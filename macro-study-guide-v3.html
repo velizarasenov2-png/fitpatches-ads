@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Макроикономика — Пълен Guide v3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+:root{--bg:#0a0a12;--card:#12121f;--card2:#1a1a2e;--accent:#f0c040;--a2:#40e0d0;--a3:#ff6b6b;--a4:#a78bfa;--a5:#34d399;--text:#e8e8f0;--muted:#666;--border:rgba(255,255,255,0.07);--ctx:#0f1929;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;min-height:100vh;padding-bottom:80px;}
+
+header{background:linear-gradient(135deg,#1a1a2e,#0a0a12);border-bottom:2px solid var(--accent);padding:28px 20px 20px;text-align:center;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(240,192,64,.12),transparent 70%);}
+header h1{font-size:clamp(1.4rem,4vw,2.1rem);font-weight:800;letter-spacing:-1px;color:var(--accent);position:relative;}
+header p{color:var(--muted);margin-top:5px;font-size:.8rem;position:relative;}
+
+.timer-bar{background:var(--card);border-bottom:1px solid var(--border);padding:9px 20px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--a2);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+#timer{font-weight:700;color:var(--accent);font-size:.95rem;}
+.tdot{width:6px;height:6px;border-radius:50%;background:var(--a3);animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.nav{display:flex;gap:5px;padding:10px 14px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--border);background:var(--card);flex-wrap:wrap;}
+.nav::-webkit-scrollbar{display:none;}
+.nb{background:none;border:1px solid var(--border);color:var(--muted);padding:5px 11px;border-radius:20px;font-family:'Sora',sans-serif;font-size:.7rem;cursor:pointer;white-space:nowrap;transition:all .18s;}
+.nb:hover,.nb.on{background:var(--accent);color:#000;border-color:var(--accent);font-weight:700;}
+
+.sec{display:none;padding:14px 16px;max-width:900px;margin:0 auto;}
+.sec.on{display:block;animation:fi .25s ease;}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sec-title{font-size:1.2rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.card-head{padding:14px 16px;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;user-select:none;}
+.card-head:hover{background:rgba(255,255,255,.02);}
+.ch-left{flex:1;}
+.card-title{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:3px;}
+.card-sub{font-size:.75rem;color:var(--muted);}
+.card-arrow{color:var(--muted);font-size:.8rem;flex-shrink:0;margin-top:2px;transition:transform .2s;}
+.card.open .card-arrow{transform:rotate(90deg);}
+.badge{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;flex-shrink:0;}
+.b-g{background:rgba(52,211,153,.15);color:var(--a5);border:1px solid var(--a5);}
+.b-y{background:rgba(240,192,64,.15);color:var(--accent);border:1px solid var(--accent);}
+.b-r{background:rgba(255,107,107,.15);color:var(--a3);border:1px solid var(--a3);}
+.b-p{background:rgba(167,139,250,.15);color:var(--a4);border:1px solid var(--a4);}
+.b-b{background:rgba(64,224,208,.15);color:var(--a2);border:1px solid var(--a2);}
+
+/* BODY */
+.card-body{display:none;padding:0 16px 16px;}
+.card.open .card-body{display:block;}
+
+/* FORMULA */
+.formula{background:#0a0a18;border:1px solid var(--a4);border-radius:7px;padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--a4);margin:6px 0;}
+
+/* CONTEXT BOX — the new detailed explanation */
+.ctx-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:5px 12px;border:1px solid rgba(64,224,208,.3);border-radius:20px;background:rgba(64,224,208,.06);color:var(--a2);font-size:.72rem;font-family:'Sora',sans-serif;cursor:pointer;transition:all .18s;}
+.ctx-btn:hover{background:rgba(64,224,208,.12);border-color:var(--a2);}
+.ctx-btn.active{background:rgba(64,224,208,.15);border-color:var(--a2);}
+.ctx-box{display:none;margin-top:10px;background:var(--ctx);border:1px solid rgba(64,224,208,.2);border-radius:9px;padding:13px 15px;}
+.ctx-box.on{display:block;animation:fi .2s ease;}
+.ctx-box h4{font-size:.78rem;font-weight:700;color:var(--a2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;}
+.ctx-box p{font-size:.82rem;color:#aab;line-height:1.65;margin-bottom:7px;}
+.ctx-box p:last-child{margin-bottom:0;}
+.ctx-box strong{color:var(--text);}
+.ctx-eg{border-left:2px solid var(--a5);padding-left:10px;margin:8px 0;font-size:.8rem;color:#8bc;}
+.ctx-warn{border-left:2px solid var(--a3);padding-left:10px;margin:8px 0;font-size:.8rem;color:#c99;}
+.ctx-key{border-left:2px solid var(--accent);padding-left:10px;margin:8px 0;font-size:.8rem;color:#cc9;}
+
+/* GENERAL ATOMS */
+.hl{background:rgba(240,192,64,.08);border-left:3px solid var(--accent);padding:8px 12px;border-radius:0 7px 7px 0;margin:7px 0;font-size:.83rem;}
+ul.ul{list-style:none;padding:0;}
+ul.ul li{padding:4px 0 4px 16px;position:relative;font-size:.82rem;color:#ccc;border-bottom:1px solid rgba(255,255,255,.03);}
+ul.ul li:last-child{border-bottom:none;}
+ul.ul li::before{content:'→';position:absolute;left:0;color:var(--a2);font-weight:700;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+@media(max-width:560px){.g2{grid-template-columns:1fr;}}
+.mini{background:var(--card2);border-radius:8px;padding:10px 12px;}
+.mini .lbl{font-size:.7rem;color:var(--muted);margin-bottom:3px;}
+.mini .val{font-size:1.4rem;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',monospace;}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.68rem;font-weight:700;margin:2px;}
+.tg{background:rgba(52,211,153,.12);color:var(--a5);border:1px solid rgba(52,211,153,.3);}
+.ty{background:rgba(240,192,64,.12);color:var(--accent);border:1px solid rgba(240,192,64,.3);}
+.tr{background:rgba(255,107,107,.12);color:var(--a3);border:1px solid rgba(255,107,107,.3);}
+.tp{background:rgba(167,139,250,.12);color:var(--a4);border:1px solid rgba(167,139,250,.3);}
+.tb{background:rgba(64,224,208,.12);color:var(--a2);border:1px solid rgba(64,224,208,.3);}
+.mn{background:linear-gradient(135deg,rgba(167,139,250,.1),rgba(64,224,208,.07));border:1px solid var(--a4);border-radius:8px;padding:11px;margin:8px 0;font-size:.81rem;}
+.mn strong{color:var(--a4);}
+table.dt{width:100%;border-collapse:collapse;font-size:.77rem;}
+table.dt th{background:rgba(240,192,64,.09);color:var(--accent);padding:6px 8px;text-align:left;font-size:.7rem;text-transform:uppercase;}
+table.dt td{padding:6px 8px;border-bottom:1px solid var(--border);color:#ccc;}
+table.dt tr:last-child td{border-bottom:none;}
+
+/* SLIDER */
+.sl-row{display:flex;align-items:center;gap:8px;margin:6px 0;}
+.sl-row label{font-size:.77rem;color:var(--muted);min-width:90px;}
+.sl-row input[type=range]{flex:1;accent-color:var(--a2);}
+.sl-row span{font-size:.77rem;font-weight:700;min-width:44px;text-align:right;color:var(--text);}
+hr.div{border:none;border-top:1px solid var(--border);margin:12px 0;}
+
+/* QUIZ */
+.quiz-card{background:var(--card2);border:1px solid var(--border);border-radius:11px;padding:16px;margin-bottom:10px;}
+.quiz-q{font-weight:700;font-size:.88rem;margin-bottom:11px;line-height:1.5;}
+.quiz-opts button{display:block;width:100%;text-align:left;padding:8px 12px;margin:4px 0;background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text);border-radius:7px;cursor:pointer;font-family:'Sora',sans-serif;font-size:.8rem;transition:all .18s;}
+.quiz-opts button:hover{background:rgba(255,255,255,.07);border-color:var(--accent);}
+.quiz-opts button.correct{background:rgba(52,211,153,.15);border-color:var(--a5);color:var(--a5);}
+.quiz-opts button.wrong{background:rgba(255,107,107,.12);border-color:var(--a3);color:var(--a3);}
+.qfb{display:none;margin-top:8px;font-size:.8rem;padding:8px 12px;border-radius:7px;}
+.qfb.ok{display:block;background:rgba(52,211,153,.1);color:var(--a5);}
+.qfb.bad{display:block;background:rgba(255,107,107,.09);color:var(--a3);}
+.score-bar{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Макроикономика — Пълен Guide v3</h1>
+  <p>Кликни заглавие за теория · "Обясни контекста" за дълбоко разбиране · Quiz в края</p>
+</header>
+
+<div class="timer-bar">
+  <div class="tdot"></div>
+  <span>Учиш:</span>
+  <span id="timer">00:00</span>
+</div>
+
+<div class="nav" id="navBar"></div>
+
+<!-- ══════════════════════════════════════════
+     1. БВП
+══════════════════════════════════════════ -->
+<div class="sec on" id="s-gdp">
+<div class="sec-title">💰 БВП — Основи</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Какво е БВП?</div><div class="card-sub">Основният измерител на икономическата активност</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-b">Основа</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="hl">Паричната стойност на всички <strong>крайни</strong> стоки и услуги, произведени на територията на дадена страна за определен период.</div>
+    <div class="g2" style="margin-top:9px">
+      <div class="mini"><div class="lbl">✅ Включва се</div><ul class="ul" style="margin-top:4px"><li>Ново производство</li><li>Нов строеж (жилища)</li><li>Услуги на лекар, адвокат</li></ul></div>
+      <div class="mini"><div class="lbl">❌ Не се включва</div><ul class="ul" style="margin-top:4px"><li>Акции, облигации</li><li>Домашна работа</li><li>Сива икономика</li><li>Стоки втора употреба</li></ul></div>
+    </div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо само "крайни" стоки?</h4>
+      <p>Ако включим и суровините, и крайния продукт, ще броим едни и същи стоки многократно. Това се казва <strong>двойно броене</strong>.</p>
+      <div class="ctx-eg">🧑‍🌾 Фермер продава пшеница → 10 лв. (БДС=10) &nbsp;→&nbsp; Мелница прави брашно → 20 лв. (БДС=10) &nbsp;→&nbsp; Пекарна прави хляб → 40 лв. (БДС=20). В БВП влизат само 40 лв. — крайната стойност. Ако броим всичко: 10+20+40=70 лв. — ГРЕШНО.</div>
+      <p>Акциите <strong>не</strong> влизат в БВП, защото купуването на акция не произвежда нищо ново — само прехвърля собственост от един на друг. Същото важи за втора употреба: тя вече е bila броена при производството.</p>
+      <div class="ctx-warn">⚠️ Домашното производство (готвене, отглеждане на деца, доброволен труд) не е в БВП, защото не минава през пазара. Затова БВП подценява реалното благосъстояние.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Номинален vs Реален БВП</div><div class="card-sub">Как премахваме ефекта на инфлацията</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-y">Изчисление</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">Номинален БВП = P(текущи) × Q(текущи)</div>
+    <div class="formula">Реален БВП = P(базова година) × Q(текущи)</div>
+    <div class="formula">Дефлатор = (Номинален / Реален) × 100%</div>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:6px">Базова година = кратна на 5: 2015, 2020...</p>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо ни трябва реален БВП?</h4>
+      <p>Ако номиналният БВП се е увеличил с 10%, не знаем: икономиката ли е нараснала реално, или просто цените са по-високи? <strong>Реалният БВП</strong> отговаря на този въпрос — фиксираме цените от базова година и виждаме само промяната в количеството на производство.</p>
+      <div class="ctx-eg">2023: Производство = 1000 хляба по 2 лв. → Номинален БВП = 2000 лв.<br>2024: Производство = 1000 хляба по 2.5 лв. → Номинален БВП = 2500 лв. (+25%!)<br>Реален БВП 2024 (по цени от 2023) = 1000 × 2 = 2000 лв. (0% реален растеж!)<br>→ Дефлатор = 2500/2000 × 100 = 125. Инфлация = 25%.</div>
+      <p>Дефлаторът ни казва с колко % са се вдигнали цените спрямо базовата година. Ако е над 100 → инфлация. Под 100 → дефлация.</p>
+      <div class="ctx-key">💡 Дефлаторът обхваща ВСИЧКИ стоки в БВП — по-широк от ИПЦ (само потребителска кошница). Но ИПЦ се публикува месечно, дефлаторът — тримесечно.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Производствен разрив</div><div class="card-sub">Колко далеч е икономиката от потенциала си</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-r">Важно!</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">Разрив = (Y − Y*) / Y*</div>
+    <div class="g2" style="margin-top:8px">
+      <div class="mini"><div class="lbl">📉 Рецесионен (Y &lt; Y*)</div><p style="font-size:.77rem;color:#ccc;margin-top:4px">Незаети ресурси, висока безработица. Трябват стимули (↑G или ↓лихви).</p></div>
+      <div class="mini"><div class="lbl">📈 Инфлационен (Y &gt; Y*)</div><p style="font-size:.77rem;color:#ccc;margin-top:4px">Прегряване, ↑инфлация. Трябва охлаждане (↓G или ↑лихви).</p></div>
+    </div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Какво е потенциален БВП (Y*)?</h4>
+      <p><strong>Y*</strong> е производството при <em>пълна заетост</em> — когато всеки, който иска, може да намери работа при пазарна работна заплата. Определя се от производствената функция: Y* = A × F(K*, L*).</p>
+      <p>A = обща факторна производителност (технологии, организация) | K* = наличен капитал | L* = равновесна заетост</p>
+      <div class="ctx-eg">При рецесионен разрив: Представи си фабрика с 100 машини, но работи само 70% от капацитета. Има незаети машини и безработни хора. Реалният БВП е под потенциала.</div>
+      <div class="ctx-eg">При инфлационен разрив: Фабриката работи на 110% — извънреден труд, машините се износват по-бързо. Не е устойчиво. Разрешава се чрез ↑цени, ↑заплати → самостоятелно охлаждане в дълъг план.</div>
+      <div class="ctx-warn">⚠️ Степента на използване на мощностите = Y / Y* × 100. Над 100% = инфлационен натиск. Под 100% = слабо търсене.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ══════════════════════════════════════════
+     2. 3 МЕТОДА
+══════════════════════════════════════════ -->
+<div class="sec" id="s-methods">
+<div class="sec-title">📐 3 Метода за изчисление</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">1️⃣ Разходен метод: C + I + G + NX</div><div class="card-sub">Кой купува произведената продукция?</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-y">Метод 1</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">БВП = C + I + G + (X − M)</div>
+    <table class="dt" style="margin-top:8px">
+      <tr><th>Символ</th><th>Значение</th><th>Зависи от Y?</th></tr>
+      <tr><td><strong>C</strong></td><td>Потребление на домакинства</td><td><span class="tag tg">ДА (индуциран)</span></td></tr>
+      <tr><td><strong>I</strong></td><td>Инвестиции на фирми</td><td><span class="tag tr">НЕ (автономен)</span></td></tr>
+      <tr><td><strong>G</strong></td><td>Правителствени покупки</td><td><span class="tag tr">НЕ (автономен)</span></td></tr>
+      <tr><td><strong>X</strong></td><td>Износ</td><td><span class="tag tr">НЕ (автономен)</span></td></tr>
+      <tr><td><strong>M</strong></td><td>Внос</td><td><span class="tag tg">ДА (индуциран)</span></td></tr>
+    </table>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Логиката зад разходния метод</h4>
+      <p>Всяка произведена стока трябва да е <strong>купена от някого</strong>. Делим всички купувачи на 4 групи. Сборът им = БВП.</p>
+      <p><strong>C (Потребление)</strong>: Всичко, което домакинствата купуват — храна, дрехи, услуги, кола (но НЕ ново жилище!). Зависи от разполагаемия доход (YD = Y − данъци + трансфери).</p>
+      <p><strong>I (Инвестиции)</strong>: Машини, оборудване, сгради, НОВО жилище (не старо!), промени в запасите. Не зависи от текущия Y, а от лихвения процент и очаквани печалби.</p>
+      <p><strong>G (Правителствени покупки)</strong>: Армия, полиция, учители, болници. <em>Не включва</em> трансфери (пенсии, помощи) — те не купуват стоки директно, само прехвърлят доход.</p>
+      <p><strong>NX = X − M (Нетен износ)</strong>: Добавяме X защото чужденците купуват нашето. Изваждаме M защото C, I, G включват вносни стоки, а ние мерим само местното производство.</p>
+      <div class="ctx-warn">⚠️ NX може да е отрицателен (търговски дефицит). Не е непременно лошо — напр. ако внасяме машини за инвестиции.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">2️⃣ Доходен метод: W + R + Int + Prf</div><div class="card-sub">Кой получава дохода от производството?</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-p">Метод 2</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">БВП = W + R + Int + Prf + Амортизации + (Данъци − Субсидии)</div>
+    <ul class="ul" style="margin-top:8px">
+      <li><strong>W</strong> — Заплати + осигурителни вноски на работодателя (~60-70% от БВП)</li>
+      <li><strong>R</strong> — Рента от земя, сгради, природни ресурси</li>
+      <li><strong>Int</strong> — Лихви от заеми и ценни книжа</li>
+      <li><strong>Prf</strong> — Брутен опериращ излишък (корпоративна печалба)</li>
+    </ul>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Производство = нечий доход</h4>
+      <p>Всяко производство разпределя стойност между факторите на производство. Логиката: за всяко нещо, което се произведе, НЯКОЙ получава пари.</p>
+      <div class="ctx-eg">Фирма продава продукт за 100 лв.:<br>→ 55 лв. заплати (W) | 8 лв. наем на склад (R) | 5 лв. лихви по кредит (Int) | 12 лв. данъци | 20 лв. печалба (Prf). Сума = 100 лв. = БВП.</div>
+      <p><strong>Брутен опериращ излишък</strong> = при корпорирани фирми (АД, ООД). <strong>Брутен смесен доход</strong> = при семейни фирми — включва и труда на собственика, защото той не се плаща отделно.</p>
+      <div class="ctx-key">💡 "Брутен" означава преди приспадане на амортизациите. Нетен = Брутен − Амортизации.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">3️⃣ Производствен метод (БДС)</div><div class="card-sub">Каква стойност добавя всяко предприятие?</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-b">Метод 3</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">БДС = Приходи − Разходи за суровини (междинно потребление)</div>
+    <div class="formula">БВП = Σ БДС + Косвени данъци − Субсидии</div>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:6px">Сектори: <span class="tag tg">Първичен</span> (земеделие, добив) <span class="tag ty">Вторичен</span> (промишленост) <span class="tag tp">Третичен</span> (услуги)</p>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Как работи БДС — без двойно броене</h4>
+      <p>Вместо да търсим крайния продукт, сумираме колко <strong>стойност добавя</strong> всяко предприятие на всеки производствен етап. Резултатът е идентичен с разходния метод — само пътят е различен.</p>
+      <div class="ctx-eg">🧑‍🌾 Фермер (суровини → 10 лв.) | БДС = 10 лв.<br>🏭 Мелница (суровини 10 → брашно 22 лв.) | БДС = 12 лв.<br>🥖 Пекарна (суровини 22 → хляб 40 лв.) | БДС = 18 лв.<br>Σ БДС = 10 + 12 + 18 = 40 лв. = цена на крайния хляб ✓</div>
+      <p>Добавят се "корективи" — разлика между косвените данъци (ДДС, акцизи, мита) и субсидиите. БДС се изчислява по <strong>базисни цени</strong> (без данъците), БВП е по <strong>пазарни цени</strong> (с данъците).</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     3. РАЗХОДИ & РАВНОВЕСИЕ
+══════════════════════════════════════════ -->
+<div class="sec" id="s-spending">
+<div class="sec-title">🛒 Съвкупни разходи & Равновесие</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Функция на потреблението (Кейнс)</div><div class="card-sub">Как доходът определя колко харчим</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-g">Кейнс</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">C = C₀ + MPC × YD &nbsp;&nbsp; (YD = Y − TA + TR)</div>
+    <div class="formula">APC = C/YD &nbsp;|&nbsp; MPC = ΔC/ΔYD</div>
+    <div class="formula">MPC + MPS = 1 &nbsp;&nbsp;&nbsp; APC + APS = 1</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Психологически закон на Кейнс</h4>
+      <p><strong>C₀ (автономно потребление)</strong> = минималното потребление дори при нулев доход — финансира се от спестявания, кредити или помощи. Например ако нямаш работа, пак ядеш.</p>
+      <p><strong>MPC (пределна склонност към потребление)</strong> = от всеки 1 лв. допълнителен доход, колко лв. харчиш? Ако MPC = 0.8, харчиш 80 ст. и спестяваш 20 ст.</p>
+      <div class="ctx-eg">Доход преди = 1000 лв., потребление = 900 лв. Доход след = 1100 лв., потребление = 980 лв. → MPC = (980−900)/(1100−1000) = 80/100 = 0.8. APC = 980/1100 = 0.89.</div>
+      <p><strong>Психологически закон на Кейнс</strong>: При по-нисък доход харчим пропорционално повече (APC е по-висок). С нарастване на дохода, APC намалява, APS нараства — богатите спестяват по-голяма дял от дохода.</p>
+      <div class="ctx-warn">⚠️ YD (разполагаем доход) = Y − TA + TR. Данъците намаляват доходите → намаляват потреблението. Трансферните плащания (пенсии, помощи) увеличават разполагаемия доход.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Кейнсиански кръст (AE = Y)</div><div class="card-sub">Как икономиката достига равновесие</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-r">Равновесие</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="hl">Равновесие когато: <strong>AE = Y</strong> — Планираните разходи = Произведеното. Всички точки на 45° линията (бисектрисата).</div>
+    <table class="dt" style="margin-top:8px">
+      <tr><th>Ситуация</th><th>Ефект върху запасите</th><th>Резултат</th></tr>
+      <tr><td>AE &gt; Y (наляво от E)</td><td>Непланиран СПАД на запаси</td><td>Фирмите ↑ производство</td></tr>
+      <tr><td>AE &lt; Y (надясно от E)</td><td>Непланирано НАТРУПВАНЕ на запаси</td><td>Фирмите ↓ производство</td></tr>
+      <tr><td>AE = Y (точка E)</td><td>Запасите не се менят</td><td>✅ Равновесие</td></tr>
+    </table>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Механизмът на уравновесяване</h4>
+      <p>Фирмите не знаят предварително колко ще продадат. Произвеждат по план, а след това разглеждат складовите си наличности като сигнал:</p>
+      <p>→ <strong>Запасите намаляват</strong> (продаде се повече от планираното): "Трябва да произведем повече" → ↑Y</p>
+      <p>→ <strong>Запасите се натрупват</strong> (продаде се по-малко от планираното): "Произвеждаме твърде много" → ↓Y</p>
+      <div class="ctx-eg">Представи си магазин за хляб. Произвежда 100 хляба/ден (Y=100). Хората искат 120 (AE=120). Складът се изпразва → пекарят увеличава производството до 120. Сега Y = AE = 120. Равновесие!</div>
+      <p><strong>Sticky prices (лепкави цени)</strong>: В краткосрочен план цените не се адаптират веднага поради сключени договори. Затова фирмите регулират производството (Q), а не цените (P). Точно затова Кейнс може да игнорира цените краткосрочно.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Инжекции vs Изтичания</div><div class="card-sub">Кръговото движение на дохода</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-b">Кръгооборот</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="g2">
+      <div class="mini"><div class="lbl" style="color:var(--a5)">💉 ИНЖЕКЦИИ (добавят)</div><ul class="ul" style="margin-top:5px"><li>Инвестиции (I)</li><li>Правителствени разходи (G)</li><li>Износ (X)</li></ul></div>
+      <div class="mini"><div class="lbl" style="color:var(--a3)">💧 ИЗТИЧАНИЯ (изваждат)</div><ul class="ul" style="margin-top:5px"><li>Спестявания (S)</li><li>Данъци (T)</li><li>Внос (M)</li></ul></div>
+    </div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Кръговото движение на парите</h4>
+      <p>В икономиката парите циркулират: Фирмите плащат заплати → Домакинствата харчат → Приходи на фирмите. Но от тази верига "изтичат" пари (спестявания, данъци, внос) и "влизат" нови пари (инвестиции, G, износ).</p>
+      <p>При равновесие: <strong>Инжекции = Изтичания</strong> → I + G + X = S + T + M</p>
+      <div class="ctx-eg">Ако домакинствата спестяват повече (↑S) → по-малко харчат → ↓C → ↓приходи на фирмите → ↓заплати → ↓доход. Изтичането "S" се е увеличило без балансираща инжекция → Y пада.</div>
+      <div class="ctx-key">💡 Именно затова при рецесия правителството трябва да увеличи G (инжекция), за да компенсира намалялото частно търсене — логиката на кейнсианския stimulus.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     4. МУЛТИПЛИКАТОР
+══════════════════════════════════════════ -->
+<div class="sec" id="s-mult">
+<div class="sec-title">✖️ Мултипликатор</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Логиката и формулата</div><div class="card-sub">Защо 100 лв. правителствени разходи дават 500 лв. БВП</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-r">Ключово!</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">Затворена (без правит.): γ = 1/(1−MPC) = 1/MPS</div>
+    <div class="formula">С правителство: γ = 1/[1−MPC(1−t)]</div>
+    <div class="formula">Отворена: γ = 1/[1−MPC(1−t) + m]</div>
+    <div class="formula">ΔY = γ × ΔАвтономни разходи</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Как работи мултипликаторът стъпка по стъпка</h4>
+      <p>При MPC=0.8 и ΔG = 100 лв.:</p>
+      <div class="ctx-eg">Кръг 1: Г дава 100 лв. на строителна фирма → тя получава 100 лв. доход.<br>Кръг 2: Фирмата харчи 80% = 80 лв. (при MPC=0.8) → следващата фирма получава 80 лв.<br>Кръг 3: Тя харчи 64 лв. → и т.н.<br>Общо: 100 + 80 + 64 + 51.2 + ... = 100 × (1/(1−0.8)) = 100 × 5 = 500 лв.</div>
+      <p><strong>Защо данъците и вносът намаляват мултипликатора?</strong> Данъците "крадат" от всеки кръг (при t=0.2: реалният MPC е 0.8×0.8=0.64). Вносът изтича към чуждата икономика.</p>
+      <p><strong>Ограничения</strong>: Мултипликаторът е по-голям при: ↑MPC, ↓t, ↓m, ↓R (нисък лихвен процент), и когато икономиката е далеч от пълна заетост (в Кейнсиански участък).</p>
+      <div class="ctx-warn">⚠️ ΔY от TR (трансфери) = MPC × γ × ΔTR — по-малко от G ефекта! Защото частта MPC от трансфера се спестява, а само останалото влиза в TS.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Интерактивен калкулатор</div><div class="card-sub">Изчисли мултипликатора и ΔY</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-y">Задачи</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="sl-row"><label>MPC</label><input type="range" min="0.1" max="0.95" step="0.05" value="0.8" id="sl-mpc"><span id="v-mpc">0.80</span></div>
+    <div class="sl-row"><label>Данъци t</label><input type="range" min="0" max="0.4" step="0.05" value="0" id="sl-t"><span id="v-t">0.00</span></div>
+    <div class="sl-row"><label>Внос m</label><input type="range" min="0" max="0.3" step="0.05" value="0" id="sl-m"><span id="v-m">0.00</span></div>
+    <div class="sl-row"><label>ΔРазходи</label><input type="range" min="10" max="500" step="10" value="100" id="sl-dg"><span id="v-dg">100 лв.</span></div>
+    <hr class="div">
+    <div class="g2">
+      <div class="mini"><div class="lbl">Мултипликатор γ</div><div class="val" id="r-mult">5.00</div></div>
+      <div class="mini"><div class="lbl">ΔY (промяна в БВП)</div><div class="val" id="r-dy">500 лв.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Акселератор и парадокс на спестяването</div><div class="card-sub">Две важни концепции на Кейнс</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-p">Теория</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">Акселератор: k = I / ΔY &nbsp;→&nbsp; I_t = k × ΔY_{t−1}</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Акселератор: инвестициите реагират на растежа</h4>
+      <p>Ако Y нараства → фирмите очакват повече търсене → инвестират в нови мощности. Обратното при ↓Y. Акселераторът показва колко инвестиции са нужни за всяка единица ↑Y.</p>
+      <div class="ctx-eg">k = 3: За да нарасне Y с 10 лв., трябват 30 лв. нови инвестиции. При ↓Y — инвестициите падат дори по-рязко от дохода.</div>
+      <h4 style="margin-top:12px">Парадокс на спестяването</h4>
+      <p>Ако ЕДНО домакинство спестява повече → добре. Ако ВСИЧКИ спестяват едновременно → ↓C → ↓AD → ↓производство → ↓доходи → спестяванията всъщност не нарастват!</p>
+      <div class="ctx-warn">⚠️ Затова Кейнс препоръчва при рецесия: Дори ако домакинствата не харчат, правителството трябва да харчи. "В дългосрочен план всички сме мъртви" — не можем да чакаме пазарът сам да се оправи.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     5. ПАРИ
+══════════════════════════════════════════ -->
+<div class="sec" id="s-money">
+<div class="sec-title">🏦 Пари и финансова система</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">4 функции на парите и агрегати</div><div class="card-sub">Какво са парите и как се мерят</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-b">Основа</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="g2" style="margin-bottom:10px">
+      <div class="mini" style="text-align:center"><div style="font-size:1.3rem">💱</div><div class="lbl">Средство за размяна</div></div>
+      <div class="mini" style="text-align:center"><div style="font-size:1.3rem">📏</div><div class="lbl">Мерна единица</div></div>
+      <div class="mini" style="text-align:center"><div style="font-size:1.3rem">🏦</div><div class="lbl">Съхранение на стойност</div></div>
+      <div class="mini" style="text-align:center"><div style="font-size:1.3rem">⏰</div><div class="lbl">Стандарт за отложено плащане</div></div>
+    </div>
+    <table class="dt">
+      <tr><th>Агрегат</th><th>Съдържание</th><th>Употреба</th></tr>
+      <tr><td><span class="tag ty">M0/MB</span></td><td>Кеш в обращение + резерви</td><td>Парична база</td></tr>
+      <tr><td><span class="tag tg">M1</span></td><td>M0 + депозити на виждане (овърнайт)</td><td>Текуща активност</td></tr>
+      <tr><td><span class="tag tp">M2</span></td><td>M1 + срочни до 2г. + предизвестие до 3 мес.</td><td>Краткоср. спестявания</td></tr>
+      <tr><td><span class="tag tr">M3</span></td><td>M2 + репо + облигации до 2г.</td><td>ЕЦБ → следи инфлацията</td></tr>
+    </table>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо имаме различни парични агрегати?</h4>
+      <p>Не всички форми на пари са еднакво "бързи". <strong>Ликвидност</strong> = скоростта и лекотата, с която можеш да ги използваш за плащане.</p>
+      <p>M1 е най-ликвиден — парите в джоба и в разплащателната сметка са веднага достъпни. M2 включва срочни депозити — трябва да изчакаш матуритета или да платиш санкция. M3 е най-малко ликвиден.</p>
+      <div class="ctx-eg">Пример: Имаш 500 лв. в брой (M0), 1000 лв. в разплащателна сметка (M1), 5000 лв. в 6-месечен депозит (M2), 10000 лв. в облигации (M3). За пица плащаш с брой или карта (M1). За кола може да "разбиеш" депозита (M2). Облигациите са за дългосрочни спестявания.</div>
+      <div class="ctx-key">💡 M1 = индикатор за текуща икономическа активност. M3 = ЕЦБ го ползва за анализ на инфлационни рискове.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Депозитна и парична мултипликация</div><div class="card-sub">Как банките "създават" пари</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-y">Механизъм</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">Депозитен мултипликатор DM = 1 / rd</div>
+    <div class="formula">Паричен мултипликатор m₁ = (1 + cu) / (cu + re)</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Как банките умножават парите</h4>
+      <p>При <strong>частична резервна система</strong>: банките задържат само малък процент от депозитите (rd = норма на задължителни резерви) и дават останалото като кредит.</p>
+      <div class="ctx-eg">rd = 10%. Внасяш 100 лв. → Банка А задържа 10 лв., дава кредит 90 лв. → Кредитополучателят депозира 90 лв. в Банка Б → Банка Б задържа 9 лв., дава кредит 81 лв. → ... → Общо пари = 1000 лв.! DM = 1/0.1 = 10.</div>
+      <p><strong>Паричен мултипликатор m₁</strong> е по-реалистичен — отчита, че хората задържат пари в брой (cu = кеш/депозити) и банките задържат свръхрезерви (re).</p>
+      <div class="ctx-warn">⚠️ Ако хората масово теглят пари (bank run) или банките откажат да кредитират (↑re), паричният мултипликатор пада → паричното предлагане се свива → дефлационен натиск. Точно това се случи в Голямата депресия.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Търсене на пари и капан на ликвидността</div><div class="card-sub">3 мотива на Кейнс + критичен сценарий</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-r">Кейнс</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">MD/P = L(Y, R) &nbsp;→&nbsp; при ↑R → ↓MD</div>
+    <ul class="ul" style="margin-top:8px">
+      <li><strong>Трансакционен</strong> — за всекидневни покупки, зависи от Y</li>
+      <li><strong>Предохранителен</strong> — за непредвидени разходи, зависи от Y и R</li>
+      <li><strong>Спекулативен</strong> — очаквана печалба, зависи обратно от R</li>
+    </ul>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо хората "държат" пари вместо да ги влагат?</h4>
+      <p>Парите не носят лихва (или носят малка). Защо ги държим? Кейнс дава три причини:</p>
+      <p><strong>Трансакционен мотив</strong>: Плащанията и постъпленията не съвпадат по време. Заплатата е 1-во число, но ядеш всеки ден → трябват пари за "bridge".</p>
+      <p><strong>Предохранителен мотив</strong>: Непредвидени разходи — счупена кола, болница. Колкото по-несигурна е средата, толкова повече се пазят пари в резерв.</p>
+      <p><strong>Спекулативен мотив</strong>: Ако очакваш, че лихвените проценти ще растат → цените на облигациите ще падат → по-добре задръж пари сега и купи облигации по-евтино по-късно.</p>
+      <h4 style="margin-top:12px">Капан на ликвидността</h4>
+      <p>При i = 0% и дефлационни очаквания: реалният лихвен процент R = i + π_e (очакваната дефлация) може да остане висок → инвестициите не се стимулират. Паричната политика е неефективна!</p>
+      <div class="ctx-eg">Япония 1990-2013: Централната банка сложи i = 0%, но банките предпочитаха да пазят свръхрезерви. Ниски лихви, но без кредитиране, без растеж → капан.</div>
+      <div class="ctx-warn">⚠️ При капан на ликвидността единственото работещо средство е фискалната политика (↑G). Паричната политика е "pushing on a string" — безполезна.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     6. БЕЗРАБОТИЦА
+══════════════════════════════════════════ -->
+<div class="sec" id="s-unemp">
+<div class="sec-title">👷 Безработица</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Дефиниции и коефициенти</div><div class="card-sub">Кой е безработен и как го мерим</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-b">Дефиниции</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="hl">Безработен = лице 15–74 год., без работа, търсило активно 4 седмици, готово да започне в 2 седмици — ИЛИ с договор до 3 месеца.</div>
+    <div class="formula">Работна сила = Заети + Безработни</div>
+    <div class="formula">Коеф. безработица = Безработни / Работна сила × 100</div>
+    <div class="formula">Коеф. заетост = Заети / Население × 100</div>
+    <div class="formula">Коеф. иконом. активност = Работна сила / Население × 100</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо официалната безработица може да подвежда</h4>
+      <p>Дефиницията е строга — трябва да <em>търсиш активно</em>. Ако си отчаян и спреш да търсиш → ставаш "обезкуражен" → <strong>излизаш от работната сила</strong> → статистиката ти показва по-ниска безработица! Парадоксално при тежки кризи може коефициентът на безработица да ПАДА, защото хората спират да търсят.</p>
+      <div class="ctx-eg">Числата: Работна сила = 1000, Безработни = 100 → Коеф. = 10%. После 50 обезкуражени спират да търсят → Работна сила = 950, Безработни = 50 → Коеф. = 5.3%! Ситуацията е по-лоша, но числото изглежда по-добро.</div>
+      <div class="ctx-warn">⚠️ Затова икономистите следят и коеф. на заетост и коеф. на активност, а не само безработицата.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Видове безработица</div><div class="card-sub">Не всяка безработица е еднакво лоша</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-r">Важно</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <table class="dt">
+      <tr><th>Вид</th><th>Причина</th><th>Лечение</th></tr>
+      <tr><td><span class="tag tg">Фрикционна</span></td><td>Движение между работни места</td><td>Не е нужно — нормална</td></tr>
+      <tr><td><span class="tag ty">Структурна</span></td><td>Несъответствие квалификация ↔ търсене</td><td>Преквалификация</td></tr>
+      <tr><td><span class="tag tp">Естествена U*</span></td><td>Фрикционна + Структурна</td><td>"Пълна заетост" = норма</td></tr>
+      <tr><td><span class="tag tr">Циклична</span></td><td>Икономически спад, ↓AD</td><td>Стимули (G↑ или i↓)</td></tr>
+    </table>
+    <div class="formula" style="margin-top:8px">Циклична = U − U* &nbsp;&nbsp; Закон на Оукън: (Y−Y*)/Y* ≈ −β(u−u*)</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо естествената безработица никога не е нула?</h4>
+      <p>Дори в "перфектна" икономика при пълна заетост, винаги ще има хора в преход — студент търси първа работа, или някой е напуснал и търси по-добра. Това е <strong>фрикционна безработица</strong>.</p>
+      <p>Дигитализацията унищожава касиерски работни места, но създава нужда от програмисти. Докато хората не се преквалифицират → <strong>структурна безработица</strong>.</p>
+      <p><strong>Хистерезис ефект</strong>: При дълга криза (>1 год. безработица), хората губят квалификация → работодателите ги избягват → U* трайно нараства. Затова е важно кризите да са кратки!</p>
+      <div class="ctx-eg">Закон на Оукън: Ако Y е с 3% под Y* → цикличната безработица е с ~1% над U*. При Y* = 100 лв. и Y = 97 лв. → u − u* ≈ 1%. Ако u* = 5%, тогава u ≈ 6%.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     7. ИНФЛАЦИЯ
+══════════════════════════════════════════ -->
+<div class="sec" id="s-inf">
+<div class="sec-title">📈 Инфлация</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Видове и измерване</div><div class="card-sub">Темпове, понятия и индекси</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-y">Основа</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">Инфлация = (ИПЦ_t − ИПЦ_{t−1}) / ИПЦ_{t−1} × 100%</div>
+    <table class="dt" style="margin-top:8px">
+      <tr><th>Тип</th><th>Темп</th><th>Ефект</th></tr>
+      <tr><td>Пълзяща</td><td>до 3%</td><td style="color:var(--a5)">✅ Желана — стимулира</td></tr>
+      <tr><td>Умерена</td><td>3–10%</td><td>Поносима</td></tr>
+      <tr><td>Галопираща</td><td>20–400%</td><td style="color:var(--a3)">⚠️ Опасна</td></tr>
+      <tr><td>Хиперинфлация</td><td>&gt;50%/месец</td><td style="color:var(--a3)">🔴 Катастрофа</td></tr>
+    </table>
+    <ul class="ul" style="margin-top:8px">
+      <li><strong>Дезинфлация</strong> — ТЕМПЪТ на инфлация намалява (не цените!)</li>
+      <li><strong>Дефлация</strong> — Цените падат → нежелана (депресия)</li>
+      <li><strong>Стагфлация</strong> — Спад + Инфлация едновременно</li>
+      <li><strong>Шринкфлация</strong> — Цената = същата, количеството ↓</li>
+    </ul>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо малката инфлация е желана?</h4>
+      <p>Пълзящата инфлация (~2%) е желана защото: (1) Дава "буфер" срещу дефлация при рецесия. (2) Улеснява корекцията на относителни цени без номинален спад. (3) При нулева инфлация реалните заплати е по-трудно да се намалят (психологическа съпротива), но инфлацията "тихо" го прави.</p>
+      <p><strong>Защо дефлацията е лоша?</strong> Хората отлагат покупките ("утре ще е по-евтино") → ↓C → ↓производство → ↓заплати → ↓цени → порочен кръг. Японски сценарий 1990-2012.</p>
+      <div class="ctx-warn">⚠️ При хиперинфлация хората бягат от парите — купуват всичко веднага (↑V). Парите губят функцията си. Пример: Германия 1923, Зимбабве 2008 (инфлация 89.7 секстилиона процента!).</div>
+      <h4 style="margin-top:12px">Измерители</h4>
+      <p><strong>ИПЦ</strong> — 846 стоки за 2022 г., потребителска кошница на домакинствата. <strong>ХИПЦ</strong> — по методология на Евростат, сравним между страните ЕС. <strong>Дефлатор на БВП</strong> — всички стоки в БВП, не само потребителска кошница. <strong>ИЦП (PPI)</strong> — производителски цени (суровини, полуфабрикати) — "водещ" индикатор за бъдеща потребителска инфлация.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Причини и Крива на Филипс</div><div class="card-sub">Откъде идва инфлацията и връзката с безработицата</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-p">Теория</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="g2">
+      <div class="mini"><div class="lbl" style="color:var(--accent)">📈 Инфлация на търсенето</div><p style="font-size:.77rem;color:#ccc;margin-top:4px">AD &gt; AS. Причини: ↑G, ↑I, ↑X, ↑доходи. Крива AD → надясно.</p></div>
+      <div class="mini"><div class="lbl" style="color:var(--a3)">🏭 Инфлация на разходите</div><p style="font-size:.77rem;color:#ccc;margin-top:4px">AS намалява. Причини: ↑заплати, ↑петрол, ↑данъци. Крива AS → наляво.</p></div>
+    </div>
+    <div class="mn" style="margin-top:9px"><strong>Крива на Филипс (кратко):</strong> ↑инфлация ↔ ↓безработица. <strong>Дълго:</strong> Вертикална при U*. NAIRU = U* = безработица без ускоряваща инфлация.</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Инфлация на търсенето vs разходите</h4>
+      <p><strong>Търсене (demand-pull)</strong>: Твърде много пари гонят твърде малко стоки. Фирмите могат да продадат повече → вдигат цени. Производството може да нарасне ако сме в Кейнсиански участък, но при вертикална AS → само ↑P.</p>
+      <p><strong>Разходи (cost-push)</strong>: Производствените разходи растат (↑заплати, ↑петрол) → AS намалява → при СЪЩОТО AD → ↑P И ↓Y → стагфлация. Много по-лоша ситуация!</p>
+      <div class="ctx-eg">1973 нефтена криза: ОПЕК ↑ цени на петрола → производствените разходи на всички индустрии скочиха → AS ← наляво → целият Запад изпита стагфлация.</div>
+      <h4 style="margin-top:12px">Защо Крива на Филипс е различна в кратко vs дълго?</h4>
+      <p><strong>Кратко</strong>: Работниците не забелязват веднага инфлацията (фиксирани договори). Ако AD расте → фирмите наемат повече → U пада. "Измамва" работниците с номинално ↑ заплата, докато реалната заплата пада.</p>
+      <p><strong>Дълго</strong> (Фридман/Фелпс): Работниците се адаптират → договарят по-高 номинални заплати за компенсация → U се връща на U*. В дълъг план политика, която "купува" ниска безработица чрез инфлация, само произвежда по-висока инфлация.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     8. ФИСКАЛНА ПОЛИТИКА
+══════════════════════════════════════════ -->
+<div class="sec" id="s-fiscal">
+<div class="sec-title">🏛️ Фискална политика</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Инструменти и бюджетни салда</div><div class="card-sub">Как правителството управлява икономиката</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-g">Правителство</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">BS = TA − (G + TR) = taY − (G + TR)</div>
+    <div class="formula">BS* (структурно) = taY* − (G + TR)</div>
+    <div class="formula">Циклично BS = BS − BS* = ta(Y − Y*)</div>
+    <table class="dt" style="margin-top:8px">
+      <tr><th>Вид политика</th><th>Кога?</th><th>Действие</th></tr>
+      <tr><td><span class="tag tg">Експанзионистична</span></td><td>Рецесия (Y &lt; Y*)</td><td>↑G или ↓t → ↑AD → ↑Y</td></tr>
+      <tr><td><span class="tag tr">Рестриктивна</span></td><td>Прегряване (Y &gt; Y*)</td><td>↓G или ↑t → ↓AD</td></tr>
+    </table>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Структурно vs Циклично салдо — защо е важно?</h4>
+      <p>Ако виждаш голям бюджетен дефицит, не знаеш дали: (а) правителството харчи прекалено (лоша дискреционна политика) или (б) просто е рецесия и данъчните приходи са автоматично паднали.</p>
+      <p><strong>Структурното салдо (BS*)</strong> изолира (а) — показва дефицита при хипотетично Y = Y*. Ако структурното салдо е голямо → дискреционна политика е проблемна. Ако цикличното е голямо → просто рецесия.</p>
+      <div class="ctx-eg">Y = 90, Y* = 100, ta = 20%. BS = 0.2×90 − G = 18 − G. BS* = 0.2×100 − G = 20 − G. Цикличен компонент = 18 − 20 = −2 (2 лв. дефицит само заради рецесията, не заради лоша политика).</div>
+      <div class="ctx-key">💡 Фискалните правила в България: Дефицит &lt; 3% БВП | Разходи &lt; 40% БВП | Дълг &lt; 60% БВП. Валутен борд от 1997 — 1€ = 1.95583 лв. фиксирано.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Автоматични стабилизатори</div><div class="card-sub">Самозащитата на икономиката</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-p">Механизъм</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="hl">При ↓Y → ↓данъчни приходи АВТОМАТИЧНО + ↑социални помощи АВТОМАТИЧНО → буфер срещу рецесията, без изрична намеса!</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо са по-добри от дискреционната политика?</h4>
+      <p>Дискреционната политика страда от <strong>лагове</strong>: разпознаване на проблема (3-6 мес.) + вземане на решение (3-6 мес.) + изпълнение (6-12 мес.) = 1-2 години закъснение. До тогава рецесията може да е свършила и стимулите да причинят инфлация!</p>
+      <p>Автоматичните стабилизатори нямат лаг — работят веднага, без политически решения.</p>
+      <div class="ctx-eg">При рецесия: Хората губят работа → плащат по-малко данъци (TA = ta × Y пада автоматично) + получават обезщетения (TR нараства). Двата ефекта поддържат разполагаемия им доход и предотвратяват свободно падане на C.</div>
+      <div class="ctx-warn">⚠️ Проблем: Автоматичните стабилизатори могат да забавят излизането от криза! При оживление → автоматично ↑данъци + ↓обезщетения → охлаждане на растежа. Работят двупосочно.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     9. ПАРИЧНА ПОЛИТИКА
+══════════════════════════════════════════ -->
+<div class="sec" id="s-monetary">
+<div class="sec-title">🏧 Парична политика</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Инструменти на ЦБ и Правило на Тейлър</div><div class="card-sub">Как централната банка управлява парите</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-b">ЦБ</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <ul class="ul">
+      <li><strong>Операции на откр. пазар</strong> — ЦБ купува/продава ДЦК → ↑/↓ парично предлагане</li>
+      <li><strong>Сконтов лихвен процент</strong> — цена на кредит от ЦБ към търговски банки</li>
+      <li><strong>Задължителни резерви (rd)</strong> — % от депозитите, задържани при ЦБ</li>
+    </ul>
+    <div class="formula" style="margin-top:8px">Правило на Тейлър: i = ī + a(π − π̄) + b(Y−Y*)/Y*</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Как работи операцията на открития пазар?</h4>
+      <p>ЦБ иска да ↑ паричното предлагане → Купува ДЦК от търговски банки → Плаща им → Банките имат повече резерви → Могат да дадат повече кредити → ↑ парично предлагане → ↓ лихвени проценти → ↑ инвестиции → ↑ Y.</p>
+      <p>Обратното: ЦБ продава ДЦК → Банките плащат → Губят резерви → По-малко кредити → ↑ лихви → ↓ I → ↓ Y.</p>
+      <h4 style="margin-top:12px">Правило на Тейлър</h4>
+      <p>ī = естествен лихвен процент (~2%) | π̄ = целева инфлация (~2%) | a, b ≈ 0.5</p>
+      <div class="ctx-eg">Инфлацията е 4% (2% над целта), Y = Y* (без производствен разрив): i = 2% + 0.5×(4−2)% + 0 = 3%. ЦБ трябва да вдигне лихвата на 3%, за да охлади инфлацията.</div>
+      <div class="ctx-eg">Рецесия: Y е 2% под Y*, инфлация = 1% (1% под целта): i = 2% + 0.5×(1−2)% + 0.5×(−2)% = 2% − 0.5% − 1% = 0.5%. ЦБ трябва да смъкне до 0.5%.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     10. ИКОНОМИЧЕСКИ ЦИКЪЛ
+══════════════════════════════════════════ -->
+<div class="sec" id="s-cycle">
+<div class="sec-title">🔄 Икономически цикъл</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">4 Фази и показатели</div><div class="card-sub">Как се движи икономиката в цикъл</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-y">Цикъл</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <table class="dt">
+      <tr><th>Фаза</th><th>Y спрямо Y*</th><th>Безработица</th><th>Инфлация</th></tr>
+      <tr><td><span class="tag ty">Бум</span></td><td>Y &gt;&gt; Y*</td><td>↓ ниска</td><td>↑ ускорява</td></tr>
+      <tr><td><span class="tag tr">Рецесия</span></td><td>Y пада</td><td>↑ расте</td><td>↓ забавя</td></tr>
+      <tr><td><span class="tag tr">Депресия</span></td><td>Y &lt;&lt; Y*</td><td>↑↑ висока</td><td>↓↓ ниска</td></tr>
+      <tr><td><span class="tag tg">Експанзия</span></td><td>Y расте</td><td>↓ намалява</td><td>↑ ускорява</td></tr>
+    </table>
+    <div class="mn" style="margin-top:9px"><strong>Водещи показатели</strong>: лихви, курс, цени на имоти (6-12 мес. преди фазата) | <strong>Съвпадащи</strong>: доходи, потребление | <strong>Изоставащи</strong>: безработица, фалити (6 мес. след)</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо цикличността е неизбежна?</h4>
+      <p>Икономиката никога не е статична — постоянно има шокове. Кейнс обяснява цикъла с промени в "животинските духове" (animal spirits) на инвеститорите — оптимизъм и песимизъм в инвестиционните решения. Неокласиците — с технологични шокове.</p>
+      <p><strong>Техническа рецесия</strong> = 2 последователни тримесечия с ↓ реален БВП. <strong>Стагфлация</strong> = рецесия + инфлация (при ↑ производствени разходи — кривата AS ← наляво).</div>
+      <div class="ctx-eg">Пример от България: 2008-2009 световна финансова криза → ↓износ → ↓I → рецесионен разрив. 2021-2023: Постковид възстановяване + война в Украйна → инфлационен натиск.</div>
+      <div class="ctx-key">💡 Водещите показатели се сменят ПРЕДИ фазата. Затова инвеститорите следят лихвените проценти и цените на акциите — те "предвиждат" рецесия 6-12 месеца напред.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     11. IS-LM
+══════════════════════════════════════════ -->
+<div class="sec" id="s-islm">
+<div class="sec-title">📊 IS-LM Модел</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Крива IS — стоков пазар</div><div class="card-sub">Всички (R, Y) при които AE = Y</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-g">IS</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">Y = γ × [AC − (i₁ + x₃ + m₂) × R]</div>
+    <ul class="ul" style="margin-top:8px">
+      <li>Отрицателен наклон: ↓R → ↑I → ↑NX → ↑Y</li>
+      <li>↑G → IS се мества надясно (повече Y за всяко R)</li>
+      <li>По-голям γ → IS е по-полегата</li>
+    </ul>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо IS има отрицателен наклон?</h4>
+      <p>IS показва: "При дадено R, какво Y осигурява равновесие на стоковия пазар?" Когато R пада: → Кредитите стават по-евтини → Фирмите заемат повече за инвестиции (↑I) → AD нараства → нужно е по-голямо Y за равновесие. Затова: ↓R → ↑Y. Наклонът е отрицателен.</p>
+      <div class="ctx-eg">Пример: R пада от 5% на 3%. Фирмата, която преди е смятала инвестицията за непечеливша при 5% кредит, сега я прави при 3%. Повече инвестиции → повече производство и доход.</div>
+      <p><strong>IS се мества</strong> при промяна в автономните разходи (G, TR, X, C₀): ↑G → за всяко R, Y е по-голямо → IS надясно. ↑данъци → IS наляво.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Крива LM — паричен пазар</div><div class="card-sub">Всички (R, Y) при които MD = MS</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-p">LM</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="formula">QM/P = zY − hR &nbsp;→&nbsp; при ↑Y → ↑R (за дадено MS)</div>
+    <ul class="ul" style="margin-top:8px">
+      <li>Положителен наклон: ↑Y → ↑търсене на пари → ↑R</li>
+      <li>↑MS → LM надясно (↓R за всяко Y)</li>
+      <li>По-висока чувств. от R (h) → LM по-полегата</li>
+    </ul>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Защо LM има положителен наклон?</h4>
+      <p>LM показва: "При дадено MS, при какво R е паричният пазар в равновесие за всяко Y?" Когато Y нараства: → Трансакционното търсене на пари расте (повече бизнес, повече плащания) → При фиксирано MS → Лихвеният процент трябва да нарасне, за да намали спекулативното търсене и да балансира. Затова: ↑Y → ↑R. Наклонът е положителен.</p>
+      <div class="ctx-eg">MS = 1000 лв. (фиксирано от ЦБ). При Y = 800: MD = 1000 при R = 5%. При Y = 1000: MD = 1000 само при R = 7% (по-висок лихвен процент измества хората от парите към активи). LM трябва да е на (1000, 7%).</div>
+      <p><strong>LM се мества</strong> при промяна в паричното предлагане: ↑MS → за всяко Y, лихвеният процент е по-нисък → LM надясно (парична експанзия).</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Ефект на изтласкването и Рикардианска еквивалентност</div><div class="card-sub">Защо фискалната политика може да е по-слаба от очакваното</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-r">Некейнсиански</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="hl">↑G → ↑Y → ↑търсене на пари → ↑R → ↓I → ↓NX → частично неутрализиране!</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Ефект на изтласкването (Crowding Out)</h4>
+      <p>Когато правителството ↑G: AD нараства → Y нараства → Трансакционното търсене на пари нараства → При фиксирано MS → R нараства → Частните инвестиции стават по-скъпи → ↓I.</p>
+      <p>Т.е. правителствените разходи "изтласкват" частните инвестиции. Ефектът е пълен само при вертикална LM (класически случай). При полегата LM (Кейнс) — частичен.</p>
+      <div class="ctx-eg">Пълен ефект: ΔY = γΔG от IS, но ↑R намалява I с точно γΔG. Нетен ефект = 0! Правителството заема от фин. пазар → частните фирми не могат → замества, не добавя.</div>
+      <h4 style="margin-top:12px">Рикардианска еквивалентност (Некейнсиански)</h4>
+      <p>Ако хората са рационални и имат дълъг хоризонт: ↑G сега → трябват ↑данъци по-късно за изплащане на дълга → хората ↑спестявания сега в очакване → ↓C → мултипликаторът е нула!</p>
+      <div class="ctx-warn">⚠️ В реалния живот Рикардианската еквивалентност не е пълна — хората не са перфектно рационални и не мислят за данъци след 20+ години. Но частично я има, особено сред богатите.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     12. ШКОЛИ
+══════════════════════════════════════════ -->
+<div class="sec" id="s-schools">
+<div class="sec-title">🎓 Икономически школи</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Кейнсиanska vs Неокласическа</div><div class="card-sub">Двете основни гледни точки</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-y">Школи</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <table class="dt">
+      <tr><th>Въпрос</th><th>Кейнсиански</th><th>Неокласически</th></tr>
+      <tr><td>Водещо за растеж</td><td>AD (търсенето)</td><td>AS (предлагането)</td></tr>
+      <tr><td>Цени краткосрочно</td><td>Фиксирани (sticky)</td><td>Гъвкави</td></tr>
+      <tr><td>Безработица</td><td>Принудителна — реална!</td><td>Само доброволна</td></tr>
+      <tr><td>Намеса на държавата</td><td>Необходима при кризи</td><td>Нежелана — изкривява</td></tr>
+      <tr><td>Паричен хоризонт</td><td>Краткосрочен план</td><td>Дългосрочен план</td></tr>
+    </table>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Историческият контекст</h4>
+      <p><strong>Кейнс</strong> пише "Обща теория" (1936) по време на Голямата депресия. Вижда, че пазарът не се е оправил сам в продължение на години → намесата на правителството е оправдана.</p>
+      <p><strong>Неокласиците</strong> (Фридман, Лукас) оспорват Кейнс от 1960-те — икономическите агенти са рационални, цените са гъвкави, пазарът се саморегулира. Държавата само създава инфлация.</p>
+      <p><strong>Консенсусът днес</strong>: Краткосрочно → Кейнс е прав (цените са sticky, безработицата е реална). Дългосрочно → Неокласиците са прави (Y = Y*, инфлацията е монетарно явление).</p>
+      <div class="ctx-eg">COVID-2020: Целият свят приложи масивни кейнсиански стимули (↑G). Работи краткосрочно — избягна депресия. Последица: висока инфлация 2022-23 — неокласически предупреждения се сбъднаха.</div>
+      <h4 style="margin-top:12px">3 участъка на AS кривата</h4>
+      <p><strong>Кейнсиански (хоризонтален)</strong>: Голяма безработица, производствените ресурси са незаети → ↑AD → само ↑Y, цените не се менят.</p>
+      <p><strong>Междинен</strong>: Нормална икономика → ↑AD → и ↑Y, и ↑P.</p>
+      <p><strong>Класически (вертикален)</strong>: Пълна заетост (Y = Y*) → ↑AD → само ↑P, без реален растеж.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head" onclick="tog(this)">
+    <div class="ch-left"><div class="card-title">Закон на Сей и Крива на Лафер</div><div class="card-sub">Две ключови неокласически концепции</div></div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="badge b-p">Неокласически</span><span class="card-arrow">▶</span></div>
+  </div>
+  <div class="card-body">
+    <div class="hl"><strong>Закон на Сей</strong>: "Предлагането само си създава търсене." При гъвкави цени и лихвен процент, S = I винаги → AD винаги абсорбира AS.</div>
+    <button class="ctx-btn" onclick="ctxTog(this)">💡 Обясни контекста</button>
+    <div class="ctx-box">
+      <h4>Закон на Сей</h4>
+      <p>Жан-Батист Сей (1803): Когато произвеждаш нещо, ти "произвеждаш" и търсене за същата стойност — защото разплащаш производствените фактори (заплати, наем, лихви) → те получават доход → харчат за твоя продукт. Затова не може да има трайна криза на свръхпроизводство.</p>
+      <p>Кейнс опровергава: Спестяванията "изтичат" от кръгооборота. Ако хората спестяват, а инвестициите не ги абсорбират → излишно предлагане → рецесия. Законът на Сей важи само при гъвкав лихвен процент.</p>
+      <h4 style="margin-top:12px">Крива на Лафер</h4>
+      <p>При t = 0% → TA = 0. При t = 100% → никой не работи → TA = 0. Между тях има оптимална данъчна ставка, при която TA е максимален. Неокласиците използват това: ↓данъци → ↑стимули → ↑производство → евентуално ↑TA.</p>
+      <div class="ctx-warn">⚠️ Кривата на Лафер е теоретична конструкция — на практика е трудно да се определи "оптималната" ставка. Използвана е политически за оправдаване на данъчни намаления без ясни емпирични доказателства.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     13. QUIZ
+══════════════════════════════════════════ -->
+<div class="sec" id="s-quiz">
+<div class="sec-title">🎯 Quiz — 20 въпроса</div>
+<div class="score-bar">
+  <span style="font-size:.82rem;color:var(--muted)">Резултат:</span>
+  <span><span id="sc" style="color:var(--a5);font-weight:700">0</span> / <span id="st" style="color:var(--muted)">20</span></span>
+</div>
+<div id="qc"></div>
+</div>
+
+</div><!-- end wrap -->
+
+<script>
+const pages=[
+  {id:'gdp',label:'💰 БВП'},
+  {id:'methods',label:'📐 3 Метода'},
+  {id:'spending',label:'🛒 Разходи'},
+  {id:'mult',label:'✖️ Мулт-р'},
+  {id:'money',label:'🏦 Пари'},
+  {id:'unemp',label:'👷 Безработица'},
+  {id:'inf',label:'📈 Инфлация'},
+  {id:'fiscal',label:'🏛️ Фискална'},
+  {id:'monetary',label:'🏧 Парична'},
+  {id:'cycle',label:'🔄 Цикъл'},
+  {id:'islm',label:'📊 IS-LM'},
+  {id:'schools',label:'🎓 Школи'},
+  {id:'quiz',label:'🎯 Quiz'},
+];
+
+const nav=document.getElementById('navBar');
+pages.forEach((p,i)=>{
+  const b=document.createElement('button');
+  b.className='nb'+(i===0?' on':'');
+  b.textContent=p.label;
+  b.onclick=()=>{
+    document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+    document.querySelectorAll('.nb').forEach(x=>x.classList.remove('on'));
+    document.getElementById('s-'+p.id).classList.add('on');
+    b.classList.add('on');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+  nav.appendChild(b);
+});
+
+function tog(head){
+  const card=head.parentElement;
+  card.classList.toggle('open');
+}
+
+function ctxTog(btn){
+  const box=btn.nextElementSibling;
+  box.classList.toggle('on');
+  btn.classList.toggle('active');
+  btn.textContent=box.classList.contains('on')?'▲ Скрий контекста':'💡 Обясни контекста';
+}
+
+/* Slider */
+function sl(slId,outId,suffix,isFixed){
+  const s=document.getElementById(slId),o=document.getElementById(outId);
+  if(!s)return;
+  const upd=()=>{o.textContent=(isFixed?parseFloat(s.value).toFixed(2):s.value)+suffix; calc();};
+  s.oninput=upd; upd();
+}
+sl('sl-mpc','v-mpc','',true); sl('sl-t','v-t','',true); sl('sl-m','v-m','',true); sl('sl-dg','v-dg',' лв.',false);
+function calc(){
+  const mpc=parseFloat(document.getElementById('sl-mpc').value);
+  const t=parseFloat(document.getElementById('sl-t').value);
+  const m=parseFloat(document.getElementById('sl-m').value);
+  const dg=parseFloat(document.getElementById('sl-dg').value);
+  const denom=1-mpc*(1-t)+m;
+  const gamma=denom>0?1/denom:0;
+  const dy=gamma*dg;
+  document.getElementById('r-mult').textContent=gamma.toFixed(2);
+  document.getElementById('r-dy').textContent=Math.round(dy)+' лв.';
+}
+calc();
+
+/* Timer */
+let start=Date.now();
+setInterval(()=>{
+  const e=Math.floor((Date.now()-start)/1000);
+  document.getElementById('timer').textContent=`${String(Math.floor(e/60)).padStart(2,'0')}:${String(e%60).padStart(2,'0')}`;
+},1000);
+
+/* Quiz */
+const qs=[
+  {q:"Кое НЕ се включва в БВП?",o:["Нов автомобил","Услуга от лекар","Покупка на акции","Ново жилищно строителство"],c:2,e:"Акциите само прехвърлят собственост — не е ново производство."},
+  {q:"Ако MPC = 0.80, мултипликаторът (затворена, без правителство) е:",o:["0.80","2","5","10"],c:2,e:"γ = 1/(1−0.80) = 1/0.20 = 5"},
+  {q:"Кой вид безработица е резултат от икономически спад?",o:["Фрикционна","Структурна","Циклична","Сезонна"],c:2,e:"Цикличната (конюнктурна) се формира при икономически спад."},
+  {q:"Дефлаторът на БВП е равен на:",o:["Реален/Номинален × 100","Номинален/Реален × 100","ИПЦ/ИЦП","БВП/Население"],c:1,e:"Дефлатор = (Номинален / Реален) × 100%"},
+  {q:"Краткосрочната крива на Филипс показва:",o:["Пряка връзка инфлация-безработица","Обратна връзка инфлация-безработица","Никаква връзка","Само дефлация"],c:1,e:"Краткосрочно: ↑инфлация ↔ ↓безработица. Дългосрочно — вертикална."},
+  {q:"M2 включва:",o:["Само кеш","M1 + срочни депозити до 2г.","M3 + репо","Само овърнайт депозити"],c:1,e:"M2 = M1 + квазипари (срочни до 2г. и с предизвестие до 3 мес.)"},
+  {q:"Закон на Оукън: при 3% производствен разрив над Y*, цикличната безработица:",o:["Расте с 1%","Пада с 1%","Не се мени","Пада с 3%"],c:1,e:"(Y−Y*)/Y* ≈ −β(u−u*). При ~3% разрив → ~1% промяна в безработицата."},
+  {q:"Кейнсианците смятат, че краткосрочно водещото за растеж е:",o:["AS (предлагането)","AD (търсенето)","Данъчната политика","Гъвкавите цени"],c:1,e:"Кейнс: AD определя Y краткосрочно при sticky цени. Неокласиците — AS."},
+  {q:"Ефектът на изтласкването (Crowding Out) означава:",o:["↑G → ↑частни инвестиции","↑G → ↑R → ↓частни инвестиции","↓G → ↑Y","↑T → ↑Y"],c:1,e:"↑G → ↑Y → ↑MD → при фиксирано MS → ↑R → ↓I (частните инвестиции се изтласкват)."},
+  {q:"При инфлационен разрив (Y > Y*) и допълнително ↑AD:",o:["Реален растеж без инфлация","Само инфлация, без реален растеж","Само растеж","Дефлация"],c:1,e:"При Y > Y* (вертикален участък на AS): ↑AD → само ↑P, без реален ↑Y."},
+  {q:"Автономните разходи включват:",o:["Само потребление","Потребление и внос","I, G, X и авт. потребление","Само данъци"],c:2,e:"Автономни НЕ зависят от Y: I, G, X и автономното потребление (C₀)."},
+  {q:"При rd = 10%, депозитният мултипликатор е:",o:["0.1","2","10","100"],c:2,e:"DM = 1/rd = 1/0.10 = 10. Начален депозит 100 лв. → 1000 лв. в системата."},
+  {q:"Структурното бюджетно салдо BS* показва:",o:["Реалния отчетен дефицит","Дефицита при Y = Y*","Сумата на дълга","Данъчните приходи"],c:1,e:"BS* = taY* − (G+TR). Мери дискреционната политика независима от цикъла."},
+  {q:"Капанът на ликвидността е ситуация при:",o:["Много висока инфлация","i = 0% но паричната политика е неефективна","Пълна заетост","Висок лихвен процент"],c:1,e:"При i=0% и дефлационни очаквания, реалният R може да остане висок → ТБ предпочитат свръхрезерви."},
+  {q:"Правилото на Тейлър определя:",o:["Данъчната ставка","Целевия лихвен процент на ЦБ","Мултипликатора","Нормата на резервите"],c:1,e:"i = ī + a(π−π̄) + b(Y−Y*)/Y*. Балансира инфлационния и производствения разрив."},
+  {q:"Закон на Сей гласи:",o:["Търсенето ражда предлагане","Предлагането само си създава търсене","Парите са неутрални","Инфлацията е монетарно явление"],c:1,e:"Жан-Батист Сей: Производството разпределя доход → доходът се харчи → търсене = предлагане."},
+  {q:"Стагфлацията е:",o:["Бърз растеж + ниска инфлация","Спад + ниска инфлация","Стагнация + инфлация","Пълна заетост + инфлация"],c:2,e:"Стагфлация = стагнация (↓Y) + инфлация (↑P). Причинява се от ↑AS разходи."},
+  {q:"При рестриктивна парична политика (↑i):",o:["↑Кредити → ↑AD → ↑Y","↓Кредити → ↓AD → ↓Y","↑G → ↑Y","↓T → ↑Y"],c:1,e:"↑i → ↑цена на кредит → ↓I → ↓AD → ↓Y. Целта е ↓инфлация."},
+  {q:"Кривата LM има положителен наклон защото:",o:["↑Y → ↑MD → ↑R","↓Y → ↑инфлация","↑R → ↑инвестиции","↓R → ↑спестявания"],c:0,e:"При ↑Y → ↑трансакционно MD → при фиксирано MS → ↑R за балансиране."},
+  {q:"Хистерезис ефектът при безработицата означава:",o:["U* намалява след рецесия","Дългата безработица повишава U*","Фрикционната изчезва","Цикличната е нулева"],c:1,e:"Продължителна безработица → загуба на квалификация → работодатели избягват → U* трайно нараства."}
+];
+
+let correct=0,ans=0;
+const qc=document.getElementById('qc');
+qs.forEach((q,i)=>{
+  const d=document.createElement('div');
+  d.className='quiz-card';
+  d.innerHTML=`<div class="quiz-q">${i+1}. ${q.q}</div><div class="quiz-opts">${q.o.map((o,j)=>`<button onclick="ans(this,${i},${j})">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div><div class="qfb" id="fb${i}"></div>`;
+  qc.appendChild(d);
+});
+
+function ans(btn,qi,oi){
+  const opts=btn.parentElement.querySelectorAll('button');
+  opts.forEach(b=>b.disabled=true);
+  const q=qs[qi];
+  const fb=document.getElementById('fb'+qi);
+  if(oi===q.c){btn.classList.add('correct');correct++;fb.textContent='✅ '+q.e;fb.className='qfb ok';}
+  else{btn.classList.add('wrong');opts[q.c].classList.add('correct');fb.textContent='❌ '+q.e;fb.className='qfb bad';}
+  ans++;
+  document.getElementById('sc').textContent=correct;
+  document.getElementById('st').textContent=ans+'/'+qs.length;
+}
+</script>
+</body>
+</html>
