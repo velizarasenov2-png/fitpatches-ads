@@ -1,0 +1,32 @@
+{%- comment -%} FitPatches — празно поле за снимка (плейсхолдър) {%- endcomment -%}
+{%- liquid
+  assign img = section.settings.image
+  assign label = section.settings.label | default: 'Място за снимка'
+  assign h = section.settings.height | default: '340'
+-%}
+<div class="fp-slot" style="--h:{{ h }}px">
+  <div class="fp-slot__inner">
+    {%- if img != blank -%}
+      <img src="{{ img | image_url: width: 1400 }}" alt="{{ label | escape }}" loading="lazy" width="{{ img.width }}" height="{{ img.height }}">
+    {%- else -%}
+      <div class="fp-slot__ph"><span>{{ label }}</span></div>
+    {%- endif -%}
+  </div>
+</div>
+<style>
+  #shopify-section-{{ section.id }} .fp-slot{max-width:760px;margin:0 auto;padding:10px 16px}
+  #shopify-section-{{ section.id }} .fp-slot__inner img{width:100%;height:auto;border-radius:14px;display:block}
+  #shopify-section-{{ section.id }} .fp-slot__ph{width:100%;height:var(--h);border:2px dashed #cfcfcf;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#fafafa;color:#9a9a9a;font-size:14px;text-align:center;padding:16px;box-sizing:border-box}
+</style>
+{% schema %}
+{
+  "name": "FitPatches снимка",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Снимка" },
+    { "type": "text", "id": "label", "label": "Етикет при празно поле", "default": "Място за снимка" },
+    { "type": "text", "id": "height", "label": "Височина на празното поле (px)", "default": "340" }
+  ],
+  "presets": [ { "name": "FitPatches снимка" } ]
+}
+{% endschema %}
