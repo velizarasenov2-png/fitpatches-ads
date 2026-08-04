@@ -1,0 +1,63 @@
+{%- comment -%} FitPatches — оборване на възражения (под бързата поръчка) {%- endcomment -%}
+<section class="fp-obj" id="fpo-{{ section.id }}">
+  <div class="fp-obj__wrap">
+    <p class="fp-obj__eyebrow">ПРЕДИ ДА ПОРЪЧАШ</p>
+    <h2 class="fp-obj__title">Знаем какво си мислиш.</h2>
+    <p class="fp-obj__sub">Чуваме тези съмнения всеки ден — ето честните отговори.</p>
+
+    <div class="fp-obj__list">
+      <details class="fp-obj__item" open>
+        <summary>„Наистина ли работи? Как лепенка може да свали килограми?"</summary>
+        <div class="fp-obj__a">FitPatches не „топи мазнини" с магия. Действа, като <b>намалява апетита и желанието за сладко</b> — така се храниш по-малко, без да се насилваш. Берберинът се усвоява <b>постепенно през кожата (трансдермално)</b> и заобикаля стомаха, където таблетките губят голяма част от силата си. Затова усещаш разлика в глада, а не просто пиеш поредното хапче.</div>
+      </details>
+      <details class="fp-obj__item">
+        <summary>„Пробвах други лепенки и добавки, но нямаше ефект."</summary>
+        <div class="fp-obj__a">Повечето таблетки се разграждат в стомаха и до кръвта достига малка част от активното вещество. Много евтини лепенки пък слагат <b>твърде малко берберин</b> или нямат съставка, която да го пренесе през кожата. FitPatches е с <b>концентрирана формула и трансдермално действие</b> — това е разликата между „нищо не усетих" и реален ефект върху апетита.</div>
+      </details>
+      <details class="fp-obj__item">
+        <summary>„Честно казано, звучи ми като измама."</summary>
+        <div class="fp-obj__a">Разбираме скептицизма — пазарът е пълен с обещания. Затова при нас <b>плащаш при доставка (наложен платеж), без предплащане</b> — първо получаваш продукта, после плащаш. Съставките са натурални, без странични ефекти. Не рискуваш пари предварително.</div>
+      </details>
+      <details class="fp-obj__item">
+        <summary>„Колко бързо ще усетя резултат?"</summary>
+        <div class="fp-obj__a">Повечето клиенти усещат <b>по-малко желание за храна още в първите дни</b>. За видима промяна във фигурата дай на организма 4–8 седмици редовна употреба — една лепенка на ден.</div>
+      </details>
+      <details class="fp-obj__item">
+        <summary>„Има ли странични ефекти?"</summary>
+        <div class="fp-obj__a">Съставките са натурални и добре поносими. При бременност, кърмене или прием на лекарства се консултирай с лекар преди употреба.</div>
+      </details>
+      <details class="fp-obj__item">
+        <summary>„А ако на мен не ми подейства?"</summary>
+        <div class="fp-obj__a">Точно затова започваш <b>без риск с наложен платеж</b>. Пробвай един пакет — ако не усетиш разлика в апетита, просто не поръчваш пак. Повечето хора се връщат за 2 и 3 пакета именно защото усещат ефекта.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<style>
+  #fpo-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1}
+  #fpo-{{ section.id }} .fp-obj__wrap{max-width:760px;margin:0 auto;padding:44px 18px}
+  #fpo-{{ section.id }} .fp-obj__eyebrow{text-align:center;color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px}
+  #fpo-{{ section.id }} .fp-obj__title{text-align:center;font-size:30px;font-weight:800;color:#111;margin:0 0 6px}
+  #fpo-{{ section.id }} .fp-obj__sub{text-align:center;color:#666;font-size:15px;margin:0 0 26px}
+  #fpo-{{ section.id }} .fp-obj__item{border:1px solid #eee;border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff}
+  #fpo-{{ section.id }} .fp-obj__item[open]{border-color:var(--a);box-shadow:0 0 0 2px var(--soft)}
+  #fpo-{{ section.id }} .fp-obj__item summary{list-style:none;cursor:pointer;font-weight:700;font-size:16px;color:#111;padding:18px 44px 18px 18px;position:relative}
+  #fpo-{{ section.id }} .fp-obj__item summary::-webkit-details-marker{display:none}
+  #fpo-{{ section.id }} .fp-obj__item summary:after{content:"+";position:absolute;right:16px;top:15px;font-size:24px;color:var(--a);font-weight:400;line-height:1}
+  #fpo-{{ section.id }} .fp-obj__item[open] summary:after{content:"×"}
+  #fpo-{{ section.id }} .fp-obj__a{padding:0 18px 18px;color:#555;font-size:15px;line-height:1.6}
+  #fpo-{{ section.id }} .fp-obj__a b{color:#111}
+  @media(max-width:749px){ #fpo-{{ section.id }} .fp-obj__title{font-size:24px} #fpo-{{ section.id }} .fp-obj__item summary{font-size:15px} }
+</style>
+<script>
+(function(){
+  var root=document.getElementById('fpo-{{ section.id }}'); if(!root) return;
+  var items=root.querySelectorAll('details');
+  items.forEach(function(d){ d.addEventListener('toggle', function(){
+    if(d.open){ items.forEach(function(o){ if(o!==d) o.open=false; }); }
+  }); });
+})();
+</script>
+{% schema %}
+{ "name": "FitPatches Възражения", "tag": "section", "settings": [], "presets": [ { "name": "FitPatches Възражения" } ] }
+{% endschema %}
