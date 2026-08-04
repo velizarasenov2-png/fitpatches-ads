@@ -5,28 +5,35 @@
 <section class="fp-vs" id="fpv-{{ section.id }}">
   <div class="fp-vs__wrap">
     <h2 class="fp-vs__title">FitPatches <span>срещу</span> диети и хапчета</h2>
-    <div class="fp-vs__imgs">
-      <div></div>
-      <div class="fp-vs__im"><img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-patch-real.png?v=1785852731" alt="FitPatches лепенка" loading="lazy"></div>
-      <div class="fp-vs__im"><img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-nat-pills.png?v=1785854560" alt="Диети и хапчета" loading="lazy"></div>
-    </div>
-    <div class="fp-vs__head">
-      <div class="fp-vs__hl"></div>
-      <div class="fp-vs__hc fp-vs__hc--fp">FitPatches</div>
-      <div class="fp-vs__hc">Диети / хапчета</div>
-    </div>
-    {%- for r in rows -%}
-      {%- assign i = forloop.index0 -%}
-      <div class="fp-vs__row">
-        <div class="fp-vs__label">{{ r }}</div>
-        <div class="fp-vs__cell fp-vs__cell--fp">
-          {%- if fp[i] == '1' -%}<span class="fp-vs__yes">✓</span>{%- else -%}<span class="fp-vs__no">✕</span>{%- endif -%}
-        </div>
-        <div class="fp-vs__cell">
-          {%- if other[i] == '1' -%}<span class="fp-vs__yes fp-vs__yes--dim">✓</span>{%- else -%}<span class="fp-vs__no">✕</span>{%- endif -%}
-        </div>
-      </div>
-    {%- endfor -%}
+    <table class="fp-vs__table">
+      <thead>
+        <tr>
+          <th class="fp-vs__corner"></th>
+          <th class="fp-vs__th fp-vs__th--fp">
+            <img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-patch-real.png?v=1785852731" alt="FitPatches лепенка" loading="lazy">
+            <span>FitPatches</span>
+          </th>
+          <th class="fp-vs__th">
+            <img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-nat-pills.png?v=1785854560" alt="Диети и хапчета" loading="lazy">
+            <span>Диети / хапчета</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for r in rows -%}
+          {%- assign i = forloop.index0 -%}
+          <tr>
+            <td class="fp-vs__label">{{ r }}</td>
+            <td class="fp-vs__c fp-vs__c--fp">
+              {%- if fp[i] == '1' -%}<span class="fp-vs__yes">✓</span>{%- else -%}<span class="fp-vs__no">✕</span>{%- endif -%}
+            </td>
+            <td class="fp-vs__c">
+              {%- if other[i] == '1' -%}<span class="fp-vs__yes">✓</span>{%- else -%}<span class="fp-vs__no">✕</span>{%- endif -%}
+            </td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
   </div>
 </section>
 <style>
@@ -34,22 +41,22 @@
   #fpv-{{ section.id }} .fp-vs__wrap{max-width:720px;margin:0 auto;padding:48px 18px}
   #fpv-{{ section.id }} .fp-vs__title{text-align:center;font-size:30px;font-weight:800;color:#111;margin:0 0 28px}
   #fpv-{{ section.id }} .fp-vs__title span{color:var(--a)}
-  #fpv-{{ section.id }} .fp-vs__imgs,#fpv-{{ section.id }} .fp-vs__head,#fpv-{{ section.id }} .fp-vs__row{display:grid;grid-template-columns:1fr 130px 130px;align-items:center}
-  #fpv-{{ section.id }} .fp-vs__im img{width:78px;height:78px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 10px;border:3px solid var(--soft)}
-  #fpv-{{ section.id }} .fp-vs__head{margin-bottom:6px}
-  #fpv-{{ section.id }} .fp-vs__hc{text-align:center;font-weight:800;font-size:14px;padding:10px 6px;border-radius:10px 10px 0 0}
-  #fpv-{{ section.id }} .fp-vs__hc--fp{background:var(--a);color:#fff}
-  #fpv-{{ section.id }} .fp-vs__hc:last-child{color:#999}
-  #fpv-{{ section.id }} .fp-vs__row{border-top:1px solid #eee}
-  #fpv-{{ section.id }} .fp-vs__label{font-size:15px;color:#222;padding:14px 8px 14px 0}
-  #fpv-{{ section.id }} .fp-vs__cell{display:flex;align-items:center;justify-content:center;padding:14px 6px;align-self:stretch}
-  #fpv-{{ section.id }} .fp-vs__cell--fp{background:var(--soft)}
+  #fpv-{{ section.id }} .fp-vs__table{width:100%;border-collapse:collapse;table-layout:fixed}
+  #fpv-{{ section.id }} .fp-vs__corner{width:auto}
+  #fpv-{{ section.id }} .fp-vs__th{width:120px;text-align:center;vertical-align:bottom;padding:0 6px 10px}
+  #fpv-{{ section.id }} .fp-vs__th img{width:74px;height:74px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 10px;border:3px solid var(--soft)}
+  #fpv-{{ section.id }} .fp-vs__th span{display:block;font-weight:800;font-size:14px;color:#999;line-height:1.2}
+  #fpv-{{ section.id }} .fp-vs__th--fp span{color:#fff;background:var(--a);border-radius:10px 10px 0 0;padding:10px 6px;margin-top:2px}
+  #fpv-{{ section.id }} .fp-vs__table tbody tr{border-top:1px solid #eee}
+  #fpv-{{ section.id }} .fp-vs__label{font-size:15px;color:#222;padding:16px 8px 16px 0}
+  #fpv-{{ section.id }} .fp-vs__c{text-align:center;vertical-align:middle;padding:16px 6px}
+  #fpv-{{ section.id }} .fp-vs__c--fp{background:var(--soft)}
   #fpv-{{ section.id }} .fp-vs__yes{color:#1aa34a;font-weight:900;font-size:20px}
-  #fpv-{{ section.id }} .fp-vs__yes--dim{color:#bbb}
   #fpv-{{ section.id }} .fp-vs__no{color:#e23b3b;font-weight:900;font-size:18px}
   @media(max-width:749px){
-    #fpv-{{ section.id }} .fp-vs__imgs,#fpv-{{ section.id }} .fp-vs__head,#fpv-{{ section.id }} .fp-vs__row{grid-template-columns:1fr 80px 80px}
-    #fpv-{{ section.id }} .fp-vs__im img{width:56px;height:56px}
+    #fpv-{{ section.id }} .fp-vs__th{width:64px}
+    #fpv-{{ section.id }} .fp-vs__th img{width:52px;height:52px}
+    #fpv-{{ section.id }} .fp-vs__th span{font-size:12px}
     #fpv-{{ section.id }} .fp-vs__title{font-size:24px}
   }
 </style>
