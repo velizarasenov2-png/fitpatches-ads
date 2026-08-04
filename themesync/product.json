@@ -275,19 +275,24 @@
       "type": "fp-features",
       "settings": {}
     },
-    "fp_img_howto": {
-      "type": "fp-image-slot",
-      "settings": {
-        "label": "Място за снимка: как се използва — лепенка върху кожата",
-        "height": "340"
-      }
+    "fp_science": {
+      "type": "fp-science",
+      "settings": {}
     },
     "fp_vs": {
       "type": "fp-vs",
       "settings": {}
     },
-    "fp_science": {
-      "type": "fp-science",
+    "fp_howworks": {
+      "type": "fp-howworks",
+      "settings": {}
+    },
+    "fp_results": {
+      "type": "fp-results",
+      "settings": {}
+    },
+    "fp_analysis": {
+      "type": "fp-analysis",
       "settings": {}
     },
     "fp_img_collage": {
@@ -425,9 +430,11 @@
     "fp_img_beforeafter",
     "fp_ticker",
     "fp_features",
-    "fp_img_howto",
-    "fp_vs",
     "fp_science",
+    "fp_vs",
+    "fp_howworks",
+    "fp_results",
+    "fp_analysis",
     "fp_img_collage",
     "fp_fb_reviews",
     "fp_faq"
