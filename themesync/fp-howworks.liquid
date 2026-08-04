@@ -1,0 +1,48 @@
+{%- comment -%} FitPatches — Как действа (4 стъпки) {%- endcomment -%}
+<section class="fp-hw" id="fphw-{{ section.id }}">
+  <div class="fp-hw__wrap">
+    <p class="fp-hw__eyebrow">КАК ДЕЙСТВА</p>
+    <h2 class="fp-hw__title">Ето как FitPatches работи</h2>
+    <div class="fp-hw__grid">
+      <div class="fp-hw__step">
+        <div class="fp-hw__media"><div class="fp-hw__ph">снимка<br>стъпка 1</div><span class="fp-hw__num">1</span></div>
+        <h3>Залепи лепенката</h3>
+        <p>Сутрин, върху чиста и суха кожа — ръка, корем или бедро.</p>
+      </div>
+      <div class="fp-hw__step">
+        <div class="fp-hw__media"><div class="fp-hw__ph">снимка<br>стъпка 2</div><span class="fp-hw__num">2</span></div>
+        <h3>Носи я през деня</h3>
+        <p>Тънка и дискретна — не се усеща под дрехите и не пречи.</p>
+      </div>
+      <div class="fp-hw__step">
+        <div class="fp-hw__media"><div class="fp-hw__ph">снимка<br>стъпка 3</div><span class="fp-hw__num">3</span></div>
+        <h3>Апетитът намалява</h3>
+        <p>Берберинът се усвоява постепенно през кожата и овладява глада.</p>
+      </div>
+      <div class="fp-hw__step">
+        <div class="fp-hw__media"><div class="fp-hw__ph">снимка<br>стъпка 4</div><span class="fp-hw__num">4</span></div>
+        <h3>Виждаш резултат</h3>
+        <p>Хапваш по-малко без насилие и фигурата ти се променя седмица след седмица.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  #fphw-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4}
+  #fphw-{{ section.id }} .fp-hw__wrap{max-width:1040px;margin:0 auto;padding:48px 18px}
+  #fphw-{{ section.id }} .fp-hw__eyebrow{text-align:center;color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px}
+  #fphw-{{ section.id }} .fp-hw__title{text-align:center;font-size:32px;font-weight:800;color:#111;margin:0 0 32px}
+  #fphw-{{ section.id }} .fp-hw__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  #fphw-{{ section.id }} .fp-hw__media{position:relative;margin-bottom:14px}
+  #fphw-{{ section.id }} .fp-hw__ph{width:100%;aspect-ratio:1/1;border:2px dashed #e3b3ca;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#c98bab;background:var(--warm);text-align:center;font-size:13px}
+  #fphw-{{ section.id }} .fp-hw__num{position:absolute;top:-10px;left:-10px;width:34px;height:34px;border-radius:50%;background:var(--a);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+  #fphw-{{ section.id }} .fp-hw__step h3{font-size:17px;font-weight:800;color:#111;margin:0 0 6px}
+  #fphw-{{ section.id }} .fp-hw__step p{color:#666;font-size:14px;line-height:1.5;margin:0}
+  @media(max-width:749px){
+    #fphw-{{ section.id }} .fp-hw__grid{grid-template-columns:1fr 1fr;gap:16px}
+    #fphw-{{ section.id }} .fp-hw__title{font-size:24px}
+  }
+</style>
+{% schema %}
+{ "name": "FitPatches Как работи", "tag": "section", "settings": [], "presets": [ { "name": "FitPatches Как работи" } ] }
+{% endschema %}

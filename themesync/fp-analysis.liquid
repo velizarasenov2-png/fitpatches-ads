@@ -1,0 +1,60 @@
+{%- comment -%} FitPatches — Научен анализ (3 емоционални карти) {%- endcomment -%}
+<section class="fp-an" id="fpan-{{ section.id }}">
+  <div class="fp-an__wrap">
+    <h2 class="fp-an__title">Научен анализ</h2>
+
+    <article class="fp-an__card">
+      <div class="fp-an__media"><div class="fp-an__ph">снимка<br>здраве / тяло</div></div>
+      <div class="fp-an__body">
+        <span class="fp-an__eyebrow">ЗДРАВЕ</span>
+        <h3>Килограмите не са само въпрос на външност.</h3>
+        <p>По данни на <b>Световната здравна организация</b> наднорменото тегло е сред водещите рискови фактори за <b>диабет тип 2, сърдечно-съдови заболявания и проблеми със ставите</b>. От 1990 г. насам затлъстяването в света се е <b>повече от удвоило</b>.</p>
+        <p>Всеки свален килограм намалява натоварването върху сърцето, ставите и обмяната.</p>
+        <span class="fp-an__src">Източник: СЗО (WHO)</span>
+      </div>
+    </article>
+
+    <article class="fp-an__card fp-an__card--rev">
+      <div class="fp-an__media"><div class="fp-an__ph">снимка<br>диети / везна</div></div>
+      <div class="fp-an__body">
+        <span class="fp-an__eyebrow">ЗАЩО ДИЕТИТЕ СЕ ПРОВАЛЯТ</span>
+        <h3>Не е въпрос на воля.<br>Въпрос е на глад.</h3>
+        <p>Повечето строги диети се провалят не защото на човек му липсва воля, а защото <b>постоянният глад побеждава</b>. Организмът се бори срещу лишенията и рано или късно килограмите се връщат — така нареченият <b>йо-йо ефект</b>.</p>
+        <p>FitPatches подхожда от другата страна: вместо да се бориш с глада, <b>намаляваш го</b> — и храненето по-малко идва естествено.</p>
+      </div>
+    </article>
+
+    <article class="fp-an__card">
+      <div class="fp-an__media"><div class="fp-an__ph">снимка<br>самочувствие</div></div>
+      <div class="fp-an__body">
+        <span class="fp-an__eyebrow">ЦЕНАТА, КОЯТО НЕ СЕ ВИЖДА</span>
+        <h3>Не е само за дрехите.<br>За самочувствието е.</h3>
+        <p>Наднорменото тегло тежи не само на тялото, а и на <b>енергията, съня и увереността</b>. Отказаните покани, снимките, на които не искаш да си, дрехите в дъното на гардероба.</p>
+        <p>Промяната във фигурата връща нещо повече от размер — <b>връща усещането, че контролираш живота си</b>.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<style>
+  #fpan-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4}
+  #fpan-{{ section.id }} .fp-an__wrap{max-width:920px;margin:0 auto;padding:48px 18px}
+  #fpan-{{ section.id }} .fp-an__title{text-align:center;font-size:32px;font-weight:800;color:#111;margin:0 0 32px}
+  #fpan-{{ section.id }} .fp-an__card{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:center;border:1px solid #eee;border-radius:20px;padding:22px;margin-bottom:22px;background:#fff}
+  #fpan-{{ section.id }} .fp-an__card--rev{grid-template-columns:1.2fr 1fr}
+  #fpan-{{ section.id }} .fp-an__card--rev .fp-an__media{order:2}
+  #fpan-{{ section.id }} .fp-an__ph{width:100%;aspect-ratio:1/1;border:2px dashed #e3b3ca;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#c98bab;background:var(--warm);text-align:center;font-size:14px}
+  #fpan-{{ section.id }} .fp-an__eyebrow{display:inline-block;color:var(--a);font-weight:800;letter-spacing:1px;font-size:11px;margin:0 0 8px}
+  #fpan-{{ section.id }} .fp-an__body h3{font-size:24px;font-weight:800;color:#111;line-height:1.2;margin:0 0 12px}
+  #fpan-{{ section.id }} .fp-an__body p{color:#555;font-size:15px;line-height:1.6;margin:0 0 10px}
+  #fpan-{{ section.id }} .fp-an__body b{color:#111}
+  #fpan-{{ section.id }} .fp-an__src{display:inline-block;margin-top:4px;color:#aaa;font-size:12px}
+  @media(max-width:749px){
+    #fpan-{{ section.id }} .fp-an__card,#fpan-{{ section.id }} .fp-an__card--rev{grid-template-columns:1fr;gap:18px}
+    #fpan-{{ section.id }} .fp-an__card--rev .fp-an__media{order:0}
+    #fpan-{{ section.id }} .fp-an__title{font-size:24px}
+    #fpan-{{ section.id }} .fp-an__body h3{font-size:20px}
+  }
+</style>
+{% schema %}
+{ "name": "FitPatches Научен анализ", "tag": "section", "settings": [], "presets": [ { "name": "FitPatches Научен анализ" } ] }
+{% endschema %}

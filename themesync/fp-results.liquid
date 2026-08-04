@@ -1,0 +1,53 @@
+{%- comment -%} FitPatches — Какво се случва след 30 дни (Преди / След) {%- endcomment -%}
+<section class="fp-res" id="fpr-{{ section.id }}">
+  <div class="fp-res__wrap">
+    <h2 class="fp-res__title">Какво се случва след 30 дни с FitPatches</h2>
+    <div class="fp-res__cols">
+      <div class="fp-res__col fp-res__col--before">
+        <span class="fp-res__tag">ПРЕДИ</span>
+        <div class="fp-res__media"><div class="fp-res__ph">снимка<br>ПРЕДИ</div></div>
+        <ul>
+          <li>Постоянен глад и вечерно тършуване за сладко</li>
+          <li>Диети, които издържат няколко дни</li>
+          <li>Килограмите се връщат отново и отново</li>
+          <li>Липса на енергия и самочувствие</li>
+        </ul>
+      </div>
+      <div class="fp-res__col fp-res__col--after">
+        <span class="fp-res__tag fp-res__tag--a">СЛЕД</span>
+        <div class="fp-res__media"><div class="fp-res__ph fp-res__ph--a">снимка<br>СЛЕД</div></div>
+        <ul>
+          <li>Овладян апетит — хапваш по-малко без насилие</li>
+          <li>По-малко желание за сладко през целия ден</li>
+          <li>Постепенна, стабилна промяна във фигурата</li>
+          <li>Повече енергия и увереност в себе си</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fp-res__note">Резултатите са индивидуални. За най-добър ефект — една лепенка на ден в продължение на 4–8 седмици.</p>
+  </div>
+</section>
+<style>
+  #fpr-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4}
+  #fpr-{{ section.id }} .fp-res__wrap{max-width:960px;margin:0 auto;padding:48px 18px}
+  #fpr-{{ section.id }} .fp-res__title{text-align:center;font-size:30px;font-weight:800;color:#111;margin:0 0 28px}
+  #fpr-{{ section.id }} .fp-res__cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  #fpr-{{ section.id }} .fp-res__col{border:1px solid #eee;border-radius:18px;padding:18px;background:#fff}
+  #fpr-{{ section.id }} .fp-res__col--after{border-color:var(--a);box-shadow:0 0 0 2px var(--soft)}
+  #fpr-{{ section.id }} .fp-res__tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1px;color:#999;background:#f2f2f2;border-radius:20px;padding:5px 14px;margin-bottom:14px}
+  #fpr-{{ section.id }} .fp-res__tag--a{color:#fff;background:var(--a)}
+  #fpr-{{ section.id }} .fp-res__ph{width:100%;aspect-ratio:4/3;border:2px dashed #dcdcdc;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#aaa;background:#f7f7f7;text-align:center;font-size:14px;margin-bottom:16px}
+  #fpr-{{ section.id }} .fp-res__ph--a{border-color:#e3b3ca;color:#c98bab;background:var(--warm)}
+  #fpr-{{ section.id }} .fp-res__col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+  #fpr-{{ section.id }} .fp-res__col li{position:relative;padding-left:26px;font-size:15px;line-height:1.4;color:#444}
+  #fpr-{{ section.id }} .fp-res__col--before li:before{content:"✕";position:absolute;left:0;top:0;color:#c9c9c9;font-weight:900}
+  #fpr-{{ section.id }} .fp-res__col--after li:before{content:"✓";position:absolute;left:0;top:0;color:var(--a);font-weight:900}
+  #fpr-{{ section.id }} .fp-res__note{text-align:center;color:#999;font-size:13px;margin:20px 0 0}
+  @media(max-width:749px){
+    #fpr-{{ section.id }} .fp-res__cols{grid-template-columns:1fr;gap:16px}
+    #fpr-{{ section.id }} .fp-res__title{font-size:24px}
+  }
+</style>
+{% schema %}
+{ "name": "FitPatches Резултат", "tag": "section", "settings": [], "presets": [ { "name": "FitPatches Резултат" } ] }
+{% endschema %}
