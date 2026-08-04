@@ -1,0 +1,39 @@
+{%- comment -%} FitPatches — научен анализ (снимка + текст) {%- endcomment -%}
+{%- assign img = section.settings.image -%}
+<section class="fp-sci" id="fps-{{ section.id }}">
+  <div class="fp-sci__wrap">
+    <div class="fp-sci__media">
+      {%- if img != blank -%}
+        <img src="{{ img | image_url: width: 900 }}" alt="Берберин" loading="lazy">
+      {%- else -%}
+        <div class="fp-sci__ph">снимка<br>научна визуализация</div>
+      {%- endif -%}
+    </div>
+    <div class="fp-sci__text">
+      <p class="fp-sci__eyebrow">НАУЧЕН АНАЛИЗ</p>
+      <h2 class="fp-sci__title">Берберинът — растението, което учените изследват заради метаболизма.</h2>
+      <p>Берберинът е активно вещество, извличано от растения като <b>жълт кантарион и берберис</b>. От години е обект на научни изследвания заради влиянието му върху <b>апетита, обмяната на веществата и усвояването на захарите</b>.</p>
+      <p>Проблемът с приема му на таблетки е ниската бионаличност — голяма част се разгражда в стомаха. Затова <b>FitPatches използва трансдермална лепенка</b>, която подава активните съставки постепенно през кожата през целия ден.</p>
+      <p>Резултатът, който клиентите усещат: <b>по-малко желание за храна и по-стабилен апетит</b> — без хапчета и без диети.</p>
+      <a href="#fps-{{ section.id }}" class="fp-sci__btn">Как действа →</a>
+    </div>
+  </div>
+</section>
+<style>
+  #fps-{{ section.id }}{--a:#d64d87;--warm:#faf0f4}
+  #fps-{{ section.id }} .fp-sci__wrap{max-width:1040px;margin:0 auto;padding:48px 18px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  #fps-{{ section.id }} .fp-sci__media img{width:100%;border-radius:16px;display:block}
+  #fps-{{ section.id }} .fp-sci__ph{width:100%;aspect-ratio:4/5;border:2px dashed #e3b3ca;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#c98bab;background:var(--warm);text-align:center;font-size:14px}
+  #fps-{{ section.id }} .fp-sci__eyebrow{color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px}
+  #fps-{{ section.id }} .fp-sci__title{font-size:28px;font-weight:800;color:#111;line-height:1.2;margin:0 0 16px}
+  #fps-{{ section.id }} .fp-sci__text p{color:#444;font-size:15px;line-height:1.6;margin:0 0 12px}
+  #fps-{{ section.id }} .fp-sci__text b{color:#111}
+  #fps-{{ section.id }} .fp-sci__btn{display:inline-block;margin-top:6px;color:var(--a);font-weight:800;text-decoration:none;border:2px solid var(--a);border-radius:10px;padding:11px 18px}
+  @media(max-width:749px){
+    #fps-{{ section.id }} .fp-sci__wrap{grid-template-columns:1fr;gap:24px}
+    #fps-{{ section.id }} .fp-sci__title{font-size:23px}
+  }
+</style>
+{% schema %}
+{ "name": "FitPatches Наука", "tag": "section", "settings": [ { "type": "image_picker", "id": "image", "label": "Снимка" } ], "presets": [ { "name": "FitPatches Наука" } ] }
+{% endschema %}
