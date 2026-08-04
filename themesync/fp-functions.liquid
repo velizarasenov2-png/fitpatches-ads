@@ -1,0 +1,70 @@
+{%- comment -%} FitPatches — функции на лепенката (анотиран продукт с изнесени етикети) {%- endcomment -%}
+<section class="fp-fn" id="fpfn-{{ section.id }}">
+  <div class="fp-fn__wrap">
+    <p class="fp-fn__eyebrow">СЪЗДАДЕНА ДА РАБОТИ</p>
+    <h2 class="fp-fn__title">Всяка лепенка е <span>малка технология.</span></h2>
+    <p class="fp-fn__sub">Пренася активните съставки точно там, където таблетките се провалят — през кожата, директно и постепенно.</p>
+
+    <div class="fp-fn__stage">
+      <div class="fp-fn__col fp-fn__col--l">
+        <div class="fp-fn__it">
+          <b>Трансдермален слой</b>
+          <span>Освобождава берберина постепенно през кожата през целия ден.</span>
+        </div>
+        <div class="fp-fn__it">
+          <b>Концентрирана формула</b>
+          <span>По-висока доза активни съставки от обикновените лепенки.</span>
+        </div>
+      </div>
+
+      <div class="fp-fn__media">
+        <span class="fp-fn__glow"></span>
+        <img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-patch.png?v=1785852354" alt="FitPatches лепенка" loading="lazy">
+      </div>
+
+      <div class="fp-fn__col fp-fn__col--r">
+        <div class="fp-fn__it">
+          <b>Хипоалергенно лепило</b>
+          <span>Държи здраво през деня, маха се лесно и безболезнено.</span>
+        </div>
+        <div class="fp-fn__it">
+          <b>Тънък профил</b>
+          <span>Не се усеща и остава незабележима под дрехите.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  #fpfn-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4}
+  #fpfn-{{ section.id }} .fp-fn__wrap{max-width:1080px;margin:0 auto;padding:52px 18px;text-align:center}
+  #fpfn-{{ section.id }} .fp-fn__eyebrow{color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px}
+  #fpfn-{{ section.id }} .fp-fn__title{font-size:32px;font-weight:800;color:#111;margin:0 0 8px;line-height:1.15}
+  #fpfn-{{ section.id }} .fp-fn__title span{color:var(--a)}
+  #fpfn-{{ section.id }} .fp-fn__sub{color:#666;font-size:15px;max-width:560px;margin:0 auto 34px}
+  #fpfn-{{ section.id }} .fp-fn__stage{display:grid;grid-template-columns:1fr minmax(240px,320px) 1fr;align-items:center;gap:20px}
+  #fpfn-{{ section.id }} .fp-fn__col{display:flex;flex-direction:column;gap:40px}
+  #fpfn-{{ section.id }} .fp-fn__it{position:relative}
+  #fpfn-{{ section.id }} .fp-fn__col--l .fp-fn__it{text-align:right;padding-right:22px}
+  #fpfn-{{ section.id }} .fp-fn__col--r .fp-fn__it{text-align:left;padding-left:22px}
+  #fpfn-{{ section.id }} .fp-fn__it:before{content:"";position:absolute;top:9px;width:14px;height:2px;background:var(--a)}
+  #fpfn-{{ section.id }} .fp-fn__col--l .fp-fn__it:before{right:0}
+  #fpfn-{{ section.id }} .fp-fn__col--r .fp-fn__it:before{left:0}
+  #fpfn-{{ section.id }} .fp-fn__it b{display:block;font-size:16px;color:#111;margin-bottom:3px}
+  #fpfn-{{ section.id }} .fp-fn__it span{color:#666;font-size:13.5px;line-height:1.45;display:block}
+  #fpfn-{{ section.id }} .fp-fn__media{position:relative;display:flex;align-items:center;justify-content:center}
+  #fpfn-{{ section.id }} .fp-fn__glow{position:absolute;width:86%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,var(--soft) 0,rgba(251,233,241,0) 70%)}
+  #fpfn-{{ section.id }} .fp-fn__media img{position:relative;z-index:1;width:100%;border-radius:20px;display:block}
+  @media(max-width:749px){
+    #fpfn-{{ section.id }} .fp-fn__title{font-size:25px}
+    #fpfn-{{ section.id }} .fp-fn__stage{grid-template-columns:1fr;gap:22px}
+    #fpfn-{{ section.id }} .fp-fn__media{order:-1}
+    #fpfn-{{ section.id }} .fp-fn__media img{max-width:280px;margin:0 auto}
+    #fpfn-{{ section.id }} .fp-fn__col{flex-direction:row;gap:14px}
+    #fpfn-{{ section.id }} .fp-fn__col .fp-fn__it{flex:1;padding:0!important;text-align:center!important}
+    #fpfn-{{ section.id }} .fp-fn__it:before{display:none}
+  }
+</style>
+{% schema %}
+{ "name": "FitPatches Функции", "tag": "section", "settings": [], "presets": [ { "name": "FitPatches Функции" } ] }
+{% endschema %}

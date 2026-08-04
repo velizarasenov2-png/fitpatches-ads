@@ -3,15 +3,19 @@
   assign img = section.settings.image
   assign label = section.settings.label | default: 'Място за снимка'
   assign h = section.settings.height | default: '340'
+  assign full = false
+  if label contains 'ПРЕДИ'
+    assign full = true
+  endif
 -%}
-<div class="fp-slot" style="--h:{{ h }}px">
+<div class="fp-slot{% if full %} fp-slot--full{% endif %}" style="--h:{{ h }}px">
   <div class="fp-slot__inner">
     {%- if img != blank -%}
-      <img src="{{ img | image_url: width: 1400 }}" alt="{{ label | escape }}" loading="lazy" width="{{ img.width }}" height="{{ img.height }}">
+      <img src="{{ img | image_url: width: 1600 }}" alt="{{ label | escape }}" loading="lazy" width="{{ img.width }}" height="{{ img.height }}">
     {%- elsif label contains 'колаж' -%}
       <img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-collage.png?v=1785849763" alt="FitPatches клиенти" loading="lazy">
-    {%- elsif label contains 'ПРЕДИ' -%}
-      <img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-hero-lifestyle.png?v=1785849764" alt="FitPatches резултат" loading="lazy">
+    {%- elsif full -%}
+      <img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-shoulder.png?v=1785852353" alt="Поставяне на FitPatches лепенка" loading="lazy">
     {%- else -%}
       <div class="fp-slot__ph"><span>{{ label }}</span></div>
     {%- endif -%}
@@ -19,7 +23,9 @@
 </div>
 <style>
   #shopify-section-{{ section.id }} .fp-slot{max-width:760px;margin:0 auto;padding:10px 16px}
-  #shopify-section-{{ section.id }} .fp-slot__inner img{width:100%;height:auto;border-radius:14px;display:block}
+  #shopify-section-{{ section.id }} .fp-slot--full{max-width:100%;padding:0;width:100vw;margin-left:calc(50% - 50vw)}
+  #shopify-section-{{ section.id }} .fp-slot__inner img{width:100%;height:auto;display:block;border-radius:14px}
+  #shopify-section-{{ section.id }} .fp-slot--full .fp-slot__inner img{border-radius:0;max-height:640px;object-fit:cover}
   #shopify-section-{{ section.id }} .fp-slot__ph{width:100%;height:var(--h);border:2px dashed #cfcfcf;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#fafafa;color:#9a9a9a;font-size:14px;text-align:center;padding:16px;box-sizing:border-box}
 </style>
 {% schema %}
