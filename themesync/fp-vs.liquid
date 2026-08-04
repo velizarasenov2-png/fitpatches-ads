@@ -1,0 +1,58 @@
+{%- comment -%} FitPatches — сравнение срещу диети и хапчета {%- endcomment -%}
+{%- assign rows = 'Без глад и лишения,Действа през целия ден,Без хапчета за гълтане,Натурални съставки,Без йо-йо ефект,Лесно за прилагане' | split: ',' -%}
+{%- assign fp = '1,1,1,1,1,1' | split: ',' -%}
+{%- assign other = '0,0,0,0,0,0' | split: ',' -%}
+<section class="fp-vs" id="fpv-{{ section.id }}">
+  <div class="fp-vs__wrap">
+    <h2 class="fp-vs__title">FitPatches <span>срещу</span> диети и хапчета</h2>
+    <div class="fp-vs__imgs">
+      <div></div>
+      <div class="fp-vs__im"><img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-patch-real.png?v=1785852731" alt="FitPatches лепенка" loading="lazy"></div>
+      <div class="fp-vs__im"><img src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-nat-pills.png?v=1785854560" alt="Диети и хапчета" loading="lazy"></div>
+    </div>
+    <div class="fp-vs__head">
+      <div class="fp-vs__hl"></div>
+      <div class="fp-vs__hc fp-vs__hc--fp">FitPatches</div>
+      <div class="fp-vs__hc">Диети / хапчета</div>
+    </div>
+    {%- for r in rows -%}
+      {%- assign i = forloop.index0 -%}
+      <div class="fp-vs__row">
+        <div class="fp-vs__label">{{ r }}</div>
+        <div class="fp-vs__cell fp-vs__cell--fp">
+          {%- if fp[i] == '1' -%}<span class="fp-vs__yes">✓</span>{%- else -%}<span class="fp-vs__no">✕</span>{%- endif -%}
+        </div>
+        <div class="fp-vs__cell">
+          {%- if other[i] == '1' -%}<span class="fp-vs__yes fp-vs__yes--dim">✓</span>{%- else -%}<span class="fp-vs__no">✕</span>{%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+<style>
+  #fpv-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1}
+  #fpv-{{ section.id }} .fp-vs__wrap{max-width:720px;margin:0 auto;padding:48px 18px}
+  #fpv-{{ section.id }} .fp-vs__title{text-align:center;font-size:30px;font-weight:800;color:#111;margin:0 0 28px}
+  #fpv-{{ section.id }} .fp-vs__title span{color:var(--a)}
+  #fpv-{{ section.id }} .fp-vs__imgs,#fpv-{{ section.id }} .fp-vs__head,#fpv-{{ section.id }} .fp-vs__row{display:grid;grid-template-columns:1fr 130px 130px;align-items:center}
+  #fpv-{{ section.id }} .fp-vs__im img{width:78px;height:78px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 10px;border:3px solid var(--soft)}
+  #fpv-{{ section.id }} .fp-vs__head{margin-bottom:6px}
+  #fpv-{{ section.id }} .fp-vs__hc{text-align:center;font-weight:800;font-size:14px;padding:10px 6px;border-radius:10px 10px 0 0}
+  #fpv-{{ section.id }} .fp-vs__hc--fp{background:var(--a);color:#fff}
+  #fpv-{{ section.id }} .fp-vs__hc:last-child{color:#999}
+  #fpv-{{ section.id }} .fp-vs__row{border-top:1px solid #eee}
+  #fpv-{{ section.id }} .fp-vs__label{font-size:15px;color:#222;padding:14px 8px 14px 0}
+  #fpv-{{ section.id }} .fp-vs__cell{display:flex;align-items:center;justify-content:center;padding:14px 6px;align-self:stretch}
+  #fpv-{{ section.id }} .fp-vs__cell--fp{background:var(--soft)}
+  #fpv-{{ section.id }} .fp-vs__yes{color:var(--a);font-weight:900;font-size:18px}
+  #fpv-{{ section.id }} .fp-vs__yes--dim{color:#bbb}
+  #fpv-{{ section.id }} .fp-vs__no{color:#d0d0d0;font-weight:900;font-size:16px}
+  @media(max-width:749px){
+    #fpv-{{ section.id }} .fp-vs__imgs,#fpv-{{ section.id }} .fp-vs__head,#fpv-{{ section.id }} .fp-vs__row{grid-template-columns:1fr 80px 80px}
+    #fpv-{{ section.id }} .fp-vs__im img{width:56px;height:56px}
+    #fpv-{{ section.id }} .fp-vs__title{font-size:24px}
+  }
+</style>
+{% schema %}
+{ "name": "FitPatches Сравнение", "tag": "section", "settings": [], "presets": [ { "name": "FitPatches Сравнение" } ] }
+{% endschema %}
