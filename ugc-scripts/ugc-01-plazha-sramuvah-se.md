@@ -1,28 +1,26 @@
 # UGC ВИДЕО #01 — „Миналото лято за първи път не си свалих ризата на плажа"
 
 **Продукт:** FitPatches · **Формат:** 9:16 UGC talking head · **Героиня:** жена на 45, обикновена външност
-**26 сцени · ~226 сек суров материал · ~3:10 след монтаж**
+**20 сцени · максимум 10 сек всяка · ~183 сек суров материал · ~2:50 след монтаж**
 **Модели в Kie:** първи кадър → `gptimage2` · видео → `omniflash` (Image to Video)
+
+> Целият текст е запазен дума по дума — сцените само са групирани по смисъл, за да са по-малко на брой.
 
 ---
 
-# СТЪПКА 0 — настройки (прочети веднъж)
+# СТЪПКА 0 — как работи
 
-**Как върви работата за всяка сцена:**
-1. `gptimage2` → пействаш **КАДЪР** промпта → сваляш снимката
-2. `omniflash` (Image to Video) → качваш снимката + пействаш **ВИДЕО** промпта → задаваш секундите от заглавието на сцената
-3. Следваща сцена
+За **всяка** сцена:
+1. **gptimage2** → пействаш `КАДЪР` промпта → сваляш снимката
+2. **omniflash** (Image to Video) → качваш снимката + пействаш `ВИДЕО` промпта → задаваш секундите от заглавието
 
-**Настройки:** gptimage2 → формат **9:16** (ако няма, вземи 2:3 и кропни). omniflash → **720p** (не 1080p, по-мърлявото изглежда по-истинско).
+**Настройки:** gptimage2 → **9:16**. omniflash → **720p** (не 1080p — по-мърлявото изглежда по-истинско).
 
-**НАЙ-ВАЖНОТО — консистентност на лицето:**
-Генерирай **първо Сцена 01**. Като си харесаш жената, запази тази снимка — тя ти е **референцията**. За Сцени 02–26 пускаш gptimage2 в режим **Image Edit / с референтна снимка**: качваш кадъра от Сцена 01 + пействаш промпта на новата сцена. Промптите за 02–26 вече са написани точно за този режим.
+**Най-важното:** генерирай **първо Сцена 01**. Тази снимка ти е **референцията**. За Сцени 02–20 пускаш gptimage2 **с референтна снимка** (Image Edit) — качваш кадъра от Сцена 01 и пействаш промпта. Затова промптите от 02 нататък са къси и започват с „Use the woman from the reference image".
 
-**Две неща в репликите, които не пипай:**
-- Числата са изписани с думи („тридесет и три", „шейсет дневен") — иначе моделът ги чете грешно
-- FitPatches е написано **ФитПачис** — за да се произнесе правилно на български
+**Не пипай в репликите:** числата са с думи („тридесет и три", „шейсет дневен"), FitPatches е написано **ФитПачис** — иначе се произнася грешно на български.
 
-**Продуктът:** кутията навсякъде е описана **без четим текст** нарочно — AI видеото пише буквите разкривени. Реалната кутия/пластир ги слагаш на монтаж.
+**Кутията** навсякъде е описана **без четим текст** нарочно — AI видеото пише буквите разкривени. Реалната кутия я слагаш на монтаж.
 
 ---
 
@@ -35,22 +33,22 @@
 ---
 ---
 
-# СЦЕНА 01 — 8 секунди
+# СЦЕНА 01 — 10 секунди
 
 **Ситуация:** върви по алея в парка, снима се на протегната ръка
-**Защо:** движението в кадъра спира скрола — това е хукът, тук се решава всичко
-**Тя казва:** „Миналото лято за първи път не си свалих ризата на плажа. Не защото ми беше студено."
+**Защо:** движението спира скрола + целият срам е събран в един блок
+**Тя казва:** „Миналото лято за първи път не си свалих ризата на плажа. Не защото ми беше студено. А защото ме беше срам да ме видят."
 
-**КАДЪР — gptimage2** (единственият промпт с пълно описание — от него излиза референтната снимка)
+**КАДЪР — gptimage2** *(единственият с пълно описание — от него излиза референцията)*
 ```
 Vertical 9:16 amateur selfie photo. A 45-year-old Bulgarian woman, ordinary plain looks, not a model, not attractive in a commercial way: full round face, soft double chin, overweight body (EU size 46), broad shoulders, heavy upper arms, shoulder-length dyed light-brown hair with visible grey roots at the parting, slightly frizzy, small hazel-brown eyes, thin sparse eyebrows, crow's feet, nasolabial lines, mild under-eye shadows, visible skin pores, a few sun spots on the cheeks, a small mole above the right corner of her mouth, thin lips, no makeup, small stud earrings, thin gold wedding band. She wears a loose navy-blue cotton t-shirt and a light cardigan. She is walking along a paved alley in a city park, holding the phone at arm's length slightly above eye level, looking into the lens, mouth open mid-sentence. Background: green trees, a park bench, a blurry passer-by far away, overcast soft daylight. Shot on an iPhone 12 front camera, 1080p, slightly soft and lo-fi, digital noise in the shadows, flat unedited colours, slight overexposure on the skin, no colour grading, no bokeh, no professional lighting, imperfect handheld framing, head slightly off-centre. Looks like a real woman filming herself, not an ad. No text, no captions, no watermark, no logo, not a model, no beauty retouch, no smooth plastic skin.
 ```
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same park. She walks slowly forward holding the phone at arm's length and talks straight into the camera. Natural head movements, blinks, one small shrug, real speech mouth shapes. The phone is handheld while walking so the frame bounces and drifts slightly, background trees move past her.
-DIALOGUE (Bulgarian, spoken exactly as written, nothing added, nothing skipped): „Миналото лято за първи път не си свалих ризата на плажа. Не защото ми беше студено."
-VOICE: real 45-year-old Bulgarian woman, warm slightly hoarse mid-tone, conversational and confiding, unpolished, not an announcer. Slightly embarrassed, like admitting something to a friend.
+Animate this exact frame. Same woman, same face, same clothes, same park. She walks slowly forward holding the phone at arm's length and talks straight into the camera. She looks down for half a second before the last sentence, then back into the lens. Natural head movements, blinks, small shrug, real speech mouth shapes. The phone is handheld while walking so the frame bounces and drifts, background trees move past her.
+DIALOGUE (Bulgarian, spoken exactly as written, nothing added, nothing skipped): „Миналото лято за първи път не си свалих ризата на плажа. Не защото ми беше студено. А защото ме беше срам да ме видят."
+VOICE: real 45-year-old Bulgarian woman, warm slightly hoarse mid-tone, conversational and confiding, unpolished, not an announcer. Slightly embarrassed, like admitting something to a friend, quieter on the last sentence.
 AUDIO: only her voice plus faint outdoor park ambience. No music.
 CAMERA: handheld selfie, one continuous take, no cuts, no zoom.
 NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no other person speaking, no scene change, no beauty filter, no slow motion.
@@ -58,13 +56,13 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 02 — 8 секунди
+# СЦЕНА 02 — 10 секунди
 
 **Ситуация:** седнала на пейка в парка, телефонът подпрян
-**Защо:** тук се казва срамът — статичен кадър, за да не се разсейва зрителят
-**Тя казва:** „А защото ме беше срам да ме видят. Едно време бях първата, която скачаше във водата."
+**Защо:** цялото „едно време / сега" в един блок — контрастът удря по-силно наведнъж
+**Тя казва:** „Едно време бях първата, която скачаше във водата. Намазвах се със слънцезащитно и право в морето, без да се замислям. А сега седя облечена на шезлонга."
 
-**КАДЪР — gptimage2** (с референтната снимка от Сцена 01)
+**КАДЪР — gptimage2**
 ```
 Use the woman from the reference image. Keep her face, age, hair, skin texture and body type exactly identical — same person. Change only the location, clothes and pose as described below.
 Vertical 9:16 amateur selfie photo. She wears the same navy-blue t-shirt and light cardigan. She is sitting on a wooden park bench, slightly slouched, hands in her lap, looking into the phone camera which is propped up in front of her at chest height, talking. Background: park path, green bushes, autumn leaves on the ground, soft overcast daylight.
@@ -74,9 +72,9 @@ No text, no captions, no watermark, no logo, not a model, no beauty retouch, no 
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same bench. She sits and talks into the phone, looks down for half a second on the shameful part, then back into the lens. Small hand gesture, blinks, natural speech mouth shapes. Phone is propped up so the frame is almost static with a tiny drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „А защото ме беше срам да ме видят. Едно време бях първата, която скачаше във водата."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, conversational. First sentence quiet and ashamed, second sentence warmer, almost a smile at the memory.
+Animate this exact frame. Same woman, same face, same clothes, same bench. She talks into the phone, warm and lively on the memory with a small smile and a hand gesture, then her face drops flat and resigned on the last sentence. Blinks, natural head movement, real speech mouth shapes. Phone is propped up so the frame is almost static with a tiny drift.
+DIALOGUE (Bulgarian, spoken exactly as written): „Едно време бях първата, която скачаше във водата. Намазвах се със слънцезащитно и право в морето, без да се замислям. А сега седя облечена на шезлонга."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, conversational. Nostalgic and quick at first, then slower and flat on the last sentence.
 AUDIO: only her voice plus faint park ambience, distant birds. No music.
 CAMERA: static propped selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
@@ -84,11 +82,11 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 03 — 8 секунди
+# СЦЕНА 03 — 10 секунди
 
 **Ситуация:** на маса пред кафене, картонена чаша кафе
-**Защо:** контрастът „едно време / сега" — смяната на локацията го подсилва
-**Тя казва:** „Намазвах се със слънцезащитно и право в морето, без да се замислям. А сега седя облечена на шезлонга."
+**Защо:** „не е за килограмите" и „спрях да правя нещата, които обичам" вървят заедно — това е истинската болка
+**Тя казва:** „В тридесет и три градуса пек. Не ми пука толкова за килограмите. Те са само цифра. Най-лошото е, че бавно спрях да правя нещата, които обичам."
 
 **КАДЪР — gptimage2**
 ```
@@ -100,9 +98,9 @@ No text, no captions, no readable writing, no brand logo, no watermark, not a mo
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same café terrace. She talks into the camera, lifts the coffee cup once and puts it back down, small tired half-smile on the last sentence. Blinks, natural head movement, real speech mouth shapes. Handheld phone drifts slightly.
-DIALOGUE (Bulgarian, spoken exactly as written): „Намазвах се със слънцезащитно и право в морето, без да се замислям. А сега седя облечена на шезлонга."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, conversational. First half nostalgic and lively, second half flat and resigned.
+Animate this exact frame. Same woman, same face, same clothes, same café terrace. She talks into the camera, small dismissive hand wave on the weight line, lifts the coffee cup once and puts it back down, then slows down and gets serious on the last sentence. Blinks, natural head movement, real speech mouth shapes. Handheld phone drifts slightly.
+DIALOGUE (Bulgarian, spoken exactly as written): „В тридесет и три градуса пек. Не ми пука толкова за килограмите. Те са само цифра. Най-лошото е, че бавно спрях да правя нещата, които обичам."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, a bit sarcastic at the start, matter-of-fact in the middle, quiet and heavy on the last sentence.
 AUDIO: only her voice plus faint street and café ambience. No music.
 CAMERA: handheld selfie at arm's length, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
@@ -110,11 +108,11 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 04 — 8 секунди
+# СЦЕНА 04 — 10 секунди
 
 **Ситуация:** в паркираната кола, на шофьорското място
-**Защо:** „в колата" е най-разпознаваемият UGC кадър — вдига доверието, че е истински човек
-**Тя казва:** „В тридесет и три градуса пек. Не ми пука толкова за килограмите — те са само цифра."
+**Защо:** признанието + началото на плажната сцена. „В колата" вдига доверието, че е истински човек.
+**Тя казва:** „И си измислях причини, за да не си признавам истинския проблем. На плажа приятелките ми ме викаха: Ела бе, стига си седяла!"
 
 **КАДЪР — gptimage2**
 ```
@@ -126,47 +124,21 @@ No text, no captions, no watermark, no logo, not a model, no beauty retouch.
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same car interior. She talks into the phone, raises her eyebrows on the first line, then makes a small dismissive hand wave on the second. Blinks, natural micro head movement, real speech mouth shapes. Slight handheld shake.
-DIALOGUE (Bulgarian, spoken exactly as written): „В тридесет и три градуса пек. Не ми пука толкова за килограмите — те са само цифра."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, a bit sarcastic on the first line, matter-of-fact on the second.
+Animate this exact frame. Same woman, same face, same clothes, same car interior. She talks into the phone, honest and a bit ashamed on the first sentence, then does a small playful imitation voice when she quotes her friends. Blinks, natural micro head movement, real speech mouth shapes. Slight handheld shake.
+DIALOGUE (Bulgarian, spoken exactly as written, the quoted part in the same voice): „И си измислях причини, за да не си признавам истинския проблем. На плажа приятелките ми ме викаха: Ела бе, стига си седяла!"
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse. Quiet and honest first, then lighter and playful when imitating the friends.
 AUDIO: only her voice plus faint car interior ambience. No music.
 CAMERA: handheld selfie in a car, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no driving, no scene change, no beauty filter.
+NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no driving, no other person speaking, no scene change, no beauty filter.
 ```
 
 ---
 
 # СЦЕНА 05 — 10 секунди
 
-**Ситуация:** у тях, седнала на дивана, вечер
-**Защо:** истинската болка — не килограмите, а спрелия живот. Тук зрителката се разпознава.
-**Тя казва:** „Най-лошото е, че бавно спрях да правя нещата, които обичам. И си измислях причини, за да не си признавам истинския проблем."
-
-**КАДЪР — gptimage2**
-```
-Use the woman from the reference image. Keep her face, age, hair, skin texture and body type exactly identical — same person. Change only the location, clothes and pose as described below.
-Vertical 9:16 amateur selfie photo. She wears a soft oversized dark-green sweatshirt, hair loose and a bit messy. She is sitting on a beige fabric sofa in an ordinary modest Bulgarian living-room, legs tucked under her, a folded blanket and a cushion beside her, holding the phone at chest height, looking into the lens, talking. Background: living-room wall, a framed family photo, a small lamp, warm indoor light in the evening.
-Shot on an iPhone 12 front camera, 1080p, slightly soft and grainy in the low light, flat unedited colours, no colour grading, no bokeh, no professional lighting. Looks like a real woman filming herself at home, not an ad.
-No text, no captions, no watermark, no logo, not a model, no beauty retouch.
-```
-
-**ВИДЕО — omniflash**
-```
-Animate this exact frame. Same woman, same face, same clothes, same sofa. She talks into the phone quietly, looks away once, gives a small resigned sigh between the two sentences, tucks a strand of hair behind her ear. Blinks, natural head movement, real speech mouth shapes. Small handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Най-лошото е, че бавно спрях да правя нещата, които обичам. И си измислях причини, за да не си признавам истинския проблем."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, quiet, honest, a little heavy — like a confession late in the evening.
-AUDIO: only her voice plus quiet room tone. No music.
-CAMERA: handheld selfie, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
-```
-
----
-
-# СЦЕНА 06 — 10 секунди
-
 **Ситуация:** на балкона сутрин, книга и кафе на масичката
-**Защо:** конкретната сцена с приятелките — детайлът прави историята истинска
-**Тя казва:** „На плажа приятелките ми ме викаха: Ела бе, стига си седяла! Казах им, че искам да си дочета главата от книгата."
+**Защо:** извинението и последствието му са едно цяло — книгата на масата го подсилва визуално
+**Тя казва:** „Казах им, че искам да си дочета главата от книгата. Останах под чадъра, докато те си говореха и се забавляваха в морето."
 
 **КАДЪР — gptimage2**
 ```
@@ -178,9 +150,9 @@ No text, no captions, no readable writing on the book, no watermark, not a model
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same balcony. She talks into the camera, does a small mocking imitation when she quotes her friends, then rolls her eyes slightly at herself on the second sentence. Blinks, natural head movement, real speech mouth shapes. Handheld drift, laundry moves faintly in the breeze.
-DIALOGUE (Bulgarian, spoken exactly as written, the quoted part in the same voice): „На плажа приятелките ми ме викаха: Ела бе, стига си седяла! Казах им, че искам да си дочета главата от книгата."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse. Playful when quoting the friends, then flat and slightly guilty on the excuse.
+Animate this exact frame. Same woman, same face, same clothes, same balcony. She talks into the camera, taps the book on the table once on the first sentence, rolls her eyes slightly at herself, then looks off to the side and goes quiet and lonely on the second sentence. Blinks, natural head movement, real speech mouth shapes. Handheld drift, laundry moves faintly in the breeze.
+DIALOGUE (Bulgarian, spoken exactly as written): „Казах им, че искам да си дочета главата от книгата. Останах под чадъра, докато те си говореха и се забавляваха в морето."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, slightly guilty on the excuse, then quiet and lonely, no self-pity.
 AUDIO: only her voice plus faint outdoor morning ambience. No music.
 CAMERA: handheld selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no second person on screen, no scene change, no beauty filter.
@@ -188,37 +160,11 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 07 — 8 секунди
-
-**Ситуация:** седнала на стъпалата пред входа на блока
-**Защо:** ниският ъгъл е нарочно нелицеприятен — подсилва самотата в сцената
-**Тя казва:** „Останах под чадъра, докато те си говореха и се забавляваха в морето."
-
-**КАДЪР — gptimage2**
-```
-Use the woman from the reference image. Keep her face, age, hair, skin texture and body type exactly identical — same person. Change only the location, clothes and pose as described below.
-Vertical 9:16 amateur selfie photo. She wears a simple black t-shirt and dark trousers. She is sitting on the concrete steps in front of the entrance of an old Bulgarian apartment block, elbows on her knees, holding the phone slightly below eye level so the angle is unflattering, looking into the lens, talking. Background: entrance door, mailboxes, a bit of grass and parked cars, flat late-afternoon daylight.
-Shot on an iPhone 12 front camera, 1080p, slightly soft and lo-fi, digital noise, flat unedited colours, no colour grading, no bokeh, no professional lighting, slightly tilted framing. Looks like a real woman filming herself, not an ad.
-No text, no captions, no watermark, no logo, not a model, no beauty retouch.
-```
-
-**ВИДЕО — omniflash**
-```
-Animate this exact frame. Same woman, same face, same clothes, same steps. She talks into the phone, looks slightly down and to the side as she remembers, small shrug at the end. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Останах под чадъра, докато те си говореха и се забавляваха в морето."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, quiet and a bit lonely, no self-pity.
-AUDIO: only her voice plus faint outdoor street ambience. No music.
-CAMERA: handheld selfie from a low angle, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
-```
-
----
-
-# СЦЕНА 08 — 10 секунди
+# СЦЕНА 06 — 10 секунди
 
 **Ситуация:** вкъщи, в креслото до прозореца, книгата в скута
-**Защо:** най-силният емоционален детайл в целия скрипт — „дали не ме обсъждат"
-**Тя казва:** „Четох една и съща страница десет минути. Не защото беше интересна, а защото се чудех дали не ме обсъждат."
+**Защо:** най-силният емоционален детайл, и веднага след него преходът „прибрах се и започнах пак"
+**Тя казва:** „Четох една и съща страница десет минути. Не защото беше интересна, а защото се чудех дали не ме обсъждат. Прибрах се от тази почивка и започнах пак."
 
 **КАДЪР — gptimage2**
 ```
@@ -230,9 +176,9 @@ No text, no captions, no readable writing on the book, no watermark, not a model
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same armchair. She talks into the phone, taps the book on her lap once with two fingers on the first sentence, then a short uncomfortable pause before the second sentence, small nervous half-smile at the end. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Четох една и съща страница десет минути. Не защото беше интересна, а защото се чудех дали не ме обсъждат."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, low and vulnerable, slows down on the last words.
+Animate this exact frame. Same woman, same face, same clothes, same armchair. She talks into the phone, taps the book on her lap once with two fingers, a short uncomfortable pause and a small nervous half-smile after the second sentence, then her tone changes to matter-of-fact on the last sentence. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
+DIALOGUE (Bulgarian, spoken exactly as written): „Четох една и съща страница десет минути. Не защото беше интересна, а защото се чудех дали не ме обсъждат. Прибрах се от тази почивка и започнах пак."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, low and vulnerable, slows down on „дали не ме обсъждат", then picks the pace back up.
 AUDIO: only her voice plus quiet room tone. No music.
 CAMERA: handheld selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
@@ -240,11 +186,11 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 09 — 8 секунди
+# СЦЕНА 07 — 10 секунди
 
 **Ситуация:** на кухненската маса, отворен лаптоп, кантарче за храна
-**Защо:** започва частта „опитвах всичко" — зрителката вече е пробвала същото
-**Тя казва:** „Прибрах се от тази почивка и започнах пак. Диети, ютуб инструктори, следене на калории."
+**Защо:** целият провал с диетите в един блок, завършващ с примка „разбрах нещо"
+**Тя казва:** „Диети, ютуб инструктори, следене на калории. Свалях по два килограма, връщах три. По някое време разбрах нещо, което дотогава никой не ми беше казвал."
 
 **КАДЪР — gptimage2**
 ```
@@ -256,9 +202,9 @@ No text, no captions, no readable writing on the screen or the notebook, no wate
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same kitchen. She talks into the phone and counts the three things off on her fingers as she lists them, small tired smile. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Прибрах се от тази почивка и започнах пак. Диети, ютуб инструктори, следене на калории."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, slightly faster pace, a bit self-ironic on the list.
+Animate this exact frame. Same woman, same face, same clothes, same kitchen. She talks into the phone and counts the three things off on her fingers as she lists them, tired smile, then leans slightly closer to the camera on the last sentence as if letting the viewer in on something. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
+DIALOGUE (Bulgarian, spoken exactly as written): „Диети, ютуб инструктори, следене на калории. Свалях по два килограма, връщах три. По някое време разбрах нещо, което дотогава никой не ми беше казвал."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, faster and self-ironic on the list, flat and defeated in the middle, then quieter and intriguing at the end — a small cliffhanger.
 AUDIO: only her voice plus quiet kitchen room tone. No music.
 CAMERA: handheld selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
@@ -266,37 +212,11 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 10 — 8 секунди
+# СЦЕНА 08 — 10 секунди
 
-**Ситуация:** в спалнята, седнала на ръба на леглото, кантар на пода
-**Защо:** отваря се примката „разбрах нещо" — задържа гледането към следващата сцена
-**Тя казва:** „Свалях по два килограма, връщах три. По някое време разбрах нещо, което дотогава никой не ми беше казвал."
-
-**КАДЪР — gptimage2**
-```
-Use the woman from the reference image. Keep her face, age, hair, skin texture and body type exactly identical — same person. Change only the location, clothes and pose as described below.
-Vertical 9:16 amateur selfie photo. She wears a grey pyjama top, hair slightly messy. She is sitting on the edge of an unmade bed in a modest bedroom, a white bathroom scale on the floor near her bare feet, holding the phone at arm's length, looking into the lens, talking. Background: bedroom wall, wardrobe door, a chair with clothes on it, soft morning light through the curtains.
-Shot on an iPhone 12 front camera, 1080p, slightly soft, digital noise, flat unedited colours, no colour grading, no bokeh, no professional lighting. Looks like a real woman filming herself, not an ad.
-No text, no captions, no readable numbers on the scale, no watermark, not a model, no beauty retouch.
-```
-
-**ВИДЕО — omniflash**
-```
-Animate this exact frame. Same woman, same face, same clothes, same bedroom. She talks into the phone, glances down at the scale on the first sentence, then leans slightly closer to the camera on the second sentence as if letting the viewer in on something. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Свалях по два килограма, връщах три. По някое време разбрах нещо, което дотогава никой не ми беше казвал."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse. Flat and defeated on the first sentence, then quieter and more intriguing on the second — a small cliffhanger.
-AUDIO: only her voice plus quiet room tone. No music.
-CAMERA: handheld selfie, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
-```
-
----
-
-# СЦЕНА 11 — 8 секунди
-
-**Ситуация:** кухнята вечерта, застанала до отворения хладилник
-**Защо:** ключовата смяна на вярването: проблемът не си ти, а гладът. Светлината от хладилника го прави визуално.
-**Тя казва:** „Проблемът ми не беше волята. Проблемът беше постоянният глад. Цял ден се мъчех да издържа."
+**Ситуация:** кухнята вечерта, до отворения хладилник
+**Защо:** цялата смяна на вярването в един блок — проблемът не си ти, а гладът. Светлината от хладилника го прави визуално.
+**Тя казва:** „Проблемът ми не беше волята. Проблемът беше постоянният глад. Цял ден се мъчех да издържа. И не, това не е слабост на характера."
 
 **КАДЪР — gptimage2**
 ```
@@ -308,8 +228,8 @@ No text, no captions, no readable labels, no watermark, not a model, no beauty r
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same kitchen. She talks into the phone, shakes her head slightly on the first sentence, closes the fridge door with her free hand near the end. Blinks, natural head movement, real speech mouth shapes. Handheld drift, the light on her face changes slightly as the fridge closes.
-DIALOGUE (Bulgarian, spoken exactly as written): „Проблемът ми не беше волята. Проблемът беше постоянният глад. Цял ден се мъчех да издържа."
+Animate this exact frame. Same woman, same face, same clothes, same kitchen. She talks into the phone, shakes her head slightly on the first sentence, closes the fridge door with her free hand mid-way, then one firm hand gesture on the last sentence. Blinks, natural head movement, real speech mouth shapes. Handheld drift, the light on her face changes as the fridge closes.
+DIALOGUE (Bulgarian, spoken exactly as written): „Проблемът ми не беше волята. Проблемът беше постоянният глад. Цял ден се мъчех да издържа. И не, това не е слабост на характера."
 VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, firm and clear — this is the point of the whole story, not a complaint.
 AUDIO: only her voice plus faint fridge hum. No music.
 CAMERA: handheld selfie in low light, one continuous take, no cuts.
@@ -318,11 +238,11 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 12 — 10 секунди
+# СЦЕНА 09 — 10 секунди
 
-**Ситуация:** на работа, седнала на бюрото в пауза, говори тихо
-**Защо:** сваля вината от зрителката — „не си слаб характер". Тихият глас звучи като споделяне.
-**Тя казва:** „И не, това не е слабост на характера. Апетитът просто се управлява от процеси, които не решаваш съзнателно."
+**Ситуация:** на работа, на бюрото в пауза, говори тихо
+**Защо:** обяснението и въпросът към колежката — оттук продуктът идва от човек, не от реклама
+**Тя казва:** „Апетитът просто се управлява от процеси, които не решаваш съзнателно. Един ден си преглътнах егото и попитах една колежка как успява да яде толкова малко."
 
 **КАДЪР — gptimage2**
 ```
@@ -334,9 +254,9 @@ No text, no captions, no readable writing on the papers or screen, no watermark,
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same office. She talks into the phone in a lowered voice as if colleagues are nearby, one firm hand gesture on the first sentence, glances briefly off to the side once. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „И не, това не е слабост на характера. Апетитът просто се управлява от процеси, които не решаваш съзнателно."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, lowered volume, calm and convinced — explaining, not selling.
+Animate this exact frame. Same woman, same face, same clothes, same office. She talks into the phone in a lowered voice as if colleagues are nearby, one calm explaining hand gesture, then a small embarrassed smile on the second sentence, glances briefly off to the side once. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
+DIALOGUE (Bulgarian, spoken exactly as written): „Апетитът просто се управлява от процеси, които не решаваш съзнателно. Един ден си преглътнах егото и попитах една колежка как успява да яде толкова малко."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, lowered volume, calm and convinced first, then lighter and slightly embarrassed.
 AUDIO: only her voice plus faint office room tone. No music.
 CAMERA: handheld selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no other person speaking, no scene change, no beauty filter.
@@ -344,36 +264,10 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 13 — 8 секунди
-
-**Ситуация:** до кафемашината в офиса
-**Защо:** началото на откритието. Продуктът идва от човек, не от реклама — това е най-важното за доверието.
-**Тя казва:** „Един ден си преглътнах егото и попитах една колежка как успява да яде толкова малко."
-
-**КАДЪР — gptimage2**
-```
-Use the woman from the reference image. Keep her face, age, hair, skin texture and body type exactly identical — same person. Change only the location, clothes and pose as described below.
-Vertical 9:16 amateur selfie photo. She wears the same dark-blue office blouse, hair pinned back. She is standing in a small office kitchenette next to a coffee machine, holding a paper cup in one hand and the phone at arm's length in the other, looking into the lens, talking. Background: kitchenette counter, sink, a microwave, a few mugs, cold ceiling light.
-Shot on an iPhone 12 front camera, 1080p, slightly soft, digital noise, flat unedited colours, mixed indoor light, no colour grading, no bokeh, no professional lighting, slightly crooked framing. Looks like a real woman filming herself at work, not an ad.
-No text, no captions, no readable labels, no watermark, not a model, no beauty retouch.
-```
-
-**ВИДЕО — omniflash**
-```
-Animate this exact frame. Same woman, same face, same clothes, same kitchenette. She talks into the phone, gives a small embarrassed smile on the ego part, takes half a sip from the cup at the end. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Един ден си преглътнах егото и попитах една колежка как успява да яде толкова малко."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, conversational, slightly embarrassed but light.
-AUDIO: only her voice plus faint office kitchenette ambience. No music.
-CAMERA: handheld selfie, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no other person on screen, no scene change, no beauty filter.
-```
-
----
-
-# СЦЕНА 14 — 10 секунди
+# СЦЕНА 10 — 8 секунди
 
 **Ситуация:** в коридора на офиса, до асансьора — показва на своята ръка
-**Защо:** първото „виждане" на продукта, но през чужд човек. Жестът с ръкава го прави визуално.
+**Защо:** първото „виждане" на продукта, но през друг човек. Жестът с ръкава го прави визуално.
 **Тя казва:** „Тя си вдигна ръкава и видях една розова лепенка. Каза ми, че точно това ѝ е помогнало да свали килограмите."
 
 **КАДЪР — gptimage2**
@@ -396,10 +290,10 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 15 — 10 секунди
+# СЦЕНА 11 — 8 секунди
 
 **Ситуация:** в банята пред огледалото, лепи пластира на рамото си
-**Защо:** механизмът + демонстрация как се ползва. Тук се вижда, че е лесно.
+**Защо:** механизъм + демонстрация. Тук се вижда, че е лесно.
 **Тя казва:** „Така попаднах на тези малки пластирчета с берберин, който се усвоява през кожата. Лепиш го сутрин и си продължаваш деня."
 
 **КАДЪР — gptimage2**
@@ -420,15 +314,15 @@ CAMERA: handheld mirror selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging text, no watermark, no music, no scene change, no beauty filter.
 ```
 
-> **Монтаж:** тук сложи 1–2 сек close-up на реалния FitPatches пластир/кутия, после се връщаш на нея.
+> **Монтаж:** тук вмъкни 1–2 сек close-up на реалния FitPatches пластир/кутия.
 
 ---
 
-# СЦЕНА 16 — 8 секунди
+# СЦЕНА 12 — 10 секунди
 
 **Ситуация:** на дивана, кутията в ръка
-**Защо:** скептицизмът е задължителен. Ако тя не се усъмни, зрителят не ѝ вярва.
-**Тя казва:** „Първата ми мисъл беше поредната глупост. Но реших да пробвам един месец. Първите три дни — нищо."
+**Защо:** скептицизъм + първите дни в един блок, а сцената свършва на кука „нещо странно"
+**Тя казва:** „Първата ми мисъл беше поредната глупост. Но реших да пробвам един месец. Първите три дни — нищо. Честно. Към седмия ден забелязах нещо странно."
 
 **КАДЪР — gptimage2**
 ```
@@ -440,9 +334,9 @@ No text, no captions, no readable writing on the box, no brand logo, no watermar
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same sofa. She talks into the phone, gives a sceptical shrug and a small laugh on the first sentence, turns the little box once in her hand, then a flat honest face on the last sentence. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Първата ми мисъл беше поредната глупост. Но реших да пробвам един месец. Първите три дни — нищо."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, sceptical and self-ironic at first, then plain and honest — she is not overselling.
+Animate this exact frame. Same woman, same face, same clothes, same sofa. She talks into the phone, sceptical shrug and a small laugh on the first sentence, turns the little box once in her hand, flat honest face on „Първите три дни — нищо. Честно.", then raises her eyebrows with curiosity on the last sentence. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
+DIALOGUE (Bulgarian, spoken exactly as written): „Първата ми мисъл беше поредната глупост. Но реших да пробвам един месец. Първите три дни — нищо. Честно. Към седмия ден забелязах нещо странно."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, sceptical and self-ironic at first, plain and honest in the middle, curious at the end — she is not overselling.
 AUDIO: only her voice plus quiet room tone. No music.
 CAMERA: handheld selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging text, no watermark, no music, no scene change, no beauty filter.
@@ -450,11 +344,11 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging te
 
 ---
 
-# СЦЕНА 17 — 10 секунди
+# СЦЕНА 13 — 10 секунди
 
-**Ситуация:** в кухнята, застанала пред отворен шкаф със сладки неща
-**Защо:** резултатът се показва като сцена, не като твърдение. Шкафът е доказателството.
-**Тя казва:** „Към седмия ден забелязах нещо странно. Минах покрай шкафа с бисквити и шоколад, които обожавам. Или по-скоро обожавах."
+**Ситуация:** в кухнята, пред отворен шкаф със сладки неща
+**Защо:** резултатът и обяснението му са едно цяло — „не се борих" е най-важната фраза в скрипта
+**Тя казва:** „Минах покрай шкафа с бисквити и шоколад, които обожавам. Или по-скоро обожавах. И изненадващо не ми се доядоха. Не се борих — просто не ми се дояде."
 
 **КАДЪР — gptimage2**
 ```
@@ -466,9 +360,9 @@ No text, no captions, no readable writing on the wrappers, no brand logos, no wa
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same kitchen. She talks into the phone, gestures with an open palm towards the sweets in the open cupboard, then corrects herself with a small amused smile on the last three words. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Към седмия ден забелязах нещо странно. Минах покрай шкафа с бисквити и шоколад, които обожавам. Или по-скоро обожавах."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, curious and slightly surprised, with a small laugh on the correction at the end.
+Animate this exact frame. Same woman, same face, same clothes, same kitchen. She talks into the phone, gestures with an open palm towards the sweets in the open cupboard, corrects herself with a small amused smile, then closes the cupboard door with her free hand and gives a small "I don't know" shrug on the last sentence. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
+DIALOGUE (Bulgarian, spoken exactly as written): „Минах покрай шкафа с бисквити и шоколад, които обожавам. Или по-скоро обожавах. И изненадващо не ми се доядоха. Не се борих — просто не ми се дояде."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, curious and slightly surprised, small laugh on the correction, then calm and understated — almost puzzled by her own words.
 AUDIO: only her voice plus quiet kitchen room tone. No music.
 CAMERA: handheld selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging, no watermark, no music, no scene change, no beauty filter.
@@ -476,33 +370,7 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging, n
 
 ---
 
-# СЦЕНА 18 — 8 секунди
-
-**Ситуация:** същата кухня, шкафът е затворен, чаша вода в ръка
-**Защо:** най-важната фраза в целия скрипт — „не се борих". Това е обещанието на продукта.
-**Тя казва:** „И изненадващо не ми се доядоха. Не се борих — просто не ми се дояде."
-
-**КАДЪР — gptimage2**
-```
-Use the woman from the reference image. Keep her face, age, hair, skin texture and body type exactly identical — same person. Change only the location, clothes and pose as described below.
-Vertical 9:16 amateur selfie photo. She wears the same plain white t-shirt. She is standing by the kitchen counter with the cupboard now closed behind her, a glass of water in one hand, the phone at arm's length in the other, looking into the lens, talking. Background: closed kitchen cupboards, the sink, a tea towel, daylight from a window.
-Shot on an iPhone 12 front camera, 1080p, slightly soft, digital noise, flat unedited colours, no colour grading, no bokeh, no professional lighting. Looks like a real woman filming herself, not an ad.
-No text, no captions, no watermark, no logo, not a model, no beauty retouch.
-```
-
-**ВИДЕО — omniflash**
-```
-Animate this exact frame. Same woman, same face, same clothes, same kitchen. She talks into the phone, gives a small "I don't know" shrug, takes a sip of water at the end and shrugs again. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „И изненадващо не ми се доядоха. Не се борих — просто не ми се дояде."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, calm and almost puzzled by her own words, understated.
-AUDIO: only her voice plus quiet kitchen room tone. No music.
-CAMERA: handheld selfie, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, no scene change, no beauty filter.
-```
-
----
-
-# СЦЕНА 19 — 8 секунди
+# СЦЕНА 14 — 8 секунди
 
 **Ситуация:** в спалнята пред огледалото на гардероба, с дънките
 **Защо:** резултат чрез дреха, не чрез килограми — по-достоверно и минава по-лесно на Meta
@@ -528,7 +396,7 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 20 — 10 секунди
+# СЦЕНА 15 — 8 секунди
 
 **Ситуация:** на плажа, седнала на шезлонг, по бански с парео, морето отзад
 **Защо:** затваря се кръгът от хука. Емоционалната изплата на цялото видео.
@@ -554,7 +422,7 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 21 — 8 секунди
+# СЦЕНА 16 — 8 секунди
 
 **Ситуация:** на плажа, права до водата, мокра коса, леко задъхана
 **Защо:** задъханият глас е детайлът, който убива усещането за реклама
@@ -580,10 +448,10 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 22 — 8 секунди
+# СЦЕНА 17 — 8 секунди
 
-**Ситуация:** на маса в плажен бар, приятелките ѝ размазани отзад
-**Защо:** приятелките се появяват визуално — обещанието „пак ще си сред хора" става видимо
+**Ситуация:** на маса в плажен бар, приятелките размазани отзад
+**Защо:** обещанието „пак ще си сред хора" става видимо
 **Тя казва:** „Да ме е срам от тялото ми и да не мога да се социализирам с приятелите си."
 
 **КАДЪР — gptimage2**
@@ -606,51 +474,25 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 
 ---
 
-# СЦЕНА 23 — 8 секунди
-
-**Ситуация:** вкъщи на терасата, кутията на масата пред нея
-**Защо:** първо и единствено споменаване на марката — късно и небрежно, точно затова минава
-**Тя казва:** „Честно казано, не мисля да спирам да ползвам тези ФитПачис лепенки."
-
-**КАДЪР — gptimage2**
-```
-Use the woman from the reference image. Keep her face, age, hair and skin texture exactly identical — same person, full body (EU size 44). Change the location, clothes and pose as described below.
-Vertical 9:16 amateur selfie photo. She wears a coral-coloured summer blouse, light everyday makeup. She is sitting at a small table on a home terrace, a small plain white-and-pink cardboard box with no readable text on the table in front of her, one hand resting next to it, holding the phone at arm's length, looking into the lens, talking. Background: terrace railing, potted plants, a neighbouring building, warm late-afternoon daylight.
-Shot on an iPhone 12 front camera, 1080p, slightly soft, digital noise, flat unedited colours, no colour grading, no bokeh, no professional lighting. Looks like a real woman filming herself, not an ad.
-No text, no captions, no readable writing on the box, no brand logo, no watermark, not a model, no beauty retouch.
-```
-
-**ВИДЕО — omniflash**
-```
-Animate this exact frame. Same woman, same face, same clothes, same terrace. She talks into the phone and taps the small box on the table twice with one finger, small confident smile. Blinks, natural head movement, real speech mouth shapes. Handheld drift, leaves move faintly in the breeze.
-DIALOGUE (Bulgarian, spoken exactly as written): „Честно казано, не мисля да спирам да ползвам тези ФитПачис лепенки."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, casual and certain, like stating an obvious fact.
-AUDIO: only her voice plus faint outdoor ambience. No music.
-CAMERA: handheld selfie, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging text, no watermark, no music, no scene change, no beauty filter.
-```
-
----
-
-# СЦЕНА 24 — 8 секунди
+# СЦЕНА 18 — 10 секунди
 
 **Ситуация:** пред входа на блока, с получен колет в ръка
-**Защо:** дефицит, но като лично оплакване, не като рекламен натиск
-**Тя казва:** „Проблемът е, че предния път едвам успях да си взема, защото хората ги бяха изкупили."
+**Защо:** марката се споменава късно и небрежно, а веднага след нея — дефицитът като лично оплакване
+**Тя казва:** „Честно казано, не мисля да спирам да ползвам тези ФитПачис лепенки. Проблемът е, че предния път едвам успях да си взема, защото хората ги бяха изкупили."
 
 **КАДЪР — gptimage2**
 ```
 Use the woman from the reference image. Keep her face, age, hair and skin texture exactly identical — same person, full body (EU size 44). Change the location, clothes and pose as described below.
-Vertical 9:16 amateur selfie photo. She wears the coral summer blouse and a light jacket over it. She is standing in front of the entrance of a Bulgarian apartment block, holding a small plain brown cardboard parcel with no readable text under one arm, the phone at arm's length in the other hand, looking into the lens, talking. Background: entrance door, mailboxes, a strip of grass, parked cars, flat daylight.
+Vertical 9:16 amateur selfie photo. She wears a coral-coloured summer blouse and a light jacket over it, light everyday makeup. She is standing in front of the entrance of a Bulgarian apartment block, holding a small plain brown cardboard parcel with no readable text under one arm, the phone at arm's length in the other hand, looking into the lens, talking. Background: entrance door, mailboxes, a strip of grass, parked cars, flat daylight.
 Shot on an iPhone 12 front camera, 1080p, slightly soft, digital noise, flat unedited colours, no colour grading, no bokeh, no professional lighting, slightly crooked framing. Looks like a real woman filming herself, not an ad.
 No text, no captions, no readable writing on the parcel, no watermark, not a model, no beauty retouch.
 ```
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same entrance. She talks into the phone, lifts the small parcel slightly towards the camera once, raises her eyebrows at the end. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
-DIALOGUE (Bulgarian, spoken exactly as written): „Проблемът е, че предния път едвам успях да си взема, защото хората ги бяха изкупили."
-VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, slightly hurried and a bit annoyed, like a genuine complaint — not a sales line.
+Animate this exact frame. Same woman, same face, same clothes, same entrance. She talks into the phone, small confident smile on the first sentence, lifts the small parcel slightly towards the camera once, then raises her eyebrows at the end. Blinks, natural head movement, real speech mouth shapes. Handheld drift.
+DIALOGUE (Bulgarian, spoken exactly as written): „Честно казано, не мисля да спирам да ползвам тези ФитПачис лепенки. Проблемът е, че предния път едвам успях да си взема, защото хората ги бяха изкупили."
+VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, casual and certain first, then slightly hurried and a bit annoyed — like a genuine complaint, not a sales line.
 AUDIO: only her voice plus faint outdoor street ambience. No music.
 CAMERA: handheld selfie, one continuous take, no cuts.
 NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging text, no watermark, no music, no scene change, no beauty filter.
@@ -658,10 +500,10 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging te
 
 ---
 
-# СЦЕНА 25 — 10 секунди
+# СЦЕНА 19 — 10 секунди
 
 **Ситуация:** вкъщи в креслото, кутията в ръка, по-близък кадър
-**Защо:** сваля последното възражение — рискът. По-близкият кадър подсилва „говоря лично на теб".
+**Защо:** сваля последното възражение — риска. По-близкият кадър подсилва „говоря лично на теб".
 **Тя казва:** „Аз даже не се замислих, като ги взимах първия път. Защото имат шейсет дневен тест период и ако нямат ефект, ти връщат парите."
 
 **КАДЪР — gptimage2**
@@ -684,10 +526,10 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging te
 
 ---
 
-# СЦЕНА 26 — 8 секунди
+# СЦЕНА 20 — 5 секунди
 
 **Ситуация:** на дивана, сочи надолу към долния край на екрана
-**Защо:** CTA-то е меко и приятелско — „погледнете", не „купете". Жестът надолу вдига кликовете.
+**Защо:** меко CTA — „погледнете", не „купете". Жестът надолу вдига кликовете.
 **Тя казва:** „Ще оставя линка отдолу, така че може да ги погледнете."
 
 **КАДЪР — gptimage2**
@@ -711,19 +553,18 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 ---
 ---
 
-# СТЪПКА ФИНАЛ — монтаж
+# ФИНАЛНА СТЪПКА — монтаж
 
-1. Подреждаш 01 → 26 и режеш веднага след последната сричка на всяка сцена. Нула паузи между клиповете.
-2. Субтитри — **в монтажа, не в промпта**. Едри бели букви с черен кант, 3–4 думи на ред, долна трета.
-3. Продуктови вложки от твои реални снимки по 1–1.5 сек: след Сцена 15, след Сцена 16, върху 23 и 25.
-4. Музика: никаква през първите 30 сек. После тиха фонова на 8–10% под гласа.
+1. Подреждаш 01 → 20 и режеш веднага след последната сричка на всяка сцена. Нула паузи между клиповете.
+2. Субтитрите се слагат **в монтажа, не в промпта** — едри бели букви с черен кант, 3–4 думи на ред.
+3. Продуктови вложки от твои реални снимки, по 1–1.5 сек: след Сцена 11, върху Сцена 12 и Сцена 19.
+4. Музика: никаква през първите 30 сек, после тиха на 8–10% под гласа.
 5. Финален статичен кадър 2 сек: лого, оферта, „60 дни гаранция".
 
 # АЛТЕРНАТИВНИ ХУКОВЕ ЗА ТЕСТ
 
-Сменяш само репликата в Сцена 01, кадърът остава същият:
+Сменяш само първото изречение в Сцена 01, кадърът остава същият:
 
-1. „Миналото лято за първи път не си свалих ризата на плажа. И не защото ми беше студено."
-2. „На четиридесет и пет години седях облечена на плажа в тридесет и три градуса. Ще ви кажа защо."
-3. „Проблемът ми никога не е бил волята. Разбрах го чак миналата година."
-4. „Приятелките ми бяха в морето, а аз се правех, че чета книга под чадъра."
+1. „Проблемът ми никога не е бил волята. Разбрах го чак миналата година."
+2. „Приятелките ми бяха в морето, а аз се правех, че чета книга под чадъра."
+3. „На четиридесет и пет години седях облечена на плажа в тридесет и три градуса. Ще ви кажа защо."
