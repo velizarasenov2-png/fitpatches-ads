@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мия — Zootropolis Storyboard</title>
+<style>
+  :root{
+    --bg:#FBF6F0; --surface:#FFFFFF; --surface-2:#F4EBE2;
+    --ink:#2A211C; --muted:#8C7D72; --line:#E7DACE;
+    --rose:#E1517A; --rose-soft:#FBE4EA;
+    --teal:#188F8B; --gold:#D9922F;
+    --shadow:0 1px 2px rgba(42,33,28,.06),0 8px 24px rgba(42,33,28,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#181310; --surface:#221B16; --surface-2:#2C231D;
+      --ink:#F3E9E0; --muted:#A99A8D; --line:#382E26;
+      --rose:#FF7D9A; --rose-soft:#39202A;
+      --teal:#4FD0CB; --gold:#F0B25A;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#181310; --surface:#221B16; --surface-2:#2C231D;
+    --ink:#F3E9E0; --muted:#A99A8D; --line:#382E26;
+    --rose:#FF7D9A; --rose-soft:#39202A;
+    --teal:#4FD0CB; --gold:#F0B25A;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.55; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header.top{
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,var(--surface),var(--bg));
+  }
+  .top-inner{padding:34px 0 26px;display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between}
+  .brandline{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);font-weight:700}
+  .brandline .dot{width:8px;height:8px;border-radius:50%;background:var(--rose)}
+  h1{
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-weight:700; font-size:clamp(28px,5vw,44px); line-height:1.05;
+    margin:12px 0 8px; text-wrap:balance; letter-spacing:-.01em;
+  }
+  h1 em{color:var(--rose);font-style:normal}
+  .sub{color:var(--muted);max-width:52ch;font-size:15px}
+  .meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{
+    font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;
+    background:var(--surface);color:var(--ink);white-space:nowrap
+  }
+  .chip b{color:var(--teal)}
+  .theme-btn{
+    border:1px solid var(--line);background:var(--surface);color:var(--ink);
+    border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;font-weight:600
+  }
+  .theme-btn:hover{border-color:var(--rose)}
+
+  /* Section */
+  section{padding:30px 0}
+  .eyebrow{
+    font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;margin:0 0 14px;display:flex;align-items:center;gap:10px
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+  h2{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:22px;margin:0 0 4px}
+
+  /* Bible grid */
+  .bible{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:16px 16px 14px;box-shadow:var(--shadow)
+  }
+  .card h3{margin:0 0 6px;font-size:15px;display:flex;align-items:center;gap:8px}
+  .card h3 .tagdot{width:9px;height:9px;border-radius:50%}
+  .card p{margin:0;font-size:13.5px;color:var(--muted)}
+  .card p b{color:var(--ink);font-weight:600}
+
+  /* Lock blocks */
+  .lock{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:12px;
+    padding:14px;margin-top:12px
+  }
+  .lock .lock-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+  .lock .lock-head span{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .prompt{
+    font-family:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+    font-size:12.5px;line-height:1.5;color:var(--ink);
+    white-space:pre-wrap;word-break:break-word;margin:0
+  }
+  .copy{
+    border:1px solid var(--line);background:var(--surface);color:var(--ink);
+    border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;font-weight:600;white-space:nowrap
+  }
+  .copy:hover{border-color:var(--rose);color:var(--rose)}
+  .copy.ok{border-color:var(--teal);color:var(--teal)}
+
+  /* Shot list */
+  .shots{display:flex;flex-direction:column;gap:18px}
+  .shot{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);overflow:hidden;border-left:4px solid var(--strip,var(--muted))
+  }
+  .shot-top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;padding:16px 18px 4px}
+  .num{
+    font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:26px;font-weight:700;
+    color:var(--strip,var(--ink));line-height:1;min-width:1.6em
+  }
+  .shot-tag{
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+    padding:3px 9px;border-radius:999px;background:var(--surface-2);color:var(--strip,var(--muted));
+    border:1px solid var(--line)
+  }
+  .tc{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;margin-left:auto}
+  .vo{
+    padding:2px 18px 12px;font-size:17px;line-height:1.45;
+    font-family:"Iowan Old Style",Palatino,Georgia,serif
+  }
+  .vo::before{content:"„";color:var(--rose)}
+  .vo::after{content:"“";color:var(--rose)}
+  .note{
+    padding:0 18px 14px;font-size:13.5px;color:var(--muted);display:flex;gap:8px;align-items:flex-start
+  }
+  .note b{color:var(--teal);font-weight:600;white-space:nowrap}
+  .prompts{border-top:1px solid var(--line);background:var(--bg);padding:14px 18px 16px;display:flex;flex-direction:column;gap:12px}
+  .pblock .lock-head span .kind{color:var(--rose)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:13px}
+  a{color:var(--rose)}
+  @media (max-width:560px){
+    .vo{font-size:15.5px}
+    .num{font-size:22px}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <div>
+      <div class="brandline"><span class="dot"></span>FitPatches · Animated Ad</div>
+      <h1>Мия<em>.</em> История в <em>Zootropolis</em> стил</h1>
+      <p class="sub">Раскадровка на говора → кадри. Всеки shot носи готови prompt-ове за <b>gptimage&nbsp;2</b> (начален кадър) и <b>omniflash</b> (движение), за продукция в kie.ai.</p>
+      <div class="meta-chips">
+        <span class="chip">Формат <b>9:16 вертикален</b></span>
+        <span class="chip">Кадри <b>22</b></span>
+        <span class="chip">Дължина <b>~1:45–1:50</b></span>
+        <span class="chip">Продукт <b>FitPatches (берберин)</b></span>
+      </div>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button">◐ Тема</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- BIBLE -->
+  <section>
+    <p class="eyebrow">Продукшън библия · Consistency</p>
+    <h2>Герои, стил и продукт</h2>
+    <p class="sub" style="margin:6px 0 18px">Тези блокове се <b>повтарят дословно</b> във всеки image prompt — така gptimage&nbsp;2 връща един и същ герой кадър след кадър.</p>
+
+    <div class="bible">
+      <div class="card">
+        <h3><span class="tagdot" style="background:var(--rose)"></span>Мия · главна героиня</h3>
+        <p>Женска <b>речна видра</b>, късни 20-те. Топло кестеняво-кафява козина, кремав муцунка и гърди, меко закръглено коремче, големи изразителни тъмни очи, розови бузки, малки кръгли уши, мустачки. Топла, „момичето от съседата".</p>
+      </div>
+      <div class="card">
+        <h3><span class="tagdot" style="background:var(--teal)"></span>Приятелките</h3>
+        <p>2 в морето: <b>розово фламинго</b> и <b>спортен гепард</b> по бански — весели, приканващи. (Пази ги еднакви във всички плажни кадри.)</p>
+      </div>
+      <div class="card">
+        <h3><span class="tagdot" style="background:var(--gold)"></span>Колежката</h3>
+        <p>Елегантна <b>газела</b> в офис облекло — тя показва розовата лепенка (кадър 14).</p>
+      </div>
+      <div class="card">
+        <h3><span class="tagdot" style="background:var(--rose)"></span>Продукт</h3>
+        <p>Малка кръгла <b>меко-розова лепенка FitPatches</b> на горната част на ръката + <b>розова кутия FitPatches</b>.</p>
+      </div>
+    </div>
+
+    <div class="lock">
+      <div class="lock-head"><span>STYLE LOCK — залепи в началото на всеки image prompt</span><button class="copy" data-copy="#styleLock" type="button">Copy</button></div>
+      <p class="prompt" id="styleLock">Pixar / Disney "Zootopia"-style 3D animated feature film, anthropomorphic animals, soft global illumination, subsurface-scattered fur, shallow cinematic depth of field, warm wholesome color grade, high detail, vertical 9:16 composition.</p>
+    </div>
+    <div class="lock">
+      <div class="lock-head"><span>CHARACTER LOCK — Мия (дословно във всеки неин кадър)</span><button class="copy" data-copy="#miaLock" type="button">Copy</button></div>
+      <p class="prompt" id="miaLock">Mia, a cute late-20s female river otter, warm chestnut-brown fur, cream muzzle and chest, soft rounded belly, big expressive dark eyes, rosy cheeks, small round ears, whiskers, gentle friendly face.</p>
+    </div>
+  </section>
+
+  <!-- SHOTS -->
+  <section>
+    <p class="eyebrow">Раскадровка · 22 кадъра</p>
+    <h2>Кадър по кадър</h2>
+    <p class="sub" style="margin:6px 0 20px"><b>Image</b> = начален кадър в gptimage&nbsp;2 · <b>Motion</b> = движение/камера в omniflash. Копирай, генерирай, синхронизирай с говора по таймкода.</p>
+    <div class="shots" id="shots"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  Раскадровка за FitPatches · Zootropolis-style spot. Таймкодовете са ориентировъчни — напаснете ги към финалния voiceover. Героинята (видра) е сменяема: заменете CHARACTER LOCK и оставете STYLE LOCK.
+</footer>
+
+<script>
+const STYLE = `Pixar / Disney "Zootopia"-style 3D animated feature film, anthropomorphic animals, soft global illumination, subsurface-scattered fur, shallow cinematic depth of field, warm wholesome color grade, high detail, vertical 9:16 composition.`;
+const MIA = `Mia, a cute late-20s female river otter, warm chestnut-brown fur, cream muzzle and chest, soft rounded belly, big expressive dark eyes, rosy cheeks, small round ears, whiskers.`;
+
+// tag -> color strip
+const C = {hook:'var(--rose)', story:'var(--muted)', flash:'var(--gold)', product:'var(--rose)', payoff:'var(--teal)', cta:'var(--rose)'};
+
+const SHOTS = [
+  {tag:'ХУК', c:'hook', dur:4,
+   vo:`Миналото лято за първи път не си свалих ризата на плажа.`,
+   note:`Мия на ръба на плажа, увита в риза, приятелките ѝ се смеят разфокусирано в морето зад нея.`,
+   img:`Standing at the edge of a sunny Mediterranean beach, wearing an oversized white linen shirt buttoned over a teal swimsuit, arms wrapped self-consciously around herself, looking down at the sand. Behind her, softly blurred friends splash and laugh in turquoise water. Melancholy mood, bright daylight, gentle bokeh.`,
+   mot:`Slow push-in on Mia. A warm breeze ruffles her fur and shirt; she hugs herself a little tighter and lowers her gaze. Subtle water shimmer in the background.`},
+
+  {tag:'ХУК', c:'hook', dur:4,
+   vo:`Не защото ми беше студено. А защото ме беше срам да ме видят.`,
+   note:`Близък план на лицето — свян, дърпа края на ризата надолу над коремчето.`,
+   img:`Close-up of Mia's face and shoulders, eyes lowered and cheeks flushed with embarrassment, one paw tugging the hem of her white shirt down over her belly. Warm side light, shallow focus.`,
+   mot:`Mia tugs her shirt hem downward and glances nervously to the side, ears dipping. Subtle self-conscious micro-expressions, slight camera drift.`},
+
+  {tag:'FLASHBACK', c:'flash', dur:3,
+   vo:`Едно време бях първата, която скачаше във водата.`,
+   note:`Флашбек, златист носталгичен грейд — безгрижна Мия скача с усмивка в морето.`,
+   img:`FLASHBACK, warm golden nostalgic grade. A carefree Mia mid-leap, jumping joyfully into sparkling turquoise sea, arms thrown up, huge open smile, water droplets flying, sun flare.`,
+   mot:`Hold the joyful leap, then she splashes into the water, droplets scattering in slight slow-motion, sun flare blooming. Energetic and happy.`},
+
+  {tag:'FLASHBACK', c:'flash', dur:3,
+   vo:`Намажа се със слънцезащитно и право в морето, без да се замислям.`,
+   note:`Продължава флашбекът — маже се набързо и хуква към вълните.`,
+   img:`FLASHBACK, golden nostalgic grade. Mia on the beach quickly rubbing sunscreen on her arm with a grin, then turning to dash toward the waves, relaxed and carefree, wind in her fur.`,
+   mot:`Mia finishes dabbing sunscreen and runs playfully toward the sea with a light bounce, a small splash as she reaches the water.`},
+
+  {tag:'СЕГА', c:'story', dur:4,
+   vo:`А сега седя облечена на шезлонга. В 33 градуса пек.`,
+   note:`Обратно в настоящето — облечена, потна, скована на шезлонга; жарко слънце, топлинно трептене.`,
+   img:`PRESENT DAY, flatter warm grade, intense midday heat. Mia sitting stiffly on a beach lounger fully covered — white shirt on, a towel draped over her legs — a bead of sweat on her brow, blazing sun overhead, faint heat shimmer in the air.`,
+   mot:`Heat shimmer rises around her; Mia fans herself with a paw, shifting uncomfortably, glancing at the inviting sea she won't join.`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:3,
+   vo:`Не ми пука толкова за килограмите. Те са само цифра.`,
+   note:`Замислен близък план, лека пренебрежителна свивка на рамене — „те са само цифра".`,
+   img:`Close-up of Mia looking thoughtful and a little tired, giving a small dismissive shrug, as if waving away a number in her mind. Warm soft light, contemplative.`,
+   mot:`Mia gives a small shrug and looks away with a faint "it doesn't matter" expression, slow subtle push-in.`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:6,
+   vo:`Най-лошото е, че бавно спрях да правя нещата, които обичам, и си измислях причини, за да не си признавам истинския проблем.`,
+   note:`Мия седи сама и малка отпред; приятелките ѝ играят волейбол и плуват в средния план. Тя гледа с копнеж, насилена усмивка.`,
+   img:`Mia sitting alone and small in the foreground on the lounger, while in the mid-ground her friends play beach volleyball and swim happily. She watches them wistfully, slightly slumped, a forced faint smile hiding her real feelings.`,
+   mot:`Gentle slow dolly; friends move and laugh in the background while Mia watches wistfully, her forced smile fading for a beat.`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:3,
+   vo:`На плажа приятелките ми ме викаха: „Ела бе, стига си седяла."`,
+   note:`Фламингото и гепардът във водата махат и я приканват весело.`,
+   img:`Two of Mia's friends in the turquoise water — a cheerful pink flamingo and a sporty cheetah in swimwear — waving and beckoning toward camera, calling her to join, big friendly smiles, splashes around them.`,
+   mot:`The friends wave and beckon energetically, splashing water, mouths moving as they cheerfully call out.`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:3,
+   vo:`Казах им, че искам да си дочета главата от книгата.`,
+   note:`Мия под чадъра вдига книга с извинителна усмивка и малък отказващ жест.`,
+   img:`Mia sitting under a striped beach umbrella, holding up an open paperback book with an apologetic little smile and a small "wave-off" gesture toward her friends.`,
+   mot:`Mia lifts the book slightly and gives an apologetic smile and a small wave, as if to say "I'll stay here".`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:8,
+   vo:`Останах под чадъра, докато те се забавляваха в морето. Четох една и съща страница десет минути — чудех се дали не ме обсъждат.`,
+   note:`Книга в ръцете, но очите ѝ тревожно се плъзгат към приятелките. Несигурност. Същата страница.`,
+   img:`Mia under the beach umbrella, book open in her paws but her big eyes drifting anxiously toward her laughing friends in the sea, an insecure worried expression, thumb nervously resting on the page.`,
+   mot:`Mia's eyes flick from the book to her friends and back, anxious; the book stays unmoving on the same page, ears twitching with worry.`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:6,
+   vo:`Прибрах се и започнах пак. Диети, ютуб инструктори, следене на калории. Свалях по два килограма, връщах три.`,
+   note:`Домашен монтаж: тъжна салата, телефон с тренировка, апликация за калории, кантар. Уморена, претоварена.`,
+   img:`Home montage vibe. Mia in her kitchen surrounded by diet clutter — a small sad salad, a phone propped up playing a workout video, a calorie-tracking app on a tablet, a bathroom scale on the floor. She looks tired and overwhelmed, mid-effort.`,
+   mot:`Quick energetic montage motion: Mia glances between the workout video and the calorie app, exhales, wipes her brow — busy but weary.`},
+
+  {tag:'ОЗАРЕНИЕ', c:'story', dur:7,
+   vo:`Разбрах нещо, което никой не ми беше казвал: проблемът не беше волята. Проблемът беше постоянният глад.`,
+   note:`Нощ, отворен светещ хладилник, лапичка на стомаха, гладен конфликтен поглед.`,
+   img:`Nighttime kitchen. Mia standing in front of the open, glowing refrigerator, one paw pressed to her stomach, staring at the food with a hungry, conflicted expression, cool fridge light on her face in the dark.`,
+   mot:`The fridge glow flickers on her face; Mia's stomach tightens under her paw as she resists, torn, swaying slightly toward and away from the fridge.`},
+
+  {tag:'ОЗАРЕНИЕ', c:'story', dur:6,
+   vo:`Цял ден се мъчех да издържа. Апетитът просто се управлява от процеси, които не решаваш съзнателно.`,
+   note:`На бюрото, бута чиния със снаксове настрани, стисната челюст — воля на предел.`,
+   img:`Mia at a desk trying to resist a plate of snacks she has pushed to the far edge, jaw set with effort, a tired determined look, subtle warm office light.`,
+   mot:`Mia pushes the snack plate further away, closes her eyes and sighs, shoulders dropping under the strain of constant willpower.`},
+
+  {tag:'ОТКРИТИЕ', c:'story', dur:8,
+   vo:`Попитах една колежка как яде толкова малко. Тя си вдигна ръкава и видях една розова лепенка. Каза, че точно това ѝ помогнало.`,
+   note:`Офис. Елегантна газела вдига ръкав и показва малка розова лепенка на ръката. Мия се навежда любопитно.`,
+   img:`Bright modern office. An elegant graceful female gazelle colleague in smart office wear rolls up her sleeve to reveal a small soft-pink dermal patch on her upper arm. Mia leans in, ears perked, eyes wide with curious surprise.`,
+   mot:`The gazelle rolls up her sleeve and points to the small pink patch; Mia leans in closer, eyes widening with intrigued curiosity.`},
+
+  {tag:'ПРОДУКТ', c:'product', dur:6,
+   vo:`Така попаднах на тези малки пластирчета с берберин, който се усвоява през кожата. Лепиш го сутрин и продължаваш деня си.`,
+   note:`ГЕРОЙ-КАДЪР. Светла баня, сутрешна светлина. Мия залепя розовата FitPatches лепенка на ръката, кутията до нея.`,
+   img:`HERO PRODUCT SHOT. Bright clean bathroom, soft morning light. Mia smoothing a small round soft-pink FitPatches patch onto her upper arm, smiling with quiet hope. A rose-pink FitPatches box sits on the counter beside her. Crisp, aspirational.`,
+   mot:`Mia presses and smooths the pink patch onto her arm with a fingertip, then gives a small hopeful smile into the mirror; morning light warms the scene.`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:4,
+   vo:`Първата ми мисъл беше „поредната глупост". Но реших да пробвам един месец.`,
+   note:`Скептично вдигната вежда → решителен кимащ поглед „добре, един месец". Календар зад нея.`,
+   img:`Close-up of Mia with one eyebrow skeptically raised, a wry "yeah, right" half-smile, glancing at the pink patch on her arm; a wall calendar softly visible behind her.`,
+   mot:`Mia raises one eyebrow skeptically, then her expression shifts into a small resolved nod — "okay, one month".`},
+
+  {tag:'ИСТОРИЯ', c:'story', dur:3,
+   vo:`Първите три дни — нищо. Честно.`,
+   note:`Календар с дни 1–2–3, неутрална свивка на рамене „нищо още".`,
+   img:`Simple clean shot of Mia shrugging with a neutral, unconvinced expression beside a wall calendar showing days 1, 2, 3 marked; flat honest lighting.`,
+   mot:`Day-marks tick by on the calendar; Mia shrugs, unimpressed, palms up — "nothing yet".`},
+
+  {tag:'ОБРАТ', c:'story', dur:8,
+   vo:`Към седмия ден минах покрай шкафа с бисквити и шоколад — и не ми се доядоха. Не се борих, просто не ми се дояде.`,
+   note:`Ден 7. Минава спокойно покрай отворен шкаф със сладки, поглежда с лека приятна изненада, без глад. Лепенката на ръката.`,
+   img:`Kitchen, day 7. Mia walking calmly past an open cupboard full of cookies and chocolate bars, glancing at them with mild pleasant surprise and no craving, the small pink patch visible on her arm, relaxed easy posture.`,
+   mot:`Mia strolls past the open snack cupboard, gives the cookies a calm glance and a surprised little smile, and keeps walking easily — completely relaxed.`},
+
+  {tag:'РЕЗУЛТАТ', c:'payoff', dur:4,
+   vo:`След месец готините ми дънки, които не бях обличала две години, се закопчаха.`,
+   note:`Спалня, огледало. Радостно закопчава стилни дънки, които вече ѝ стават.`,
+   img:`Bedroom, mirror. A delighted Mia happily buttoning up a pair of stylish blue jeans that now fit, looking down in joyful surprise, bright cheerful light.`,
+   mot:`Mia fastens the top button of her jeans, does a happy little bounce and beams at her reflection in the mirror.`},
+
+  {tag:'ПАЙОФ', c:'payoff', dur:5,
+   vo:`Най-важната промяна беше, че това лято не ме беше срам да съм по бански и в морето с приятелките ми.`,
+   note:`ПАЙОФ (огледало на кадър 3). Ярък плаж, златен час — уверена Мия по бански се смее в морето с приятелките си.`,
+   img:`PAYOFF SHOT, mirroring the earlier flashback. Bright joyful beach, golden hour, warm but real grade. A confident radiant Mia in a cute teal swimsuit laughing in the turquoise water together with her flamingo and cheetah friends, splashing and happy.`,
+   mot:`Mia runs and leaps into the sea with her friends, big splash, everyone laughing, water and light sparkling — pure joy and confidence.`},
+
+  {tag:'ПАЙОФ', c:'payoff', dur:5,
+   vo:`Не бих искала да се връщам към старото си аз — да ме е срам от тялото ми и да не мога да съм с приятелите си.`,
+   note:`Мия в плитчината на златен час, обръща се към камерата с топла уверена усмивка.`,
+   img:`Mia standing in the shallow water at golden hour, turning to smile warmly and confidently toward camera, relaxed and self-assured, a soft breeze in her fur, friends happily blurred behind her.`,
+   mot:`Mia turns to camera with a warm confident smile, wind gently moving her fur, a subtle grateful look in her eyes.`},
+
+  {tag:'CTA', c:'cta', dur:8,
+   vo:`Не мисля да спирам с тези FitPatches. Имат 60-дневен тест период — ако няма ефект, връщат парите. Оставям линка отдолу.`,
+   note:`CTA. Мия държи розовата FitPatches кутия към камерата, лепенка на ръката, широка усмивка. Празно място долу за линк/бутон + бадж „60 дни гаранция".`,
+   img:`CTA SHOT. Warm friendly shot of Mia holding a rose-pink FitPatches box toward camera with both paws, the small pink patch on her upper arm, bright confident smile; clean bright background with open space at the bottom for a link/button and a "60-day money-back guarantee" badge.`,
+   mot:`Mia presents the FitPatches box toward camera and points downward toward the link area with a friendly wink and smile; a subtle sparkle glints on the box.`}
+];
+
+// build
+const fmt = s => `${String(Math.floor(s/60)).padStart(1,'0')}:${String(s%60).padStart(2,'0')}`;
+let t = 0;
+const esc = x => x.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const html = SHOTS.map((s,i)=>{
+  const start = t; t += s.dur;
+  const strip = C[s.c] || 'var(--muted)';
+  const fullImg = `${STYLE}\n\n${MIA}\n\n${s.img}`;
+  const id1 = `img${i}`, id2 = `mot${i}`;
+  return `<article class="shot" style="--strip:${strip}">
+    <div class="shot-top">
+      <span class="num">${String(i+1).padStart(2,'0')}</span>
+      <span class="shot-tag">${s.tag}</span>
+      <span class="tc">${fmt(start)}–${fmt(t)} · ${s.dur}s</span>
+    </div>
+    <p class="vo">${esc(s.vo)}</p>
+    <p class="note"><b>Кадър:</b> <span>${esc(s.note)}</span></p>
+    <div class="prompts">
+      <div class="pblock">
+        <div class="lock-head"><span><span class="kind">IMAGE</span> · gptimage 2 — начален кадър</span><button class="copy" data-copy="#${id1}" type="button">Copy</button></div>
+        <p class="prompt" id="${id1}">${esc(fullImg)}</p>
+      </div>
+      <div class="pblock">
+        <div class="lock-head"><span><span class="kind">MOTION</span> · omniflash — движение</span><button class="copy" data-copy="#${id2}" type="button">Copy</button></div>
+        <p class="prompt" id="${id2}">${esc(s.mot)}</p>
+      </div>
+    </div>
+  </article>`;
+}).join('');
+document.getElementById('shots').innerHTML = html;
+
+// copy
+document.addEventListener('click', async e=>{
+  const b = e.target.closest('.copy'); if(!b) return;
+  const el = document.querySelector(b.dataset.copy); if(!el) return;
+  const txt = el.innerText;
+  try{ await navigator.clipboard.writeText(txt); }
+  catch{ const ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy')}catch{} ta.remove(); }
+  const old=b.textContent; b.textContent='Copied ✓'; b.classList.add('ok');
+  setTimeout(()=>{b.textContent=old; b.classList.remove('ok')},1400);
+});
+
+// theme toggle
+const tb=document.getElementById('themeBtn');
+tb.addEventListener('click',()=>{
+  const cur=document.documentElement.getAttribute('data-theme');
+  const next = cur==='dark' ? 'light' : cur==='light' ? 'dark'
+    : (matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', next);
+});
+</script>
+</body>
+</html>
