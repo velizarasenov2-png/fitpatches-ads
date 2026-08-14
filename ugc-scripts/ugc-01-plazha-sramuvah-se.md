@@ -24,6 +24,18 @@
 
 ---
 
+## БЛОК Б — ПЛАСТИРЪТ (по реалния продукт)
+
+Качваш снимката на пластира като **втора референтна снимка** в gptimage2 (заедно с кадъра от Сцена 01). Ако моделът приема само една референция — ползваш само това описание:
+
+```
+The patch: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, dusty blush-pink, with a fine fibrous surface texture and a clean laser-cut edge. It lies completely flat and conforms to the skin, no air bubbles, no lifted corners, no glossy plastic shine, no adhesive rim. A ring of very small dark-grey micro-print runs around the circumference just inside the edge, far too small to read — it must read as texture, not as legible words. It is a cosmetic transdermal patch, not a bandage, not a plaster, not a nicotine patch, not a sticker.
+```
+
+Заедно с него винаги слагай в NEGATIVE: `no readable text on the patch, no large letters on the patch, no logo, no cross-shaped bandage, no gauze pad, no square patch, no glossy patch`.
+
+---
+
 ## БЛОК А — описанието на героинята (трябва ти само ако не ползваш референтна снимка)
 
 ```
@@ -296,22 +308,24 @@ NEGATIVE: no subtitles, no captions, no on-screen text, no watermark, no music, 
 **Защо:** механизъм + демонстрация. Тук се вижда, че е лесно.
 **Тя казва:** „Така попаднах на тези малки пластирчета с берберин, който се усвоява през кожата. Лепиш го сутрин и си продължаваш деня."
 
-**КАДЪР — gptimage2**
+**КАДЪР — gptimage2** *(референция 1 = кадърът от Сцена 01, референция 2 = снимката на пластира)*
 ```
-Use the woman from the reference image. Keep her face, age, hair, skin texture and body type exactly identical — same person. Change only the location, clothes and pose as described below.
-Vertical 9:16 amateur mirror selfie photo. She wears a sleeveless white top so her bare upper arm is visible, hair damp and pushed back, no makeup. She is standing in front of an ordinary bathroom mirror, filming her reflection with the phone in one hand, her other hand pressing a small round pale-pink adhesive patch onto her upper arm. Background: bathroom tiles, a sink with a toothbrush cup, a small plain white-and-pink cardboard box with no readable text on the shelf, bright unflattering bathroom light.
+Use the woman from the first reference image — keep her face, age, hair, skin texture and body type exactly identical, same person. Use the second reference image for the patch — reproduce it exactly.
+Vertical 9:16 amateur mirror selfie photo, waist-up framing — her head in the upper third, her bare left upper arm clearly visible in the middle of the frame, no empty space at the bottom. She wears a white sleeveless tank top, hair loose and slightly damp, no makeup. She is standing in front of an ordinary bathroom mirror, filming her reflection with the phone held in her raised right hand at chest height. Her left shoulder is turned slightly towards the mirror to show the patch already stuck on the outer side of her left upper arm. Her left arm hangs relaxed at her side — the arms do NOT cross, only one hand is raised.
+The patch: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, dusty blush-pink, with a fine fibrous surface texture and a clean laser-cut edge. It lies completely flat and conforms to the skin, no air bubbles, no lifted corners, no glossy plastic shine, no adhesive rim. A ring of very small dark-grey micro-print runs around the circumference just inside the edge, far too small to read — it must read as texture, not as legible words. It is a cosmetic transdermal patch, not a bandage, not a plaster, not a nicotine patch, not a sticker.
+Background: bathroom wall tiles, a sink, a toothbrush cup, and a small flat closed blank cardboard box lying on the shelf, matte white with a thin pink stripe and no readable text. Bright unflattering bathroom light.
 Shot on an iPhone 12, 1080p, slightly soft, digital noise, flat unedited colours, mirror glare, no colour grading, no bokeh, no professional lighting. Looks like a real woman filming herself, not an ad.
-No text, no captions, no readable writing on the box, no brand logo, no watermark, not a model, no beauty retouch.
+No text, no captions, no readable text on the patch, no large letters on the patch, no logo, no readable writing on the box, no watermark, not a model, no beauty retouch, no smooth plastic skin, no crossed arms, no extra hands, no cotton pad, no makeup remover pad, no gauze pad, no cross-shaped bandage, no square patch, no glossy patch.
 ```
 
 **ВИДЕО — omniflash**
 ```
-Animate this exact frame. Same woman, same face, same clothes, same bathroom mirror. She presses the small pale-pink patch flat onto her upper arm, smooths it with two fingers, then looks up into the mirror and keeps talking to her own reflection. Blinks, natural head movement, real speech mouth shapes. Handheld phone, slight shake and mirror reflection.
+Animate this exact frame. Same woman, same face, same clothes, same bathroom mirror. She keeps the phone raised in her right hand and talks to her own reflection. She turns her left shoulder a little further towards the mirror so the round pink patch on her upper arm stays clearly visible, then looks back up into the lens. The patch stays exactly the same size, shape, colour and position for the whole shot. Blinks, natural head movement, real speech mouth shapes. Handheld phone, slight shake and mirror reflection. Her free arm stays relaxed at her side and never crosses her body.
 DIALOGUE (Bulgarian, spoken exactly as written): „Така попаднах на тези малки пластирчета с берберин, който се усвоява през кожата. Лепиш го сутрин и си продължаваш деня."
 VOICE: same real 45-year-old Bulgarian woman, warm slightly hoarse, simple and matter-of-fact, like explaining a small everyday habit.
 AUDIO: only her voice plus faint bathroom room tone. No music.
 CAMERA: handheld mirror selfie, one continuous take, no cuts.
-NEGATIVE: no subtitles, no captions, no on-screen text, no readable packaging text, no watermark, no music, no scene change, no beauty filter.
+NEGATIVE: no subtitles, no captions, no on-screen text, no readable text on the patch, no readable packaging text, no watermark, no music, no scene change, no beauty filter, no crossed arms, no extra hands, no morphing fingers, no patch changing shape or size, no patch peeling off.
 ```
 
 > **Монтаж:** тук вмъкни 1–2 сек close-up на реалния FitPatches пластир/кутия.
