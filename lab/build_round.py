@@ -37,6 +37,10 @@ def load(path):
 
 
 def clean_text(s, note):
+    # "като C0 …" / "като родителя …" are author shorthand; the panel must not see them.
+    s = re.sub(r"\s*\bкато C0 \(джипът\)", ": „След това един с джип щеше да ме блъсне 😑😑“", s)
+    s = re.sub(r"(?i)(^|\s)като (в |при )?(C0|родителя)\b[:,]?\s*", lambda m: m.group(1), s).strip()
+    s = s[:1].upper() + s[1:] if note and s else s
     # Parenthesised production notes that name the control or the gene go everywhere.
     s = re.sub(r"\s*\([^()]*\)", lambda m: "" if LEAK.search(m.group(0)) else m.group(0), s)
     if not note:
