@@ -276,6 +276,172 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261001-2313-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V11",
+          "name": "ugc1 · W1 без хапчета, без инжекции",
+          "composite": 34.5,
+          "ci90": [
+            30.2,
+            38.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V14",
+          "name": "ugc1 · W2 снимката от сватбата",
+          "composite": 33.7,
+          "ci90": [
+            29.1,
+            38.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 · W3 не е шоколадът, а умората",
+          "composite": 32.3,
+          "ci90": [
+            25.8,
+            38.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V12",
+          "name": "ugc1 · A4 какво има вътре",
+          "composite": 30.7,
+          "ci90": [
+            25.1,
+            36.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "ugc1 · A7 тялото ми се промени",
+          "composite": 28.0,
+          "ci90": [
+            21.1,
+            34.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "ugc1 · A6 сестра ми и 3+1",
+          "composite": 27.8,
+          "ci90": [
+            23.8,
+            32.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "ugc1 · W5 07:10 · 15:30 · 21:00",
+          "composite": 27.6,
+          "ci90": [
+            22.3,
+            32.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "ugc1 · W6 до жената, която…",
+          "composite": 26.6,
+          "ci90": [
+            20.0,
+            33.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "ugc1 · A5 шоколадът в 21:00",
+          "composite": 25.6,
+          "ci90": [
+            19.8,
+            31.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V15",
+          "name": "ad1 (videa3)",
+          "composite": 24.6,
+          "ci90": [
+            20.5,
+            29.1
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V1",
+          "name": "ugc1 · W4 5 неща, които бавят метаболизма ми",
+          "composite": 24.1,
+          "ci90": [
+            20.8,
+            27.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V13",
+          "name": "ugc1 - Copy",
+          "composite": 22.7,
+          "ci90": [
+            17.6,
+            27.8
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V4",
+          "name": "ugc1 · A3 с какво сте различни",
+          "composite": 19.9,
+          "ci90": [
+            15.6,
+            24.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "ugc1 · A8 пробвала съм всичко",
+          "composite": 18.6,
+          "ci90": [
+            14.5,
+            23.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "ugc1 · C0 почистена контрола",
+          "composite": 14.9,
+          "ci90": [
+            12.1,
+            17.7
+          ],
+          "real": null
+        }
+      ]
     }
   ]
 }

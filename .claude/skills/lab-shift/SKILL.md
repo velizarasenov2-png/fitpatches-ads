@@ -12,8 +12,9 @@ description: Лабораторна смяна на всеки 4 часа (ру�
 3. **Опашка от гени** (`team/lab/gene-queue.json`, създай го, ако липсва): за всяка ACTIVE реклама редът е `angle → world_format → hook → angle → world_format → script` и отначало. Ъглите и формати от света са 2/3 от всичко.
 4. **Рунд** `/ad-lab active`: **до 12 варианта** (≈6 нови ъгъла + ≈6 формата от света) + контрола + 2 котви:
    - вариантите пишат `copywriter` и `creative-strategist` паралелно;
-   - `compliance-officer` филтрира;
-   - 4 панела `audience-panel` (A–D) паралелно;
+   - `compliance-officer` филтрира и пише само вердикти и замени в `drafts/compliance.json`; `python3 lab/apply_review.py <run> drafts/copywriter.json drafts/strategist.json` → `reviewed.json`;
+   - `python3 lab/build_round.py <run> --reviewed <run>/reviewed.json --control-from <рунд с контролата> --anchors-from <рунд с котвите>` → `variants.json`, сляпа версия без следи от контролата, `pairs.json`;
+   - при 15 реклами: 8 панела `audience-panel` (A–H) по 3 персони паралелно (по-малки файлове, по-малко грешки); при ≤ 11 реклами: 4 панела по 6;
    - `python3 lab/score.py`.
 5. **Решение:** ако вариант печели A/B срещу контролата (≥ 60% от ICP) и има по-висок SIM, той става **кандидат за реален A/B тест в Meta**. Получава мисия „чака твоето „да““ в играта и ред в `team/decision-log.md`. Само се предлага, не се създава.
 6. **Играта** (един `batch` след `list`):
