@@ -196,8 +196,8 @@ footer{padding-top:22px;color:var(--muted);font-size:.78rem;max-width:80ch}
   <section class="row2">
     <div class="stack">
       <div class="frame" aria-labelledby="h-sim">
-        <div class="fh"><h2 id="h-sim">Симулационна камера</h2><span class="lbl mono" id="run-id"></span></div>
-        <div id="arena"><p class="empty">Тук излизат битките между вариантите. 24 синтетични клиентки от твоя ICP оценяват на сляпо: спира ли скрола, гледа ли докрай, разбира ли продукта, кликва ли, купува ли и взема ли си пратката.</p></div>
+        <div class="fh"><h2 id="h-sim">Симулационна камера · A/B</h2><span class="lbl mono" id="run-id"></span></div>
+        <div id="arena"><p class="empty">Тук излизат битките между вариантите. Всеки нов ъгъл и формат се сблъсква с контролата пред 24 синтетични клиентки от твоя ICP: спира ли скрола, гледа ли докрай, кликва ли, купува ли.</p></div>
       </div>
       <div class="frame" aria-labelledby="h-crew">
         <div class="fh"><h2 id="h-crew">Екипаж</h2><span class="lbl">ниво · опит · задача</span></div>
@@ -362,13 +362,16 @@ footer{padding-top:22px;color:var(--muted);font-size:.78rem;max-width:80ch}
     var fs=el("div","fighters");
     a.fighters.forEach(function(f,i){var row=el("div","ft"+(i===0?" first":""));row.appendChild(el("div","rk",i===0?"01":(i+1<10?"0":"")+(i+1)));
       var mid=el("div");mid.style.minWidth="0";var nm=el("div","fn");nm.appendChild(el("span",null,f.name||f.code));
-      if(f.anchor==="winner")nm.appendChild(el("span","tag win","реален победител"));if(f.anchor==="loser")nm.appendChild(el("span","tag lose","реален губещ"));if(f.gene)nm.appendChild(el("span","tag gene",f.gene));mid.appendChild(nm);
+      if(f.anchor==="winner")nm.appendChild(el("span","tag win","реален победител"));if(f.anchor==="loser")nm.appendChild(el("span","tag lose","реален губещ"));if(f.gene)nm.appendChild(el("span","tag gene",f.gene));
+      if(f.control)nm.appendChild(el("span","tag","контрола"));
+      if(f.ab!=null&&!f.control){var ab=el("span","tag "+(f.ab>=0.6?"win":f.ab<0.4?"lose":""),"A/B "+Math.round(f.ab*100)+"% срещу контролата");nm.appendChild(ab);}
+      mid.appendChild(nm);
       var col=f.score>=50?"#56f0b5":f.score>=30?"#45d4ff":"#ff4d5e";var bar=el("div","bar");var fi=el("i");fi.style.width=Math.max(2,Math.min(100,f.score||0))+"%";fi.style.background=col;fi.style.color=col;bar.appendChild(fi);
       if(f.ci&&f.ci.length===2){var ci=el("span","ci");ci.style.left=f.ci[0]+"%";ci.style.width=Math.max(1,f.ci[1]-f.ci[0])+"%";bar.appendChild(ci);}mid.appendChild(bar);
-      var sx=el("div","fs");[["спира",f.stop],["задържа",f.watch],["разбира",f.understanding],["клик",f.click],["купува",f.buy],["взима пратката",f.pickup]].forEach(function(p){if(p[1]==null)return;var sp=el("span",null,p[0]+" ");sp.appendChild(el("b",null,fmt(p[1],1)));sx.appendChild(sp);});if(sx.childNodes.length)mid.appendChild(sx);
+      var sx=el("div","fs");[["спира",f.stop],["задържа",f.watch],["клик",f.click],["купува",f.buy]].forEach(function(p){if(p[1]==null)return;var sp=el("span",null,p[0]+" ");sp.appendChild(el("b",null,fmt(p[1],1)));sx.appendChild(sp);});if(sx.childNodes.length)mid.appendChild(sx);
       if(f.curve&&f.curve.length){var cvv=el("div","curve");f.curve.forEach(function(x,k){var b=el("i");b.style.height=Math.max(2,Math.round(x*20))+"px";b.title="сцена "+(k+1)+": "+Math.round(x*100)+"%";cvv.appendChild(b);});mid.appendChild(cvv);}
-      var sub=[];if(f.qos!=null)sub.push("качествени поръчки "+fmt(f.qos,1));if(f.real&&f.real.cpa!=null)sub.push("реален CPA "+fmt(f.real.cpa)+" €");if(f.real&&f.real.link_ctr!=null)sub.push("CTR "+fmt(f.real.link_ctr)+"%");if(f.real&&f.real.hold_rate!=null)sub.push("hold "+Math.round(f.real.hold_rate*100)+"%");if(f.real&&f.real.pickup_rate!=null)sub.push("взети "+Math.round(f.real.pickup_rate*100)+"%");
-      if(sub.length)mid.appendChild(el("div","sub2",sub.join(" · ")));if(f.quote)mid.appendChild(el("div","quote","„"+f.quote+"“"));if(f.door_doubt)mid.appendChild(el("div","sub2","Пред куриера: „"+f.door_doubt+"“"));
+      var sub=[];if(f.qos!=null)sub.push("сила на ъгъла "+fmt(f.qos,1));if(f.real&&f.real.cpa!=null)sub.push("реален CPA "+fmt(f.real.cpa)+" €");if(f.real&&f.real.link_ctr!=null)sub.push("CTR "+fmt(f.real.link_ctr)+"%");if(f.real&&f.real.hold_rate!=null)sub.push("hold "+Math.round(f.real.hold_rate*100)+"%");if(f.real&&f.real.pickup_rate!=null)sub.push("взети "+Math.round(f.real.pickup_rate*100)+"%");
+      if(sub.length)mid.appendChild(el("div","sub2",sub.join(" · ")));if(f.quote)mid.appendChild(el("div","quote","„"+f.quote+"“"));
       row.appendChild(mid);row.appendChild(el("div","score num",fmt(f.score,0)));fs.appendChild(row);});
     box.appendChild(fs);}
 

@@ -46,6 +46,7 @@ def arena(run_dir):
             "click": icp.get("click"), "buy": icp.get("buy"), "pickup": icp.get("pickup"), "qos": icp.get("qos"),
             "curve": r.get("retention_curve"), "door_doubt": (r.get("door_doubts") or [None])[0],
             "anchor": v.get("anchor"), "gene": gene, "quote": quote,
+            "ab": r.get("ab_vs_control"), "control": r.get("control"),
             "real": {k: real.get(k) for k in ("cpa", "link_ctr", "spend", "hold_rate", "pickup_rate") if real.get(k) is not None} or None,
         })
     meta = {}

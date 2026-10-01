@@ -26,9 +26,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PERSONAS = os.path.join(ROOT, "team", "lab", "personas.json")
 LEADERBOARD = os.path.join(ROOT, "team", "lab", "leaderboard.json")
 METRICS = ["stop", "watch", "understanding", "relevance", "trust", "click", "buy", "pickup"]
-# Team goal: hold attention, educate, and bring buyers who actually take the parcel (COD).
+OPTIONAL = {"understanding", "pickup"}  # kept for diagnostics, not in the composite
+# Team goal (owner, 01.10): which angle/format stops the scroll, holds, gets the click and the sale.
 # SIM composite on a 0-100 scale.
-WEIGHTS = {"stop": 0.20, "watch": 0.20, "understanding": 0.15, "click": 0.15, "buy": 0.15, "pickup": 0.15}
+WEIGHTS = {"stop": 0.30, "watch": 0.25, "click": 0.25, "buy": 0.20}
 
 
 def load_json(path):
@@ -51,8 +52,8 @@ def ctr_index(r):
 
 
 def qos(r):
-    # "Quality orders" index: stops, clicks, buys AND takes the parcel. Uncalibrated proxy.
-    return 1000 * (r["stop"] / 10) * (r["click"] / 10) * (r["buy"] / 10) * (r["pickup"] / 10)
+    # "Angle power" index: stops the scroll, clicks AND buys. Uncalibrated proxy.
+    return 1000 * (r["stop"] / 10) * (r["click"] / 10) * (r["buy"] / 10)
 
 
 def ranks(xs):
@@ -121,7 +122,8 @@ def main():
                 continue
             if "pickup" not in r and "refusal_risk" in r:  # older panel files
                 r["pickup"] = 10 - float(r["refusal_risk"])
-            r.setdefault("understanding", r.get("relevance", 0))
+            for m in OPTIONAL:
+                r.setdefault(m, 0)
             try:
                 for m in METRICS:
                     r[m] = max(0, min(10, float(r[m])))
@@ -179,6 +181,18 @@ def main():
             games.append((w, loser, wt))
     bt = bradley_terry(list(vmap), games) if games else {}
 
+    # Simple A/B: head-to-head share of personas picking the variant over the control
+    controls = [c for c, v in vmap.items() if v.get("control")]
+    ab = {}
+    for c in controls:
+        for w, l, wt in games:
+            if c in (w, l):
+                other = l if w == c else w
+                won = wt if w == other else 0.0
+                tot = ab.setdefault(other, [0.0, 0.0])
+                tot[0] += won
+                tot[1] += wt
+
     results = []
     for code, v in vmap.items():
         icp = agg(by_var[code], True)
@@ -202,6 +216,8 @@ def main():
             "mutated_gene": v.get("mutated_gene"), "gene_value": v.get("gene_value"),
             "icp": icp, "others": other, "ci90": boot_ci(code),
             "bt_strength": round(bt.get(code, float("nan")), 3) if bt else None,
+            "ab_vs_control": round(ab[code][0] / ab[code][1], 2) if code in ab and ab[code][1] else None,
+            "control": bool(v.get("control")),
             "top_quotes": quotes, "objections": objections[:5], "door_doubts": door[:5], "learned": learned[:3],
             "retention_curve": curve, "real": v.get("real"),
         })
@@ -271,13 +287,14 @@ def main():
     # Markdown summary
     lines = [f"# Резултати от симулацията: {out['run_id']}", "",
              f"Панели: {len(panels)} · оценки: {len(ratings)} · двойки: {len(games)} · персони: {len(used_personas)}", "",
-             "| # | Код | Вариант | SIM (ICP) | 90% интервал | Спира | Задържа | Разбира | Клик | Купува | Взима пратката | Качествени поръчки | BT | Външни: клик |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+             "| # | Код | Вариант | SIM (ICP) | 90% интервал | A/B срещу контролата | Спира | Задържа | Клик | Купува | Сила на ъгъла | BT | Външни: клик |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for r in results:
         i, o = r["icp"] or {}, r["others"] or {}
-        lines.append(f"| {r['rank']} | {r['code']} | {r['name']} | **{i.get('composite','–')}** | {r['ci90'] or '–'} | "
-                     f"{i.get('stop','–')} | {i.get('watch','–')} | {i.get('understanding','–')} | {i.get('click','–')} | {i.get('buy','–')} | "
-                     f"{i.get('pickup','–')} | {i.get('qos','–')} | {r['bt_strength'] if r['bt_strength'] is not None else '–'} | {o.get('click','–')} |")
+        abv = "контрола" if r["control"] else (f"{int(r['ab_vs_control']*100)}%" if r["ab_vs_control"] is not None else "–")
+        lines.append(f"| {r['rank']} | {r['code']} | {r['name']} | **{i.get('composite','–')}** | {r['ci90'] or '–'} | {abv} | "
+                     f"{i.get('stop','–')} | {i.get('watch','–')} | {i.get('click','–')} | {i.get('buy','–')} | "
+                     f"{i.get('qos','–')} | {r['bt_strength'] if r['bt_strength'] is not None else '–'} | {o.get('click','–')} |")
     if calib:
         lines += ["", "## Калибрация спрямо реалните резултати в Meta", "```", json.dumps(calib, ensure_ascii=False, indent=2), "```",
                   "Spearman е от −1 до 1: над 0.5 значи, че симулацията подрежда рекламите горе-долу като реалността; около 0 значи, че не ги подрежда."]
@@ -292,8 +309,7 @@ def main():
         lines += [f"> {q}" for q in r["top_quotes"]]
         if r.get("retention_curve"):
             lines.append("Задържане по сцени (дял ICP, които още гледат): " + " → ".join(f"{int(x*100)}%" for x in r["retention_curve"]))
-        if r.get("door_doubts"):
-            lines.append("Съмнения пред куриера: " + " | ".join(r["door_doubts"][:3]))
+
     if warnings:
         lines += ["", "## ⚠️ Предупреждения", *[f"- {w}" for w in warnings]]
     with open(os.path.join(run_dir, "results.md"), "w", encoding="utf-8") as f:
