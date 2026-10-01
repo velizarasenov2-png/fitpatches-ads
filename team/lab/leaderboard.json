@@ -150,6 +150,132 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261001-2030-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V7",
+          "name": "ugc1 · S2 отговарям на коментарите",
+          "composite": 38.8,
+          "ci90": [
+            33.5,
+            44.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V11",
+          "name": "ugc1 · M1 скритата причина",
+          "composite": 31.1,
+          "ci90": [
+            23.7,
+            39.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "ugc1 · A2 ям като врабче",
+          "composite": 30.6,
+          "ci90": [
+            23.8,
+            37.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "ugc1 · M2 роклята на 46",
+          "composite": 28.0,
+          "ci90": [
+            21.8,
+            34.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "ugc1 · M3 доверие + оферта",
+          "composite": 26.7,
+          "ci90": [
+            19.5,
+            34.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 · E1 образователен блок",
+          "composite": 24.5,
+          "ci90": [
+            19.5,
+            29.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "ugc1 · S1 мит → истина",
+          "composite": 23.2,
+          "ci90": [
+            18.8,
+            28.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "ugc1 - Copy",
+          "composite": 22.8,
+          "ci90": [
+            18.0,
+            27.5
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V1",
+          "name": "ad1 (videa3)",
+          "composite": 22.2,
+          "ci90": [
+            17.6,
+            27.3
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V6",
+          "name": "ugc1 · C0 почистена контрола",
+          "composite": 19.5,
+          "ci90": [
+            17.0,
+            22.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "ugc1 · A1 майка без време",
+          "composite": 16.6,
+          "ci90": [
+            11.5,
+            23.7
+          ],
+          "real": null
+        }
+      ]
     }
   ]
 }
