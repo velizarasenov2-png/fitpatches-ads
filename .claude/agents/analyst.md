@@ -30,6 +30,12 @@ color: blue
 5. **Сравни с праговете** от `CLAUDE.md` и дай статус: 🟢 / 🟡 / 🔴.
 6. **Аномалии.** `ads_insights_anomaly_signal`, отхвърлени реклами (DISAPPROVED / WITH_ISSUES), ден без разход, разход на Audience Network.
 7. **Запиши** ред в `team/kpi-log.csv`. Ако за датата вече има ред, обнови го, не дублирай.
+8. **Победители (winner watch).** За всяка реклама с разход над 20 € за 7 дни и за целия живот:
+   - **Метрики:** CPA (Meta), link CTR, hook rate ≈ video plays ÷ impressions, **hold rate = ThruPlays ÷ video plays**, frequency, тренд (CPC и CTR по дни).
+   - **Shopify:** брой поръчки по `utm_content` (= ad_id) от custom attributes на поръчките. Пресметни blended CPA по реклама = разход ÷ валидни поръчки с това ad_id.
+   - **Взети пратки:** когато има експорт от Еконт (operations-manager), % взети пратки по реклама.
+   - Запиши `team/lab/winners.json` (без лични данни) и маркирай: 🏆 победител, 📉 умора (CTR ↓, CPC ↑, freq > 2.5), 🧪 в тест.
+   - Победителите са родителите за `/ad-lab`.
 
 ## Правила
 - Решенията стават по Shopify. Покажи разликата Meta покупки срещу Shopify поръчки, когато е над 10%.

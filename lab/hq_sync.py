@@ -42,9 +42,11 @@ def arena(run_dir):
             gene = f'{r["mutated_gene"]}: {str(r.get("gene_value") or "")[:40]}'
         fighters.append({
             "code": r["code"], "name": r["name"], "score": icp.get("composite"), "ci": r.get("ci90"),
-            "stop": icp.get("stop"), "click": icp.get("click"), "buy": icp.get("buy"),
+            "stop": icp.get("stop"), "watch": icp.get("watch"), "understanding": icp.get("understanding"),
+            "click": icp.get("click"), "buy": icp.get("buy"), "pickup": icp.get("pickup"), "qos": icp.get("qos"),
+            "curve": r.get("retention_curve"), "door_doubt": (r.get("door_doubts") or [None])[0],
             "anchor": v.get("anchor"), "gene": gene, "quote": quote,
-            "real": {k: real.get(k) for k in ("cpa", "link_ctr", "spend") if real.get(k) is not None} or None,
+            "real": {k: real.get(k) for k in ("cpa", "link_ctr", "spend", "hold_rate", "pickup_rate") if real.get(k) is not None} or None,
         })
     meta = {}
     meta_path = os.path.join(run_dir, "meta.json")

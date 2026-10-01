@@ -25,9 +25,10 @@ from collections import defaultdict
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PERSONAS = os.path.join(ROOT, "team", "lab", "personas.json")
 LEADERBOARD = os.path.join(ROOT, "team", "lab", "leaderboard.json")
-METRICS = ["stop", "watch", "relevance", "trust", "click", "buy", "refusal_risk"]
-# Composite on a 0-100 scale. Buying intent and clicking matter most; trust protects CPA.
-WEIGHTS = {"stop": 0.30, "click": 0.30, "buy": 0.25, "trust": 0.15}
+METRICS = ["stop", "watch", "understanding", "relevance", "trust", "click", "buy", "pickup"]
+# Team goal: hold attention, educate, and bring buyers who actually take the parcel (COD).
+# SIM composite on a 0-100 scale.
+WEIGHTS = {"stop": 0.20, "watch": 0.20, "understanding": 0.15, "click": 0.15, "buy": 0.15, "pickup": 0.15}
 
 
 def load_json(path):
@@ -47,6 +48,11 @@ def composite(r):
 def ctr_index(r):
     # Probability-like funnel proxy: stops the scroll AND clicks.
     return 100 * (r["stop"] / 10) * (r["click"] / 10)
+
+
+def qos(r):
+    # "Quality orders" index: stops, clicks, buys AND takes the parcel. Uncalibrated proxy.
+    return 1000 * (r["stop"] / 10) * (r["click"] / 10) * (r["buy"] / 10) * (r["pickup"] / 10)
 
 
 def ranks(xs):
@@ -113,6 +119,9 @@ def main():
             if r.get("variant") not in vmap or r.get("persona") not in personas:
                 warnings.append(f"unknown variant/persona in panel {pnl.get('panel_id')}: {r.get('persona')}/{r.get('variant')}")
                 continue
+            if "pickup" not in r and "refusal_risk" in r:  # older panel files
+                r["pickup"] = 10 - float(r["refusal_risk"])
+            r.setdefault("understanding", r.get("relevance", 0))
             try:
                 for m in METRICS:
                     r[m] = max(0, min(10, float(r[m])))
@@ -144,6 +153,7 @@ def main():
         out = {m: round(wmean([(r[m], personas[r["persona"]]["weight"]) for r in sub]), 2) for m in METRICS}
         out["composite"] = round(wmean([(composite(r), 1) for r in sub]), 1)
         out["ctr_index"] = round(wmean([(ctr_index(r), 1) for r in sub]), 1)
+        out["qos"] = round(wmean([(qos(r), 1) for r in sub]), 1)
         out["n"] = len(sub)
         return out
 
@@ -176,12 +186,24 @@ def main():
         quotes = [f'{personas[r["persona"]]["name"]} ({r["persona"]}): {r.get("quote","")}'
                   for r in sorted(by_var[code], key=lambda r: -composite(r))[:2]]
         objections = [r.get("objection", "") for r in by_var[code] if personas[r["persona"]]["icp"] and r.get("objection")]
+        door = [r.get("door_doubt", "") for r in by_var[code] if personas[r["persona"]]["icp"] and r.get("door_doubt")]
+        learned = [r.get("learned", "") for r in by_var[code] if personas[r["persona"]]["icp"] and r.get("learned")]
+        # Retention curve: share of ICP personas still watching after each scene (left_at 0 = watched to the end)
+        icp_rs = [r for r in by_var[code] if personas[r["persona"]]["icp"]]
+        n_sc = max([int(r.get("left_at") or 0) for r in icp_rs] + [len(v.get("scenes") or [])] + [0])
+        curve = None
+        if icp_rs and n_sc:
+            curve = []
+            for k in range(1, n_sc + 1):
+                still = sum(1 for r in icp_rs if not r.get("left_at") or int(r["left_at"]) > k)
+                curve.append(round(still / len(icp_rs), 2))
         results.append({
             "code": code, "name": v.get("name", code), "parent": v.get("parent"),
             "mutated_gene": v.get("mutated_gene"), "gene_value": v.get("gene_value"),
             "icp": icp, "others": other, "ci90": boot_ci(code),
             "bt_strength": round(bt.get(code, float("nan")), 3) if bt else None,
-            "top_quotes": quotes, "objections": objections[:5], "real": v.get("real"),
+            "top_quotes": quotes, "objections": objections[:5], "door_doubts": door[:5], "learned": learned[:3],
+            "retention_curve": curve, "real": v.get("real"),
         })
     results.sort(key=lambda x: -(x["icp"]["composite"] if x["icp"] else -1))
     for i, r in enumerate(results, 1):
@@ -199,10 +221,17 @@ def main():
         calib = {"n_ads": len(real), "min_spend": min_spend}
         if all(v is not None for v in series("link_ctr")):
             calib["spearman_ctrindex_vs_real_ctr"] = spearman(ctri, series("link_ctr"))
+        holds = [(x["icp"]["watch"], x["real"].get("hold_rate")) for x in real if x["real"].get("hold_rate") is not None]
+        if len(holds) >= 3:
+            calib["spearman_watch_vs_real_hold"] = spearman([a for a, _ in holds], [b for _, b in holds])
+        picks = [(x["icp"]["pickup"], x["real"].get("pickup_rate")) for x in real if x["real"].get("pickup_rate") is not None]
+        if len(picks) >= 3:
+            calib["spearman_pickup_vs_real_pickup"] = spearman([a for a, _ in picks], [b for _, b in picks])
         cpas = series("cpa")
         if all(v is not None for v in cpas):
             inv = [-c for c in cpas]
             calib["spearman_composite_vs_real_cpa"] = spearman(comp, inv)
+            calib["spearman_qos_vs_real_cpa"] = spearman([x["icp"]["qos"] for x in real], inv)
             calib["spearman_bt_vs_real_cpa"] = spearman(btv, inv)
             agree = total = 0
             for i in range(len(real)):
@@ -242,13 +271,13 @@ def main():
     # Markdown summary
     lines = [f"# Резултати от симулацията: {out['run_id']}", "",
              f"Панели: {len(panels)} · оценки: {len(ratings)} · двойки: {len(games)} · персони: {len(used_personas)}", "",
-             "| # | Код | Вариант | SIM (ICP) | 90% интервал | Спира | Клик | Купува | Доверие | CTR индекс | BT | Външни: клик |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+             "| # | Код | Вариант | SIM (ICP) | 90% интервал | Спира | Задържа | Разбира | Клик | Купува | Взима пратката | Качествени поръчки | BT | Външни: клик |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for r in results:
         i, o = r["icp"] or {}, r["others"] or {}
         lines.append(f"| {r['rank']} | {r['code']} | {r['name']} | **{i.get('composite','–')}** | {r['ci90'] or '–'} | "
-                     f"{i.get('stop','–')} | {i.get('click','–')} | {i.get('buy','–')} | {i.get('trust','–')} | "
-                     f"{i.get('ctr_index','–')} | {r['bt_strength'] if r['bt_strength'] is not None else '–'} | {o.get('click','–')} |")
+                     f"{i.get('stop','–')} | {i.get('watch','–')} | {i.get('understanding','–')} | {i.get('click','–')} | {i.get('buy','–')} | "
+                     f"{i.get('pickup','–')} | {i.get('qos','–')} | {r['bt_strength'] if r['bt_strength'] is not None else '–'} | {o.get('click','–')} |")
     if calib:
         lines += ["", "## Калибрация спрямо реалните резултати в Meta", "```", json.dumps(calib, ensure_ascii=False, indent=2), "```",
                   "Spearman е от −1 до 1: над 0.5 значи, че симулацията подрежда рекламите горе-долу като реалността; около 0 значи, че не ги подрежда."]
@@ -261,6 +290,10 @@ def main():
     for r in results[:3]:
         lines.append(f"**{r['code']} {r['name']}**")
         lines += [f"> {q}" for q in r["top_quotes"]]
+        if r.get("retention_curve"):
+            lines.append("Задържане по сцени (дял ICP, които още гледат): " + " → ".join(f"{int(x*100)}%" for x in r["retention_curve"]))
+        if r.get("door_doubts"):
+            lines.append("Съмнения пред куриера: " + " | ".join(r["door_doubts"][:3]))
     if warnings:
         lines += ["", "## ⚠️ Предупреждения", *[f"- {w}" for w in warnings]]
     with open(os.path.join(run_dir, "results.md"), "w", encoding="utf-8") as f:

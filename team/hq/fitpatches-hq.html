@@ -116,6 +116,13 @@ p{margin:0}
 .f-score{font-family:var(--f-pixel);font-size:1.15rem;text-align:right}
 .f-sub{font-size:.76rem;color:var(--muted);margin-top:3px}
 .f-quote{font-size:.8rem;color:var(--patch);margin-top:3px;font-style:italic}
+.f-stats{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:5px;font-size:.76rem}
+.f-stats span{white-space:nowrap}
+.f-stats b{font-family:var(--f-pixel);font-weight:600;font-size:.86rem}
+.curve{display:flex;align-items:flex-end;gap:2px;height:22px;margin-top:5px}
+.curve i{display:block;width:10px;background:var(--info);min-height:2px}
+.curve-l{font-size:.68rem;color:var(--muted);font-family:var(--f-mono)}
+.f-door{font-size:.76rem;color:var(--muted);margin-top:3px}
 
 /* Radar */
 .radar-box{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;align-items:start}
@@ -148,6 +155,7 @@ footer{padding-top:22px;color:var(--muted);font-size:.8rem}
         <span class="chip"><span class="k">MER</span><b class="num" id="c-mer">–</b></span>
         <span class="chip"><span class="k">злато/ден</span><b class="num" id="c-gold">–</b></span>
         <span class="chip"><span class="k">реклами в бой</span><b class="num" id="c-ads">–</b></span>
+        <span class="chip" id="chip-pick" hidden><span class="k">взети пратки</span><b class="num" id="c-pick">–</b></span>
       </div>
     </div>
     <div class="boss">
@@ -353,6 +361,7 @@ footer{padding-top:22px;color:var(--muted);font-size:.8rem}
     $("c-mer").textContent=fmt(s.mer);$("c-mer").parentNode.className="chip "+(s.mer>=s.mer_target?"good":s.mer>=s.be_mer?"warn":"bad");
     $("c-gold").textContent=fmt(s.profit_day,0)+" €";
     $("c-ads").textContent=s.active_ads==null?"–":s.active_ads;$("c-ads").parentNode.className="chip "+(s.active_ads>=3?"good":"bad");
+    if(s.pickup_rate!=null){$("chip-pick").hidden=false;$("c-pick").textContent=Math.round(s.pickup_rate*100)+"%";$("chip-pick").className="chip "+(s.pickup_rate>=0.88?"good":s.pickup_rate>=0.8?"warn":"bad");}
     var goal=s.goal_orders||15,o=s.orders_day||0,hp=Math.max(0,1-o/goal);
     $("boss-name").textContent="БОС · "+goal+" поръчки/ден";
     $("boss-hp").style.width=(hp*100).toFixed(1)+"%";$("boss-bar").setAttribute("aria-valuenow",String(Math.round(hp*100)));
@@ -381,7 +390,7 @@ footer{padding-top:22px;color:var(--muted);font-size:.8rem}
     var c=a.calibration||{};var cal=el("div","calib");
     var r=c.spearman_composite_vs_real_cpa;cal.appendChild(el("div","gauge",r==null?"?":(r>0?"+":"")+fmt(r,2)));
     var why=el("div");why.appendChild(el("div",null,"Точност на симулатора: "+calibWord(r)));
-    why.appendChild(el("div","why","Spearman спрямо реалния CPA"+(c.n_ads?" · "+c.n_ads+" реклами":"")+(c.pairwise_agreement_cpa?" · двойки "+c.pairwise_agreement_cpa:"")+(c.spearman_ctrindex_vs_real_ctr!=null?" · CTR "+fmt(c.spearman_ctrindex_vs_real_ctr,2):"")));
+    why.appendChild(el("div","why","Spearman спрямо реалния CPA"+(c.n_ads?" · "+c.n_ads+" реклами":"")+(c.pairwise_agreement_cpa?" · двойки "+c.pairwise_agreement_cpa:"")+(c.spearman_ctrindex_vs_real_ctr!=null?" · CTR "+fmt(c.spearman_ctrindex_vs_real_ctr,2):"")+(c.spearman_watch_vs_real_hold!=null?" · задържане "+fmt(c.spearman_watch_vs_real_hold,2):"")+(c.spearman_pickup_vs_real_pickup!=null?" · пратки "+fmt(c.spearman_pickup_vs_real_pickup,2):"")));
     cal.appendChild(why);box.appendChild(cal);
     var fs=el("div","fighters");
     a.fighters.forEach(function(f,i){
@@ -395,9 +404,18 @@ footer{padding-top:22px;color:var(--muted);font-size:.8rem}
       fill.style.background=(f.score>=50?"var(--good)":f.score>=30?"var(--gold)":"var(--bad)");hp.appendChild(fill);
       if(f.ci&&f.ci.length===2){var ci=el("span","ci");ci.style.left=f.ci[0]+"%";ci.style.width=Math.max(1,f.ci[1]-f.ci[0])+"%";hp.appendChild(ci);}
       mid.appendChild(hp);
-      var sub=[];if(f.stop!=null)sub.push("спира "+fmt(f.stop,1));if(f.click!=null)sub.push("клик "+fmt(f.click,1));if(f.buy!=null)sub.push("купува "+fmt(f.buy,1));
+      var stats=el("div","f-stats");
+      [["спира",f.stop],["задържа",f.watch],["разбира",f.understanding],["клик",f.click],["купува",f.buy],["взима пратката",f.pickup]].forEach(function(p){
+        if(p[1]==null)return;var sp=el("span",null,p[0]+" ");sp.appendChild(el("b",null,fmt(p[1],1)));stats.appendChild(sp);});
+      if(stats.childNodes.length)mid.appendChild(stats);
+      if(f.curve&&f.curve.length){var cv=el("div","curve");cv.setAttribute("aria-label","Задържане по сцени");
+        f.curve.forEach(function(x,k){var b=el("i");b.style.height=Math.max(2,Math.round(x*22))+"px";b.title="сцена "+(k+1)+": "+Math.round(x*100)+"% гледат";cv.appendChild(b);});
+        mid.appendChild(cv);mid.appendChild(el("div","curve-l","задържане по сцени: "+f.curve.map(function(x){return Math.round(x*100)+"%";}).join(" → ")));}
+      var sub=[];if(f.qos!=null)sub.push("качествени поръчки "+fmt(f.qos,1));
       if(f.real&&f.real.cpa!=null)sub.push("реален CPA "+fmt(f.real.cpa)+" €");if(f.real&&f.real.link_ctr!=null)sub.push("CTR "+fmt(f.real.link_ctr)+"%");
+      if(f.real&&f.real.hold_rate!=null)sub.push("hold "+Math.round(f.real.hold_rate*100)+"%");if(f.real&&f.real.pickup_rate!=null)sub.push("взети пратки "+Math.round(f.real.pickup_rate*100)+"%");
       if(sub.length)mid.appendChild(el("div","f-sub",sub.join(" · ")));
+      if(f.door_doubt)mid.appendChild(el("div","f-door","Пред куриера: „"+f.door_doubt+"“"));
       if(f.quote)mid.appendChild(el("div","f-quote","„"+f.quote+"“"));
       row.appendChild(mid);row.appendChild(el("div","f-score num",fmt(f.score,0)));fs.appendChild(row);
     });
