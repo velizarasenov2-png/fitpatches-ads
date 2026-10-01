@@ -60,6 +60,11 @@ def arena(run_dir):
 
 def radar():
     latest = json.load(open(os.path.join(ROOT, "team", "lab", "intel", "latest.json"), encoding="utf-8"))
+    # World formats first in the HQ idea list: they feed the next lab shift
+    wf = [{"cb": f.get("id"), "title": f'{f.get("name", "")} · {", ".join(f.get("countries", [])[:4])}'}
+          for f in latest.get("world_formats", [])]
+    latest["ideas"] = (wf + latest.get("ideas", []))[:8]
+    latest.pop("world_formats", None)
     return [write_doc("hq", "radar", latest)]
 
 

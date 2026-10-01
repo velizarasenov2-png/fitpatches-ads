@@ -14,9 +14,17 @@
     "оземпик"
   ],
   "keywords_international": {
-    "US": ["weight loss patch", "GLP-1 patch", "berberine"],
-    "GB": ["menopause belly", "berberine patch"],
-    "DE": ["Abnehmpflaster", "Berberin"]
+    "US": ["weight loss patch", "GLP-1 patch", "berberine", "sugar cravings", "collagen"],
+    "GB": ["menopause belly", "berberine patch", "magnesium sleep"],
+    "DE": ["Abnehmpflaster", "Berberin"],
+    "FR": ["ventre ménopause"],
+    "ES": ["GLP-1"],
+    "IT": ["berberina"],
+    "PL": ["plastry na odchudzanie"],
+    "RO": ["plasturi slabire"],
+    "NL": ["menopauze buik"],
+    "AU": ["cortisol belly"],
+    "BR": ["metabolismo depois dos 40"]
   },
   "pages": [
     {"page_id": "1270210309498666", "name": "VitaPatch.bg", "why": "лепенки, пряк конкурент; оферта „Метаболизъм Трио 2+1 за 27,80 €“"},
@@ -41,11 +49,28 @@
     {"page_id": "831328513402467", "name": "BalansFactory", "why": "15 реклами „Научи Повече“ за 7 дни (скалира); продуктът е неясен, провери snapshot 2340512283355597", "added": "2026-10-01"}
   ],
   "pages_international": [
-    {"page_id": "764071750116449", "name": "Healthtime", "country": "GB", "why": "„It's Not Fat, It's …“ + „Celebrity Menopause Doctor“; 24 нови за 24 ч (източник за CB-010)"},
-    {"page_id": "1163484226855615", "name": "Dr. Emma Davis", "country": "GB", "why": "същата мрежа като Healthtime, „лекар“ страница"},
-    {"page_id": "1071069639423316", "name": "Hormone Health Lab", "country": "US", "why": "32 нови за 24 ч: „Skip the injections - 50% OFF“, квиз, „Cravings…“ (CB-012, CB-014)"},
-    {"page_id": "1166120003257412", "name": "Skin Tips After 40", "country": "US", "why": "„The Dress I Ordered Twice“ ×12, нашият DRESS ъгъл в US"},
-    {"page_id": "613141265221073", "name": "Gentle Patches", "country": "US", "why": "лепенки: „Risk Free“, „90-Day Test Results“"}
+    {"page_id": "764071750116449", "name": "Healthtime", "country": "GB", "why": "„It's Not Fat, It's …“ + „Celebrity Menopause Doctor“; 24 нови за 24 ч (източник за CB-010) · 01.10 вечер: ≈3 346 активни (с Dr. Emma Davis), локализирани на 10 езика; нов шаблон „X Makes You Fat“ × 8 причини (F-001, F-002)"},
+    {"page_id": "1163484226855615", "name": "Dr. Emma Davis", "country": "GB", "why": "същата мрежа като Healthtime, „лекар“ страница · 01.10 вечер: версии на PL и SV („GLP-1 диета за жени след 40“), PCOS вариант (F-002)"},
+    {"page_id": "1071069639423316", "name": "Hormone Health Lab", "country": "US", "why": "32 нови за 24 ч: „Skip the injections - 50% OFF“, квиз, „Cravings…“ (CB-012, CB-014) · 01.10 вечер: още 10 „Skip the injections“ + 9 квиза за деня; Ledisa клонира заглавието (F-003)"},
+    {"page_id": "1166120003257412", "name": "Skin Tips After 40", "country": "US", "why": "„The Dress I Ordered Twice“ ×12, нашият DRESS ъгъл в US · 01.10 вечер: 25 нови за 24 ч, 20× „The Dress. The Photo. Still You.“ (F-006, F-014)"},
+    {"page_id": "613141265221073", "name": "Gentle Patches", "country": "US", "why": "лепенки: „Risk Free“, „90-Day Test Results“ · 01.10 вечер: нови ъгли менопауза, сън „3 AM“, партньор (F-008)"},
+    {"page_id": "874123325792470", "name": "Lyphéa", "country": "FR", "why": "„Менопаузалният пояс… не е мазнина?“ ×22 + „Погледни се пак в огледалото“ ×6, всичките за 24 ч (F-001, F-014)", "added": "2026-10-01"},
+    {"page_id": "118010614521169", "name": "Bany RO", "country": "RO", "why": "лепенки за отслабване; „Не всеки иска хапчета, добавки или сложни режими“ ×28, най-старите 40 дни, нови вълни на 4–10 дни (F-003)", "added": "2026-10-01"},
+    {"page_id": "727046483825423", "name": "Tinyshopstore", "country": "RO", "why": "„Без хапчета и диети“, 84 дни (F-003)", "added": "2026-10-01"},
+    {"page_id": "116514997995316", "name": "DermaMed Zentrum", "country": "DE", "why": "„Лекари хвалят тези лепенки за отслабване…“ ×13, 141 дни (F-004; висок риск, не копираме)", "added": "2026-10-01"},
+    {"page_id": "100195629043841", "name": "VitaHaut Klinik", "country": "DE", "why": "„Ценена от лекари, растителна лепенка за енергия и метаболизъм“, 22 дни; клонирана от Beautylulus-US (F-004)", "added": "2026-10-01"},
+    {"page_id": "939585345915831", "name": "Beautylulus-US", "country": "US", "why": "EN клонинг на VitaHaut Klinik, 2 нови на 01.10 (F-004)", "added": "2026-10-01"},
+    {"page_id": "146832847524711", "name": "FreshHaut", "country": "DE", "why": "лепенки с моринга; сравнителен тест „коя лепенка се представи най-добре“ (F-004)", "added": "2026-10-01"},
+    {"page_id": "709497912237193", "name": "Overgang Tips", "country": "NL", "why": "менопауза; „4,9/5 | 31 847 отзива“ ×17 за 5 дни (F-005)", "added": "2026-10-01"},
+    {"page_id": "736039396268224", "name": "WonderBiotics", "country": "US", "why": "менопауза и черва; „не е проблем на волята“ ×8 за 24 ч (F-001)", "added": "2026-10-01"},
+    {"page_id": "1048540858340021", "name": "Burnitty", "country": "AU", "why": "„Кортизолът ти складира корема“ ×8 за 24 ч, плаща в EUR (F-001)", "added": "2026-10-01"},
+    {"page_id": "1314071885125324", "name": "Dr. Karin Weber", "country": "NL", "why": "„не обвинявай начина си на живот, а лимфата“ ×4; същото заглавие при Karin Holmberg и Natural Vitality Journal (F-001)", "added": "2026-10-01"},
+    {"page_id": "990618684125532", "name": "Adeline Mercier", "country": "PL", "why": "лепенки; „Тествай 30 дни! Гаранция“ ×6, 33–41 дни (F-010)", "added": "2026-10-01"},
+    {"page_id": "1068378719702576", "name": "Eat Smart Every Day", "country": "ES", "why": "„само 2 седмици“ ×16 на EN/ES/FR; мрежа от 4 страници с едно заглавие (F-009)", "added": "2026-10-01"},
+    {"page_id": "1243988402141868", "name": "Solvéra", "country": "US", "why": "канела (наша съставка); „Повечето канели не минават 3 теста“ ×3 (F-011)", "added": "2026-10-01"},
+    {"page_id": "101269614788125", "name": "Elisir D", "country": "IT", "why": "берберин за холестерол; 7 кратки заглавия-стакато за ден (F-013)", "added": "2026-10-01"},
+    {"page_id": "610945308759002", "name": "Ledisa", "country": "US", "why": "клонира „Skip the injections - 50% OFF“ на Hormone Health Lab (F-003)", "added": "2026-10-01"},
+    {"page_id": "109899597504831", "name": "Javvy", "country": "US", "why": "общ DTC: 22 реклами с едно заглавие за минута (F-014)", "added": "2026-10-01"}
   ],
-  "note": "pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден)."
+  "note": "pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
 }
