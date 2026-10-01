@@ -1,0 +1,155 @@
+{
+  "runs": [
+    {
+      "run_id": "20261001-2010-calibrate",
+      "calibration": {
+        "n_ads": 6,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.03,
+        "spearman_watch_vs_real_hold": -0.14,
+        "spearman_composite_vs_real_cpa": 0.54,
+        "spearman_qos_vs_real_cpa": 0.49,
+        "spearman_bt_vs_real_cpa": 0.6,
+        "pairwise_agreement_cpa": "8/12"
+      },
+      "top": [
+        {
+          "code": "V1",
+          "name": "New Sales Ad (videa2)",
+          "composite": 34.6,
+          "ci90": [
+            29.4,
+            39.9
+          ],
+          "real": {
+            "spend": 517.68,
+            "link_ctr": 2.13,
+            "cpa": 7.19,
+            "hold_rate": 0.139,
+            "purchases": 72,
+            "status": "DISAPPROVED"
+          }
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 - Copy",
+          "composite": 29.6,
+          "ci90": [
+            25.5,
+            34.2
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226,
+            "purchases": 152,
+            "status": "ACTIVE"
+          }
+        },
+        {
+          "code": "V6",
+          "name": "1 (statichni1)",
+          "composite": 27.0,
+          "ci90": [
+            23.0,
+            31.1
+          ],
+          "real": {
+            "spend": 20.61,
+            "link_ctr": 3.99,
+            "cpa": null,
+            "hold_rate": null,
+            "purchases": 0,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V8",
+          "name": "ugc3",
+          "composite": 25.2,
+          "ci90": [
+            20.9,
+            29.6
+          ],
+          "real": {
+            "spend": 54.71,
+            "link_ctr": 5.05,
+            "cpa": 10.94,
+            "hold_rate": 0.1994,
+            "purchases": 5,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V5",
+          "name": "New Sales Ad (sestra)",
+          "composite": 24.4,
+          "ci90": [
+            20.2,
+            29.2
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V7",
+          "name": "ad1 (videa3)",
+          "composite": 23.8,
+          "ci90": [
+            19.6,
+            28.6
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497,
+            "purchases": 8,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V2",
+          "name": "New Sales Ad (lepenkite sa suzdadeni)",
+          "composite": 21.8,
+          "ci90": [
+            18.4,
+            25.5
+          ],
+          "real": {
+            "spend": 31.8,
+            "link_ctr": 2.71,
+            "cpa": 7.95,
+            "hold_rate": 0.2038,
+            "purchases": 4,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V4",
+          "name": "ugc_reta",
+          "composite": 16.9,
+          "ci90": [
+            13.3,
+            22.4
+          ],
+          "real": {
+            "spend": 14.06,
+            "link_ctr": 6.2,
+            "cpa": 14.06,
+            "hold_rate": 0.1333,
+            "purchases": 1,
+            "status": "PAUSED"
+          }
+        }
+      ]
+    }
+  ]
+}
