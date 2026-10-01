@@ -1,477 +1,422 @@
 <title>FitPatches HQ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a night-shift game HQ. Sticky HUD with the boss bar on top; the pixel base map is the hero; party, quests, arena, radar and log are panels around it. Single dark theme on purpose (arcade screen). */
+/* Layout: a JARVIS-style holographic HUD. The arc-reactor core with orbiting agents is the hero; KPI dials flank it; simulation chamber, radar, shifts, crew and terminal sit below. Deliberately single dark theme (it is a HUD). */
 :root{
   color-scheme:dark;
-  --night:#17122a;      /* page ground */
-  --panel:#211a3a;      /* panel fill */
-  --panel-2:#2c2350;    /* raised rows, bars track */
-  --line:#3d3268;       /* pixel borders */
-  --ink:#f1eaff;        /* main text */
-  --muted:#a89bcc;      /* secondary text */
-  --gold:#f4c443;       /* berberine yellow: accent, XP, gold */
-  --patch:#ec9fb8;      /* dusty pink patch: ICP, brand */
-  --good:#6fdc8c; --warn:#ff9f43; --bad:#ff5d73; --info:#5ad1e6;
-  --f-pixel:"Pixelify Sans","Press Start 2P",ui-monospace,monospace;
-  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --void:#02070d;                 /* ground */
+  --glass:rgba(8,32,52,.46);      /* panel fill */
+  --glass-2:rgba(14,52,80,.42);   /* raised rows */
+  --line:rgba(80,210,255,.26);    /* hairlines */
+  --cyan:#45d4ff;                 /* primary holo */
+  --ice:#bff3ff;                  /* bright holo text */
+  --ink:#d6f3ff; --muted:#6f9bb3;
+  --gold:#ffb547;                 /* Iron Man gold: approvals, goal */
+  --red:#ff4d5e; --green:#56f0b5; --violet:#a98bff;
+  --f-hud:"Jura","Exo 2",system-ui,sans-serif;
+  --f-body:"Exo 2",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-  --px:3px;             /* pixel border width */
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html,body{background:var(--night);color:var(--ink)}
-body{font-family:var(--f-body);font-size:15px;line-height:1.5}
-.app{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:0 48px}
-h1,h2,h3{font-family:var(--f-pixel);font-weight:600;margin:0;letter-spacing:.02em;text-wrap:balance}
-h2{font-size:1.15rem;display:flex;align-items:center;gap:10px}
-h2 .tag{font-family:var(--f-mono);font-size:.68rem;color:var(--muted);font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+html,body{background:var(--void);color:var(--ink)}
+body{font-family:var(--f-body);font-size:15px;line-height:1.5;
+  background-image:radial-gradient(ellipse at 50% -10%,rgba(69,212,255,.16),transparent 60%),
+    linear-gradient(rgba(69,212,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(69,212,255,.045) 1px,transparent 1px);
+  background-size:auto,40px 40px,40px 40px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);z-index:20}
+.app{max-width:1320px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
+h1,h2,h3{font-family:var(--f-hud);font-weight:600;margin:0;text-wrap:balance}
 p{margin:0}
 .num{font-variant-numeric:tabular-nums}
-.muted{color:var(--muted)}
+.lbl{font-family:var(--f-hud);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .mono{font-family:var(--f-mono)}
 
-/* HUD */
-.hud{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--night);border-bottom:var(--px) solid var(--line);padding-block:12px;display:grid;gap:10px}
-.hud-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
-.brand{display:flex;align-items:baseline;gap:10px}
-.brand h1{font-size:1.5rem;color:var(--gold);text-shadow:3px 3px 0 #000}
-.brand span{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto}
-.chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel);border:var(--px) solid var(--line);padding:3px 9px;font-family:var(--f-pixel);font-size:.9rem;white-space:nowrap}
-.chip b{font-weight:600}
-.chip .k{color:var(--muted);font-size:.78rem;font-family:var(--f-body)}
-.chip.good{border-color:var(--good)} .chip.warn{border-color:var(--warn)} .chip.bad{border-color:var(--bad)}
-.dot{width:8px;height:8px;background:var(--muted);display:inline-block}
-.dot.on{background:var(--good);animation:blink 1.6s steps(2) infinite}
-.boss{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px}
-.boss .who{font-family:var(--f-pixel);font-size:.95rem;color:var(--bad);white-space:nowrap}
-.bar{height:16px;background:var(--panel-2);border:var(--px) solid #000;position:relative;overflow:hidden}
-.bar>i{position:absolute;inset:0 auto 0 0;display:block;background:var(--bad);box-shadow:inset 0 -4px 0 rgba(0,0,0,.25);transition:width .6s steps(12)}
-.boss .val{font-family:var(--f-pixel);font-size:.95rem;white-space:nowrap}
+/* Top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding-block:12px;
+  background:linear-gradient(var(--void),rgba(2,7,13,.86));border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:12px}
+.brand h1{font-size:1.25rem;letter-spacing:.32em;color:var(--ice);text-shadow:0 0 14px rgba(69,212,255,.55)}
+.brand .sub{font-family:var(--f-hud);font-size:.75rem;letter-spacing:.2em;color:var(--cyan)}
+.sys{display:flex;flex-wrap:wrap;gap:8px 18px;margin-left:auto;align-items:center}
+.sys .it{display:flex;align-items:center;gap:7px;font-family:var(--f-hud);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.sys .it b{color:var(--ice);font-weight:600;letter-spacing:.06em}
+.led{width:8px;height:8px;border-radius:50%;background:var(--muted);box-shadow:0 0 8px currentColor}
+.led.on{background:var(--green);color:var(--green);animation:pulse 2s ease-in-out infinite}
+.led.off{background:var(--red);color:var(--red)}
 
-/* Panels */
-.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px;padding-top:18px}
-.col{display:grid;gap:18px;align-content:start;min-width:0}
-.panel{background:var(--panel);border:var(--px) solid var(--line);box-shadow:6px 6px 0 #0c0918;padding:14px;display:grid;gap:12px;min-width:0}
-.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.empty{border:2px dashed var(--line);padding:14px;color:var(--muted);font-size:.92rem}
-.empty b{color:var(--ink)}
-@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+/* Frames */
+.frame{position:relative;background:var(--glass);border:1px solid var(--line);padding:14px;display:grid;gap:12px;min-width:0;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.frame::before,.frame::after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--cyan);opacity:.85;pointer-events:none}
+.frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.fh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.fh h2{font-size:.92rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ice)}
+.fh .lbl{font-size:.66rem}
+.empty{border:1px dashed var(--line);padding:12px;color:var(--muted);font-size:.9rem}
 
-/* Base map */
-.map-wrap{position:relative;background:#0f0b1d;border:var(--px) solid #000}
-#map{display:block;width:100%;height:auto;image-rendering:pixelated;cursor:pointer}
-.map-hint{font-size:.82rem;color:var(--muted)}
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) minmax(0,1fr);gap:16px;padding-top:16px;align-items:start}
+.dials{display:grid;gap:12px}
+.dial{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:center}
+.dial svg{width:96px;height:96px;overflow:visible}
+.dial .v{font-family:var(--f-hud);font-size:1.5rem;font-weight:600;color:var(--ice);line-height:1}
+.dial .s{font-size:.8rem;color:var(--muted)}
+.dial .z{font-family:var(--f-hud);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;margin-top:4px}
+.z.good{color:var(--green)} .z.warn{color:var(--gold)} .z.bad{color:var(--red)}
+.core-wrap{position:relative}
+#core{display:block;width:100%;height:auto;aspect-ratio:1;max-width:100%;cursor:pointer}
+.core-cap{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+.detail{border-left:2px solid var(--gold);background:var(--glass-2);padding:10px 12px;display:grid;gap:4px;font-size:.9rem}
+.detail h3{font-size:1rem;letter-spacing:.08em;color:var(--ice)}
+@media (max-width:1050px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .core-frame{grid-column:1/-1;order:-1}}
+@media (max-width:620px){.hero{grid-template-columns:minmax(0,1fr)}}
 
-/* Party */
-.party{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
-.hero{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;background:var(--panel-2);border:var(--px) solid transparent;padding:9px;text-align:left;color:inherit;font:inherit;cursor:pointer}
-.hero:hover{border-color:var(--line)}
-.hero:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.hero.sel{border-color:var(--gold)}
-.hero canvas{width:44px;height:44px;image-rendering:pixelated;background:#0f0b1d}
-.hero .nm{font-family:var(--f-pixel);font-size:.98rem;line-height:1.15}
-.hero .cl{font-size:.75rem;color:var(--muted)}
-.hero .task{font-size:.8rem;color:var(--ink);opacity:.9;margin-top:4px;overflow-wrap:anywhere}
-.xp{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:center;margin-top:5px}
-.xp .lv{font-family:var(--f-pixel);font-size:.75rem;color:var(--gold)}
-.xp .bar{height:8px;border-width:2px}
-.xp .bar>i{background:var(--gold)}
-.st{display:inline-block;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;margin-top:4px;border:2px solid currentColor}
-.st.working{color:var(--info)} .st.waiting{color:var(--gold)} .st.idle{color:var(--muted)} .st.blocked{color:var(--bad)} .st.done{color:var(--good)}
-.detail{background:var(--panel-2);border-left:var(--px) solid var(--gold);padding:10px 12px;font-size:.9rem;display:grid;gap:4px}
-.detail h3{font-size:1rem}
-
-/* Quests */
+/* Protocols (quests) */
 .quests{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.quest{background:var(--panel-2);padding:9px 10px;display:grid;gap:6px;border-left:var(--px) solid var(--line)}
-.quest.waiting_approval{border-left-color:var(--gold)}
-.quest.won{border-left-color:var(--good)} .quest.lost{border-left-color:var(--bad)} .quest.running,.quest.live{border-left-color:var(--info)}
+.quest{background:var(--glass-2);border-left:2px solid var(--line);padding:8px 10px;display:grid;gap:5px}
+.quest.waiting_approval{border-left-color:var(--gold);box-shadow:inset 0 0 0 1px rgba(255,181,71,.25)}
+.quest.won,.quest.done{border-left-color:var(--green)} .quest.lost{border-left-color:var(--red)} .quest.running,.quest.live{border-left-color:var(--cyan)}
 .q-top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
-.q-title{font-weight:600;font-size:.93rem;min-width:0;overflow-wrap:anywhere}
-.q-st{font-family:var(--f-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
-.q-st.waiting_approval{color:var(--gold);animation:blink 1.2s steps(2) infinite}
-.q-st.won{color:var(--good)} .q-st.lost{color:var(--bad)} .q-st.running,.q-st.live{color:var(--info)} .q-st.queued,.q-st.done{color:var(--muted)}
-.q-meta{font-size:.8rem;color:var(--muted);overflow-wrap:anywhere}
-.quest .bar{height:8px;border-width:2px}
-.quest .bar>i{background:var(--info)}
+.q-title{font-size:.88rem;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.q-st{font-family:var(--f-hud);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.q-st.waiting_approval{color:var(--gold);animation:pulse 1.4s ease-in-out infinite}
+.q-st.running,.q-st.live{color:var(--cyan)} .q-st.won,.q-st.done{color:var(--green)} .q-st.lost{color:var(--red)} .q-st.queued{color:var(--muted)}
+.q-meta{font-size:.76rem;color:var(--muted);overflow-wrap:anywhere}
+.track{height:4px;background:rgba(69,212,255,.12);position:relative;overflow:hidden}
+.track>i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--cyan),var(--ice));box-shadow:0 0 10px var(--cyan)}
 
-/* Arena */
-.calib{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;background:var(--panel-2);padding:10px}
-.gauge{font-family:var(--f-pixel);font-size:1.6rem;color:var(--gold);line-height:1}
-.calib .why{font-size:.84rem;color:var(--muted)}
+/* Second row */
+.row2{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:16px;padding-top:16px;align-items:start}
+.stack{display:grid;gap:16px;min-width:0}
+@media (max-width:900px){.row2{grid-template-columns:minmax(0,1fr)}}
+
+/* Simulation chamber */
+.calib{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;background:var(--glass-2);padding:10px 12px}
+.calib .g{font-family:var(--f-hud);font-size:1.8rem;font-weight:600;color:var(--gold);text-shadow:0 0 12px rgba(255,181,71,.45);line-height:1}
+.calib .w{font-size:.82rem;color:var(--muted)}
 .fighters{display:grid;gap:8px}
-.fighter{display:grid;grid-template-columns:30px minmax(0,1fr) 52px;gap:10px;align-items:center;background:var(--panel-2);padding:8px 10px}
-.rank{font-family:var(--f-pixel);font-size:1.05rem;text-align:center;color:var(--muted)}
-.fighter.first .rank{color:var(--gold)}
-.f-name{font-size:.9rem;font-weight:600;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;overflow-wrap:anywhere}
-.f-tag{font-family:var(--f-mono);font-size:.64rem;padding:0 5px;border:2px solid var(--line);color:var(--muted);font-weight:400}
-.f-tag.win{border-color:var(--good);color:var(--good)} .f-tag.lose{border-color:var(--bad);color:var(--bad)} .f-tag.gene{border-color:var(--patch);color:var(--patch)}
-.hp{height:14px;margin-top:5px}
-.hp>i{background:var(--good)}
-.hp .ci{position:absolute;top:2px;bottom:2px;border-left:2px solid #fff;border-right:2px solid #fff;opacity:.55}
-.f-score{font-family:var(--f-pixel);font-size:1.15rem;text-align:right}
-.f-sub{font-size:.76rem;color:var(--muted);margin-top:3px}
-.f-quote{font-size:.8rem;color:var(--patch);margin-top:3px;font-style:italic}
-.f-stats{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:5px;font-size:.76rem}
-.f-stats span{white-space:nowrap}
-.f-stats b{font-family:var(--f-pixel);font-weight:600;font-size:.86rem}
-.curve{display:flex;align-items:flex-end;gap:2px;height:22px;margin-top:5px}
-.curve i{display:block;width:10px;background:var(--info);min-height:2px}
-.curve-l{font-size:.68rem;color:var(--muted);font-family:var(--f-mono)}
-.f-door{font-size:.76rem;color:var(--muted);margin-top:3px}
+.ft{display:grid;grid-template-columns:34px minmax(0,1fr) 58px;gap:12px;align-items:center;background:var(--glass-2);padding:9px 11px;border:1px solid transparent}
+.ft.first{border-color:rgba(255,181,71,.45);box-shadow:0 0 18px rgba(255,181,71,.12)}
+.rk{font-family:var(--f-hud);font-size:1.1rem;font-weight:600;text-align:center;color:var(--muted)}
+.ft.first .rk{color:var(--gold)}
+.fn{font-size:.9rem;font-weight:500;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;overflow-wrap:anywhere}
+.tag{font-family:var(--f-hud);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:1px 6px;border:1px solid var(--line);color:var(--muted)}
+.tag.win{border-color:var(--green);color:var(--green)} .tag.lose{border-color:var(--red);color:var(--red)} .tag.gene{border-color:var(--violet);color:var(--violet)}
+.bar{height:8px;background:rgba(69,212,255,.1);position:relative;margin-top:6px}
+.bar>i{position:absolute;inset:0 auto 0 0;box-shadow:0 0 10px currentColor}
+.bar .ci{position:absolute;top:-3px;bottom:-3px;border-left:1px solid var(--ice);border-right:1px solid var(--ice);opacity:.6}
+.fs{display:flex;flex-wrap:wrap;gap:3px 12px;margin-top:6px;font-size:.74rem;color:var(--muted)}
+.fs b{font-family:var(--f-hud);color:var(--ice);font-weight:600;font-size:.86rem}
+.curve{display:flex;align-items:flex-end;gap:3px;height:20px;margin-top:6px}
+.curve i{width:9px;min-height:2px;background:var(--cyan);box-shadow:0 0 6px var(--cyan);opacity:.85}
+.sub2{font-size:.74rem;color:var(--muted);margin-top:4px}
+.quote{font-size:.8rem;color:var(--ice);margin-top:4px;font-style:italic;opacity:.9}
+.score{font-family:var(--f-hud);font-size:1.3rem;font-weight:600;text-align:right;color:var(--ice)}
 
-/* Radar */
-.radar-box{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;align-items:start}
-#radar{width:150px;height:150px;image-rendering:pixelated;background:#0f0b1d;border:var(--px) solid #000}
-.r-list{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.84rem;min-width:0}
-.r-list li{overflow-wrap:anywhere}
-.r-list b{font-family:var(--f-pixel);font-weight:600;color:var(--gold)}
-.ideas{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.ideas li{background:var(--panel-2);padding:7px 9px;font-size:.84rem}
-.ideas li b{color:var(--patch);font-family:var(--f-mono);font-size:.74rem;margin-right:6px}
-@media (max-width:440px){.radar-box{grid-template-columns:minmax(0,1fr)} #radar{width:100%;height:auto;aspect-ratio:1;max-width:100%}}
+/* Radar + shifts */
+.radar-box{display:grid;grid-template-columns:140px minmax(0,1fr);gap:12px;align-items:start}
+#radar{width:140px;height:140px;display:block}
+.rl{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:.82rem;min-width:0}
+.rl li{overflow-wrap:anywhere}
+.rl b{font-family:var(--f-hud);color:var(--gold);font-weight:600}
+.ideas{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.ideas li{background:var(--glass-2);padding:6px 9px;font-size:.82rem}
+.ideas b{font-family:var(--f-mono);font-size:.72rem;color:var(--violet);margin-right:6px}
+@media (max-width:420px){.radar-box{grid-template-columns:minmax(0,1fr)} #radar{width:100%;height:auto;aspect-ratio:1;max-width:100%}}
+.shifts{display:grid;gap:8px}
+.shift{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:baseline;background:var(--glass-2);padding:8px 10px}
+.shift .n{font-size:.88rem;font-weight:500}
+.shift .d{grid-column:1/-1;font-size:.74rem;color:var(--muted)}
+.shift .t{font-family:var(--f-hud);font-size:1.05rem;font-weight:600;color:var(--cyan);text-shadow:0 0 8px rgba(69,212,255,.5)}
 
-/* Log */
-.log{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-family:var(--f-mono);font-size:.78rem;max-height:340px;overflow:auto}
-.log li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;padding:3px 0;border-bottom:1px solid var(--line)}
-.log .t{color:var(--muted)}
-.log .who{color:var(--gold)}
+/* Crew */
+.crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.agent{all:unset;box-sizing:border-box;display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;background:var(--glass-2);padding:10px;border:1px solid transparent;cursor:pointer;color:var(--ink)}
+.agent:hover{border-color:var(--line)}
+.agent:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.agent.sel{border-color:var(--gold)}
+.glyph{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-hud);font-weight:700;font-size:.85rem;color:var(--ice);border:1px solid currentColor;box-shadow:0 0 12px currentColor inset}
+.glyph.working{color:var(--cyan)} .glyph.waiting{color:var(--gold)} .glyph.blocked{color:var(--red)} .glyph.done{color:var(--green)} .glyph.idle{color:#3a6178}
+.an{font-family:var(--f-hud);font-weight:600;font-size:.92rem;letter-spacing:.04em;color:var(--ice)}
+.ar{font-size:.72rem;color:var(--muted)}
+.ast{font-family:var(--f-hud);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;margin-top:3px}
+.ast.working{color:var(--cyan)} .ast.waiting{color:var(--gold)} .ast.blocked{color:var(--red)} .ast.done{color:var(--green)} .ast.idle{color:var(--muted)}
+.atask{font-size:.76rem;margin-top:3px;overflow-wrap:anywhere;opacity:.92}
+.xp{display:grid;grid-template-columns:auto 1fr;gap:6px;align-items:center;margin-top:5px;font-family:var(--f-hud);font-size:.66rem;color:var(--gold);letter-spacing:.1em}
+.xp .track>i{background:linear-gradient(90deg,var(--gold),#ffe0a3);box-shadow:0 0 8px var(--gold)}
 
-footer{padding-top:22px;color:var(--muted);font-size:.8rem}
-@keyframes blink{50%{opacity:.35}}
+/* Terminal */
+.term{list-style:none;margin:0;padding:0;display:grid;gap:3px;font-family:var(--f-mono);font-size:.76rem;max-height:360px;overflow:auto}
+.term li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:8px;padding:3px 0;border-bottom:1px solid rgba(69,212,255,.08)}
+.term .t{color:var(--muted)} .term .w{color:var(--cyan)}
+.cursor{display:inline-block;width:7px;height:12px;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(2) infinite}
+footer{padding-top:22px;color:var(--muted);font-size:.78rem;max-width:80ch}
+@keyframes pulse{50%{opacity:.45}}
+@keyframes blink{50%{opacity:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
 <div class="app">
-  <header class="hud" aria-label="Състояние на бизнеса">
-    <div class="hud-top">
-      <div class="brand"><h1>FITPATCHES HQ</h1><span id="sync"><i class="dot" id="syncdot"></i> <span id="synctxt">свързване…</span></span></div>
-      <div class="chips" id="chips">
-        <span class="chip"><span class="k">CPA 7 дни</span><b class="num" id="c-cpa">–</b></span>
-        <span class="chip"><span class="k">MER</span><b class="num" id="c-mer">–</b></span>
-        <span class="chip"><span class="k">злато/ден</span><b class="num" id="c-gold">–</b></span>
-        <span class="chip"><span class="k">реклами в бой</span><b class="num" id="c-ads">–</b></span>
-        <span class="chip" id="chip-pick" hidden><span class="k">взети пратки</span><b class="num" id="c-pick">–</b></span>
-      </div>
-    </div>
-    <div class="boss">
-      <span class="who" id="boss-name">БОС · 15 поръчки/ден</span>
-      <div class="bar" role="progressbar" aria-label="Живот на боса" aria-valuemin="0" aria-valuemax="100" id="boss-bar"><i id="boss-hp" style="width:100%"></i></div>
-      <span class="val num" id="boss-val">– / 15</span>
+  <header class="top">
+    <div class="brand"><h1>J.A.R.V.I.S.</h1><span class="sub">FITPATCHES · КОМАНДЕН ЦЕНТЪР</span></div>
+    <div class="sys">
+      <span class="it"><i class="led" id="led"></i><span id="sys-txt">свързване</span></span>
+      <span class="it">София <b class="num" id="clock">--:--</b></span>
+      <span class="it">Следващ цикъл <b class="num" id="next">--:--</b></span>
     </div>
   </header>
 
-  <main class="grid">
-    <div class="col">
-      <section class="panel" aria-labelledby="h-map">
-        <div class="panel-head"><h2 id="h-map">База <span class="tag">агентите на работа</span></h2><span class="map-hint">Натисни герой за детайли</span></div>
-        <div class="map-wrap"><canvas id="map" width="320" height="184" aria-label="Карта на базата с агентите"></canvas></div>
-        <div class="detail" id="detail" hidden></div>
-      </section>
-
-      <section class="panel" aria-labelledby="h-arena">
-        <div class="panel-head"><h2 id="h-arena">Арена <span class="tag">симулирани битки</span></h2><span class="muted mono" id="arena-run"></span></div>
-        <div id="arena"><p class="empty"><b>Още няма битка.</b> Първата започва с калибрация: панелът от 24 синтетични клиентки оценява на сляпо рекламите, които вече си пускал, и сравняваме класирането с реалния CPA.</p></div>
-      </section>
-
-      <section class="panel" aria-labelledby="h-party">
-        <div class="panel-head"><h2 id="h-party">Отбор <span class="tag">ниво · опит · задача</span></h2></div>
-        <div class="party" id="party"></div>
-      </section>
+  <section class="hero" aria-label="Основни показатели и ядро">
+    <div class="frame dials" aria-labelledby="h-vitals">
+      <div class="fh"><h2 id="h-vitals">Жизнени показатели</h2><span class="lbl" id="stats-upd"></span></div>
+      <div class="dial"><svg id="d-cpa" viewBox="0 0 100 100" aria-hidden="true"></svg><div><div class="lbl">CPA · 7 дни</div><div class="v num" id="v-cpa">–</div><div class="s" id="s-cpa">праг за скалиране 8.06 €</div><div class="z" id="z-cpa"></div></div></div>
+      <div class="dial"><svg id="d-mer" viewBox="0 0 100 100" aria-hidden="true"></svg><div><div class="lbl">MER</div><div class="v num" id="v-mer">–</div><div class="s">цел над 3.49</div><div class="z" id="z-mer"></div></div></div>
+      <div class="dial"><svg id="d-gold" viewBox="0 0 100 100" aria-hidden="true"></svg><div><div class="lbl">Печалба / ден</div><div class="v num" id="v-gold">–</div><div class="s" id="s-gold">реклама –</div></div></div>
+      <div class="dial"><svg id="d-ads" viewBox="0 0 100 100" aria-hidden="true"></svg><div><div class="lbl">Активни реклами</div><div class="v num" id="v-ads">–</div><div class="s">цел 2–3 доказани + 3–5 теста</div><div class="z" id="z-ads"></div></div></div>
+      <div class="dial" id="dial-pick" hidden><svg id="d-pick" viewBox="0 0 100 100" aria-hidden="true"></svg><div><div class="lbl">Взети пратки</div><div class="v num" id="v-pick">–</div><div class="s">цел над 88%</div></div></div>
     </div>
 
-    <div class="col">
-      <section class="panel" aria-labelledby="h-quests">
-        <div class="panel-head"><h2 id="h-quests">Мисии <span class="tag">тестове и задачи</span></h2></div>
-        <ol class="quests" id="quests"><li class="empty"><b>Мисиите идват от екипа.</b> Тук се виждат текущите тестове, кой ги води и какво чака твоето одобрение.</li></ol>
-      </section>
+    <div class="frame core-frame" aria-labelledby="h-core">
+      <div class="fh"><h2 id="h-core">Ядро</h2><span class="lbl">агентите в орбита · натисни възел</span></div>
+      <div class="core-wrap"><canvas id="core" width="640" height="640" aria-label="Ядрото: агентите около целта 15 поръчки на ден"></canvas></div>
+      <div class="core-cap"><span>Външната дъга: поръчки на ден към целта</span><span class="num" id="goal-txt">– / 15</span></div>
+      <div class="detail" id="detail" hidden></div>
+    </div>
 
-      <section class="panel" aria-labelledby="h-radar">
-        <div class="panel-head"><h2 id="h-radar">Радар <span class="tag">конкурентите днес</span></h2><span class="muted mono" id="radar-date"></span></div>
-        <div class="radar-box">
-          <canvas id="radar" width="100" height="100" aria-label="Радар на конкурентите"></canvas>
-          <ul class="r-list" id="r-list"><li class="muted">Скаутът сканира Meta Ads Library всеки ден. Тук ще видиш кой върти най-дълго, кой скалира и новите формати.</li></ul>
-        </div>
+    <div class="frame" aria-labelledby="h-proto">
+      <div class="fh"><h2 id="h-proto">Протоколи</h2><span class="lbl">мисии и одобрения</span></div>
+      <ol class="quests" id="quests"><li class="empty">Протоколите идват от екипа: текущи тестове, кой ги води и какво чака твоето „да“.</li></ol>
+    </div>
+  </section>
+
+  <section class="row2">
+    <div class="stack">
+      <div class="frame" aria-labelledby="h-sim">
+        <div class="fh"><h2 id="h-sim">Симулационна камера</h2><span class="lbl mono" id="run-id"></span></div>
+        <div id="arena"><p class="empty">Тук излизат битките между вариантите. 24 синтетични клиентки от твоя ICP оценяват на сляпо: спира ли скрола, гледа ли докрай, разбира ли продукта, кликва ли, купува ли и взема ли си пратката.</p></div>
+      </div>
+      <div class="frame" aria-labelledby="h-crew">
+        <div class="fh"><h2 id="h-crew">Екипаж</h2><span class="lbl">ниво · опит · задача</span></div>
+        <div class="crew" id="crew"></div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="frame" aria-labelledby="h-shifts">
+        <div class="fh"><h2 id="h-shifts">Смени 24/7</h2><span class="lbl">автоматичен график</span></div>
+        <div class="shifts" id="shifts"><p class="empty">Графикът на смените се зарежда.</p></div>
+      </div>
+      <div class="frame" aria-labelledby="h-radar">
+        <div class="fh"><h2 id="h-radar">Радар</h2><span class="lbl" id="radar-date">конкуренти</span></div>
+        <div class="radar-box"><canvas id="radar" width="280" height="280" aria-label="Радар на конкурентите"></canvas>
+          <ul class="rl" id="rl"><li style="color:var(--muted)">Скаутът сканира Meta Ads Library: кой върти най-дълго, кой скалира, нови формати.</li></ul></div>
         <ul class="ideas" id="ideas" hidden></ul>
-      </section>
-
-      <section class="panel" aria-labelledby="h-log">
-        <div class="panel-head"><h2 id="h-log">Дневник <span class="tag">промени</span></h2></div>
-        <ul class="log" id="log"><li><span class="t">–</span><span class="muted">Записите се появяват, щом агент свърши нещо.</span></li></ul>
-      </section>
+      </div>
+      <div class="frame" aria-labelledby="h-term">
+        <div class="fh"><h2 id="h-term">Терминал</h2><span class="lbl">дневник на промените</span></div>
+        <ul class="term" id="term"><li><span class="t">--:--</span><span>Очаквам данни <span class="cursor"></span></span></li></ul>
+      </div>
     </div>
-  </main>
-  <footer>Числата идват от Shopify (поръчки), Meta (разход) и симулацията. Симулацията подрежда идеите, а реалният тест в Meta решава.</footer>
+  </section>
+  <footer>Данните идват от Shopify (поръчки), Meta (разход) и симулацията. Симулацията подрежда идеите, а реалният тест в Meta решава. Нищо не се пуска и нищо не се харчи без твоето „да“.</footer>
 </div>
 
 <script>
 (function(){
   "use strict";
-  // ---------- static roster (game look); live status comes from db agents/<id> ----------
   var ROSTER=[
-    {id:"coo",name:"Командир",role:"Оперативен директор (главният чат)",cls:"Командир",x:160,y:94,shirt:"#f4c443",hat:"crown"},
-    {id:"analyst",name:"Анализатор",role:"Числа и KPI",cls:"Оракул",x:36,y:46,shirt:"#5ad1e6",hat:"glasses",st:"chart"},
-    {id:"media-buyer",name:"Медия байър",role:"Meta реклами",cls:"Стрелец",x:86,y:46,shirt:"#6fdc8c",hat:"headset",st:"console"},
-    {id:"creative-strategist",name:"Стратег",role:"Ъгли и брийфове",cls:"Тактик",x:136,y:46,shirt:"#b48cff",hat:"cap",st:"board"},
-    {id:"copywriter",name:"Копирайтър",role:"Текстове и скриптове",cls:"Бард",x:186,y:46,shirt:"#ec9fb8",hat:"beret",st:"desk"},
-    {id:"creative-producer",name:"Продуцент",role:"Видео и визии",cls:"Ковач",x:236,y:46,shirt:"#ff9f43",hat:"band",st:"camera"},
-    {id:"market-scout",name:"Скаут",role:"Конкуренти и формати",cls:"Разузнавач",x:288,y:46,shirt:"#7fb069",hat:"hood",st:"dish"},
-    {id:"compliance-officer",name:"Комплайънс",role:"Meta политики и право",cls:"Паладин",x:36,y:106,shirt:"#c9d1ff",hat:"helmet",st:"shield"},
-    {id:"cro-specialist",name:"CRO",role:"Сайт и конверсия",cls:"Алхимик",x:86,y:106,shirt:"#5ad1e6",hat:"goggles",st:"flask"},
-    {id:"operations-manager",name:"Операции",role:"Куриер, склад, кеш",cls:"Интендант",x:236,y:106,shirt:"#d9a066",hat:"cap",st:"boxes"},
-    {id:"customer-care",name:"Клиенти",role:"Обслужване и ретеншън",cls:"Лечител",x:288,y:106,shirt:"#ff8fab",hat:"headset",st:"heart"},
-    {id:"audience-panel",name:"Панел",role:"24 синтетични клиентки",cls:"Арена",x:160,y:150,shirt:"#ec9fb8",hat:"none",st:"arena"}
+    {id:"analyst",name:"Анализатор",g:"АН",role:"Числа и KPI"},
+    {id:"media-buyer",name:"Медия байър",g:"МБ",role:"Meta реклами"},
+    {id:"creative-strategist",name:"Стратег",g:"СТ",role:"Ъгли и брийфове"},
+    {id:"copywriter",name:"Копирайтър",g:"КП",role:"Текстове и скриптове"},
+    {id:"creative-producer",name:"Продуцент",g:"ПР",role:"Видео и визии"},
+    {id:"market-scout",name:"Скаут",g:"СК",role:"Конкуренти и формати"},
+    {id:"audience-panel",name:"Панел",g:"24",role:"24 синтетични клиентки"},
+    {id:"compliance-officer",name:"Комплайънс",g:"КМ",role:"Meta политики"},
+    {id:"cro-specialist",name:"CRO",g:"CR",role:"Сайт и конверсия"},
+    {id:"operations-manager",name:"Операции",g:"ОП",role:"Еконт, склад, кеш"},
+    {id:"customer-care",name:"Клиенти",g:"КЛ",role:"Ретеншън"}
   ];
-  var BY={}; ROSTER.forEach(function(a){BY[a.id]=a;});
-  var STATUS_TXT={working:"работи",waiting:"чака одобрение",idle:"свободен",blocked:"блокиран",done:"готово"};
-  var Q_TXT={queued:"в опашка",running:"в арената",waiting_approval:"чака твоето „да“",live:"на живо в Meta",won:"победа",lost:"загуба",done:"готово"};
-  var state={stats:null,agents:{},quests:[],arena:null,radar:null,log:[],sel:null};
+  var CORE={id:"coo",name:"J.A.R.V.I.S.",role:"Оперативен директор (главният чат)"};
+  var BY={coo:CORE};ROSTER.forEach(function(a){BY[a.id]=a;});
+  var ST={working:"работи",waiting:"чака одобрение",idle:"в готовност",blocked:"блокиран",done:"готово"};
+  var QT={queued:"в опашка",running:"в процес",waiting_approval:"чака „да“",live:"на живо",won:"победа",lost:"загуба",done:"готово"};
+  var COL={working:"#45d4ff",waiting:"#ffb547",blocked:"#ff4d5e",done:"#56f0b5",idle:"#3a6178"};
+  var S={stats:null,agents:{},quests:[],arena:null,radar:null,sched:null,log:[],sel:null};
   var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  function $(id){return document.getElementById(id);}
-  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
-  function fmt(n,d){return (n==null||isNaN(n))?"–":Number(n).toFixed(d==null?2:d);}
+  function $(i){return document.getElementById(i);}
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+  function fmt(n,d){return(n==null||isNaN(n))?"–":Number(n).toFixed(d==null?2:d);}
   function lvl(xp){return 1+Math.floor((xp||0)/300);}
+  function st(id){return (S.agents[id]&&S.agents[id].status)||"idle";}
 
-  // ---------- pixel sprites ----------
-  var SKIN=["#f2c9a6","#e0ac86","#c98b62"], HAIR=["#3a2416","#6b4226","#c9a15a","#1d1d1d","#8e3b2e"];
-  function px(c,x,y,w,h,col){c.fillStyle=col;c.fillRect(Math.round(x),Math.round(y),w||1,h||1);}
-  function person(c,x,y,a,t,idx){
-    var bob=(a._status==="working"&&!reduce)?Math.round(Math.sin(t/180+idx)*0.6+0.4):0;
-    var s=SKIN[idx%3],h=HAIR[idx%5]; y-=bob;
-    px(c,x-3,y+12,6,1,"rgba(0,0,0,.35)");           // shadow
-    px(c,x-2,y+8,2,4,"#2b2440");px(c,x+0,y+8,2,4,"#2b2440"); // legs
-    px(c,x-3,y+3,6,5,a.shirt);px(c,x-4,y+4,1,3,a.shirt);px(c,x+3,y+4,1,3,a.shirt); // body+arms
-    px(c,x-2,y-2,4,5,s);                              // head
-    px(c,x-2,y-3,4,2,h);px(c,x-3,y-2,1,2,h);px(c,x+2,y-2,1,1,h);
-    px(c,x-1,y,1,1,"#1b1430");px(c,x+1,y,1,1,"#1b1430"); // eyes
-    var hc=a.hat;
-    if(hc==="crown"){px(c,x-2,y-5,4,2,"#f4c443");px(c,x-2,y-6,1,1,"#f4c443");px(c,x+1,y-6,1,1,"#f4c443");px(c,x-3,y+3,1,6,"#a12c47");px(c,x+2,y+3,1,6,"#a12c47");}
-    else if(hc==="glasses"){px(c,x-2,y,4,1,"#5ad1e6");}
-    else if(hc==="headset"){px(c,x-3,y-1,1,3,"#222");px(c,x+2,y-1,1,3,"#222");px(c,x-2,y-4,4,1,"#222");px(c,x+2,y+2,2,1,"#222");}
-    else if(hc==="cap"){px(c,x-2,y-4,4,2,a.shirt);px(c,x+2,y-3,2,1,a.shirt);}
-    else if(hc==="beret"){px(c,x-3,y-4,5,2,"#a12c47");}
-    else if(hc==="band"){px(c,x-2,y-2,4,1,"#ff5d73");}
-    else if(hc==="hood"){px(c,x-3,y-4,6,2,"#4b6b3a");px(c,x-3,y-2,1,4,"#4b6b3a");px(c,x+2,y-2,1,4,"#4b6b3a");}
-    else if(hc==="helmet"){px(c,x-3,y-4,6,3,"#c9d1ff");px(c,x-1,y-1,2,2,"#c9d1ff");}
-    else if(hc==="goggles"){px(c,x-2,y-1,4,2,"#2b2440");px(c,x-2,y-1,1,1,"#6fdc8c");px(c,x+1,y-1,1,1,"#6fdc8c");}
+  // ---------- dials (SVG) ----------
+  var NS="http://www.w3.org/2000/svg";
+  function arcPath(cx,cy,r,a0,a1){var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);var large=(a1-a0)>Math.PI?1:0;return "M"+x0.toFixed(2)+" "+y0.toFixed(2)+" A"+r+" "+r+" 0 "+large+" 1 "+x1.toFixed(2)+" "+y1.toFixed(2);}
+  function dial(svgId,frac,color,ticks){
+    var s=$(svgId);s.textContent="";var A0=Math.PI*0.75,SPAN=Math.PI*1.5;
+    function p(d,stroke,w,op){var e=document.createElementNS(NS,"path");e.setAttribute("d",d);e.setAttribute("fill","none");e.setAttribute("stroke",stroke);e.setAttribute("stroke-width",w);if(op)e.setAttribute("opacity",op);e.setAttribute("stroke-linecap","round");s.appendChild(e);return e;}
+    p(arcPath(50,50,40,A0,A0+SPAN),"rgba(69,212,255,.14)",7);
+    var c=document.createElementNS(NS,"circle");c.setAttribute("cx",50);c.setAttribute("cy",50);c.setAttribute("r",30);c.setAttribute("fill","none");c.setAttribute("stroke","rgba(69,212,255,.25)");c.setAttribute("stroke-dasharray","2 4");s.appendChild(c);
+    var f=Math.max(0,Math.min(1,frac||0));if(f>0.002){var e=p(arcPath(50,50,40,A0,A0+SPAN*f),color,7);e.setAttribute("style","filter:drop-shadow(0 0 4px "+color+")");}
+    (ticks||[]).forEach(function(t){var a=A0+SPAN*Math.max(0,Math.min(1,t.f));var l=document.createElementNS(NS,"line");l.setAttribute("x1",50+33*Math.cos(a));l.setAttribute("y1",50+33*Math.sin(a));l.setAttribute("x2",50+47*Math.cos(a));l.setAttribute("y2",50+47*Math.sin(a));l.setAttribute("stroke",t.c);l.setAttribute("stroke-width",1.6);s.appendChild(l);});
   }
-  function station(c,a,t){
-    var x=a.x,y=a.y+4,k=a.st;
-    if(k==="arena"){
-      c.fillStyle="#2c2350";c.beginPath();c.ellipse(160,152,58,20,0,0,Math.PI*2);c.fill();
-      c.strokeStyle="#f4c443";c.lineWidth=1;c.beginPath();c.ellipse(160,152,58,20,0,0,Math.PI*2);c.stroke();
-      for(var i=0;i<24;i++){var ang=i/24*Math.PI*2+(reduce?0:t/4000);var icp=i<16;
-        var px_=160+Math.cos(ang)*50,py_=152+Math.sin(ang)*15;px(c,px_-1,py_-2,2,3,icp?"#ec9fb8":"#8a80a8");}
-      return;
-    }
-    if(k==="desk"||k==="chart"||k==="console"||k==="heart"){
-      px(c,x-9,y-6,18,2,"#4a3b2a");px(c,x-9,y-4,1,6,"#3a2d20");px(c,x+8,y-4,1,6,"#3a2d20"); // desk behind
-      px(c,x-6,y-15,12,8,"#0b0816");px(c,x-6,y-15,12,1,"#3d3268");px(c,x-1,y-7,2,1,"#3d3268");
-      var on=a._status==="working"&&!reduce;
-      if(k==="chart"){var hs=[3,5,4,6,7];for(var j=0;j<5;j++){var hh=on?Math.max(1,hs[(j+Math.floor(t/400))%5]):hs[j];px(c,x-5+j*2,y-8-hh,1,hh,"#5ad1e6");}}
-      else if(k==="console"){for(var m=0;m<3;m++)px(c,x-5,y-13+m*2,on?(3+((m+Math.floor(t/300))%4)*2):6,1,"#6fdc8c");}
-      else if(k==="heart"){px(c,x-2,y-12,2,2,"#ff8fab");px(c,x+0,y-12,2,2,"#ff8fab");px(c,x-1,y-10,2,2,"#ff8fab");}
-      else {for(var n=0;n<3;n++)px(c,x-4,y-13+n*2,8-(n%2)*3,1,"#ec9fb8");}
-    } else if(k==="board"){
-      px(c,x-10,y-18,20,12,"#6b4a2b");px(c,x-9,y-17,18,10,"#c8a46a");
-      px(c,x-6,y-15,3,3,"#ff5d73");px(c,x+1,y-14,3,3,"#5ad1e6");px(c,x-2,y-11,3,3,"#f4c443");
-    } else if(k==="camera"){
-      px(c,x+6,y-12,6,4,"#222");px(c,x+5,y-11,1,2,"#5ad1e6");px(c,x+8,y-8,1,8,"#555");
-      if(a._status==="working"&&!reduce&&Math.floor(t/500)%2) px(c,x+11,y-13,1,1,"#ff5d73");
-    } else if(k==="dish"){
-      var sw=reduce?0:Math.sin(t/700)*2;
-      px(c,x+6,y-6,1,6,"#888");c.fillStyle="#cfd6e6";c.beginPath();c.ellipse(x+7+sw,y-9,4,3,0.4,0,Math.PI*2);c.fill();
-      px(c,x+7+sw,y-10,1,1,"#ff5d73");
-    } else if(k==="shield"){
-      px(c,x+6,y-12,6,7,"#c9d1ff");px(c,x+7,y-5,4,2,"#c9d1ff");px(c,x+8,y-11,2,6,"#f4c443");
-    } else if(k==="flask"){
-      px(c,x-9,y-6,18,2,"#4a3b2a");px(c,x-6,y-11,3,5,"#6fdc8c");px(c,x-5,y-13,1,2,"#cfd6e6");px(c,x+3,y-10,3,4,"#b48cff");
-      if(a._status==="working"&&!reduce)px(c,x-5,y-14-Math.floor(t/300)%3,1,1,"#6fdc8c");
-    } else if(k==="boxes"){
-      px(c,x+5,y-6,7,6,"#a6763d");px(c,x+6,y-12,6,6,"#c08a48");px(c,x+8,y-12,2,6,"#e6c48a");
-    }
+  function zone(id,cls,txt){var z=$(id);if(!z)return;z.className="z "+cls;z.textContent=txt;}
+  function renderStats(){
+    var s=S.stats;if(!s)return;
+    var cpa=s.cpa7,max=s.be_cpa||13.44,sc=s.scale_cpa||8.06,sp=s.stop_cpa||10.75;
+    var zc=cpa==null?"":cpa<sc?"good":cpa<=sp?"warn":"bad";
+    dial("d-cpa",cpa/max,zc==="good"?"#56f0b5":zc==="warn"?"#ffb547":"#ff4d5e",[{f:sc/max,c:"#56f0b5"},{f:sp/max,c:"#ff4d5e"}]);
+    $("v-cpa").textContent=fmt(cpa)+" €";$("s-cpa").textContent="скалиране < "+fmt(sc)+" € · спиране > "+fmt(sp)+" €";
+    zone("z-cpa",zc,{good:"скалирай",warn:"задръж",bad:"над прага"}[zc]||"");
+    var mer=s.mer,mt=s.mer_target||3.49;dial("d-mer",mer/6,mer>=mt?"#56f0b5":mer>=(s.be_mer||2.09)?"#ffb547":"#ff4d5e",[{f:mt/6,c:"#56f0b5"},{f:(s.be_mer||2.09)/6,c:"#ff4d5e"}]);
+    $("v-mer").textContent=fmt(mer);zone("z-mer",mer>=mt?"good":"warn",mer>=mt?"над целта":"под целта");
+    dial("d-gold",(s.profit_day||0)/150,"#ffb547");$("v-gold").textContent=fmt(s.profit_day,0)+" €";$("s-gold").textContent="реклама "+fmt(s.spend_day,0)+" €/ден"+(s.today?" · днес "+fmt(s.today.spend,0)+" € / "+(s.today.orders==null?"–":s.today.orders)+" поръчки":"");
+    var ads=s.active_ads;dial("d-ads",(ads||0)/8,ads>=3?"#56f0b5":"#ff4d5e",[{f:3/8,c:"#ffb547"}]);$("v-ads").textContent=ads==null?"–":ads;zone("z-ads",ads>=3?"good":"bad",ads>=3?"портфолиото е наред":"твърде малко креативи");
+    if(s.pickup_rate!=null){$("dial-pick").hidden=false;dial("d-pick",s.pickup_rate,s.pickup_rate>=0.88?"#56f0b5":s.pickup_rate>=0.8?"#ffb547":"#ff4d5e",[{f:0.88,c:"#56f0b5"}]);$("v-pick").textContent=Math.round(s.pickup_rate*100)+"%";}
+    $("goal-txt").textContent=fmt(s.orders_day,1)+" / "+(s.goal_orders||15)+" поръчки на ден";
+    $("stats-upd").textContent=s.updated?("обновено "+s.updated):"";
   }
-  function bubble(c,a,t){
-    var s=a._status,x=a.x,y=a.y-10;
-    if(s==="waiting"){ if(reduce||Math.floor(t/400)%2){px(c,x-2,y-6,5,7,"#f4c443");px(c,x,y-5,1,3,"#17122a");px(c,x,y-1,1,1,"#17122a");} }
-    else if(s==="working"&&!reduce){ for(var i=0;i<3;i++){ if((Math.floor(t/250)%4)>i) px(c,x-3+i*3,y-3,2,2,"#f1eaff"); } }
-    else if(s==="blocked"){px(c,x-2,y-5,5,5,"#ff5d73");px(c,x-1,y-4,3,1,"#17122a");px(c,x-1,y-2,3,1,"#17122a");}
-    else if(s==="idle"&&!reduce){ var zz=Math.floor(t/600)%3; px(c,x+3,y-2-zz,2,1,"#a89bcc"); }
-  }
-  function drawFloor(c){
-    c.fillStyle="#130f24";c.fillRect(0,0,320,184);
-    for(var yy=24;yy<184;yy+=8)for(var xx=0;xx<320;xx+=8){c.fillStyle=((xx+yy)/8)%2?"#1b1533":"#191330";c.fillRect(xx,yy,8,8);}
-    c.fillStyle="#2c2350";c.fillRect(0,0,320,22);c.fillStyle="#3d3268";c.fillRect(0,20,320,2);
-    // windows with night sky
-    for(var w=0;w<6;w++){c.fillStyle="#0b0816";c.fillRect(14+w*52,5,24,10);c.fillStyle="#f4c443";c.fillRect(20+w*52+(w*7)%12,8,1,1);c.fillRect(30+w*52-(w*5)%9,11,1,1);}
-  }
-  var map=$("map"),mc=map.getContext("2d");
-  function drawMap(t){
-    mc.imageSmoothingEnabled=false;drawFloor(mc);
-    ROSTER.forEach(function(a){var live=state.agents[a.id]||{};a._status=live.status||"idle";});
-    ROSTER.forEach(function(a){station(mc,a,t);});
-    ROSTER.forEach(function(a,i){ person(mc,a.x,a.y,a,t,i); bubble(mc,a,t);
-      if(state.sel===a.id){mc.strokeStyle="#f4c443";mc.lineWidth=1;mc.strokeRect(a.x-7.5,a.y-14.5,15,29);} });
-  }
-  function loop(t){drawMap(t||0);drawRadar(t||0);if(!reduce)requestAnimationFrame(loop);}
-  map.addEventListener("click",function(e){
-    var r=map.getBoundingClientRect(),sx=320/r.width,sy=184/r.height,x=(e.clientX-r.left)*sx,y=(e.clientY-r.top)*sy,best=null,bd=1e9;
-    ROSTER.forEach(function(a){var d=Math.hypot(a.x-x,a.y+2-y);if(d<bd){bd=d;best=a;}});
-    if(best&&bd<16)select(best.id);
-  });
 
-  // ---------- party ----------
-  function portrait(cv,a,i){var c=cv.getContext("2d");c.imageSmoothingEnabled=false;c.fillStyle="#0f0b1d";c.fillRect(0,0,22,22);
-    var copy=Object.assign({},a,{_status:"idle"});person(c,11,7,copy,0,i);}
-  function renderParty(){
-    var box=$("party");box.textContent="";
-    ROSTER.forEach(function(a,i){
-      var live=state.agents[a.id]||{};var b=el("button","hero"+(state.sel===a.id?" sel":""));b.type="button";b.setAttribute("aria-pressed",state.sel===a.id?"true":"false");
-      var cv=el("canvas");cv.width=22;cv.height=22;portrait(cv,a,i);b.appendChild(cv);
-      var info=el("div");info.style.minWidth="0";
-      info.appendChild(el("div","nm",a.name));info.appendChild(el("div","cl",a.cls+" · "+a.role));
-      var xp=el("div","xp");var L=lvl(live.xp);xp.appendChild(el("span","lv","Lv "+L));
-      var bar=el("div","bar");var fill=el("i");fill.style.width=(((live.xp||0)%300)/3)+"%";bar.appendChild(fill);xp.appendChild(bar);info.appendChild(xp);
-      var s=live.status||"idle";info.appendChild(el("span","st "+s,STATUS_TXT[s]||s));
-      if(live.task)info.appendChild(el("div","task",live.task));
+  // ---------- core (canvas) ----------
+  var cv=$("core"),cx=cv.getContext("2d"),W=640,C=320,ORB=232,nodes=[];
+  ROSTER.forEach(function(a,i){var ang=-Math.PI/2+i/ROSTER.length*Math.PI*2;nodes.push({a:a,ang:ang});});
+  function drawCore(t){
+    var c=cx;c.clearRect(0,0,W,W);
+    var g=c.createRadialGradient(C,C,10,C,C,300);g.addColorStop(0,"rgba(69,212,255,.22)");g.addColorStop(.45,"rgba(69,212,255,.05)");g.addColorStop(1,"rgba(2,7,13,0)");c.fillStyle=g;c.fillRect(0,0,W,W);
+    var rot=reduce?0:t/1000;
+    function ring(r,w,dash,speed,alpha,col){c.save();c.translate(C,C);c.rotate(rot*speed);c.strokeStyle=col||"rgba(69,212,255,"+alpha+")";c.lineWidth=w;c.setLineDash(dash);c.beginPath();c.arc(0,0,r,0,Math.PI*2);c.stroke();c.restore();}
+    ring(300,1,[2,6],0.05,.35);ring(282,2,[60,14,8,14],-0.12,.35);ring(ORB,1,[],0,.18);ring(170,1,[4,10],0.25,.35);ring(128,3,[90,30],-0.4,.4);ring(96,1,[1,5],0.6,.6);
+    // goal arc (orders/day vs goal)
+    var s=S.stats,frac=s?Math.min(1,(s.orders_day||0)/(s.goal_orders||15)):0;
+    c.save();c.lineCap="round";c.lineWidth=6;c.strokeStyle="rgba(255,181,71,.15)";c.beginPath();c.arc(C,C,262,-Math.PI/2,Math.PI*1.5);c.stroke();
+    if(frac>0){c.strokeStyle="#ffb547";c.shadowColor="#ffb547";c.shadowBlur=14;c.beginPath();c.arc(C,C,262,-Math.PI/2,-Math.PI/2+Math.PI*2*frac);c.stroke();}
+    c.restore();
+    // tick marks around goal ring
+    c.save();c.strokeStyle="rgba(255,181,71,.5)";c.lineWidth=1;for(var k=0;k<15;k++){var a=-Math.PI/2+k/15*Math.PI*2;c.beginPath();c.moveTo(C+252*Math.cos(a),C+252*Math.sin(a));c.lineTo(C+256*Math.cos(a),C+256*Math.sin(a));c.stroke();}c.restore();
+    // links + packets
+    nodes.forEach(function(n,i){
+      var s2=st(n.a.id),col=COL[s2]||COL.idle,x=C+ORB*Math.cos(n.ang),y=C+ORB*Math.sin(n.ang);n.x=x;n.y=y;
+      c.strokeStyle=col;c.globalAlpha=s2==="idle"?.18:.45;c.lineWidth=1;c.setLineDash([]);c.beginPath();c.moveTo(C+60*Math.cos(n.ang),C+60*Math.sin(n.ang));c.lineTo(x-30*Math.cos(n.ang),y-30*Math.sin(n.ang));c.stroke();c.globalAlpha=1;
+      if((s2==="working"||s2==="waiting")&&!reduce){for(var p=0;p<2;p++){var f=((t/1600)+i*0.13+p*0.5)%1;var px=C+(60+f*(ORB-90))*Math.cos(n.ang),py=C+(60+f*(ORB-90))*Math.sin(n.ang);c.fillStyle=col;c.shadowColor=col;c.shadowBlur=10;c.beginPath();c.arc(px,py,2.6,0,Math.PI*2);c.fill();c.shadowBlur=0;}}
+    });
+    // center reactor
+    var pul=reduce?0.6:0.6+0.4*Math.sin(t/500);
+    var cg=c.createRadialGradient(C,C,4,C,C,62);cg.addColorStop(0,"rgba(220,250,255,"+(0.9*pul)+")");cg.addColorStop(.35,"rgba(69,212,255,.55)");cg.addColorStop(1,"rgba(69,212,255,0)");
+    c.fillStyle=cg;c.beginPath();c.arc(C,C,62,0,Math.PI*2);c.fill();
+    c.save();c.translate(C,C);c.rotate(-rot*0.8);c.strokeStyle="rgba(191,243,255,.85)";c.lineWidth=2;for(var q=0;q<10;q++){c.rotate(Math.PI/5);c.beginPath();c.moveTo(36,0);c.lineTo(48,0);c.stroke();}c.restore();
+    c.fillStyle="#bff3ff";c.font="600 22px Jura, Exo 2, sans-serif";c.textAlign="center";c.textBaseline="middle";c.fillText("FP",C,C-4);
+    c.font="500 11px Jura, sans-serif";c.fillStyle="rgba(191,243,255,.8)";c.fillText(st("coo")==="working"?"ОБРАБОТВАМ":"ОНЛАЙН",C,C+16);
+    // nodes
+    nodes.forEach(function(n){
+      var s2=st(n.a.id),col=COL[s2]||COL.idle,blink=(s2==="waiting"&&!reduce)?(0.55+0.45*Math.sin(t/220)):1;
+      c.save();c.globalAlpha=blink;c.fillStyle="rgba(2,12,22,.92)";c.strokeStyle=col;c.lineWidth=S.sel===n.a.id?3:1.6;c.shadowColor=col;c.shadowBlur=s2==="idle"?0:16;
+      c.beginPath();c.arc(n.x,n.y,27,0,Math.PI*2);c.fill();c.stroke();c.shadowBlur=0;
+      if(s2==="working"&&!reduce){c.strokeStyle=col;c.lineWidth=2;c.beginPath();var a0=t/300;c.arc(n.x,n.y,33,a0,a0+1.4);c.stroke();}
+      c.fillStyle=s2==="idle"?"#6f9bb3":"#e8fbff";c.font="700 14px Jura, sans-serif";c.textAlign="center";c.textBaseline="middle";c.fillText(n.a.g,n.x,n.y+1);
+      c.font="500 12px Exo 2, sans-serif";c.fillStyle=s2==="idle"?"#6f9bb3":"#bff3ff";
+      var ly=n.y+(Math.sin(n.ang)>0.3?44:-42);c.fillText(n.a.name,n.x,ly);c.restore();
+    });
+  }
+  cv.addEventListener("click",function(e){var r=cv.getBoundingClientRect(),k=W/r.width,x=(e.clientX-r.left)*k,y=(e.clientY-r.top)*k,best=null,bd=1e9;
+    nodes.forEach(function(n){var d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;best=n.a.id;}});if(Math.hypot(x-C,y-C)<70){best="coo";bd=0;}
+    if(best&&bd<44)select(best);});
+
+  // ---------- crew ----------
+  function renderCrew(){
+    var box=$("crew");box.textContent="";
+    [CORE].concat(ROSTER).forEach(function(a){
+      var live=S.agents[a.id]||{},s2=live.status||"idle";
+      var b=el("button","agent"+(S.sel===a.id?" sel":""));b.type="button";b.setAttribute("aria-pressed",S.sel===a.id?"true":"false");
+      b.appendChild(el("span","glyph "+s2,a.g||"JV"));
+      var info=el("span");info.style.minWidth="0";info.style.display="block";
+      info.appendChild(el("span","an",a.name));info.appendChild(el("div","ar",a.role));
+      info.appendChild(el("div","ast "+s2,ST[s2]||s2));
+      if(live.task)info.appendChild(el("div","atask",live.task));
+      var xp=el("div","xp");xp.appendChild(el("span",null,"LV "+lvl(live.xp)));var tr=el("div","track");var fi=el("i");fi.style.width=(((live.xp||0)%300)/3)+"%";tr.appendChild(fi);xp.appendChild(tr);info.appendChild(xp);
       b.appendChild(info);b.addEventListener("click",function(){select(a.id);});box.appendChild(b);
     });
   }
-  function select(id){state.sel=state.sel===id?null:id;renderParty();renderDetail();}
-  function renderDetail(){
-    var d=$("detail"),id=state.sel;if(!id){d.hidden=true;return;}
-    var a=BY[id],live=state.agents[id]||{};d.textContent="";
-    d.appendChild(el("h3",null,a.name+" · "+a.cls));
-    d.appendChild(el("p","muted",a.role+" · Lv "+lvl(live.xp)+" · "+(live.xp||0)+" XP"));
-    d.appendChild(el("p",null,"Сега: "+(live.task||"няма активна задача")));
-    if(live.last)d.appendChild(el("p","muted","Последно: "+live.last));
-    d.hidden=false;
-  }
+  function select(id){S.sel=S.sel===id?null:id;renderCrew();renderDetail();}
+  function renderDetail(){var d=$("detail"),id=S.sel;if(!id){d.hidden=true;return;}var a=BY[id],live=S.agents[id]||{};d.textContent="";
+    d.appendChild(el("h3",null,a.name));d.appendChild(el("p","lbl",(ST[live.status||"idle"]||"")+" · LV "+lvl(live.xp)+" · "+(live.xp||0)+" XP"));
+    d.appendChild(el("p",null,"Сега: "+(live.task||"няма активна задача")));if(live.last)d.appendChild(el("p",null,"Последно: "+live.last));d.hidden=false;}
 
-  // ---------- HUD ----------
-  function renderStats(){
-    var s=state.stats;if(!s)return;
-    var cpa=s.cpa7,zone=cpa==null?"":cpa<s.scale_cpa?"good":cpa<=s.stop_cpa?"warn":"bad";
-    $("c-cpa").textContent=fmt(cpa)+" €";$("c-cpa").parentNode.className="chip "+zone;
-    $("c-mer").textContent=fmt(s.mer);$("c-mer").parentNode.className="chip "+(s.mer>=s.mer_target?"good":s.mer>=s.be_mer?"warn":"bad");
-    $("c-gold").textContent=fmt(s.profit_day,0)+" €";
-    $("c-ads").textContent=s.active_ads==null?"–":s.active_ads;$("c-ads").parentNode.className="chip "+(s.active_ads>=3?"good":"bad");
-    if(s.pickup_rate!=null){$("chip-pick").hidden=false;$("c-pick").textContent=Math.round(s.pickup_rate*100)+"%";$("chip-pick").className="chip "+(s.pickup_rate>=0.88?"good":s.pickup_rate>=0.8?"warn":"bad");}
-    var goal=s.goal_orders||15,o=s.orders_day||0,hp=Math.max(0,1-o/goal);
-    $("boss-name").textContent="БОС · "+goal+" поръчки/ден";
-    $("boss-hp").style.width=(hp*100).toFixed(1)+"%";$("boss-bar").setAttribute("aria-valuenow",String(Math.round(hp*100)));
-    $("boss-val").textContent=fmt(o,1)+" / "+goal;
-  }
+  // ---------- protocols ----------
+  function renderQuests(){var ol=$("quests");if(!S.quests.length)return;ol.textContent="";
+    S.quests.forEach(function(q){var li=el("li","quest "+(q.status||""));var top=el("div","q-top");top.appendChild(el("span","q-title",q.title||q.id));top.appendChild(el("span","q-st "+(q.status||""),QT[q.status]||q.status||""));li.appendChild(top);
+      var m=[];if(q.owner&&BY[q.owner])m.push(BY[q.owner].name);if(q.result)m.push(q.result);if(m.length)li.appendChild(el("div","q-meta",m.join(" · ")));
+      if(typeof q.progress==="number"){var tr=el("div","track");var fi=el("i");fi.style.width=Math.round(q.progress*100)+"%";tr.appendChild(fi);li.appendChild(tr);}ol.appendChild(li);});}
 
-  // ---------- quests ----------
-  function renderQuests(){
-    var ol=$("quests");if(!state.quests.length)return;ol.textContent="";
-    state.quests.forEach(function(q){
-      var li=el("li","quest "+(q.status||""));var top=el("div","q-top");
-      top.appendChild(el("span","q-title",q.title||q.id));top.appendChild(el("span","q-st "+(q.status||""),Q_TXT[q.status]||q.status||""));li.appendChild(top);
-      var meta=[];if(q.owner&&BY[q.owner])meta.push(BY[q.owner].name);if(q.result)meta.push(q.result);
-      if(meta.length)li.appendChild(el("div","q-meta",meta.join(" · ")));
-      if(typeof q.progress==="number"){var b=el("div","bar");var f=el("i");f.style.width=Math.round(q.progress*100)+"%";b.appendChild(f);li.appendChild(b);}
-      ol.appendChild(li);
-    });
-  }
-
-  // ---------- arena ----------
-  function calibWord(r){if(r==null)return"няма данни";if(r>=0.7)return"остър";if(r>=0.5)return"добър";if(r>=0.2)return"слаб";return"сляп";}
-  function renderArena(){
-    var a=state.arena;if(!a||!a.fighters||!a.fighters.length)return;var box=$("arena");box.textContent="";
-    $("arena-run").textContent=a.run_id||"";
+  // ---------- simulation chamber ----------
+  function cw(r){if(r==null)return"няма данни";if(r>=0.7)return"висока";if(r>=0.5)return"добра";if(r>=0.2)return"слаба";return"няма сигнал";}
+  function renderArena(){var a=S.arena;if(!a||!a.fighters||!a.fighters.length)return;var box=$("arena");box.textContent="";$("run-id").textContent=a.run_id||"";
     if(a.title)box.appendChild(el("p",null,a.title));
-    var c=a.calibration||{};var cal=el("div","calib");
-    var r=c.spearman_composite_vs_real_cpa;cal.appendChild(el("div","gauge",r==null?"?":(r>0?"+":"")+fmt(r,2)));
-    var why=el("div");why.appendChild(el("div",null,"Точност на симулатора: "+calibWord(r)));
-    why.appendChild(el("div","why","Spearman спрямо реалния CPA"+(c.n_ads?" · "+c.n_ads+" реклами":"")+(c.pairwise_agreement_cpa?" · двойки "+c.pairwise_agreement_cpa:"")+(c.spearman_ctrindex_vs_real_ctr!=null?" · CTR "+fmt(c.spearman_ctrindex_vs_real_ctr,2):"")+(c.spearman_watch_vs_real_hold!=null?" · задържане "+fmt(c.spearman_watch_vs_real_hold,2):"")+(c.spearman_pickup_vs_real_pickup!=null?" · пратки "+fmt(c.spearman_pickup_vs_real_pickup,2):"")));
-    cal.appendChild(why);box.appendChild(cal);
+    var c=a.calibration||{},r=c.spearman_composite_vs_real_cpa;
+    var cal=el("div","calib");cal.appendChild(el("div","g",r==null?"—":(r>0?"+":"")+fmt(r,2)));var w=el("div");w.appendChild(el("div",null,"Точност на симулацията: "+cw(r)));
+    var bits=["Spearman спрямо реалния CPA"];if(c.n_ads)bits.push(c.n_ads+" реклами");if(c.pairwise_agreement_cpa)bits.push("двойки "+c.pairwise_agreement_cpa);if(c.spearman_ctrindex_vs_real_ctr!=null)bits.push("CTR "+fmt(c.spearman_ctrindex_vs_real_ctr,2));if(c.spearman_watch_vs_real_hold!=null)bits.push("задържане "+fmt(c.spearman_watch_vs_real_hold,2));if(c.spearman_pickup_vs_real_pickup!=null)bits.push("пратки "+fmt(c.spearman_pickup_vs_real_pickup,2));
+    w.appendChild(el("div","w",bits.join(" · ")));cal.appendChild(w);box.appendChild(cal);
     var fs=el("div","fighters");
-    a.fighters.forEach(function(f,i){
-      var row=el("div","fighter"+(i===0?" first":""));row.appendChild(el("div","rank",i===0?"♛":String(i+1)));
-      var mid=el("div");mid.style.minWidth="0";var nm=el("div","f-name");nm.appendChild(el("span",null,f.name||f.code));
-      if(f.anchor==="winner")nm.appendChild(el("span","f-tag win","реален победител"));
-      if(f.anchor==="loser")nm.appendChild(el("span","f-tag lose","реален губещ"));
-      if(f.gene)nm.appendChild(el("span","f-tag gene",f.gene));
-      mid.appendChild(nm);
-      var hp=el("div","bar hp");var fill=el("i");fill.style.width=Math.max(2,Math.min(100,f.score||0))+"%";
-      fill.style.background=(f.score>=50?"var(--good)":f.score>=30?"var(--gold)":"var(--bad)");hp.appendChild(fill);
-      if(f.ci&&f.ci.length===2){var ci=el("span","ci");ci.style.left=f.ci[0]+"%";ci.style.width=Math.max(1,f.ci[1]-f.ci[0])+"%";hp.appendChild(ci);}
-      mid.appendChild(hp);
-      var stats=el("div","f-stats");
-      [["спира",f.stop],["задържа",f.watch],["разбира",f.understanding],["клик",f.click],["купува",f.buy],["взима пратката",f.pickup]].forEach(function(p){
-        if(p[1]==null)return;var sp=el("span",null,p[0]+" ");sp.appendChild(el("b",null,fmt(p[1],1)));stats.appendChild(sp);});
-      if(stats.childNodes.length)mid.appendChild(stats);
-      if(f.curve&&f.curve.length){var cv=el("div","curve");cv.setAttribute("aria-label","Задържане по сцени");
-        f.curve.forEach(function(x,k){var b=el("i");b.style.height=Math.max(2,Math.round(x*22))+"px";b.title="сцена "+(k+1)+": "+Math.round(x*100)+"% гледат";cv.appendChild(b);});
-        mid.appendChild(cv);mid.appendChild(el("div","curve-l","задържане по сцени: "+f.curve.map(function(x){return Math.round(x*100)+"%";}).join(" → ")));}
-      var sub=[];if(f.qos!=null)sub.push("качествени поръчки "+fmt(f.qos,1));
-      if(f.real&&f.real.cpa!=null)sub.push("реален CPA "+fmt(f.real.cpa)+" €");if(f.real&&f.real.link_ctr!=null)sub.push("CTR "+fmt(f.real.link_ctr)+"%");
-      if(f.real&&f.real.hold_rate!=null)sub.push("hold "+Math.round(f.real.hold_rate*100)+"%");if(f.real&&f.real.pickup_rate!=null)sub.push("взети пратки "+Math.round(f.real.pickup_rate*100)+"%");
-      if(sub.length)mid.appendChild(el("div","f-sub",sub.join(" · ")));
-      if(f.door_doubt)mid.appendChild(el("div","f-door","Пред куриера: „"+f.door_doubt+"“"));
-      if(f.quote)mid.appendChild(el("div","f-quote","„"+f.quote+"“"));
-      row.appendChild(mid);row.appendChild(el("div","f-score num",fmt(f.score,0)));fs.appendChild(row);
-    });
-    box.appendChild(fs);
-  }
+    a.fighters.forEach(function(f,i){var row=el("div","ft"+(i===0?" first":""));row.appendChild(el("div","rk",i===0?"01":(i+1<10?"0":"")+(i+1)));
+      var mid=el("div");mid.style.minWidth="0";var nm=el("div","fn");nm.appendChild(el("span",null,f.name||f.code));
+      if(f.anchor==="winner")nm.appendChild(el("span","tag win","реален победител"));if(f.anchor==="loser")nm.appendChild(el("span","tag lose","реален губещ"));if(f.gene)nm.appendChild(el("span","tag gene",f.gene));mid.appendChild(nm);
+      var col=f.score>=50?"#56f0b5":f.score>=30?"#45d4ff":"#ff4d5e";var bar=el("div","bar");var fi=el("i");fi.style.width=Math.max(2,Math.min(100,f.score||0))+"%";fi.style.background=col;fi.style.color=col;bar.appendChild(fi);
+      if(f.ci&&f.ci.length===2){var ci=el("span","ci");ci.style.left=f.ci[0]+"%";ci.style.width=Math.max(1,f.ci[1]-f.ci[0])+"%";bar.appendChild(ci);}mid.appendChild(bar);
+      var sx=el("div","fs");[["спира",f.stop],["задържа",f.watch],["разбира",f.understanding],["клик",f.click],["купува",f.buy],["взима пратката",f.pickup]].forEach(function(p){if(p[1]==null)return;var sp=el("span",null,p[0]+" ");sp.appendChild(el("b",null,fmt(p[1],1)));sx.appendChild(sp);});if(sx.childNodes.length)mid.appendChild(sx);
+      if(f.curve&&f.curve.length){var cvv=el("div","curve");f.curve.forEach(function(x,k){var b=el("i");b.style.height=Math.max(2,Math.round(x*20))+"px";b.title="сцена "+(k+1)+": "+Math.round(x*100)+"%";cvv.appendChild(b);});mid.appendChild(cvv);}
+      var sub=[];if(f.qos!=null)sub.push("качествени поръчки "+fmt(f.qos,1));if(f.real&&f.real.cpa!=null)sub.push("реален CPA "+fmt(f.real.cpa)+" €");if(f.real&&f.real.link_ctr!=null)sub.push("CTR "+fmt(f.real.link_ctr)+"%");if(f.real&&f.real.hold_rate!=null)sub.push("hold "+Math.round(f.real.hold_rate*100)+"%");if(f.real&&f.real.pickup_rate!=null)sub.push("взети "+Math.round(f.real.pickup_rate*100)+"%");
+      if(sub.length)mid.appendChild(el("div","sub2",sub.join(" · ")));if(f.quote)mid.appendChild(el("div","quote","„"+f.quote+"“"));if(f.door_doubt)mid.appendChild(el("div","sub2","Пред куриера: „"+f.door_doubt+"“"));
+      row.appendChild(mid);row.appendChild(el("div","score num",fmt(f.score,0)));fs.appendChild(row);});
+    box.appendChild(fs);}
 
   // ---------- radar ----------
-  var rc=$("radar").getContext("2d");
-  function drawRadar(t){
-    var c=rc;c.imageSmoothingEnabled=false;c.fillStyle="#0f0b1d";c.fillRect(0,0,100,100);
-    c.strokeStyle="#2c2350";for(var r=12;r<=48;r+=12){c.beginPath();c.arc(50,50,r,0,Math.PI*2);c.stroke();}
-    c.beginPath();c.moveTo(2,50);c.lineTo(98,50);c.moveTo(50,2);c.lineTo(50,98);c.stroke();
-    var ang=reduce?0.8:(t/1400)%(Math.PI*2);
-    c.fillStyle="rgba(111,220,140,.18)";c.beginPath();c.moveTo(50,50);c.arc(50,50,48,ang-0.5,ang);c.closePath();c.fill();
-    var R=state.radar;if(!R)return;var pts=[];
-    (R.longest_running||[]).forEach(function(x,i){var d=Math.min(90,x.days||0);pts.push({rr:46-d/90*38,a:i*1.3+0.4,col:"#ff5d73",s:3});});
-    (R.scaling||[]).forEach(function(x,i){pts.push({rr:30+ (i%3)*5,a:i*1.9+2.2,col:"#f4c443",s:2+Math.min(3,Math.round((x.new_7d||0)/6))});});
-    pts.forEach(function(p){var x=50+Math.cos(p.a)*p.rr,y=50+Math.sin(p.a)*p.rr;c.fillStyle=p.col;c.fillRect(Math.round(x-p.s/2),Math.round(y-p.s/2),p.s,p.s);});
-    c.fillStyle="#6fdc8c";c.fillRect(49,49,2,2);
-  }
-  function renderRadar(){
-    var R=state.radar;if(!R)return;$("radar-date").textContent=R.date||"";var ul=$("r-list");ul.textContent="";
-    var head=el("li");head.appendChild(el("b",null,String(R.new_ads==null?"–":R.new_ads)));head.appendChild(document.createTextNode(" нови реклами · "+(R.stopped_ads==null?"–":R.stopped_ads)+" спрели"));ul.appendChild(head);
+  var rc=$("radar").getContext("2d"),RW=280,RC=140;
+  function drawRadar(t){var c=rc;c.clearRect(0,0,RW,RW);var g=c.createRadialGradient(RC,RC,4,RC,RC,138);g.addColorStop(0,"rgba(69,212,255,.12)");g.addColorStop(1,"rgba(2,7,13,0)");c.fillStyle=g;c.beginPath();c.arc(RC,RC,136,0,Math.PI*2);c.fill();
+    c.strokeStyle="rgba(69,212,255,.25)";c.lineWidth=1;for(var r=34;r<=136;r+=34){c.beginPath();c.arc(RC,RC,r,0,Math.PI*2);c.stroke();}
+    c.beginPath();c.moveTo(4,RC);c.lineTo(RW-4,RC);c.moveTo(RC,4);c.lineTo(RC,RW-4);c.stroke();
+    var ang=reduce?0.9:(t/1500)%(Math.PI*2);var sg=c.createLinearGradient(RC,RC,RC+136*Math.cos(ang),RC+136*Math.sin(ang));
+    c.save();c.fillStyle="rgba(69,212,255,.16)";c.beginPath();c.moveTo(RC,RC);c.arc(RC,RC,136,ang-0.6,ang);c.closePath();c.fill();c.strokeStyle="rgba(191,243,255,.8)";c.beginPath();c.moveTo(RC,RC);c.lineTo(RC+136*Math.cos(ang),RC+136*Math.sin(ang));c.stroke();c.restore();
+    var R=S.radar;if(!R)return;var pts=[];
+    (R.longest_running||[]).forEach(function(x,i){var d=Math.min(150,x.days||0);pts.push({rr:128-d/150*100,a:i*1.25+0.5,col:"#ff4d5e",s:4});});
+    (R.scaling||[]).forEach(function(x,i){pts.push({rr:70+(i%3)*18,a:i*1.9+2.4,col:"#ffb547",s:3+Math.min(4,Math.round((x.new_7d||0)/5))});});
+    pts.forEach(function(p){var x=RC+Math.cos(p.a)*p.rr,y=RC+Math.sin(p.a)*p.rr;var dA=((ang-p.a)%(Math.PI*2)+Math.PI*2)%(Math.PI*2);var glow=reduce?0.8:Math.max(0.35,1-dA/2.5);c.globalAlpha=glow;c.fillStyle=p.col;c.shadowColor=p.col;c.shadowBlur=10;c.beginPath();c.arc(x,y,p.s,0,Math.PI*2);c.fill();c.shadowBlur=0;c.globalAlpha=1;});
+    c.fillStyle="#bff3ff";c.beginPath();c.arc(RC,RC,3,0,Math.PI*2);c.fill();}
+  function renderRadar(){var R=S.radar;if(!R)return;$("radar-date").textContent=R.date||"";var ul=$("rl");ul.textContent="";
+    var h=el("li");h.appendChild(el("b",null,String(R.new_ads==null?"–":R.new_ads)));h.appendChild(document.createTextNode(" нови реклами · "+(R.stopped_ads==null?"–":R.stopped_ads)+" спрели"));ul.appendChild(h);
     (R.longest_running||[]).slice(0,4).forEach(function(x){var li=el("li");li.appendChild(el("b",null,(x.days||0)+" дни"));li.appendChild(document.createTextNode(" "+(x.page||"")+" · "+(x.title||"")));ul.appendChild(li);});
-    (R.scaling||[]).slice(0,3).forEach(function(x){var li=el("li");li.appendChild(el("b",null,"+"+(x.new_7d||0)));li.appendChild(document.createTextNode(" "+(x.page||"")+" скалира"+(x.repeated_title?": „"+x.repeated_title+"“":"")));ul.appendChild(li);});
-    if(R.formats&&R.formats.length){var li2=el("li","muted","Формати: "+R.formats.slice(0,5).map(function(f){return f.format+" "+(f.count||0)+(f.trend?" "+f.trend:"");}).join(" · "));ul.appendChild(li2);}
-    var ideas=$("ideas");ideas.textContent="";(R.ideas||[]).slice(0,5).forEach(function(x){var li=el("li");li.appendChild(el("b",null,x.cb||"идея"));li.appendChild(document.createTextNode(x.title||""));ideas.appendChild(li);});
-    ideas.hidden=!(R.ideas&&R.ideas.length);
+    (R.scaling||[]).slice(0,3).forEach(function(x){var li=el("li");li.appendChild(el("b",null,"+"+(x.new_7d||0)));li.appendChild(document.createTextNode(" "+(x.page||"")+" скалира"));ul.appendChild(li);});
+    var ideas=$("ideas");ideas.textContent="";(R.ideas||[]).slice(0,5).forEach(function(x){var li=el("li");li.appendChild(el("b",null,x.cb||"идея"));li.appendChild(document.createTextNode(x.title||""));ideas.appendChild(li);});ideas.hidden=!(R.ideas&&R.ideas.length);}
+
+  // ---------- shifts ----------
+  function nextOf(r,now){if(!r.next_run_at)return null;var t=Date.parse(r.next_run_at);if(isNaN(t))return null;var ev=(r.every_min||0)*60000;if(ev>0)while(t<now)t+=ev;return t;}
+  function hm(ms){if(ms==null)return"–";var s=Math.max(0,Math.round(ms/1000)),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=s%60;return(h?h+"ч ":"")+(m<10&&h?"0":"")+m+"м "+(x<10?"0":"")+x+"с";}
+  function renderShifts(){var box=$("shifts");var sc=S.sched;if(!sc||!sc.routines)return;var now=Date.now(),soon=null;box.textContent="";
+    sc.routines.forEach(function(r){var n=nextOf(r,now);if(n!=null&&(soon==null||n<soon))soon=n;var d=el("div","shift");d.appendChild(el("span","n",r.name));d.appendChild(el("span","t num",hm(n==null?null:n-now)));d.appendChild(el("span","d",r.desc||""));box.appendChild(d);});
+    $("next").textContent=soon==null?"--:--":hm(soon-now);}
+  function tick(){var d=new Date();try{$("clock").textContent=d.toLocaleTimeString("bg-BG",{timeZone:"Europe/Sofia",hour:"2-digit",minute:"2-digit",second:"2-digit"});}catch(e){$("clock").textContent=d.toTimeString().slice(0,8);}renderShifts();}
+
+  // ---------- terminal ----------
+  function renderLog(){if(!S.log.length)return;var ul=$("term");ul.textContent="";
+    S.log.slice(0,60).forEach(function(e,i){var li=el("li");li.appendChild(el("span","t",e.t||""));var b=el("span");var who=BY[e.agent]?BY[e.agent].name:(e.agent||"");if(who)b.appendChild(el("span","w",who+" › "));b.appendChild(document.createTextNode(e.text||""));if(i===0){var cu=el("span","cursor");b.appendChild(document.createTextNode(" "));b.appendChild(cu);}li.appendChild(b);ul.appendChild(li);});}
+
+  function sys(on,txt){$("led").className="led "+(on?"on":"off");$("sys-txt").textContent=txt;}
+  async function connect(){var db=null;try{db=await window.claude.use("db");}catch(e){db=null;}
+    if(!db){sys(false,"няма връзка с базата");return;}sys(true,"всички системи онлайн");
+    function err(){sys(false,"връзката прекъсна · презареди");}
+    db.doc("hq/stats").onSnapshot(function(s){if(s.exists){S.stats=s.data();renderStats();}},err);
+    db.doc("hq/arena").onSnapshot(function(s){if(s.exists){S.arena=s.data();renderArena();}},err);
+    db.doc("hq/radar").onSnapshot(function(s){if(s.exists){S.radar=s.data();renderRadar();}},err);
+    db.doc("hq/schedule").onSnapshot(function(s){if(s.exists){S.sched=s.data();renderShifts();}},err);
+    db.collection("agents").onSnapshot(function(q){var m={};q.docs.forEach(function(d){m[d.id]=d.data();});S.agents=m;renderCrew();renderDetail();},err);
+    db.collection("quests").orderBy("order","asc").limit(40).onSnapshot(function(q){S.quests=q.docs.map(function(d){return Object.assign({id:d.id},d.data());});renderQuests();},err);
+    db.collection("log").orderBy("day","desc").limit(3).onSnapshot(function(q){var all=[];q.docs.forEach(function(d){var x=d.data()||{};(x.entries||[]).forEach(function(e){all.push(Object.assign({day:x.day},e));});});all.sort(function(a,b){return(b.day+b.t)>(a.day+a.t)?1:-1;});S.log=all;renderLog();},err);
   }
-
-  // ---------- log ----------
-  function renderLog(){
-    if(!state.log.length)return;var ul=$("log");ul.textContent="";
-    state.log.slice(0,60).forEach(function(e){var li=el("li");li.appendChild(el("span","t",e.t||""));
-      var body=el("span");var who=BY[e.agent]?BY[e.agent].name:(e.agent||"");body.appendChild(el("span","who",who?who+": ":""));body.appendChild(document.createTextNode(e.text||""));li.appendChild(body);ul.appendChild(li);});
-  }
-
-  function setSync(on,txt){$("syncdot").className="dot"+(on?" on":"");$("synctxt").textContent=txt;}
-
-  // ---------- data ----------
-  async function connect(){
-    var db=null;try{db=await window.claude.use("db");}catch(e){db=null;}
-    if(!db){setSync(false,"без връзка с базата (отвори страницата в claude.ai)");return;}
-    setSync(true,"на живо");
-    function err(){setSync(false,"връзката прекъсна, презареди страницата");}
-    db.doc("hq/stats").onSnapshot(function(s){if(s.exists){state.stats=s.data();renderStats();}},err);
-    db.doc("hq/arena").onSnapshot(function(s){if(s.exists){state.arena=s.data();renderArena();}},err);
-    db.doc("hq/radar").onSnapshot(function(s){if(s.exists){state.radar=s.data();renderRadar();}},err);
-    db.collection("agents").onSnapshot(function(q){var m={};q.docs.forEach(function(d){m[d.id]=d.data();});state.agents=m;renderParty();renderDetail();},err);
-    db.collection("quests").orderBy("order","asc").limit(40).onSnapshot(function(q){state.quests=q.docs.map(function(d){var x=Object.assign({id:d.id},d.data());return x;});renderQuests();},err);
-    db.collection("log").orderBy("day","desc").limit(3).onSnapshot(function(q){var all=[];q.docs.forEach(function(d){var x=d.data()||{};(x.entries||[]).forEach(function(e){all.push(Object.assign({day:x.day},e));});});
-      all.sort(function(a,b){return (b.day+b.t)>(a.day+a.t)?1:-1;});state.log=all;renderLog();},err);
-  }
-
-  renderParty();
-  if(reduce){drawMap(0);drawRadar(0);} else requestAnimationFrame(loop);
+  function loop(t){drawCore(t||0);drawRadar(t||0);if(!reduce)requestAnimationFrame(loop);}
+  renderCrew();tick();setInterval(tick,1000);
+  if(reduce){drawCore(0);drawRadar(0);}else requestAnimationFrame(loop);
   connect();
 })();
 </script>
