@@ -48,19 +48,49 @@ function doGet() {
   return ContentService.createTextOutput('FitPatches: формата за бързи поръчки работи.');
 }
 
+// Пусни веднъж от редактора (бутон „Изпълни“ с избрана функция setup), за да оформи таблицата и обобщението.
+function setup() {
+  getSheet_();
+}
+
 function getSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME) || ss.getSheets()[0];
   if (sheet.getName() !== SHEET_NAME) sheet.setName(SHEET_NAME);
-  if (sheet.getLastRow() === 0 || sheet.getRange(1, 1).getValue() !== HEADERS[0]) {
-    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]).setFontWeight('bold').setBackground('#fbe9f1');
+  if (sheet.getLastRow() === 0) sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+  var props = PropertiesService.getScriptProperties();
+  if (props.getProperty('formatted') !== '1') {
+    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold').setBackground('#fbe9f1');
     sheet.setFrozenRows(1);
     sheet.getRange('A:A').setNumberFormat('dd.mm.yyyy hh:mm');
     sheet.getRange('D:D').setNumberFormat('@');
     var rule = SpreadsheetApp.newDataValidation().requireValueInList(STATUSES, true).setAllowInvalid(true).build();
     sheet.getRange(2, 8, sheet.getMaxRows() - 1, 1).setDataValidation(rule);
+    ensureSummary_(ss);
+    props.setProperty('formatted', '1');
   }
   return sheet;
+}
+
+// Таб „Обобщение“ — броячи с формули, които се обновяват сами с всяка нова заявка.
+function ensureSummary_(ss) {
+  var sum = ss.getSheetByName('Обобщение') || ss.insertSheet('Обобщение');
+  var src = "'" + SHEET_NAME + "'!";
+  var rows = [
+    ['Показател', 'Стойност'],
+    ['Общо заявки', '=COUNTA(' + src + 'B2:B)'],
+    ['Заявки днес', '=COUNTIFS(' + src + 'A2:A,">="&TODAY())'],
+    ['Заявки последните 7 дни', '=COUNTIFS(' + src + 'A2:A,">="&TODAY()-6)']
+  ];
+  STATUSES.forEach(function (s) {
+    rows.push(['Статус: ' + s, '=COUNTIF(' + src + 'H2:H,"' + s + '")']);
+  });
+  rows.push(['Маркирани като дубликат', '=COUNTIF(' + src + 'J2:J,"Да")']);
+  rows.push(['Сума на доставените (€)', '=SUMIF(' + src + 'H2:H,"Доставена",' + src + 'G2:G)']);
+  rows.push(['Средна сума на заявка (€)', '=IFERROR(AVERAGE(' + src + 'G2:G),0)']);
+  sum.getRange(1, 1, rows.length, 2).setValues(rows);
+  sum.getRange(1, 1, 1, 2).setFontWeight('bold').setBackground('#fbe9f1');
+  sum.setColumnWidth(1, 240);
 }
 
 function isDuplicate_(sheet, digits) {
