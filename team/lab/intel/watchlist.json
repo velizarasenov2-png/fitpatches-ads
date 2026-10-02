@@ -17,7 +17,7 @@
     "US": ["weight loss patch", "GLP-1 patch", "berberine", "sugar cravings", "collagen"],
     "GB": ["menopause belly", "berberine patch", "magnesium sleep"],
     "DE": ["Abnehmpflaster", "Berberin"],
-    "FR": ["ventre ménopause"],
+    "FR": ["ventre ménopause", "berbérine", "patch minceur"],
     "ES": ["GLP-1"],
     "IT": ["berberina"],
     "PL": ["plastry na odchudzanie"],
@@ -73,7 +73,13 @@
     {"page_id": "109899597504831", "name": "Javvy", "country": "US", "why": "общ DTC: 22 реклами с едно заглавие за минута (F-014)", "added": "2026-10-01"},
     {"page_id": "1412571095263073", "name": "Tryskintle Online", "country": "US", "why": "„Бъдещето на ежедневния уелнес: без хапчета“ ×5 за ден (F-003); сестринска Tryskintle (1365190990001471) с „една лепенка на ден“", "added": "2026-10-02"},
     {"page_id": "984192894788532", "name": "Sara Davis", "country": "US", "why": "черен дроб + цитат „много често срещан“ ×3 за ден (F-007, F-002); тема забранена за нас, следим само формата", "added": "2026-10-02"},
-    {"page_id": "434152626445677", "name": "Mag-shop", "country": "RO", "why": "„Așa Funcționează Nano-Acele Pentru Slăbire“: лепенки с микроигли, нов механизъм; 1 реклама от 30.09, следи за клонинги", "added": "2026-10-02"}
+    {"page_id": "434152626445677", "name": "Mag-shop", "country": "RO", "why": "„Așa Funcționează Nano-Acele Pentru Slăbire“: лепенки с микроигли, нов механизъм; 1 реклама от 30.09, следи за клонинги · 02.10 15:11: микроиглите са вече при 3 марки за 3 дни (+ FreshHaut DE, Tryskintle shop) (F-016)", "added": "2026-10-02"},
+    {"page_id": "1079442235243162", "name": "Tryskintle shop", "country": "FR", "why": "„🔥70% OFF! Berberine Nano Microneedle Patch“ ×4 за 6 сек (02.10, 10:28): берберин + микроигла, нашата категория; трета страница на Tryskintle (F-016)", "added": "2026-10-02"},
+    {"page_id": "1073196552546699", "name": "Vitaliaina-A", "country": "FR", "why": "мрежа Vitaliaina (лепенки, USD): „A Simpler Daily Wellness Routine“ ×11 за 37 сек (02.10, 11:41), тръгват 14:47–15:09 (F-014)", "added": "2026-10-02"},
+    {"page_id": "1138162346036232", "name": "Vitaliaina store", "country": "FR", "why": "„I was stuck, despite doing everything right...“ ×4 (02.10): цитат „направих всичко правилно“, ъгълът на нашия AD28; сестринска Vitaliaina-shop (1096750230180840) „Eat Well + Exercise, Still Sluggish?“ ×6", "added": "2026-10-02"},
+    {"page_id": "1312576898594566", "name": "SoulBotanic", "country": "FR", "why": "3 hook-а в една минута (02.10, 01:25), сред тях „The Absorption Question, Answered“ (съмнението като заглавие, F-016) и „Your sugar cravings are not the whole story.“ (F-001)", "added": "2026-10-02"},
+    {"page_id": "582414301620905", "name": "BeautyShan", "country": "FR", "why": "лепенки (USD): „On a refusé leur offre !“ 230 дни и „Ces patchs ont changés ma vie en 3 mois ! ✨“ 117 дни, най-дългите във FR; съдържанието е неясно, отвори snapshot-а", "added": "2026-10-02"},
+    {"page_id": "1366178646569547", "name": "Maya Slim", "country": "FR", "why": "лепенки: 17 реклами (с Maya Slim Officiel 1270442116151587) от 14.09 с 4 заглавия-оферти (−20% код, „4,8/5 sur Trustpilot“), и 17-те въртят 18 дни (F-005, F-015)", "added": "2026-10-02"}
   ],
   "note": "pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
 }
