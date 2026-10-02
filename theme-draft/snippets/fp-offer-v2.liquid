@@ -330,7 +330,7 @@
   function showSuccess(name, phone, leadId){
     orderForm.hidden = true; successEl.hidden = false;
     setText('[data-success-title]', 'Благодарим, ' + name.split(' ')[0] + '! Заявката е приета.');
-    setText('[data-success-text]', 'Ще ти се обадим на ' + phone + ', за да потвърдим поръчката. Номер на заявката: ' + leadId + '.');
+    setText('[data-success-text]', 'Ще ти се обадим на ' + phone + ', за да потвърдим поръчката.');
   }
   if (orderForm) orderForm.addEventListener('submit', function(e){
     e.preventDefault(); errEl.hidden = true;
