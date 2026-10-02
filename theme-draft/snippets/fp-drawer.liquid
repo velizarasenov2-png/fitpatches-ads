@@ -1,4 +1,4 @@
-{%- comment -%} FitPatches — плъзгаща количка. Единствен бутон: EasySell COD формата (клас es-popup-button-drawer). Shopify checkout само като резерва, ако EasySell не се отвори. {%- endcomment -%}
+{%- comment -%} FitPatches — плъзгаща количка. Единствен бутон: EasySell COD формата (клас es-popup-button-drawer). {%- endcomment -%}
 <div class="fpd" id="fpDrawer" aria-hidden="true">
   <div class="fpd__ov" data-fpd-close></div>
   <aside class="fpd__panel" role="dialog" aria-label="Количка">
@@ -160,16 +160,8 @@
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
   function markAgree(){ try{ fetch('/cart/update.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({attributes:{'Съгласие за получаване (наложен платеж)':agEl&&agEl.checked?'Да':'Не'}}),keepalive:true}); }catch(e){} }
   /* EasySell слуша кликове върху .es-popup-button-drawer и отваря своята форма с количката.
-     Ако EasySell не се отвори (приложението е изключено), пращаме към стандартния checkout. */
-  codEl.addEventListener('click',function(){
-    markAgree(); close();
-    if(!window.EasySellHelpers){ window.location.href='/checkout'; return; }
-    setTimeout(function(){
-      var modal=document.querySelector('.easysell-modal, #es-popup, .es-form-container');
-      var visible=modal && (modal.offsetWidth||modal.offsetHeight||modal.getClientRects().length);
-      if(!visible){ window.location.href='/checkout'; }
-    },2500);
-  });
+     Без резервно пренасочване към стандартния checkout. */
+  codEl.addEventListener('click',function(){ markAgree(); close(); });
   (function(){
     var el=root.querySelector('[data-fpd-eta]'); if(!el) return;
     var MB=['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
