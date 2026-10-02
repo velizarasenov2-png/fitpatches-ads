@@ -1172,6 +1172,132 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261002-2312-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V11",
+          "name": "S3 · 30 сек",
+          "composite": 38.5,
+          "ci90": [
+            34.2,
+            42.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "A13 · без „след 40“",
+          "composite": 36.8,
+          "ci90": [
+            29.8,
+            42.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "F-011 · hook без „берберин“",
+          "composite": 32.1,
+          "ci90": [
+            27.7,
+            36.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "S2 · скрийншот от чат (VF-011)",
+          "composite": 31.2,
+          "ci90": [
+            26.6,
+            35.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "ugc1 · S2 отговарям на коментарите",
+          "composite": 31.2,
+          "ci90": [
+            26.2,
+            36.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "F-011 · тетрадка на ръка (VF-008)",
+          "composite": 30.8,
+          "ci90": [
+            24.8,
+            36.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "ugc1 · A16 сутрешен ритуал",
+          "composite": 29.1,
+          "ci90": [
+            23.8,
+            35.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "A13 · карусел-чеклист (VF-009)",
+          "composite": 26.0,
+          "ci90": [
+            20.2,
+            32.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "ugc1 - Copy",
+          "composite": 25.7,
+          "ci90": [
+            20.3,
+            30.9
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V7",
+          "name": "ad1 (videa3)",
+          "composite": 23.4,
+          "ci90": [
+            17.6,
+            30.2
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 · VF-001 цената първа (статик)",
+          "composite": 19.6,
+          "ci90": [
+            15.8,
+            23.4
+          ],
+          "real": null
+        }
+      ]
     }
   ]
 }
