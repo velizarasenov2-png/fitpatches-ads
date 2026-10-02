@@ -1,0 +1,49 @@
+{%- comment -%}
+  FitPatches — „Благодарим за поръчката!“ след поръчка през EasySell, без номер на поръчка.
+  EasySell вика window.es_hook_before_redirect(order) точно преди да пренасочи към страницата на Shopify,
+  която показва „Поръчка #1338“. Обещание, което не се изпълнява, спира това пренасочване и вместо него
+  показваме този екран. Събитието Purchase към Meta EasySell го изпраща преди тази стъпка.
+  Зарежда се от layout/theme.liquid, за да важи на всяка страница.
+{%- endcomment -%}
+<div class="fpty" id="fpThanks" hidden role="dialog" aria-modal="true" aria-labelledby="fpThanksTitle">
+  <div class="fpty__card">
+    <div class="fpty__ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h2 class="fpty__title" id="fpThanksTitle">Благодарим за поръчката!</h2>
+    <p class="fpty__sum" data-fpty-sum hidden></p>
+    <p class="fpty__text">Ще се свържем с теб за потвърждение. Плащаш на куриера, когато получиш пратката.</p>
+    <a class="fpty__btn" href="/">Към началната страница</a>
+    <p class="fpty__help">Въпроси? Обади се на <a href="tel:0887459494">0887 459 494</a></p>
+  </div>
+</div>
+<style>
+  #fpThanks{position:fixed;inset:0;z-index:2147483000;background:rgba(20,10,16,.55);display:flex;align-items:center;justify-content:center;padding:16px;font-family:inherit}
+  #fpThanks[hidden]{display:none}
+  #fpThanks .fpty__card{background:#fff;border-radius:18px;max-width:420px;width:100%;padding:28px 22px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.2)}
+  #fpThanks .fpty__ok{width:56px;height:56px;border-radius:50%;background:#eef8f1;color:#1f8a4c;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  #fpThanks .fpty__ok svg{width:28px;height:28px}
+  #fpThanks .fpty__title{font-size:24px;font-weight:800;color:#111;margin:0 0 10px;line-height:1.25}
+  #fpThanks .fpty__sum{margin:0 0 8px;color:#333;font-size:15px;font-weight:700}
+  #fpThanks .fpty__text{margin:0 0 20px;color:#555;font-size:15px;line-height:1.45}
+  #fpThanks .fpty__btn{display:block;background:#d64d87;color:#fff;font-weight:800;border-radius:12px;padding:14px;text-decoration:none}
+  #fpThanks .fpty__help{margin:12px 0 0;font-size:13px;color:#777}
+  #fpThanks .fpty__help a{color:#b93a70;font-weight:700}
+  body.fpty-lock{overflow:hidden}
+</style>
+<script>
+  window.es_hook_before_redirect = function (order) {
+    try {
+      var box = document.getElementById('fpThanks');
+      if (!box) return Promise.resolve();
+      var t = parseFloat((order || {}).total_price);
+      var sumEl = box.querySelector('[data-fpty-sum]');
+      if (t > 0 && t < 1000) { sumEl.textContent = 'Сума за плащане при доставка: ' + t.toFixed(2).replace('.', ',') + ' €'; sumEl.hidden = false; }
+      if (window.fpCart && window.fpCart.close) window.fpCart.close();
+      box.hidden = false;
+      document.body.classList.add('fpty-lock');
+      fetch('/cart/clear.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(function () {});
+      return new Promise(function () {});
+    } catch (e) {
+      return Promise.resolve();
+    }
+  };
+</script>
