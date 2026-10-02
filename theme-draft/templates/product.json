@@ -1,0 +1,292 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p style=\"margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.5px;color:#b93a70;text-transform:uppercase;\">Берберинови лепенки FitPatches · 30 бр. в пакет</p><h1 class=\"h1\" style=\"margin:0 0 6px;line-height:1.15;\">Една лепенка сутрин. По-малко желание за сладко през деня.</h1><p style=\"margin:0;font-size:15px;color:#555;line-height:1.45;\">Без хапчета, без абонамент — плащаш при доставка.</p>"
+          }
+        },
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p style=\"margin:10px 0 14px;font-size:14px;color:#1f8a4c;font-weight:700;display:flex;align-items:center;gap:6px;\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"/></svg>Над 350 поръчки в България · плащане при доставка</p>"
+          }
+        },
+        "fp_custom_offer": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'fp-offer-v2' %}"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "fp_custom_offer"
+      ],
+      "custom_css": [],
+      "settings": {
+        "display_id": false,
+        "enable_sticky_info": true,
+        "display_variant_image_first": false,
+        "disable_prepend": true,
+        "hide_variants": false,
+        "variant_image_filtering": "none",
+        "image_zoom": "none",
+        "thumbnails_ratio": "square",
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": false,
+        "dots_color_scheme": "inverse",
+        "video_player": "play_btn",
+        "enable_video_looping": false,
+        "autoplay_videos_pause_btn": false,
+        "video_sound_btn": false,
+        "video_timeline": false,
+        "play_btn_color_scheme": "accent-1",
+        "sound_btn_color_scheme": "inverse",
+        "timeline_color": "accent-1",
+        "media_size": "medium",
+        "media_position": "left",
+        "gallery_layout": "thumbnail_slider",
+        "desktop_thumbnails_position": "bottom",
+        "desktop_thumbnails_count": 5,
+        "desktop_vertical_thumbnails_width": 16,
+        "desktop_vertical_thumbnails_hide_arrows": false,
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "desktop_arrows_position": "hidden",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing_pixels": 0,
+        "mobile_arrows_position": "sides",
+        "mobile_pagination": "dots_overlay",
+        "mobile_thumbnails_position": "hidden",
+        "mobile_thumbnails_count": 5,
+        "mobile_vertical_thumbnails_width": 22,
+        "mobile_vertical_thumbnails_hide_arrows": true,
+        "mobile_scroll_padding_percentage": 0,
+        "mobile_scroll_padding_pixels": 14,
+        "enable_mobile_outher_spacing": false,
+        "mobile_slides_container_width": 100,
+        "mobile_slides_inner_width": 100,
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 8,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 8,
+        "desktop_padding_bottom": 36
+      }
+    },
+    "fp_features": {
+      "type": "fp-features",
+      "settings": {}
+    },
+    "fp_science": {
+      "type": "fp-science",
+      "settings": {}
+    },
+    "fp_vs": {
+      "type": "fp-vs",
+      "settings": {}
+    },
+    "fp_howworks": {
+      "type": "fp-howworks",
+      "settings": {}
+    },
+    "fp_results": {
+      "type": "fp-results",
+      "settings": {}
+    },
+    "fp_analysis": {
+      "type": "fp-analysis",
+      "settings": {}
+    },
+    "fp_img_collage": {
+      "type": "fp-image-slot",
+      "settings": {
+        "label": "Място за снимка: много хора използват FitPatches (колаж)",
+        "height": "360"
+      }
+    },
+    "fp_fb_reviews": {
+      "type": "facebook-testimonials",
+      "blocks": {
+        "post1": {
+          "type": "column",
+          "settings": {
+            "post_author": "Мария Иванова",
+            "post_author_verified": false,
+            "post_time": "преди 3 дни",
+            "post_text": "<p>Втора седмица съм на лепенките и наистина усещам разлика — вечер вече не тършувам за нещо сладко. Свалих 2 кг без никаква диета.</p>",
+            "post_reactions": "like, love, care",
+            "post_reactions_text": "213",
+            "post_comments_text": "18 коментара",
+            "comment_1_author": "Даниела Петрова",
+            "comment_1_author_verified": false,
+            "comment_1_time": "",
+            "comment_1_text": "<p>И аз ги поръчах, чакам ги с нетърпение!</p>",
+            "comment_2_author": "Ния Георгиева",
+            "comment_2_author_verified": false,
+            "comment_2_time": "",
+            "comment_2_text": "<p>Браво! От къде ги взе?</p>"
+          }
+        },
+        "post2": {
+          "type": "column",
+          "settings": {
+            "post_author": "Петя Стоянова",
+            "post_author_verified": false,
+            "post_time": "преди 5 дни",
+            "post_text": "<p>Скептична бях, но апетитът ми наистина намаля. Най-много ми помага, че не ми се яде между храненията.</p>",
+            "post_reactions": "like, love",
+            "post_reactions_text": "156",
+            "post_comments_text": "9 коментара",
+            "comment_1_author": "Валентина М.",
+            "comment_1_author_verified": false,
+            "comment_1_time": "",
+            "comment_1_text": "<p>Точно това ми е проблемът, поръчвам!</p>",
+            "comment_2_author": "Comment author",
+            "comment_2_author_verified": false,
+            "comment_2_time": "3h ago",
+            "comment_2_text": ""
+          }
+        },
+        "post3": {
+          "type": "column",
+          "settings": {
+            "post_author": "Галя Димитрова",
+            "post_author_verified": false,
+            "post_time": "преди 1 седмица",
+            "post_text": "<p>Един месец по-късно — минус 4 кг и повече енергия. Лепя си я сутрин и забравям за нея през целия ден.</p>",
+            "post_reactions": "like, care, wow",
+            "post_reactions_text": "301",
+            "post_comments_text": "24 коментара",
+            "comment_1_author": "Роси Тодорова",
+            "comment_1_author_verified": false,
+            "comment_1_time": "",
+            "comment_1_text": "<p>Супер резултат, поздравления!</p>",
+            "comment_2_author": "Милена К.",
+            "comment_2_author_verified": false,
+            "comment_2_time": "",
+            "comment_2_text": "<p>И при мен тръгна след около седмица.</p>"
+          }
+        },
+        "post4": {
+          "type": "column",
+          "settings": {
+            "post_author": "Ивелина Колева",
+            "post_author_verified": false,
+            "post_time": "преди 2 седмици",
+            "post_text": "<p>Купих 3 пакета на промоция. Работи, но искаше малко търпение — при мен ефектът дойде след 10-тина дни.</p>",
+            "post_reactions": "like, love",
+            "post_reactions_text": "88",
+            "post_comments_text": "6 коментара",
+            "comment_1_author": "Антония Г.",
+            "comment_1_author_verified": false,
+            "comment_1_time": "",
+            "comment_1_text": "<p>Благодаря за честния отзив!</p>",
+            "comment_2_author": "Comment author",
+            "comment_2_author_verified": false,
+            "comment_2_time": "3h ago",
+            "comment_2_text": ""
+          }
+        },
+        "post5": {
+          "type": "column",
+          "settings": {
+            "post_author": "Радост Ангелова",
+            "post_author_verified": false,
+            "post_time": "преди 3 седмици",
+            "post_text": "<p>Най-сетне нещо, което не са хапчета. Роклята, която не ми се закопчаваше, вече ми става спокойно.</p>",
+            "post_reactions": "like, love, haha",
+            "post_reactions_text": "142",
+            "post_comments_text": "11 коментара",
+            "comment_1_author": "Десислава П.",
+            "comment_1_author_verified": false,
+            "comment_1_time": "",
+            "comment_1_text": "<p>Ееех, това е мечта! Поръчвам и аз.</p>",
+            "comment_2_author": "Габриела Н.",
+            "comment_2_author_verified": false,
+            "comment_2_time": "",
+            "comment_2_text": "<p>Разкажи после как върви 🙂</p>"
+          }
+        }
+      },
+      "block_order": [
+        "post1",
+        "post2",
+        "post3",
+        "post4",
+        "post5"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Какво казват клиентите ни във Facebook",
+        "title_highlight_color": "#6d388b",
+        "heading_size": "h1",
+        "text": "",
+        "color_scheme": "background-2",
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 24,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "post_bg_color": "#ffffff",
+        "post_text_color": "#101010",
+        "comments_bg_color": "#f0f2f5",
+        "separators_color": "#a4b0be",
+        "post_border_color": "#dfdfdf",
+        "border_width": 1,
+        "like_label": "Харесвам",
+        "comment_label": "Коментар",
+        "reply_label": "Отговор",
+        "share_label": "Сподели",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_colors_background": "#f3f3f3",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#2e2a39"
+      },
+      "disabled": true
+    }
+  },
+  "order": [
+    "main",
+    "fp_features",
+    "fp_science",
+    "fp_vs",
+    "fp_howworks",
+    "fp_results",
+    "fp_analysis",
+    "fp_img_collage",
+    "fp_fb_reviews"
+  ]
+}

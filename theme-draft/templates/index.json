@@ -1,0 +1,260 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "qv_hero": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<style>@media(max-width:767px){.fp-hero-wrap{grid-template-columns:1fr!important;gap:0!important;padding:28px 16px 20px!important;}.fp-h1{font-size:1.85rem!important;}.fp-trust{font-size:11px!important;}}</style><div style='background:#faf6f1;'><div class='fp-hero-wrap' style='max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:60px 20px 40px;'><div style='text-align:center;'><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/fitpatches_2048_no_white_background.png?v=1779431202' style='max-width:100%;height:auto;max-height:480px;'/></div><div><div style='display:flex;align-items:center;gap:8px;margin-bottom:16px;'><span style='color:#d64d87;font-size:16px;'>&#10003;</span><span style='color:#666;font-size:13px;'>Над 350 поръчки в България</span></div><h1 class='fp-h1' style='font-size:2.8rem;font-weight:900;color:#121212;line-height:1.08;margin-bottom:22px;letter-spacing:-1.5px;text-transform:uppercase;'>ЕДНА ЛЕПЕНКА СУТРИН. ПО-МАЛКО ЖЕЛАНИЕ ЗА СЛАДКО.</h1><div style='display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px;'><div style='background:#fef3f3;padding:16px 8px;border-radius:14px;text-align:center;border:1.5px solid #f5d5d5;'><div style='font-size:10px;font-weight:800;color:#121212;'>БЕЗ ХАПЧЕТА</div></div><div style='background:#fef3f3;padding:16px 8px;border-radius:14px;text-align:center;border:1.5px solid #f5d5d5;'><div style='font-size:10px;font-weight:800;color:#121212;'>ОТ 0,27 € НА ДЕН</div></div><div style='background:#fef3f3;padding:16px 8px;border-radius:14px;text-align:center;border:1.5px solid #f5d5d5;'><div style='font-size:10px;font-weight:800;color:#121212;'>ПЛАЩАНЕ ПРИ ДОСТАВКА</div></div></div><a href='/products/fitpatches-berberinovi-plastiri-30' style='display:block;background:#d64d87;color:#fff;text-align:center;padding:18px 24px;border-radius:50px;font-size:16px;font-weight:800;text-decoration:none;margin-bottom:14px;'>ИЗБЕРИ ПАКЕТ &#8594;</a><div class='fp-trust' style='font-size:12px;color:#888;text-align:center;line-height:1.9;'>Плащане при доставка &middot; Еконт 2–4 работни дни &middot; 30 дни гаранция</div></div></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "qv_marquee": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#d64d87;color:#fff;padding:12px 0;overflow:hidden;white-space:nowrap;'><div style='display:inline-block;animation:fp_scroll 25s linear infinite;font-size:12px;font-weight:700;letter-spacing:1.5px;'><span style='margin:0 20px;'>&#10022; ЕДНА ЛЕПЕНКА НА ДЕН</span><span style='margin:0 20px;'>&#10022; РАСТИТЕЛНИ СЪСТАВКИ</span><span style='margin:0 20px;'>&#10022; БЕЗ ХАПЧЕТА</span><span style='margin:0 20px;'>&#10022; ПЛАЩАНЕ ПРИ ДОСТАВКА</span><span style='margin:0 20px;'>&#10022; 30 ДНИ ГАРАНЦИЯ</span><span style='margin:0 20px;'>&#10022; ДИСКРЕТЕН РАЗМЕР</span><span style='margin:0 20px;'>&#10022; БЕЗ АБОНАМЕНТ</span><span style='margin:0 20px;'>&#10022; ЕДНА ЛЕПЕНКА НА ДЕН</span><span style='margin:0 20px;'>&#10022; РАСТИТЕЛНИ СЪСТАВКИ</span><span style='margin:0 20px;'>&#10022; БЕЗ ХАПЧЕТА</span><span style='margin:0 20px;'>&#10022; ПЛАЩАНЕ ПРИ ДОСТАВКА</span><span style='margin:0 20px;'>&#10022; 30 ДНИ ГАРАНЦИЯ</span><span style='margin:0 20px;'>&#10022; ДИСКРЕТЕН РАЗМЕР</span><span style='margin:0 20px;'>&#10022; БЕЗ АБОНАМЕНТ</span></div></div><style>@keyframes fp_scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "qv_vs": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#fff;padding:52px 16px;'><div style='max-width:780px;margin:0 auto;'><div style='text-align:center;margin-bottom:28px;'><div style='font-size:11px;font-weight:700;color:#d64d87;letter-spacing:3px;margin-bottom:10px;'>СРАВНЕНИЕ</div><h2 style='font-size:2.2rem;font-weight:900;color:#121212;letter-spacing:-1px;margin-bottom:8px;'>Лепенка срещу капсули и прахове</h2><p style='font-size:14px;color:#666;'>Ежедневна подкрепа в по-лесна форма — без гълтане и без отмерване.</p></div><div style='display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-bottom:22px;'><div style='text-align:center;'><div style='width:90px;height:90px;border-radius:50%;background:#fef3f3;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;border:3px solid #d64d87;overflow:hidden;'><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/fitpatches_2048_no_white_background.png?v=1779431202' style='width:70px;height:70px;object-fit:contain;'/></div><div style='font-weight:900;font-size:13px;color:#d64d87;'>FitPatches</div><div style='font-size:11px;color:#888;'>Една на ден</div></div><div style='text-align:center;padding:0 14px;font-size:12px;font-weight:800;color:#bbb;letter-spacing:2px;'>VS</div><div style='text-align:center;'><div style='width:90px;height:90px;border-radius:50%;background:#f5f5f5;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;border:2px solid #eee;overflow:hidden;'><img src='https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-nat-pills.png?v=1785854560' style='width:80px;height:80px;object-fit:contain;'/></div><div style='font-weight:900;font-size:13px;color:#666;'>Капсули / прахове</div><div style='font-size:11px;color:#888;'>Добавки за гълтане</div></div></div><div style='border-top:2px solid #f0e0e0;'><div style='display:grid;grid-template-columns:44px 1fr 44px;border-bottom:1px solid #f5eded;'><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fef3f3;border:2px solid #d64d87;display:flex;align-items:center;justify-content:center;color:#d64d87;font-weight:900;'>&#10003;</div></div><div style='padding:13px 8px;text-align:center;font-size:13px;color:#333;display:flex;align-items:center;justify-content:center;font-weight:500;'>Без гълтане на капсули</div><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fafafa;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;color:#c0392b;font-weight:900;'>&#10005;</div></div></div><div style='display:grid;grid-template-columns:44px 1fr 44px;border-bottom:1px solid #f5eded;'><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fef3f3;border:2px solid #d64d87;display:flex;align-items:center;justify-content:center;color:#d64d87;font-weight:900;'>&#10003;</div></div><div style='padding:13px 8px;text-align:center;font-size:13px;color:#333;display:flex;align-items:center;justify-content:center;font-weight:500;'>Една дневна доза — без отмерване</div><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fafafa;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;color:#c0392b;font-weight:900;'>&#10005;</div></div></div><div style='display:grid;grid-template-columns:44px 1fr 44px;border-bottom:1px solid #f5eded;'><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fef3f3;border:2px solid #d64d87;display:flex;align-items:center;justify-content:center;color:#d64d87;font-weight:900;'>&#10003;</div></div><div style='padding:13px 8px;text-align:center;font-size:13px;color:#333;display:flex;align-items:center;justify-content:center;font-weight:500;'>Без вкус и мирис</div><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fafafa;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;color:#c0392b;font-weight:900;'>&#10005;</div></div></div><div style='display:grid;grid-template-columns:44px 1fr 44px;border-bottom:1px solid #f5eded;'><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fef3f3;border:2px solid #d64d87;display:flex;align-items:center;justify-content:center;color:#d64d87;font-weight:900;'>&#10003;</div></div><div style='padding:13px 8px;text-align:center;font-size:13px;color:#333;display:flex;align-items:center;justify-content:center;font-weight:500;'>Лесно се помни: сутрин и готово</div><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fafafa;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;color:#c0392b;font-weight:900;'>&#10005;</div></div></div><div style='display:grid;grid-template-columns:44px 1fr 44px;border-bottom:1px solid #f5eded;'><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fef3f3;border:2px solid #d64d87;display:flex;align-items:center;justify-content:center;color:#d64d87;font-weight:900;'>&#10003;</div></div><div style='padding:13px 8px;text-align:center;font-size:13px;color:#333;display:flex;align-items:center;justify-content:center;font-weight:500;'>Дискретна — носиш я под дрехите</div><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fafafa;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;color:#c0392b;font-weight:900;'>&#10005;</div></div></div><div style='display:grid;grid-template-columns:44px 1fr 44px;'><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fef3f3;border:2px solid #d64d87;display:flex;align-items:center;justify-content:center;color:#d64d87;font-weight:900;'>&#10003;</div></div><div style='padding:13px 8px;text-align:center;font-size:13px;color:#333;display:flex;align-items:center;justify-content:center;font-weight:500;'>Не я носиш в чантата през деня</div><div style='padding:13px 8px;display:flex;justify-content:center;align-items:center;'><div style='width:28px;height:28px;border-radius:50%;background:#fafafa;border:2px solid #ddd;display:flex;align-items:center;justify-content:center;color:#c0392b;font-weight:900;'>&#10005;</div></div></div></div></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "qv_how": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#d64d87;padding:52px 16px;'><div style='max-width:1100px;margin:0 auto;text-align:center;'><div style='font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:3px;margin-bottom:12px;'>— КАК РАБОТИ —</div><h2 style='font-size:2.2rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:10px;'>Ето как FitPatches работи</h2><p style='font-size:14px;color:rgba(255,255,255,0.85);margin-bottom:32px;'>Без обучение. Без усилие. Само лепенка на кожата.</p><div style='display:grid;grid-template-columns:repeat(4,1fr);gap:10px;'><div style='background:rgba(255,255,255,0.12);border-radius:14px;overflow:hidden;position:relative;'><div style='position:absolute;top:8px;left:8px;background:#fff;color:#d64d87;font-size:11px;font-weight:900;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;'>01</div><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/1779457635120-ytjqvhsicj.png' style='width:100%;aspect-ratio:1/1;object-fit:cover;display:block;'/><div style='padding:10px;font-size:12px;font-weight:700;color:#fff;'>Избери</div></div><div style='background:rgba(255,255,255,0.12);border-radius:14px;overflow:hidden;position:relative;'><div style='position:absolute;top:8px;left:8px;background:#fff;color:#d64d87;font-size:11px;font-weight:900;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;'>02</div><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/1779457775580-rvou0f6a16.png' style='width:100%;aspect-ratio:1/1;object-fit:cover;display:block;'/><div style='padding:10px;font-size:12px;font-weight:700;color:#fff;'>Отлепи</div></div><div style='background:rgba(255,255,255,0.12);border-radius:14px;overflow:hidden;position:relative;'><div style='position:absolute;top:8px;left:8px;background:#fff;color:#d64d87;font-size:11px;font-weight:900;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;'>03</div><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/1779457851225-kel68uax0wq.png' style='width:100%;aspect-ratio:1/1;object-fit:cover;display:block;'/><div style='padding:10px;font-size:12px;font-weight:700;color:#fff;'>Залепи</div></div><div style='background:rgba(255,255,255,0.12);border-radius:14px;overflow:hidden;position:relative;'><div style='position:absolute;top:8px;left:8px;background:#fff;color:#d64d87;font-size:11px;font-weight:900;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;'>04</div><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/1779457921881-bjvepzg66uc.png' style='width:100%;aspect-ratio:1/1;object-fit:cover;display:block;'/><div style='padding:10px;font-size:12px;font-weight:700;color:#fff;'>Носи</div></div></div></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "qv_science": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#faf6f1;padding:52px 16px;'><div style='max-width:1100px;margin:0 auto;'><div style='text-align:center;margin-bottom:36px;'><div style='font-size:11px;font-weight:700;color:#d64d87;letter-spacing:3px;margin-bottom:10px;'>— СЪСТАВ —</div><h2 style='font-size:2.2rem;font-weight:900;color:#121212;letter-spacing:-1px;'>Какво има в една лепенка</h2></div><div style='display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;'><div><div style='display:flex;align-items:flex-start;gap:14px;margin-bottom:22px;'><div style='min-width:42px;height:42px;border-radius:50%;background:#d64d87;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;color:#fff;flex-shrink:0;'>1</div><div><div style='font-size:14px;font-weight:800;color:#121212;margin-bottom:4px;'>Берберин</div><div style='font-size:13px;color:#666;line-height:1.55;'>Растително вещество от кисел трън (берберис), изследвано във връзка с обмяната на веществата.</div></div></div><div style='display:flex;align-items:flex-start;gap:14px;margin-bottom:22px;'><div style='min-width:42px;height:42px;border-radius:50%;background:#d64d87;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;color:#fff;flex-shrink:0;'>2</div><div><div style='font-size:14px;font-weight:800;color:#121212;margin-bottom:4px;'>Канела и нар</div><div style='font-size:13px;color:#666;line-height:1.55;'>Растителни екстракти, които допълват формулата.</div></div></div><div style='display:flex;align-items:flex-start;gap:14px;'><div style='min-width:42px;height:42px;border-radius:50%;background:#d64d87;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;color:#fff;flex-shrink:0;'>3</div><div><div style='font-size:14px;font-weight:800;color:#121212;margin-bottom:4px;'>Лепенка вместо капсули</div><div style='font-size:13px;color:#666;line-height:1.55;'>Носиш я под дрехите от сутрин до вечер — без гълтане. Не е лекарствен продукт.</div></div></div></div><div style='border-radius:18px;overflow:hidden;'><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ChatGPT_Image_May_22_2026_02_38_15_PM.png?v=1779449931' style='width:100%;display:block;'/></div></div></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "qv_ba": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#fff;padding:52px 16px;'><div style='max-width:700px;margin:0 auto;text-align:center;'><div style='font-size:11px;font-weight:700;color:#d64d87;letter-spacing:3px;margin-bottom:12px;'>ПРЕДИ / СЛЕД</div><h2 style='font-size:2.2rem;font-weight:900;color:#121212;line-height:1.15;margin-bottom:12px;'>Какво се случва след 1 месец</h2><p style='font-size:14px;color:#666;margin-bottom:28px;'>Желанието за сладко намалява, апетитът става контролируем.</p><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/1779523119084-okrxr1jzvo8.png?v=1779523701' style='width:100%;max-width:560px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:block;margin:0 auto;'/></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "qv_stats": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#fff;padding:52px 16px;'><div style='max-width:1100px;margin:0 auto;'><div style='text-align:center;margin-bottom:36px;'><h2 style='font-size:2.2rem;font-weight:900;line-height:1.2;letter-spacing:-1px;color:#121212;'>Над 1,837 успешни трансформации.<br/>Време е да си твоята.</h2></div><div style='display:grid;grid-template-columns:repeat(3,1fr);gap:14px;'><div style='text-align:center;padding:24px 14px;border:1px solid #f0e0e0;border-radius:14px;background:#faf6f1;'><div style='font-size:3.5rem;font-weight:900;color:#d64d87;line-height:1;margin-bottom:8px;'>97%</div><div style='font-size:12px;color:#555;'>от жените споделят, че желанието за сладко е намалено в 14 дни</div></div><div style='text-align:center;padding:24px 14px;border:1px solid #f0e0e0;border-radius:14px;background:#faf6f1;'><div style='font-size:3.5rem;font-weight:900;color:#d64d87;line-height:1;margin-bottom:8px;'>95%</div><div style='font-size:12px;color:#555;'>усещат видими промени в тялото в 45 дни</div></div><div style='text-align:center;padding:24px 14px;border:1px solid #f0e0e0;border-radius:14px;background:#faf6f1;'><div style='font-size:3.5rem;font-weight:900;color:#d64d87;line-height:1;margin-bottom:8px;'>92%</div><div style='font-size:12px;color:#555;'>казват, че се чувстват по-енергични</div></div></div></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "qv_doctor": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#faf6f1;padding:52px 16px;'><div style='max-width:780px;margin:0 auto;'><div style='background:#fff;border-radius:18px;padding:32px 28px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;box-shadow:0 2px 14px rgba(0,0,0,0.06);'><div style='position:relative;flex-shrink:0;'><img src='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/doktora.png' style='width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid #d64d87;display:block;'/><div style='position:absolute;bottom:-2px;right:-2px;background:#d64d87;color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;'>&#10003;</div></div><div><div style='font-size:10px;font-weight:700;color:#d64d87;letter-spacing:2px;margin-bottom:8px;'>ПРЕПОРЪЧАНО ОТ ЛЕКАР</div><div style='font-size:1rem;color:#333;font-style:italic;line-height:1.6;margin-bottom:12px;'>&bdquo;Виждам резултати с FitPatches. Без хапчета, без диети &mdash; само постоянство.&ldquo;</div><div style='font-size:14px;font-weight:800;color:#121212;'>д-р Александър Димитров</div><div style='font-size:12px;color:#888;margin-top:2px;'>Диетолог &middot; Партньор на FitPatches</div></div></div></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "qv_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "f1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Как действат FitPatches?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>Лепенката съдържа берберин, канела и екстракт от нар и е създадена като ежедневна подкрепа за контрола на апетита и желанието за сладко. Най-добре работи заедно с балансирано хранене и движение. Резултатите са индивидуални.</p>",
+            "page": ""
+          }
+        },
+        "f2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Какво съдържат?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>Берберин, канела и екстракт от нар. Всеки пакет съдържа 30 лепенки — по една на ден за 30 дни.</p>",
+            "page": ""
+          }
+        },
+        "f3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Как се използват?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>Залепи една лепенка сутрин върху чиста и суха кожа (ръка, корем или бедро) и я свали вечер. Всеки ден сменяй мястото.</p>",
+            "page": ""
+          }
+        },
+        "f4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Безопасни ли са?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>При чувствителна кожа лепилото може да зачерви мястото — затова сменяй мястото всеки ден. Не се препоръчват при бременност, кърмене, за деца и при прием на лекарства (особено за кръвна захар или кръвно налягане) — в тези случаи първо се консултирай с лекар. Не е лекарствен продукт.</p>",
+            "page": ""
+          }
+        },
+        "f5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Кога ще усетя разлика?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>Всеки организъм е различен, затова не обещаваме конкретни срокове или килограми. Препоръчваме поне 2–3 месеца редовна употреба.</p>",
+            "page": ""
+          }
+        },
+        "f6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Мога ли да ги използвам, ако спазвам диета?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>Да. Лепенката не замества храненето — тя е подкрепа към режима, който вече спазваш.</p>",
+            "page": ""
+          }
+        },
+        "f7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Как плащам и кога пристига поръчката?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>Плащаш на куриера при получаване — без карта и без предплащане. Доставката е с Еконт до 2–4 работни дни. Имаш 30 дни гаранция за връщане на парите.</p>",
+            "page": ""
+          }
+        },
+        "f8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Колко пакета да взема?",
+            "icon": "check_box",
+            "filled_icon": false,
+            "row_content": "<p>Един пакет стига за 30 дни. Пакетът 3+2 подарък стига за 5 месеца и излиза 0,27 € на ден срещу 0,50 € при единичен пакет.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "caption": "",
+        "title": "Често задавани въпроси",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "row_heading_size": "medium",
+        "collapse_icon": "carret",
+        "display_top_border": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "qv_guarantee": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style='background:#faf6f1;padding:28px 16px;'><div style='max-width:740px;margin:0 auto;'><div style='background:#fff;border:2px solid #d64d87;border-radius:18px;padding:28px 24px;display:flex;align-items:center;gap:20px;'><div style='flex-shrink:0;width:60px;height:60px;border-radius:50%;background:#d64d87;display:flex;align-items:center;justify-content:center;'><svg width='30' height='30' viewBox='0 0 36 36' fill='none'><path d='M18 4 L22 14 L33 14 L24 21 L27 32 L18 26 L9 32 L12 21 L3 14 L14 14 Z' fill='white'/></svg></div><div><div style='font-size:1.1rem;font-weight:900;color:#121212;margin-bottom:6px;'>30-дневна гаранция за връщане</div><div style='font-size:13px;color:#555;line-height:1.6;'>Пробвай цял месец. Ако не си доволна, обади ни се на 0887 459 494 — <strong>задръж продукта</strong> и ние ще ти върнем парите.</div></div></div></div></div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "qv_reviews": {
+      "type": "fitpatches-reviews",
+      "settings": {
+        "title": "Какво казват нашите клиентки",
+        "subtitle": "Реални резултати от реални жени",
+        "bg_color": "#ffffff",
+        "padding_top": 52,
+        "padding_bottom": 52
+      },
+      "disabled": true
+    },
+    "qv_offer": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<div style=\"background:#fff;padding:44px 16px 36px;\"><div style=\"max-width:980px;margin:0 auto;text-align:center;\">\n<div style=\"font-size:11px;font-weight:700;color:#d64d87;letter-spacing:3px;margin-bottom:10px;\">— ПАКЕТИ —</div>\n<h2 style=\"font-size:1.9rem;font-weight:800;color:#121212;margin:0 0 8px;line-height:1.2;\">Колкото по-голям пакетът, толкова по-ниска цената на ден</h2>\n<p style=\"color:#666;margin:0 0 26px;font-size:15px;\">Плащаш при доставка · 30 дни гаранция за връщане на парите</p>\n<div class=\"fp-offer-grid\" style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left;\">\n<a href=\"/products/fitpatches-berberinovi-plastiri-30\" style=\"display:block;text-decoration:none;color:#121212;border:2px solid #f0e0e0;border-radius:16px;padding:18px;background:#fff;\"><div style=\"font-weight:800;font-size:18px;\">1 пакет</div><div style=\"color:#777;font-size:13px;margin:2px 0 10px;\">30 лепенки · за 1 месец</div><div style=\"font-weight:800;font-size:22px;\">14,99 €</div><div style=\"color:#b93a70;font-weight:700;font-size:13px;\">0,50 € на ден</div></a>\n<a href=\"/products/fitpatches-berberinovi-plastiri-30\" style=\"display:block;text-decoration:none;color:#121212;border:2px solid #f0e0e0;border-radius:16px;padding:18px;background:#fff;\"><div style=\"font-weight:800;font-size:18px;\">2+1 подарък</div><div style=\"color:#777;font-size:13px;margin:2px 0 10px;\">3 пакета · за 3 месеца</div><div style=\"font-weight:800;font-size:22px;\">27,99 €</div><div style=\"color:#b93a70;font-weight:700;font-size:13px;\">0,31 € на ден</div></a>\n<a href=\"/products/fitpatches-berberinovi-plastiri-30\" style=\"position:relative;display:block;text-decoration:none;color:#121212;border:2px solid #d64d87;border-radius:16px;padding:18px;background:#fffafc;box-shadow:0 0 0 3px #fbe9f1;\"><span style=\"position:absolute;top:-11px;right:14px;background:#d64d87;color:#fff;font-size:11px;font-weight:800;padding:4px 11px;border-radius:20px;\">Най-изгодно</span><div style=\"font-weight:800;font-size:18px;\">3+2 подарък</div><div style=\"color:#777;font-size:13px;margin:2px 0 10px;\">5 пакета · за 5 месеца</div><div style=\"font-weight:800;font-size:22px;\">39,99 €</div><div style=\"color:#b93a70;font-weight:700;font-size:13px;\">0,27 € на ден</div></a>\n</div>\n<a href=\"/products/fitpatches-berberinovi-plastiri-30\" style=\"display:inline-block;margin-top:24px;background:#d64d87;color:#fff;font-weight:800;font-size:17px;border-radius:14px;padding:16px 34px;text-decoration:none;\">Избери пакет &#8594;</a>\n</div></div><style>@media(max-width:767px){.fp-offer-grid{grid-template-columns:1fr!important;}}</style>"
+      }
+    }
+  },
+  "order": [
+    "qv_hero",
+    "qv_marquee",
+    "qv_offer",
+    "qv_vs",
+    "qv_how",
+    "qv_science",
+    "qv_ba",
+    "qv_stats",
+    "qv_doctor",
+    "qv_faq",
+    "qv_guarantee",
+    "qv_reviews"
+  ]
+}
