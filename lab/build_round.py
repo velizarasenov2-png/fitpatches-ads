@@ -26,9 +26,11 @@ import re
 
 CONTENT = ["format", "hook_visual", "hook_words", "length_s", "scenes", "transcript",
            "primary_texts", "headlines", "cta", "offer"]
-LEAK = re.compile(r"родител|контролата|compliance|комплайънс|\bC0\b|\bген\b|почистен|симулац|ugc1", re.I)
+LEAK = re.compile(r"родител|контролата|compliance|комплайънс|\bC0\b|\bS[1-9]\b|\bген\b|почистен|симулац|ugc1"
+                  r"|CLAUDE\.md|собственика|operations-manager", re.I)
 NOTE_FIELDS = {"hook_visual", "offer", "visual", "shot"}  # production notes; ad copy is never rewritten
-NOTE_LEAK = re.compile(LEAK.pattern + r"|добавен|непровер|вместо|заменя|махна|премахн|сменен", re.I)
+NOTE_LEAK = re.compile(LEAK.pattern + r"|добавен|непровер|вместо|заменя|махна|премахн|сменен"
+                       r"|не се споменава|сметнато|\bурок\b", re.I)
 
 
 def load(path):
@@ -43,7 +45,8 @@ def clean_text(s, note):
     s = re.sub(r"\s+от (C0|родителя)\b", "", s)
     s = s[:1].upper() + s[1:] if note and s else s
     # Parenthesised production notes that name the control or the gene go everywhere.
-    s = re.sub(r"\s*\([^()]*\)", lambda m: "" if LEAK.search(m.group(0)) else m.group(0), s)
+    bad = NOTE_LEAK if note else LEAK
+    s = re.sub(r"\s*\([^()]*\)", lambda m: "" if bad.search(m.group(0)) else m.group(0), s)
     if not note:
         return s
     s = re.sub(r"(?i)като (при )?родителя[:,]?\s*", "", s)
