@@ -11,6 +11,7 @@ description: Лабораторна смяна на всеки 4 часа (ру�
 2. **Скаут (лек, по света):** `market-scout` прави 3–4 заявки: една ротираща държава от списъка (US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR) и страниците, които скалират най-бързо. Добавя нови реклами в `ads-seen.jsonl`. Нови идеи отиват в backlog-а, само ако сигналът е силен.
 3. **Опашка от гени** (`team/lab/gene-queue.json`, създай го, ако липсва): за всяка ACTIVE реклама редът е `angle → world_format → hook → angle → world_format → script` и отначало. Ъглите и формати от света са 2/3 от всичко.
 4. **Рунд** `/ad-lab active`: **до 12 варианта** (≈6 нови ъгъла + ≈6 формата от света) + контрола + 2 котви:
+   - **най-много 2 реклами с едно и също тяло** в рунд (иначе панелът се уморява и наказва цялото семейство, урок 02.10 15:11); hook тестът F-015 е в отделен мини рунд;
    - вариантите пишат `copywriter` и `creative-strategist` паралелно;
    - `compliance-officer` филтрира и пише само вердикти и замени в `drafts/compliance.json`; `python3 lab/apply_review.py <run> drafts/copywriter.json drafts/strategist.json` → `reviewed.json`;
    - `python3 lab/build_round.py <run> --reviewed <run>/reviewed.json --control-from <рунд с контролата> --anchors-from <рунд с котвите>` → `variants.json`, сляпа версия без следи от контролата, `pairs.json`;

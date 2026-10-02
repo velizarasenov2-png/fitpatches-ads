@@ -870,6 +870,172 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261002-1512-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V15",
+          "name": "ugc1 · A13 чеклист „не са от мързел“",
+          "composite": 36.8,
+          "ci90": [
+            30.0,
+            43.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "ugc1 · F-007 цитатът, който я пренебрегва",
+          "composite": 35.1,
+          "ci90": [
+            29.2,
+            41.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V14",
+          "name": "ugc1 · F-011 провери 3 неща",
+          "composite": 32.3,
+          "ci90": [
+            25.3,
+            39.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V13",
+          "name": "S3 · 30 сек",
+          "composite": 30.4,
+          "ci90": [
+            25.3,
+            35.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 · S4 3 неща, които никой не ми каза",
+          "composite": 30.1,
+          "ci90": [
+            25.9,
+            34.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "ugc1 · S3 диалог с приятелка",
+          "composite": 27.4,
+          "ci90": [
+            23.2,
+            32.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "S3 · лекарят след „как се лепи“",
+          "composite": 27.3,
+          "ci90": [
+            22.6,
+            31.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "S2 · hook „Не е диетата“",
+          "composite": 27.0,
+          "ci90": [
+            21.4,
+            32.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "S3 · COD в hook-а",
+          "composite": 24.8,
+          "ci90": [
+            18.0,
+            31.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V12",
+          "name": "S2 · hook „Сигурно е измама“",
+          "composite": 24.4,
+          "ci90": [
+            20.3,
+            28.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "ugc1 - Copy",
+          "composite": 23.0,
+          "ci90": [
+            17.6,
+            28.4
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V9",
+          "name": "ugc1 · S2 отговарям на коментарите",
+          "composite": 22.7,
+          "ci90": [
+            19.3,
+            26.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V11",
+          "name": "ad1 (videa3)",
+          "composite": 22.4,
+          "ci90": [
+            18.1,
+            26.8
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V8",
+          "name": "S2 · hook „Наложен платеж“",
+          "composite": 21.4,
+          "ci90": [
+            15.2,
+            28.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "S2 · hook „Пет минути пред вратата“",
+          "composite": 18.4,
+          "ci90": [
+            14.7,
+            22.4
+          ],
+          "real": null
+        }
+      ]
     }
   ]
 }
