@@ -28,6 +28,8 @@ def span(t):
 
 
 def fmt_t(t):
+    if not re.search(r"\d+(?:\.\d+)?\s*[-–]\s*\d", str(t)):
+        return str(t)  # "карта 3", "статик"
     a, b = span(t)
     f = lambda x: f"{x:g}"
     return f"{f(a)}–{f(b)} с"
