@@ -7,7 +7,7 @@
       <button class="fpd__x" type="button" data-fpd-close aria-label="Затвори">&times;</button>
     </div>
     <div class="fpd__ship">
-      <p class="fpd__ship-txt">Плащаш при доставка · Еконт до 2–4 работни дни</p>
+      <p class="fpd__ship-txt" data-fpd-eta>Плащаш при доставка · Еконт до 2–4 работни дни</p>
     </div>
     <div class="fpd__body">
       <div class="fpd__items" data-fpd-items></div>
@@ -171,6 +171,14 @@
     },2500);
   });
   altEl.addEventListener('click',function(){ markAgree(); });
+  (function(){
+    var el=root.querySelector('[data-fpd-eta]'); if(!el) return;
+    var MB=['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
+    function addBiz(d,n){ var x=new Date(d.getTime()); while(n>0){ x.setDate(x.getDate()+1); var w=x.getDay(); if(w!==0&&w!==6) n--; } return x; }
+    var now=new Date(), d1=addBiz(now,2), d2=addBiz(now,4);
+    var range=d1.getMonth()===d2.getMonth()?(d1.getDate()+'–'+d2.getDate()+' '+MB[d2.getMonth()]):(d1.getDate()+' '+MB[d1.getMonth()]+' – '+d2.getDate()+' '+MB[d2.getMonth()]);
+    el.textContent='Плащаш при доставка · Еконт: получаваш '+range;
+  })();
   window.fpCart={open:open,close:close,refresh:refresh};
 })();
 </script>
