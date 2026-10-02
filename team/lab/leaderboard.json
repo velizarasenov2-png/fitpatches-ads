@@ -588,6 +588,142 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261002-0712-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V7",
+          "name": "ugc1 · A9 честната",
+          "composite": 41.1,
+          "ci90": [
+            34.7,
+            46.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V12",
+          "name": "S2 · 30 сек",
+          "composite": 34.7,
+          "ci90": [
+            28.5,
+            40.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "S2 · HW3 hook „лакомница“",
+          "composite": 32.4,
+          "ci90": [
+            26.6,
+            38.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "S2 · DOC питай лекаря",
+          "composite": 32.2,
+          "ci90": [
+            27.8,
+            36.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V11",
+          "name": "ugc1 · S2 отговарям на коментарите",
+          "composite": 30.6,
+          "ci90": [
+            26.5,
+            34.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "ugc1 · W7 три кратки изречения",
+          "composite": 30.0,
+          "ci90": [
+            25.1,
+            34.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "S2 · HW2 hook „лакътят“",
+          "composite": 28.6,
+          "ci90": [
+            23.8,
+            33.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "ugc1 · W8 30 лепенки, 30 сутрини",
+          "composite": 24.0,
+          "ci90": [
+            20.2,
+            27.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "S2 · PF продуктът в първия кадър",
+          "composite": 23.5,
+          "ci90": [
+            18.9,
+            28.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "ad1 (videa3)",
+          "composite": 22.8,
+          "ci90": [
+            17.6,
+            28.9
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V2",
+          "name": "ugc1 - Copy",
+          "composite": 21.2,
+          "ci90": [
+            17.1,
+            25.9
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V1",
+          "name": "ugc1 · A10 дневникът",
+          "composite": 21.0,
+          "ci90": [
+            16.7,
+            25.5
+          ],
+          "real": null
+        }
+      ]
     }
   ]
 }
