@@ -724,6 +724,152 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261002-0859-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V6",
+          "name": "ugc1 · S3 диалог с приятелка",
+          "composite": 36.3,
+          "ci90": [
+            32.2,
+            40.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "ugc1 · S4 3 неща, които никой не ми каза",
+          "composite": 33.4,
+          "ci90": [
+            28.5,
+            38.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "A9 · COD плащаш при доставка",
+          "composite": 31.7,
+          "ci90": [
+            26.0,
+            37.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 · A11 мъжът ми пита",
+          "composite": 31.1,
+          "ci90": [
+            26.2,
+            35.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V13",
+          "name": "S2 · 30 сек",
+          "composite": 30.9,
+          "ci90": [
+            25.2,
+            36.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V12",
+          "name": "A9 · CTA наложен платеж",
+          "composite": 30.4,
+          "ci90": [
+            24.7,
+            35.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "ugc1 · S2 отговарям на коментарите",
+          "composite": 30.1,
+          "ci90": [
+            25.7,
+            34.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V11",
+          "name": "A9 · 3+1 оферта",
+          "composite": 30.1,
+          "ci90": [
+            25.1,
+            34.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "A9 · 25 сек",
+          "composite": 29.8,
+          "ci90": [
+            24.8,
+            34.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "ugc1 · A9 честната",
+          "composite": 29.5,
+          "ci90": [
+            24.7,
+            34.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "ugc1 · A12 работя на смени",
+          "composite": 26.8,
+          "ci90": [
+            19.3,
+            35.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "ad1 (videa3)",
+          "composite": 21.6,
+          "ci90": [
+            16.9,
+            26.8
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V7",
+          "name": "ugc1 - Copy",
+          "composite": 20.2,
+          "ci90": [
+            15.5,
+            25.4
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        }
+      ]
     }
   ]
 }
