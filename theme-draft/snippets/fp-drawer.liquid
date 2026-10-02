@@ -1,4 +1,4 @@
-{%- comment -%} FitPatches — плъзгаща количка. Основен бутон: EasySell COD формата (клас es-popup-button-drawer), резервен: Shopify checkout. {%- endcomment -%}
+{%- comment -%} FitPatches — плъзгаща количка. Единствен бутон: EasySell COD формата (клас es-popup-button-drawer). Shopify checkout само като резерва, ако EasySell не се отвори. {%- endcomment -%}
 <div class="fpd" id="fpDrawer" aria-hidden="true">
   <div class="fpd__ov" data-fpd-close></div>
   <aside class="fpd__panel" role="dialog" aria-label="Количка">
@@ -34,7 +34,6 @@
         <label class="fpd__agree"><input type="checkbox" data-fpd-agree checked><span>С поръчката си поемам ангажимент да получа и заплатя пратката си с наложен платеж. Разбирам, че при отказ на пратката ще бъда отбелязан(а) като некоректен клиент в системата на куриера (Еконт) и магазинът може да не приема мои бъдещи поръчки с наложен платеж.</span></label>
       </div>
       <button type="button" class="fpd__go es-popup-button-drawer" data-fpd-cod>Поръчай с наложен платеж</button>
-      <a class="fpd__alt" href="/checkout" data-fpd-checkout>или продължи към стандартна поръчка</a>
       <div class="fpd__badges">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>Наложен платеж</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.2-3 7.2-7 8.5-4-1.3-7-4.3-7-8.5V6z"/><path d="M9 12l2 2 4-4"/></svg>30 дни гаранция</span>
@@ -146,7 +145,7 @@
   function esc(s){ return String(s||'').replace(/[&<>"]/g,function(x){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[x];}); }
   var itemsEl=root.querySelector('[data-fpd-items]'), totEl=root.querySelector('[data-fpd-total]');
   var upEl=root.querySelector('[data-fpd-upsell]'), upMore=root.querySelector('[data-fpd-upmore]');
-  var codEl=root.querySelector('[data-fpd-cod]'), altEl=root.querySelector('[data-fpd-checkout]'), agEl=root.querySelector('[data-fpd-agree]');
+  var codEl=root.querySelector('[data-fpd-cod]'), agEl=root.querySelector('[data-fpd-agree]');
   var lastCart=null;
   function render(cart){
     lastCart=cart; var items=cart.items||[];
@@ -168,7 +167,7 @@
     var showUp=items.length>0 && !hasTop && packs<5;
     upEl.hidden=!showUp;
     if(showUp){ var diff=TOP_TOTAL-cart.total_price/100; upMore.textContent=(diff>0?'Само +'+diff.toFixed(2).replace('.',',')+' € за ':'Още ')+(5-packs)+' пакета повече'; }
-    var empty=!items.length; codEl.disabled=empty; altEl.style.pointerEvents=empty?'none':''; altEl.style.opacity=empty?'.4':'';
+    var empty=!items.length; codEl.disabled=empty;
   }
   function refresh(){ return fetch('/cart.js',{headers:{'Accept':'application/json'}}).then(function(r){return r.json();}).then(render); }
   function change(key,q){ return fetch('/cart/change.js',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({id:key,quantity:q})}).then(function(r){return r.json();}).then(render); }
@@ -201,7 +200,6 @@
       if(!visible){ window.location.href='/checkout'; }
     },2500);
   });
-  altEl.addEventListener('click',function(){ markAgree(); });
   (function(){
     var el=root.querySelector('[data-fpd-eta]'); if(!el) return;
     var MB=['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
