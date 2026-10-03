@@ -101,5 +101,12 @@
     {"page_id": "561715293698507", "name": "Dott.ssa Saccone Federica - Dimagrimento Naturale - Metodo FESPA", "country": "IT", "why": "експерт с името си на 2 страници (+ 543009473298707): „RISULTATI O NON PAGHI“ ×4 и „⭐⭐⭐⭐⭐“ ×2 за 19 мин (02.10) (F-018, F-010)", "added": "2026-10-03"},
     {"page_id": "1234216446433332", "name": "Personal Doc", "country": "IT", "why": "заглавие „гледай до края“ на 6 езика ×2 (03.10): видео с „лекар“ (висок риск, само формата)", "added": "2026-10-03"}
   ],
-  "note": "pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
+  "pages_international_to_resolve": [
+    {"name": "Bioma", "country": "US", "why": "„GLP-1 Booster“ (пробиотик), мъже 30–55 + нов женски синбиотик; 459 активни, ≈111 нови на седмица (Motion, 03.10); преди/след 14%, „цената първа“ 9%, листикъл 8%, постоянно −35%; двойка и подкаст", "added": "2026-10-03"},
+    {"name": "Lemme", "country": "US", "why": "метаболизъм (Burn, LeanBiome Burn), Debloat, креатин за жени; „мостът след GLP-1“; 266 активни, ≈62 нови на седмица (Motion, 03.10); Feature Benefit Pointout 29%, Headline 25%, листикъл 10%", "added": "2026-10-03"},
+    {"name": "Kind Patches", "country": "US", "why": "най-голямата марка с лепенки; „Berberine Patches (GLP-1 Friendly)“; ≈2 000 активни, ≈168 нови на седмица, Demo 15% (VF-023); има и ES страница", "added": "2026-10-03"},
+    {"name": "Happy Mammoth", "country": "US/AU", "why": "хормони и тегло при жени 40+ (Hormone Harmony); ≈1 000 активни, ≈116 нови на седмица; листикъл, post-it, UGC overlay (VF-008, VF-025)", "added": "2026-10-03"},
+    {"name": "WalkFit", "country": "US", "why": "ходене за жени 50+, менопауза; 426 активни, ≈192 нови на седмица; скечове със скептичка (VF-026)", "added": "2026-10-03"}
+  ],
+  "note": "pages_international_to_resolve: US марки без page_id (03.10, 23:11, само уеб); при първия US скан с Ads Library намери page_id по името и ги премести в pages_international. pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
 }
