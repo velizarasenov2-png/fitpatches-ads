@@ -1716,6 +1716,122 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261003-1512-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V4",
+          "name": "WILD · улична анкета",
+          "composite": 37.7,
+          "ci90": [
+            33.2,
+            42.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 37.4,
+          "ci90": [
+            31.8,
+            42.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "A19 · дъщеря ми пита",
+          "composite": 35.8,
+          "ci90": [
+            30.3,
+            41.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "A18 · хормоните и коремът",
+          "composite": 32.7,
+          "ci90": [
+            25.2,
+            39.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "A20 · колежката на обяд пита",
+          "composite": 32.2,
+          "ci90": [
+            27.5,
+            36.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "A18 · Stitch: непозната пита",
+          "composite": 29.4,
+          "ci90": [
+            23.9,
+            34.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "S3 · 30 сек",
+          "composite": 28.5,
+          "ci90": [
+            24.4,
+            32.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "S3 · пита съпругът",
+          "composite": 26.7,
+          "ci90": [
+            22.6,
+            30.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "ugc1 - Copy",
+          "composite": 25.2,
+          "ci90": [
+            19.8,
+            30.7
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V10",
+          "name": "ad1 (videa3)",
+          "composite": 24.6,
+          "ci90": [
+            19.1,
+            30.2
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
