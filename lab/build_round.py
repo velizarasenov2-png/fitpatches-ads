@@ -38,7 +38,12 @@ def load(path):
         return json.load(f)
 
 
+PLACEHOLDER = re.compile(r"\[[^\[\]]*\?\]")  # open owner questions, e.g. "[ГАРАНЦИЯ: 60 или 30?]"
+
+
 def clean_text(s, note):
+    # Open questions to the owner are not ad copy: the panel sees what the site says today (60 days).
+    s = re.sub(r"\[ГАРАНЦИЯ:[^\]]*\]", "60", s)
     # "като C0 …" / "като родителя …" are author shorthand; the panel must not see them.
     s = re.sub(r"\s*\bкато C0 \(джипът\)", ": „След това един с джип щеше да ме блъсне 😑😑“", s)
     s = re.sub(r"(?i)(^|\s)като (в |при )?(C0|родителя)\b[:,]?\s*", lambda m: m.group(1), s).strip()
@@ -68,7 +73,7 @@ def clean(obj, key=""):
 def leaks(obj, where=""):
     out = []
     if isinstance(obj, str):
-        if LEAK.search(obj):
+        if LEAK.search(obj) or PLACEHOLDER.search(obj):
             out.append((where, obj[:160]))
     elif isinstance(obj, list):
         for i, x in enumerate(obj):
