@@ -27,6 +27,12 @@
 
 **03-berberis:** `Close-up of a barberry branch (Berberis vulgaris) with elongated red berries next to a cut piece of bright yellow root, on a light linen background, natural daylight, botanical editorial photo, 3:2`
 
+**04-lepenka-ramo** (с референтна снимка на истинската лепенка): `Photorealistic close-up, morning light by a kitchen window, a woman's hand applying a small round pink adhesive patch to her upper arm/shoulder, a cup of coffee on the table in the soft-focus background, natural skin texture, clean minimal composition, 3:2`
+
+**05-stapka-1:** `Photorealistic close-up of clean bare skin on a woman's upper arm and shoulder, soft natural daylight, neutral light background, minimal, square 1:1`
+
+**06-stapka-2** (с референтна снимка на истинската лепенка): `Photorealistic close-up of two fingers gently pressing a small round pink adhesive patch onto a woman's upper arm, soft natural daylight, neutral background, square 1:1`
+
 **07-stapka-3:** `Photorealistic photo of a woman in her 40s walking in a park in the morning, casual clothes, small round pink patch barely visible on her upper arm, natural light, candid, square 1:1`
 
 ## Преди пускане
