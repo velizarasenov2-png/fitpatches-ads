@@ -1,0 +1,169 @@
+{%- comment -%}
+  FitPatches — Отзиви от клиенти. Само истински коментари (от Facebook, Instagram, Viber или след поръчка),
+  поставени ръчно като блокове със съгласието на човека. Без блокове секцията не се показва на клиентите;
+  в редактора на темата се вижда празен пример как ще изглежда.
+{%- endcomment -%}
+{%- liquid
+  assign shown = 0
+  for block in section.blocks
+    if block.settings.text != blank
+      assign shown = shown | plus: 1
+    endif
+  endfor
+-%}
+{%- if shown > 0 or request.design_mode -%}
+<section class="fp-rv" id="fprv-{{ section.id }}">
+  <div class="fp-rv__wrap">
+    <p class="fp-rv__eyebrow">Отзиви</p>
+    <h2 class="fp-rv__title">{{ section.settings.title }}</h2>
+    {%- if section.settings.subtitle != blank -%}<p class="fp-rv__sub">{{ section.settings.subtitle }}</p>{%- endif -%}
+
+    <div class="fp-rv__track">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.text == blank -%}{%- continue -%}{%- endif -%}
+        {%- liquid
+          assign parts = block.settings.name | strip | split: ' '
+          assign initials = parts.first | slice: 0
+          if parts.size > 1
+            assign second = parts[1] | slice: 0
+            assign initials = initials | append: second
+          endif
+          if initials == blank
+            assign initials = 'К'
+          endif
+        -%}
+        <article class="fp-rv__card" {{ block.shopify_attributes }}>
+          <header class="fp-rv__head">
+            <span class="fp-rv__av" aria-hidden="true">{{ initials | upcase }}</span>
+            <span class="fp-rv__who">
+              <b class="fp-rv__name">{{ block.settings.name | default: 'Клиент' | escape }}</b>
+              {%- if block.settings.date != blank -%}<span class="fp-rv__date">{{ block.settings.date | escape }}</span>{%- endif -%}
+            </span>
+            {%- case block.settings.source -%}
+              {%- when 'facebook' -%}
+                <span class="fp-rv__src fp-rv__src--fb"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg>Facebook</span>
+              {%- when 'instagram' -%}
+                <span class="fp-rv__src">Instagram</span>
+              {%- when 'message' -%}
+                <span class="fp-rv__src">Съобщение</span>
+              {%- else -%}
+                <span class="fp-rv__src">След поръчка</span>
+            {%- endcase -%}
+          </header>
+
+          {%- assign stars = block.settings.rating | plus: 0 -%}
+          {%- if stars > 0 -%}
+            <div class="fp-rv__stars" aria-label="{{ stars }} от 5 звезди">
+              {%- for i in (1..5) -%}<span class="{% if i <= stars %}on{% endif %}">★</span>{%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          <p class="fp-rv__text">{{ block.settings.text | escape | newline_to_br }}</p>
+
+          {%- if block.settings.image != blank -%}
+            <img class="fp-rv__img" src="{{ block.settings.image | image_url: width: 600 }}" alt="Снимка от {{ block.settings.name | escape }}" loading="lazy" width="300" height="300">
+          {%- endif -%}
+
+          {%- if block.settings.verified or block.settings.url != blank -%}
+            <footer class="fp-rv__foot">
+              {%- if block.settings.verified -%}<span class="fp-rv__ver"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>Потвърдена поръчка</span>{%- endif -%}
+              {%- if block.settings.url != blank -%}<a class="fp-rv__link" href="{{ block.settings.url }}" target="_blank" rel="noopener">Виж оригинала ›</a>{%- endif -%}
+            </footer>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+
+      {%- if shown == 0 and request.design_mode -%}
+        {%- for i in (1..3) -%}
+          <article class="fp-rv__card fp-rv__card--ph">
+            <header class="fp-rv__head">
+              <span class="fp-rv__av" aria-hidden="true">?</span>
+              <span class="fp-rv__who"><b class="fp-rv__name">Име И.</b><span class="fp-rv__date">дата на коментара</span></span>
+              <span class="fp-rv__src fp-rv__src--fb">Facebook</span>
+            </header>
+            <p class="fp-rv__text">Пример. Тук ще стои текстът на истински коментар от клиент. Добави го от „Добавяне на блок“ вляво — тези примери не се виждат в сайта.</p>
+          </article>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.note != blank -%}<p class="fp-rv__note">{{ section.settings.note }}</p>{%- endif -%}
+  </div>
+</section>
+<style>
+  #fprv-{{ section.id }}{--a:#d64d87;--a-dark:#b93a70;--soft:#fbe9f1;--pink:#f0c3dc;background:#fdf6f9}
+  #fprv-{{ section.id }} .fp-rv__wrap{max-width:1120px;margin:0 auto;padding:52px 0 44px}
+  #fprv-{{ section.id }} .fp-rv__eyebrow{text-align:center;margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--a)}
+  #fprv-{{ section.id }} .fp-rv__title{text-align:center;margin:0 18px 8px;font-size:30px;line-height:1.2;font-weight:800;color:#111}
+  #fprv-{{ section.id }} .fp-rv__sub{text-align:center;margin:0 18px 26px;font-size:15px;color:#666}
+  #fprv-{{ section.id }} .fp-rv__track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:6px 18px 10px;align-items:start}
+  #fprv-{{ section.id }} .fp-rv__card{background:#fff;border-radius:18px;padding:18px 18px 16px;box-shadow:0 6px 22px rgba(185,58,112,.08);border:1px solid #f6e3ec;display:flex;flex-direction:column;gap:10px}
+  #fprv-{{ section.id }} .fp-rv__card--ph{border-style:dashed;opacity:.75}
+  #fprv-{{ section.id }} .fp-rv__head{display:flex;align-items:center;gap:10px}
+  #fprv-{{ section.id }} .fp-rv__av{flex:0 0 40px;height:40px;border-radius:50%;background:var(--pink);color:var(--a-dark);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+  #fprv-{{ section.id }} .fp-rv__who{display:flex;flex-direction:column;min-width:0;flex:1}
+  #fprv-{{ section.id }} .fp-rv__name{font-size:15px;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #fprv-{{ section.id }} .fp-rv__date{font-size:12px;color:#8a8a8a}
+  #fprv-{{ section.id }} .fp-rv__src{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#666;background:#f4f4f4;border-radius:20px;padding:4px 9px}
+  #fprv-{{ section.id }} .fp-rv__src svg{width:13px;height:13px}
+  #fprv-{{ section.id }} .fp-rv__src--fb{color:#1877f2;background:#eef4fe}
+  #fprv-{{ section.id }} .fp-rv__stars{font-size:16px;letter-spacing:1px;color:#e5e5e5;line-height:1}
+  #fprv-{{ section.id }} .fp-rv__stars .on{color:#f5b301}
+  #fprv-{{ section.id }} .fp-rv__text{margin:0;font-size:15px;line-height:1.55;color:#2b2b2b}
+  #fprv-{{ section.id }} .fp-rv__img{width:100%;max-width:220px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;display:block}
+  #fprv-{{ section.id }} .fp-rv__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px;padding-top:10px;border-top:1px solid #f3eaee}
+  #fprv-{{ section.id }} .fp-rv__ver{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#1f8a4c}
+  #fprv-{{ section.id }} .fp-rv__ver svg{width:14px;height:14px}
+  #fprv-{{ section.id }} .fp-rv__link{font-size:12px;font-weight:700;color:var(--a-dark);text-decoration:none;margin-left:auto}
+  #fprv-{{ section.id }} .fp-rv__note{text-align:center;margin:16px 18px 0;font-size:12px;color:#999}
+  @media (max-width:749px){
+    #fprv-{{ section.id }} .fp-rv__wrap{padding:40px 0 34px}
+    #fprv-{{ section.id }} .fp-rv__title{font-size:24px}
+    #fprv-{{ section.id }} .fp-rv__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 16px 12px;gap:12px}
+    #fprv-{{ section.id }} .fp-rv__track::-webkit-scrollbar{display:none}
+    #fprv-{{ section.id }} .fp-rv__card{flex:0 0 84%;scroll-snap-align:center}
+  }
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FitPatches Отзиви",
+  "tag": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Слагай само истински коментари, със съгласието на човека. Фамилията съкращавай до инициал. Без блокове секцията не се показва в сайта." },
+    { "type": "text", "id": "title", "label": "Заглавие", "default": "Какво казват клиентите ни" },
+    { "type": "text", "id": "subtitle", "label": "Подзаглавие", "default": "Коментари от наши клиентки във Facebook и след поръчка" },
+    { "type": "text", "id": "note", "label": "Бележка под отзивите", "default": "Публикуваме истински коментари със съгласието на клиентите. Фамилиите са съкратени." }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Коментар",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Име", "info": "Например: Мария И." },
+        { "type": "text", "id": "date", "label": "Дата на коментара", "info": "Например: 12 септември 2026" },
+        { "type": "select", "id": "source", "label": "Откъде е", "default": "facebook", "options": [
+          { "value": "facebook", "label": "Коментар във Facebook" },
+          { "value": "instagram", "label": "Instagram" },
+          { "value": "message", "label": "Съобщение (Viber, Messenger)" },
+          { "value": "order", "label": "Отзив след поръчка" }
+        ] },
+        { "type": "select", "id": "rating", "label": "Звезди", "default": "0", "info": "Само ако клиентът сам е дал оценка", "options": [
+          { "value": "0", "label": "Без звезди" },
+          { "value": "5", "label": "5" },
+          { "value": "4", "label": "4" },
+          { "value": "3", "label": "3" },
+          { "value": "2", "label": "2" },
+          { "value": "1", "label": "1" }
+        ] },
+        { "type": "textarea", "id": "text", "label": "Текст на коментара", "info": "Точно както е написан, без поправки" },
+        { "type": "image_picker", "id": "image", "label": "Снимка от клиента (по желание)" },
+        { "type": "checkbox", "id": "verified", "label": "Потвърдена поръчка", "default": false, "info": "Само ако има поръчка от този човек" },
+        { "type": "url", "id": "url", "label": "Линк към оригиналния коментар (по желание)" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "FitPatches Отзиви" } ]
+}
+{% endschema %}

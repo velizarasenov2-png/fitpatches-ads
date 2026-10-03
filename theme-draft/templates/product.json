@@ -287,6 +287,15 @@
         "custom_colors_background": "#f3f3f3",
         "custom_gradient_background": "",
         "custom_colors_text": "#2e2a39"
+      },
+      "disabled": true
+    },
+    "fp_reviews": {
+      "type": "fp-reviews",
+      "settings": {
+        "title": "Какво казват клиентите ни",
+        "subtitle": "Коментари от наши клиентки във Facebook и след поръчка",
+        "note": "Публикуваме истински коментари със съгласието на клиентите. Фамилиите са съкратени."
       }
     }
   },
@@ -299,6 +308,7 @@
     "fp_results",
     "fp_analysis",
     "fp_img_collage",
+    "fp_reviews",
     "fp_fb_reviews"
   ]
 }
