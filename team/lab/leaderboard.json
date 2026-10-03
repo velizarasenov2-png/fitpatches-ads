@@ -1298,6 +1298,122 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261003-0312-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V1",
+          "name": "ugc1 · A17 фризьорката пита какво е това",
+          "composite": 35.7,
+          "ci90": [
+            30.8,
+            41.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "S3 · 30 сек",
+          "composite": 35.5,
+          "ci90": [
+            30.1,
+            40.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "F-011 · тетрадка на ръка (VF-008)",
+          "composite": 33.7,
+          "ci90": [
+            27.6,
+            39.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "A13 · ред „за какво е“",
+          "composite": 33.5,
+          "ci90": [
+            26.2,
+            40.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "S2 · скрийншот от чат (VF-011)",
+          "composite": 31.9,
+          "ci90": [
+            26.4,
+            37.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "ugc1 · VF-004 писмо",
+          "composite": 29.5,
+          "ci90": [
+            22.6,
+            37.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "A13 · голям текст (VF-005)",
+          "composite": 28.6,
+          "ci90": [
+            22.8,
+            35.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "ugc1 - Copy",
+          "composite": 24.3,
+          "ci90": [
+            19.6,
+            29.5
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V10",
+          "name": "S3 · бележка в телефона (VF-006)",
+          "composite": 24.1,
+          "ci90": [
+            19.1,
+            29.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "ad1 (videa3)",
+          "composite": 20.8,
+          "ci90": [
+            15.9,
+            26.8
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }

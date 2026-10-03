@@ -70,7 +70,7 @@ def tidy(v):
 def card(v, res=None):
     v = tidy(v)
     o = [f"## {v['name']}"]
-    meta = [v.get("format", ""), f"{v.get('length_s', '?')} сек"]
+    meta = [v.get("format", "")] + ([f"{v['length_s']} сек"] if v.get("length_s") else [])
     if res:
         icp = res.get("icp", {})
         ab = res.get("ab_vs_control")
