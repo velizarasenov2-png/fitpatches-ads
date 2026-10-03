@@ -30,7 +30,7 @@ LEAK = re.compile(r"родител|контролата|compliance|компла�
                   r"|CLAUDE\.md|собственика|operations-manager", re.I)
 NOTE_FIELDS = {"hook_visual", "offer", "visual", "shot"}  # production notes; ad copy is never rewritten
 NOTE_LEAK = re.compile(LEAK.pattern + r"|добавен|непровер|вместо|заменя|махна|премахн|сменен"
-                       r"|не се споменава|сметнато|\bурок\b", re.I)
+                       r"|не се споменава|сметнато|\bурок\b|без гаранция", re.I)  # „Без гаранция…“ = бележка за пропуск, не оферта
 
 
 def load(path):
