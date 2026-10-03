@@ -30,7 +30,6 @@
 **07-stapka-3:** `Photorealistic photo of a woman in her 40s walking in a park in the morning, casual clothes, small round pink patch barely visible on her upper arm, natural light, candid, square 1:1`
 
 ## Преди пускане
-- [ ] ЕИК и адрес на управление във футъра (`[ЕИК]`, `[адрес на управление]`; жълто маркирани в страницата)
 - [ ] Гаранцията: 30 или 60 дни? На страницата е 30. Трябва да съвпада с продуктовата страница.
 - [ ] Съставките (берберин, канела, нар) да съвпадат дословно с етикета
 - [ ] Цените и пакетите (14,99 / 27,99 / 39,99 € за 3+1) да съвпадат с Shopify
