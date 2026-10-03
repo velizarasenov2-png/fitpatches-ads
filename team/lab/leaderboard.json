@@ -1968,6 +1968,132 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261003-2312-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V2",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 36.2,
+          "ci90": [
+            30.3,
+            41.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "A19 · дъщеря ми пита",
+          "composite": 35.2,
+          "ci90": [
+            28.9,
+            41.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "VF-027 V-б · анкетата без монолога",
+          "composite": 35.1,
+          "ci90": [
+            30.8,
+            39.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "WILD · улична анкета",
+          "composite": 32.6,
+          "ci90": [
+            28.8,
+            36.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V11",
+          "name": "VF-028 V-б · сестра ми в колата",
+          "composite": 31.4,
+          "ci90": [
+            26.1,
+            36.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "VF-027 V-а · пет бързи въпроса на улицата",
+          "composite": 31.2,
+          "ci90": [
+            26.2,
+            36.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "A23 · свекърва ми пита",
+          "composite": 29.7,
+          "ci90": [
+            23.0,
+            36.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "A22 · майка ми пита",
+          "composite": 27.6,
+          "ci90": [
+            20.5,
+            35.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "ugc1 - Copy",
+          "composite": 27.6,
+          "ci90": [
+            22.2,
+            33.3
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V1",
+          "name": "ad1 (videa3)",
+          "composite": 24.6,
+          "ci90": [
+            20.6,
+            28.7
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V7",
+          "name": "VF-011 · A19 като чат с дъщерята",
+          "composite": 23.6,
+          "ci90": [
+            17.8,
+            29.2
+          ],
+          "real": null
+        }
+      ]
     }
   ]
 }
