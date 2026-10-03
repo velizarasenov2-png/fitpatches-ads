@@ -22,7 +22,7 @@
     "IT": ["berberina", "menopausa"],
     "PL": ["plastry na odchudzanie"],
     "RO": ["plasturi slabire"],
-    "NL": ["menopauze buik"],
+    "NL": ["menopauze buik", "berberine pleister", "GLP-1 pleister", "overgang", "bloedsuiker"],
     "AU": ["cortisol belly"],
     "BR": ["metabolismo depois dos 40", "adesivo emagrecedor", "berberina", "GLP-1 natural"]
   },
@@ -73,6 +73,8 @@
     {"page_id": "736039396268224", "name": "WonderBiotics", "country": "US", "why": "менопауза и черва; „не е проблем на волята“ ×8 за 24 ч (F-001)", "added": "2026-10-01"},
     {"page_id": "1048540858340021", "name": "Burnitty", "country": "AU", "why": "„Кортизолът ти складира корема“ ×8 за 24 ч, плаща в EUR (F-001)", "added": "2026-10-01"},
     {"page_id": "1314071885125324", "name": "Dr. Karin Weber", "country": "NL", "why": "„не обвинявай начина си на живот, а лимфата“ ×4; същото заглавие при Karin Holmberg и Natural Vitality Journal (F-001)", "added": "2026-10-01"},
+    {"page_id": "1216006811598356", "name": "Ingrid Scholten", "country": "NL", "why": "страница-персона, менопауза; 4 hook-а в една партида на 25.09 („3 uur klaarwakker“, „Vier klachten. Eén oorzaak.“; F-008, F-013, F-015). Добавена на 03.10 11:11 от паметта, без нова заявка", "added": "2026-10-03"},
+    {"page_id": "1027363683800322", "name": "Karin Holmberg", "country": "NL", "why": "страница-персона; същото заглавие за лимфата като Dr. Karin Weber, 5 + 4 реклами на 2 страници за 8 ч (F-001). Добавена на 03.10 11:11 от паметта", "added": "2026-10-03"},
     {"page_id": "990618684125532", "name": "Adeline Mercier", "country": "PL", "why": "лепенки; „Тествай 30 дни! Гаранция“ ×6, 33–41 дни (F-010)", "added": "2026-10-01"},
     {"page_id": "1068378719702576", "name": "Eat Smart Every Day", "country": "ES", "why": "„само 2 седмици“ ×16 на EN/ES/FR; мрежа от 4 страници с едно заглавие (F-009)", "added": "2026-10-01"},
     {"page_id": "1243988402141868", "name": "Solvéra", "country": "US", "why": "канела (наша съставка); „Повечето канели не минават 3 теста“ ×3 (F-011)", "added": "2026-10-01"},
