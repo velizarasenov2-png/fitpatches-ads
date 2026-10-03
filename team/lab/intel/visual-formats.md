@@ -26,6 +26,7 @@
 | VF-007 | Разопаковане без лице (ръце + плик от Еконт) | **A.** Motion: Unboxing hit rate 9.8%, spend use 1.3; в топ по hit rate в Health & Wellness | ниска–средна | нов |
 | VF-008 | Ръкописно листче, тетрадка, post-it | **B+.** Motion: Post It ≈1.3×, 100+ марки (Happy Mammoth); Sign 7.86%; Unconventional text placement 9.63%. ADM: +26% ROAS, −23% цена на поръчка (здраве и красота) | ниска | **за 23:11** (F-011) |
 | VF-009 | Карусел-чеклист (A13 в 5 карти) | **B+.** Happy Mammoth: Listicle = 13% от ≈1 000 активни реклами; Motion Listicle 5.3%; A13 два пъти в топ 4 в симулацията | ниска | **за 23:11** (A13) |
+| VF-022 | „Какво е · за какво е · как се ползва“ (етикетна карта + How To с ръце) | **B+.** Motion: Demo е №3 в Meta, hit rate 8.1%, 12.6% от креативите и 12.9% от разхода; How To при AG1, HUM. BR 03.10: 4 страници за 2 дни слагат името и какво е продуктът в заглавието (Arnaldo Roberto ×43). Лаб: P15 (59 г.) в 8 от 11 варианта казва „не разбрах за какво е“ | ниска | **нов (03.10), за лаб смяната** |
 | VF-010 | „Ние срещу тях“ без марки (рутина, не ефект) | **B.** Motion: hit rate 6.52%; Ridge върти формата постоянно. Памет: 92 реда „сравнение“ (Hormone Health Lab ×32 в партида) | ниска | нов |
 | VF-011 | Скрийншот от чат | **B.** Motion: 20 марки, сред тях AG1, Happy Mammoth, Magic Mind, Hims; „social post mockup“ №1 в H&W | ниска | **за 23:11** (S2) |
 | VF-012 | Split screen (говорещ кадър + карти) | **B.** Motion: 4K+ уникални реклами от топ марки (Health Insider, Shapermint); в топ листата по hit rate (диапазон ≈5–9%) | средна | нов |
@@ -80,11 +81,12 @@
 ## Източници (световни разбивки)
 
 - Motion, Creative Benchmarks 2026, топ визуални формати (578 750 креатива, IX.2025–I.2026, вкл. Black Friday): [top-visual-formats](https://motionapp.com/library/research/creative-benchmarks-2026/top-visual-formats) · по вертикали: [visual-formats-by-vertical](https://motionapp.com/library/research/creative-benchmarks-2026/visual-formats-by-vertical) · hit rate по формати: [thumbstop-pulse](https://motionapp.com/thumbstop-pulse/creative-benchmarks-2026/) · обобщение: [Foxwell Digital](https://www.foxwelldigital.com/blog/motion-creative-benchmarks-2026-8-key-takeaways)
-- Motion, страници на формати: [Letter](https://motionapp.com/library/formats/letter) · [Post It](https://motionapp.com/library/formats/post-it) · [Notes App](https://motionapp.com/library/formats/notes-app) · [Text Message](https://motionapp.com/library/formats/text-message) · [Social Comments](https://motionapp.com/library/formats/social-comments) · [Us Vs Them](https://motionapp.com/library/formats/us-vs-them) · [Split Screen](https://motionapp.com/library/formats/split-screen) · [Podcast](https://motionapp.com/library/formats/podcast) · [Infographic](https://motionapp.com/library/formats/infographic) · [Listicle](https://motionapp.com/library/formats/listicle) · [Animation](https://motionapp.com/library/formats/animation) · [Native Search](https://motionapp.com/library/formats/native-search) · [Stitch](https://motionapp.com/library/formats/stitch) · [Headline](https://motionapp.com/library/formats/headline) · марка в нашата ниша: [Happy Mammoth](https://motionapp.com/library/happy-mammoth) (хормони и тегло при жени 40+: ≈1 000 активни реклами, ≈116 нови на седмица)
+- Motion, страници на формати: [Letter](https://motionapp.com/library/formats/letter) · [Post It](https://motionapp.com/library/formats/post-it) · [Notes App](https://motionapp.com/library/formats/notes-app) · [Text Message](https://motionapp.com/library/formats/text-message) · [Social Comments](https://motionapp.com/library/formats/social-comments) · [Us Vs Them](https://motionapp.com/library/formats/us-vs-them) · [Split Screen](https://motionapp.com/library/formats/split-screen) · [Podcast](https://motionapp.com/library/formats/podcast) · [Infographic](https://motionapp.com/library/formats/infographic) · [Listicle](https://motionapp.com/library/formats/listicle) · [Animation](https://motionapp.com/library/formats/animation) · [Native Search](https://motionapp.com/library/formats/native-search) · [Stitch](https://motionapp.com/library/formats/stitch) · [Headline](https://motionapp.com/library/formats/headline) · [Demo](https://motionapp.com/library/formats/demo) · [How To](https://motionapp.com/library/formats/how-to) (03.10) · марка в нашата ниша: [Happy Mammoth](https://motionapp.com/library/happy-mammoth) (хормони и тегло при жени 40+: ≈1 000 активни реклами, ≈116 нови на седмица)
 - Curtis Howland: [The DTC static ad system, 67 852 реклами от 106 марки](https://newsletter.curtishowland.com/p/the-dtc-static-ad-system-what-67852) (статиките са 55.6% от всички реклами, 64.8% при DTC) · [DTC Meta Ads Tier List](https://newsletter.curtishowland.com/p/the-dtc-meta-ads-tier-list)
 - [Superscale: static ads 2026](https://superscale.ai/learn/static-ads/) · [Adrio: 7 static формата](https://adrio.ai/blog/best-meta-ad-formats) · [Adlibrary: 8 DTC формата](https://adlibrary.com/posts/best-dtc-meta-ads-examples-2026) · [Adlibrary: 10 карусела](https://adlibrary.com/posts/carousel-ad-examples-2026) · [AdRiseLab: анатомия на карусела](https://adriselab.com/blog/meta-carousel-ads-anatomy-2026) · [Segwise: 5 формата](https://segwise.ai/blog/100m-meta-ads-5-formats-dtc)
 - [ADM: post-it реклами](https://www.accelerateddigitalmedia.com/insights/using-post-it-graphics-in-paid-social-ads/) · [NextAfter: тест на notes app](https://www.nextafter.com/experiments/how-using-an-iphone-notes-app-style-of-facebook-ad-creative-impact-clicks/) · [RocketShip HQ: текст във видео](https://www.rocketshiphq.com/text-overlays-video-ads-mobile/) · [The Performers: 40 000 реклами от 11 DTC марки](https://www.blog.theperformers.io/p/9-figure-dtc-report)
 - AI и skeleton: [Higgsfield: AI аватари срещу UGC](https://higgsfield.ai/blog/ai-avatars-vs-ugc-creators-2026) · [Cinerads: Meta и AI хора в реклами](https://www.cinerads.com/blog/ai-ugc-facebook-ad-policy) · [AITuber: skeleton канал, 119 млн. гледания (органично)](https://aituber.app/blog/skeleton-channel-case-study-million-views/) · [Hustler Marketing: green screen](https://www.hustlermarketing.com/types-of-ugc-ads-the-formats-that-work-for-ecommerce-brands-2026/)
+- По-възрастна аудитория (03.10): [CDMG: Marketing to Seniors, 44 съвета от директния маркетинг](https://cdmginc.com/2026/09/09/marketing-to-seniors-46-surprising-advertising-insights/) (яснота, едър шрифт, без обърнат текст; твърдения на автора)
 
 Числата на доставчици (Segwise „60–70% от конверсиите“, AdRiseLab „+27% CTR“) са твърдения на самите блогове. Ползват се като посока, не като доказателство.
 
@@ -396,6 +398,58 @@
 **Продукция:** Higgsfield. Средна.
 **Риск в Meta:** висок, ако аватарът разказва „моите резултати“ (забранено в compliance-rules). Надпис „Драматизация · създадено с AI“ (EU AI Act, чл. 50).
 **Статус:** нов
+
+---
+
+### VF-022 „Какво е · за какво е · как се ползва“ (етикетна карта + 17 сек How To с ръце)
+*Добавена на 03.10, 03:11, лаб смяна BR. Защо точно сега: панелът на 23:11 показа, че по-възрастните не разбират за какво е продуктът, а 4-те визуални формата, които вече тествахме, не го казват (карусел-чеклист 26.0, тетрадка 30.8, чат 31.2, статик с цената 19.6).*
+
+**Какво е визуално:** два варианта на един формат. Без персона и без лице, затова не е нужна „Драматизация“ (ред 68 в compliance-rules).
+- **Статик 4:5 (основен).** Светъл фон (крем или бяло) и тъмен текст. Без светъл текст на тъмен фон. Горе: истинският пакет FitPatches, до него 1 лепенка извън плика, снимка с телефон на кухненска маса. Под тях 3 реда с номера, без иконки в кръг (ред 74). Шрифтът е едър: думата в началото на реда е ≥ 64 px, текстът ≥ 48 px при ширина 1080 px.
+  1. **Какво е:** лепенка с берберин, канела и нар. 30 в пакет.
+  2. **За какво е:** [един от трите реда по-долу, избира compliance-officer]
+  3. **Как се ползва:** 1 лепенка сутрин, на рамото. Не е хапче, не се гълта.
+  Лента долу, на един ред, в един цвят и размер: „14.99 € + доставка · плащаш при доставка“. Под нея дребен печатен ред (≥ 30 px): „Не е лекарство. Не замества разнообразното хранене и движението. При лекарства, бременност или кърмене — първо лекарят.“ Пакетът не докосва дребния ред (ред 72).
+- **Видео 17 сек, 9:16 (How To, само ръце).** Надписите се четат и без звук. Гласът е по желание, бавен, женски, 50+.
+
+| Време | Кадър | Надпис | Глас |
+|---|---|---|---|
+| 0–3 сек | Ръце държат пакета на кухненската маса, етикетът се чете | „Какво е това?“ (голямо) | „Какво е това и за какво е? Казвам го направо.“ |
+| 3–6 сек | Ръката вади 1 лепенка от плика | „Лепенка с берберин, канела и нар · 30 в пакет“ | „Лепенка с берберин, канела и нар. Трийсет в пакет.“ |
+| 6–10 сек | Ръката лепва лепенката на рамото през деколтето на блузата (рамото, не корема), с едно движение | „1 сутрин · на рамото · не се гълта“ | „Една сутрин, на рамото. Не е хапче.“ |
+| 10–13 сек | Ръкавът пада, лепенката не се вижда. Ръцете оставят пакета | „За какво е: [ред от compliance]“ | същият ред на глас |
+| 13–15 сек | Пакетът и отвореният сив плик от Еконт без товарителница (ред 76) | „14.99 € + доставка · плащаш при доставка“ | „Четиринайсет и деветдесет и девет плюс доставка. Плащаш, като я получиш.“ |
+| 15–17 сек | Чаша кафе, без продукт в кадър (ред 36, 43), твърд срез | „Не е лекарство. При лекарства, бременност или кърмене — първо лекарят.“ | същото, на глас |
+
+**Редът „За какво е“ (решава compliance-officer, подредени от най-ясния към най-безопасния):**
+- **А:** „За жени, които искат да отслабнат и не искат още едно хапче.“ Отговаря точно на въпроса на P15 („за килограмите ли е?“). Рискът е най-висок: това е функция на продукта, а за берберина няма разрешена здравна претенция (1924/2006). Meta изисква 18+ и без обещан резултат.
+- **Б:** „Част от сутрешната рутина на жени, които внимават с храненето и теглото.“ Описва кой го ползва, не какво прави. Рискът е среден: „теглото“ стои близо до продукта.
+- **В:** „За жени, които искат да внимават с храненето и не искат още едно хапче.“ Без тегло, затова е най-безопасен, но и най-малко ясен.
+- Към всеки от тях стои „Не е лекарство.“. Ред „Не е за кръвно или кръвна захар.“ би отговорил директно на P15, но назовава заболяване. Пускаме го само с ОК от compliance.
+
+**Текст под рекламата:**
+„Какво е това? Казваме го направо.
+Какво е: лепенка с берберин, канела и нар. 30 в пакет.
+За какво е: [ред от compliance].
+Как се ползва: 1 лепенка сутрин, на рамото. Не е хапче, не се гълта.
+1 пакет 14.99 € + доставка. Плащаш при доставка.
+Не е лекарство. Не замества разнообразното хранене и движението. При лекарства, бременност или кърмене — първо лекарят.“
+**Заглавия:** „Какво е, за какво е и как се ползва“ · „Лепенка с берберин: 1 сутрин, на рамото“. **CTA:** като родителя.
+
+**Къде и защо скалира (сигнал):**
+- **Motion 2026:** Demo („продуктът прави това, за което е създаден“) е №3 сред най-добрите формати в Meta: hit rate 8.1%, 12.6% от креативите и 12.9% от разхода ([formats](https://motionapp.com/library/formats/)). Примери в здраве и красота: AG1, SkinCeuticals, Gisou ([Demo](https://motionapp.com/library/formats/demo)). How To (стъпка по стъпка, ръце отблизо, надпис на всяка стъпка) ползват AG1, HUM Nutrition, Dog is Human и Function Health ([How To](https://motionapp.com/library/formats/how-to)). За How To отделни числа няма.
+- **BR, 03.10 (нашата памет):** 4 страници за 2 дни слагат в заглавието само името и какво е продуктът. Seviva „Berberina HCL 500mg“ ([1554709433342845](https://www.facebook.com/ads/library/?id=1554709433342845)). BiotipoFarma „Conheça o Destrave Metabólico“ („Запознай се с…“, 6 карти в една реклама, [1822334802434822](https://www.facebook.com/ads/library/?id=1822334802434822)). Estação Saúde „KIT BERBERINA + MELÃO SÃO CAETANO“ ([927561833448102](https://www.facebook.com/ads/library/?id=927561833448102)). Arnaldo Roberto „Glutanac 60 Cápsulas — Fórmula Hepática…“ ×43 за 7 ч, от тях 36 за 62 сек ([2142461056400643](https://www.facebook.com/ads/library/?id=2142461056400643)). Всички са на 0–1 ден, дълголетие няма. Визията е неясна, сигналът е само в заглавията.
+- **Лаб, 23:11** (`team/lab/runs/20261002-2312-active/panel-H.json`): P15 (59 г., пие лекарство за кръвно) в 8 от 11 варианта казва, че не е разбрала за какво е продуктът: „Ама за какво е това, за кръвно ли, за отслабване ли, не разбрах.“ Поправките, които самата тя предлага: „Да почне с това за какво е, на глас и с голям надпис.“ и „Всичко на една голяма картинка, с цената и за какво е.“
+- **CDMG** (директен маркетинг към 55+): „Clarity beats cleverness“. Според автора тест с шрифт 14 срещу 10 пункта дава +18% отговор, а светъл текст на тъмен фон намалява четенето ([източник](https://cdmginc.com/2026/09/09/marketing-to-seniors-46-surprising-advertising-insights/)). Това е твърдение на автора и го ползваме само като посока.
+
+**Защо ще работи:** това е единственият формат в библиотеката, който казва какво е продуктът още в първия ред и с едър шрифт. Карусел, тетрадка, чат и статик с цената оставят въпроса „за какво е“ без отговор, а P15 казва точно това. Цената и плащането при доставка (ядрото на S2) остават, а продуктът се вижда в употреба, тоест Demo. Без кредити: една снимка и 17 сек с телефон.
+
+**Как ще подейства:** спира с „Какво е това?“, защото е същият въпрос, който тя си задава за всяка реклама с лепенки. Не изглежда като обещание, а като етикет. Чете 3 реда (какво е, за какво, как), едри като на кутия от аптеката, и вижда ръката, която лепва на рамото, тоест „толкова е лесно“. Цената с доставката и плащането при доставка махат страха от измама. Редът за лекаря стои накрая, без продукт в кадъра. За P15 това е доверие, а за нас е защита → клик.
+
+**Продукция:** снимка с телефон + Canva (статик) и 17 сек с телефон, само ръце (видео). Ниска, без AI кредити.
+**Риск в Meta:** нисък до среден. Целият риск е в реда „За какво е“: виж А/Б/В. Без кг, срокове и „през кожата“. Цената е винаги с „+ доставка“ (ред 73). Без иконки-значки (ред 74). Лепенката е на рамото (ред 26). Редът за лекаря е в дребния печатен ред и в последната сцена, без продукт (ред 36, 72). **Внимание:** колкото по-ясно е, толкова повече дърпа и хора с лекарства (P15, N04), затова редът за лекаря е задължителен и в статика, и във видеото.
+**Ген за лаб смяната:** `visual_format` върху контролата S3-30 + отворения ген „безопасен ред „за какво е““ от `gene-queue.json` → `next.angle`. Сравнение: VF-022 статик срещу VF-022 видео срещу S3-30.
+**Статус:** нов (03.10), за следващата лаб смяна след ОК на compliance за реда „За какво е“
 
 ---
 
