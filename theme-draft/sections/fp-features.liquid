@@ -1,24 +1,27 @@
-{%- comment -%} FitPatches — Природата (въртяща се ЛЕПЕНКА, HD + изнесени етикети) {%- endcomment -%}
-{%- assign vid = 'https://cdn.shopify.com/s/files/1/1048/3269/6657/files/fp-patch-spin.mp4?v=1786453852' -%}
+{%- comment -%} FitPatches — Природата (въртящ се продукт + изнесени етикети, като QuitVibe) {%- endcomment -%}
+{%- assign vid = 'https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-spin.mp4?v=1785851452' -%}
+{%- assign poster = 'https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-features.png?v=1785849764' -%}
 <section class="fp-feat" id="fpf-{{ section.id }}">
   <div class="fp-feat__wrap">
-    <h2 class="fp-feat__title">Една лепенка. Цял ден подкрепа.<br><span>Без хапчета. Без гълтане.</span></h2>
+    <h2 class="fp-feat__title">Природата в помощ на фигурата.<br><span>Без хапчета. Без мъчение.</span></h2>
 
     <div class="fp-feat__stage">
       <div class="fp-feat__col fp-feat__col--l">
         <div class="fp-feat__it">
           <span class="fp-feat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 7 9 13 13 10 21 16"/><polyline points="16 16 21 16 21 11"/></svg></span>
-          <div><b>По-малко сладко</b><span>Подкрепа за контрола на апетита.</span></div>
+          <div><b>Без глад</b><span>Потиска апетита по естествен начин.</span></div>
         </div>
         <div class="fp-feat__it">
           <span class="fp-feat__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 12 10 5 20 4c-1 9-7 16-16 16z"/><path d="M4 20c3-6 7-9.5 12-11.5"/></svg></span>
-          <div><b>Растителни съставки</b><span>Берберин, канела и нар.</span></div>
+          <div><b>Натурално</b><span>Берберин и растителни екстракти.</span></div>
         </div>
       </div>
 
       <div class="fp-feat__media">
         <span class="fp-feat__glow"></span>
-        <video class="fp-feat__vid" loop muted playsinline preload="none" data-fp-lazy-src="{{ vid }}"></video>
+        <video class="fp-feat__vid" autoplay loop muted playsinline preload="metadata" poster="{{ poster }}">
+          <source src="{{ vid }}" type="video/mp4">
+        </video>
       </div>
 
       <div class="fp-feat__col fp-feat__col--r">
@@ -34,19 +37,12 @@
     </div>
   </div>
 </section>
-<script>
-(function(){
-  var v=document.querySelector('#fpf-{{ section.id }} [data-fp-lazy-src]'); if(!v) return;
-  function go(){ if(v.src) return; v.src=v.getAttribute('data-fp-lazy-src'); var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
-  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ go(); io.disconnect(); } }); },{rootMargin:'200px'}); io.observe(v); } else { go(); }
-})();
-</script>
 <style>
   #fpf-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4}
-  #fpf-{{ section.id }} .fp-feat__wrap{max-width:1180px;margin:0 auto;padding:52px 18px}
+  #fpf-{{ section.id }} .fp-feat__wrap{max-width:1080px;margin:0 auto;padding:52px 18px}
   #fpf-{{ section.id }} .fp-feat__title{text-align:center;font-size:34px;font-weight:800;color:#111;line-height:1.15;margin:0 0 34px}
   #fpf-{{ section.id }} .fp-feat__title span{color:var(--a)}
-  #fpf-{{ section.id }} .fp-feat__stage{display:grid;grid-template-columns:1fr minmax(360px,520px) 1fr;align-items:center;gap:24px}
+  #fpf-{{ section.id }} .fp-feat__stage{display:grid;grid-template-columns:1fr minmax(280px,380px) 1fr;align-items:center;gap:24px}
   #fpf-{{ section.id }} .fp-feat__col{display:flex;flex-direction:column;gap:44px}
   #fpf-{{ section.id }} .fp-feat__it{display:flex;flex-direction:column;gap:6px}
   #fpf-{{ section.id }} .fp-feat__col--l .fp-feat__it{align-items:flex-end;text-align:right}
@@ -56,13 +52,13 @@
   #fpf-{{ section.id }} .fp-feat__it b{display:block;font-size:16px;color:#111;margin-bottom:2px}
   #fpf-{{ section.id }} .fp-feat__it span{color:#666;font-size:13.5px;line-height:1.4;max-width:200px;display:block}
   #fpf-{{ section.id }} .fp-feat__media{position:relative;display:flex;align-items:center;justify-content:center}
-  #fpf-{{ section.id }} .fp-feat__glow{position:absolute;width:92%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,var(--soft) 0,rgba(251,233,241,0) 70%);z-index:0}
-  #fpf-{{ section.id }} .fp-feat__vid{position:relative;z-index:1;width:100%;border-radius:22px;display:block;background:var(--warm)}
+  #fpf-{{ section.id }} .fp-feat__glow{position:absolute;width:82%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,var(--soft) 0,rgba(251,233,241,0) 70%);z-index:0}
+  #fpf-{{ section.id }} .fp-feat__vid{position:relative;z-index:1;width:100%;border-radius:20px;display:block;background:var(--warm)}
   @media(max-width:749px){
     #fpf-{{ section.id }} .fp-feat__title{font-size:25px;margin:0 0 24px}
     #fpf-{{ section.id }} .fp-feat__stage{grid-template-columns:1fr;gap:26px}
     #fpf-{{ section.id }} .fp-feat__media{order:-1}
-    #fpf-{{ section.id }} .fp-feat__vid{max-width:440px;width:100%;margin:0 auto}
+    #fpf-{{ section.id }} .fp-feat__vid{max-width:320px;margin:0 auto}
     #fpf-{{ section.id }} .fp-feat__col{flex-direction:row;gap:16px}
     #fpf-{{ section.id }} .fp-feat__col .fp-feat__it{flex:1}
     #fpf-{{ section.id }} .fp-feat__col--l .fp-feat__it,#fpf-{{ section.id }} .fp-feat__col--r .fp-feat__it{align-items:center;text-align:center}

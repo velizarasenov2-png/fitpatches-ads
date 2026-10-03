@@ -13,21 +13,34 @@
       "type": "main-product",
       "blocks": {
         "title": {
-          "type": "custom_liquid",
+          "type": "title",
           "settings": {
-            "custom_liquid": "<p style=\"margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.5px;color:#b93a70;text-transform:uppercase;\">Берберинови лепенки FitPatches · 30 бр. в пакет</p><h1 class=\"h1\" style=\"margin:0 0 6px;line-height:1.15;\">Една лепенка сутрин. По-малко желание за сладко през деня.</h1><p style=\"margin:0;font-size:15px;color:#555;line-height:1.45;\">Без хапчета, без абонамент — плащаш при доставка.</p>"
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 0
           }
         },
         "a6eb81db-40e4-43e0-972f-32db010a4a56": {
-          "type": "custom_liquid",
+          "type": "rating_stars",
           "settings": {
-            "custom_liquid": "<p style=\"margin:10px 0 14px;font-size:14px;color:#1f8a4c;font-weight:700;display:flex;align-items:center;gap:6px;\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6L9 17l-5-5\"/></svg>Над 350 поръчки в България · плащане при доставка</p>"
+            "rating": 4.4,
+            "star_color": "#ffcc00",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": "1012 Ревюта",
+            "size": 16,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 0,
+            "margin_bottom": 9
           }
         },
         "fp_custom_offer": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'fp-offer-v2' %}"
+            "custom_liquid": "{% render 'fp-offer-v2', product: product %}"
           }
         }
       },
@@ -82,7 +95,7 @@
         "mobile_slides_inner_width": 100,
         "trust_badge_position": "top-right",
         "trust_badge_size": "medium",
-        "mobile_padding_top": 8,
+        "mobile_padding_top": 0,
         "mobile_padding_bottom": 16,
         "desktop_padding_top": 8,
         "desktop_padding_bottom": 36
@@ -274,8 +287,7 @@
         "custom_colors_background": "#f3f3f3",
         "custom_gradient_background": "",
         "custom_colors_text": "#2e2a39"
-      },
-      "disabled": true
+      }
     }
   },
   "order": [

@@ -1,4 +1,4 @@
-{%- comment -%} FitPatches — плъзгаща количка. Единствен бутон: EasySell COD формата (клас es-popup-button-drawer). {%- endcomment -%}
+{%- comment -%} FitPatches — плъзгаща количка (като на активния сайт). Бутонът „Поръчай“ е на EasySell: приложението го слага преди скрития линк към checkout. Без розов бутон към checkout и без лента за доставка. {%- endcomment -%}
 <div class="fpd" id="fpDrawer" aria-hidden="true">
   <div class="fpd__ov" data-fpd-close></div>
   <aside class="fpd__panel" role="dialog" aria-label="Количка">
@@ -6,19 +6,15 @@
       <span class="fpd__logo">Fit<span>Patches</span></span>
       <button class="fpd__x" type="button" data-fpd-close aria-label="Затвори">&times;</button>
     </div>
-    <div class="fpd__ship">
-      <p class="fpd__ship-txt" data-fpd-eta>Плащаш при доставка · Еконт до 2–4 работни дни</p>
-    </div>
     <div class="fpd__body">
       <div class="fpd__items" data-fpd-items></div>
       <div class="fpd__up" data-fpd-upsell hidden>
-        <p class="fpd__up-h" data-fpd-uph>Вземи повече и плати по-малко на ден</p>
+        <p class="fpd__up-h">Може още да ти хареса</p>
         <div class="fpd__up-card">
           <img class="fpd__up-img" src="https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fitpatches_2048_no_white_background.png?v=1773008342" alt="">
           <div class="fpd__up-info">
             <span class="fpd__up-name">3+2 подарък — 5 пакета</span>
-            <span class="fpd__up-price"><b>39,99 €</b> · 0,27 € на ден</span>
-            <span class="fpd__up-more" data-fpd-upmore></span>
+            <span class="fpd__up-price"><s>119.96</s> <b>39.99</b></span>
           </div>
           <button class="fpd__up-add" type="button" data-fpd-upadd>Смени</button>
         </div>
@@ -26,23 +22,17 @@
     </div>
     <div class="fpd__foot">
       <div class="fpd__tot">
-        <div class="fpd__tot-row"><span>Сума за продуктите:</span><b data-fpd-total>0,00 €</b></div>
-        <p class="fpd__tot-note">Доставката се заплаща на куриера по тарифа на Еконт.</p>
+        <div class="fpd__tot-row"><span>Крайна сума:</span><b data-fpd-total>0.00</b></div>
+        <div class="fpd__tot-row fpd__tot-row--save" data-fpd-saverow hidden><span>Спестени:</span><b data-fpd-save></b></div>
       </div>
-      <div class="fpd__important">
-        <p class="fpd__important-title">ВАЖНО</p>
-        <label class="fpd__agree"><input type="checkbox" data-fpd-agree checked><span>С поръчката си поемам ангажимент да получа и заплатя пратката си с наложен платеж. Разбирам, че при отказ на пратката ще бъда отбелязан(а) като некоректен клиент в системата на куриера (Еконт) и магазинът може да не приема мои бъдещи поръчки с наложен платеж.</span></label>
-      </div>
-      <button type="button" class="fpd__go es-popup-button-drawer" data-fpd-cod>Поръчай с наложен платеж</button>
+      <a class="fpd__go" href="/checkout">Преминаване към плащане</a>
       <div class="fpd__badges">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>Наложен платеж</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.2-3 7.2-7 8.5-4-1.3-7-4.3-7-8.5V6z"/><path d="M9 12l2 2 4-4"/></svg>30 дни гаранция</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.2-3 7.2-7 8.5-4-1.3-7-4.3-7-8.5V6z"/><path d="M9 12l2 2 4-4"/></svg>60 дни гаранция</span>
       </div>
     </div>
   </aside>
 </div>
-
-
 <style>
   #fpDrawer{--a:#d64d87;--soft:#fbe9f1;position:fixed;inset:0;z-index:99999;visibility:hidden;pointer-events:none}
   #fpDrawer.is-open{visibility:visible;pointer-events:auto}
@@ -85,59 +75,46 @@
   #fpDrawer .fpd__tot-row{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;margin-bottom:4px}
   #fpDrawer .fpd__tot-row b{font-size:22px;font-weight:800;color:#111}
   #fpDrawer .fpd__tot-row--save b{font-size:15px;color:var(--a)}
-  #fpDrawer .fpd__go{display:block;width:100%;text-align:center;background:var(--a);color:#fff;font-weight:800;font-size:17px;border-radius:14px;padding:16px;text-decoration:none;margin:12px 0 12px;border:0;cursor:pointer;font-family:inherit}
+  #fpDrawer .fpd__go{display:block;text-align:center;background:var(--a);color:#fff;font-weight:800;font-size:17px;border-radius:14px;padding:16px;text-decoration:none;margin:12px 0 12px}
   #fpDrawer .fpd__go:active{transform:translateY(1px)}
   #fpDrawer .fpd__badges{display:flex;justify-content:center;gap:22px}
   #fpDrawer .fpd__badges span{display:flex;align-items:center;gap:6px;font-size:12px;color:#666;font-weight:600}
   #fpDrawer .fpd__badges svg{width:18px;height:18px;color:var(--a)}
-  #fpDrawer .fpd__important{margin:10px 0 4px;padding:10px 12px;border:1.5px solid #e23b3b;background:#fff5f5;border-radius:10px}
-  #fpDrawer .fpd__important-title{margin:0 0 6px;color:#e23b3b;font-weight:800;font-size:12px;letter-spacing:1.5px}
-  #fpDrawer .fpd__agree{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
-  #fpDrawer .fpd__agree input{flex:0 0 18px;width:18px;height:18px;margin:1px 0 0;accent-color:#e23b3b;cursor:pointer}
-  #fpDrawer .fpd__agree span{font-size:11.5px;line-height:1.45;color:#444}
-  #fpDrawer .fpd__ship{padding:12px 20px 0}
-  #fpDrawer .fpd__ship-txt{margin:0;background:var(--soft);border-radius:10px;padding:9px 10px;color:#7a2a4d}
-  #fpDrawer .fpd__it-sub{display:block;font-size:12px;color:#888;margin:-4px 0 8px}
-  #fpDrawer .fpd__up-more{display:block;font-size:12px;color:#1f8a4c;font-weight:700;margin-top:2px}
-  #fpDrawer .fpd__tot-note{margin:0 0 4px;font-size:12px;color:#777}
-  #fpDrawer .fpd__alt{display:block;text-align:center;font-size:13px;color:#777;text-decoration:underline;margin:-4px 0 12px}
-  #fpDrawer .fpd__go[disabled]{opacity:.5;cursor:not-allowed}
+  #fpDrawer a.fpd__go{display:none!important}
   body.fpd-lock{overflow:hidden}
   @media(max-width:600px){#fpDrawer .fpd__panel{width:100%;max-width:100%}}
 </style>
 <script>
 (function(){
-  var CUR_SYM='€', TOP_ID='53837385859409', TOP_PROP='FitPatches 3+2 подарък — 5 пакета (150 лепенки)', TOP_TOTAL=39.99;
-  var PACKS={'53836021039441':1,'53837384024401':3,'53837385859409':5};
-  var THUMB='https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fitpatches_2048_no_white_background.png?v=1773008342';
+  var CUR='{{ shop.currency }}', UP_ID='53837385859409', UP_PROP='FitPatches 3+2 подарък — 5 пакета (150 лепенки)', THUMB='https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fitpatches_2048_no_white_background.png?v=1773008342';
   var root=document.getElementById('fpDrawer'); if(!root) return;
-  function m(c){ return (c/100).toFixed(2).replace('.',',')+' '+CUR_SYM; }
-  function esc(s){ return String(s||'').replace(/[&<>"]/g,function(x){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[x];}); }
-  var itemsEl=root.querySelector('[data-fpd-items]'), totEl=root.querySelector('[data-fpd-total]');
-  var upEl=root.querySelector('[data-fpd-upsell]'), upMore=root.querySelector('[data-fpd-upmore]');
-  var codEl=root.querySelector('[data-fpd-cod]'), agEl=root.querySelector('[data-fpd-agree]');
-  var lastCart=null;
+  function m(c){ return (c/100).toFixed(2)+' '+CUR; }
+  function esc(s){ return (s||'').replace(/[&<>"]/g,function(x){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[x];}); }
+  var itemsEl=root.querySelector('[data-fpd-items]');
+  var totEl=root.querySelector('[data-fpd-total]'), saveRow=root.querySelector('[data-fpd-saverow]'), saveEl=root.querySelector('[data-fpd-save]');
+  var upEl=root.querySelector('[data-fpd-upsell]'), goEl=root.querySelector('.fpd__go');
   function render(cart){
-    lastCart=cart; var items=cart.items||[];
+    var items=cart.items||[];
     if(!items.length){ itemsEl.innerHTML='<p class="fpd__empty">Количката е празна.</p>'; }
     else {
       itemsEl.innerHTML=items.map(function(it){
-        var pack=(it.properties&&it.properties['Пакет'])||it.product_title;
+        var cmp=(it.compare_at_price && it.compare_at_price>it.final_price)?('<s>'+m(it.compare_at_price*it.quantity)+'</s>'):'';
         return '<div class="fpd__it" data-key="'+esc(it.key)+'">'
-          +'<img class="fpd__it-img" src="'+esc(it.image||(it.featured_image&&it.featured_image.url)||THUMB)+'" alt="">'
-          +'<div class="fpd__it-mid"><p class="fpd__it-name">'+esc(pack)+'</p>'
-          +'<div class="fpd__qty"><button type="button" data-dec aria-label="Намали">&minus;</button><span>'+it.quantity+'</span><button type="button" data-inc aria-label="Увеличи">+</button></div>'
+          +'<img class="fpd__it-img" src="'+(it.image||(it.featured_image&&it.featured_image.url)||THUMB)+'" alt="">'
+          +'<div class="fpd__it-mid"><p class="fpd__it-name">'+esc((it.properties&&it.properties['Пакет'])||it.product_title)+'</p>'
+          +'<div class="fpd__qty"><button type="button" data-dec>&minus;</button><span>'+it.quantity+'</span><button type="button" data-inc>+</button></div>'
           +'<button type="button" class="fpd__it-rm" data-rm>Премахни</button></div>'
-          +'<div class="fpd__it-price"><b>'+m(it.final_line_price)+'</b></div></div>';
+          +'<div class="fpd__it-price">'+cmp+'<b>'+m(it.final_line_price)+'</b></div></div>';
       }).join('');
     }
+    var total=cart.total_price/100;
     totEl.textContent=m(cart.total_price);
-    var packs=0, hasTop=false;
-    items.forEach(function(it){ var p=PACKS[String(it.variant_id)]||1; packs+=p*it.quantity; if(String(it.variant_id)===TOP_ID) hasTop=true; });
-    var showUp=items.length>0 && !hasTop && packs<5;
-    upEl.hidden=!showUp;
-    if(showUp){ var diff=TOP_TOTAL-cart.total_price/100; upMore.textContent=(diff>0?'Само +'+diff.toFixed(2).replace('.',',')+' € за ':'Още ')+(5-packs)+' пакета повече'; }
-    var empty=!items.length; codEl.disabled=empty;
+    var save=0; items.forEach(function(it){ if(it.compare_at_price && it.compare_at_price>it.final_price){ save+=(it.compare_at_price-it.final_price)*it.quantity; } });
+    if(save>0){ saveRow.hidden=false; saveEl.textContent='-'+m(save); } else { saveRow.hidden=true; }
+    var hasUp=items.some(function(it){ return String(it.variant_id)===UP_ID; });
+    upEl.hidden = (hasUp || !items.length);
+    goEl.style.pointerEvents=items.length?'auto':'none';
+    goEl.style.opacity=items.length?'1':'.5';
   }
   function refresh(){ return fetch('/cart.js',{headers:{'Accept':'application/json'}}).then(function(r){return r.json();}).then(render); }
   function change(key,q){ return fetch('/cart/change.js',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({id:key,quantity:q})}).then(function(r){return r.json();}).then(render); }
@@ -150,26 +127,12 @@
   });
   root.querySelector('[data-fpd-upadd]').addEventListener('click',function(){
     var h={'Content-Type':'application/json','Accept':'application/json'};
-    fetch('/cart/clear.js',{method:'POST',headers:h})
-      .then(function(){ return fetch('/cart/add.js',{method:'POST',headers:h,body:JSON.stringify({items:[{id:TOP_ID,quantity:1,properties:{'Пакет':TOP_PROP}}]})}); })
-      .then(refresh);
+    fetch('/cart/clear.js',{method:'POST',headers:h}).then(function(){ return fetch('/cart/add.js',{method:'POST',headers:h,body:JSON.stringify({items:[{id:UP_ID,quantity:1,properties:{'Пакет':UP_PROP}}]})}); }).then(refresh);
   });
   function open(){ refresh(); root.classList.add('is-open'); root.setAttribute('aria-hidden','false'); document.body.classList.add('fpd-lock'); }
   function close(){ root.classList.remove('is-open'); root.setAttribute('aria-hidden','true'); document.body.classList.remove('fpd-lock'); }
   root.querySelectorAll('[data-fpd-close]').forEach(function(b){ b.addEventListener('click',close); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
-  function markAgree(){ try{ fetch('/cart/update.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({attributes:{'Съгласие за получаване (наложен платеж)':agEl&&agEl.checked?'Да':'Не'}}),keepalive:true}); }catch(e){} }
-  /* EasySell слуша кликове върху .es-popup-button-drawer и отваря своята форма с количката.
-     Без резервно пренасочване към стандартния checkout. */
-  codEl.addEventListener('click',function(){ markAgree(); close(); });
-  (function(){
-    var el=root.querySelector('[data-fpd-eta]'); if(!el) return;
-    var MB=['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
-    function addBiz(d,n){ var x=new Date(d.getTime()); while(n>0){ x.setDate(x.getDate()+1); var w=x.getDay(); if(w!==0&&w!==6) n--; } return x; }
-    var now=new Date(), d1=addBiz(now,2), d2=addBiz(now,4);
-    var range=d1.getMonth()===d2.getMonth()?(d1.getDate()+'–'+d2.getDate()+' '+MB[d2.getMonth()]):(d1.getDate()+' '+MB[d1.getMonth()]+' – '+d2.getDate()+' '+MB[d2.getMonth()]);
-    el.textContent='Плащаш при доставка · Еконт: получаваш '+range;
-  })();
   window.fpCart={open:open,close:close,refresh:refresh};
 })();
 </script>
