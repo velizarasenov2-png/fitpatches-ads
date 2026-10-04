@@ -2883,6 +2883,148 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261004-2312-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -0.5,
+        "spearman_composite_vs_real_cpa": 1.0,
+        "spearman_qos_vs_real_cpa": 0.87,
+        "spearman_bt_vs_real_cpa": 0.5,
+        "pairwise_agreement_cpa": "3/3"
+      },
+      "top": [
+        {
+          "code": "V4",
+          "name": "Съседката-скептик (балконът + „измама ли е?“)",
+          "composite": 36.7,
+          "ci90": [
+            31.2,
+            42.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 35.8,
+          "ci90": [
+            30.1,
+            41.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V11",
+          "name": "VF-026 · „малка“ + надпис + отворен въпрос",
+          "composite": 35.8,
+          "ci90": [
+            29.7,
+            41.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "VF-030 · фризьорката + надпис „За какво е?“",
+          "composite": 35.6,
+          "ci90": [
+            31.0,
+            40.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "Съседката на балкона",
+          "composite": 35.4,
+          "ci90": [
+            30.6,
+            40.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "VF-030 · фризьорката + надпис + отворен въпрос",
+          "composite": 35.2,
+          "ci90": [
+            29.4,
+            40.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "VF-037 V-б · покажи ми я (hook „Ти питаше.“)",
+          "composite": 28.1,
+          "ci90": [
+            23.8,
+            32.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "VF-037 V-а · покажи ми я (видеоразговор)",
+          "composite": 27.6,
+          "ci90": [
+            22.6,
+            33.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "ugc1 - Copy",
+          "composite": 24.2,
+          "ci90": [
+            20.3,
+            28.1
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V3",
+          "name": "ad1 (videa3)",
+          "composite": 20.9,
+          "ci90": [
+            16.3,
+            25.9
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V6",
+          "name": "New Sales Ad (sestra)",
+          "composite": 19.2,
+          "ci90": [
+            15.1,
+            24.1
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        }
+      ]
     }
   ]
 }
