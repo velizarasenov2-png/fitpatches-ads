@@ -2210,6 +2210,112 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261004-0712-active",
+      "calibration": null,
+      "top": [
+        {
+          "code": "V6",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 34.4,
+          "ci90": [
+            28.8,
+            40.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "VF-030 · реакцията на фризьорката",
+          "composite": 34.2,
+          "ci90": [
+            30.1,
+            39.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "VF-026 · „Толкова ли е малка?“",
+          "composite": 32.7,
+          "ci90": [
+            27.2,
+            38.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "VF-031 V-а · подкастът на дивана",
+          "composite": 31.5,
+          "ci90": [
+            26.6,
+            36.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "VF-027 V-б · анкетата без монолога",
+          "composite": 28.8,
+          "ci90": [
+            24.9,
+            33.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-027 V-б (а) · анкетата с 3 въпроса",
+          "composite": 28.4,
+          "ci90": [
+            24.1,
+            32.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "ugc1 - Copy",
+          "composite": 26.1,
+          "ci90": [
+            21.4,
+            31.1
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V3",
+          "name": "A25 · служителката на гишето пита",
+          "composite": 25.4,
+          "ci90": [
+            20.9,
+            30.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "ad1 (videa3)",
+          "composite": 25.2,
+          "ci90": [
+            19.8,
+            31.6
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
