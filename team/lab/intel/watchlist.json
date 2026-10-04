@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "keywords_bg": [
     "берберин",
     "лепенки за отслабване",
@@ -104,12 +104,17 @@
   "pages_international_to_resolve": [
     {"name": "Bioma", "country": "US", "why": "„GLP-1 Booster“ (пробиотик), мъже 30–55 + нов женски синбиотик; 459 активни, ≈111 нови на седмица (Motion, 03.10); преди/след 14%, „цената първа“ 9%, листикъл 8%, постоянно −35%; двойка и подкаст", "added": "2026-10-03"},
     {"name": "Lemme", "country": "US", "why": "метаболизъм (Burn, LeanBiome Burn), Debloat, креатин за жени; „мостът след GLP-1“; 266 активни, ≈62 нови на седмица (Motion, 03.10); Feature Benefit Pointout 29%, Headline 25%, листикъл 10%", "added": "2026-10-03"},
-    {"name": "Kind Patches", "country": "US", "why": "най-голямата марка с лепенки; „Berberine Patches (GLP-1 Friendly)“; ≈2 000 активни, ≈168 нови на седмица, Demo 15% (VF-023); има и ES страница", "added": "2026-10-03"},
+    {"name": "Kind Patches", "country": "GB/US", "why": "най-голямата марка с лепенки; „Berberine Patches (GLP-1 Friendly)“; ≈2 000 активни, ≈168 нови на седмица, Demo 15% (VF-023); има и ES страница · 04.10 GB (уеб): фирмата е Kind Patches Ltd (UK); ASA забрани „GLP-1 Patch“ + „POV: кърмеща майка“ (III.2026); оферта „Buy 2, Get 1 Free“ + до −50%, 4.8★ от 2 597 отзива", "added": "2026-10-03"},
     {"name": "Happy Mammoth", "country": "US/AU", "why": "хормони и тегло при жени 40+ (Hormone Harmony); ≈1 000 активни, ≈116 нови на седмица; листикъл, post-it, UGC overlay (VF-008, VF-025)", "added": "2026-10-03"},
     {"name": "WalkFit", "country": "US", "why": "ходене за жени 50+, менопауза; 426 активни, ≈192 нови на седмица; скечове със скептичка (VF-026); рекламите с двама са two-shot на разходка (VF-029, 04.10)", "added": "2026-10-03"},
     {"name": "Coauoo", "country": "PL", "why": "дропшипинг „Moringa × Berberyna × AMPK 10-w-1“, лепенки с микроигли (dozonlinee.com); клонинг на моринга + берберин (NL, PL); в Allegro 29.90–45 zł (04.10, уеб)", "added": "2026-10-04"},
     {"name": "Naturecan PL", "country": "PL", "why": "колекция „Suplementy GLP-1“ (GLP-1 като категория); статия „Ozempic bez recepty?“ (04.10, уеб)", "added": "2026-10-04"},
-    {"name": "Futunatura", "country": "PL", "why": "„3x GLP-1 Support“ (GLP-1 като прилагателно, 6+ марки в 4 държави) (04.10, уеб)", "added": "2026-10-04"}
+    {"name": "Futunatura", "country": "PL", "why": "„3x GLP-1 Support“ (GLP-1 като прилагателно, 6+ марки в 4 държави) (04.10, уеб)", "added": "2026-10-04"},
+    {"name": "Your Heights", "country": "GB", "why": "енергия и мозък, 40+, скептици; 343 активни, ≈109 нови на седмица (Motion); основателят интервюира клиент, подкаст, знаменитост (Matt Willis) → VF-031 (04.10, уеб)", "added": "2026-10-04"},
+    {"name": "Spacegoods", "country": "GB", "why": "„Rainbow Dust“, жени 25–55; 272 активни, ≈112 нови на седмица (Motion); hook-ове от една дума „Menobelly?“, „Cortisol belly?“ (F-001); в списъка Podcast; −58–69%, 60 дни (04.10, уеб)", "added": "2026-10-04"},
+    {"name": "Vitabiotics", "country": "GB", "why": "най-голямата UK марка витамини; 760 активни, ≈75 нови на седмица; „цената първа“ 35%; №1 в Checkout Mockup (21 реклами) → VF-032; „3 за 2“ на целия сайт (04.10, уеб)", "added": "2026-10-04"},
+    {"name": "Join ZOE", "country": "GB", "why": "хранене и черва; 155 активни, ≈44 нови на седмица; Demo 26%, Screen Recording 10%; „Less than the price of your morning cuppa!“ (04.10, уеб)", "added": "2026-10-04"},
+    {"name": "Luxarise / Healrize / Purelor / Viatow", "country": "GB", "why": "микроигли с моринга + берберин + NAD+, фалшиво одобрение от Boots и Diabetes UK (форум на Diabetes UK, VI–IX.2026); клонингът е в 5 държави (RO, DE, US, PL, GB). Висок риск, само следим (04.10, уеб)", "added": "2026-10-04"}
   ],
   "note": "pages_international_to_resolve: US марки без page_id (03.10, 23:11, само уеб); при първия US скан с Ads Library намери page_id по името и ги премести в pages_international. pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
 }
