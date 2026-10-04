@@ -2751,6 +2751,138 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261004-1912-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -0.5,
+        "spearman_composite_vs_real_cpa": 0.5,
+        "spearman_qos_vs_real_cpa": 0.5,
+        "spearman_bt_vs_real_cpa": 1.0,
+        "pairwise_agreement_cpa": "2/3"
+      },
+      "top": [
+        {
+          "code": "V6",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 40.2,
+          "ci90": [
+            33.6,
+            46.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "VF-036 V-а · от жена на жена (листчето)",
+          "composite": 33.0,
+          "ci90": [
+            28.0,
+            37.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "Съседката на балкона",
+          "composite": 32.3,
+          "ci90": [
+            26.6,
+            38.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "VF-034 V-б · класацията (3 предмета)",
+          "composite": 30.9,
+          "ci90": [
+            25.9,
+            35.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "Роклята за събота",
+          "composite": 30.5,
+          "ci90": [
+            25.5,
+            35.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "VF-036 V-в · от жена на жена (статик 4:5)",
+          "composite": 25.3,
+          "ci90": [
+            20.4,
+            30.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "ugc1 - Copy",
+          "composite": 24.4,
+          "ci90": [
+            19.7,
+            29.7
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V10",
+          "name": "VF-036 V-б · от жена на жена (без отворения въпрос)",
+          "composite": 24.4,
+          "ci90": [
+            19.9,
+            29.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "New Sales Ad (sestra)",
+          "composite": 21.2,
+          "ci90": [
+            16.1,
+            26.7
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V5",
+          "name": "ad1 (videa3)",
+          "composite": 19.5,
+          "ci90": [
+            14.5,
+            25.2
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
