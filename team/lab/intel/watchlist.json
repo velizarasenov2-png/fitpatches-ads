@@ -106,7 +106,10 @@
     {"name": "Lemme", "country": "US", "why": "метаболизъм (Burn, LeanBiome Burn), Debloat, креатин за жени; „мостът след GLP-1“; 266 активни, ≈62 нови на седмица (Motion, 03.10); Feature Benefit Pointout 29%, Headline 25%, листикъл 10%", "added": "2026-10-03"},
     {"name": "Kind Patches", "country": "US", "why": "най-голямата марка с лепенки; „Berberine Patches (GLP-1 Friendly)“; ≈2 000 активни, ≈168 нови на седмица, Demo 15% (VF-023); има и ES страница", "added": "2026-10-03"},
     {"name": "Happy Mammoth", "country": "US/AU", "why": "хормони и тегло при жени 40+ (Hormone Harmony); ≈1 000 активни, ≈116 нови на седмица; листикъл, post-it, UGC overlay (VF-008, VF-025)", "added": "2026-10-03"},
-    {"name": "WalkFit", "country": "US", "why": "ходене за жени 50+, менопауза; 426 активни, ≈192 нови на седмица; скечове със скептичка (VF-026)", "added": "2026-10-03"}
+    {"name": "WalkFit", "country": "US", "why": "ходене за жени 50+, менопауза; 426 активни, ≈192 нови на седмица; скечове със скептичка (VF-026); рекламите с двама са two-shot на разходка (VF-029, 04.10)", "added": "2026-10-03"},
+    {"name": "Coauoo", "country": "PL", "why": "дропшипинг „Moringa × Berberyna × AMPK 10-w-1“, лепенки с микроигли (dozonlinee.com); клонинг на моринга + берберин (NL, PL); в Allegro 29.90–45 zł (04.10, уеб)", "added": "2026-10-04"},
+    {"name": "Naturecan PL", "country": "PL", "why": "колекция „Suplementy GLP-1“ (GLP-1 като категория); статия „Ozempic bez recepty?“ (04.10, уеб)", "added": "2026-10-04"},
+    {"name": "Futunatura", "country": "PL", "why": "„3x GLP-1 Support“ (GLP-1 като прилагателно, 6+ марки в 4 държави) (04.10, уеб)", "added": "2026-10-04"}
   ],
   "note": "pages_international_to_resolve: US марки без page_id (03.10, 23:11, само уеб); при първия US скан с Ads Library намери page_id по името и ги премести в pages_international. pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
 }
