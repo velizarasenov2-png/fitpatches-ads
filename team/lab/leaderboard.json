@@ -3269,6 +3269,128 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261005-0859-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -1.0,
+        "spearman_composite_vs_real_cpa": 0.5,
+        "spearman_qos_vs_real_cpa": 0.5,
+        "spearman_bt_vs_real_cpa": 0.5,
+        "pairwise_agreement_cpa": "2/3"
+      },
+      "top": [
+        {
+          "code": "V6",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 38.2,
+          "ci90": [
+            32.8,
+            42.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-026 · „малка“ + надпис · нови думи",
+          "composite": 37.7,
+          "ci90": [
+            32.8,
+            42.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "Сутрешният ритуал без думи · речникът на веждите",
+          "composite": 37.2,
+          "ci90": [
+            33.6,
+            40.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "VF-030 · фризьорката · hook Б („Не я пипай“)",
+          "composite": 35.4,
+          "ci90": [
+            30.2,
+            40.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "Пратката на прага · съседката чака на столче",
+          "composite": 34.9,
+          "ci90": [
+            28.4,
+            41.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "VF-030 · фризьорката · hook А (без думи)",
+          "composite": 33.3,
+          "ci90": [
+            27.7,
+            38.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 - Copy",
+          "composite": 27.2,
+          "ci90": [
+            22.6,
+            31.9
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V1",
+          "name": "New Sales Ad (sestra)",
+          "composite": 22.9,
+          "ci90": [
+            17.9,
+            28.6
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V5",
+          "name": "ad1 (videa3)",
+          "composite": 18.5,
+          "ci90": [
+            14.3,
+            23.0
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
