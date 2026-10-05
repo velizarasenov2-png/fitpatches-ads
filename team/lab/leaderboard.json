@@ -3025,6 +3025,138 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261005-0312-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 1.0,
+        "spearman_watch_vs_real_hold": 0.5,
+        "spearman_composite_vs_real_cpa": 1.0,
+        "spearman_qos_vs_real_cpa": 1.0,
+        "spearman_bt_vs_real_cpa": 1.0,
+        "pairwise_agreement_cpa": "3/3"
+      },
+      "top": [
+        {
+          "code": "V9",
+          "name": "VF-038 V-а · присъдата на съседката (5 въпроса)",
+          "composite": 39.6,
+          "ci90": [
+            34.4,
+            44.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 34.4,
+          "ci90": [
+            28.2,
+            40.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "VF-030 · фризьорката-скептик („измама ли е?“)",
+          "composite": 33.4,
+          "ci90": [
+            27.2,
+            39.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "VF-026 · „малка“ + надпис „За какво е?“",
+          "composite": 32.9,
+          "ci90": [
+            26.9,
+            38.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "VF-030 · фризьорката + надпис „За какво е?“",
+          "composite": 32.8,
+          "ci90": [
+            27.4,
+            38.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "Съседката-скептик (балконът + „измама ли е?“)",
+          "composite": 32.7,
+          "ci90": [
+            27.8,
+            37.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "VF-038 V-б · съседката без присъда (hook „измама?“)",
+          "composite": 31.3,
+          "ci90": [
+            24.0,
+            39.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "ugc1 - Copy",
+          "composite": 22.7,
+          "ci90": [
+            18.4,
+            27.5
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V8",
+          "name": "ad1 (videa3)",
+          "composite": 21.3,
+          "ci90": [
+            16.2,
+            26.9
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V2",
+          "name": "New Sales Ad (sestra)",
+          "composite": 20.2,
+          "ci90": [
+            16.0,
+            25.1
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        }
+      ]
     }
   ]
 }
