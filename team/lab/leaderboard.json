@@ -3157,6 +3157,118 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261005-0712-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 1.0,
+        "spearman_watch_vs_real_hold": 0.0,
+        "spearman_composite_vs_real_cpa": 1.0,
+        "spearman_qos_vs_real_cpa": 0.5,
+        "spearman_bt_vs_real_cpa": 1.0,
+        "pairwise_agreement_cpa": "3/3"
+      },
+      "top": [
+        {
+          "code": "V6",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 42.7,
+          "ci90": [
+            36.2,
+            48.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-026 · присъдата на мъжа (5 въпроса)",
+          "composite": 35.6,
+          "ci90": [
+            29.8,
+            41.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "VF-039 V-б · списъкът с въпросите (измамата е въпрос 1)",
+          "composite": 35.3,
+          "ci90": [
+            28.4,
+            43.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "VF-039 V-а · списъкът с въпросите (подгънатият ред)",
+          "composite": 33.7,
+          "ci90": [
+            28.1,
+            38.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "VF-038 V-а · присъдата на съседката (5 въпроса)",
+          "composite": 33.2,
+          "ci90": [
+            26.0,
+            39.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "ugc1 - Copy",
+          "composite": 26.6,
+          "ci90": [
+            22.5,
+            31.0
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V1",
+          "name": "ad1 (videa3)",
+          "composite": 23.8,
+          "ci90": [
+            18.8,
+            29.1
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V4",
+          "name": "New Sales Ad (sestra)",
+          "composite": 18.5,
+          "ci90": [
+            14.0,
+            24.2
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        }
+      ]
     }
   ]
 }
