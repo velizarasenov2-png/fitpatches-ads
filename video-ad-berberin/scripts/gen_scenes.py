@@ -25,6 +25,8 @@ ENV = {
     "livingroom": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270696913-rbvora26958.jpg",
     "balcony": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270684456-qm0azh325s.jpg",
     "clinic": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270808406-aibmumzoc.jpg",
+    "patch": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791272822219-fmcta3fkoc.jpg",
+    "s07b_frame": "https://tempfile.redpandaai.co/kieai/1137735/fitpatches/refs/s07b_lastframe.jpg",
 }
 
 STYLE = (
@@ -54,7 +56,8 @@ WOMAN_B = (
 )
 PATCH = (
     "a small round patch about 3.5 cm wide, a perfect circle of soft matte non-woven fabric like thin felt, "
-    "dusty blush-pink"
+    "dusty blush-pink, with a thin ring of tiny dark-grey dots along its edge, exactly like the patch in the "
+    "patch reference image"
 )
 
 SCENES = {
@@ -70,10 +73,11 @@ SCENES = {
         "Location: a city bus stop in an ordinary Bulgarian residential neighbourhood on an overcast day, grey "
         "prefab panel apartment blocks behind, a simple metal bus shelter with a bench. " + WOMAN_A +
         "Camera static on the opposite side of the street, wide shot at chest height. She stands at the stop "
-        "holding her black handbag with both hands in front of her stomach. Two other people wait at the stop, "
-        "each lost in their own thoughts, looking down the road. A younger slim woman in jeans walks past along "
-        "the pavement in front of her. The woman's eyes follow the younger woman for half a second, then she "
-        "lowers her gaze to the pavement and stays still." + STYLE +
+        "and holds her black handbag firmly with both hands in front of her stomach for the whole shot. Two "
+        "other people wait at the stop, each lost in their own thoughts, looking down the road. In the middle of "
+        "the shot a younger slim woman in jeans walks past along the pavement right in front of her, clearly "
+        "visible, from left to right. The woman's eyes follow the younger woman for half a second, then she "
+        "lowers her gaze to the pavement and stays still, still holding the handbag with both hands." + STYLE +
         " Sound: quiet street ambience, distant traffic, footsteps; everyone stays silent.")),
     "S03a": dict(dur="6", chars=[A], envs=["clinic"], prompt=(
         "Location: the polyclinic waiting corridor from the reference image: blue plastic chairs along a pale "
@@ -116,8 +120,9 @@ SCENES = {
         "to her face, her eyebrows rise slightly, and she keeps reading, absorbed." + STYLE +
         " Sound: a quiet night room, a faint clock ticking; she stays silent.")),
     "S06a": dict(dur="6", chars=[A], envs=["livingroom"], prompt=(
-        "Location: the same living room from the reference image at night, lit only by dim street light "
-        "through the net curtains. " + WOMAN_A + "Camera static from the side. She puts the phone face down on "
+        "Location: the same living room from the reference image late at night: every lamp switched off, the "
+        "room dim and shadowy, lit only by orange street lights and the dark night sky through the net curtains "
+        "and the glass balcony door. " + WOMAN_A + "Camera static from the side. She puts the phone face down on "
         "the coffee table, lets out a short dismissive breath through her nose, almost a laugh, and shakes her "
         "head once. She stands up, walks to the glass balcony door and stands there with her back to the "
         "camera, looking out at the dark panel blocks." + STYLE +
@@ -138,10 +143,13 @@ SCENES = {
         "curve rises steeply into a tall sharp peak, then an arrow pointing to a small simple outline of a human "
         "body on the right. Slow animation: the curve rises into its sharp peak, and as it does, the belly area "
         "of the body outline gradually fills with soft yellow." + ANIM)),
-    "S07c": dict(dur="4", chars=[], envs=[], prompt=(
-        "The same line graph, now with the curve drawn low and flat, a gentle low wave. Beside it a small round "
-        "pale dusty-pink patch icon. The small outline of a human body on the right stays clean and light, its "
-        "belly area empty and unfilled. Gentle, calm, slow animation of the low curve drawing itself." + ANIM)),
+    "S07c": dict(dur="4", chars=[], envs=["s07b_frame"], prompt=(
+        "Use the reference image for the exact layout, size and drawing style: the same row in the middle of "
+        "the frame with an icon on the left, an arrow, the graph axes, an arrow and the human body outline on "
+        "the right. In this version the icon on the left is a small round pale dusty-pink patch. The curve in "
+        "the graph slowly draws itself as a low, flat, gentle wave along the bottom of the axes. The belly area "
+        "of the body outline is clean and empty, the same plain cream as the background, and stays that way. "
+        "Gentle, calm, slow animation." + ANIM)),
     "S08": dict(dur="6", chars=[A], envs=["kitchen"], prompt=(
         "Location: the kitchen from the reference image, late evening, dark outside the window, warm light from "
         "the single ceiling lamp. " + WOMAN_A + "Camera static from the side at table height. She sits at the "
@@ -155,12 +163,13 @@ SCENES = {
         "facing the mirror, pulling the navy blouse over her head and down. The blouse falls loosely over her "
         "body and she leaves it as it is. She pauses and looks at herself in the mirror for two seconds, her "
         "face neutral but softer. Then she takes the black handbag from the coat hook." + STYLE + SOUND)),
-    "S09b": dict(dur="6", chars=[B], envs=["kitchen"], prompt=(
+    "S09b": dict(dur="6", chars=[B], envs=["kitchen", "patch"], prompt=(
         "Location: the kitchen from the reference image in the morning, natural daylight through the net "
         "curtains. " + WOMAN_B + "Camera static from the side. She stands upright with her shoulders back next "
-        "to the gas stove and pours coffee from a metal moka pot into a white cup. On the inside of her bare "
-        "forearm, below the rolled sleeve, sits " + PATCH + ", slightly out of focus and barely noticeable as "
-        "she pours." + STYLE + " Sound: coffee pouring, quiet morning kitchen; she stays silent.")),
+        "to the gas stove. She holds a white cup in her left hand, the inside of her bare left forearm turned "
+        "toward the camera, and pours coffee into it from a metal moka pot held in her right hand. On the inside "
+        "of her left forearm, below the rolled sleeve, sits " + PATCH + ": small, softly focused, quietly "
+        "noticeable as she pours." + STYLE + " Sound: coffee pouring, quiet morning kitchen; she stays silent.")),
     "S09c": dict(dur="6", chars=[B], envs=["balcony"], prompt=(
         "Location: the balcony from the reference image, morning sun. " + WOMAN_B + "Camera static inside the "
         "room, looking out through the open balcony door. She stands at the railing holding a coffee cup with "
@@ -169,17 +178,19 @@ SCENES = {
         " Sound: soft morning city ambience, distant birds; she stays silent.")),
     "S10": dict(dur="8", chars=[B], envs=["hallway"], prompt=(
         "Location: the entry hallway from the reference image with the brown front door at the far end. "
-        + WOMAN_B + "Camera static at the other end of the hallway at chest height. With her black handbag on "
-        "her shoulder she opens the front door and steps into the doorway. She stops, turns her head and looks "
-        "directly into the camera for one second with a small closed-mouth smile, then steps out and the door "
-        "closes behind her. The hallway stays still and empty. Observational documentary style, fixed "
+        + WOMAN_B + "Camera static at the other end of the hallway at chest height. The shot opens with her "
+        "inside the apartment, standing at the closed front door with her back to the camera and her black "
+        "handbag on her shoulder. She opens the door outward and steps into the doorway. She stops, turns her "
+        "head back over her shoulder and looks directly into the camera for one second with a small "
+        "closed-mouth smile, then steps out of the apartment and the door closes behind her. The hallway stays still and empty. Observational documentary style, fixed "
         "locked-off shot, natural available light, muted grey-beige palette, realistic unedited footage, "
         "natural real-time speed, vertical 9:16." + " Sound: the door opening and closing, quiet hallway; she "
         "stays silent.")),
 }
 
 
-def run(name):
+def run(arg):
+    name, _, var = arg.partition(":")
     s = SCENES[name]
     inp = {
         "prompt": s["prompt"],
@@ -192,12 +203,12 @@ def run(name):
     if s["envs"]:
         inp["image_urls"] = [ENV[e] for e in s["envs"]]
     tid = kie.create(MODEL, inp)
-    print(name, "task", tid, flush=True)
+    print(arg, "task", tid, flush=True)
     d = kie.wait(tid, every=15, timeout=3600)
-    rec = {"name": name, "taskId": tid, "state": d["state"], "credits": d.get("creditsConsumed"),
+    rec = {"name": arg, "taskId": tid, "state": d["state"], "credits": d.get("creditsConsumed"),
            "fail": d.get("failMsg"), "urls": kie.result_urls(d)}
     if rec["urls"]:
-        kie.download(rec["urls"][0], os.path.join(CLIPS, f"{name}.mp4"))
+        kie.download(rec["urls"][0], os.path.join(CLIPS, f"{name}_{var}.mp4" if var else f"{name}.mp4"))
     print(json.dumps(rec, ensure_ascii=False), flush=True)
     with open(os.path.join(CLIPS, "clips_log.jsonl"), "a") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
@@ -206,5 +217,5 @@ def run(name):
 
 if __name__ == "__main__":
     names = sys.argv[1:] or list(SCENES)
-    with ThreadPoolExecutor(min(len(names), 6)) as ex:
+    with ThreadPoolExecutor(min(len(names), 8)) as ex:
         list(ex.map(run, names))
