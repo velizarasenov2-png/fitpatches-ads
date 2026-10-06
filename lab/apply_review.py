@@ -16,7 +16,7 @@ import os
 import sys
 
 TEXT_KEYS = {"hook_words", "hook_visual", "visual", "on_screen_text", "text", "primary_texts",
-             "headlines", "offer", "shot"}
+             "headlines", "offer", "shot", "voice"}
 
 
 def replace(obj, old, new, key=""):
