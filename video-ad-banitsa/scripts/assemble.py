@@ -15,7 +15,7 @@ import tempfile
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 CLIPS = os.path.join(ROOT, "clips")
-VOICE = os.path.join(ROOT, "audio", "voice.mp3")
+VOICE = os.path.join(ROOT, "audio", "voice_final.wav")  # offer line fixed: "с безплатна доставка" removed
 MUSIC = os.path.join(ROOT, "audio", "music_a.mp3")
 W, H, FPS = 1080, 1920, 24
 FONT_LIGHT = "/usr/share/fonts/opentype/inter/Inter-Light.otf"
