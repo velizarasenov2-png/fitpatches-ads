@@ -191,6 +191,19 @@ SCENES = {
         "both hands, looking out over the panel buildings; we see her back and her profile. She is calm and "
         "still, takes a slow breath and a small sip." + STYLE +
         " Sound: soft morning city ambience, distant birds; she stays silent.")),
+    "S10H": dict(dur="8", chars=[B], envs=["hallway"], prompt=(
+        "Location: the entry hallway from the reference image with the brown front door at the far end. "
+        + WOMAN_B + "Camera static at the other end of the hallway at chest height. The shot opens with her "
+        "inside the apartment, standing at the closed front door with her back to the camera, her black handbag "
+        "on her shoulder and her right hand already resting on the door handle. She presses the handle down with "
+        "her right hand and pulls the door open toward herself; the door moves only because her hand pulls it, "
+        "and her hand stays on the handle while it swings open. She steps into the open doorway, stops, turns her "
+        "head back over her shoulder and looks directly into the camera for one second with a small "
+        "closed-mouth smile. Then she steps out onto the landing, takes the door handle in her hand and pulls "
+        "the door shut behind her with a clear movement of her arm. The hallway stays still and empty. "
+        "Observational documentary style, fixed locked-off shot, natural available light, muted grey-beige "
+        "palette, realistic unedited footage, natural real-time speed, vertical 9:16. Sound: the door handle, "
+        "the door opening and closing, quiet hallway; she stays silent.")),
     "S10": dict(dur="8", chars=[B], envs=["hallway"], prompt=(
         "Location: the entry hallway from the reference image with the brown front door at the far end. "
         + WOMAN_B + "Camera static at the other end of the hallway at chest height. The shot opens with her "
