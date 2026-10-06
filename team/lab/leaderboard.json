@@ -3625,6 +3625,118 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261006-0859-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -0.5,
+        "spearman_composite_vs_real_cpa": 1.0,
+        "spearman_qos_vs_real_cpa": -0.5,
+        "spearman_bt_vs_real_cpa": 0.5,
+        "pairwise_agreement_cpa": "3/3"
+      },
+      "top": [
+        {
+          "code": "V4",
+          "name": "VF-040 V-а · петте слуха на кумата",
+          "composite": 39.9,
+          "ci90": [
+            34.6,
+            44.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "VF-042 V-а · само числата (синът)",
+          "composite": 39.2,
+          "ci90": [
+            33.2,
+            45.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "VF-040 · кумата · друг вярен слух",
+          "composite": 38.6,
+          "ci90": [
+            32.9,
+            44.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-043 V-а · сметката на плика",
+          "composite": 35.9,
+          "ci90": [
+            29.0,
+            42.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "VF-043 V-б · сметката на плика",
+          "composite": 28.9,
+          "ci90": [
+            21.9,
+            36.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "ugc1 - Copy",
+          "composite": 26.0,
+          "ci90": [
+            21.6,
+            30.5
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V1",
+          "name": "ad1 (videa3)",
+          "composite": 21.8,
+          "ci90": [
+            17.7,
+            26.8
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V6",
+          "name": "New Sales Ad (sestra)",
+          "composite": 21.7,
+          "ci90": [
+            16.3,
+            27.7
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        }
+      ]
     }
   ]
 }
