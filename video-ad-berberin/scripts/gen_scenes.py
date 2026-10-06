@@ -25,7 +25,8 @@ ENV = {
     "livingroom": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270696913-rbvora26958.jpg",
     "balcony": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270684456-qm0azh325s.jpg",
     "clinic": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270808406-aibmumzoc.jpg",
-    "patch": "https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791272822219-fmcta3fkoc.jpg",
+    "patch": "https://tempfile.aiquickdraw.com/workers/images/image_3460d97957404941163576c3c4d84992.jpg",
+    "patch_real": "https://tempfile.redpandaai.co/kieai/1137735/fitpatches/refs/patch_real_crop.jpg",
     "s07b_frame": "https://tempfile.redpandaai.co/kieai/1137735/fitpatches/refs/s07b_lastframe.jpg",
 }
 
@@ -55,9 +56,13 @@ WOMAN_B = (
     "ponytail, navy blue linen blouse, black trousers, flat black shoes. "
 )
 PATCH = (
-    "a small round patch about 3.5 cm wide, a perfect circle of soft matte non-woven fabric like thin felt, "
-    "dusty blush-pink, with a thin ring of tiny dark-grey dots along its edge, exactly like the patch in the "
-    "patch reference image"
+    "the FitPatches patch from the patch reference images: a round translucent soft-pink gel patch about 3.5 cm "
+    "wide with a thin clear transparent rim and a ring of small dark rose lettering running around its edge"
+)
+PATCH_ICON = (
+    "a round soft-pink patch drawn after the patch reference image, simplified into the same flat thin-line "
+    "illustration style: a translucent pink circle with a thin clear rim and a slightly darker rose ring along "
+    "its edge"
 )
 
 SCENES = {
@@ -133,9 +138,9 @@ SCENES = {
         "hesitates for a moment standing beside it, then picks up the phone from the coffee table, turns it "
         "over so the screen lights her face, and sits down, reading." + STYLE +
         " Sound: a quiet night room, soft footsteps; she stays silent.")),
-    "S07a": dict(dur="6", chars=[], envs=[], prompt=(
-        "Cross-section of human skin showing its layers, drawn in thin lines. A small round pale dusty-pink "
-        "patch is placed gently on top of the skin. Tiny soft pink dots slowly travel from the patch down "
+    "S07a": dict(dur="6", chars=[], envs=["patch_real"], prompt=(
+        "Cross-section of human skin showing its layers, drawn in thin lines. A small patch, " + PATCH_ICON +
+        ", is placed gently on top of the skin. Tiny soft pink dots slowly travel from the patch down "
         "through the skin layers into a red blood vessel at the bottom and drift along with the blood flow."
         + ANIM)),
     "S07b": dict(dur="6", chars=[], envs=[], prompt=(
@@ -143,10 +148,10 @@ SCENES = {
         "curve rises steeply into a tall sharp peak, then an arrow pointing to a small simple outline of a human "
         "body on the right. Slow animation: the curve rises into its sharp peak, and as it does, the belly area "
         "of the body outline gradually fills with soft yellow." + ANIM)),
-    "S07c": dict(dur="4", chars=[], envs=["s07b_frame"], prompt=(
+    "S07c": dict(dur="4", chars=[], envs=["s07b_frame", "patch_real"], prompt=(
         "Use the reference image for the exact layout, size and drawing style: the same row in the middle of "
         "the frame with an icon on the left, an arrow, the graph axes, an arrow and the human body outline on "
-        "the right. In this version the icon on the left is a small round pale dusty-pink patch. The curve in "
+        "the right. In this version the icon on the left is " + PATCH_ICON + ". The curve in "
         "the graph slowly draws itself as a low, flat, gentle wave along the bottom of the axes. The belly area "
         "of the body outline is clean and empty, the same plain cream as the background, and stays that way. "
         "Gentle, calm, slow animation." + ANIM)),
@@ -163,7 +168,7 @@ SCENES = {
         "facing the mirror, pulling the navy blouse over her head and down. The blouse falls loosely over her "
         "body and she leaves it as it is. She pauses and looks at herself in the mirror for two seconds, her "
         "face neutral but softer. Then she takes the black handbag from the coat hook." + STYLE + SOUND)),
-    "S09b": dict(dur="6", chars=[B], envs=["kitchen", "patch"], prompt=(
+    "S09b": dict(dur="6", chars=[B], envs=["kitchen", "patch", "patch_real"], prompt=(
         "Location: the kitchen from the reference image in the morning, natural daylight through the net "
         "curtains. " + WOMAN_B + "Camera static from the side. She stands upright with her shoulders back next "
         "to the gas stove. She holds a white cup in her left hand, the inside of her bare left forearm turned "
