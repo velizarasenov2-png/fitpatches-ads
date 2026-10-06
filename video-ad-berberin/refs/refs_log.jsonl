@@ -1,0 +1,8 @@
+{"name": "ref_A_portrait", "taskId": "d002054b7bd6a9202f2a0d021d1555f8", "credits": 18.0, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270593813-7t40do1347g.jpg"]}
+{"name": "ref_B_body", "taskId": "c2f21a7aecdfff2f111f8baaf70d47d1", "credits": 18.0, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270597621-t4e16980gyn.jpg"]}
+{"name": "ref_B_portrait", "taskId": "7942b3845bb34756d1376a60edd84d4a", "state": "success", "credits": 18.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270692251-4zeubry1amq.jpg"]}
+{"name": "env_hallway", "taskId": "316f0696f8c5b65d1220f30d2e53212e", "state": "success", "credits": 18.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270683581-sa1hawp89xr.jpg"]}
+{"name": "env_kitchen", "taskId": "a1654cb27b3e845dd39e7b1a45137a70", "state": "success", "credits": 18.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270682659-nhe54fl4ff.jpg"]}
+{"name": "env_livingroom", "taskId": "e3667ead43628bfb7c043a4871481124", "state": "success", "credits": 18.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270696913-rbvora26958.jpg"]}
+{"name": "env_balcony", "taskId": "a6651065db0991a21e71a1e1b8b1c01d", "state": "success", "credits": 18.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270684456-qm0azh325s.jpg"]}
+{"name": "env_clinic", "taskId": "22fdf9e934da1c815d26dd3a477c552b", "state": "success", "credits": 18.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/models/nano-banana-pro/1791270808406-aibmumzoc.jpg"]}

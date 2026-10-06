@@ -1,0 +1,14 @@
+{
+  "A": {
+    "characterId": "b1ea29b0862146ce9646507e98f42349",
+    "characterName": "Vesela",
+    "imageUrl": "https://file.aiquickdraw.com/omniCharacter/1791270846714-wl9ixt90gr.jpg",
+    "bodyImageUrl": "https://file.aiquickdraw.com/omniCharacter/1791270847457-42dm44yss6g.jpg"
+  },
+  "B": {
+    "characterId": "d0f025def8ac4a47a7f436c2ad86b45f",
+    "characterName": "Vesela_after",
+    "imageUrl": "https://file.aiquickdraw.com/omniCharacter/1791270848309-e6t7pr9b0l8.jpg",
+    "bodyImageUrl": "https://file.aiquickdraw.com/omniCharacter/1791270848789-ta031e0jsel.jpg"
+  }
+}
