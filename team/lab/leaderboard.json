@@ -3513,6 +3513,118 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261006-0712-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -0.5,
+        "spearman_composite_vs_real_cpa": 0.5,
+        "spearman_qos_vs_real_cpa": 1.0,
+        "spearman_bt_vs_real_cpa": 1.0,
+        "pairwise_agreement_cpa": "2/3"
+      },
+      "top": [
+        {
+          "code": "V3",
+          "name": "VF-040 V-а · петте слуха на кумата",
+          "composite": 38.7,
+          "ci90": [
+            33.6,
+            43.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "VF-026 · скептикът вкъщи",
+          "composite": 37.2,
+          "ci90": [
+            31.2,
+            43.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "VF-042 V-а · само числата (синът)",
+          "composite": 36.3,
+          "ci90": [
+            30.2,
+            42.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "Обещаният отговор · кое от трите (дъщерята)",
+          "composite": 31.1,
+          "ci90": [
+            26.3,
+            35.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "VF-041 V-а · тихата сутрин",
+          "composite": 27.9,
+          "ci90": [
+            23.3,
+            32.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "ugc1 - Copy",
+          "composite": 25.1,
+          "ci90": [
+            20.4,
+            29.6
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V4",
+          "name": "New Sales Ad (sestra)",
+          "composite": 22.1,
+          "ci90": [
+            17.2,
+            27.5
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V8",
+          "name": "ad1 (videa3)",
+          "composite": 21.8,
+          "ci90": [
+            15.9,
+            27.9
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
