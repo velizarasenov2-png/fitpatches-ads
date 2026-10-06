@@ -27,7 +27,7 @@ REF = {
 PREFIX = (
     "Cinematic 3D medical animation, photorealistic render, Octane/Unreal quality, soft volumetric lighting, "
     "shallow depth of field, dark navy background, accent colors: warm amber for blood and energy, bright "
-    "yellow for glucose, soft pink (#d64d87) for the patch and ingredients, cold blue for insulin, 9:16 "
+    "yellow for glucose, soft rose-pink for the patch and ingredients, cold blue for insulin, 9:16 "
     "vertical, clean imagery made only of 3D forms, light and particles. "
 )
 FIG = (
@@ -36,10 +36,12 @@ FIG = (
     "loose knee-length dress of the same frosted glass, smooth featureless face, hair in a simple low bun. "
 )
 SOUND = " Sound: a soft deep cinematic ambience."
+# for shots that must stay free of the product: the prefix's mention of "the patch" makes the model insert one
+PREFIX_PLAIN = PREFIX.replace("soft rose-pink for the patch and ingredients", "soft rose-pink accents")
 
 
-def shot(dur, refs, text):
-    return dict(dur=str(dur), refs=refs, prompt=PREFIX + text + SOUND)
+def shot(dur, refs, text, plain=False):
+    return dict(dur=str(dur), refs=refs, prompt=(PREFIX_PLAIN if plain else PREFIX) + text + SOUND)
 
 
 SHOTS = {
@@ -49,10 +51,11 @@ SHOTS = {
                 "in soft morning light, sweeping low over the wooden table and slowing down on a steaming coffee cup "
                 "and a plate with a square slice of golden flaky banitsa like in the reference image. " + FIG +
                 "She sits down at the table."),
-    "01b": shot(6, ["kitchen", "figure", "banitsa"],
-                FIG + "Close macro shot: her glass hand lifts the slice of golden flaky banitsa from the plate, thin "
-                "phyllo flakes falling in slow motion through the morning light beams. The camera pushes in fast "
-                "toward the crisp layered pastry until it fills the frame."),
+    "01b": shot(6, ["banitsa"],
+                "Close macro shot in warm morning light: a smooth frosted-glass hand with a faint warm inner glow lifts "
+                "the slice of golden flaky banitsa from the reference image off the white plate, thin phyllo flakes "
+                "falling in slow motion through the light beams. The camera pushes in fast toward the crisp layered "
+                "pastry until it fills the frame."),
     # P02 white flour -> sugar in minutes
     "02a": shot(6, ["banitsa"],
                 "The camera flies like a drone through the inside of the golden flaky banitsa pastry: thin layers "
@@ -90,10 +93,11 @@ SHOTS = {
     "05a": shot(6, [],
                 "The same blood vessel now empty of yellow particles, blue insulin particles still pulling, the light "
                 "shifts to a cold dim blue, red blood cells move sluggishly, the camera drifts slowly, heavy quiet mood."),
-    "05b": shot(6, ["kitchen", "figure"],
-                FIG + "She stands in the kitchen from the reference image. In front of her floats a glowing pink line-graph "
-                "hologram: the line rises into a sharp peak and then sinks below a faint glowing baseline. The camera "
-                "pushes in slowly toward the hologram."),
+    "05b": shot(6, ["kitchen"],
+                "The 3D kitchen from the reference image in cool late-morning light. A stylized woman made of frosted "
+                "glass in a simple frosted-glass dress stands by the table, seen at a medium distance. In front of her "
+                "floats a glowing pink line-graph hologram: the line rises into a sharp peak and then sinks below a "
+                "faint glowing baseline. The camera pushes in slowly toward the hologram."),
     # P06 brain, hunger
     "06a": shot(6, [],
                 "A human brain floating in dark navy space, slow orbit; deep in its center a small red point pulses "
@@ -134,19 +138,21 @@ SHOTS = {
                 FIG + "She sits slumped at the kitchen table from the reference image in flat afternoon light, her inner "
                 "glow dimming slowly, heavy clinical mood. Slow push-in."),
     # P11 life shrinks
-    "11a": shot(6, ["figure"],
-                FIG + "A 3D living room in grey afternoon light: she lies on a sofa under a blanket holding a glowing "
-                "phone, completely still, net curtains moving slightly. Wide static shot, muted and lonely."),
+    "11a": shot(6, [],
+                "A 3D living room in grey afternoon light with net curtains moving slightly. A stylized woman made of "
+                "frosted glass in a simple frosted-glass dress sits curled in the corner of a sofa wrapped in a knitted "
+                "blanket, holding a glowing phone, completely still for the whole shot. Wide static shot, muted and lonely "
+                "mood.", plain=True),
     "11b": shot(6, [],
                 "A 3D shelf in a dim grey living room: the camera slides slowly past a framed photo of a sunny sea beach "
-                "lying face down beside a closed swimsuit bag gathering dust, muted lonely mood."),
+                "lying face down beside a closed swimsuit bag gathering dust, muted lonely mood.", plain=True),
     # P12 the problem is speed; nature
     "12a": shot(6, [],
                 "A single glowing pink line on dark navy space: a tall sharp peak slowly melts and reshapes into a "
                 "soft gentle hill, smooth elegant motion, light glinting along the line."),
     "12b": shot(6, [],
                 "3D rendered ancient forest, sunlight breaking through green leaves in golden beams, dust and pollen "
-                "floating in the light, the camera gliding forward between the trees, warm and peaceful."),
+                "floating in the light, the camera gliding forward between the trees, warm and peaceful.", plain=True),
     "12c": shot(6, [],
                 "An old village kitchen with bunches of dried herbs hanging on a string by a small window, warm "
                 "afternoon light, slow pan along the herbs, dust in the light."),
