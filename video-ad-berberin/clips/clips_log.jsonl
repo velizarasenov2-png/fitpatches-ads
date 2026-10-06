@@ -34,3 +34,5 @@
 {"name": "S07c:r1", "taskId": "314bc6f931803c1c18d0eff32d9fa9aa", "state": "success", "credits": 63.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/314bc6f931803c1c18d0eff32d9fa9aa_0_1791273654.mp4"]}
 {"name": "S09b:r1", "taskId": "5a3a738ad05dcd5937bcff78b843edda", "state": "success", "credits": 84.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/5a3a738ad05dcd5937bcff78b843edda_0_1791273707.mp4"]}
 {"name": "S09b:r2", "taskId": "a5f2a5098addea42fb56c947b6c92103", "state": "success", "credits": 84.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/a5f2a5098addea42fb56c947b6c92103_0_1791273707.mp4"]}
+{"name": "S01L:a", "taskId": "e6e387c44dba1af77ae09fb6e4c4985e", "state": "success", "credits": 126.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/e6e387c44dba1af77ae09fb6e4c4985e_0_1791274857.mp4"]}
+{"name": "S01L:b", "taskId": "c9527fe9ae1d15d4dbb18ff47b5ff376", "state": "success", "credits": 126.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/c9527fe9ae1d15d4dbb18ff47b5ff376_0_1791274857.mp4"]}

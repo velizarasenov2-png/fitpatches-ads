@@ -74,6 +74,16 @@ SCENES = {
         "over her belly, lets go, then pulls it down again. She looks at her reflection for one second with a "
         "flat, neutral expression. Then she takes the black handbag off the coat hook, puts it on her shoulder "
         "and turns toward the front door." + STYLE + SOUND)),
+    "S01L": dict(dur="10", chars=[A], envs=["hallway"], prompt=(
+        "Location: the entry hallway from the reference image, with the tall wooden-framed mirror, the coat "
+        "hooks and the beige wallpaper; grey morning light comes in from the kitchen door. " + WOMAN_A +
+        "Camera 3 metres behind her at chest height, slightly to the side, so we see her back and her face in "
+        "the mirror's reflection. She stands facing the tall mirror for the whole shot. For the first six "
+        "seconds she slowly pulls the hem of her navy blouse down over her belly, lets go, smooths it with both "
+        "hands, turns a little sideways to look at her belly, and pulls the blouse down again. Around the "
+        "seventh second her hands drop to her sides and she looks at her own face in the mirror for two seconds "
+        "with a flat, neutral expression. In the last second she reaches for the black handbag on the coat "
+        "hook." + STYLE + SOUND)),
     "S02": dict(dur="8", chars=[A], envs=[], prompt=(
         "Location: a city bus stop in an ordinary Bulgarian residential neighbourhood on an overcast day, grey "
         "prefab panel apartment blocks behind, a simple metal bus shelter with a bench. " + WOMAN_A +
