@@ -36,10 +36,11 @@ def make_refs():
         futs = {n: ex.submit(nb, p, i) for n, (i, p) in REF_JOBS.items() if n not in refs}
         for n, f in futs.items(): refs[n] = f.result(); print("ref", n, refs[n], flush=True)
     if "ivaila_after" not in refs:
-        refs["ivaila_after"] = nb("The same woman from the reference image, same face, same hair, a few months "
-            "later: noticeably but realistically lighter, about 7 kg less, still a soft natural figure, fresher "
-            "skin, calm relaxed smile, hair neatly tied back, wearing a fitted light-blue cotton home t-shirt and "
-            "dark home trousers, same kitchen in soft morning daylight, realistic candid photo, vertical 9:16.",
+        refs["ivaila_after"] = nb("The same woman from the reference image, same face, same hair colour, a few "
+            "months later: visibly slimmer, about 15 kg lighter, a clearly slimmer face with a defined jawline, "
+            "slimmer arms, a narrower waist and a flatter belly, healthy glowing skin, calm confident smile, hair neatly "
+            "tied back, wearing a fitted light-blue cotton t-shirt tucked into dark slim trousers, the same kitchen in "
+            "soft morning daylight, realistic candid photo, vertical 9:16.",
             [refs["ivaila_before"]]); print("ref ivaila_after", refs["ivaila_after"], flush=True)
     refs["patch"] = PATCH
     json.dump(refs, open(REFJSON, "w"), indent=1)
@@ -51,8 +52,8 @@ def make_refs():
 LOOK = ("Realistic cinematic footage, natural film look, 9:16 vertical. The camera is inside the refrigerator, "
         "looking out through the open door between the shelves of food, like the reference kitchen image. ")
 BEFORE = f"The woman is Ivaila from the reference image: {IVAILA}. "
-AFTER = ("The woman is Ivaila from the reference image, visibly lighter and calmer than before, hair neatly tied "
-         "back, fitted light-blue cotton home t-shirt. ")
+AFTER = ("The woman is Ivaila from the reference image: visibly slimmer than before, slim face, slim arms, narrow "
+         "waist, calm and confident, hair neatly tied back, fitted light-blue cotton t-shirt tucked into dark slim trousers. ")
 SHOTS = {  # name: (seconds, refs, prompt) — line of the voice it plays under
     "s01": (6, ["kitchen_pov", "ivaila_before"], LOOK + BEFORE + "Morning: darkness inside the fridge, then the "
         "door swings open and cold light floods the shelves. Ivaila, sleepy, in the morning light of the kitchen, "
@@ -76,7 +77,8 @@ SHOTS = {  # name: (seconds, refs, prompt) — line of the voice it plays under
         "ticking, distant city night."),  # Онази вечер я чаках… Нищо. И на другата…
     "s06": (10, ["ivaila_before", "patch"], "Realistic cinematic footage, 9:16 vertical, soft morning window light in "
         "a Bulgarian apartment kitchen. Close-up: Ivaila from the reference image presses one round translucent "
-        "soft-pink patch exactly like the patch reference onto her upper arm, smooths it with two fingers and "
+        "soft-pink patch with a clear frosted rim and the curved text 'Fit Patches *' printed in dark pink around its "
+        "edge, exactly like the patch reference, onto her upper arm, smooths it with two fingers and "
         "smiles to herself. Slow push-in on the patch on her skin. Sound: quiet morning room tone."),  # Слага си лепенки…
     "s07": (8, ["kitchen_pov", "ivaila_after"], "Realistic cinematic footage, 9:16 vertical. Evening in the small "
         "Bulgarian kitchen from the reference image. " + AFTER + "She finishes a small plate of salad at the table, "
@@ -89,7 +91,7 @@ SHOTS = {  # name: (seconds, refs, prompt) — line of the voice it plays under
         "shelves a soft, almost tender look, and gently closes the door. The view goes dark; the fridge light "
         "blinks once softly in the darkness. Sound: the soft thud of the door, a quiet hum."),  # Липсва ми… радвам се
     "s10": (4, ["patch"], "Realistic premium product footage, 9:16 vertical: round translucent soft-pink patches "
-        "exactly like the patch reference lying on a light wooden kitchen counter next to cinnamon sticks, a halved "
+        "with a clear frosted rim and the curved text 'Fit Patches *' printed in dark pink around the edge, exactly like the patch reference, lying on a light wooden kitchen counter next to cinnamon sticks, a halved "
         "red pomegranate with glossy seeds and a small bowl of yellow barberry roots, soft morning light, slow "
         "camera push-in. Sound: soft warm ambience."),  # ФитПачес. Берберин, канела и нар.
 }

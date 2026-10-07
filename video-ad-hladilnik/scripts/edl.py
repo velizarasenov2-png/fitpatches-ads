@@ -12,7 +12,7 @@ EDL = [
     ("s10", 63.90, 68.80, 0.0, "fit"),  # "ФитПачес. Берберин, канела и нар. През кожата."
 ]
 TOTAL = 72.6
-END_CARD = "patches_final.jpg"   # real product photo under "Три плюс две подарък. Плащаш при получаване."
+END_CARD = "endcard_pouch.jpg"   # the real pouch (make_endcard.py) under "Три плюс две подарък. Плащаш при получаване."
 HEADLINES = [
     (23.50, 27.80, "23:00"),
     (27.80, 30.40, "23:45"),

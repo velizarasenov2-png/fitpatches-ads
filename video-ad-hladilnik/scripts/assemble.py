@@ -67,7 +67,7 @@ def end_card(dur, out, photo):
     src = os.path.join(ROOT, "refs", photo)
     n = int(dur * FPS) + 1
     run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-i", src, "-vf",
-         f"scale={W*2}:-1,pad={W*2}:{H*2}:0:(oh-ih)/2-{H//3}:color=0x{BG},"
+         f"scale={W*2}:{H*2},"
          f"zoompan=z='1+0.06*on/{n}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={n}:s={W}x{H}:fps={FPS},"
          "fade=t=in:d=0.25,format=yuv420p", "-frames:v", str(n), "-an", "-c:v", "libx264", "-crf", "16", out])
 
@@ -189,7 +189,7 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Style: Sub,Inter Bold,52,&H00FFFFFF,&H00FFFFFF,&H64000000,&H78000000,0,0,0,0,100,100,0,0,1,2,3,2,50,50,330,1
 Style: Head,Inter ExtraBold,46,&H00FFFFFF,&H00FFFFFF,&H00874DD6,&H64000000,0,0,0,0,100,100,3,0,1,0,3,8,50,50,230,1
 Style: Clock,Inter ExtraBold,110,&H00FFFFFF,&H00FFFFFF,&H00874DD6,&H64000000,0,0,0,0,100,100,2,0,1,0,4,8,50,50,200,1
-Style: Offer,Inter ExtraBold,40,&H00FFFFFF,&H00FFFFFF,&H00874DD6,&H00874DD6,0,0,0,0,100,100,1,0,3,18,0,2,50,50,220,1
+Style: Offer,Inter ExtraBold,40,&H00FFFFFF,&H00FFFFFF,&H00874DD6,&H00874DD6,0,0,0,0,100,100,1,0,3,18,0,2,50,50,90,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
