@@ -4833,6 +4833,138 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261007-2312-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -0.5,
+        "spearman_composite_vs_real_cpa": 1.0,
+        "spearman_qos_vs_real_cpa": -1.0,
+        "spearman_bt_vs_real_cpa": 1.0,
+        "pairwise_agreement_cpa": "3/3"
+      },
+      "top": [
+        {
+          "code": "V4",
+          "name": "VF-040 · кумата · 4 слуха · темпо 2 сек",
+          "composite": 41.3,
+          "ci90": [
+            35.8,
+            46.4
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "VF-026 · „малка“ · 2 сек · броене на масата",
+          "composite": 40.0,
+          "ci90": [
+            34.7,
+            45.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V10",
+          "name": "VF-054 V-б · панделката · кумата",
+          "composite": 39.4,
+          "ci90": [
+            33.8,
+            44.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "VF-026 · „малка“ · въпросът до 2-рата сек",
+          "composite": 36.2,
+          "ci90": [
+            30.8,
+            41.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "A29 · клетвата · броене на масичката",
+          "composite": 34.0,
+          "ci90": [
+            28.7,
+            39.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "A29 · клетвата: „Не съм я нарушила.“",
+          "composite": 30.5,
+          "ci90": [
+            25.5,
+            35.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "VF-054 V-а · панделката · баща ѝ",
+          "composite": 27.1,
+          "ci90": [
+            21.8,
+            32.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "ugc1 - Copy",
+          "composite": 24.9,
+          "ci90": [
+            21.1,
+            28.9
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V3",
+          "name": "ad1 (videa3)",
+          "composite": 21.9,
+          "ci90": [
+            16.9,
+            28.0
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        },
+        {
+          "code": "V1",
+          "name": "New Sales Ad (sestra)",
+          "composite": 21.2,
+          "ci90": [
+            15.5,
+            27.5
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        }
+      ]
     }
   ]
 }
