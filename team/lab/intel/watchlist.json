@@ -15,7 +15,7 @@
   ],
   "keywords_international": {
     "US": ["weight loss patch", "GLP-1 patch", "berberine", "sugar cravings", "collagen", "berberine patch", "menopause"],
-    "GB": ["menopause belly", "berberine patch", "magnesium sleep", "perimenopause supplement", "metabolism"],
+    "GB": ["menopause belly", "berberine patch", "magnesium sleep", "perimenopause supplement", "metabolism", "GLP-1 patch"],
     "DE": ["Abnehmpflaster", "Berberin", "GLP-1 Pflaster", "Wechseljahre", "Blutzucker", "Stoffwechsel", "Abnehmshake"],
     "FR": ["ventre ménopause", "berbérine", "patch minceur", "patch GLP-1", "patch micro-aiguilles", "ménopause", "bilan personnalisé"],
     "ES": ["GLP-1", "berberina", "parches adelgazar", "azúcar en sangre", "menopausia barriga"],
@@ -172,7 +172,11 @@
     {"name": "NativePath", "country": "US", "why": "„Native Berberine“, продавана като „Nature's Ozempic“ (кръвна захар, метаболизъм; по резюмето на PR в webull.ca и SEO ревюта „Scam or Legit“). Брой реклами: няма данни (Brandsearch 404). Висок риск: „Ozempic“ (ред 11) и кръвна захар (ред 116), само за наблюдение. При US скан с Ads Library: page_id, брой активни, най-старата (07.10, 15:11, уеб)", "added": "2026-10-07"},
     {"name": "ColonBroom", "country": "US", "why": "„GLP-1 Booster“ (само в заглавието на „GLP-1 Patch Scams: 2026 Update“, theglpspot.com, не е отварян); името е и при Bioma → клонинг на етикета при 2 марки. В паметта: Warning Screen ×8 (Motion, 06.10). Брой реклами и page_id: няма данни (07.10, 15:11, уеб)", "added": "2026-10-07"},
     {"name": "Health Insider", "country": "?", "why": "източник на формата, не конкурент: Motion Split Screen (видео + текст) 3K реклами, Health & Wellness; „Works well for objection handling“ (07.10, 19:11, уеб; данните са опреснени преди ≈5 месеца) → VF-053. Държавата, page_id и брой активни днес: няма данни", "added": "2026-10-07"},
-    {"name": "Health Boost", "country": "?", "why": "източник на формата, не конкурент: Motion Split Screen 3K реклами (Health & Wellness), Comic Strip 34 (07.10, IT) → VF-053, VF-050. Държавата, page_id и брой активни днес: няма данни (07.10, 19:11, уеб)", "added": "2026-10-07"}
+    {"name": "Health Boost", "country": "?", "why": "източник на формата, не конкурент: Motion Split Screen 3K реклами (Health & Wellness), Comic Strip 34 (07.10, IT) → VF-053, VF-050. Държавата, page_id и брой активни днес: няма данни (07.10, 19:11, уеб)", "added": "2026-10-07"},
+    {"name": "222 Balance Me", "country": "GB", "why": "добавка за менопаузата и хормоните; по резюмето на търсачката е сред 5-те реклами за менопауза, PCOS и хормони, забранени от ASA в края на III.2026 (заедно с Lunera, Minerva, Nova Menopause Vitality); непроверено, страницата на решението не е отваряна. page_id и брой активни: няма данни. Само за наблюдение, нищо не взимаме (07.10, 23:11, уеб)", "added": "2026-10-07"},
+    {"name": "Lunera", "country": "GB", "why": "добавка за менопаузата; по резюмето на търсачката е сред 5-те реклами, забранени от ASA в края на III.2026; непроверено. page_id и брой активни: няма данни. Само за наблюдение (07.10, 23:11, уеб)", "added": "2026-10-07"},
+    {"name": "Moringa Berberine Patches", "country": "?", "why": "магазин в lovable.app, лепенки с микроиглички (моринга + берберин), клонинг на мрежата Luxarise / Healrize / Purelor / Viatow; Trustpilot ES: 1 отзив, 3.2, дразнене и белези по корема. Висок риск, само за наблюдение (07.10, 23:11, уеб)", "added": "2026-10-07"},
+    {"name": "Olive & June", "country": "US", "why": "източник на формата, не конкурент: маникюр у дома; в Motion ASMR е пример за процес с ръцете стъпка по стъпка („The woman applies the base coat to her nails“, после сушене и слоеве) → VF-054. Брой активни: няма данни (07.10, 23:11, уеб)", "added": "2026-10-07"}
   ],
   "note": "pages_international_to_resolve: US марки без page_id (03.10, 23:11, само уеб); при първия US скан с Ads Library намери page_id по името и ги премести в pages_international. pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
 }
