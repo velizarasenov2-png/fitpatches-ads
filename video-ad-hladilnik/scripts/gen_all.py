@@ -43,6 +43,7 @@ def make_refs():
             "soft morning daylight, realistic candid photo, vertical 9:16.",
             [refs["ivaila_before"]]); print("ref ivaila_after", refs["ivaila_after"], flush=True)
     refs["patch"] = PATCH
+    refs.setdefault("patch_on_arm", json.load(open(REFJSON)).get("patch_on_arm"))
     json.dump(refs, open(REFJSON, "w"), indent=1)
     for n, u in refs.items():
         p = os.path.join(REFS, n + ".jpg")
@@ -75,18 +76,22 @@ SHOTS = {  # name: (seconds, refs, prompt) — line of the voice it plays under
         "darkness. The glowing oven clock reads 23:00, then 23:15, then 23:45. Time passes: moonlight from the window "
         "slides slowly across the empty table and the floor. The kitchen stays still and quiet. Sound: a clock "
         "ticking, distant city night."),  # Онази вечер я чаках… Нищо. И на другата…
-    "s06": (10, ["ivaila_before", "patch"], "Realistic cinematic footage, 9:16 vertical, soft morning window light in "
-        "a Bulgarian apartment kitchen. Close-up: Ivaila from the reference image presses one round translucent "
-        "soft-pink patch with a clear frosted rim and the curved text 'Fit Patches *' printed in dark pink around its "
-        "edge, exactly like the patch reference, onto her upper arm, smooths it with two fingers and "
-        "smiles to herself. Slow push-in on the patch on her skin. Sound: quiet morning room tone."),  # Слага си лепенки…
+    "s06": (10, ["ivaila_before", "patch_on_arm", "patch"], "Realistic cinematic footage, 9:16 vertical, soft morning "
+        "window light in a Bulgarian apartment kitchen. Medium close-up: Ivaila from the reference image holds a small "
+        "round patch between two fingers, about 4 cm across, the size of a large coin, and presses it onto her upper "
+        "arm, smooths it and smiles to herself. The patch is small and discreet, covering about a third of the width "
+        "of her arm, translucent soft-pink with a clear frosted rim and the curved text 'Fit Patches *' printed in dark "
+        "pink around its edge, exactly like the patch on the arm in the reference photo. Gentle push-in on the patch on "
+        "her skin. Sound: quiet morning room tone."),  # Слага си лепенки…
     "s07": (8, ["kitchen_pov", "ivaila_after"], "Realistic cinematic footage, 9:16 vertical. Evening in the small "
         "Bulgarian kitchen from the reference image. " + AFTER + "She finishes a small plate of salad at the table, "
         "relaxed, glances at the fridge for a moment, smiles calmly, switches off the kitchen light and walks out of "
         "the room. Sound: quiet evening room tone."),  # яде по-малко… не я тегли към мен
-    "s08": (8, ["kitchen_pov", "ivaila_after"], LOOK + AFTER + "Bright morning sunlight in the kitchen. The door "
-        "opens, Ivaila leans in with a light, rested face and a calm smile, takes a small bowl of yogurt with "
-        "berries, and the camera lingers on her relaxed, lighter look. Sound: fridge hum, birds outside."),  # Сега идва… По-лека.
+    "s08": (8, ["kitchen_pov", "ivaila_after"], LOOK + AFTER + "Bright morning sunlight in the kitchen. From the "
+        "very first frame a glass bowl of white yogurt with fresh berries stands on the middle fridge shelf in the "
+        "foreground, in clear view. The door opens, Ivaila leans in with a light, rested face and a calm smile, reaches "
+        "for that same bowl on the shelf, lifts it and takes it out with both hands, and the camera lingers on her "
+        "relaxed, slimmer look. Every object stays solid and continuous. Sound: fridge hum, birds outside."),  # Сега идва… По-лека.
     "s09": (6, ["kitchen_pov", "ivaila_after"], LOOK + AFTER + "Evening. Ivaila takes a bottle of water, gives the "
         "shelves a soft, almost tender look, and gently closes the door. The view goes dark; the fridge light "
         "blinks once softly in the darkness. Sound: the soft thud of the door, a quiet hum."),  # Липсва ми… радвам се
@@ -96,15 +101,16 @@ SHOTS = {  # name: (seconds, refs, prompt) — line of the voice it plays under
         "camera push-in. Sound: soft warm ambience."),  # ФитПачес. Берберин, канела и нар.
 }
 
-def shot(name, refs):
+def shot(arg, refs):
+    name, _, var = arg.partition(":")
     sec, r, prompt = SHOTS[name]
     inp = {"prompt": prompt, "duration": str(sec), "aspect_ratio": "9:16", "resolution": "720p",
            "image_urls": [refs[x] for x in r]}
-    tid = kie.create("google/gemini-omni-flash-1-1", inp); print(name, "task", tid, flush=True)
+    tid = kie.create("google/gemini-omni-flash-1-1", inp); print(arg, "task", tid, flush=True)
     d = kie.wait(tid, every=15, timeout=3600)
-    rec = {"name": name, "taskId": tid, "state": d["state"], "credits": d.get("creditsConsumed"),
+    rec = {"name": arg, "taskId": tid, "state": d["state"], "credits": d.get("creditsConsumed"),
            "fail": d.get("failMsg"), "urls": kie.result_urls(d)}
-    if rec["urls"]: kie.download(rec["urls"][0], os.path.join(CLIPS, name + ".mp4"))
+    if rec["urls"]: kie.download(rec["urls"][0], os.path.join(CLIPS, (f"{name}_{var}" if var else name) + ".mp4"))
     print(json.dumps(rec, ensure_ascii=False), flush=True)
     with open(os.path.join(CLIPS, "clips_log.jsonl"), "a") as f: f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
