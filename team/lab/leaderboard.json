@@ -4285,6 +4285,128 @@
           "real": null
         }
       ]
+    },
+    {
+      "run_id": "20261007-0712-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -1.0,
+        "spearman_composite_vs_real_cpa": 0.5,
+        "spearman_qos_vs_real_cpa": 1.0,
+        "spearman_bt_vs_real_cpa": 1.0,
+        "pairwise_agreement_cpa": "2/3"
+      },
+      "top": [
+        {
+          "code": "V8",
+          "name": "VF-026 · „малка“ · въпросът до 2-рата сек",
+          "composite": 38.6,
+          "ci90": [
+            33.9,
+            43.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-046 V-а · дребният шрифт · обещание на 2 сек",
+          "composite": 38.5,
+          "ci90": [
+            32.4,
+            44.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "VF-049 V-а · шепнешком",
+          "composite": 38.2,
+          "ci90": [
+            34.4,
+            42.0
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "VF-040 · кумата · 4 слуха · с „какво е“ в началото",
+          "composite": 37.7,
+          "ci90": [
+            31.2,
+            43.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "VF-026 · „малка“ + надпис · нови думи · с „какво е“",
+          "composite": 33.4,
+          "ci90": [
+            28.2,
+            38.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "VF-049 V-б · шепнешком · всичко шепнешком",
+          "composite": 31.4,
+          "ci90": [
+            27.6,
+            35.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "ugc1 - Copy",
+          "composite": 27.3,
+          "ci90": [
+            22.4,
+            32.2
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V5",
+          "name": "New Sales Ad (sestra)",
+          "composite": 21.1,
+          "ci90": [
+            16.4,
+            26.3
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V6",
+          "name": "ad1 (videa3)",
+          "composite": 20.0,
+          "ci90": [
+            14.9,
+            26.2
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
