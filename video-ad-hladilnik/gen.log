@@ -1,0 +1,35 @@
+ref ivaila_before https://tempfile.aiquickdraw.com/workers/images/image_a67c0a31d25fc20694c8473eb88c74c5.jpg
+ref kitchen_pov https://tempfile.aiquickdraw.com/workers/images/image_bfbf582db3ade0d28c76ef0ffc9452bd.jpg
+ref ivaila_after https://tempfile.aiquickdraw.com/workers/images/image_6402a8088b8ab121e6f072efe25ae538.jpg
+Traceback (most recent call last):
+  File "/home/user/fitpatches-ads/video-ad-hladilnik/scripts/gen_all.py", line 110, in <module>
+    refs = make_refs()
+  File "/home/user/fitpatches-ads/video-ad-hladilnik/scripts/gen_all.py", line 48, in make_refs
+    if not os.path.exists(p): kie.download(u, p)
+                              ~~~~~~~~~~~~^^^^^^
+  File "/home/user/fitpatches-ads/video-ad-hladilnik/scripts/kie.py", line 74, in download
+    r.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/root/.local/lib/python3.13/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://tempfile.redpandaai.co/kieai/1137735/fitpatches/refs/patch_real_crop.jpg
+s03 task 8b8f5b351cf4799fa3b1cb6b17c8cfd5
+s04 task 878c3b37e6261f8772a7b3d2f6cf4b07
+s07 task 51eeb31a31543ebafe72ac174cf899f1
+s01 task ec08663f10fd87d7f3a421a25af6d02f
+s09 task da1a29ea9115c348cfa4f964eb51a0b1
+s05 task 69ef5371752f3b9b14a8090003b3c406
+s10 task 48aae814ffce1b8f49268f5e0be2ca5d
+s08 task 868e0a8683d6f771ba032e01b0c37378
+s02 task 9668eba00b835b6542765106fe9bd3b3
+s06 task 8b425bb666029a6537568b100f6c2203
+{"name": "s09", "taskId": "da1a29ea9115c348cfa4f964eb51a0b1", "state": "success", "credits": 84.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/da1a29ea9115c348cfa4f964eb51a0b1_0_1791366940.mp4"]}
+{"name": "s03", "taskId": "8b8f5b351cf4799fa3b1cb6b17c8cfd5", "state": "success", "credits": 105.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/8b8f5b351cf4799fa3b1cb6b17c8cfd5_0_1791366929.mp4"]}
+{"name": "s01", "taskId": "ec08663f10fd87d7f3a421a25af6d02f", "state": "success", "credits": 84.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/ec08663f10fd87d7f3a421a25af6d02f_0_1791366938.mp4"]}
+{"name": "s05", "taskId": "69ef5371752f3b9b14a8090003b3c406", "state": "success", "credits": 126.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/69ef5371752f3b9b14a8090003b3c406_0_1791366931.mp4"]}
+{"name": "s07", "taskId": "51eeb31a31543ebafe72ac174cf899f1", "state": "success", "credits": 105.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/51eeb31a31543ebafe72ac174cf899f1_0_1791366930.mp4"]}
+{"name": "s08", "taskId": "868e0a8683d6f771ba032e01b0c37378", "state": "success", "credits": 105.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/868e0a8683d6f771ba032e01b0c37378_0_1791366933.mp4"]}
+{"name": "s10", "taskId": "48aae814ffce1b8f49268f5e0be2ca5d", "state": "success", "credits": 63.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/48aae814ffce1b8f49268f5e0be2ca5d_0_1791366935.mp4"]}
+{"name": "s06", "taskId": "8b425bb666029a6537568b100f6c2203", "state": "success", "credits": 126.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/8b425bb666029a6537568b100f6c2203_0_1791366939.mp4"]}
+{"name": "s02", "taskId": "9668eba00b835b6542765106fe9bd3b3", "state": "success", "credits": 84.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/9668eba00b835b6542765106fe9bd3b3_0_1791366931.mp4"]}
+{"name": "s04", "taskId": "878c3b37e6261f8772a7b3d2f6cf4b07", "state": "success", "credits": 84.0, "fail": null, "urls": ["https://tempfile.aiquickdraw.com/v/878c3b37e6261f8772a7b3d2f6cf4b07_0_1791366949.mp4"]}
