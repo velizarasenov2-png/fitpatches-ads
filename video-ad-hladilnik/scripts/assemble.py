@@ -44,7 +44,15 @@ def segment(name, t0, t1, inp, mode, out):
     scale = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},setsar=1"
     src = os.path.join(CLIPS, f"{name}.mp4")
     avail = clip_len(src) - inp
-    if mode == "fit" or (mode == "cut" and avail < dur - 0.02):
+    fade_out = mode.endswith("+fo")  # fade to black over the last 0.6 s
+    mode = mode.removesuffix("+fo")
+    if mode.startswith("fit:"):  # stretch only the first N seconds from the in-point
+        avail = min(avail, float(mode[4:]))
+        mode = "fit"
+    if mode == "freeze":  # hold the single frame at the in-point
+        vf = f"fps={FPS},{scale},trim=end_frame=1,tpad=stop_mode=clone:stop_duration={dur:.3f}"
+        src_t = 0.2
+    elif mode == "fit" or (mode == "cut" and avail < dur - 0.02):
         factor = dur / avail
         assert factor <= 1.25, (name, factor)
         vf = f"setpts={factor:.5f}*PTS,fps={FPS},{scale}"
@@ -55,6 +63,8 @@ def segment(name, t0, t1, inp, mode, out):
     else:
         vf = f"fps={FPS},{scale}"
         src_t = dur
+    if fade_out:
+        vf += f",fade=t=out:st={dur - 0.6:.3f}:d=0.6"
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{inp:.3f}", "-t", f"{src_t:.3f}", "-i", src,
          "-vf", vf + ",format=yuv420p", "-t", f"{dur:.3f}", "-an", "-c:v", "libx264", "-crf", "16", out])
 
