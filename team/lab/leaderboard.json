@@ -5097,6 +5097,138 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261008-0712-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.5,
+        "spearman_watch_vs_real_hold": -1.0,
+        "spearman_composite_vs_real_cpa": 0.5,
+        "spearman_qos_vs_real_cpa": 0.5,
+        "spearman_bt_vs_real_cpa": 0.5,
+        "pairwise_agreement_cpa": "2/3"
+      },
+      "top": [
+        {
+          "code": "V2",
+          "name": "VF-056 V-б · рамката около кутията · „малка“",
+          "composite": 37.2,
+          "ci90": [
+            31.9,
+            42.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "VF-040 · кумата · 4 слуха · броене на масата",
+          "composite": 36.6,
+          "ci90": [
+            31.2,
+            42.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V5",
+          "name": "VF-026 · „малка“ · 2 сек · броене на масата",
+          "composite": 36.6,
+          "ci90": [
+            31.8,
+            42.1
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "VF-046 V-а · дребният шрифт · броене на масата",
+          "composite": 35.8,
+          "ci90": [
+            29.7,
+            41.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "A30 · счетоводителката: „На едно число ще свали очилата.“",
+          "composite": 33.2,
+          "ci90": [
+            26.2,
+            39.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V8",
+          "name": "A31 · басът на племенницата: „Лельо, държа бас, че си им платила предварително.“",
+          "composite": 28.9,
+          "ci90": [
+            23.6,
+            34.2
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "ugc1 - Copy",
+          "composite": 25.7,
+          "ci90": [
+            20.2,
+            30.8
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V10",
+          "name": "VF-056 V-а · рамката около кутията · сама",
+          "composite": 23.6,
+          "ci90": [
+            19.6,
+            27.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "New Sales Ad (sestra)",
+          "composite": 21.2,
+          "ci90": [
+            16.0,
+            26.8
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V3",
+          "name": "ad1 (videa3)",
+          "composite": 20.1,
+          "ci90": [
+            15.7,
+            25.4
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
