@@ -1,0 +1,88 @@
+{%- comment -%} FitPatches — какво да очакваш през първия месец (снимка + времева линия + честна бележка) {%- endcomment -%}
+{%- liquid
+  assign img = section.settings.image_url
+  if section.settings.image != blank
+    assign img = section.settings.image | image_url: width: 1200
+  endif
+-%}
+<section class="fpx-tl" id="fpxtl-{{ section.id }}">
+  <div class="fpx-tl__wrap">
+    <p class="fpx-eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="fpx-tl__title">{{ section.settings.title }}</h2>
+    <div class="fpx-tl__grid">
+      <div class="fpx-tl__media">
+        <img src="{{ img }}" alt="{{ section.settings.title | strip_html | escape }}" loading="lazy" width="900" height="1100">
+      </div>
+      <ol class="fpx-tl__steps">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>
+            <span class="fpx-tl__dot"></span>
+            <p class="fpx-tl__when">{{ block.settings.when }}</p>
+            <p class="fpx-tl__what">{{ block.settings.text }}</p>
+          </li>
+        {%- endfor -%}
+      </ol>
+    </div>
+    {%- if section.settings.note_title != blank -%}
+      <div class="fpx-tl__note">
+        <b>{{ section.settings.note_title }}</b>
+        {{ section.settings.note_text }}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+<style>
+  #fpxtl-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4}
+  #fpxtl-{{ section.id }} .fpx-tl__wrap{max-width:1000px;margin:0 auto;padding:52px 18px}
+  #fpxtl-{{ section.id }} .fpx-eyebrow{text-align:center;color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px;text-transform:uppercase}
+  #fpxtl-{{ section.id }} .fpx-tl__title{text-align:center;font-size:30px;font-weight:800;color:#111;line-height:1.2;margin:0 0 30px}
+  #fpxtl-{{ section.id }} .fpx-tl__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+  #fpxtl-{{ section.id }} .fpx-tl__media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;display:block;background:var(--warm)}
+  #fpxtl-{{ section.id }} .fpx-tl__steps{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--soft);display:flex;flex-direction:column;gap:26px}
+  #fpxtl-{{ section.id }} .fpx-tl__steps li{position:relative}
+  #fpxtl-{{ section.id }} .fpx-tl__dot{position:absolute;left:-32px;top:3px;width:17px;height:17px;border-radius:50%;background:var(--a);border:3px solid #fff;box-shadow:0 0 0 2px var(--a)}
+  #fpxtl-{{ section.id }} .fpx-tl__when{font-size:18px;font-weight:800;color:#111;margin:0 0 4px}
+  #fpxtl-{{ section.id }} .fpx-tl__what{color:#555;font-size:15px;line-height:1.55;margin:0}
+  #fpxtl-{{ section.id }} .fpx-tl__note{margin:34px auto 0;max-width:760px;background:var(--warm);border:1.5px dashed var(--a);border-radius:18px;padding:20px 22px;color:#333;font-size:15px;line-height:1.6}
+  #fpxtl-{{ section.id }} .fpx-tl__note b{display:block;font-size:16px;color:#111;margin-bottom:6px}
+  #fpxtl-{{ section.id }} .fpx-tl__note p{margin:0}
+  @media(max-width:749px){
+    #fpxtl-{{ section.id }} .fpx-tl__grid{grid-template-columns:1fr;gap:26px}
+    #fpxtl-{{ section.id }} .fpx-tl__title{font-size:24px}
+    #fpxtl-{{ section.id }} .fpx-tl__media img{aspect-ratio:1/1}
+  }
+</style>
+{% schema %}
+{
+  "name": "FPX Първият месец",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Надзаглавие", "default": "Какво да очакваш" },
+    { "type": "text", "id": "title", "label": "Заглавие", "default": "Първите 30 дни с FitPatches" },
+    { "type": "image_picker", "id": "image", "label": "Снимка" },
+    { "type": "text", "id": "image_url", "label": "Снимка (URL, ако няма избрана)", "default": "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png" },
+    { "type": "text", "id": "note_title", "label": "Честна бележка — заглавие", "default": "И нещо, което другите няма да ти кажат" },
+    { "type": "richtext", "id": "note_text", "label": "Честна бележка — текст", "default": "<p>FitPatches не е хапче за отслабване и не „топи“ мазнини. Помага ти да овладееш апетита — а по-малкото хапване идва естествено. Затова дай на тялото поне 4 седмици. Резултатите са индивидуални.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Етап",
+      "settings": [
+        { "type": "text", "id": "when", "label": "Кога", "default": "Седмица 1" },
+        { "type": "textarea", "id": "text", "label": "Текст" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FPX Първият месец",
+      "blocks": [
+        { "type": "step", "settings": { "when": "Първите дни", "text": "Свикваш с лепенката — една сутрин и забравяш за нея. Някои усещат по-малко желание за сладко още тогава, други не. И двете са нормални." } },
+        { "type": "step", "settings": { "when": "Седмица 1 – 2", "text": "Берберинът се подава постепенно всеки ден. Тук много клиенти казват, че вечер посягат по-рядко към сладкото." } },
+        { "type": "step", "settings": { "when": "Седмица 3 – 4", "text": "Вече е навик. Съчетай лепенката с нормално хранене и малко движение — така промяната се задържа." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

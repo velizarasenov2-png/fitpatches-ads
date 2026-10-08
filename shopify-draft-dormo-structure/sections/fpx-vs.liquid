@@ -1,0 +1,84 @@
+{%- comment -%} FitPatches — лепенка срещу берберин на капсули (две карти + цена на ден) {%- endcomment -%}
+{%- liquid
+  assign img_fp = section.settings.img_fp_url
+  if section.settings.img_fp != blank
+    assign img_fp = section.settings.img_fp | image_url: width: 400
+  endif
+  assign img_other = section.settings.img_other_url
+  if section.settings.img_other != blank
+    assign img_other = section.settings.img_other | image_url: width: 400
+  endif
+  assign rows = section.settings.rows | newline_to_br | split: '<br />'
+-%}
+<section class="fpx-vs" id="fpxvs-{{ section.id }}">
+  <div class="fpx-vs__wrap">
+    <p class="fpx-eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="fpx-vs__title">{{ section.settings.title }}</h2>
+    <div class="fpx-vs__cards">
+      <div class="fpx-vs__card fpx-vs__card--fp">
+        <img src="{{ img_fp }}" alt="{{ section.settings.label_fp | escape }}" loading="lazy" width="160" height="160">
+        <b>{{ section.settings.label_fp }}</b>
+      </div>
+      <span class="fpx-vs__vs">VS</span>
+      <div class="fpx-vs__card">
+        <img src="{{ img_other }}" alt="{{ section.settings.label_other | escape }}" loading="lazy" width="160" height="160">
+        <b>{{ section.settings.label_other }}</b>
+      </div>
+    </div>
+    <ul class="fpx-vs__list">
+      {%- for r in rows -%}
+        {%- assign r = r | strip -%}
+        {%- if r != blank -%}
+          <li><span class="fpx-vs__yes">✓</span><span class="fpx-vs__txt">{{ r }}</span><span class="fpx-vs__no">✕</span></li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+    {%- if section.settings.per_day != blank -%}
+      <div class="fpx-vs__day">{{ section.settings.per_day }}</div>
+    {%- endif -%}
+  </div>
+</section>
+<style>
+  #fpxvs-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4;background:var(--warm)}
+  #fpxvs-{{ section.id }} .fpx-vs__wrap{max-width:640px;margin:0 auto;padding:52px 18px}
+  #fpxvs-{{ section.id }} .fpx-eyebrow{text-align:center;color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px;text-transform:uppercase}
+  #fpxvs-{{ section.id }} .fpx-vs__title{text-align:center;font-size:30px;font-weight:800;color:#111;line-height:1.2;margin:0 0 26px}
+  #fpxvs-{{ section.id }} .fpx-vs__cards{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-bottom:18px}
+  #fpxvs-{{ section.id }} .fpx-vs__card{background:#fff;border-radius:18px;padding:16px 12px;text-align:center;border:2px solid #eee}
+  #fpxvs-{{ section.id }} .fpx-vs__card--fp{border-color:var(--a);box-shadow:0 8px 22px rgba(214,77,135,.15)}
+  #fpxvs-{{ section.id }} .fpx-vs__card img{width:100%;max-width:150px;aspect-ratio:1/1;object-fit:cover;border-radius:14px;display:block;margin:0 auto 10px}
+  #fpxvs-{{ section.id }} .fpx-vs__card b{font-size:15px;color:#111}
+  #fpxvs-{{ section.id }} .fpx-vs__vs{width:42px;height:42px;border-radius:50%;background:#111;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
+  #fpxvs-{{ section.id }} .fpx-vs__list{list-style:none;margin:0;padding:0;background:#fff;border-radius:18px;overflow:hidden}
+  #fpxvs-{{ section.id }} .fpx-vs__list li{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;padding:14px 6px;border-top:1px solid #f1e3ea}
+  #fpxvs-{{ section.id }} .fpx-vs__list li:first-child{border-top:0}
+  #fpxvs-{{ section.id }} .fpx-vs__txt{text-align:center;font-weight:700;font-size:15px;color:#222;line-height:1.35}
+  #fpxvs-{{ section.id }} .fpx-vs__yes{color:#1aa34a;font-weight:900;font-size:20px;text-align:center}
+  #fpxvs-{{ section.id }} .fpx-vs__no{color:#e23b3b;font-weight:900;font-size:18px;text-align:center}
+  #fpxvs-{{ section.id }} .fpx-vs__day{text-align:center;margin:18px 0 0;font-size:15px;color:#444}
+  #fpxvs-{{ section.id }} .fpx-vs__day p{margin:0}
+  #fpxvs-{{ section.id }} .fpx-vs__day strong{color:var(--a)}
+  @media(max-width:749px){
+    #fpxvs-{{ section.id }} .fpx-vs__title{font-size:24px}
+    #fpxvs-{{ section.id }} .fpx-vs__txt{font-size:14px}
+  }
+</style>
+{% schema %}
+{
+  "name": "FPX Лепенка vs капсули",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Надзаглавие", "default": "Сравнение" },
+    { "type": "text", "id": "title", "label": "Заглавие", "default": "Лепенка срещу берберин на капсули" },
+    { "type": "image_picker", "id": "img_fp", "label": "Снимка — FitPatches" },
+    { "type": "text", "id": "img_fp_url", "label": "Снимка — FitPatches (URL, ако няма избрана)", "default": "https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-patch-real.png?v=1785852731" },
+    { "type": "text", "id": "label_fp", "label": "Етикет — FitPatches", "default": "FitPatches лепенка" },
+    { "type": "image_picker", "id": "img_other", "label": "Снимка — капсули" },
+    { "type": "text", "id": "img_other_url", "label": "Снимка — капсули (URL, ако няма избрана)", "default": "https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-nat-pills.png?v=1785854560" },
+    { "type": "text", "id": "label_other", "label": "Етикет — капсули", "default": "Берберин на капсули" },
+    { "type": "textarea", "id": "rows", "label": "Предимства (по един на ред)", "default": "Не минава през стомаха\nБез подуване и тежест\nЕдна лепенка на ден, не 3 капсули\nВиждаш я — не я забравяш\nПодава берберин постепенно през деня\nБез вкус и мирис" },
+    { "type": "richtext", "id": "per_day", "label": "Ред за цена на ден", "default": "<p>Една лепенка на ден излиза <strong>0,27 € на ден</strong> при пакета 3+2.</p>" }
+  ],
+  "presets": [ { "name": "FPX Лепенка vs капсули" } ]
+}
+{% endschema %}

@@ -1,0 +1,57 @@
+{%- comment -%} FitPatches — без капсули: берберинът не минава през стомаха {%- endcomment -%}
+{%- liquid
+  assign img = section.settings.image_url
+  if section.settings.image != blank
+    assign img = section.settings.image | image_url: width: 1200
+  endif
+  assign chips = section.settings.chips | split: ','
+-%}
+<section class="fpx-ns" id="fpxns-{{ section.id }}">
+  <div class="fpx-ns__wrap">
+    <div class="fpx-ns__body">
+      <p class="fpx-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="fpx-ns__title">{{ section.settings.title }}</h2>
+      <div class="fpx-ns__text">{{ section.settings.text }}</div>
+      <div class="fpx-ns__chips">
+        {%- for c in chips -%}
+          {%- assign c = c | strip -%}
+          {%- if c != blank -%}<span>{{ c }}</span>{%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="fpx-ns__media">
+      <img src="{{ img }}" alt="{{ section.settings.title | strip_html | escape }}" loading="lazy" width="900" height="900">
+    </div>
+  </div>
+</section>
+<style>
+  #fpxns-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4;background:linear-gradient(180deg,#fff 0,var(--warm) 100%)}
+  #fpxns-{{ section.id }} .fpx-ns__wrap{max-width:1040px;margin:0 auto;padding:52px 18px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  #fpxns-{{ section.id }} .fpx-eyebrow{color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px;text-transform:uppercase}
+  #fpxns-{{ section.id }} .fpx-ns__title{font-size:30px;font-weight:800;color:#111;line-height:1.2;margin:0 0 16px}
+  #fpxns-{{ section.id }} .fpx-ns__text{color:#444;font-size:15.5px;line-height:1.6}
+  #fpxns-{{ section.id }} .fpx-ns__text p{margin:0 0 12px}
+  #fpxns-{{ section.id }} .fpx-ns__chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  #fpxns-{{ section.id }} .fpx-ns__chips span{background:#fff;border:1.5px solid var(--a);color:var(--a);font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px}
+  #fpxns-{{ section.id }} .fpx-ns__media img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:22px;display:block;background:#fff}
+  @media(max-width:749px){
+    #fpxns-{{ section.id }} .fpx-ns__wrap{grid-template-columns:1fr;gap:24px;padding:40px 18px}
+    #fpxns-{{ section.id }} .fpx-ns__media{order:-1}
+    #fpxns-{{ section.id }} .fpx-ns__title{font-size:24px}
+  }
+</style>
+{% schema %}
+{
+  "name": "FPX Без стомаха",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Надзаглавие", "default": "Без капсули" },
+    { "type": "text", "id": "title", "label": "Заглавие", "default": "Берберинът — без да минава през стомаха" },
+    { "type": "richtext", "id": "text", "label": "Текст", "default": "<p>Много хора спират берберина на капсули не защото не работи, а заради стомаха — тежест, подуване, разстройство.</p><p>FitPatches подава берберина <strong>през кожата</strong>, постепенно през деня. Стомахът изобщо не участва.</p>" },
+    { "type": "text", "id": "chips", "label": "Етикети (разделени със запетая)", "default": "Без капсули, Без вкус и мирис, Работи през деня" },
+    { "type": "image_picker", "id": "image", "label": "Снимка" },
+    { "type": "text", "id": "image_url", "label": "Снимка (URL, ако няма избрана)", "default": "https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-nat-pills.png?v=1785854560" }
+  ],
+  "presets": [ { "name": "FPX Без стомаха" } ]
+}
+{% endschema %}

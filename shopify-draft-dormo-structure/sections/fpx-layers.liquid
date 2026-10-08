@@ -1,0 +1,75 @@
+{%- comment -%} FitPatches — какво има в една лепенка (снимка на слоевете + описание) {%- endcomment -%}
+{%- liquid
+  assign img = section.settings.image_url
+  if section.settings.image != blank
+    assign img = section.settings.image | image_url: width: 1200
+  endif
+-%}
+<section class="fpx-ly" id="fpxly-{{ section.id }}">
+  <div class="fpx-ly__wrap">
+    <div class="fpx-ly__media">
+      <img src="{{ img }}" alt="{{ section.settings.title | strip_html | escape }}" loading="lazy" width="900" height="900">
+    </div>
+    <div class="fpx-ly__body">
+      <p class="fpx-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="fpx-ly__title">{{ section.settings.title }}</h2>
+      <ol class="fpx-ly__list">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>
+            <span class="fpx-ly__n">{{ forloop.index }}</span>
+            <div><b>{{ block.settings.heading }}</b><span>{{ block.settings.text }}</span></div>
+          </li>
+        {%- endfor -%}
+      </ol>
+    </div>
+  </div>
+</section>
+<style>
+  #fpxly-{{ section.id }}{--a:#d64d87;--soft:#fbe9f1;--warm:#faf0f4}
+  #fpxly-{{ section.id }} .fpx-ly__wrap{max-width:1040px;margin:0 auto;padding:52px 18px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  #fpxly-{{ section.id }} .fpx-ly__media img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:22px;display:block;background:var(--warm)}
+  #fpxly-{{ section.id }} .fpx-eyebrow{color:var(--a);font-weight:800;letter-spacing:1px;font-size:12px;margin:0 0 8px;text-transform:uppercase}
+  #fpxly-{{ section.id }} .fpx-ly__title{font-size:30px;font-weight:800;color:#111;line-height:1.2;margin:0 0 22px}
+  #fpxly-{{ section.id }} .fpx-ly__list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+  #fpxly-{{ section.id }} .fpx-ly__list li{display:flex;gap:14px;align-items:flex-start}
+  #fpxly-{{ section.id }} .fpx-ly__n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--soft);color:var(--a);font-weight:900;display:flex;align-items:center;justify-content:center}
+  #fpxly-{{ section.id }} .fpx-ly__list b{display:block;font-size:16px;color:#111;margin-bottom:2px}
+  #fpxly-{{ section.id }} .fpx-ly__list span{color:#666;font-size:14px;line-height:1.5}
+  @media(max-width:749px){
+    #fpxly-{{ section.id }} .fpx-ly__wrap{grid-template-columns:1fr;gap:24px;padding:40px 18px}
+    #fpxly-{{ section.id }} .fpx-ly__title{font-size:24px}
+  }
+</style>
+{% schema %}
+{
+  "name": "FPX Слоеве на лепенката",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Надзаглавие", "default": "Отвътре" },
+    { "type": "text", "id": "title", "label": "Заглавие", "default": "Какво има в една лепенка" },
+    { "type": "image_picker", "id": "image", "label": "Снимка" },
+    { "type": "text", "id": "image_url", "label": "Снимка (URL, ако няма избрана)", "default": "https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-patch-real.png?v=1785852731" }
+  ],
+  "blocks": [
+    {
+      "type": "layer",
+      "name": "Слой",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Заглавие", "default": "Слой" },
+        { "type": "textarea", "id": "text", "label": "Текст" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FPX Слоеве на лепенката",
+      "blocks": [
+        { "type": "layer", "settings": { "heading": "Дишащ външен слой", "text": "Пази активния слой и не оставя следи по дрехите." } },
+        { "type": "layer", "settings": { "heading": "Активен слой", "text": "Берберин и растителни екстракти, които се подават постепенно през деня." } },
+        { "type": "layer", "settings": { "heading": "Мек лепилен слой", "text": "Държи лепенката на място, без да дърпа кожата при сваляне." } },
+        { "type": "layer", "settings": { "heading": "Защитно фолио", "text": "Сваляш го точно преди да залепиш — лепенката е чиста до момента на употреба." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
