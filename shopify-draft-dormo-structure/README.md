@@ -33,4 +33,6 @@ export KIE_API_KEY=...
 python3 kie/generate_images.py
 ```
 
-Докато няма генерирани снимки, секциите показват съществуващи снимки от магазина. Всяка нова секция има поле „Снимка“ (избор от Files) и резервно поле с URL.
+Генерирани са и качени в Shopify Files като `fpx-layers.jpg`, `fpx-nostomach.jpg`, `fpx-timeline.jpg`, `fpx-vs-patch.jpg`, `fpx-vs-capsules.jpg` и са избрани в секциите на draft темата. Всяка нова секция има поле „Снимка“ (избор от Files) и резервно поле с URL.
+
+`build_template.py` генерира `templates/product.json` за draft темата.
