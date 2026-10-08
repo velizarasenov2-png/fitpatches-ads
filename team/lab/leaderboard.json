@@ -5229,6 +5229,158 @@
           }
         }
       ]
+    },
+    {
+      "run_id": "20261008-0859-active",
+      "calibration": {
+        "n_ads": 3,
+        "min_spend": 30.0,
+        "spearman_ctrindex_vs_real_ctr": 0.0,
+        "spearman_watch_vs_real_hold": -1.0,
+        "spearman_composite_vs_real_cpa": 0.5,
+        "spearman_qos_vs_real_cpa": -0.5,
+        "spearman_bt_vs_real_cpa": 0.5,
+        "pairwise_agreement_cpa": "2/3"
+      },
+      "top": [
+        {
+          "code": "V10",
+          "name": "VF-040 · кумата · 3 слуха · броене на масата",
+          "composite": 41.4,
+          "ci90": [
+            35.8,
+            46.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V11",
+          "name": "A30 · счетоводителката · кратка",
+          "composite": 35.3,
+          "ci90": [
+            28.8,
+            41.8
+          ],
+          "real": null
+        },
+        {
+          "code": "V2",
+          "name": "VF-056 V-б · рамката около кутията · „малка“",
+          "composite": 35.2,
+          "ci90": [
+            29.6,
+            40.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V3",
+          "name": "VF-046 V-а · дребният шрифт · броене на масата",
+          "composite": 35.0,
+          "ci90": [
+            29.9,
+            39.7
+          ],
+          "real": null
+        },
+        {
+          "code": "V6",
+          "name": "VF-026 · „малка“ · 2 сек · броене на масата",
+          "composite": 34.8,
+          "ci90": [
+            29.1,
+            40.6
+          ],
+          "real": null
+        },
+        {
+          "code": "V9",
+          "name": "VF-057 V-б · непознатата пита · дребният шрифт",
+          "composite": 31.4,
+          "ci90": [
+            26.8,
+            36.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V4",
+          "name": "VF-057 V-а · непознатата пита · един въпрос за накрая",
+          "composite": 29.2,
+          "ci90": [
+            24.1,
+            33.9
+          ],
+          "real": null
+        },
+        {
+          "code": "V12",
+          "name": "ugc1 - Copy",
+          "composite": 24.5,
+          "ci90": [
+            20.1,
+            28.9
+          ],
+          "real": {
+            "spend": 979.03,
+            "link_ctr": 4.32,
+            "cpa": 6.44,
+            "hold_rate": 0.1226
+          }
+        },
+        {
+          "code": "V5",
+          "name": "A33 · сватята и картата: „Не е мърдала.“",
+          "composite": 23.3,
+          "ci90": [
+            16.3,
+            31.5
+          ],
+          "real": null
+        },
+        {
+          "code": "V7",
+          "name": "A32 · касиерката: „Ще ми брои парите.“",
+          "composite": 22.5,
+          "ci90": [
+            17.2,
+            29.3
+          ],
+          "real": null
+        },
+        {
+          "code": "V1",
+          "name": "New Sales Ad (sestra)",
+          "composite": 22.4,
+          "ci90": [
+            17.6,
+            27.9
+          ],
+          "real": {
+            "spend": 34.86,
+            "link_ctr": 1.77,
+            "cpa": 17.43,
+            "hold_rate": 0.1274,
+            "purchases": 2,
+            "status": "PAUSED"
+          }
+        },
+        {
+          "code": "V8",
+          "name": "ad1 (videa3)",
+          "composite": 18.1,
+          "ci90": [
+            12.8,
+            23.8
+          ],
+          "real": {
+            "spend": 100.92,
+            "link_ctr": 2.18,
+            "cpa": 12.62,
+            "hold_rate": 0.1497
+          }
+        }
+      ]
     }
   ]
 }
