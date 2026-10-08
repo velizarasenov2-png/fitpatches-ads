@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "keywords_bg": [
     "берберин",
     "лепенки за отслабване",
@@ -21,7 +21,7 @@
     "ES": ["GLP-1", "berberina", "parches adelgazar", "azúcar en sangre", "menopausia barriga"],
     "IT": ["berberina", "menopausa", "cerotti berberina", "pagamento alla consegna", "contrassegno", "GLP-1"],
     "PL": ["plastry na odchudzanie", "berberyna", "insulinooporność", "plastry z berberyną", "menopauza brzuch"],
-    "RO": ["plasturi slabire", "plasturi berberina", "plasturi GLP-1", "plata la livrare"],
+    "RO": ["plasturi slabire", "plasturi berberina", "plasturi GLP-1", "plata la livrare", "menopauza", "GLP-1 natural"],
     "NL": ["menopauze buik", "berberine pleister", "GLP-1 pleister", "overgang", "bloedsuiker", "berberine pleisters", "berberine afvallen", "natuurlijke ozempic", "achteraf betalen"],
     "AU": ["cortisol belly", "berberine patch", "perimenopause", "metabolism patch", "GLP-1 patch", "berberine weight loss", "natural ozempic"],
     "BR": ["metabolismo depois dos 40", "adesivo emagrecedor", "berberina", "GLP-1 natural", "menopausa", "pagamento na entrega", "pague na entrega"]
@@ -176,7 +176,9 @@
     {"name": "222 Balance Me", "country": "GB", "why": "добавка за менопаузата и хормоните; по резюмето на търсачката е сред 5-те реклами за менопауза, PCOS и хормони, забранени от ASA в края на III.2026 (заедно с Lunera, Minerva, Nova Menopause Vitality); непроверено, страницата на решението не е отваряна. page_id и брой активни: няма данни. Само за наблюдение, нищо не взимаме (07.10, 23:11, уеб)", "added": "2026-10-07"},
     {"name": "Lunera", "country": "GB", "why": "добавка за менопаузата; по резюмето на търсачката е сред 5-те реклами, забранени от ASA в края на III.2026; непроверено. page_id и брой активни: няма данни. Само за наблюдение (07.10, 23:11, уеб)", "added": "2026-10-07"},
     {"name": "Moringa Berberine Patches", "country": "?", "why": "магазин в lovable.app, лепенки с микроиглички (моринга + берберин), клонинг на мрежата Luxarise / Healrize / Purelor / Viatow; Trustpilot ES: 1 отзив, 3.2, дразнене и белези по корема. Висок риск, само за наблюдение (07.10, 23:11, уеб)", "added": "2026-10-07"},
-    {"name": "Olive & June", "country": "US", "why": "източник на формата, не конкурент: маникюр у дома; в Motion ASMR е пример за процес с ръцете стъпка по стъпка („The woman applies the base coat to her nails“, после сушене и слоеве) → VF-054. Брой активни: няма данни (07.10, 23:11, уеб)", "added": "2026-10-07"}
+    {"name": "Olive & June", "country": "US", "why": "източник на формата, не конкурент: маникюр у дома; в Motion ASMR е пример за процес с ръцете стъпка по стъпка („The woman applies the base coat to her nails“, после сушене и слоеве) → VF-054. Брой активни: няма данни (07.10, 23:11, уеб)", "added": "2026-10-07"},
+    {"name": "Naturalia Diet", "country": "RO", "why": "аптечни лепенки за отслабване 7.5 × 7.5 см, по 4 и 16 бр., в Dr. Max и Catena („13,99 Lei“ на брой при пакета от 4, по заглавието на резултата); състав: няма данни, не е берберин; не е DTC. page_id и брой активни: няма данни. Само за наблюдение (08.10, 03:11, уеб)", "added": "2026-10-08"},
+    {"name": "SOLO TREE", "country": "RO", "why": "лепенки с берберин и канела, 30 бр.; 04.10 в eMAG за 47.19 лей; 08.10 и в Trendyol RO с намалена цена и безплатна доставка (по резюмето на търсачката). Наложен платеж, page_id и брой активни: няма данни (08.10, 03:11, уеб)", "added": "2026-10-08"}
   ],
   "note": "pages_international_to_resolve: US марки без page_id (03.10, 23:11, само уеб); при първия US скан с Ads Library намери page_id по името и ги премести в pages_international. pages: page_ids заявки с countries BG; групирай по 3–4 страници в една заявка, за да се вместиш в ≈15 заявки на ден. pages_international: за ротацията на формати навън (по 1–2 заявки на ден). Ротация по света (01.10): US, GB, DE, FR, ES, IT, PL, RO, NL, AU, BR — по 1 заявка на държава, ключовите думи са в keywords_international."
 }
