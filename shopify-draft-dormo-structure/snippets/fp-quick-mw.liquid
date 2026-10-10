@@ -1,34 +1,114 @@
 {%- comment -%}
   FitPatches — поръчка през middleware.bg вместо EasySell (само в draft темата).
-  Скриптът на middleware.bg (layout/theme.liquid) се закача за линка „Преминаване към плащане“ в количката
-  и отваря своята форма за наложен платеж. Тук: връщаме този линк (EasySell го криеше) и правим
-  „Бърза поръчка“ в офертата да слага избрания пакет в количката и да отваря същата форма.
+  Скриптът на middleware.bg (layout/theme.liquid) скрива линка „Преминаване към плащане“ в количката
+  и слага свой бутон, който отваря формата за наложен платеж.
+  1) „Бърза поръчка“ в офертата слага избрания пакет в количката и отваря същата форма.
+  2) Най-горе във формата има избор на пакет (1 / 2+1 / 3+2). При смяна количката се сменя, формата
+     на middleware.bg се обновява, а вече попълнените име, телефон и т.н. се връщат.
+  Пакетите са същите като в fp-offer-v2 — при промяна на цени/варианти смени ги и тук.
 {%- endcomment -%}
 <style>
-  #fpDrawer a.fpd__go{display:block!important}
   .fp-offer .fp-quick [data-order-form],.fp-offer .fp-quick [data-order-sel],.fp-offer .fp-quick [data-order-success]{display:none!important}
   .fp-offer .fp-quick .fp-btn--mw{display:block;width:100%;border:0;border-radius:14px;padding:17px 20px;font-size:18px;font-weight:800;cursor:pointer;background:#d64d87;color:#fff;font-family:inherit;margin-top:6px}
   .fp-offer .fp-quick .fp-btn--mw[disabled]{opacity:.7;cursor:wait}
+  #fp-mw-pick{margin:0 0 16px;padding:12px;border:2px solid #f6cfe1;background:#fff6fb;border-radius:14px;font-family:inherit}
+  #fp-mw-pick .fpm__h{font-weight:800;color:#8a2a57;margin:0 0 8px;font-size:15px}
+  #fp-mw-pick .fpm__o{position:relative;display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;margin:0 0 6px;padding:11px 12px;border:2px solid #edc9db;background:#fff;border-radius:10px;cursor:pointer;font-size:15px;color:#1b1b1b;text-align:left;font-family:inherit;box-sizing:border-box}
+  #fp-mw-pick .fpm__o span{display:flex;flex-direction:column;gap:1px}
+  #fp-mw-pick .fpm__o small{color:#8a8a8a;font-size:12px}
+  #fp-mw-pick .fpm__o b{color:#d64d87;font-size:16px;white-space:nowrap}
+  #fp-mw-pick .fpm__o.is-on{border-color:#d64d87;background:#fbe9f1}
+  #fp-mw-pick .fpm__o i{position:absolute;top:-9px;right:10px;background:#d64d87;color:#fff;font-style:normal;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+  #fp-mw-pick.is-busy{opacity:.6;pointer-events:none}
 </style>
 <script>
 (function(){
-  var q=document.querySelector('.fp-offer .fp-quick'); if(!q) return;
-  var lead=q.querySelector('.fp-quick__lead');
-  if(lead) lead.textContent='Попълваш име, телефон и адрес за доставка в една форма — плащаш при получаване.';
-  var b=document.createElement('button'); b.type='button'; b.className='fp-btn--mw'; b.textContent='Бърза поръчка';
-  q.appendChild(b);
-  b.addEventListener('click',function(){
-    var r=document.querySelector('.fp-offer input[data-variant]:checked'); if(!r) return;
-    var old=b.textContent; b.disabled=true; b.textContent='Зареждане…';
-    var h={'Content-Type':'application/json','Accept':'application/json'};
-    fetch('/cart/clear.js',{method:'POST',headers:h})
-      .then(function(){ return fetch('/cart/add.js',{method:'POST',headers:h,body:JSON.stringify({items:[{id:r.dataset.variant,quantity:1,properties:{'Пакет':r.dataset.prop}}]})}); })
-      .then(function(){
+  var TIERS=[
+    {v:'53836021039441',n:'1 пакет',m:'30 лепенки · за 1 месец',p:'14,99 €',prop:'FitPatches 1 пакет (30 лепенки)'},
+    {v:'53837384024401',n:'2+1 подарък',m:'3 пакета · 90 лепенки',p:'27,99 €',prop:'FitPatches 2+1 подарък — 3 пакета (90 лепенки)'},
+    {v:'53837385859409',n:'3+2 подарък',m:'5 пакета · 150 лепенки',p:'39,99 €',prop:'FitPatches 3+2 подарък — 5 пакета (150 лепенки)',best:'Най-изгодно'}
+  ];
+  var H={'Content-Type':'application/json','Accept':'application/json'};
+  function setCart(t){
+    return fetch('/cart/clear.js',{method:'POST',headers:H})
+      .then(function(){ return fetch('/cart/add.js',{method:'POST',headers:H,body:JSON.stringify({items:[{id:t.v,quantity:1,properties:{'Пакет':t.prop}}]})}); });
+  }
+  function mwButton(){ return document.querySelector('#fpDrawer .mw-btn-modal')||document.querySelector('.mw-btn-modal'); }
+
+  // 1) „Бърза поръчка“ в офертата
+  var q=document.querySelector('.fp-offer .fp-quick');
+  if(q){
+    var lead=q.querySelector('.fp-quick__lead');
+    if(lead) lead.textContent='Попълваш име, телефон и адрес за доставка в една форма — плащаш при получаване.';
+    var b=document.createElement('button'); b.type='button'; b.className='fp-btn--mw'; b.textContent='Бърза поръчка';
+    q.appendChild(b);
+    b.addEventListener('click',function(){
+      var r=document.querySelector('.fp-offer input[data-variant]:checked'); if(!r) return;
+      var t=TIERS.filter(function(x){ return x.v===r.dataset.variant; })[0]||{v:r.dataset.variant,prop:r.dataset.prop};
+      var old=b.textContent; b.disabled=true; b.textContent='Зареждане…';
+      setCart(t).then(function(){
         b.disabled=false; b.textContent=old;
-        var go=document.querySelector('#fpDrawer a.fpd__go.mw-btn-modal');
+        var go=mwButton();
         if(go){ go.click(); } else if(window.fpCart){ window.fpCart.open(); } else { window.location.href='/cart'; }
-      })
-      .catch(function(){ b.disabled=false; b.textContent=old; });
-  });
+      }).catch(function(){ b.disabled=false; b.textContent=old; });
+    });
+  }
+
+  // 2) Избор на пакет най-горе във формата на middleware.bg
+  var busy=false;
+  function mark(v){
+    var d=document.getElementById('fp-mw-pick'); if(!d) return;
+    d.querySelectorAll('.fpm__o').forEach(function(o){ o.classList.toggle('is-on',o.dataset.v===v); });
+  }
+  function syncFromCart(){
+    fetch('/cart.js',{headers:{'Accept':'application/json'}}).then(function(r){ return r.json(); }).then(function(c){
+      var v=''; (c.items||[]).forEach(function(it){ if(TIERS.some(function(t){ return t.v===String(it.variant_id); })) v=String(it.variant_id); });
+      mark(v);
+    }).catch(function(){});
+  }
+  function fields(){ return [].slice.call(document.querySelectorAll('#mw-client-data input, #mw-client-data textarea')).filter(function(e){ return e.type!=='hidden'&&e.type!=='radio'&&e.type!=='checkbox'; }); }
+  function key(e){ return e.name||e.id||e.placeholder||''; }
+  function pick(t){
+    if(busy) return; busy=true;
+    var d=document.getElementById('fp-mw-pick'); d.classList.add('is-busy'); mark(t.v);
+    var snap={}; fields().forEach(function(e){ if(e.value) snap[key(e)]=e.value; });
+    var first=fields()[0];
+    function done(){ busy=false; var x=document.getElementById('fp-mw-pick'); if(x) x.classList.remove('is-busy'); syncFromCart(); }
+    setCart(t).then(function(){
+      var go=mwButton(); if(!go){ done(); return; }
+      go.click();
+      var n=0, iv=setInterval(function(){
+        n++;
+        var now=fields();
+        if((now.length && (!first || !document.body.contains(first))) || n>30){
+          clearInterval(iv);
+          now.forEach(function(e){ var k=key(e); if(snap[k]&&!e.value){ e.value=snap[k]; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true})); } });
+          done();
+        }
+      },200);
+    }).catch(done);
+  }
+  function build(){
+    var d=document.createElement('div'); d.id='fp-mw-pick';
+    d.innerHTML='<div class="fpm__h">Колко пакета искаш?</div>'+TIERS.map(function(t){
+      return '<button type="button" class="fpm__o" data-v="'+t.v+'">'+(t.best?'<i>'+t.best+'</i>':'')+'<span><strong>'+t.n+'</strong><small>'+t.m+'</small></span><b>'+t.p+'</b></button>';
+    }).join('');
+    d.addEventListener('click',function(e){
+      var o=e.target.closest&&e.target.closest('.fpm__o'); if(!o) return;
+      e.preventDefault(); e.stopPropagation();
+      if(o.classList.contains('is-on')) return;
+      pick(TIERS.filter(function(t){ return t.v===o.dataset.v; })[0]);
+    });
+    return d;
+  }
+  var wasOpen=false;
+  setInterval(function(){
+    var m=document.getElementById('mw-modal'); if(!m) return;
+    var info=m.querySelector('.mw-client-info');
+    if(info && !document.getElementById('fp-mw-pick')){ info.insertBefore(build(), info.firstChild); syncFromCart(); }
+    var open=getComputedStyle(m).display!=='none';
+    if(open && !wasOpen && !busy){ syncFromCart(); }
+    wasOpen=open;
+  },400);
 })();
 </script>
