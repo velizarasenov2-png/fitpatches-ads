@@ -36,3 +36,12 @@ python3 kie/generate_images.py
 Генерирани са и качени в Shopify Files като `fpx-layers.jpg`, `fpx-nostomach.jpg`, `fpx-timeline.jpg`, `fpx-vs-patch.jpg`, `fpx-vs-capsules.jpg` и са избрани в секциите на draft темата. Всяка нова секция има поле „Снимка“ (избор от Files) и резервно поле с URL.
 
 `build_template.py` генерира `templates/product.json` за draft темата.
+
+## Checkout: middleware.bg вместо EasySell (само в draft темата)
+
+- `layout/theme.liquid` — добавен е скриптът на middleware.bg точно преди `</head>`.
+- `config/settings_data.json` — app embed-ът на EasySell е изключен (`"disabled": true`).
+- `snippets/fp-quick-es.liquid` — вече не зарежда EasySell, а `fp-quick-mw`.
+- `snippets/fp-quick-mw.liquid` — „Бърза поръчка“ слага избрания пакет в количката и отваря формата на middleware.bg; връща линка „Преминаване към плащане“ в количката, за да може middleware.bg да го замени със своя бутон.
+
+Live темата не е пипана. За да върнеш EasySell в draft темата: включи app embed-а от редактора и върни стария `fp-quick-es.liquid` от live темата.
