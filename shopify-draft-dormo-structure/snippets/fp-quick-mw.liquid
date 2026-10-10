@@ -1,0 +1,34 @@
+{%- comment -%}
+  FitPatches — поръчка през middleware.bg вместо EasySell (само в draft темата).
+  Скриптът на middleware.bg (layout/theme.liquid) се закача за линка „Преминаване към плащане“ в количката
+  и отваря своята форма за наложен платеж. Тук: връщаме този линк (EasySell го криеше) и правим
+  „Бърза поръчка“ в офертата да слага избрания пакет в количката и да отваря същата форма.
+{%- endcomment -%}
+<style>
+  #fpDrawer a.fpd__go{display:block!important}
+  .fp-offer .fp-quick [data-order-form],.fp-offer .fp-quick [data-order-sel],.fp-offer .fp-quick [data-order-success]{display:none!important}
+  .fp-offer .fp-quick .fp-btn--mw{display:block;width:100%;border:0;border-radius:14px;padding:17px 20px;font-size:18px;font-weight:800;cursor:pointer;background:#d64d87;color:#fff;font-family:inherit;margin-top:6px}
+  .fp-offer .fp-quick .fp-btn--mw[disabled]{opacity:.7;cursor:wait}
+</style>
+<script>
+(function(){
+  var q=document.querySelector('.fp-offer .fp-quick'); if(!q) return;
+  var lead=q.querySelector('.fp-quick__lead');
+  if(lead) lead.textContent='Попълваш име, телефон и адрес за доставка в една форма — плащаш при получаване.';
+  var b=document.createElement('button'); b.type='button'; b.className='fp-btn--mw'; b.textContent='Бърза поръчка';
+  q.appendChild(b);
+  b.addEventListener('click',function(){
+    var r=document.querySelector('.fp-offer input[data-variant]:checked'); if(!r) return;
+    var old=b.textContent; b.disabled=true; b.textContent='Зареждане…';
+    var h={'Content-Type':'application/json','Accept':'application/json'};
+    fetch('/cart/clear.js',{method:'POST',headers:h})
+      .then(function(){ return fetch('/cart/add.js',{method:'POST',headers:h,body:JSON.stringify({items:[{id:r.dataset.variant,quantity:1,properties:{'Пакет':r.dataset.prop}}]})}); })
+      .then(function(){
+        b.disabled=false; b.textContent=old;
+        var go=document.querySelector('#fpDrawer a.fpd__go.mw-btn-modal');
+        if(go){ go.click(); } else if(window.fpCart){ window.fpCart.open(); } else { window.location.href='/cart'; }
+      })
+      .catch(function(){ b.disabled=false; b.textContent=old; });
+  });
+})();
+</script>
