@@ -562,13 +562,11 @@ function renderDone() {
   if (meds) html += '<div class="note"><b>Важно:</b> Тъй като приемаш лекарства, преди да започнеш нещо ново, се консултирай с личния си лекар.</div>';
   html += '<div class="actions" style="width:100%"><a class="btn" id="goSol" href="' + esc(url) + '">Виж решението</a></div></section>';
   app.innerHTML = html;
-  document.getElementById('goSol').addEventListener('click', function (e) { e.preventDefault(); leave(url); });
-}
-var leaving = false;
-function leave(url) {
-  if (leaving) return; leaving = true;
-  if (!st.sent.left) { st.sent.left = 1; save(); send('cta', 'done'); pixel(CONFIG.PIXEL_EVENTS.click); }
-  setTimeout(function () { location.href = url; }, 250);
+  // Обикновен линк: браузърът отваря продуктовата страница веднага.
+  // Записът тръгва с keepalive, така че стига дори след смяната на страницата.
+  document.getElementById('goSol').addEventListener('click', function () {
+    if (!st.sent.left) { st.sent.left = 1; save(); send('cta', 'done'); pixel(CONFIG.PIXEL_EVENTS.click); }
+  });
 }
 
 if (!st.sent.view) sendOnce('view', '');
