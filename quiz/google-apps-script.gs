@@ -1,15 +1,14 @@
 /**
- * FitPatches Quiz → Google Sheets
+ * FitPatches Quiz → Google Sheet „FitPatches Quiz – отговори“
  * ----------------------------------------------------------------------------
- * Записва всеки отговор от quiz-а в лист „Responses“ (по един ред на човек)
- * и прави „ICP Summary“: разпределение на отговорите + кои отговори кликат
- * към магазина и купуват.
+ * Приема отговорите от quiz-а и ги записва в лист „Responses“ (по един ред на
+ * човек). Claude чете листа през Google Drive връзката и прави анализа на ICP.
+ * Не е нужно да отваряш таблицата.
  *
- * Инсталация (5 мин) — виж quiz/README.md, стъпка 2:
- *   1. Нов Google Sheet → Extensions → Apps Script → постави този код → Save.
- *   2. Изпълни функцията setup() веднъж (разреши достъпа).
- *   3. Deploy → New deployment → Web app → Execute as: Me, Who has access: Anyone.
- *   4. Копирай Web app URL в CONFIG.SHEET_URL в quiz/index.html.
+ * Инсталация (3 мин) — виж quiz/README.md, стъпка 2:
+ *   1. В таблицата: Extensions → Apps Script → постави този код → Save.
+ *   2. Deploy → New deployment → Web app → Execute as: Me, Who has access: Anyone → Deploy.
+ *   3. Прати Web app URL-а на Claude (или го постави в CONFIG.SHEET_URL в quiz/index.html).
  */
 
 var SHEET_RESPONSES = 'Responses';
@@ -38,9 +37,8 @@ function setup() {
   var sh = ss.getSheetByName(SHEET_RESPONSES) || ss.insertSheet(SHEET_RESPONSES);
   sh.getRange(1, 1, 1, COLUMNS.length).setValues([COLUMNS]).setFontWeight('bold').setBackground('#fbe9f1');
   sh.setFrozenRows(1);
-  if (!ss.getSheetByName(SHEET_SUMMARY)) ss.insertSheet(SHEET_SUMMARY);
   var def = ss.getSheetByName('Sheet1') || ss.getSheetByName('Лист1');
-  if (def && ss.getSheets().length > 2 && def.getLastRow() === 0) ss.deleteSheet(def);
+  if (def && def.getLastRow() === 0 && ss.getSheets().length > 1) ss.deleteSheet(def);
 }
 
 function onOpen() {
