@@ -3,152 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Тест: какво задържа килограмите ти? | FitPatches</title>
-<meta name="description" content="60-секунден тест: разбери какво стои зад глада и килограмите ти и кое решение е подходящо за теб.">
+<title>Тест: какво задържа килограмите ти?</title>
+<meta name="description" content="Кратък тест: разбери какво стои зад килограмите и глада ти и кое решение е подходящо за теб.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#d64d87">
-<link rel="icon" href="https://fitpatches.net/cdn/shop/files/fitpatches-logo-2026.png?width=64">
 <style>
   :root{
     --accent:#d64d87; --accent-dark:#b83a70; --accent-soft:#fbe9f1; --warm:#faf0f4;
     --text:#1b1b1b; --muted:#6b6b6b; --line:#ecdfe5; --card:#ffffff; --bg:#fffafc;
-    --green:#2e9e6a; --star:#ffb400; --warn-bg:#fff6e5; --warn:#8a5a00;
+    --green:#2e9e6a; --warn-bg:#fff6e5; --warn:#7a5000;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{background:var(--bg)}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);line-height:1.45;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh}
   button{font-family:inherit;color:inherit}
-  img{max-width:100%;display:block}
   .wrap{max-width:520px;margin:0 auto;padding:0 16px 40px}
 
-  /* Header */
-  .top{position:sticky;top:0;z-index:20;background:rgba(255,250,252,.96);backdrop-filter:saturate(1.4) blur(6px);-webkit-backdrop-filter:saturate(1.4) blur(6px)}
-  .top__row{max-width:520px;margin:0 auto;padding:10px 16px 8px;display:flex;align-items:center;justify-content:center;position:relative;min-height:52px}
-  .top__logo{height:40px;width:auto}
+  .top{position:sticky;top:0;z-index:20;background:rgba(255,250,252,.96);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .top__row{max-width:520px;margin:0 auto;padding:12px 16px 8px;display:flex;align-items:center;justify-content:center;position:relative;min-height:50px}
+  .top__title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
   .top__back{position:absolute;left:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted)}
   .top__back:hover{background:var(--accent-soft)}
-  .top__back[hidden]{display:none}
+  .top__count{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--muted);font-weight:600}
   .bar{max-width:520px;margin:0 auto;padding:0 16px 10px}
   .bar__track{height:6px;background:var(--accent-soft);border-radius:99px;overflow:hidden}
   .bar__fill{height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .35s ease}
-  .bar[hidden]{display:none}
+  [hidden]{display:none!important}
 
-  /* Screens */
-  .screen{animation:in .28s ease both}
+  .screen{animation:in .25s ease both}
   @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .pill{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px;letter-spacing:.2px}
+  .pill{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:13px;padding:6px 12px;border-radius:99px}
   .h1{font-size:27px;line-height:1.2;font-weight:800;margin:14px 0 10px;letter-spacing:-.3px}
-  .lead{font-size:16.5px;color:#3d3d3d;margin-bottom:18px}
-  .q{font-size:23px;line-height:1.25;font-weight:800;margin:18px 0 6px;letter-spacing:-.2px}
-  .hint{font-size:14.5px;color:var(--muted);margin-bottom:16px}
+  .lead{font-size:16.5px;color:#3d3d3d;margin-bottom:16px}
+  .sec{font-size:12.5px;font-weight:800;color:var(--accent-dark);letter-spacing:.6px;text-transform:uppercase;margin-top:16px}
+  .q{font-size:23px;line-height:1.25;font-weight:800;margin:6px 0 6px;letter-spacing:-.2px}
+  .hint{font-size:14.5px;color:var(--muted);margin-bottom:6px}
+  .why{margin:8px 0 2px;font-size:14px;color:var(--muted)}
+  .why summary{cursor:pointer;color:var(--accent-dark);font-weight:600;list-style:none}
+  .why summary::-webkit-details-marker{display:none}
+  .why p{background:var(--warm);border-radius:12px;padding:10px 12px;margin-top:6px;color:#444}
   .opts{display:flex;flex-direction:column;gap:10px;margin-top:14px}
-  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:15px 16px;font-size:16.5px;font-weight:600;cursor:pointer;transition:border-color .15s,background .15s,transform .05s;min-height:58px}
+  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;font-size:16.5px;font-weight:600;cursor:pointer;transition:border-color .15s,background .15s;min-height:56px}
   .opt:hover{border-color:#e6a9c4}
-  .opt:active{transform:scale(.99)}
   .opt.is-on{border-color:var(--accent);background:var(--accent-soft)}
-  .opt__ico{font-size:24px;line-height:1;width:30px;text-align:center;flex-shrink:0}
+  .opt__ico{font-size:22px;line-height:1;width:28px;text-align:center;flex-shrink:0}
   .opt__txt{flex:1}
-  .opt__sub{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:2px}
   .opt__chk{width:22px;height:22px;border:2px solid #d9c3cd;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff}
   .opt.is-on .opt__chk{background:var(--accent);border-color:var(--accent)}
   .opt.is-on .opt__chk::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-  .tile{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:20px 10px 16px;text-align:center;cursor:pointer;font-size:18px;font-weight:700;transition:border-color .15s,background .15s}
+  .tile{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:18px 10px 14px;text-align:center;cursor:pointer;font-size:18px;font-weight:700;transition:border-color .15s,background .15s}
   .tile:hover{border-color:#e6a9c4}
   .tile.is-on{border-color:var(--accent);background:var(--accent-soft)}
-  .tile__ico{font-size:46px;line-height:1;display:block;margin-bottom:10px}
+  .tile__ico{font-size:44px;line-height:1;display:block;margin-bottom:8px}
 
-  .btn{display:block;width:100%;border:0;border-radius:14px;padding:18px 20px;font-size:18px;font-weight:800;cursor:pointer;background:var(--accent);color:#fff;text-align:center;text-decoration:none;box-shadow:0 6px 18px rgba(214,77,135,.28);transition:background .15s,transform .05s}
+  .btn{display:block;width:100%;border:0;border-radius:14px;padding:18px 20px;font-size:18px;font-weight:800;cursor:pointer;background:var(--accent);color:#fff;text-align:center;text-decoration:none;box-shadow:0 6px 18px rgba(214,77,135,.28)}
   .btn:hover{background:var(--accent-dark)}
-  .btn:active{transform:translateY(1px)}
   .btn[disabled]{background:#e3c4d2;box-shadow:none;cursor:not-allowed}
-  .btn--ghost{background:transparent;color:var(--muted);box-shadow:none;font-weight:600;font-size:15px;padding:12px}
-  .btn--ghost:hover{background:transparent;color:var(--text)}
-  .actions{margin-top:18px;display:flex;flex-direction:column;gap:6px}
+  .btn--ghost{background:#fff;color:var(--text);border:2px solid var(--line);box-shadow:none}
+  .btn--ghost:hover{background:var(--accent-soft)}
+  .actions{margin-top:18px;display:flex;flex-direction:column;gap:8px}
   .sticky-actions{position:sticky;bottom:0;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--bg) 70%,rgba(255,250,252,0))}
+  .fine{font-size:12px;color:#8d8d8d;text-align:center;margin-top:16px;line-height:1.5}
 
-  .trust{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13.5px;color:var(--muted);margin-top:16px;flex-wrap:wrap;text-align:center}
-  .stars{color:var(--star);letter-spacing:1px}
-  .fine{font-size:12px;color:#8d8d8d;text-align:center;margin-top:14px;line-height:1.5}
-  .fine a{color:inherit}
-
-  .input{width:100%;font-size:18px;padding:16px;border:2px solid var(--line);border-radius:14px;background:#fff;outline:none;font-family:inherit;margin-top:14px}
-  .input:focus{border-color:var(--accent)}
-
-  /* Info / interstitial */
+  .ta{width:100%;min-height:130px;font-size:17px;line-height:1.45;padding:14px;border:2px solid var(--line);border-radius:14px;background:#fff;outline:none;font-family:inherit;resize:vertical;margin-top:14px}
+  .ta:focus{border-color:var(--accent)}
+  .ta-meta{font-size:12.5px;color:#9a9a9a;text-align:right;margin-top:4px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:16px}
   .card--warm{background:var(--warm);border-color:transparent}
-  .info-ico{font-size:44px;line-height:1;margin-top:18px}
   .info p{margin-bottom:12px;font-size:16.5px;color:#333}
-  .info p strong{color:var(--text)}
-  .quote{display:flex;gap:12px;align-items:flex-start}
-  .quote img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--accent-soft)}
-  .quote blockquote{font-size:15.5px;line-height:1.5;margin-bottom:6px}
-  .quote cite{font-style:normal;font-size:13.5px;font-weight:700;color:#555}
-  .quote + .quote{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
-  .rating{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .rating__num{font-size:34px;font-weight:800;line-height:1}
-  .rating__txt{font-size:13.5px;color:var(--muted)}
+  .info p:last-child{margin-bottom:0}
+  .info-ico{font-size:42px;line-height:1;margin-top:20px}
 
-  /* Loading */
-  .loader{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:30px}
-  .ring{position:relative;width:150px;height:150px;margin:10px 0 20px}
+  /* Зареждане */
+  .loader{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:22px}
+  .ring{position:relative;width:156px;height:156px;margin:14px 0 18px}
   .ring svg{transform:rotate(-90deg)}
-  .ring__pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800}
-  .checks{list-style:none;text-align:left;width:100%;max-width:340px;margin-top:6px}
-  .checks li{display:flex;gap:10px;align-items:center;padding:8px 0;color:#b9a9b0;font-size:15.5px;transition:color .3s}
+  .ring__pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800}
+  .checks{list-style:none;text-align:left;width:100%;max-width:360px}
+  .checks li{display:flex;gap:10px;align-items:center;padding:7px 0;color:#b9a9b0;font-size:15.5px;transition:color .3s}
+  .checks li.now{color:var(--text);font-weight:600}
   .checks li.done{color:var(--text)}
   .checks li::before{content:"";width:20px;height:20px;border-radius:50%;border:2px solid #e3d3da;flex-shrink:0;transition:all .3s}
-  .checks li.done::before{background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat;border-color:var(--green)}
-
-  /* Result */
-  .res-type{background:linear-gradient(135deg,#d64d87,#e98bb2);color:#fff;border-radius:20px;padding:22px 20px;margin-top:14px;position:relative;overflow:hidden}
-  .res-type__lbl{font-size:13px;font-weight:700;opacity:.9;letter-spacing:.4px;text-transform:uppercase}
-  .res-type__name{font-size:28px;font-weight:800;line-height:1.15;margin:6px 0 10px}
-  .res-type__txt{font-size:15.5px;line-height:1.5;opacity:.97}
-  .res-type__ico{position:absolute;right:14px;top:12px;font-size:40px;opacity:.9}
-  .h2{font-size:20px;font-weight:800;margin:28px 0 10px;letter-spacing:-.2px}
-  .facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .facts li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
-  .facts b{display:block;font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:3px}
-  .facts span{font-size:15px;font-weight:700}
-  .facts li.wide{grid-column:1/-1}
-  .why{list-style:none;margin-top:4px}
-  .why li{display:flex;gap:10px;padding:9px 0;font-size:16px;border-bottom:1px solid var(--line)}
-  .why li:last-child{border-bottom:0}
-  .why li::before{content:"✓";color:#fff;background:var(--green);width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:1px}
-  .prod{display:flex;gap:14px;align-items:center}
-  .prod img{width:96px;height:96px;object-fit:contain;flex-shrink:0}
-  .prod__name{font-weight:800;font-size:18px;line-height:1.25}
-  .prod__sub{font-size:14px;color:var(--muted);margin-top:4px}
-  .plan{list-style:none;position:relative;margin-top:6px}
-  .plan li{position:relative;padding:0 0 18px 30px}
-  .plan li::before{content:"";position:absolute;left:6px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
-  .plan li::after{content:"";position:absolute;left:11px;top:20px;bottom:0;width:2px;background:var(--accent-soft)}
-  .plan li:last-child::after{display:none}
-  .plan b{display:block;font-size:15px}
-  .plan span{font-size:14.5px;color:#4a4a4a}
-  .offer{border:2px solid var(--accent);border-radius:18px;padding:18px;background:#fff;position:relative;margin-top:14px}
-  .offer__badge{position:absolute;top:-12px;left:16px;background:var(--accent);color:#fff;font-size:12px;font-weight:800;padding:5px 10px;border-radius:99px;letter-spacing:.3px}
-  .offer__row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-  .offer__name{font-size:19px;font-weight:800}
-  .offer__meta{font-size:14px;color:var(--muted);margin-top:2px}
-  .offer__price{text-align:right;flex-shrink:0}
-  .offer__new{font-size:24px;font-weight:800;color:var(--accent-dark)}
-  .offer__old{font-size:14px;color:#999;text-decoration:line-through}
-  .offer__day{font-size:13px;color:var(--green);font-weight:700}
-  .offer__note{font-size:13.5px;color:var(--muted);margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
-  .perks{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;color:#4a4a4a;margin-top:12px}
-  .perks span::before{content:"✓ ";color:var(--green);font-weight:800}
-  .note{background:var(--warn-bg);color:var(--warn);border-radius:14px;padding:14px 16px;font-size:14.5px;margin-top:16px;line-height:1.5}
-  .note b{color:#6b4500}
-  .disclaimer{font-size:12px;color:#8d8d8d;margin-top:26px;line-height:1.55;text-align:center}
-  .floatcta{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);box-shadow:0 -6px 20px rgba(0,0,0,.08);transform:translateY(110%);visibility:hidden;transition:transform .3s ease,visibility .3s}
-  .floatcta.show{transform:none;visibility:visible}
-  .floatcta .btn{max-width:488px;margin:0 auto;padding:15px 18px;font-size:17px}
-
+  .checks li.now::before{border-color:var(--accent);border-top-color:transparent;animation:spin .8s linear infinite}
+  .checks li.done::before{background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat;border-color:var(--green);animation:none}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:4px 0 16px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 11px;font-size:13px;font-weight:600;color:#444}
+  .modal{position:fixed;inset:0;background:rgba(27,27,27,.45);display:flex;align-items:flex-end;justify-content:center;z-index:50;padding:16px;animation:fade .2s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .modal__box{background:#fff;border-radius:20px;padding:22px 18px 18px;width:100%;max-width:488px;animation:up .25s ease;margin-bottom:env(safe-area-inset-bottom)}
+  @keyframes up{from{transform:translateY(30px)}to{transform:none}}
+  .modal__lbl{font-size:12.5px;font-weight:800;color:var(--accent-dark);letter-spacing:.5px;text-transform:uppercase}
+  .modal__q{font-size:20px;font-weight:800;line-height:1.3;margin:6px 0 16px}
+  .modal__btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .done-ico{width:74px;height:74px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:26px auto 8px;box-shadow:0 8px 24px rgba(46,158,106,.3)}
+  .note{background:var(--warn-bg);color:var(--warn);border-radius:14px;padding:14px 16px;font-size:15px;margin-top:16px;line-height:1.5;text-align:left}
   @media (min-width:560px){ .h1{font-size:31px} .q{font-size:25px} }
-  @media (prefers-reduced-motion:reduce){ .screen{animation:none} .bar__fill{transition:none} }
+  @media (prefers-reduced-motion:reduce){ .screen,.modal,.modal__box{animation:none} }
 </style>
 </head>
 <body>
@@ -158,236 +110,242 @@
     <button class="top__back" id="back" type="button" aria-label="Назад" hidden>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
-    <img class="top__logo" src="https://fitpatches.net/cdn/shop/files/fitpatches-logo-2026.png?width=240" alt="FitPatches" width="40" height="40">
+    <span class="top__title">Тест за отслабване</span>
+    <span class="top__count" id="count"></span>
   </div>
   <div class="bar" id="bar" hidden><div class="bar__track"><div class="bar__fill" id="barFill"></div></div></div>
 </header>
 
 <main class="wrap" id="app" aria-live="polite"></main>
-<div class="floatcta" id="floatcta" aria-hidden="true"><a class="btn" id="floatBtn" href="#">Към моя пакет →</a></div>
 
 <script>
 /* =====================================================================
-   НАСТРОЙКИ — това е единственото място, което трябва да редактираш.
+   НАСТРОЙКИ
    ===================================================================== */
 var CONFIG = {
-  // Продуктовата страница, към която води резултатът.
+  // Накрая човекът отива тук („решението“).
   PRODUCT_URL: 'https://fitpatches.net/products/fitpatches-berberinovi-plastiri-30',
 
-  // URL на Google Apps Script уеб приложението (виж quiz/README.md, стъпка 2).
-  // Докато е празно, quiz-ът работи, но отговорите НЕ се записват.
+  // URL на Google Apps Script (виж README, стъпка 2). Празно = нищо не се записва.
   SHEET_URL: '',
 
-  // Meta Pixel ID (същият като в магазина). Остави '' за да изключиш пиксела.
+  // Meta Pixel. Към Meta НЕ се пращат отговори — само стандартни събития без параметри.
   PIXEL_ID: '1036098062073138',
-  // Стандартни събития без параметри — НЕ пращаме отговорите към Meta (здравни данни).
-  PIXEL_EVENTS: { complete: 'CompleteRegistration', cta: 'Lead' },
+  PIXEL_EVENTS: { complete: 'CompleteRegistration', click: 'Lead' },
 
-  RATING: '4.8', REVIEWS: '2 365',
-  GUARANTEE: '60 дни гаранция',
-
-  PACKS: {
-    '1': { name: '1 пакет', meta: '30 лепенки · за 1 месец', price: '14,99 €', old: '29,99 €', day: '0,50 € / ден', save: 'Спестяваш 15,00 €' },
-    '3': { name: '2+1 подарък', meta: '3 пакета · 90 лепенки · за 3 месеца', price: '27,99 €', old: '89,97 €', day: '0,31 € / ден', save: 'Спестяваш 61,98 €' },
-    '5': { name: '3+2 подарък', meta: '5 пакета · 150 лепенки · за 5 месеца', price: '39,99 €', old: '149,95 €', day: '0,27 € / ден', save: 'Спестяваш 109,96 €' }
-  },
-  // Кой пакет да се препоръча според отговора „Колко време си готов/а да дадеш“.
-  // Продуктовата страница по подразбиране е на 3+2. Ако искаш по-висока средна поръчка,
-  // смени '1': '1' на '1': '3' (тогава и „1 месец“ получава препоръка 2+1).
-  RECOMMEND: { '1': '1', '3': '3', '5': '5' },
-  VERSION: 'v1'
+  LOADER_SECONDS: 30,     // колко време „подготвяме решението“ (без времето за въпросите в прозорчетата)
+  VERSION: 'v2'
 };
 
-/* Заглавия по рекламен ъгъл: ?a=<ключ> в линка от рекламата.
-   Така заглавието повтаря статичния креатив (message match), а ъгълът се записва. */
+/* Заглавие на първия екран според рекламата: ?a=<ключ>. Записва се като „angle“. */
 var ANGLES = {
-  def:      { h: 'Защо килограмите не си отиват — дори когато ядеш малко?', s: 'Отговори на няколко кратки въпроса и разбери какво задържа теглото ти и кое решение е подходящо за теб.' },
-  apetit:   { h: 'Постоянно мислиш за храна? Разбери какво стои зад глада ти.', s: 'Кратък тест, след който ще знаеш какъв тип е гладът ти и как да го овладееш — без мъчителни диети.' },
-  sladko:   { h: 'Не можеш да устоиш на сладкото? Разбери защо.', s: 'Отговори на няколко въпроса и виж кое решение е подходящо точно за теб.' },
-  vecher:   { h: 'Посягаш към хладилника вечер? Направи 60-секундния тест.', s: 'Разбери защо гладът те „удря“ вечер и как да го овладееш, без да се измъчваш.' },
-  '40':     { h: 'След 40 диетите спират да работят. Разбери защо.', s: 'Тялото ти се е променило — не волята ти. Отговори на няколко въпроса и виж какво реално помага.' },
-  korem:    { h: 'Коремчето не си отива, каквото и да правиш?', s: 'Отговори на няколко кратки въпроса и разбери какво го задържа — и кое решение е подходящо за теб.' },
-  probvala: { h: 'Пробвала си всичко и нищо не работи?', s: 'Не си ти виновна. Направи 60-секундния тест и разбери какво пропускат диетите.' },
-  yoyo:     { h: 'Сваляш килограми и после пак ги връщаш?', s: 'Разбери защо се случва йо-йо ефектът и как да задържиш резултата.' }
+  def:      { h: 'Защо килограмите не си отиват — дори когато ядеш малко?', s: 'Отговори на няколко кратки въпроса и разбери какво задържа теглото ти и какво ще помогне точно на теб.' },
+  apetit:   { h: 'Постоянно мислиш за храна? Разбери какво стои зад глада ти.', s: 'Кратък тест, след който ще знаеш какво точно ти пречи — и какво да направиш.' },
+  sladko:   { h: 'Не можеш да устоиш на сладкото? Разбери защо.', s: 'Отговори на няколко въпроса и разбери какво стои зад желанието за сладко.' },
+  vecher:   { h: 'Посягаш към хладилника вечер? Направи теста.', s: 'Разбери защо гладът те „удря“ вечер и как да го овладееш, без да се измъчваш.' },
+  '40':     { h: 'След 40 диетите спират да работят. Разбери защо.', s: 'Тялото ти се е променило — не волята ти. Отговори на няколко въпроса и разбери какво реално помага.' },
+  korem:    { h: 'Коремчето не си отива, каквото и да правиш?', s: 'Отговори на няколко кратки въпроса и разбери какво го задържа.' },
+  probvala: { h: 'Пробвала си всичко и нищо не работи?', s: 'Не си ти виновна. Направи теста и разбери какво пропускат диетите.' },
+  yoyo:     { h: 'Сваляш килограми и после пак ги връщаш?', s: 'Разбери защо се случва йо-йо ефектът и как да го прекъснеш.' }
 };
 
 /* =====================================================================
-   ВЪПРОСИ
-   purpose: icp = сегментиране на клиента · pers = персонализира резултата
-            · commit = малко „да“, което вдига намерението за покупка
+   ВЪПРОСИ — емоционална дъга: цел → навици → опит → проблем → какво търси.
+   Без продукт. „{мъжка|женска}“ форма се избира според пола.
    ===================================================================== */
 var STEPS = [
-  { id: 'gender', type: 'tiles', landing: true, purpose: 'icp',
-    q: 'Започни теста — избери:',
+  /* — ТИ — */
+  { id: 'gender', type: 'tiles', landing: true,
+    q: 'Започни теста — ти си:',
     opts: [ { v: 'f', t: 'Жена', i: '👩' }, { v: 'm', t: 'Мъж', i: '👨' } ] },
 
-  { id: 'age', type: 'single', purpose: 'icp',
+  { id: 'age', type: 'single', sec: 'За теб',
     q: 'На колко години си?',
+    why: 'Метаболизмът и хормоните се променят с възрастта — това променя и какво работи.',
     opts: [ { v: '18-29', t: '18 – 29' }, { v: '30-39', t: '30 – 39' }, { v: '40-49', t: '40 – 49' }, { v: '50-59', t: '50 – 59' }, { v: '60+', t: '60+' } ] },
 
-  { id: 'kg', type: 'single', purpose: 'pers',
-    q: 'Колко килограма искаш да свалиш?',
-    opts: [ { v: '1-5', t: 'До 5 кг', i: '🙂' }, { v: '5-10', t: '5 – 10 кг', i: '💪' }, { v: '10-20', t: '10 – 20 кг', i: '🔥' }, { v: '20+', t: 'Над 20 кг', i: '🎯' } ] },
-
-  { id: 'zone', type: 'single', purpose: 'pers',
-    q: 'Къде се трупат най-много килограмите при теб?',
-    opts: [ { v: 'korem', t: 'Корем и талия', i: '⭕' }, { v: 'hansh', t: 'Ханш и бедра', i: '🍑' }, { v: 'ratse', t: 'Ръце и гръб', i: '💁' }, { v: 'vsichko', t: 'Навсякъде', i: '🔄' } ] },
-
-  { id: 'obstacle', type: 'single', purpose: 'icp',
-    q: 'Кое описва най-точно ситуацията ти?',
-    hint: 'Избери едно — това, което най-много ти пречи.',
+  { id: 'goal', type: 'single', sec: 'Твоята цел',
+    q: 'Какво искаш да постигнеш най-много?',
     opts: [
-      { v: 'metab',   t: 'Ям малко, но теглото не помръдва', i: '⚖️' },
-      { v: 'sugar',   t: 'Не мога да устоя на сладкото', i: '🍫' },
-      { v: 'evening', t: 'Вечер посягам към хладилника', i: '🌙' },
-      { v: 'yoyo',    t: 'Свалям, но после бързо ги връщам', i: '🔁' },
-      { v: 'stress',  t: 'Ям, когато съм в стрес или уморен/а', i: '😮‍💨', tm: 'Ям, когато съм в стрес или уморен', tf: 'Ям, когато съм в стрес или уморена' }
+      { v: 'kg',       t: 'Да сваля килограми', i: '⚖️' },
+      { v: 'korem',    t: 'Да стопя коремчето и талията', i: '⭕' },
+      { v: 'apetit',   t: 'Да спра да мисля постоянно за храна', i: '🍽️' },
+      { v: 'energia',  t: 'Да имам повече енергия', i: '⚡' },
+      { v: 'ogledalo', t: 'Отново да се харесвам в огледалото', i: '🪞' }
     ] },
 
-  { id: 'i_why', type: 'info' },
+  { id: 'kg', type: 'single', sec: 'Твоята цел',
+    q: 'Колко килограма искаш да свалиш?',
+    opts: [ { v: '1-5', t: 'До 5 кг' }, { v: '5-10', t: '5 – 10 кг' }, { v: '10-20', t: '10 – 20 кг' }, { v: '20+', t: 'Над 20 кг' } ] },
 
-  { id: 'hunger_time', type: 'single', purpose: 'pers',
-    q: 'Кога гладът или желанието за сладко са най-силни?',
-    opts: [ { v: 'sutrin', t: 'Сутрин', i: '☀️' }, { v: 'sledobed', t: 'Следобед', i: '🕒' }, { v: 'vecher', t: 'Вечер', i: '🌆' }, { v: 'nosht', t: 'Късно през нощта', i: '🌙' }, { v: 'vinagi', t: 'През целия ден', i: '🔄' } ] },
+  /* — НАВИЦИ — */
+  { id: 'history', type: 'single', sec: 'Твоята история',
+    q: 'Как се появиха излишните килограми?',
+    opts: [
+      { v: 'postepenno', t: 'Постепенно, без да ям повече от преди', i: '📈' },
+      { v: 'bremennost', t: 'След бременност и раждане', i: '👶', only: 'f' },
+      { v: 'menopauza',  t: 'С менопаузата / хормоналните промени', i: '🌸', only: 'f' },
+      { v: 'stres',      t: 'След стресов или тежък период', i: '🌧️' },
+      { v: 'yoyo',       t: 'Свалям и качвам постоянно', i: '🔁' },
+      { v: 'vinagi',     t: 'Винаги съм {бил|била} по-{едър|едра}', i: '🙂' }
+    ] },
 
-  { id: 'tried', type: 'multi', purpose: 'icp',
-    q: 'Какво си {пробвал|пробвала} досега?',
+  { id: 'triggers', type: 'multi', sec: 'Твоите навици',
+    q: 'Кога най-често посягаш към храна, без да си {гладен|гладна}?',
     hint: 'Може да избереш повече от едно.',
     opts: [
-      { v: 'dieti',    t: 'Диети (кето, гладуване, броене на калории)', i: '🥗' },
-      { v: 'sport',    t: 'Фитнес или спорт', i: '🏃' },
-      { v: 'hapcheta', t: 'Хапчета или добавки за отслабване', i: '💊' },
-      { v: 'kapsuli',  t: 'Берберин на капсули', i: '🌿' },
-      { v: 'injekcii', t: 'Инжекции (Оземпик, Мунджаро и др.)', i: '💉' },
-      { v: 'dietolog', t: 'Диетолог или хранителен режим', i: '📋' },
-      { v: 'nishto',   t: 'Нищо досега', i: '✋', solo: true }
+      { v: 'vecher',   t: 'Вечер, когато се прибера', i: '🌙' },
+      { v: 'stres',    t: 'Когато съм {стресиран|стресирана}', i: '😣' },
+      { v: 'umora',    t: 'Когато съм {уморен|уморена}', i: '😴' },
+      { v: 'sledobed', t: 'Следобед — дояжда ми се сладко', i: '🍫' },
+      { v: 'skuka',    t: 'Когато ми е скучно', i: '📺' },
+      { v: 'nikoga',   t: 'Почти не ми се случва', i: '✋', solo: true }
     ] },
 
-  { id: 'duration', type: 'single', purpose: 'icp',
-    q: 'От колко време се опитваш да свалиш килограми?',
-    opts: [ { v: '<6m', t: 'По-малко от 6 месеца' }, { v: '6-12m', t: '6 – 12 месеца' }, { v: '1-3y', t: '1 – 3 години' }, { v: '3y+', t: 'Повече от 3 години' } ] },
+  { id: 'sweets', type: 'single', sec: 'Твоите навици',
+    q: 'Колко често те гони желание за сладко?',
+    opts: [ { v: 'dnevno', t: 'Всеки ден', i: '🔥' }, { v: 'chesto', t: 'Няколко пъти седмично', i: '🍪' }, { v: 'rqdko', t: 'Рядко', i: '🙂' }, { v: 'nikoga', t: 'Почти никога', i: '✋' } ] },
 
-  { id: 'i_proof', type: 'info' },
+  /* — ОПИТ — */
+  { id: 'tried', type: 'multi', sec: 'Твоят опит',
+    q: 'Какво си {пробвал|пробвала} досега, за да отслабнеш?',
+    hint: 'Може да избереш повече от едно.',
+    opts: [
+      { v: 'dieti',     t: 'Диети (кето, броене на калории…)', i: '🥗' },
+      { v: 'gladuvane', t: 'Гладуване (16:8 и подобни)', i: '⏱️' },
+      { v: 'sport',     t: 'Фитнес или спорт', i: '🏃' },
+      { v: 'dobavki',   t: 'Хапчета или добавки за отслабване', i: '💊' },
+      { v: 'berberin',  t: 'Берберин', i: '🌿' },
+      { v: 'injekcii',  t: 'Инжекции (Оземпик, Мунджаро…)', i: '💉' },
+      { v: 'dietolog',  t: 'Диетолог или хранителен режим', i: '📋' },
+      { v: 'nishto',    t: 'Нищо досега', i: '🚫', solo: true }
+    ] },
 
-  { id: 'health', type: 'multi', purpose: 'icp', optional: true,
+  { id: 'outcome', type: 'single', sec: 'Твоят опит', when: function () { return !has('tried', 'nishto'); },
+    q: 'Как завърши последният ти опит?',
+    opts: [
+      { v: 'varnah',   t: 'Свалих, но после ги върнах', i: '🔁' },
+      { v: 'nishto',   t: 'Почти нищо не свалих', i: '😕' },
+      { v: 'trudno',   t: 'Не издържах — беше прекалено трудно', i: '😩' },
+      { v: 'efekti',   t: 'Имах неприятни странични ефекти', i: '🤢' },
+      { v: 'zadarjam', t: 'Свалих и засега задържам', i: '👍' }
+    ] },
+
+  { id: 'i_notyou', type: 'info' },
+
+  { id: 'health', type: 'multi', sec: 'Твоето здраве', optional: true,
     q: 'Има ли нещо от изброените при теб?',
-    hint: 'По желание. Питаме, за да ти дадем по-точна и безопасна препоръка.',
+    hint: 'По желание. Може да избереш повече от едно.',
+    why: 'Някои състояния променят как тялото реагира на храната и какво е безопасно за теб. Отговорите са анонимни.',
     opts: [
       { v: 'ir',      t: 'Инсулинова резистентност или преддиабет', i: '🩸' },
-      { v: 'meno',    t: 'Менопауза / перименопауза', i: '🌸', only: 'f' },
+      { v: 'hormoni', t: 'Хормонален дисбаланс / менопауза', i: '🌸', only: 'f' },
       { v: 'thyroid', t: 'Проблем с щитовидната жлеза', i: '🦋' },
       { v: 'pcos',    t: 'Поликистозни яйчници (PCOS)', i: '🔬', only: 'f' },
-      { v: 'meds',    t: 'Приемам лекарства редовно (напр. метформин)', i: '💊' },
+      { v: 'kravno',  t: 'Високо кръвно или холестерол', i: '❤️' },
+      { v: 'meds',    t: 'Приемам лекарства редовно', i: '💊' },
       { v: 'preg',    t: 'Бременна съм или кърмя', i: '🤰', only: 'f' },
       { v: 'none',    t: 'Нищо от изброените', i: '✅', solo: true }
     ] },
 
-  { id: 'motivation', type: 'single', purpose: 'icp',
-    q: 'Коя е най-важната причина да искаш промяна точно сега?',
+  /* — ПРОБЛЕМЪТ — */
+  { id: 'pain', type: 'single', sec: 'Твоят проблем',
+    q: 'Кое те тормози най-много?',
+    hint: 'Избери едно — най-важното.',
     opts: [
-      { v: 'drehi',    t: 'Дрехите ми станаха тесни', i: '👗', tm: 'Дрехите ми станаха тесни', im: '👕' },
-      { v: 'ogledalo', t: 'Искам отново да се харесвам в огледалото', i: '🪞' },
-      { v: 'zdrave',   t: 'Заради здравето ми', i: '❤️' },
-      { v: 'subitie',  t: 'Предстои ми събитие (море, сватба, празник)', i: '📅' },
-      { v: 'energia',  t: 'Искам повече енергия през деня', i: '⚡' }
+      { v: 'metab',   t: 'Ям малко, а теглото не помръдва', i: '⚖️' },
+      { v: 'sugar',   t: 'Не мога да устоя на сладкото', i: '🍫' },
+      { v: 'evening', t: 'Вечер не мога да спра да ям', i: '🌙' },
+      { v: 'belly',   t: 'Коремът расте, каквото и да правя', i: '⭕' },
+      { v: 'yoyo',    t: 'Свалям, но после ги връщам', i: '🔁' },
+      { v: 'stress',  t: 'Ям от стрес или умора', i: '😮‍💨' }
     ] },
 
-  { id: 'commit', type: 'single', purpose: 'commit',
-    q: 'Колко време си {готов|готова} да дадеш на тялото си, за да се промени?',
-    hint: 'Видимата промяна обикновено идва след 4–8 седмици редовна употреба.',
+  { id: 'o_struggle', type: 'text', sec: 'С твои думи', optional: true,
+    q: 'Опиши с твои думи: кое е най-трудното за теб, когато се опитваш да отслабнеш?',
+    hint: 'Няма правилен отговор — пиши свободно, както би {казал|казала} на {приятел|приятелка}.',
+    ph: 'Напр. „Издържам няколко дни, но вечер ме хваща глад и всичко отива на вятъра…“' },
+
+  { id: 'impact', type: 'multi', sec: 'Твоят проблем',
+    q: 'Как теглото влияе на живота ти?',
+    hint: 'Може да избереш повече от едно.',
     opts: [
-      { v: '1', t: '1 месец', s: 'Искам първо да пробвам', i: '🌱' },
-      { v: '3', t: '3 месеца', s: 'Искам видим резултат', i: '🌿' },
-      { v: '5', t: '5 месеца', s: 'Искам трайна промяна', i: '🌳' }
+      { v: 'snimki',        t: 'Избягвам да се снимам', i: '📸' },
+      { v: 'drehi',         t: 'Не се чувствам добре в дрехите си', i: '👗', im: '👕' },
+      { v: 'samochuvstvie', t: 'Самочувствието ми пострада', i: '💔' },
+      { v: 'umora',         t: 'Уморявам се по-бързо', i: '🔋' },
+      { v: 'zdrave',        t: 'Притеснявам се за здравето си', i: '🩺' },
+      { v: 'plaj',          t: 'Избягвам плаж и басейн', i: '🏖️' },
+      { v: 'ne',            t: 'Не ми пречи особено', i: '🙂', solo: true }
     ] },
 
-  { id: 'name', type: 'input', purpose: 'pers', optional: true,
-    q: 'Последно: как да те наричаме?',
-    hint: 'Само малкото име — за да персонализираме плана ти.' },
+  { id: 'o_body', type: 'text', sec: 'С твои думи', optional: true,
+    q: 'Как би {описал|описала} как се чувстваш в тялото си в момента?',
+    hint: 'Едно изречение е достатъчно.',
+    ph: 'Напр. „Чувствам се тежка и подута, дрехите ме стягат и избягвам огледалото.“' },
+
+  /* — КАКВО ТЪРСИ — */
+  { id: 'want', type: 'single', sec: 'Твоето решение',
+    q: 'Какво решение търсиш?',
+    hint: 'Избери най-важното за теб.',
+    opts: [
+      { v: 'lesno',   t: 'Нещо лесно — без строги диети', i: '🙌' },
+      { v: 'glad',    t: 'Нещо, което да спре глада и желанието за сладко', i: '🛑' },
+      { v: 'natural', t: 'Нещо натурално — без хапчета', i: '🌱' },
+      { v: 'metab',   t: 'Нещо, което да подкрепи метаболизма ми', i: '🔥' },
+      { v: 'trayno',  t: 'Нещо с траен ефект — без йо-йо', i: '📌' }
+    ] },
+
+  { id: 'o_future', type: 'text', sec: 'С твои думи', optional: true,
+    q: 'Представи си, че след 3 месеца проблемът ти е решен. Какво ще е различно в живота ти?',
+    hint: 'Последен въпрос — после подготвяме решението за теб.',
+    ph: 'Напр. „Ще си облека любимата рокля, ще се снимам с децата и ще имам енергия след работа.“' },
 
   { id: 'loading', type: 'loading' },
-  { id: 'result', type: 'result' }
+  { id: 'done', type: 'done' }
 ];
 
-var LABELS = {}; STEPS.forEach(function (s) { (s.opts || []).forEach(function (o) { LABELS[s.id + ':' + o.v] = o; }); });
-
-/* Профили по основния проблем */
-var PROFILES = {
-  metab: {
-    code: 'p1', ico: '⚖️', name: 'Блокиран метаболизъм',
-    txt: 'Ядеш малко, но тялото ти е минало в „режим пестене“: пази запасите си и усилва глада. Затова „яж по-малко“ вече не работи — и вината не е в теб.',
-    why: 'Берберинът подкрепя метаболитния баланс (ензима AMPK), който регулира кръвната захар и апетита',
-    proof: { n: 'Гинка Москова', img: 'avatar-ginka-moskova.jpg', t: 'Купих си 3 опаковки и вече свалих 4 кг за месец! Най-накрая нещо, което ми потиска апетита.' }
-  },
-  sugar: {
-    code: 'p2', ico: '🍫', name: 'Сладък глад',
-    txt: 'Когато кръвната захар скача и пада, мозъкът иска бърза енергия — и ръката сама посяга към сладкото. Това е биология, не липса на воля.',
-    why: 'Много клиенти усещат по-малко желание за сладко още в първите дни',
-    proof: { n: 'Катя Димитрова', img: 'avatar-katya-dimitrova.jpg', t: 'След две седмици ползване имам много повече енергия и по-малко желание за сладко.' }
-  },
-  evening: {
-    code: 'p3', ico: '🌙', name: 'Вечерен глад',
-    txt: 'През деня се държиш, но вечер тялото „си взима своето“ — и спирането става почти невъзможно. Повечето излишни калории идват точно тогава.',
-    why: 'Берберинът се подава постепенно през целия ден — гладът не те „удря“ изведнъж вечер',
-    proof: { n: 'Анелия Радулова', img: 'avatar-anelia-radulova.jpg', t: 'Забелязвам, че порциите ми намаляха значително, откакто започнах да ползвам лепенките.' }
-  },
-  yoyo: {
-    code: 'p4', ico: '🔁', name: 'Йо-йо ефект',
-    txt: 'След всяка строга диета апетитът се връща по-силен от преди и килограмите идват обратно. Не ти трябва по-строга диета, а спокоен апетит, който можеш да задържиш.',
-    why: 'Овладян апетит без глад — така резултатът се задържа, вместо да се връща',
-    proof: { n: 'Петя Галева', img: 'avatar-petya-galeva-1.jpg', t: 'Усещането за глад е много по-слабо и съм успяла да сваля 3 кг.' }
-  },
-  stress: {
-    code: 'p5', ico: '😮‍💨', name: 'Емоционален глад',
-    txt: 'Стресът и умората засилват апетита — особено за сладко и тестени. Храната се превръща в бърза утеха, а килограмите се трупат незабелязано.',
-    why: 'По-стабилен апетит през целия ден — дори в напрегнатите дни',
-    proof: { n: 'Мими Попова', img: 'avatar-mimi-popova.jpg', t: 'Продуктът е страхотен! Не усещам глад през деня и вече виждам разлика в талията.' }
-  }
-};
+/* Въпроси в прозорче по време на зареждането (по модела на Noom): задържат вниманието и събират още данни. */
+var POPUPS = [
+  { id: 'p_hunger', at: 0.28, q: 'Случва ли ти се да огладнееш час-два, след като си {ял|яла}?' },
+  { id: 'p_sleep',  at: 0.55, q: 'Спиш ли по-малко от 7 часа на нощ?' },
+  { id: 'p_event',  at: 0.80, q: 'Имаш ли повод в следващите месеци, за който искаш да изглеждаш добре?' }
+];
 
 /* =====================================================================
-   ДВИГАТЕЛ — не е нужно да се пипа
+   ДВИГАТЕЛ
    ===================================================================== */
 var P = {};
 try { new URLSearchParams(location.search).forEach(function (v, k) { P[k] = v.slice(0, 200); }); } catch (e) {}
 var ANGLE = ANGLES[P.a] ? P.a : 'def';
-var IMG = 'https://fitpatches.net/cdn/shop/files/';
-var app = document.getElementById('app');
-var backBtn = document.getElementById('back');
-var bar = document.getElementById('bar'), barFill = document.getElementById('barFill');
-var floatcta = document.getElementById('floatcta'), floatBtn = document.getElementById('floatBtn');
+var app = document.getElementById('app'), backBtn = document.getElementById('back');
+var bar = document.getElementById('bar'), barFill = document.getElementById('barFill'), countEl = document.getElementById('count');
+var LABELS = {}; STEPS.forEach(function (s) { (s.opts || []).forEach(function (o) { LABELS[s.id + ':' + o.v] = o; }); });
+POPUPS.forEach(function (p) { LABELS[p.id + ':yes'] = { t: 'Да' }; LABELS[p.id + ':no'] = { t: 'Не' }; });
 
-var st = load() || { qid: newId(), a: {}, i: 0, hist: [], t0: Date.now(), sent: {} };
-if (P.reset) { st = { qid: newId(), a: {}, i: 0, hist: [], t0: Date.now(), sent: {} }; }
-if (st.i >= idx('loading')) st.i = idx('result');
+function fresh() { return { qid: newId(), a: {}, i: 0, hist: [], t0: Date.now(), sent: {} }; }
+var st = (!P.reset && load()) || fresh();
 
 function newId() { return 'q' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
 function idx(id) { for (var k = 0; k < STEPS.length; k++) if (STEPS[k].id === id) return k; return -1; }
-function save() { try { sessionStorage.setItem('fpq', JSON.stringify(st)); } catch (e) {} }
-function load() { try { return JSON.parse(sessionStorage.getItem('fpq')); } catch (e) { return null; } }
+function save() { try { sessionStorage.setItem('fpq2', JSON.stringify(st)); } catch (e) {} }
+function load() { try { return JSON.parse(sessionStorage.getItem('fpq2')); } catch (e) { return null; } }
 function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 function isM() { return st.a.gender === 'm'; }
-function g(f, m) { return isM() ? m : f; }
-/* „{пробвал|пробвала}“ → мъжка | женска форма */
 function gt(s) { return String(s).replace(/\{([^|}]*)\|([^}]*)\}/g, function (_, m, f) { return isM() ? m : f; }); }
-function optText(o) { return isM() ? (o.tm || o.t) : (st.a.gender === 'f' ? (o.tf || o.t) : o.t); }
-function optIco(o) { return isM() && o.im ? o.im : (o.i || ''); }
-function visibleOpts(s) { return (s.opts || []).filter(function (o) { return !o.only || o.only === st.a.gender || !st.a.gender; }); }
-function questions() { return STEPS.filter(function (s) { return ['single', 'multi', 'tiles', 'input'].indexOf(s.type) > -1; }); }
-function profile() { return PROFILES[st.a.obstacle] || PROFILES.metab; }
-function pack() { var k = CONFIG.RECOMMEND[st.a.commit]; return CONFIG.PACKS[k] ? k : '3'; }
-function label(id, v) { var o = LABELS[id + ':' + v]; return o ? optText(o) : v; }
-function labels(id) { var v = st.a[id]; if (!v) return ''; return (Array.isArray(v) ? v : [v]).map(function (x) { return label(id, x); }).join(', '); }
 function has(id, v) { var x = st.a[id]; return Array.isArray(x) ? x.indexOf(v) > -1 : x === v; }
+function active(s) { return !s.when || s.when(); }
+function visibleOpts(s) { return (s.opts || []).filter(function (o) { return !o.only || !st.a.gender || o.only === st.a.gender; }); }
+function questions() { return STEPS.filter(function (s) { return ['single', 'multi', 'tiles', 'text'].indexOf(s.type) > -1 && active(s); }); }
+function label(id, v) { var o = LABELS[id + ':' + v]; return o ? gt(o.t) : v; }
 
-/* ---------- Запис в Google Sheets ---------- */
+/* ---------- Запис (Google Apps Script → Sheet, който Claude чете) ---------- */
 function payload(event, step) {
-  // В таблицата записваме текста на отговора (по-лесно за четене), не кода.
   var a = {};
   Object.keys(st.a).forEach(function (k) {
     a[k] = (Array.isArray(st.a[k]) ? st.a[k] : [st.a[k]]).map(function (v) {
       if (v === 'skip') return 'Пропуснато';
-      var o = LABELS[k + ':' + v]; return o ? o.t + (o.s ? ' — ' + o.s : '') : v;
+      var o = LABELS[k + ':' + v]; return o ? gt(o.t) : v;
     }).join(' | ');
   });
   var qs = questions(), maxStep = 0;
@@ -399,7 +357,7 @@ function payload(event, step) {
     utm_content: P.utm_content || '', utm_term: P.utm_term || '', fbclid: P.fbclid ? 'yes' : '',
     device: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
     referrer: (document.referrer || '').split('?')[0].slice(0, 120),
-    profile: st.a.obstacle ? profile().name : '', recommended_pack: st.a.commit ? pack() : '',
+    profile: st.a.pain ? label('pain', st.a.pain) : '',
     answers: a, version: CONFIG.VERSION
   };
 }
@@ -407,114 +365,98 @@ function send(event, step) {
   var body = JSON.stringify(payload(event, step));
   if (P.debug) console.log('[quiz]', event, JSON.parse(body));
   if (!CONFIG.SHEET_URL) return;
-  try {
-    fetch(CONFIG.SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body });
-  } catch (e) {
-    try { navigator.sendBeacon(CONFIG.SHEET_URL, new Blob([body], { type: 'text/plain' })); } catch (e2) {}
-  }
+  try { fetch(CONFIG.SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }); }
+  catch (e) { try { navigator.sendBeacon(CONFIG.SHEET_URL, new Blob([body], { type: 'text/plain' })); } catch (e2) {} }
 }
 function sendOnce(event, step) { if (st.sent[event]) return; st.sent[event] = 1; save(); send(event, step); }
 
-/* ---------- Meta Pixel (без данни от отговорите) ---------- */
-function pixel(ev) {
-  if (!CONFIG.PIXEL_ID || !ev) return;
-  try { window.fbq && window.fbq('track', ev); } catch (e) {}
-}
+/* ---------- Meta Pixel (без отговори) ---------- */
+function pixel(ev) { if (CONFIG.PIXEL_ID && ev) try { window.fbq && window.fbq('track', ev); } catch (e) {} }
 if (CONFIG.PIXEL_ID) {
   !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', CONFIG.PIXEL_ID); fbq('track', 'PageView');
 }
 
 /* ---------- Навигация ---------- */
-function go(i) {
-  if (i !== st.i) st.hist.push(st.i);
-  st.i = i; save(); render(); window.scrollTo(0, 0);
-}
-function next() { go(st.i + 1); }
-backBtn.addEventListener('click', function () {
-  if (!st.hist.length) return;
-  st.i = st.hist.pop(); save(); render(); window.scrollTo(0, 0);
-});
+function go(i) { if (i !== st.i) st.hist.push(st.i); st.i = i; save(); render(); window.scrollTo(0, 0); }
+function next() { var i = st.i + 1; while (STEPS[i] && !active(STEPS[i])) i++; go(i); }
+backBtn.addEventListener('click', function () { if (!st.hist.length) return; st.i = st.hist.pop(); save(); render(); window.scrollTo(0, 0); });
 
 function render() {
-  var s = STEPS[st.i];
-  var qs = questions(), qn = qs.indexOf(s);
-  var pct = s.type === 'result' || s.type === 'loading' ? 100 : Math.round(((qn > -1 ? qn : qs.indexOf(STEPS[st.i - 1]) + 1) / qs.length) * 100);
-  bar.hidden = !!s.landing || s.type === 'result';
-  barFill.style.width = Math.max(4, pct) + '%';
-  backBtn.hidden = !!s.landing || s.type === 'loading' || s.type === 'result' || !st.hist.length;
-  floatcta.classList.remove('show');
-  if (s.type === 'info') return renderInfo(s);
+  var s = STEPS[st.i], qs = questions(), qn = qs.indexOf(s);
+  var shown = qn > -1 ? qn + 1 : qs.filter(function (x) { return st.a[x.id] !== undefined; }).length;
+  var isQ = qn > -1 || s.type === 'info';
+  bar.hidden = !!s.landing || !isQ;
+  barFill.style.width = Math.max(4, Math.round((shown / qs.length) * 100)) + '%';
+  countEl.textContent = qn > 0 ? (qn + 1) + ' / ' + qs.length : '';
+  backBtn.hidden = !!s.landing || !isQ || !st.hist.length;
+  if (s.type === 'info') return renderInfo();
   if (s.type === 'loading') return renderLoading();
-  if (s.type === 'result') return renderResult();
+  if (s.type === 'done') return renderDone();
   renderQuestion(s);
+}
+
+function optHtml(o, on, multi) {
+  var ico = isM() && o.im ? o.im : o.i;
+  return '<button type="button" class="opt' + (on ? ' is-on' : '') + '" data-v="' + esc(o.v) + '" aria-pressed="' + on + '">' +
+    (ico ? '<span class="opt__ico" aria-hidden="true">' + ico + '</span>' : '') +
+    '<span class="opt__txt">' + esc(gt(o.t)) + '</span>' + (multi ? '<span class="opt__chk" aria-hidden="true"></span>' : '') + '</button>';
 }
 
 function renderQuestion(s) {
   var html = '<section class="screen">';
   if (s.landing) {
     var A = ANGLES[ANGLE];
-    html += '<div style="padding-top:10px"><span class="pill">⏱ Безплатен тест · 60 секунди</span></div>' +
-      '<h1 class="h1">' + esc(A.h) + '</h1><p class="lead">' + esc(A.s) + '</p>';
+    html += '<div style="padding-top:8px"><span class="pill">⏱ Безплатен тест · около 1 минута</span></div>' +
+      '<h1 class="h1">' + esc(A.h) + '</h1><p class="lead">' + esc(A.s) + '</p>' +
+      '<h2 class="q" style="font-size:19px">' + esc(s.q) + '</h2>';
+  } else {
+    if (s.sec) html += '<div class="sec">' + esc(s.sec) + '</div>';
+    html += '<h2 class="q">' + esc(gt(s.q)) + '</h2>';
+    if (s.hint) html += '<p class="hint">' + esc(gt(s.hint)) + '</p>';
+    if (s.why) html += '<details class="why"><summary>ⓘ Защо питаме?</summary><p>' + esc(s.why) + '</p></details>';
   }
-  html += '<h2 class="q"' + (s.landing ? ' style="font-size:19px;margin-top:6px"' : '') + '>' + esc(gt(s.q)) + '</h2>';
-  if (s.hint) html += '<p class="hint">' + esc(gt(s.hint)) + '</p>';
-
+  if (s.type === 'text') {
+    html += '<textarea class="ta" id="ta" maxlength="300" placeholder="' + esc(gt(s.ph || '')) + '">' + esc(st.a[s.id] && st.a[s.id] !== 'skip' ? st.a[s.id] : '') + '</textarea>' +
+      '<div class="ta-meta">🔒 Анонимно</div>' +
+      '<div class="actions"><button class="btn" id="go" type="button">Продължи</button>' +
+      '<button class="btn btn--ghost" id="skip" type="button">Пропусни</button></div></section>';
+    app.innerHTML = html;
+    var ta = document.getElementById('ta'), goT = document.getElementById('go');
+    var sync = function () { goT.disabled = ta.value.trim().length < 2; };
+    ta.addEventListener('input', sync); sync();
+    goT.onclick = function () { var v = ta.value.replace(/[<>]/g, '').trim().slice(0, 300); if (v.length < 2) return; st.a[s.id] = v; save(); send('answer', s.id); next(); };
+    document.getElementById('skip').onclick = function () { st.a[s.id] = 'skip'; save(); send('answer', s.id); next(); };
+    return;
+  }
   if (s.type === 'tiles') {
     html += '<div class="grid2">' + visibleOpts(s).map(function (o) {
       return '<button type="button" class="tile' + (st.a[s.id] === o.v ? ' is-on' : '') + '" data-v="' + esc(o.v) + '"><span class="tile__ico">' + o.i + '</span>' + esc(o.t) + '</button>';
     }).join('') + '</div>';
-  } else if (s.type === 'input') {
-    html += '<input class="input" id="nameIn" type="text" maxlength="30" autocomplete="given-name" placeholder="Твоето име" value="' + esc(st.a[s.id] || '') + '">' +
-      '<div class="actions"><button class="btn" id="go" type="button">Покажи моя резултат →</button>' +
-      '<button class="btn btn--ghost" id="skip" type="button">Пропусни</button></div>';
   } else {
     var multi = s.type === 'multi', cur = st.a[s.id] || (multi ? [] : null);
-    html += '<div class="opts">' + visibleOpts(s).map(function (o) {
-      var on = multi ? cur.indexOf(o.v) > -1 : cur === o.v;
-      return '<button type="button" class="opt' + (on ? ' is-on' : '') + '" data-v="' + esc(o.v) + '" aria-pressed="' + on + '">' +
-        (optIco(o) ? '<span class="opt__ico" aria-hidden="true">' + optIco(o) + '</span>' : '') +
-        '<span class="opt__txt">' + esc(optText(o)) + (o.s ? '<span class="opt__sub">' + esc(o.s) + '</span>' : '') + '</span>' +
-        (multi ? '<span class="opt__chk" aria-hidden="true"></span>' : '') + '</button>';
-    }).join('') + '</div>';
+    html += '<div class="opts">' + visibleOpts(s).map(function (o) { return optHtml(o, multi ? cur.indexOf(o.v) > -1 : cur === o.v, multi); }).join('') + '</div>';
     if (multi) html += '<div class="sticky-actions"><button class="btn" id="go" type="button"' + (cur.length || s.optional ? '' : ' disabled') + '>' + (cur.length || !s.optional ? 'Продължи' : 'Пропусни') + '</button></div>';
   }
-  if (s.landing) {
-    html += '<div class="trust"><span class="stars">★★★★★</span><span><b>' + CONFIG.RATING + '/5</b> от ' + CONFIG.REVIEWS + ' клиенти</span></div>' +
-      '<p class="fine">🔒 Отговорите са анонимни и се използват само за подобряване на препоръките ни. Тестът не е медицинска диагноза. Продължавайки, се съгласяваш с това.</p>';
-  }
+  if (s.landing) html += '<p class="fine">🔒 Отговорите са анонимни. Тестът не е медицинска диагноза.</p>';
   html += '</section>';
   app.innerHTML = html;
-
-  if (s.type === 'input') {
-    var inp = document.getElementById('nameIn');
-    var finish = function (val) {
-      st.a.name = val ? val.replace(/[<>]/g, '').slice(0, 30) : '';
-      send('answer', s.id); next();
-    };
-    document.getElementById('go').onclick = function () { finish(inp.value.trim()); };
-    document.getElementById('skip').onclick = function () { finish(''); };
-    inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') finish(inp.value.trim()); });
-    return;
-  }
 
   var btns = app.querySelectorAll('[data-v]');
   Array.prototype.forEach.call(btns, function (b) {
     b.addEventListener('click', function () {
       var v = b.getAttribute('data-v');
       if (s.type === 'multi') {
-        var arr = (st.a[s.id] || []).slice();
-        var o = LABELS[s.id + ':' + v];
+        var arr = (st.a[s.id] || []).slice(), o = LABELS[s.id + ':' + v];
         if (arr.indexOf(v) > -1) arr.splice(arr.indexOf(v), 1);
         else if (o && o.solo) arr = [v];
         else { arr = arr.filter(function (x) { var ox = LABELS[s.id + ':' + x]; return !(ox && ox.solo); }); arr.push(v); }
-        st.a[s.id] = arr; save(); renderQuestion(s);
-        return;
+        st.a[s.id] = arr; save(); renderQuestion(s); return;
       }
       st.a[s.id] = v; save();
       Array.prototype.forEach.call(btns, function (x) { x.classList.toggle('is-on', x === b); });
       send('answer', s.id);
-      setTimeout(next, 220);
+      setTimeout(next, 200);
     });
   });
   var goBtn = document.getElementById('go');
@@ -524,135 +466,109 @@ function renderQuestion(s) {
   };
 }
 
-function renderInfo(s) {
-  var p = profile(), html = '<section class="screen info">';
-  if (s.id === 'i_why') {
-    var why = {
-      metab: ['Не си ' + g('виновна', 'виновен') + '. Това не е липса на воля.', 'Когато ядеш малко, а теглото стои, тялото често е минало в <strong>„режим пестене“</strong>: забавя се и засилва глада, за да пази запасите си. С годините — особено след 40 — хормоналните промени правят този ефект още по-силен.', 'Затова старото правило „яж по-малко, движи се повече“ <strong>спира да работи</strong>.'],
-      sugar: ['Желанието за сладко не е слабост.', 'Когато кръвната захар скача и после рязко пада, мозъкът изпраща сигнал за <strong>бърза енергия</strong> — и ръката сама посяга към шоколада или баничката.', 'Колкото по-рязък е спадът, толкова по-силно е желанието. Ключът е <strong>по-стабилен апетит</strong>, а не повече воля.'],
-      evening: ['Вечерният глад е най-честият враг на теглото.', 'Когато през деня ядеш малко или нередовно, вечер тялото <strong>„си взима своето“</strong> — и спирането става почти невъзможно.', 'Добрата новина: когато гладът е по-равномерен през целия ден, <strong>вечерите стават много по-лесни</strong>.'],
-      yoyo: ['Йо-йо ефектът не е провал — това е защитна реакция.', 'След рестриктивна диета тялото се „защитава“: <strong>апетитът се връща по-силен</strong> от преди и килограмите идват обратно.', 'Решението не е по-строга диета, а <strong>спокоен апетит</strong>, който можеш да задържиш дълго.'],
-      stress: ['Стресът буквално те кара да ядеш повече.', 'Хормонът на стреса засилва апетита — особено за <strong>сладко и тестени</strong>. А умората прави самоконтрола още по-труден.', 'Това е биология, не липса на воля. Помага <strong>по-стабилен апетит</strong>, който не зависи от настроението.']
-    }[st.a.obstacle] || [];
-    html += '<div class="info-ico">' + p.ico + '</div><h2 class="q">' + why[0] + '</h2>' +
-      '<div class="card card--warm"><p>' + why[1] + '</p><p style="margin-bottom:0">' + why[2] + '</p></div>';
+/* Един екран „не си виновна“ — за проблема, не за продукт. */
+function renderInfo() {
+  var o = st.a.outcome, h, p1;
+  if (o === 'varnah' || st.a.history === 'yoyo') {
+    h = 'Връщането на килограмите не е провал.';
+    p1 = 'След всяка рестриктивна диета тялото се „защитава“: <strong>апетитът се връща по-силен</strong>, а метаболизмът се забавя. Затова килограмите идват обратно — често с бонус.';
+  } else if (o === 'trudno' || o === 'efekti') {
+    h = 'Не е липса на воля.';
+    p1 = 'Повечето методи разчитат на <strong>постоянна борба с глада</strong>. Издържаш седмица-две, а после тялото надделява. Това е биология, не слабост.';
+  } else if (st.a.history === 'menopauza' || st.a.history === 'postepenno' || /^(40|50|60)/.test(st.a.age || '')) {
+    h = 'Не си ' + gt('{виновен|виновна}') + '. Тялото ти се е променило.';
+    p1 = 'С годините хормоните и метаболизмът се променят и тялото започва да <strong>пази запасите си</strong>. Затова старото „яж по-малко, движи се повече“ вече не дава същия резултат.';
   } else {
-    var tried = st.a.tried || [], nTried = tried.filter(function (x) { return x !== 'nishto'; }).length;
-    var head = nTried >= 2 ? 'Не си ' + g('единствената', 'единственият') + ', ' + g('която', 'който') + ' е ' + g('пробвала', 'пробвал') + ' „всичко“.' : 'Не си ' + g('сама', 'сам') + ' в това.';
-    html += '<div class="info-ico">🤝</div><h2 class="q">' + esc(head) + '</h2>' +
-      '<p class="hint">Хиляди българи вече овладяха апетита си с FitPatches — без диети и без хапчета.</p>' +
-      '<div class="card"><div class="rating"><div class="rating__num">' + CONFIG.RATING + '</div><div><div class="stars">★★★★★</div><div class="rating__txt">от ' + CONFIG.REVIEWS + ' доволни клиенти</div></div></div>' +
-      quote(p.proof) + '</div>';
+    h = 'Не си ' + gt('{сам|сама}') + ' в това.';
+    p1 = 'Почти всеки, който се опитва да отслабне, стига до една и съща стена: <strong>гладът и желанието за сладко</strong> надделяват над волята.';
   }
-  html += '<div class="actions"><button class="btn" id="go" type="button">Продължи</button></div></section>';
-  app.innerHTML = html;
+  app.innerHTML = '<section class="screen info"><div class="info-ico">💗</div><h2 class="q" style="margin-top:10px">' + h + '</h2>' +
+    '<div class="card card--warm"><p>' + p1 + '</p><p>Още няколко въпроса и ще подготвим решението, което пасва на <strong>твоя</strong> случай.</p></div>' +
+    '<div class="actions"><button class="btn" id="go" type="button">Продължи</button></div></section>';
   document.getElementById('go').onclick = next;
 }
 
-function quote(q) {
-  return '<div class="quote"><img src="' + IMG + q.img + '?width=100" alt="" width="46" height="46"><div><div class="stars" style="font-size:13px">★★★★★</div><blockquote>„' + esc(q.t) + '“</blockquote><cite>' + esc(q.n) + ' · проверен клиент</cite></div></div>';
+/* ---------- ~30 сек. „Подготвяме решението…“ с въпроси в прозорче ---------- */
+function chips() {
+  var c = [];
+  if (st.a.gender) c.push(label('gender', st.a.gender));
+  if (st.a.age) c.push(label('age', st.a.age) + ' г.');
+  if (st.a.kg) c.push('Цел: ' + label('kg', st.a.kg).replace('До ', 'до '));
+  if (st.a.pain) c.push(label('pain', st.a.pain));
+  return c;
 }
-
 function renderLoading() {
-  var items = ['Анализираме отговорите ти', 'Определяме типа на глада ти', 'Избираме подходящия подход', 'Подготвяме персоналния ти план'];
-  app.innerHTML = '<section class="screen loader"><h2 class="q" style="margin-top:0">' + (st.a.name ? esc(st.a.name) + ', подготвяме' : 'Подготвяме') + ' твоя резултат…</h2>' +
-    '<div class="ring"><svg width="150" height="150" viewBox="0 0 150 150"><circle cx="75" cy="75" r="66" fill="none" stroke="#fbe9f1" stroke-width="12"/><circle id="arc" cx="75" cy="75" r="66" fill="none" stroke="#d64d87" stroke-width="12" stroke-linecap="round" stroke-dasharray="414.7" stroke-dashoffset="414.7"/></svg><div class="ring__pct" id="pct">0%</div></div>' +
+  var items = ['Анализираме отговорите ти', 'Откриваме какво задържа килограмите ти', 'Съпоставяме с хора с подобен профил', 'Подготвяме решението за твоя проблем'];
+  app.innerHTML = '<section class="screen loader">' +
+    '<h2 class="q" style="margin-top:0">Подготвяме решението за теб и твоя проблем…</h2>' +
+    '<div class="ring"><svg width="156" height="156" viewBox="0 0 156 156"><circle cx="78" cy="78" r="68" fill="none" stroke="#fbe9f1" stroke-width="12"/><circle id="arc" cx="78" cy="78" r="68" fill="none" stroke="#d64d87" stroke-width="12" stroke-linecap="round" stroke-dasharray="427.3" stroke-dashoffset="427.3"/></svg><div class="ring__pct" id="pct">0%</div></div>' +
+    '<div class="chips">' + chips().map(function (c) { return '<span class="chip">' + esc(c) + '</span>'; }).join('') + '</div>' +
     '<ul class="checks">' + items.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></section>';
   var arc = document.getElementById('arc'), pctEl = document.getElementById('pct'), lis = app.querySelectorAll('.checks li');
-  var dur = 4200, t0 = performance.now();
-  (function tick(now) {
-    var k = Math.min(1, (now - t0) / dur), v = Math.round(k * 100);
-    arc.setAttribute('stroke-dashoffset', String(414.7 * (1 - k)));
-    pctEl.textContent = v + '%';
-    Array.prototype.forEach.call(lis, function (li, n) { if (k >= (n + 1) / (lis.length + .3)) li.classList.add('done'); });
-    if (k < 1) requestAnimationFrame(tick); else setTimeout(function () { st.i = idx('result'); save(); render(); window.scrollTo(0, 0); }, 350);
-  })(t0);
+  var total = CONFIG.LOADER_SECONDS * 1000, elapsed = 0, last = performance.now(), paused = false;
+  var pending = POPUPS.filter(function (p) { return st.a[p.id] === undefined; });
+
+  function ease(k) { return k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2; } // бавно → бързо → бавно
+  function tick(now) {
+    if (!document.body.contains(arc)) return;
+    if (!paused) elapsed += Math.min(100, now - last);
+    last = now;
+    var k = Math.min(1, elapsed / total), shown = ease(k);
+    arc.setAttribute('stroke-dashoffset', String(427.3 * (1 - shown)));
+    pctEl.textContent = Math.round(shown * 100) + '%';
+    Array.prototype.forEach.call(lis, function (li, n) {
+      li.className = shown >= (n + 1) / lis.length ? 'done' : shown >= n / lis.length ? 'now' : '';
+    });
+    if (!paused && pending.length && shown >= pending[0].at) { paused = true; ask(pending.shift(), function () { paused = false; last = performance.now(); }); }
+    if (k < 1) requestAnimationFrame(tick);
+    else setTimeout(function () { st.i = idx('done'); save(); render(); window.scrollTo(0, 0); }, 400);
+  }
+  requestAnimationFrame(tick);
+}
+function ask(p, cb) {
+  var m = document.createElement('div');
+  m.className = 'modal';
+  m.innerHTML = '<div class="modal__box" role="dialog" aria-modal="true"><div class="modal__lbl">За да уточним решението</div><div class="modal__q">' + esc(gt(p.q)) + '</div>' +
+    '<div class="modal__btns"><button type="button" class="btn btn--ghost" data-a="no">Не</button><button type="button" class="btn" data-a="yes">Да</button></div></div>';
+  document.body.appendChild(m);
+  Array.prototype.forEach.call(m.querySelectorAll('[data-a]'), function (b) {
+    b.addEventListener('click', function () {
+      st.a[p.id] = b.getAttribute('data-a'); save(); send('answer', p.id);
+      m.remove(); cb();
+    });
+  });
 }
 
+/* ---------- Готово → бутон „Виж решението“ към продуктовата страница ---------- */
 function productUrl() {
-  var u;
-  try { u = new URL(CONFIG.PRODUCT_URL); } catch (e) { return CONFIG.PRODUCT_URL; }
+  var u; try { u = new URL(CONFIG.PRODUCT_URL); } catch (e) { return CONFIG.PRODUCT_URL; }
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'].forEach(function (k) { if (P[k]) u.searchParams.set(k, P[k]); });
   if (!P.utm_source) u.searchParams.set('utm_source', 'quiz');
-  u.searchParams.set('qid', st.qid);          // свързва поръчката с отговорите (виж README)
-  u.searchParams.set('qp', profile().code);    // неутрален код на профила (без здравни думи)
-  u.searchParams.set('qpk', pack());           // препоръчан пакет: 1 / 3 / 5
+  u.searchParams.set('qid', st.qid);   // свързва поръчката с отговорите (виж shopify-theme-snippet.html)
+  var codes = { metab: 'p1', sugar: 'p2', evening: 'p3', yoyo: 'p4', stress: 'p5', belly: 'p6' };
+  if (codes[st.a.pain]) u.searchParams.set('qp', codes[st.a.pain]); // неутрален код, без здравни думи
   return u.toString();
 }
-
-function renderResult() {
-  var p = profile(), k = pack(), PK = CONFIG.PACKS[k], name = st.a.name;
-  var preg = has('health', 'preg'), meds = has('health', 'meds');
-  var tried = st.a.tried || [];
-  sendOnce('complete', 'result'); if (!st.sent.px) { st.sent.px = 1; save(); pixel(CONFIG.PIXEL_EVENTS.complete); }
-
-  // Защо FitPatches — според отговорите
-  var why = ['Една лепенка сутрин — без диети, без хапчета, без броене на калории', p.why];
-  if (tried.indexOf('kapsuli') > -1) why.push('Не минава през стомаха като капсулите — без тежест и подуване');
-  else if (tried.indexOf('hapcheta') > -1) why.push('Без стимуланти и без хапчета — натурален берберин през кожата');
-  else if (tried.indexOf('dieti') > -1 || tried.indexOf('dietolog') > -1) why.push('Не е нужна строга диета — просто ядеш по-малко, без да се измъчваш');
-  else why.push('Подава берберин постепенно през кожата през целия ден');
-  if (has('hunger_time', 'vecher') || has('hunger_time', 'nosht')) why.push('Помага гладът да е по-равномерен — и вечерите стават по-лесни');
-
-  var facts = [];
-  if (st.a.kg) facts.push(['Цел', label('kg', st.a.kg)]);
-  if (st.a.zone) facts.push(['Проблемна зона', label('zone', st.a.zone)]);
-  if (st.a.hunger_time) facts.push(['Най-силен глад', label('hunger_time', st.a.hunger_time)]);
-  if (st.a.duration) facts.push(['Опитваш от', label('duration', st.a.duration).toLowerCase()]);
-  var triedTxt = tried.filter(function (x) { return x !== 'nishto'; }).map(function (x) { return label('tried', x).replace(/ \(.*\)/, ''); }).join(', ');
-
-  var plan = [
-    ['Дни 1 – 7', 'Свикваш с лепенката — една сутрин и забравяш за нея. Много клиенти усещат по-малко желание за сладко още тогава.'],
-    ['Седмица 2 – 4', 'Апетитът става по-стабилен. Порциите намаляват естествено, без да се измъчваш.'],
-    ['Седмица 4 – 8', 'Започваш да виждаш промяна — в дрехите, в огледалото, на кантара.']
-  ];
-  if (k !== '1') plan.push(['Месец 3' + (k === '5' ? ' – 5' : ''), 'Новият апетит се превръща в навик — така резултатът се задържа, вместо да се връща.']);
-
-  var html = '<section class="screen">' +
-    '<div style="padding-top:12px"><span class="pill">✨ Твоят резултат е готов</span></div>' +
-    '<h1 class="h1" style="font-size:25px">' + (name ? esc(name) + ', ето' : 'Ето') + ' какво показаха отговорите ти</h1>' +
-    '<div class="res-type"><div class="res-type__ico">' + p.ico + '</div><div class="res-type__lbl">Твоят тип</div><div class="res-type__name">' + p.name + '</div><div class="res-type__txt">' + esc(p.txt) + '</div></div>';
-
-  if (facts.length) {
-    html += '<h2 class="h2">Твоят профил</h2><ul class="facts">' + facts.map(function (f) { return '<li><b>' + f[0] + '</b><span>' + esc(f[1]) + '</span></li>'; }).join('') +
-      (triedTxt ? '<li class="wide"><b>Вече ' + g('пробвала', 'пробвал') + '</b><span>' + esc(triedTxt) + '</span></li>' : '') + '</ul>';
-  }
-
+function renderDone() {
+  sendOnce('complete', 'done');
+  if (!st.sent.pxc) { st.sent.pxc = 1; save(); pixel(CONFIG.PIXEL_EVENTS.complete); }
+  var preg = has('health', 'preg'), meds = has('health', 'meds'), url = productUrl();
+  var html = '<section class="screen loader"><div class="done-ico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>';
   if (preg) {
-    html += '<div class="note"><b>Важно:</b> По време на бременност и кърмене не препоръчваме FitPatches без одобрение от лекар. Запази си резултата и се върни към него, когато е подходящо. 💗</div>' +
-      '<p class="disclaimer">Тестът има информативен характер и не е медицинска диагноза. FitPatches не е лекарство.</p></section>';
-    app.innerHTML = html; return;
+    app.innerHTML = html + '<h2 class="q">Благодарим ти за отговорите!</h2><div class="note">💗 По време на бременност и кърмене не препоръчваме да започваш нищо ново за отслабване без одобрение от твоя лекар. Върни се към теста, когато е подходящо.</div></section>';
+    return;
   }
-
-  html += '<h2 class="h2">Решението за теб</h2>' +
-    '<div class="card"><div class="prod"><img src="' + IMG + 'fitpatches_2048_no_white_background.png?width=300" alt="FitPatches берберинови лепенки" width="96" height="96"><div><div class="prod__name">FitPatches берберинови лепенки</div><div class="prod__sub">За ' + (p.code === 'p1' ? 'метаболитен баланс и ' : '') + 'овладян апетит — без диети и без хапчета</div></div></div>' +
-    '<ul class="why" style="margin-top:14px">' + why.map(function (w) { return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></div>';
-
-  if (meds) html += '<div class="note"><b>Приемаш лекарства:</b> Преди да започнеш, консултирай се с личния си лекар — особено при лекарства за кръвна захар (напр. метформин), тъй като берберинът също влияе на нивата ѝ.</div>';
-
-  html += '<h2 class="h2">Твоят план</h2><ul class="plan">' + plan.map(function (x) { return '<li><b>' + x[0] + '</b><span>' + x[1] + '</span></li>'; }).join('') + '</ul>';
-
-  var bigGoal = (st.a.kg === '10-20' || st.a.kg === '20+') && k === '1';
-  html += '<h2 class="h2">Препоръчан пакет за теб</h2>' +
-    '<div class="offer"><span class="offer__badge">ИЗБРАН СПОРЕД ОТГОВОРИТЕ ТИ</span><div class="offer__row"><div><div class="offer__name">' + PK.name + '</div><div class="offer__meta">' + PK.meta + '</div></div>' +
-    '<div class="offer__price"><div class="offer__new">' + PK.price + '</div><div class="offer__old">' + PK.old + '</div><div class="offer__day">' + PK.day + '</div></div></div>' +
-    '<div class="offer__note">' + (bigGoal ? 'При цел над 10 кг повечето клиенти избират пакета за 3 месеца — ' : '') + 'Ще можеш да смениш пакета на следващата стъпка.</div></div>' +
-    '<div class="actions"><a class="btn" id="cta" href="' + esc(productUrl()) + '">Към моя пакет →</a></div>' +
-    '<div class="perks"><span>Плащане при доставка</span><span>Доставка 2–4 работни дни</span>' + (CONFIG.GUARANTEE ? '<span>' + CONFIG.GUARANTEE + '</span>' : '') + '</div>';
-
-  var others = Object.keys(PROFILES).filter(function (x) { return PROFILES[x] !== p; }).slice(0, 1).map(function (x) { return PROFILES[x].proof; });
-  html += '<h2 class="h2">Какво казват клиентите</h2><div class="card">' + quote(p.proof) + others.map(quote).join('') + '</div>' +
-    '<div class="actions" style="margin-top:22px"><a class="btn" href="' + esc(productUrl()) + '" data-cta="2">Започни своя план →</a></div>' +
-    '<p class="disclaimer">Тестът има информативен характер и не е медицинска диагноза. FitPatches не е лекарство и не е предназначен за диагностика или лечение на заболявания. Резултатите са индивидуални. При бременност, кърмене, хронично заболяване или прием на лекарства се консултирай с лекар преди употреба.</p></section>';
+  html += '<h2 class="q">Решението за теб е готово!</h2>';
+  if (meds) html += '<div class="note"><b>Важно:</b> Тъй като приемаш лекарства, преди да започнеш нещо ново, се консултирай с личния си лекар.</div>';
+  html += '<div class="actions" style="width:100%"><a class="btn" id="goSol" href="' + esc(url) + '">Виж решението</a></div></section>';
   app.innerHTML = html;
-
-  var url = productUrl();
-  floatBtn.setAttribute('href', url);
-  var onCta = function () { send('cta', 'result'); if (!st.sent.pxc) { st.sent.pxc = 1; save(); pixel(CONFIG.PIXEL_EVENTS.cta); } };
-  Array.prototype.forEach.call(document.querySelectorAll('#cta,[data-cta],#floatBtn'), function (a) { a.addEventListener('click', onCta); });
-  var cta = document.getElementById('cta');
-  var onScroll = function () { var r = cta.getBoundingClientRect(), inView = r.top < window.innerHeight && r.bottom > 0; floatcta.classList.toggle('show', window.scrollY > 300 && !inView); };
-  window.addEventListener('scroll', onScroll, { passive: true });
+  document.getElementById('goSol').addEventListener('click', function (e) { e.preventDefault(); leave(url); });
+}
+var leaving = false;
+function leave(url) {
+  if (leaving) return; leaving = true;
+  if (!st.sent.left) { st.sent.left = 1; save(); send('cta', 'done'); pixel(CONFIG.PIXEL_EVENTS.click); }
+  setTimeout(function () { location.href = url; }, 250);
 }
 
 if (!st.sent.view) sendOnce('view', '');

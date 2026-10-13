@@ -16,16 +16,18 @@ var SHEET_SUMMARY = 'ICP Summary';
 
 // Редът на въпросите — трябва да съвпада с STEPS в quiz/index.html.
 var QUESTIONS = [
-  ['gender', 'Пол'], ['age', 'Възраст'], ['kg', 'Цел (кг)'], ['zone', 'Проблемна зона'],
-  ['obstacle', 'Основен проблем'], ['hunger_time', 'Кога е гладът'], ['tried', 'Пробвали досега'],
-  ['duration', 'От колко време опитва'], ['health', 'Здравословни особености'],
-  ['motivation', 'Мотивация'], ['commit', 'Готовност (месеци)'], ['name', 'Име']
+  ['gender', 'Пол'], ['age', 'Възраст'], ['goal', 'Цел'], ['kg', 'Колко кг'],
+  ['history', 'Как се появиха килограмите'], ['triggers', 'Кога яде без глад'], ['sweets', 'Желание за сладко'],
+  ['tried', 'Пробвали досега'], ['outcome', 'Как завърши опитът'], ['health', 'Здраве'],
+  ['pain', 'Кое тормози най-много'], ['o_struggle', 'С нейни думи: най-трудното'], ['impact', 'Как влияе на живота'],
+  ['o_body', 'С нейни думи: как се чувства в тялото си'], ['want', 'Какво решение търси'], ['o_future', 'С нейни думи: какво ще е различно след 3 месеца'],
+  ['p_hunger', 'Гладна час-два след хранене'], ['p_sleep', 'Спи под 7 часа'], ['p_event', 'Има повод']
 ];
 
 var META_COLS = [
   'qid', 'first_seen', 'last_seen', 'status', 'max_step', 'steps_total', 'last_step_id', 'seconds',
   'angle', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid',
-  'device', 'referrer', 'profile', 'recommended_pack'
+  'device', 'referrer', 'profile'
 ];
 var TAIL_COLS = ['cta_clicked', 'order', 'order_pack', 'order_total', 'version'];
 var COLUMNS = META_COLS.concat(QUESTIONS.map(function (q) { return q[0]; })).concat(TAIL_COLS);
@@ -83,7 +85,7 @@ function doPost(e) {
     if (!found) set('first_seen', now);
     set('last_seen', now);
     if (d.event !== 'order') ['steps_total', 'seconds', 'angle', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-     'fbclid', 'device', 'referrer', 'profile', 'recommended_pack', 'version'].forEach(function (k) { set(k, d[k]); });
+     'fbclid', 'device', 'referrer', 'profile', 'version'].forEach(function (k) { set(k, d[k]); });
     if (d.step_id && d.event !== 'order') set('last_step_id', d.step_id);
     if (Number(d.max_step) > Number(row[col.max_step] || 0)) set('max_step', Number(d.max_step));
 
@@ -140,7 +142,7 @@ function buildSummary() {
 
   // 2) По въпрос / отговор
   QUESTIONS.forEach(function (q) {
-    if (q[0] === 'name') return;
+    if (/^o_/.test(q[0])) return; // свободен текст — Claude го анализира отделно
     var stats = {};
     rows.filter(isDone).forEach(function (r) {
       String(r[c[q[0]]] || '—').split(' | ').forEach(function (v) {
