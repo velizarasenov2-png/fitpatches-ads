@@ -1,0 +1,60 @@
+<!--
+  FitPatches Quiz → Shopify (по желание, но силно препоръчително)
+  ---------------------------------------------------------------
+  Какво прави:
+   1. Когато човек дойде от quiz-а (линкът съдържа ?qid=...), на продуктовата
+      страница автоматично се избира пакетът, препоръчан в резултата (?qpk=1/3/5).
+   2. Закача quiz ID-то към продукта в количката като скрито свойство (_quiz_id).
+      То стига до поръчката в Shopify (Middleware.bg пази свойствата на продукта —
+      същото, което днес записва „Пакет“). Така всяка поръчка от quiz-а може да се
+      свърже с отговорите на човека → виждаш кой реално КУПУВА, а не само кой попълва.
+
+  Къде се слага:
+   Shopify Admin → Online Store → Themes → (активната тема) ⋯ → Edit code →
+   layout/theme.liquid → постави целия блок точно преди </body> → Save.
+
+  Не променя нищо, ако човекът не идва от quiz-а.
+-->
+<script>
+(function () {
+  try {
+    var p = new URLSearchParams(location.search);
+    if (p.get('qid')) {
+      sessionStorage.setItem('fp_qid', p.get('qid').slice(0, 40));
+      if (p.get('qp')) sessionStorage.setItem('fp_qp', p.get('qp').slice(0, 10));
+    }
+    var qid = sessionStorage.getItem('fp_qid');
+    if (!qid) return;
+    var qp = sessionStorage.getItem('fp_qp') || '';
+
+    // 1) Избира препоръчания пакет на продуктовата страница.
+    var qpk = p.get('qpk');
+    if (qpk) {
+      var pick = function () {
+        var r = document.querySelector('.fp-offer input[type="radio"][data-packs="' + qpk.replace(/\D/g, '') + '"]');
+        if (r && !r.checked) { r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true })); }
+      };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(pick, 50); });
+      else setTimeout(pick, 50);
+    }
+
+    // 2) Добавя _quiz_id към всеки продукт, който влиза в количката.
+    var origFetch = window.fetch;
+    window.fetch = function (url, opts) {
+      try {
+        var u = typeof url === 'string' ? url : (url && url.url) || '';
+        if (u.indexOf('/cart/add') > -1 && opts && typeof opts.body === 'string') {
+          var b = JSON.parse(opts.body);
+          (b.items || [b]).forEach(function (it) {
+            it.properties = it.properties || {};
+            it.properties._quiz_id = qid;
+            if (qp) it.properties._quiz_profile = qp;
+          });
+          opts.body = JSON.stringify(b);
+        }
+      } catch (e) {}
+      return origFetch.apply(this, arguments);
+    };
+  } catch (e) {}
+})();
+</script>
