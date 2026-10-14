@@ -134,7 +134,7 @@ var CONFIG = {
   PIXEL_EVENTS: { complete: 'CompleteRegistration', click: 'Lead' },
 
   LOADER_SECONDS: 30,     // колко време „подготвяме решението“ (без времето за въпросите в прозорчетата)
-  VERSION: 'v2'
+  VERSION: 'v3'
 };
 
 /* Заглавие на първия екран според рекламата: ?a=<ключ>. Записва се като „angle“. */
@@ -190,19 +190,31 @@ var STEPS = [
       { v: 'vinagi',     t: 'Винаги съм {бил|била} по-{едър|едра}', i: '🙂' }
     ] },
 
-  { id: 'triggers', type: 'multi', sec: 'Твоите навици',
+  { id: 'triggers', type: 'multi', sec: 'Твоето хранене',
     q: 'Кога най-често посягаш към храна, без да си {гладен|гладна}?',
     hint: 'Може да избереш повече от едно.',
     opts: [
       { v: 'vecher',   t: 'Вечер, когато се прибера', i: '🌙' },
       { v: 'stres',    t: 'Когато съм {стресиран|стресирана}', i: '😣' },
       { v: 'umora',    t: 'Когато съм {уморен|уморена}', i: '😴' },
-      { v: 'sledobed', t: 'Следобед — дояжда ми се сладко', i: '🍫' },
+      { v: 'sledobed', t: 'Следобед — дояжда ми се нещо', i: '🕒' },
       { v: 'skuka',    t: 'Когато ми е скучно', i: '📺' },
       { v: 'nikoga',   t: 'Почти не ми се случва', i: '✋', solo: true }
     ] },
 
-  { id: 'sweets', type: 'single', sec: 'Твоите навици',
+  { id: 'eating', type: 'multi', sec: 'Твоето хранене',
+    q: 'Кое описва храненето ти?',
+    hint: 'Може да избереш повече от едно.',
+    opts: [
+      { v: 'porcii',      t: 'Ям големи порции и трудно усещам ситост', i: '🍝' },
+      { v: 'pohapvane',   t: 'Похапвам постоянно между храненията', i: '🥨' },
+      { v: 'neredovno',   t: 'Ям нередовно и пропускам хранения', i: '⏰' },
+      { v: 'barzo',       t: 'Ям бързо, на крак', i: '⏩' },
+      { v: 'testeni',     t: 'Не мога без хляб и тестени', i: '🥐' },
+      { v: 'zdravoslovno',t: 'Храня се здравословно, но не свалям', i: '🥗' }
+    ] },
+
+  { id: 'sweets', type: 'single', sec: 'Твоето хранене',
     q: 'Колко често те гони желание за сладко?',
     opts: [ { v: 'dnevno', t: 'Всеки ден', i: '🔥' }, { v: 'chesto', t: 'Няколко пъти седмично', i: '🍪' }, { v: 'rqdko', t: 'Рядко', i: '🙂' }, { v: 'nikoga', t: 'Почти никога', i: '✋' } ] },
 
@@ -254,7 +266,8 @@ var STEPS = [
     hint: 'Избери едно — най-важното.',
     opts: [
       { v: 'metab',   t: 'Ям малко, а теглото не помръдва', i: '⚖️' },
-      { v: 'sugar',   t: 'Не мога да устоя на сладкото', i: '🍫' },
+      { v: 'apetit',  t: 'Постоянно ми се яде — не мога да спра да похапвам', i: '🍽️' },
+      { v: 'porcii',  t: 'Не усещам ситост и ям повече, отколкото трябва', i: '🍝' },
       { v: 'evening', t: 'Вечер не мога да спра да ям', i: '🌙' },
       { v: 'belly',   t: 'Коремът расте, каквото и да правя', i: '⭕' },
       { v: 'yoyo',    t: 'Свалям, но после ги връщам', i: '🔁' },
@@ -290,7 +303,7 @@ var STEPS = [
     hint: 'Избери най-важното за теб.',
     opts: [
       { v: 'lesno',   t: 'Нещо лесно — без строги диети', i: '🙌' },
-      { v: 'glad',    t: 'Нещо, което да спре глада и желанието за сладко', i: '🛑' },
+      { v: 'glad',    t: 'Нещо, което да овладее апетита и преяждането', i: '🛑' },
       { v: 'natural', t: 'Нещо натурално — без хапчета', i: '🌱' },
       { v: 'metab',   t: 'Нещо, което да подкрепи метаболизма ми', i: '🔥' },
       { v: 'trayno',  t: 'Нещо с траен ефект — без йо-йо', i: '📌' }
@@ -451,7 +464,15 @@ function renderQuestion(s) {
         if (arr.indexOf(v) > -1) arr.splice(arr.indexOf(v), 1);
         else if (o && o.solo) arr = [v];
         else { arr = arr.filter(function (x) { var ox = LABELS[s.id + ':' + x]; return !(ox && ox.solo); }); arr.push(v); }
-        st.a[s.id] = arr; save(); renderQuestion(s); return;
+        st.a[s.id] = arr; save();
+        // Само отмятаме — без презареждане на екрана (иначе примигва).
+        Array.prototype.forEach.call(btns, function (x) {
+          var on = arr.indexOf(x.getAttribute('data-v')) > -1;
+          x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on);
+        });
+        var g = document.getElementById('go');
+        if (g) { g.disabled = !arr.length && !s.optional; g.textContent = arr.length || !s.optional ? 'Продължи' : 'Пропусни'; }
+        return;
       }
       st.a[s.id] = v; save();
       Array.prototype.forEach.call(btns, function (x) { x.classList.toggle('is-on', x === b); });
@@ -480,7 +501,7 @@ function renderInfo() {
     p1 = 'С годините хормоните и метаболизмът се променят и тялото започва да <strong>пази запасите си</strong>. Затова старото „яж по-малко, движи се повече“ вече не дава същия резултат.';
   } else {
     h = 'Не си ' + gt('{сам|сама}') + ' в това.';
-    p1 = 'Почти всеки, който се опитва да отслабне, стига до една и съща стена: <strong>гладът и желанието за сладко</strong> надделяват над волята.';
+    p1 = 'Почти всеки, който се опитва да отслабне, стига до една и съща стена: <strong>гладът и преяждането</strong> надделяват над волята.';
   }
   app.innerHTML = '<section class="screen info"><div class="info-ico">💗</div><h2 class="q" style="margin-top:10px">' + h + '</h2>' +
     '<div class="card card--warm"><p>' + p1 + '</p><p>Още няколко въпроса и ще подготвим решението, което пасва на <strong>твоя</strong> случай.</p></div>' +
@@ -545,7 +566,7 @@ function productUrl() {
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'].forEach(function (k) { if (P[k]) u.searchParams.set(k, P[k]); });
   if (!P.utm_source) u.searchParams.set('utm_source', 'quiz');
   u.searchParams.set('qid', st.qid);   // свързва поръчката с отговорите (виж shopify-theme-snippet.html)
-  var codes = { metab: 'p1', sugar: 'p2', evening: 'p3', yoyo: 'p4', stress: 'p5', belly: 'p6' };
+  var codes = { metab: 'p1', apetit: 'p2', evening: 'p3', yoyo: 'p4', stress: 'p5', belly: 'p6', porcii: 'p7' };
   if (codes[st.a.pain]) u.searchParams.set('qp', codes[st.a.pain]); // неутрален код, без здравни думи
   return u.toString();
 }
