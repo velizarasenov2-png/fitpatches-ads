@@ -1,0 +1,586 @@
+== CC-MAIN-2021-43 bg,emag)/ 20211021102536 | halloween_hits=0 bf_hits=2
+   BF: ide/black-friday?ref=footer_4_5" class="footer-link" title="Black Friday">Black Friday</a></li> 
+   BF: ay?ref=footer_4_5" class="footer-link" title="Black Friday">Black Friday</a></li> 
+== CC-MAIN-2021-43 bg,emag)/ 20211027013430 | halloween_hits=0 bf_hits=2
+   BF: ide/black-friday?ref=footer_4_5" class="footer-link" title="Black Friday">Black Friday</a></li> 
+   BF: ay?ref=footer_4_5" class="footer-link" title="Black Friday">Black Friday</a></li> 
+== CC-MAIN-2021-43 bg,douglas)/ 20211023013533 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 bg,fashiondays)/ 20211022221611 | halloween_hits=0 bf_hits=1
+   BF:  > Black Friday Fashion Days </a></li></ul></div></div><div class="foot
+== CC-MAIN-2021-43 bg,answear)/ 20211017181859 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 bg,gymbeam)/ 20211023104517 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 bg,gymbeam)/ 20211026043736 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 bg,myprotein)/ 20211019154215 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 bg,remedium)/ 20211017155415 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 bg,mareshki)/ 20211022153400 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 bg,lidl)/ 20211022160605 | halloween_hits=75 bf_hits=0
+   HW: source data-srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_2142_halloween_420x316.jpg, https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout-retina/slot_2142
+   HW: 420x316.jpg, https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout-retina/slot_2142_halloween_420x316.jpg 2x" srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_
+   HW: 316.jpg 2x" srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_2142_halloween_420x316.jpg"> <img alt="" class="lazyload" src="https://bg.cat-ret.assets.lidl/cata
+   HW: ass="lazyload" src="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_2142_halloween_420x316.jpg" /> </picture> </div> 
+   HW:  <source data-srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/lg/slot_2142_halloween_420x316.jpg, https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/lg-retina/slot_2142_hal
+== CC-MAIN-2021-43 bg,lidl)/ 20211023115828 | halloween_hits=75 bf_hits=0
+   HW: source data-srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_2142_halloween_420x316.jpg, https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout-retina/slot_2142
+   HW: 420x316.jpg, https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout-retina/slot_2142_halloween_420x316.jpg 2x" srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_
+   HW: 316.jpg 2x" srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_2142_halloween_420x316.jpg"> <img alt="" class="lazyload" src="https://bg.cat-ret.assets.lidl/cata
+   HW: ass="lazyload" src="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/flyout/slot_2142_halloween_420x316.jpg" /> </picture> </div> 
+   HW:  <source data-srcset="https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/lg/slot_2142_halloween_420x316.jpg, https://bg.cat-ret.assets.lidl/catalog4media/bg/list/2291/slot/lg-retina/slot_2142_hal
+== CC-MAIN-2021-43 bg,pulsefit)/ 20211016152522 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 com,lookfantastic)/ 20211022073033 | halloween_hits=7 bf_hits=0
+   HW:  <a class="responsiveFlyoutMenu_levelThreeLink" href="/seasonal/halloween.list" data-context="Halloween" data-j
+   HW:  href="/seasonal/halloween.list" data-context="Halloween" data-js-nav-level="3"> <span cl
+   HW:  <span class="responsiveFlyoutMenu_levelThreeLinkText"> Halloween </span> </a> 
+   HW:  <div class="imageCardOverlay"> <div class="trackwidget" data-block-name="Halloween" data-block-type="" data-widget-id="2117224"> <a class="imageCardOverlay_link" href="/seasonal/ha
+   HW: en" data-block-type="" data-widget-id="2117224"> <a class="imageCardOverlay_link" href="/seasonal/halloween.list"> <div class="imageCardOverlay_content"> <div class="imageCardOverlay_imageFrame"> 
+== CC-MAIN-2021-43 com,lookfantastic)/ 20211025105908 | halloween_hits=14 bf_hits=0
+   HW:  <a class="responsiveFlyoutMenu_levelThreeLink" href="/seasonal/halloween.list" data-context="Halloween" data-j
+   HW:  href="/seasonal/halloween.list" data-context="Halloween" data-js-nav-level="3"> <span cl
+   HW:  <span class="responsiveFlyoutMenu_levelThreeLinkText"> Halloween </span> </a> 
+   HW:  <div class="imageCardOverlay"> <div class="trackwidget" data-block-name="Halloween" data-block-type="" data-widget-id="2117224"> <a class="imageCardOverlay_link" href="/seasonal/ha
+   HW: en" data-block-type="" data-widget-id="2117224"> <a class="imageCardOverlay_link" href="/seasonal/halloween.list"> <div class="imageCardOverlay_content"> <div class="imageCardOverlay_imageFrame"> 
+== CC-MAIN-2021-43 com,boots)/ 20211027222245 | halloween_hits=132 bf_hits=10
+   HW: iv> </div> </a></label> </p> </div> </div> </div> <div class="supermenu_espot"data-espot-for="ESpot_halloween"> </div> <div class="supermenu_espot"data-espot-for="ESpot_baby-child"> </div> <div class="supermen
+   HW: is)"onblur="removeBackgroundColourOnFocus(this)"aria-label="link"href="https://www.boots.com/beauty/halloween-beauty-products"manual_cm_sp="Supermenu-_-Shop by department-_-beautyANDskincare-halloween beauty p
+   HW: m/beauty/halloween-beauty-products"manual_cm_sp="Supermenu-_-Shop by department-_-beautyANDskincare-halloween beauty products"name="Supermenu:Shop by department:beauty & skincare:halloween beauty products"titl
+   HW: -_-beautyANDskincare-halloween beauty products"name="Supermenu:Shop by department:beauty & skincare:halloween beauty products"title="halloween beauty products"class="menuLink categoryLinkItem anchorDataToggle"
+   HW: auty products"name="Supermenu:Shop by department:beauty & skincare:halloween beauty products"title="halloween beauty products"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subca
+   BF: k-friday"manual_cm_sp="Supermenu-_-Offers-_-seasonal events-black friday"name="Supermenu:Offers:seasonal events:black friday"title="
+   BF:  events-black friday"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+== CC-MAIN-2021-43 com,boots)/ 20211028210841 | halloween_hits=132 bf_hits=21
+   HW: iv> </div> </a></label> </p> </div> </div> </div> <div class="supermenu_espot"data-espot-for="ESpot_halloween"> </div> <div class="supermenu_espot"data-espot-for="ESpot_baby-child"> </div> <div class="supermen
+   HW: is)"onblur="removeBackgroundColourOnFocus(this)"aria-label="link"href="https://www.boots.com/beauty/halloween-beauty-products"manual_cm_sp="Supermenu-_-Shop by department-_-beautyANDskincare-halloween beauty p
+   HW: m/beauty/halloween-beauty-products"manual_cm_sp="Supermenu-_-Shop by department-_-beautyANDskincare-halloween beauty products"name="Supermenu:Shop by department:beauty & skincare:halloween beauty products"titl
+   HW: -_-beautyANDskincare-halloween beauty products"name="Supermenu:Shop by department:beauty & skincare:halloween beauty products"title="halloween beauty products"class="menuLink categoryLinkItem anchorDataToggle"
+   HW: auty products"name="Supermenu:Shop by department:beauty & skincare:halloween beauty products"title="halloween beauty products"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subca
+   BF: k-friday"manual_cm_sp="Supermenu-_-Offers-_-seasonal events-black friday"name="Supermenu:Offers:seasonal events:black friday"title="
+   BF:  events-black friday"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+== CC-MAIN-2021-43 uk,co,cultbeauty)/ 20211024180249 | halloween_hits=0 bf_hits=2
+   BF: inkColumns_levelTwoItemLink" data-link="true" data-context="Black Friday" > Black Friday
+   BF: Black Friday" > Black Friday </a> 
+== CC-MAIN-2021-43 uk,co,cultbeauty)/ 20211026201801 | halloween_hits=0 bf_hits=2
+   BF: inkColumns_levelTwoItemLink" data-link="true" data-context="Black Friday" > Black Friday
+   BF: Black Friday" > Black Friday </a> 
+== CC-MAIN-2021-43 de,rossmann)/de 20211027102709 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 de,rossmann)/de 20211027214604 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 de,douglas)/de 20211023114432 | halloween_hits=29 bf_hits=0
+   HW: c/make-up/lippen/0302">Lippen</a> in dunklen Beerentönen. </p> <p>Zum Herbst gehört natürlich auch Halloween – die perfekte Gelegenheit für extravagantes Make-up! Lass dich von unseren Beauty-Tutorials für de
+   HW:  für extravagantes Make-up! Lass dich von unseren Beauty-Tutorials für deinen <a href="/de/c/herbst/halloween-specials/2706">Halloween Look</a> inspirieren und entscheide, in wen du dich verwandeln willst! </p
+   HW: p! Lass dich von unseren Beauty-Tutorials für deinen <a href="/de/c/herbst/halloween-specials/2706">Halloween Look</a> inspirieren und entscheide, in wen du dich verwandeln willst! </p> <h2 id="herbst-gem-tli
+   HW: ZGdsLURFLWNvbnRlbnQiLCJjYXRhbG9nVmVyc2lvbiI6Ik9ubGluZSJ9","content.hp_platin_kw42_2021_de_v3.platin_halloween_kw42_2021_de.text_platin_halloween_kw42_2021_de.buttonlink_2706","o|2H|2w|2x|2K","eyJpdGVtSWQiOiJjb
+   HW: yc2lvbiI6Ik9ubGluZSJ9","content.hp_platin_kw42_2021_de_v3.platin_halloween_kw42_2021_de.text_platin_halloween_kw42_2021_de.buttonlink_2706","o|2H|2w|2x|2K","eyJpdGVtSWQiOiJjbXNpdGVtXzAxMTQ5MDY1IiwiY2F0YWxvZ0lk
+== CC-MAIN-2021-43 de,douglas)/de 20211026043402 | halloween_hits=67 bf_hits=0
+   HW: Code:</span></a></span><span class="promotion-bar__coupon"><span class="promotion-bar__coupon-code">HALLOWEEN20</span><span class="promotion-bar__copy"><span class="copy-coupon-code">Code kopieren</span></span
+   HW: ="no-decoration" external="false" linkappearance="true" target="" anchor="false" href="/de/c/herbst/halloween-specials/tutorial-poseidon/270611"><div class="single-story__image-container"><div class="single-st
+   HW: ="no-decoration" external="false" linkappearance="true" target="" anchor="false" href="/de/c/herbst/halloween-specials/tutorial-medusa/270610"><div class="single-story__image-container"><div class="single-stor
+   HW: ="no-decoration" external="false" linkappearance="true" target="" anchor="false" href="/de/c/herbst/halloween-specials/tutorial-gruseliger-pueppchen-look/270601"><div class="single-story__image-container"><div
+   HW: alse" linkappearance="true" target="" anchor="false" href="/de/c/herbst/halloween-specials/tutorial-gruseliger-pueppchen-look/270601"><div class="single-story__image-container"><div class="single-story__ima
+== CC-MAIN-2021-43 fr,sephora)/ 20211025161404 | halloween_hits=4 bf_hits=2
+   HW: cat-id="C302" data-default-active="true" data-tc-category-name="makeup"> <div class="nos-selections-halloween" data-cat-id="nos-selections-halloween" data-tc-category-name="null"> <a class="nav-level-3-link js
+   HW: " data-tc-category-name="makeup"> <div class="nos-selections-halloween" data-cat-id="nos-selections-halloween" data-tc-category-name="null"> <a class="nav-level-3-link js-tc-nav-click-event" href="/nos-selecti
+   HW: ta-tc-category-name="null"> <a class="nav-level-3-link js-tc-nav-click-event" href="/nos-selections-halloween/"> 🎃Halloween Beauty </a> </div> </div> <div class="nav-level-3 js-nav-3 active C302" data-cat-id="
+   HW: -name="null"> <a class="nav-level-3-link js-tc-nav-click-event" href="/nos-selections-halloween/"> 🎃Halloween Beauty </a> </div> </div> <div class="nav-level-3 js-nav-3 active C302" data-cat-id="C302" data-def
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> <li><a href="https://www.sephora.fr/cyber-monday/"
+   BF: /a></li> <li><a href="https://www.sephora.fr/cyber-monday/">Cyber Monday</a></li> <li><a href="https://www.sephora.fr/noel/">Idées C
+== CC-MAIN-2021-43 fr,sephora)/ 20211026015113 | halloween_hits=4 bf_hits=2
+   HW: cat-id="C302" data-default-active="true" data-tc-category-name="makeup"> <div class="nos-selections-halloween" data-cat-id="nos-selections-halloween" data-tc-category-name="null"> <a class="nav-level-3-link js
+   HW: " data-tc-category-name="makeup"> <div class="nos-selections-halloween" data-cat-id="nos-selections-halloween" data-tc-category-name="null"> <a class="nav-level-3-link js-tc-nav-click-event" href="/nos-selecti
+   HW: ta-tc-category-name="null"> <a class="nav-level-3-link js-tc-nav-click-event" href="/nos-selections-halloween/"> 🎃Halloween Beauty </a> </div> </div> <div class="nav-level-3 js-nav-3 active C302" data-cat-id="
+   HW: -name="null"> <a class="nav-level-3-link js-tc-nav-click-event" href="/nos-selections-halloween/"> 🎃Halloween Beauty </a> </div> </div> <div class="nav-level-3 js-nav-3 active C302" data-cat-id="C302" data-def
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> <li><a href="https://www.sephora.fr/cyber-monday/"
+   BF: /a></li> <li><a href="https://www.sephora.fr/cyber-monday/">Cyber Monday</a></li> <li><a href="https://www.sephora.fr/noel/">Idées C
+== CC-MAIN-2021-43 com,myprotein)/ 20211023013435 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 com,myprotein)/ 20211028010306 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 de,notino)/ 20211020042451 | halloween_hits=0 bf_hits=3
+   BF: kalender</a> <a href="/black-friday/" title="BLACK FRIDAY" onclick="dataLayer.push({&#39;event&#39;: &#39;EventFire-R
+   BF: 9;/black-friday/&#39;, &#39;eventValue&#39;: undefined });">BLACK FRIDAY</a> </p> </div></li> </ul> <div class='carou
+== CC-MAIN-2021-43 de,dm)/ 20211018103800 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2021-43 de,dm)/ 20211026110328 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,notino)/ 20221007072052 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,emag)/ 20220924152823 | halloween_hits=0 bf_hits=2
+   BF: ide/black-friday?ref=footer_4_5" class="footer-link" title="Black Friday">Black Friday</a></li> 
+   BF: ay?ref=footer_4_5" class="footer-link" title="Black Friday">Black Friday</a></li> 
+== CC-MAIN-2022-40 bg,douglas)/ 20220929173901 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,fashiondays)/ 20220928220735 | halloween_hits=0 bf_hits=1
+   BF:  > Black Friday Fashion Days </a></li></ul></div></div><div class="foot
+== CC-MAIN-2022-40 bg,gymbeam)/ 20221004131029 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,myprotein)/ 20220927171901 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,myprotein)/ 20220928003058 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,remedium)/ 20220928125502 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,mareshki)/ 20221005081616 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,lidl)/ 20221001150918 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 bg,pulsefit)/ 20221003084518 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 com,hollandandbarrett)/ 20221007115845 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 com,hollandandbarrett)/ 20221007213002 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 com,lookfantastic)/ 20220928063248 | halloween_hits=3 bf_hits=0
+   HW: ss="responsiveFlyoutMenu_levelThreeLink" href="/health-beauty/trends/witch-hazel.list" data-context="Witch Hazel" 
+   HW:  href="/health-beauty/trends/witch-hazel.list" data-context="Witch Hazel" data-js-nav-level="3"> <s
+   HW:  <span class="responsiveFlyoutMenu_levelThreeLinkText"> Witch Hazel </span> </a> 
+== CC-MAIN-2022-40 com,boots)/ 20221001151440 | halloween_hits=16 bf_hits=11
+   HW: ocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Shop by department:beauty & skincare:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: abel="link"href="javascript:;"name="Supermenu:Shop by department:beauty & skincare:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_15905
+   HW: 9190"tabindex="9"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="10"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_1590591_1595015_1719190"name="Supermenu:Shop by departme
+   HW: "categoryLink_1590591_1595015_1719190"name="Supermenu:Shop by department:beauty & skincare:View all halloween"onfocus="addBackgroundColourOnFocus(this)"onclick='analyticsJS.headObjectEventGtm("Shop by departme
+   BF: k"href="javascript:;"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+   BF: "name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchorDataToggle"role="men
+== CC-MAIN-2022-40 com,boots)/ 20221006041019 | halloween_hits=35 bf_hits=11
+   HW: ESpot_black-founded-and-inclusive-brands"> </div> <div class="supermenu_espot"data-espot-for="ESpot_halloween"> </div> <div class="supermenu_espot"data-espot-for="ESpot_brands"> </div> <div class="supermenu_es
+   HW: ocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Shop by department:beauty & skincare:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: abel="link"href="javascript:;"name="Supermenu:Shop by department:beauty & skincare:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_15905
+   HW: 9190"tabindex="9"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="10"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_1590591_1595015_1719190"name="Supermenu:Shop by departme
+   BF: k"href="javascript:;"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+   BF: "name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchorDataToggle"role="men
+== CC-MAIN-2022-40 de,rossmann)/de 20220926190427 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 de,rossmann)/de 20220928093105 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 de,douglas)/de 20221007184833 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 de,douglas)/de 20221007211823 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 fr,sephora)/ 20221002034913 | halloween_hits=0 bf_hits=1
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> <li><a href="https://www.sephora.fr/cadeau-calendr
+== CC-MAIN-2022-40 fr,sephora)/ 20221004141949 | halloween_hits=0 bf_hits=1
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> <li><a href="https://www.sephora.fr/cadeau-calendr
+== CC-MAIN-2022-40 com,myprotein)/ 20220925091138 | halloween_hits=0 bf_hits=2
+   BF: inkColumns_levelTwoItemLink" data-link="true" data-context="Black Friday" > Black Friday
+   BF: Black Friday" > Black Friday </a> 
+== CC-MAIN-2022-40 com,myprotein)/ 20221003112016 | halloween_hits=0 bf_hits=2
+   BF: inkColumns_levelTwoItemLink" data-link="true" data-context="Black Friday" > Black Friday
+   BF: Black Friday" > Black Friday </a> 
+== CC-MAIN-2022-40 de,dm)/ 20220924184812 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2022-40 de,dm)/ 20220929215235 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,notino)/ 20230928022212 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,fashiondays)/ 20230930182616 | halloween_hits=0 bf_hits=1
+   BF:  > Black Friday Fashion Days </a></li></ul></div></div><div class="foot
+== CC-MAIN-2023-40 bg,fashiondays)/ 20231004153256 | halloween_hits=0 bf_hits=1
+   BF:  > Black Friday Fashion Days </a></li></ul></div></div><div class="foot
+== CC-MAIN-2023-40 bg,gymbeam)/ 20231003065641 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,myprotein)/ 20230927185355 | halloween_hits=0 bf_hits=2
+   BF: inkColumns_levelTwoItemLink" data-link="true" data-context="черен петък" > черен петък 
+   BF: "черен петък" > черен петък </a> 
+== CC-MAIN-2023-40 bg,subra)/ 20230923100257 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,benu)/ 20230921101206 | halloween_hits=1 bf_hits=0
+   HW: _buttons"> <button type="submit" name="acceptSelected" value="Приемам избраното" class="btn btn-ghost u-w-100p" data-ajax-pd="btnSpinner" data-ajax-off="spinner history"> <span clas
+== CC-MAIN-2023-40 bg,mareshki)/ 20230929162443 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,kaufland)/ 20230930165434 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,kaufland)/ 20231004004328 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,lidl)/ 20230922012656 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,lidl)/ 20230929073738 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,pulsefit)/ 20230926214546 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 bg,pulsefit)/ 20231001223733 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 com,hollandandbarrett)/ 20230928152410 | halloween_hits=2 bf_hits=0
+   HW:  natural sleeping remedies</div></a><a href="/the-health-hub/food-drink/recipes/vegan-recipes/vegan-pumpkin-spice-latte/" class="MenuItemLink-module_link__CRXWn MenuItemLink-module_active__fmHNU"><div class=
+   HW: odule_base__h-bPx Typography-module_helvetica__-8F7V" style="font-size:14px;line-height:19px">Vegan pumpkin spice latte</div></a><a href="/the-health-hub/food-drink/drinks/giving-up-alcohol/" class="MenuItem
+== CC-MAIN-2023-40 com,hollandandbarrett)/ 20230928184017 | halloween_hits=2 bf_hits=0
+   HW:  natural sleeping remedies</div></a><a href="/the-health-hub/food-drink/recipes/vegan-recipes/vegan-pumpkin-spice-latte/" class="MenuItemLink-module_link__CRXWn MenuItemLink-module_active__fmHNU"><div class=
+   HW: odule_base__h-bPx Typography-module_helvetica__-8F7V" style="font-size:14px;line-height:19px">Vegan pumpkin spice latte</div></a><a href="/the-health-hub/food-drink/drinks/giving-up-alcohol/" class="MenuItem
+== CC-MAIN-2023-40 com,lookfantastic)/ 20231004232427 | halloween_hits=4 bf_hits=0
+   HW: _levelThreeLink" data-override-value="Skincare-SkincareIngredients-WitchHazel" href="/health-beauty/trends/witch-hazel.list" 
+   HW: incare-SkincareIngredients-WitchHazel" href="/health-beauty/trends/witch-hazel.list" data-context="Witch Hazel" 
+   HW:  href="/health-beauty/trends/witch-hazel.list" data-context="Witch Hazel" data-js-nav-level="3"> 
+   HW:  <span class="responsiveFlyoutMenu_levelThreeLinkText"> Witch Hazel </span> </a> 
+== CC-MAIN-2023-40 com,lookfantastic)/ 20231005021200 | halloween_hits=4 bf_hits=0
+   HW: _levelThreeLink" data-override-value="Skincare-SkincareIngredients-WitchHazel" href="/health-beauty/trends/witch-hazel.list" 
+   HW: incare-SkincareIngredients-WitchHazel" href="/health-beauty/trends/witch-hazel.list" data-context="Witch Hazel" 
+   HW:  href="/health-beauty/trends/witch-hazel.list" data-context="Witch Hazel" data-js-nav-level="3"> 
+   HW:  <span class="responsiveFlyoutMenu_levelThreeLinkText"> Witch Hazel </span> </a> 
+== CC-MAIN-2023-40 com,boots)/ 20231002105422 | halloween_hits=8 bf_hits=11
+   HW: roundColourOnFocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: s(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_23576
+   HW: 190"tabindex="25"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="26"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal 
+   HW: i> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal events:View all halloween"onfocus="addBackgroundColourOnFocus(this)"onclick='analyticsJS.headObjectEventGtm("Offers : seasona
+   BF: k"href="javascript:;"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+   BF: "name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchorDataToggle"role="men
+== CC-MAIN-2023-40 com,boots)/ 20231005035134 | halloween_hits=52 bf_hits=11
+   HW: nu_espot"data-espot-for="ESpot_christmas"> </div> <div class="supermenu_espot"data-espot-for="ESpot_halloween"> </div> <div class="supermenu_espot"data-espot-for="ESpot_sale"> </div> <div class="supermenu_espo
+   HW: dColourOnFocus(this)"onblur="removeBackgroundColourOnFocus(this)"name="Supermenu:Shop by department:halloween"title="halloween"href="javascript:;"class="1 link menuLink departmentLinkItem anchorDataToggle"data
+   HW: is)"onblur="removeBackgroundColourOnFocus(this)"name="Supermenu:Shop by department:halloween"title="halloween"href="javascript:;"class="1 link menuLink departmentLinkItem anchorDataToggle"data-toggle="departme
+   HW: em"tabindex="8"> <p class="departmentLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"id="departmenrGlobalNavA
+   HW: ="departmentMenu departmentList"role="menu"data-parent="departmentMenu"data-id="1719190"aria-label="halloween"style="top:65px"data-espot-show="ESpot_halloween"> <ul id="catergoryList"class="categoryList"data-p
+   BF: k"href="javascript:;"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+   BF: "name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchorDataToggle"role="men
+== CC-MAIN-2023-40 de,rossmann)/de 20230930095950 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 de,rossmann)/de 20231004085834 | halloween_hits=2 bf_hits=0
+   HW: ion-link="true" class="swiper-slide" target="blank" href="https://www.rossmann.de/de/neu/halloween-make-up/wednesday-addams-schminken"> <pictur
+   HW: gory__banner-image rm-lazy__picture " data-promotion-name="teaser25_start_entdeckt_ratgeber_halloween_wednesday" data-promotion-id="cmsitem_9300ef4e-7088-4482-a205-c51e3677bfde" data-pr
+== CC-MAIN-2023-40 de,douglas)/de 20231001162631 | halloween_hits=0 bf_hits=1
+   BF: t\u002Fluxusgeschenke\u002F2905","s|o|KK|MT|MU|MV|KO","28","Cyber Monday","\u002Fde\u002Fc\u002Fcyber-monday\u002F28","s|o|KK|MX|MY|
+== CC-MAIN-2023-40 de,douglas)/de 20231002012218 | halloween_hits=0 bf_hits=1
+   BF: t\u002Fluxusgeschenke\u002F2905","s|o|LV|Ne|Nf|Ng|LZ","28","Cyber Monday","\u002Fde\u002Fc\u002Fcyber-monday\u002F28","s|o|LV|Ni|Nj|
+== CC-MAIN-2023-40 fr,sephora)/ 20231003100012 | halloween_hits=0 bf_hits=1
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> <li><a href="https://www.sephora.fr/noel/">Cadeaux
+== CC-MAIN-2023-40 fr,sephora)/ 20231004170210 | halloween_hits=0 bf_hits=1
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> <li><a href="https://www.sephora.fr/noel/">Cadeaux
+== CC-MAIN-2023-40 com,myprotein)/ 20230925062439 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 de,notino)/ 20230925103323 | halloween_hits=0 bf_hits=1
+   BF: ooter-sectionLink" href="https://www.notino.de/black-week/">Black Friday</a></li><li class="footer-linkListItem"><a class="footer-li
+== CC-MAIN-2023-40 de,dm)/ 20231004004043 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2023-40 de,dm)/ 20231004204200 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,emag)/ 20241011052732 | halloween_hits=0 bf_hits=2
+   BF: ide/black-friday?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+   BF: ay?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+== CC-MAIN-2024-42 bg,emag)/ 20241013132316 | halloween_hits=0 bf_hits=2
+   BF: ide/black-friday?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+   BF: ay?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+== CC-MAIN-2024-42 bg,dm-drogeriemarkt)/ 20241011141402 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,douglas)/ 20241006070529 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,douglas)/ 20241011184021 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,fashiondays)/ 20241010073046 | halloween_hits=0 bf_hits=1
+   BF:  > Black Friday Fashion Days </a></li></ul></div></div><div class="foot
+== CC-MAIN-2024-42 bg,myprotein)/ 20241014024839 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,subra)/ 20241012084738 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,subra)/ 20241012095628 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,benu)/ 20241007090715 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,mareshki)/ 20241008052050 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,kaufland)/ 20241003235019 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,lidl)/ 20241007014341 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 bg,pulsefit)/ 20241007181444 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 com,hollandandbarrett)/ 20241012113244 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 com,hollandandbarrett)/ 20241012213828 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 com,lookfantastic)/ 20241015081649 | halloween_hits=9 bf_hits=0
+   HW: ro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>GHD</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: " data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Aloe Vera</a><a href="/c/health-beauty/trends/witch-hazel/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Witch Hazel</a>
+   HW: ty/trends/witch-hazel/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Witch Hazel</a></div></div><div class="sub-nav-item" data-astro-cid-r6zccy7c><div data-astro-cid-r6zccy7c
+   HW: -cid-37bvxqo4>Aloe Vera</a><a data-astro-prefetch="tap" tabindex="-1" href="/c/health-beauty/trends/witch-hazel/" aria-label="Skincare IngredientsWitch Hazel" data-astro-cid-37bvxqo4>Witch Hazel</a> </div>
+== CC-MAIN-2024-42 com,lookfantastic)/ 20241016000117 | halloween_hits=14 bf_hits=0
+   HW: ro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>GHD</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: " data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Aloe Vera</a><a href="/c/health-beauty/trends/witch-hazel/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Witch Hazel</a>
+   HW: ty/trends/witch-hazel/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Witch Hazel</a></div></div><div class="sub-nav-item" data-astro-cid-r6zccy7c><div data-astro-cid-r6zccy7c
+   HW: -cid-37bvxqo4>Aloe Vera</a><a data-astro-prefetch="tap" tabindex="-1" href="/c/health-beauty/trends/witch-hazel/" aria-label="Skincare IngredientsWitch Hazel" data-astro-cid-37bvxqo4>Witch Hazel</a> </div>
+== CC-MAIN-2024-42 com,boots)/ 20241013155504 | halloween_hits=10 bf_hits=8
+   HW: roundColourOnFocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: s(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_23576
+   HW: 190"tabindex="25"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="26"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal 
+   HW: i> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal events:View all halloween"onfocus="addBackgroundColourOnFocus(this)"onclick='analyticsJS.headObjectEventGtm("Offers : seasona
+   BF: easonal/black-friday"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+   BF: "name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchorDataToggle"role="men
+== CC-MAIN-2024-42 uk,co,cultbeauty)/ 20241015084601 | halloween_hits=8 bf_hits=0
+   HW: ata-astro-prefetch="hover" data-astro-cid-r6zccy7c>A/W 24&#39; Beauty Trends</a><a href="/blog/best-halloween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Hallo
+   HW: oween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Halloween Make Up Looks</a></div></div><div class="sub-nav-item" data-astro-cid-r6zccy7c><a href="/blog/beaut
+   HW: d-37bvxqo4>A/W 24&#39; Beauty Trends</a><a data-astro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Hallow
+   HW: ro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data
+   HW: loween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data-astro-cid-37bvxqo4> <div data-astro-cid-37bvxqo4> <
+== CC-MAIN-2024-42 uk,co,cultbeauty)/ 20241016043151 | halloween_hits=8 bf_hits=0
+   HW: ata-astro-prefetch="hover" data-astro-cid-r6zccy7c>A/W 24&#39; Beauty Trends</a><a href="/blog/best-halloween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Hallo
+   HW: oween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Halloween Make Up Looks</a></div></div><div class="sub-nav-item" data-astro-cid-r6zccy7c><a href="/blog/beaut
+   HW: d-37bvxqo4>A/W 24&#39; Beauty Trends</a><a data-astro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Hallow
+   HW: ro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data
+   HW: loween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data-astro-cid-37bvxqo4> <div data-astro-cid-37bvxqo4> <
+== CC-MAIN-2024-42 de,rossmann)/de 20241008234951 | halloween_hits=1 bf_hits=0
+   HW: op"> <a data-promotion-link="true" href="https://www.rossmann.de/de/ernaehrung/ratgeber/rezeptwelt/pumpkin-spice-latte" class="rm-category__banner-responsive-link"> <picture class="rm-category__banner-i
+== CC-MAIN-2024-42 de,rossmann)/de 20241014205857 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 fr,sephora)/ 20241016000917 | halloween_hits=0 bf_hits=1
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> </ul> </div> <div class="info-links hide-for-small
+== CC-MAIN-2024-42 fr,sephora)/ 20241016035131 | halloween_hits=0 bf_hits=1
+   BF: /a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> </ul> </div> <div class="info-links hide-for-small
+== CC-MAIN-2024-42 com,myprotein)/ 20241011054602 | halloween_hits=3 bf_hits=0
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl" data-astro-cid-mzq34yl7> ✕ </button> </div> <!-- Navigation & Account --> <div class="bg-w
+   HW: ar" class="cursor-pointer hover:text-hover-primary flex h-12 items-center btn btn-md btn-circle btn-ghost text-2xl">x</button> </div> <mobile-instant-search> <div id="mobile-instant-search" class="hidden f
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"></div> </div> </dialog
+== CC-MAIN-2024-42 com,myprotein)/ 20241013004354 | halloween_hits=3 bf_hits=0
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl" data-astro-cid-mzq34yl7> ✕ </button> </div> <!-- Navigation & Account --> <div class="bg-w
+   HW: ar" class="cursor-pointer hover:text-hover-primary flex h-12 items-center btn btn-md btn-circle btn-ghost text-2xl">x</button> </div> <mobile-instant-search> <div id="mobile-instant-search" class="hidden f
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"></div> </div> </dialog
+== CC-MAIN-2024-42 de,dm)/ 20241003211010 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-42 de,dm)/ 20241010163230 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 bg,emag)/ 20241114010525 | halloween_hits=0 bf_hits=6
+   BF: mag.bg/blackfriday?ref=hdr_guide-black-friday" title="Guide Black Friday" data-test="NavbarAuxLink" data-test-id="2394"> 
+   BF: st-id="2394"> Guide Black Friday </a> 
+== CC-MAIN-2024-46 bg,dm-drogeriemarkt)/ 20241102012834 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 bg,fashiondays)/ 20241103165212 | halloween_hits=0 bf_hits=16
+   BF: ound-color:#000000;" data-gtm-id="BLACK FRIDAY е толкова близо! Старт: УТРЕ след 7:00 ч.! | https://www.fa
+   BF: ng-black-friday-w/" data-gtm-name="FB (NO BANNER) 2 TEASING BLACK FRIDAY 03 NOIEMBRIE W" data-gtm-creative="content" data-gtm-positi
+== CC-MAIN-2024-46 bg,fashiondays)/ 20241109001000 | halloween_hits=0 bf_hits=59
+   BF: data-item-type="8"> BLACK FRIDAY 
+   BF: s.bg/s/flash-black-friday-w/" data-gtm-name="FB (NO BANNER) BLACK FRIDAY 04-10 NOIEMBRIE W" data-gtm-creative="content" data-gtm-pos
+== CC-MAIN-2024-46 bg,myprotein)/ 20241107201655 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 bg,subra)/ 20241101185848 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 bg,benu)/ 20241103154414 | halloween_hits=0 bf_hits=7
+   BF: e="font-size:18px;"> <a href="https://www.benu.bg/promocii">Black November</a> | Безплатна доставка над 60 лв. с <a href="https://www.
+   BF: derline main-menu__link--red" href="/promocii" > Black November </a> </li> <li class="menu-dropdown__item js-hide
+== CC-MAIN-2024-46 bg,mareshki)/ 20241111070021 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 bg,kaufland)/ 20241103071657 | halloween_hits=18 bf_hits=3
+   HW: iv> <figure class="m-figure "> <img alt="Изображение за продукта Тиква Хелоуин рисувана" class="a-image-responsive " data-t-name="ImageResponsive" onerror="this.onerror =
+   HW:  <figure class="m-figure "> <img alt="Изображение за продукта Тиква Хелоуин рисувана" class="a-image-responsive " data-t-name="ImageResponsive" onerror="this.onerror = null; t
+   HW: nd.com/images/PPIM/KMO/BG2708_20777291_P.jpg?MYRAVRESIZE=2708 2708w" title="Изображение за продукта Тиква Хелоуин рисувана"/> </figure> </div> </div> <div class="m-off
+   HW: /images/PPIM/KMO/BG2708_20777291_P.jpg?MYRAVRESIZE=2708 2708w" title="Изображение за продукта Тиква Хелоуин рисувана"/> </figure> </div> </div> <div class="m-offer-tile-
+   HW:  <div class="m-offer-tile-big__text"> <h5 class="m-offer-tile-big__subtitle"> Тиква Хелоуин</h5> <h4 class="m-offer-tile-big__title"> рисувана</h4> 
+   BF: log=black-week" target="_self" title="Kaufland: Ексклузивни black week оферти още от неделя"> <div class="m-hero-image-teas
+   BF: ="1900" width="2708"/> <img alt="Kaufland: Ексклузивни black week оферти още от неделя" class="a-image-responsive-picture__im
+== CC-MAIN-2024-46 bg,lidl)/ 20241103190347 | halloween_hits=1 bf_hits=0
+   HW: ion_Click%22%7D"><div class="ATeaserHeadline"><!----><div class="ATeaserHeadline__Claim">Чийзкейк с тиква</div><span class="ATeaserHeadline__Subclaim">Димитър Тончев</span></div></a></div><!--]--></li><li 
+== CC-MAIN-2024-46 bg,pulsefit)/ 20241112002154 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 com,hollandandbarrett)/ 20241109054447 | halloween_hits=0 bf_hits=17
+   BF: p; Wellbeing Store</title><meta name="description" content="Black Friday sale now on at Holland &amp; Barrett! For all your vitamins
+   BF: fers/">Offers</a><a href="/shop/offers/black-friday-deals/">Black Friday Deals</a><a href="/shop/offers/buy-one-get-one-1-2-price/">
+== CC-MAIN-2024-46 com,hollandandbarrett)/ 20241110112534 | halloween_hits=0 bf_hits=17
+   BF: p; Wellbeing Store</title><meta name="description" content="Black Friday sale now on at Holland &amp; Barrett! For all your vitamins
+   BF: fers/">Offers</a><a href="/shop/offers/black-friday-deals/">Black Friday Deals</a><a href="/shop/offers/buy-one-get-one-1-2-price/">
+== CC-MAIN-2024-46 com,lookfantastic)/ 20241114063423 | halloween_hits=13 bf_hits=9
+   HW: efetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Gatineau</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: ation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Ariana Grande</a><a href="/c/brands/ghost/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Ghost</a><a href="/c/
+   HW: href="/c/brands/ghost/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Ghost</a><a href="/c/brands/travalo/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-
+   HW: " data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Aloe Vera</a><a href="/c/health-beauty/trends/witch-hazel/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Witch Hazel</a>
+   BF: cid-7vmq727z> <span class="text-sm" data-astro-cid-r6zccy7c>Black Friday Is Here - Up To 50% Off Selected</span> </a> <!--Icon Heade
+   BF: "my-3 px-4 text-sm tracking-widest" data-astro-cid-r6zccy7c>Black Friday</p></a> <div class="absolute top-1/2 left-
+== CC-MAIN-2024-46 com,lookfantastic)/ 20241114162632 | halloween_hits=13 bf_hits=8
+   HW: efetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Gatineau</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: ation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Ariana Grande</a><a href="/c/brands/ghost/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Ghost</a><a href="/c/
+   HW: href="/c/brands/ghost/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Ghost</a><a href="/c/brands/travalo/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-
+   HW: " data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Aloe Vera</a><a href="/c/health-beauty/trends/witch-hazel/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Witch Hazel</a>
+   BF: "my-3 px-4 text-sm tracking-widest" data-astro-cid-r6zccy7c>Black Friday</p></a> <div class="absolute top-1/2 left-
+   BF: n-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>Black Friday Edit</a><a href="/c/black-friday/category/v1/" class="navig
+== CC-MAIN-2024-46 com,boots)/ 20241104195959 | halloween_hits=8 bf_hits=69
+   HW: roundColourOnFocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: s(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_23576
+   HW: 190"tabindex="25"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="26"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal 
+   HW: i> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal events:View all halloween"onfocus="addBackgroundColourOnFocus(this)"onclick='analyticsJS.headObjectEventGtm("Offers : seasona
+   BF: roundColourOnFocus(this)"name="Supermenu:Shop by department:black friday"title="black friday"href="javascript:;"class="0 link menuLi
+   BF: his)"name="Supermenu:Shop by department:black friday"title="black friday"href="javascript:;"class="0 link menuLink departmentLinkIte
+== CC-MAIN-2024-46 com,boots)/ 20241112095741 | halloween_hits=8 bf_hits=71
+   HW: roundColourOnFocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: s(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_23576
+   HW: 190"tabindex="25"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="26"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal 
+   HW: i> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal events:View all halloween"onfocus="addBackgroundColourOnFocus(this)"onclick='analyticsJS.headObjectEventGtm("Offers : seasona
+   BF: roundColourOnFocus(this)"name="Supermenu:Shop by department:black friday"title="black friday"href="javascript:;"class="0 link menuLi
+   BF: his)"name="Supermenu:Shop by department:black friday"title="black friday"href="javascript:;"class="0 link menuLink departmentLinkIte
+== CC-MAIN-2024-46 uk,co,cultbeauty)/ 20241111172625 | halloween_hits=8 bf_hits=0
+   HW: ata-astro-prefetch="hover" data-astro-cid-r6zccy7c>A/W 24&#39; Beauty Trends</a><a href="/blog/best-halloween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Hallo
+   HW: oween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Halloween Make Up Looks</a></div></div><div class="sub-nav-item" data-astro-cid-r6zccy7c><a href="/blog/beaut
+   HW: d-37bvxqo4>A/W 24&#39; Beauty Trends</a><a data-astro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Hallow
+   HW: ro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data
+   HW: loween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data-astro-cid-37bvxqo4> <div data-astro-cid-37bvxqo4> <
+== CC-MAIN-2024-46 uk,co,cultbeauty)/ 20241112034702 | halloween_hits=8 bf_hits=0
+   HW: ata-astro-prefetch="hover" data-astro-cid-r6zccy7c>A/W 24&#39; Beauty Trends</a><a href="/blog/best-halloween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Hallo
+   HW: oween-makeup-looks/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>10 Halloween Make Up Looks</a></div></div><div class="sub-nav-item" data-astro-cid-r6zccy7c><a href="/blog/beaut
+   HW: d-37bvxqo4>A/W 24&#39; Beauty Trends</a><a data-astro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Hallow
+   HW: ro-prefetch="tap" tabindex="-1" href="/blog/best-halloween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data
+   HW: loween-makeup-looks/" aria-label="Cult Corner10 Halloween Make Up Looks" data-astro-cid-37bvxqo4>10 Halloween Make Up Looks</a> </div> </div> </div><div data-astro-cid-37bvxqo4> <div data-astro-cid-37bvxqo4> <
+== CC-MAIN-2024-46 de,rossmann)/de 20241106214358 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 fr,sephora)/ 20241114163710 | halloween_hits=0 bf_hits=2
+   BF: a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> </ul> </div> <div class="info-links hide-for-smal
+   BF: ales.<br /> *Singles' Day = Journée des célibataires<br /> *Black Friday = Vendredi noir<br /> *Secret Santa = Père Noël Secret<br /
+== CC-MAIN-2024-46 fr,sephora)/ 20241114213425 | halloween_hits=0 bf_hits=2
+   BF: a></li> <li><a href="https://www.sephora.fr/black-friday/">Black Friday</a></li> </ul> </div> <div class="info-links hide-for-smal
+   BF: ales.<br /> *Singles' Day = Journée des célibataires<br /> *Black Friday = Vendredi noir<br /> *Secret Santa = Père Noël Secret<br /
+== CC-MAIN-2024-46 com,myprotein)/ 20241104104420 | halloween_hits=4 bf_hits=0
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl" data-astro-cid-mzq34yl7> ✕ </button> </div> <!-- Navigation & Account --> <div class="bg-w
+   HW: ar" class="cursor-pointer hover:text-hover-primary flex h-12 items-center btn btn-md btn-circle btn-ghost text-2xl">x</button> </div> <mobile-instant-search> <div id="mobile-instant-search" class="hidden f
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"></div> </div> </dialog
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id="drawer-conten
+== CC-MAIN-2024-46 com,myprotein)/ 20241106153657 | halloween_hits=4 bf_hits=0
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl" data-astro-cid-mzq34yl7> ✕ </button> </div> <!-- Navigation & Account --> <div class="bg-w
+   HW: ar" class="cursor-pointer hover:text-hover-primary flex h-12 items-center btn btn-md btn-circle btn-ghost text-2xl">x</button> </div> <mobile-instant-search> <div id="mobile-instant-search" class="hidden f
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"></div> </div> </dialog
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id="drawer-conten
+== CC-MAIN-2024-46 de,dm)/ 20241102022715 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2024-46 de,dm)/ 20241107122911 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,notino)/ 20251016233612 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,lillydrogerie)/ 20251012042052 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,lillydrogerie)/ 20251017160037 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,dm-drogeriemarkt)/ 20251015144304 | halloween_hits=6 bf_hits=0
+   HW: ata-dmid="teaser" class="edico_teaserOuterContainer-hHDwK"><a class="edico_link-PeY1f " aria-label="Хелоуин" href="/vdahnovenie-i-saveti/tematichni-predlozhenia-i-idei/halloween" style="border-radius: 6px; h
+   HW: "edico_link-PeY1f " aria-label="Хелоуин" href="/vdahnovenie-i-saveti/tematichni-predlozhenia-i-idei/halloween" style="border-radius: 6px; height: 100%;"><div style="height: 100%;"><div class="edico_imageAndTex
+   HW: p: 0.625rem;"><p data-designsystem="true" data-dmid="teaser-small-headline" class="u w jx ac ag il">Хелоуин</p></div></div></div></a></div></div></li><li data-dmid="content-group-item-container-1" style="gri
+   HW: ser" class="edico_teaserOuterContainer-hHDwK"><a class="edico_link-PeY1f " aria-label="Крем супа от тиква, Есенна рецепта" href="/vdahnovenie-i-saveti/hranene/zdravoslovni-retsepti/krem-supa-ot-tikva-13254
+   HW: width: 100%;"><img class="edico_image-OHTyg " width="400" height="281" alt="Рецепта за крем супа от тиква" style="border-radius: 6px;" src="https://editorial-content.dm-static.com/image/upload/q_auto:eco,f
+== CC-MAIN-2025-43 bg,douglas)/ 20251010060832 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,fashiondays)/ 20251015051028 | halloween_hits=0 bf_hits=1
+   BF:  > Black Friday Fashion Days </a></li><li><a href="https://www.fashiond
+== CC-MAIN-2025-43 bg,fashiondays)/ 20251018083417 | halloween_hits=0 bf_hits=1
+   BF:  > Black Friday Fashion Days </a></li><li><a href="https://www.fashiond
+== CC-MAIN-2025-43 bg,answear)/ 20251010053316 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,myprotein)/ 20251011011344 | halloween_hits=4 bf_hits=0
+   HW:  на навигацията" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl absolute right-2"> ✕ </button> </div> <div class="bg-white h-dvh text-primary pb-6 pt-3"> <
+   HW: не" class="cursor-pointer hover:text-hover-primary flex h-12 items-center btn btn-md btn-circle btn-ghost text-2xl"> x </button> </div> <div> <div id="mobile-instant-search" class="hidden flex-col mx-auto 
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"> <h2 id="modal-title">
+   HW: n aria-label="Затваряне на модала" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id="drawer-conten
+== CC-MAIN-2025-43 bg,subra)/ 20251009133543 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,remedium)/ 20251013025848 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,benu)/ 20251008065958 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,kaufland)/ 20251010155700 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 bg,lidl)/ 20251014132432 | halloween_hits=36 bf_hits=0
+   HW: 962770><!----><picture data-v-d0962770><source media="(min-width: 80rem)" srcset="/static/assets/MT_Halloween_LG-1818327.jpg"><source media="(min-width: 48rem)" srcset="/static/assets/MT_Halloween_LG-1818327.j
+   HW: ic/assets/MT_Halloween_LG-1818327.jpg"><source media="(min-width: 48rem)" srcset="/static/assets/MT_Halloween_LG-1818327.jpg"><source media="(min-width: 37.5rem)" srcset="/static/assets/MT_Halloween_XS-1818340
+   HW: /assets/MT_Halloween_LG-1818327.jpg"><source media="(min-width: 37.5rem)" srcset="/static/assets/MT_Halloween_XS-1818340.jpg"><source media="(min-width: 0rem)" srcset="/static/assets/MT_Halloween_XS-1818340.jp
+   HW: tic/assets/MT_Halloween_XS-1818340.jpg"><source media="(min-width: 0rem)" srcset="/static/assets/MT_Halloween_XS-1818340.jpg"><img class="AMarketingTeaser__Image" src="/static/assets/MT_Halloween_LG-1818327.jp
+   HW: tic/assets/MT_Halloween_XS-1818340.jpg"><img class="AMarketingTeaser__Image" src="/static/assets/MT_Halloween_LG-1818327.jpg" alt="Хелоуин в Lidl: призрачен замък с прилепи, пълнолуние и мълнии." loading="lazy
+== CC-MAIN-2025-43 bg,pulsefit)/ 20251008041756 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 com,hollandandbarrett)/ 20251013085100 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 com,hollandandbarrett)/ 20251014232833 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-43 com,lookfantastic)/ 20251018162513 | halloween_hits=5 bf_hits=4
+   HW: refetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Garnier</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: e w-full"> <form method="dialog"> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: "dialog"> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4">✕</button> </form> <div class="flex flex-col justify-center
+   HW: "dialog"> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4">✕</button> </form> <div class="flex flex-col overflow-auto 
+   BF: scount</a> </li><li> <a href="/c/black-friday/" aria-label="Black Friday 2025">Black Friday 2025</a> </li><li> <a href="/c/team-fant
+   BF: > <a href="/c/black-friday/" aria-label="Black Friday 2025">Black Friday 2025</a> </li><li> <a href="/c/team-fantastic/" aria-label=
+== CC-MAIN-2025-43 com,lookfantastic)/ 20251018203241 | halloween_hits=5 bf_hits=4
+   HW: refetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Garnier</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: e w-full"> <form method="dialog"> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: "dialog"> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4">✕</button> </form> <div class="flex flex-col justify-center
+   HW: "dialog"> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4">✕</button> </form> <div class="flex flex-col overflow-auto 
+   BF: scount</a> </li><li> <a href="/c/black-friday/" aria-label="Black Friday 2025">Black Friday 2025</a> </li><li> <a href="/c/team-fant
+   BF: > <a href="/c/black-friday/" aria-label="Black Friday 2025">Black Friday 2025</a> </li><li> <a href="/c/team-fantastic/" aria-label=
+== CC-MAIN-2025-43 com,boots)/ 20251014004049 | halloween_hits=10 bf_hits=7
+   HW: roundColourOnFocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: s(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_23576
+   HW: 190"tabindex="25"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="26"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal 
+   HW: i> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal events:View all halloween"onfocus="addBackgroundColourOnFocus(this)"onclick='analyticsJS.headObjectEventGtm("Offers : seasona
+   BF: k"href="javascript:;"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+   BF: "name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchorDataToggle"role="men
+== CC-MAIN-2025-43 com,boots)/ 20251016025145 | halloween_hits=15 bf_hits=7
+   HW: roundColourOnFocus(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subc
+   HW: s(this)"aria-label="link"href="javascript:;"name="Supermenu:Offers:seasonal events:halloween"title="halloween"class="menuLink categoryLinkItem anchorDataToggle"role="menuitem"data-toggle="subcategoryLink_23576
+   HW: 190"tabindex="25"> <p class="categoryLinkOutput"><span class="menuItemLabel lowerLevelMenuListItem">halloween</span></p> </a> <span data-icon="5"aria-hidden="true"class="globalNavArrow"></span> <div id="subcat
+   HW: ></span> <a class="mobileBackLink"tabindex="26"> <span class="menuItemLabel lowerLevelMenuListItem">halloween</span> </a> </li> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal 
+   HW: i> <li> <a id="categoryLink_2357689_1708685_1719190"name="Supermenu:Offers:seasonal events:View all halloween"onfocus="addBackgroundColourOnFocus(this)"onclick='analyticsJS.headObjectEventGtm("Offers : seasona
+   BF: k"href="javascript:;"name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchor
+   BF: "name="Supermenu:Offers:seasonal events:black friday"title="black friday"class="menuLink categoryLinkItem anchorDataToggle"role="men
+== CC-MAIN-2025-43 uk,co,cultbeauty)/ 20251011011807 | halloween_hits=3 bf_hits=0
+   HW: e w-full"> <form method="dialog"> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: "dialog"> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4">✕</button> </form> <div class="flex flex-col justify-center
+   HW: "dialog"> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4">✕</button> </form> <div class="flex flex-col overflow-auto 
+== CC-MAIN-2025-43 uk,co,cultbeauty)/ 20251012042650 | halloween_hits=7 bf_hits=0
+   HW: e w-full"> <form method="dialog"> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: 0px] mx-auto lg:h-fit grid" data-e2e="global-primary-banner"> <a href="/p/laneige-lip-sleeping-mask-pumpkin-pie/17035256/" data-e2e="global-primary-banner-link" class="sm:inline-flex h-full focus-visible:bor
+   HW: nner-custom-padding px-6 sm:px-6 md:px-8 lg:px-16 sm:w-auto"> <a href="/p/laneige-lip-sleeping-mask-pumpkin-pie/17035256/"><div class="w-full items-center justify-center"> <figure> <picture> <source srcset="
+   HW: anner-subtitle"> Fulfil your ‘cosy season’ fantasies with the limited-edition Lip Sleeping Mask in ‘Pumpkin Pie’ — the <br> overnight secret to pillowy kisses. </p></a> <div class="global-primary-banner__cta
+   HW: -banner__ctas w-full flex gap-6 items-center justify-center"> <a href="/p/laneige-lip-sleeping-mask-pumpkin-pie/17035256/" class="btn btn-1 pointer-events-auto btn-primary">SHOP NOW</a> <a href="/c/brands/la
+== CC-MAIN-2025-43 de,rossmann)/de 20251006110509 | halloween_hits=1 bf_hits=0
+   HW: ton Katzensnacks, Bestview Augentropfen, Ener BIO Linsen Knusper Ecken und eine Isana Tuchmaske mit Halloween-Motiv." /> </picture></a> </span></li> 
+== CC-MAIN-2025-43 de,rossmann)/de 20251010205948 | halloween_hits=1 bf_hits=0
+   HW: ton Katzensnacks, Bestview Augentropfen, Ener BIO Linsen Knusper Ecken und eine Isana Tuchmaske mit Halloween-Motiv." /> </picture></a> </span></li> 
+== CC-MAIN-2025-43 fr,sephora)/ 20251016225945 | halloween_hits=0 bf_hits=1
+   BF: -inverse-fixed text-wrap line-clamp-1 hover:text-underline">Black Friday</p></a></li><li class="flex flex-1 first:pt-1"><a class="fl
+== CC-MAIN-2025-43 fr,sephora)/ 20251018103741 | halloween_hits=0 bf_hits=1
+   BF: -inverse-fixed text-wrap line-clamp-1 hover:text-underline">Black Friday</p></a></li><li class="flex flex-1 first:pt-1"><a class="fl
+== CC-MAIN-2025-43 com,myprotein)/ 20251015211520 | halloween_hits=4 bf_hits=0
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl absolute right-2"> ✕ </button> </div> <general-tabs id="navigation-tabs"> <div class="tab-
+   HW:  options modal" class="close-size-options-btn a11y-closeBtn btn btn-sm right-0 top-1 btn-circle btn-ghost absolute text-xl z-30 "> ✕ </button> <ul class="flex flex-wrap gap-1 justify-center items-center mx
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"> <h2 id="modal-title">
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id="drawer-conten
+== CC-MAIN-2025-43 com,myprotein)/ 20251016152529 | halloween_hits=4 bf_hits=0
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl absolute right-2"> ✕ </button> </div> <general-tabs id="navigation-tabs"> <div class="tab-
+   HW:  options modal" class="close-size-options-btn a11y-closeBtn btn btn-sm right-0 top-1 btn-circle btn-ghost absolute text-xl z-30 "> ✕ </button> <ul class="flex flex-wrap gap-1 justify-center items-center mx
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"> <h2 id="modal-title">
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id="drawer-conten
+== CC-MAIN-2025-43 de,notino)/ 20251016005926 | halloween_hits=0 bf_hits=1
+   BF: ter-sectionLink" href="https://www.notino.de/black-friday/">Black Friday</a></li><li class="footer-linkListItem"><a class="footer-li
+== CC-MAIN-2025-43 de,dm)/ 20251008160727 | halloween_hits=33 bf_hits=0
+   HW: dico_image-OHTyg " width="399" height="400" alt="Zwei Produktverpackungen von Profissimo, vorne ein Kürbis Schnitz-Set mit einem lachenden Kürbis und der Aufschrift „3 x Schnitzwerkzeug, 6 x Sticker und Mot
+   HW: 400" alt="Zwei Produktverpackungen von Profissimo, vorne ein Kürbis Schnitz-Set mit einem lachenden Kürbis und der Aufschrift „3 x Schnitzwerkzeug, 6 x Sticker und Motivvorlagen“, hinten eine Verpackung für
+   HW: yg " width="399" height="400" alt="Ein roter Holzpilz mit weißen Punkten steht vor einem weißen Filzkürbis mit braunem Stiel und Blatt auf einem hellgrünen Hintergrund" style="border-radius: 6px; visibility
+   HW: ex-col grow relative overflow-hidden"><span class="sr-only">Marke: dmBio; Produktname: Bliss Balls, Pumpkin Spice, 60 g; Preis: 1,65&nbsp;€; Grundpreis: 0,06 kg (27,50&nbsp;€ je 1 kg); Limitierte Editition G
+   HW: </span><a class="cursor-pointer w-full relative bg-color9 aspect-[1/1.05]" href="/dmbio-bliss-balls-pumpkin-spice-p4066447869637.html"><img alt="Bliss Balls, Pumpkin Spice dmBio" loading="lazy" class="p-s bg
+== CC-MAIN-2025-47 bg,emag)/ 20251111071400 | halloween_hits=0 bf_hits=2
+   BF: ide/black-friday?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+   BF: ay?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+== CC-MAIN-2025-47 bg,emag)/ 20251115180040 | halloween_hits=0 bf_hits=2
+   BF: ide/black-friday?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+   BF: ay?ref=footer_3_4" class="footer-link" title="Black Friday">Black Friday</a></li> 
+== CC-MAIN-2025-47 bg,lillydrogerie)/ 20251115050449 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 bg,lillydrogerie)/ 20251116022210 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 bg,dm-drogeriemarkt)/ 20251114021300 | halloween_hits=11 bf_hits=0
+   HW: ser" class="edico_teaserOuterContainer-hHDwK"><a class="edico_link-PeY1f " aria-label="Крем супа от тиква, Есенна рецепта" href="/vdahnovenie-i-saveti/hranene/zdravoslovni-retsepti/krem-supa-ot-tikva-13254
+   HW: width: 100%;"><img class="edico_image-OHTyg " width="400" height="281" alt="Рецепта за крем супа от тиква" style="border-radius: 6px;" src="https://editorial-content.dm-static.com/image/upload/q_auto:eco,f
+   HW: <p data-designsystem="true" data-dmid="teaser-big-headline" class="u w jz bj ag in jo">Крем супа от тиква</p></div></div></div></a></div></div></li></ol><div class="a fb fc fd fe ff c d fg fh fi"><button t
+   HW: w relative overflow-hidden"><span class="sr-only">Марка: Profissimo; Име на продукта: Ароматна свещ Pumpkin Spice Latte, 1 бр.; Цена: 4,29&nbsp;лв.; Основна цена: 1 бр. (4,29&nbsp;лв. за 1 бр.); Лимитирана с
+   HW:  class="cursor-pointer w-full relative bg-color9 aspect-[1/1.05]" href="/profissimo-aromatna-svesht-pumpkin-spice-latte-p4067796062038.html"><img alt="Ароматна свещ Pumpkin Spice Latte Profissimo" loading="l
+== CC-MAIN-2025-47 bg,dm-drogeriemarkt)/ 20251117223421 | halloween_hits=8 bf_hits=0
+   HW: w relative overflow-hidden"><span class="sr-only">Марка: Profissimo; Име на продукта: Ароматна свещ Pumpkin Spice Latte, 1 бр.; Цена: 4,29&nbsp;лв.; Основна цена: 1 бр. (4,29&nbsp;лв. за 1 бр.); Лимитирана с
+   HW:  class="cursor-pointer w-full relative bg-color9 aspect-[1/1.05]" href="/profissimo-aromatna-svesht-pumpkin-spice-latte-p4067796062038.html"><img alt="Ароматна свещ Pumpkin Spice Latte Profissimo" loading="l
+   HW:  href="/profissimo-aromatna-svesht-pumpkin-spice-latte-p4067796062038.html"><img alt="Ароматна свещ Pumpkin Spice Latte Profissimo" loading="lazy" class="p-s bg-color9 object-center object-contain w-full h-f
+   HW: w_320/v1747486868/assets/pas/images/032b8986-4edb-48ff-a658-442d18d29e18/profissimo-aromatna-svesht-pumpkin-spice-latte"></a><div data-dmid="eyecatchers" class="flex flex-col gap-xxxs absolute left-xxxs top-
+   HW: t-m font-medium text-headline [text-decoration:none] text-pretty" href="/profissimo-aromatna-svesht-pumpkin-spice-latte-p4067796062038.html">Ароматна свещ Pumpkin Spice Latte, 1 бр.</a><div class="ac u w mx"
+== CC-MAIN-2025-47 bg,douglas)/ 20251108003313 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 bg,fashiondays)/ 20251115080133 | halloween_hits=0 bf_hits=114
+   BF: ondays.bg/s/black-friday-after-party-w/" data-gtm-name="MCC BLACK FRIDAY AFTERPARTY 10-19 NOV W" data-gtm-creative="https://fdcdn.ak
+   BF: bg/s/black-friday-after-party-w/" data-gtm-list-detail="MCC BLACK FRIDAY AFTERPARTY 10-19 NOV W" data-gtm-type="banner" data-gtm-ben
+== CC-MAIN-2025-47 bg,fashiondays)/ 20251118193210 | halloween_hits=0 bf_hits=114
+   BF: ondays.bg/s/black-friday-after-party-w/" data-gtm-name="MCC BLACK FRIDAY AFTERPARTY 10-19 NOV W" data-gtm-creative="https://fdcdn.ak
+   BF: bg/s/black-friday-after-party-w/" data-gtm-list-detail="MCC BLACK FRIDAY AFTERPARTY 10-19 NOV W" data-gtm-type="banner" data-gtm-ben
+== CC-MAIN-2025-47 bg,myprotein)/ 20251117224706 | halloween_hits=4 bf_hits=0
+   HW:  на навигацията" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl absolute right-2"> ✕ </button> </div> <div class="bg-white h-dvh text-primary pb-6 pt-3"> <
+   HW: не" class="cursor-pointer hover:text-hover-primary flex h-12 items-center btn btn-md btn-circle btn-ghost text-2xl"> x </button> </div> <div> <div id="mobile-instant-search" class="hidden flex-col mx-auto 
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"> <h2 id="modal-title" 
+   HW: n aria-label="Затваряне на модала" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-[86px] lg:top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id=
+== CC-MAIN-2025-47 bg,subra)/ 20251117121023 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 bg,benu)/ 20251109042721 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 bg,lidl)/ 20251118005144 | halloween_hits=1 bf_hits=0
+   HW: <!----></button></div></div></div></a><!--]--></li><!--]--><li class="ux-base-carousel__slide" data-ghost-slide="true" aria-hidden="true" tabindex="-1" data-v-2fca2819><!--[--><div class="AMarketingTeaser 
+== CC-MAIN-2025-47 bg,pulsefit)/ 20251116191446 | halloween_hits=3 bf_hits=0
+   HW: " data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" href="https://pulsefit.bg/halloween-events-by-pulse/"> <div class="e-con-inner"> </div> </a> <div class="elementor-elem
+   HW: class="elementor-widget-container"> <h2 class="elementor-heading-title elementor-size-default">🎃 Halloween Events by Pulse!</h2> </div> </div> <div class="elementor-element elementor-element-a3ef43
+   HW:  <a class="elementor-button elementor-button-link elementor-size-sm" href="https://pulsefit.bg/halloween-events-by-pulse/"> <span class="elementor-button-content-wrapper"> <span class="elem
+== CC-MAIN-2025-47 com,hollandandbarrett)/ 20251114094627 | halloween_hits=0 bf_hits=10
+   BF: itamins-supplements-shop-all/?t=promo%3Ablack-friday-deals">Black Friday Deals</a><a href="/shop/vitamins-supplements/vitamins-suppl
+   BF: od-drink/food-drink-shop-all/?t=promo%3Ablack-friday-deals">Black Friday Deals</a><a href="/shop/food-drink/food-drink-shop-all/?t=p
+== CC-MAIN-2025-47 com,hollandandbarrett)/ 20251116192839 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 com,lookfantastic)/ 20251119040250 | halloween_hits=4 bf_hits=23
+   HW: refetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Garnier</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: "dialog" data-astro-cid-3a6tfe2q> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: 3a6tfe2q> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" data-astro-cid-3a6tfe2q>✕</button> </form> <div class="flex
+   BF: my-3 px-4 text-sm tracking-widest" data-astro-cid-r6zccy7c> Black Friday </p> </a> <div class="absolute top-1/2 left-[90%]" data-ast
+   BF: n class="sr-only" data-astro-cid-r6zccy7c> Enter submenu (Black Friday) </span> <svg xmlns="http://www.w3.org/2000/svg" width="12"
+== CC-MAIN-2025-47 com,lookfantastic)/ 20251119083255 | halloween_hits=4 bf_hits=23
+   HW: refetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Garnier</a><a href="/c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a hre
+   HW: /c/brands/ghost/" data-astro-prefetch="hover" class="brand-navigation-item" data-astro-cid-wuiayirg>Ghost</a><a href="/c/brands/givenchy/" data-astro-prefetch="hover" class="brand-navigation-item" data-ast
+   HW: "dialog" data-astro-cid-3a6tfe2q> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: 3a6tfe2q> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" data-astro-cid-3a6tfe2q>✕</button> </form> <div class="flex
+   BF: my-3 px-4 text-sm tracking-widest" data-astro-cid-r6zccy7c> Black Friday </p> </a> <div class="absolute top-1/2 left-[90%]" data-ast
+   BF: n class="sr-only" data-astro-cid-r6zccy7c> Enter submenu (Black Friday) </span> <svg xmlns="http://www.w3.org/2000/svg" width="12"
+== CC-MAIN-2025-47 com,boots)/ 20251111013024 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 uk,co,cultbeauty)/ 20251116000347 | halloween_hits=5 bf_hits=0
+   HW: -keep-your-tan-longer/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>PUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE</a><a href="/blog/the-no-make-up-make-up-need-to
+   HW: tro-prefetch="tap" tabindex="-1" href="/blog/how-to-keep-your-tan-longer/" aria-label="Beauty TrendsPUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE" data-astro-cid-37bvxqo4>PUMPKIN BEAUTY ESSENTIA
+   HW: l="Beauty TrendsPUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE" data-astro-cid-37bvxqo4>PUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE</a><a data-astro-prefetch="tap" tabindex="-1" hr
+   HW: "dialog" data-astro-cid-3a6tfe2q> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: 3a6tfe2q> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" data-astro-cid-3a6tfe2q>✕</button> </form> <div class="flex
+== CC-MAIN-2025-47 uk,co,cultbeauty)/ 20251117193214 | halloween_hits=5 bf_hits=0
+   HW: -keep-your-tan-longer/" class="navigation-item" data-astro-prefetch="hover" data-astro-cid-r6zccy7c>PUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE</a><a href="/blog/the-no-make-up-make-up-need-to
+   HW: tro-prefetch="tap" tabindex="-1" href="/blog/how-to-keep-your-tan-longer/" aria-label="Beauty TrendsPUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE" data-astro-cid-37bvxqo4>PUMPKIN BEAUTY ESSENTIA
+   HW: l="Beauty TrendsPUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE" data-astro-cid-37bvxqo4>PUMPKIN BEAUTY ESSENTIALS THAT GO BEYOND YOUR SPICED LATTE</a><a data-astro-prefetch="tap" tabindex="-1" hr
+   HW: "dialog" data-astro-cid-3a6tfe2q> <button id="close-session-modal" class="btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" aria-label="Close session settings modal">✕</button> </form> 
+   HW: 3a6tfe2q> <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn btn-sm btn-circle btn-ghost absolute right-4 text-xl z-30 top-4" data-astro-cid-3a6tfe2q>✕</button> </form> <div class="flex
+== CC-MAIN-2025-47 de,rossmann)/de 20251107115147 | halloween_hits=20 bf_hits=0
+   HW: data-promotion-enabled="true" data-promotion-retailmedia="false" data-promotion-name="app_start_btt_halloween_vampir_de_2025_kw43" data-promotion-id="c7d20c6e-9262-4c97-abab-dbdf1f24030f" data-promotion-positi
+   HW: ent-type="rossmann/components/teasers/imagetextteaser" data-promotion-component-name="app_start_btt_halloween_vampir_de_2025_kw43" data-promotion-component-id="e532ee58-ad64-468a-b2b6-2fbcac6c54cd"><a aria-lab
+   HW: data-promotion-enabled="true" data-promotion-retailmedia="false" data-promotion-name="app_start_btt_halloween_joker_de_2025_kw43" data-promotion-id="0b68412b-1814-42c0-9921-fcac26c6635c" data-promotion-positio
+   HW: ent-type="rossmann/components/teasers/imagetextteaser" data-promotion-component-name="app_start_btt_halloween_joker_de_2025_kw43" data-promotion-component-id="e532ee58-ad64-468a-b2b6-2fbcac6c54cd"><a aria-labe
+   HW: 1"><a aria-label="Jetzt entdecken!" href="https://www.rossmann.de/de/ernaehrung/ratgeber/rezeptwelt/pumpkin-spice-latte"><img alt="Bild von einem Pumpkin Spice Latte in einem Becher" class="aspect-[3/4] w-fu
+== CC-MAIN-2025-47 de,rossmann)/de 20251116063641 | halloween_hits=20 bf_hits=0
+   HW: data-promotion-enabled="true" data-promotion-retailmedia="false" data-promotion-name="app_start_btt_halloween_vampir_de_2025_kw43" data-promotion-id="c7d20c6e-9262-4c97-abab-dbdf1f24030f" data-promotion-positi
+   HW: ent-type="rossmann/components/teasers/imagetextteaser" data-promotion-component-name="app_start_btt_halloween_vampir_de_2025_kw43" data-promotion-component-id="e532ee58-ad64-468a-b2b6-2fbcac6c54cd"><a aria-lab
+   HW: data-promotion-enabled="true" data-promotion-retailmedia="false" data-promotion-name="app_start_btt_halloween_joker_de_2025_kw43" data-promotion-id="0b68412b-1814-42c0-9921-fcac26c6635c" data-promotion-positio
+   HW: ent-type="rossmann/components/teasers/imagetextteaser" data-promotion-component-name="app_start_btt_halloween_joker_de_2025_kw43" data-promotion-component-id="e532ee58-ad64-468a-b2b6-2fbcac6c54cd"><a aria-labe
+   HW: r" data-promotion-enabled="true" data-promotion-retailmedia="false" data-promotion-name="btt_rezept_pumpkin_spice_latte" data-promotion-id="ad5f9968-3cbf-4a85-a095-255f1554d0fc" data-promotion-position="2" d
+== CC-MAIN-2025-47 fr,sephora)/ 20251118184429 | halloween_hits=0 bf_hits=1
+   BF: -inverse-fixed text-wrap line-clamp-1 hover:text-underline">Black Friday</p></a></li><li class="flex flex-1 first:pt-1"><a class="fl
+== CC-MAIN-2025-47 fr,sephora)/ 20251119081130 | halloween_hits=0 bf_hits=41
+   BF: ext-text-primary text-wrap text-left" style="color:#980000">Black Friday</span></span><svg xmlns="http://www.w3.org/2000/svg" viewBo
+   BF:  tablet:text-title4 font-bold font-brand text-text-primary">Black Friday</p><button class="flex flex-row items-center text-text-prim
+== CC-MAIN-2025-47 com,myprotein)/ 20251119021624 | halloween_hits=4 bf_hits=1
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl absolute right-2"> ✕ </button> </div> <general-tabs id="navigation-tabs"> <div class="tab-
+   HW:  options modal" class="close-size-options-btn a11y-closeBtn btn btn-sm right-0 top-1 btn-circle btn-ghost absolute text-xl z-30 "> ✕ </button> <ul class="flex flex-wrap gap-1 justify-center items-center mx
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"> <h2 id="modal-title" 
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-[86px] lg:top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id=
+   BF: s="heading pl-6 md:pl-1" data-astro-cid-4hr7w3oc>HOW DO YOU BLACK FRIDAY?</h2> <p class="title-font text-lg mt-4" data-astro-cid-4hr
+== CC-MAIN-2025-47 com,myprotein)/ 20251119045351 | halloween_hits=4 bf_hits=1
+   HW: lose Navigation" class="lg:hidden cursor-pointer hover:text-hover-primary btn btn-sm btn-circle btn-ghost text-xl absolute right-2"> ✕ </button> </div> <general-tabs id="navigation-tabs"> <div class="tab-
+   HW:  options modal" class="close-size-options-btn a11y-closeBtn btn btn-sm right-0 top-1 btn-circle btn-ghost absolute text-xl z-30 "> ✕ </button> <ul class="flex flex-wrap gap-1 justify-center items-center mx
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-4">✕</button> </form> <div id="modal-content"> <h2 id="modal-title" 
+   HW: > <button aria-label="Close modal" class="closeBtn a11y-closeBtn btn-sm text-primary btn-circle btn-ghost fixed right-4 text-xl z-30 top-[86px] lg:top-4" data-astro-cid-4h447f5l>✕</button> </form> <div id=
+   BF: s="heading pl-6 md:pl-1" data-astro-cid-4hr7w3oc>HOW DO YOU BLACK FRIDAY?</h2> <p class="title-font text-lg mt-4" data-astro-cid-4hr
+== CC-MAIN-2025-47 de,dm)/ 20251107184547 | halloween_hits=0 bf_hits=0
+== CC-MAIN-2025-47 de,dm)/ 20251118132257 | halloween_hits=0 bf_hits=0
