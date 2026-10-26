@@ -1,0 +1,38 @@
+name: Viber съобщения за поръчки
+
+on:
+  schedule:
+    # Every 15 minutes, 05:00–19:59 UTC = covers 08:00–21:00 in Sofia (summer and winter).
+    # The script itself checks the exact sending hours.
+    - cron: '*/15 5-19 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: order-viber-messages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Изпращане на съобщенията
+        working-directory: order-viber-messages
+        run: node src/run.js
+        env:
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+          SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
+          BULKGATE_APP_ID: ${{ secrets.BULKGATE_APP_ID }}
+          BULKGATE_TOKEN: ${{ secrets.BULKGATE_TOKEN }}
+          TEST_PHONE: ${{ secrets.TEST_PHONE }}
+          VIBER_SENDER: ${{ vars.VIBER_SENDER }}
+          LIVE: ${{ vars.LIVE }}
+          START_AT: ${{ vars.START_AT }}

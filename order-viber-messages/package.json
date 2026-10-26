@@ -1,0 +1,13 @@
+{
+  "name": "order-viber-messages",
+  "private": true,
+  "description": "Viber/SMS съобщения към клиентите на FitPatches: благодарност за поръчката и напомняния за пратката",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/run.js",
+    "test": "node --test test/*.test.js"
+  }
+}
