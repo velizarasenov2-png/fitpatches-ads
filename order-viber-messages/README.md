@@ -1,8 +1,8 @@
-# Viber съобщения за поръчките (BulkGate + Shopify + BigArena)
+# Съобщения за поръчките (Twilio или BulkGate + Shopify + BigArena)
 
 На всеки 15 минути (08:00–21:00) системата проверява поръчките от последните 14 дни и праща на клиента съобщение.
 
-**В момента: само SMS** (кратък текст на латиница, 1 SMS). `VIBER_SENDER` остава празно. Viber се включва по-късно, без промяна в кода: регистрирате Viber подател и шаблони в BulkGate и попълвате `VIBER_SENDER`. Тогава първо се пробва Viber, а SMS отива само ако клиентът няма Viber.
+**В момента: само SMS** (кратък текст на латиница, 1 SMS). Праща се през **Twilio**, ако са зададени `TWILIO_ACCOUNT_SID` и `TWILIO_AUTH_TOKEN`, иначе през BulkGate. Viber може само през BulkGate: регистрирате Viber подател и шаблони там, махате Twilio ключовете и попълвате `VIBER_SENDER`. Тогава първо се пробва Viber, а SMS отива само ако клиентът няма Viber.
 
 | Кога | Съобщение |
 |---|---|
@@ -32,8 +32,14 @@
 
 ## Пускане
 
-### 1. BulkGate (праща и Viber, и SMS)
-За SMS стигат стъпки 1 и 2. Стъпки 3–5 са само за Viber, по-късно.
+### 1. Twilio (SMS, с акаунта, който вече имате)
+1. **Акаунтът трябва да е платен** (Upgrade). Пробният акаунт праща само до потвърдени номера и добавя „Sent from your Twilio trial account“.
+2. **Console → Account Info:** взимате **Account SID** и **Auth Token**.
+3. **Messaging → Settings → Geo permissions:** включвате **Bulgaria**. Без това Twilio отказва всеки SMS до български номер.
+4. **Подател:** по подразбиране е `FitPatches`. Ако името не е регистрирано за България (регистрацията е около 4 седмици), операторът може да го смени с общ подател. Затова всеки SMS започва с „FitPatches:“.
+
+### 1б. BulkGate (по-евтин SMS, и Viber по-късно)
+Само ако не ползвате Twilio. За SMS стигат стъпки 1 и 2. Стъпки 3–5 са само за Viber.
 
 1. Регистрация на bulkgate.com и зареждане на кредит.
 2. **Modules & APIs → Advanced API → създаване на приложение.** Взимате **Application ID** и **Application token**.
@@ -57,12 +63,14 @@ Settings → Secrets and variables → Actions:
 | Secrets | |
 |---|---|
 | `SHOPIFY_CLIENT_ID`, `SHOPIFY_CLIENT_SECRET` | от Shopify |
-| `BULKGATE_APP_ID`, `BULKGATE_TOKEN` | от BulkGate |
+| `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN` | от Twilio |
+| `BULKGATE_APP_ID`, `BULKGATE_TOKEN` | от BulkGate (само ако не ползвате Twilio) |
 | `TEST_PHONE` | вашият телефон, само за теста |
 
 | Variables | |
 |---|---|
-| `VIBER_SENDER` | одобреното Viber име, напр. `FitPatches` |
+| `TWILIO_FROM` | по желание; по подразбиране `FitPatches` |
+| `VIBER_SENDER` | само с BulkGate: одобреното Viber име, напр. `FitPatches` |
 | `VIBER_TEMPLATES` | по подразбиране `true` (праща одобрените шаблони); `false` = обикновен текст |
 | `LIVE` | `false` → проба, `true` → праща |
 | `START_AT` | напр. `2026-10-27T08:00:00+02:00` |
@@ -77,7 +85,9 @@ Settings → Secrets and variables → Actions:
 При първото пускане клиентите, чиито пратки вече чакат в офис, получават по едно напомняне: това, което им се полага в момента. Благодарност получават само поръчките след `START_AT`.
 
 ## Цена
-- **SMS (сега):** €0.076 (A1, Vivacom) – €0.089 (Telenor) за SMS от подател 1779, без месечна такса. При ~700 SMS на месец това са около €55–60. Всеки SMS е до 160 знака на латиница, така че е 1 SMS.
+Всеки SMS е до 160 знака на латиница, така че е 1 SMS. При ~300 поръчки на месец това са около 700 SMS.
+- **SMS през Twilio:** $0.1466 на SMS, без месечна такса. При ~700 SMS на месец са около $103.
+- **SMS през BulkGate:** €0.076 (A1, Vivacom) – €0.089 (Telenor) на SMS от подател 1779, без месечна такса. При ~700 SMS на месец са около €55–60.
 - BulkGate Viber (по-късно): €0.0198 с шаблон, €0.03 без шаблон. Viber изисква минимум **€150 на месец** (предплатени, после се харчат за съобщения). При ~300 поръчки на месец това са около 700 съобщения, тоест реално плащате минимума.
 - GitHub Actions: безплатно, защото repo-то е публично.
 
@@ -99,7 +109,7 @@ Repo-то е публично и логовете на GitHub Actions се ви�
 
 ## Разработка
 ```bash
-npm test                                  # 32 теста
+npm test                                  # 37 теста
 node --env-file=.env src/run.js           # едно пускане с настройките от .env
 ```
 
@@ -109,6 +119,6 @@ node --env-file=.env src/run.js           # едно пускане с наст�
 - `messages.js`: текстовете;
 - `bigarena.js`: проследяването;
 - `order.js`: данните от поръчката;
-- `bulkgate.js`, `shopify.js`: връзка с BulkGate и Shopify.
+- `twilio.js`, `bulkgate.js`, `shopify.js`: връзка с Twilio, BulkGate и Shopify.
 
 GitHub спира автоматичните пускания в публично repo, ако 60 дни няма никаква промяна в него. Тогава ги включвате пак от Actions.

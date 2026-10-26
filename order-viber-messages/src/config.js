@@ -9,6 +9,13 @@ export function loadConfig(env = process.env) {
     shopifyClientSecret: env.SHOPIFY_CLIENT_SECRET || '',
     shopifyApiVersion: env.SHOPIFY_API_VERSION || '2026-04',
 
+    // twilio = SMS only through Twilio; bulkgate = SMS (and Viber later). Picked automatically from the keys that are set.
+    smsProvider: (env.SMS_PROVIDER || (env.TWILIO_ACCOUNT_SID ? 'twilio' : 'bulkgate')).trim().toLowerCase(),
+    twilioAccountSid: env.TWILIO_ACCOUNT_SID || '',
+    twilioAuthToken: env.TWILIO_AUTH_TOKEN || '',
+    // Alphanumeric sender (max 11 characters), a Twilio number (+...), or a Messaging Service SID (MG...).
+    twilioFrom: env.TWILIO_FROM || 'FitPatches',
+
     bulkgateAppId: env.BULKGATE_APP_ID || '',
     bulkgateToken: env.BULKGATE_TOKEN || '',
     // Registered Viber sender name. Empty = SMS only (e.g. while Viber registration is pending).
@@ -48,9 +55,15 @@ export function validateConfig(cfg) {
   }
   if (cfg.startAt && Number.isNaN(cfg.startAt.getTime())) errors.push('START_AT не е валидна дата (пример: 2026-10-27T08:00:00+02:00).');
   if (cfg.live) {
-    if (!cfg.bulkgateAppId || !cfg.bulkgateToken) errors.push('LIVE=true, но липсват BULKGATE_APP_ID и BULKGATE_TOKEN.');
+    if (cfg.smsProvider === 'twilio') {
+      if (!cfg.twilioAccountSid || !cfg.twilioAuthToken) errors.push('LIVE=true, но липсват TWILIO_ACCOUNT_SID и TWILIO_AUTH_TOKEN.');
+    } else if (!cfg.bulkgateAppId || !cfg.bulkgateToken) {
+      errors.push('LIVE=true, но липсват BULKGATE_APP_ID и BULKGATE_TOKEN.');
+    }
     if (!cfg.startAt) errors.push('LIVE=true изисква START_AT, за да не се пишат благодарности за стари поръчки.');
   }
+  if (!['twilio', 'bulkgate'].includes(cfg.smsProvider)) errors.push('SMS_PROVIDER трябва да е twilio или bulkgate.');
+  if (cfg.smsProvider === 'twilio' && cfg.viberSender) errors.push('Twilio не праща Viber: махнете VIBER_SENDER или ползвайте BulkGate.');
   if (!/^\d{2}:\d{2}-\d{2}:\d{2}$/.test(cfg.sendHours)) errors.push('SEND_HOURS трябва да е във формат 08:00-21:00.');
   return errors;
 }

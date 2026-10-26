@@ -8,6 +8,7 @@ import { orderInfo, shipmentStatus, needsTracking, normalizePhone } from './orde
 import { decide } from './decide.js';
 import { render } from './messages.js';
 import { sendMessage } from './bulkgate.js';
+import { sendTwilio } from './twilio.js';
 import { DAY, withinHours } from './time.js';
 
 const LABEL = {
@@ -33,7 +34,7 @@ async function mapLimit(items, limit, fn) {
   return out;
 }
 
-export async function runOnce({ cfg, shopify, now = new Date(), fetchTrackingImpl = fetchTracking, send = sendMessage, log = console.log }) {
+export async function runOnce({ cfg, shopify, now = new Date(), fetchTrackingImpl = fetchTracking, send = cfg.smsProvider === 'twilio' ? sendTwilio : sendMessage, log = console.log }) {
   const stateKey = cfg.testPhone ? 'msgs_test' : 'msgs';
   const summary = { orders: 0, tracked: 0, sent: 0, failed: 0, planned: 0 };
 
@@ -125,7 +126,7 @@ async function main() {
   }
   console.log(
     cfg.live
-      ? `РЕЖИМ: на живо${cfg.testPhone ? ' (всичко отива на тестовия телефон)' : ''}, канал: ${cfg.viberSender ? `Viber${cfg.viberTemplates ? ' (шаблони)' : ''} + SMS` : 'само SMS'}`
+      ? `РЕЖИМ: на живо${cfg.testPhone ? ' (всичко отива на тестовия телефон)' : ''}, канал: ${cfg.smsProvider === 'twilio' ? 'SMS през Twilio' : cfg.viberSender ? `Viber${cfg.viberTemplates ? ' (шаблони)' : ''} + SMS през BulkGate` : 'SMS през BulkGate'}`
       : 'РЕЖИМ: проба (LIVE=false) – нищо не се праща и не се записва',
   );
   const shopify = await createShopify(cfg);
