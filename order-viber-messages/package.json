@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node src/run.js",
     "templates": "node src/templates.js",
+    "test-sms": "node src/test-sms.js",
     "test": "node --test test/*.test.js"
   }
 }
