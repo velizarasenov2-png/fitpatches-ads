@@ -60,6 +60,8 @@ export const baseCfg = {
   printTexts: false,
   viberSender: 'FitPatches',
   viberExpiration: 3600,
+  viberTemplates: false,
+  viberTemplateLanguage: 'bg',
   smsSenderId: 'gSystem',
   smsSenderValue: '',
   bulkgateAppId: '1',

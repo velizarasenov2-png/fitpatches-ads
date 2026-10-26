@@ -15,6 +15,10 @@ export function loadConfig(env = process.env) {
     viberSender: env.VIBER_SENDER || '',
     // Seconds Viber has to deliver before BulkGate falls back to SMS.
     viberExpiration: num(env.VIBER_EXPIRATION, 3600),
+    // Viber requires approved templates for transactional messages (see `npm run templates`).
+    // false = plain text (billed as promotional).
+    viberTemplates: bool(env.VIBER_TEMPLATES, true),
+    viberTemplateLanguage: env.VIBER_TEMPLATE_LANGUAGE || 'bg',
     smsSenderId: env.SMS_SENDER_ID || 'gSystem',
     smsSenderValue: env.SMS_SENDER_VALUE || '',
 

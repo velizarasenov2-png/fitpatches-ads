@@ -86,7 +86,7 @@ export async function runOnce({ cfg, shopify, now = new Date(), fetchTrackingImp
       break;
     }
     const result = await send(
-      { phone: cfg.testPhone ? normalizePhone(cfg.testPhone) : info.phone, viberText: text.viber, smsText: text.sms, tag: `${info.name} ${due.key}` },
+      { phone: cfg.testPhone ? normalizePhone(cfg.testPhone) : info.phone, viberText: text.viber, smsText: text.sms, template: text.template, tag: `${info.name} ${due.key}` },
       cfg,
     );
     const stamp = now.toISOString();
@@ -125,7 +125,7 @@ async function main() {
   }
   console.log(
     cfg.live
-      ? `РЕЖИМ: на живо${cfg.testPhone ? ' (всичко отива на тестовия телефон)' : ''}, канал: ${cfg.viberSender ? 'Viber + SMS' : 'само SMS'}`
+      ? `РЕЖИМ: на живо${cfg.testPhone ? ' (всичко отива на тестовия телефон)' : ''}, канал: ${cfg.viberSender ? `Viber${cfg.viberTemplates ? ' (шаблони)' : ''} + SMS` : 'само SMS'}`
       : 'РЕЖИМ: проба (LIVE=false) – нищо не се праща и не се записва',
   );
   const shopify = await createShopify(cfg);

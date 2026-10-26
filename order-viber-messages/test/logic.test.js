@@ -167,10 +167,29 @@ test('texts: product line, tracking number, phone; no order number; SMS fits one
 
 test('texts: zero amount and missing name are handled', () => {
   const info = orderInfo(orderNode({ totalOutstandingSet: { presentmentMoney: { amount: '0.0', currencyCode: 'EUR' } }, shippingAddress: { firstName: '', address1: '', city: 'Варна' }, customer: null, fulfillments: [fulfillment('1')] }));
-  const { viber, sms } = render('office', info, baseCfg);
+  const { viber, sms, template } = render('office', info, baseCfg);
   assert.match(viber, /^Здравейте! 📦/);
-  assert.doesNotMatch(viber, /Сума/);
+  assert.match(viber, /Сума за плащане: 0\.00 €/);
   assert.doesNotMatch(sms, /suma/);
+  assert.equal(template.params.name, 'клиент'); // Viber templates need a value for every variable
+});
+
+test('Viber templates follow Viber rules and match the text that is sent', async () => {
+  const { viberTemplates, fill, TEMPLATE_KEYS } = await import('../src/messages.js');
+  const all = viberTemplates(baseCfg);
+  assert.deepEqual(Object.keys(all).sort(), Object.keys(TEMPLATE_KEYS).sort());
+  for (const [type, text] of Object.entries(all)) {
+    const vars = [...text.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1]);
+    assert.ok(new Set(vars).size <= 8, type);
+    assert.ok(text.length <= 875, type);
+    assert.doesNotMatch(text.trim(), /^\{\{|\}\}$/, `${type} starts or ends with a variable`);
+    assert.match(text, /0887459494|\{\{/, type);
+    const info = orderInfo(orderNode({ fulfillments: [fulfillment('1055000000001')] }));
+    const r = render(type, info, baseCfg);
+    assert.equal(r.template.key, TEMPLATE_KEYS[type]);
+    assert.deepEqual(Object.keys(r.template.params).sort(), [...new Set(vars)].sort(), type);
+    assert.equal(fill(text, r.template.params), r.viber, type);
+  }
 });
 
 test('transliteration', () => {

@@ -129,6 +129,19 @@ test('BulkGate request: Viber first with SMS fallback, or SMS only', () => {
   assert.deepEqual(Object.keys(smsOnly.channel), ['sms']);
 });
 
+test('BulkGate request with an approved Viber template', () => {
+  const msg = { phone: '359888000111', viberText: 'V', smsText: 'S', template: { key: 'fp-office', params: { name: 'Мария' } } };
+  const req = buildRequest(msg, { ...baseCfg, viberTemplates: true, viberTemplateLanguage: 'bg' });
+  assert.deepEqual(req.channel.viber, {
+    sender: 'FitPatches',
+    expiration: 3600,
+    template_id: '@fp-office',
+    template_language: 'bg',
+    template_parameters: { name: 'Мария' },
+  });
+  assert.equal(req.channel.sms.text, 'S');
+});
+
 test('BulkGate responses: success, bad number, and backup host on network error', async () => {
   const ok = await sendMessage({ phone: '1', viberText: 'v', smsText: 's' }, baseCfg, async () => ({
     ok: true,

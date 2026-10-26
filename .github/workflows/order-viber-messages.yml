@@ -34,5 +34,6 @@ jobs:
           BULKGATE_TOKEN: ${{ secrets.BULKGATE_TOKEN }}
           TEST_PHONE: ${{ secrets.TEST_PHONE }}
           VIBER_SENDER: ${{ vars.VIBER_SENDER }}
+          VIBER_TEMPLATES: ${{ vars.VIBER_TEMPLATES }}
           LIVE: ${{ vars.LIVE }}
           START_AT: ${{ vars.START_AT }}

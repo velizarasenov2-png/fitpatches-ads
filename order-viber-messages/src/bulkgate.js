@@ -5,9 +5,17 @@ const OK = new Set(['accepted', 'sent', 'scheduled']);
 // Problems with the number itself: retrying won't help.
 const PERMANENT = new Set(['invalid_number', 'blacklisted', 'invalid_phone_number']);
 
-export function buildRequest({ phone, viberText, smsText, tag }, cfg) {
+export function buildRequest({ phone, viberText, smsText, tag, template }, cfg) {
   const channel = {};
-  if (cfg.viberSender) {
+  if (cfg.viberSender && cfg.viberTemplates && template) {
+    channel.viber = {
+      sender: cfg.viberSender,
+      expiration: cfg.viberExpiration,
+      template_id: '@' + template.key,
+      template_language: cfg.viberTemplateLanguage,
+      template_parameters: template.params,
+    };
+  } else if (cfg.viberSender) {
     channel.viber = { sender: cfg.viberSender, expiration: cfg.viberExpiration, text: viberText };
   }
   channel.sms = {

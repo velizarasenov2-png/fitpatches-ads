@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node src/run.js",
+    "templates": "node src/templates.js",
     "test": "node --test test/*.test.js"
   }
 }
