@@ -29,6 +29,8 @@ export function loadConfig(env = process.env) {
     smsSenderId: env.SMS_SENDER_ID || 'gSystem',
     smsSenderValue: env.SMS_SENDER_VALUE || '',
 
+    // cyrillic: 2–3 SMS per message; latin: 1 SMS per message (cheaper).
+    smsAlphabet: (env.SMS_ALPHABET || 'cyrillic').trim().toLowerCase(),
     supportPhone: env.SUPPORT_PHONE || '0887459494',
 
     // LIVE=false (default) only prints what would be sent: nothing is sent and nothing is written to Shopify.
@@ -63,6 +65,7 @@ export function validateConfig(cfg) {
     if (!cfg.startAt) errors.push('LIVE=true изисква START_AT, за да не се пишат благодарности за стари поръчки.');
   }
   if (!['twilio', 'bulkgate'].includes(cfg.smsProvider)) errors.push('SMS_PROVIDER трябва да е twilio или bulkgate.');
+  if (!['cyrillic', 'latin'].includes(cfg.smsAlphabet)) errors.push('SMS_ALPHABET трябва да е cyrillic или latin.');
   if (cfg.smsProvider === 'twilio' && cfg.viberSender) errors.push('Twilio не праща Viber: махнете VIBER_SENDER или ползвайте BulkGate.');
   if (!/^\d{2}:\d{2}-\d{2}:\d{2}$/.test(cfg.sendHours)) errors.push('SEND_HOURS трябва да е във формат 08:00-21:00.');
   return errors;

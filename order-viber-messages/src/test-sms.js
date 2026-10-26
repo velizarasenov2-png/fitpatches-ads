@@ -2,7 +2,7 @@
 import { pathToFileURL } from 'node:url';
 import { loadConfig } from './config.js';
 import { normalizePhone } from './order.js';
-import { render } from './messages.js';
+import { render, smsSegments } from './messages.js';
 import { sendMessage } from './bulkgate.js';
 import { sendTwilio } from './twilio.js';
 
@@ -33,7 +33,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
   }
   sendTestSms(process.argv[2], cfg)
     .then(({ sms, result }) => {
-      console.log(`Доставчик: ${cfg.smsProvider}\nТекст (${sms.length} знака): ${sms}`);
+      console.log(`Доставчик: ${cfg.smsProvider}\nТекст (${sms.length} знака, ${smsSegments(sms)} SMS): ${sms}`);
       console.log(result.ok ? 'Приет за изпращане.' : `НЕ е изпратен: ${result.reason}`);
       process.exit(result.ok ? 0 : 1);
     })

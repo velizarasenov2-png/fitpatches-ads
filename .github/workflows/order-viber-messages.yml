@@ -34,6 +34,7 @@ jobs:
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_FROM: ${{ vars.TWILIO_FROM }}
           SMS_PROVIDER: ${{ vars.SMS_PROVIDER }}
+          SMS_ALPHABET: ${{ vars.SMS_ALPHABET }}
           BULKGATE_APP_ID: ${{ secrets.BULKGATE_APP_ID }}
           BULKGATE_TOKEN: ${{ secrets.BULKGATE_TOKEN }}
           TEST_PHONE: ${{ secrets.TEST_PHONE }}

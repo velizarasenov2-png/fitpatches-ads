@@ -1,5 +1,5 @@
-// Message texts. The Viber texts are also the Viber templates registered in BulkGate ({{variable}} = filled per order);
-// the SMS fallback is short Latin text so it fits in one SMS.
+// Message texts. The Viber texts are also the Viber templates registered in BulkGate ({{variable}} = filled per order).
+// SMS: Cyrillic by default (70 characters per SMS, 67 per part when longer), or Latin (160 per SMS) with SMS_ALPHABET=latin.
 const COURIER = { econt: 'Еконт', speedy: 'Спиди' };
 const COURIER_LAT = { econt: 'Econt', speedy: 'Speedy' };
 
@@ -87,7 +87,14 @@ export function toLatin(s) {
 
 const money = (n) => (Math.round(n * 100) / 100).toFixed(2);
 
-function fit(parts, max = 160) {
+// Number of SMS parts the operator bills for this text.
+export function smsSegments(text) {
+  const gsm = /^[A-Za-z0-9 .,:;!?'"()\-\/+&%#*@\n]*$/.test(text);
+  const [single, part] = gsm ? [160, 153] : [70, 67];
+  return text.length <= single ? 1 : Math.ceil(text.length / part);
+}
+
+function fit(parts, max) {
   const text = parts.filter(Boolean).join(' ');
   return text.length <= max ? text : text.slice(0, max - 1).trimEnd() + '.';
 }
@@ -123,6 +130,43 @@ export function render(type, info, cfg) {
   const tracking = all.tracking;
   const amountLat = info.amount > 0 ? `${money(info.amount)} ${info.currency}` : '';
   const phone = cfg.supportPhone;
+  if (cfg.smsAlphabet !== 'latin') {
+    const hello = name ? `${name}, ` : '';
+    const city = info.office?.city ? ' ' + info.office.city.slice(0, 25) : '';
+    const amount = info.amount > 0 ? all.amount : '';
+    const smsBg = {
+      thanks: [
+        name ? `FitPatches: Благодарим за поръчката, ${name}!` : 'FitPatches: Благодарим за поръчката!',
+        `Розовите лепенки за намаляване на апетита идват ${info.courier === 'speedy' ? 'със' : 'с'} ${courier}.`,
+        amount && `Сума ${amount}.`,
+        `Тел. ${phone}`,
+      ],
+      office: [
+        `FitPatches: ${hello}розовите лепенки за намаляване на апетита Ви чакат в офис ${courier}${city}.`,
+        `Товарителница ${tracking}${amount && `, сума ${amount}`}.`,
+      ],
+      office_reminder: [
+        `FitPatches: Напомняне – лепенките Ви чакат в офис ${courier}${city}.`,
+        `Товарителница ${tracking}${amount && `, сума ${amount}`}.`,
+        `Тел. ${phone}`,
+      ],
+      office_last: [
+        `FitPatches: Последно напомняне – пратката Ви е в офис ${courier}${city} и скоро ще се върне.`,
+        `Товарителница ${tracking}${amount && `, сума ${amount}`}.`,
+      ],
+      address_out: [
+        `FitPatches: ${hello}днес ${courier} ще Ви донесе розовите лепенки за намаляване на апетита.`,
+        `Товарителница ${tracking}${amount && `, пригответе ${amount}`}.`,
+      ],
+      address_failed: [
+        `FitPatches: ${hello}куриерът на ${courier} не успя да Ви открие днес.`,
+        `Товарителница ${tracking}. Обадете ни се: ${phone}`,
+      ],
+    }[type];
+    // At most 3 SMS parts.
+    return { viber, sms: fit(smsBg, 201), template: { key: TEMPLATE_KEYS[type], params } };
+  }
+
   const sms = {
     thanks: [
       name ? `FitPatches: Blagodarim za porachkata, ${toLatin(name)}!` : 'FitPatches: Blagodarim za porachkata!',
@@ -153,5 +197,5 @@ export function render(type, info, cfg) {
     ],
   }[type];
 
-  return { viber, sms: fit(sms), template: { key: TEMPLATE_KEYS[type], params } };
+  return { viber, sms: fit(sms, 160), template: { key: TEMPLATE_KEYS[type], params } };
 }

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { normalizePhone, parseOffice, cleanName, orderInfo, shipmentStatus, needsTracking } from '../src/order.js';
 import { decide } from '../src/decide.js';
-import { render, toLatin } from '../src/messages.js';
+import { render, toLatin, smsSegments } from '../src/messages.js';
 import { parseTracking } from '../src/bigarena.js';
 import { baseCfg, orderNode, fulfillment, trackingHtml } from './helpers.js';
 
@@ -138,7 +138,7 @@ test('address: courier out today, failed attempt, then reminders if moved to an 
   assert.match(render(r.type, info, baseCfg).viber, /още Ви чакат в офис на Спиди\./);
 });
 
-test('texts: product line, tracking number, phone; no order number; SMS fits one GSM-7 message', () => {
+test('texts: product line, tracking number, phone; no order number; SMS at most 3 parts in Cyrillic, 1 in Latin', () => {
   const info = orderInfo(
     orderNode({
       name: '#2001',
@@ -157,8 +157,12 @@ test('texts: product line, tracking number, phone; no order number; SMS fits one
     assert.match(viber, /розов(ите|и) лепенки FitPatches за намаляване на апетита/i, type);
     assert.doesNotMatch(viber, /#2001/, type);
     assert.doesNotMatch(sms, /#2001/, type);
-    assert.ok(sms.length <= 160, `${type} SMS is ${sms.length} chars`);
-    assert.match(sms, /^[A-Za-z0-9 .,:;!?'"()\-\/+&%#*@]+$/, type);
+    assert.match(sms, /^FitPatches: /, type);
+    assert.ok(smsSegments(sms) <= 3, `${type} SMS is ${sms.length} chars`);
+    if (type !== 'thanks') assert.match(sms, /Товарителница 63000000002/, type);
+    const latin = render(type, info, { ...baseCfg, smsAlphabet: 'latin' }).sms;
+    assert.equal(smsSegments(latin), 1, `${type} Latin SMS is ${latin.length} chars`);
+    assert.match(latin, /^[A-Za-z0-9 .,:;!?'"()\-\/+&%#*@]+$/, type);
     if (type !== 'thanks') assert.match(viber, /Товарителница: 63000000002/, type);
   }
   assert.match(render('thanks', info, baseCfg).viber, /За въпроси: 0887459494/);
@@ -170,7 +174,7 @@ test('texts: zero amount and missing name are handled', () => {
   const { viber, sms, template } = render('office', info, baseCfg);
   assert.match(viber, /^Здравейте! 📦/);
   assert.match(viber, /Сума за плащане: 0\.00 €/);
-  assert.doesNotMatch(sms, /suma/);
+  assert.doesNotMatch(sms, /сума/i);
   assert.equal(template.params.name, 'клиент'); // Viber templates need a value for every variable
 });
 
@@ -195,4 +199,12 @@ test('Viber templates follow Viber rules and match the text that is sent', async
 test('transliteration', () => {
   assert.equal(toLatin('София, ул. Гео Милев №10'), 'Sofia, ul. Geo Milev No10');
   assert.equal(toLatin('Щастлива Юлия'), 'Shtastliva Yulia');
+});
+
+test('SMS parts: 160/153 for Latin, 70/67 for Cyrillic', () => {
+  assert.equal(smsSegments('a'.repeat(160)), 1);
+  assert.equal(smsSegments('a'.repeat(161)), 2);
+  assert.equal(smsSegments('я'.repeat(70)), 1);
+  assert.equal(smsSegments('я'.repeat(134)), 2);
+  assert.equal(smsSegments('я'.repeat(135)), 3);
 });

@@ -124,6 +124,7 @@ test('BulkGate request: Viber first with SMS fallback, or SMS only', () => {
   assert.deepEqual(both.channel.viber, { sender: 'FitPatches', expiration: 3600, text: 'V' });
   assert.equal(both.channel.sms.text, 'S');
   assert.equal(both.channel.sms.unicode, false);
+  assert.equal(buildRequest({ ...msg, smsText: 'FitPatches: Благодарим' }, baseCfg).channel.sms.unicode, true);
   assert.equal(both.country, 'bg');
   const smsOnly = buildRequest(msg, { ...baseCfg, viberSender: '' });
   assert.deepEqual(Object.keys(smsOnly.channel), ['sms']);

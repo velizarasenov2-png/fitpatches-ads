@@ -21,7 +21,7 @@ export function buildRequest({ phone, viberText, smsText, tag, template }, cfg) 
   channel.sms = {
     sender_id: cfg.smsSenderId,
     ...(cfg.smsSenderValue ? { sender_id_value: cfg.smsSenderValue } : {}),
-    unicode: false,
+    unicode: /[^\x00-\x7f]/.test(smsText),
     text: smsText,
   };
   return {
