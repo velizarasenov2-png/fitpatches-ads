@@ -6,14 +6,16 @@
     Версията се пази в localStorage, така че същият човек вижда винаги същото заглавие.
   - Сменя се само видимото заглавие (H1) на страницата. Името на продукта, <title> и og:title
     НЕ се сменят → заглавието под видеото в рекламата в Meta не се засяга.
-  - Към всеки пакет, добавен в количката от тази страница, се добавя свойство „Тест заглавие: A/B“.
-    Middleware.bg прехвърля свойствата в поръчката → в Shopify всяка поръчка показва версията.
-    Във формата за поръчка редът „Тест заглавие“ е скрит от клиента (скритото поле остава).
-  - Към Meta се праща персонализирано събитие FPTitleTest_A / FPTitleTest_B (по едно на зареждане),
-    за да се вижда колко посетители е получила всяка версия.
+  - Към всеки пакет, добавен в количката от тази страница, се добавя СКРИТО свойство „_Тест заглавие: A/B“.
+    Долната черта отпред = клиентът не го вижда (количка, форма на Middleware.bg, страница и имейл на поръчката),
+    но Middleware.bg го праща заедно с поръчката (проверено в скритите полета на формата).
+  - Към Meta пиксела отиват персонализирани събития:
+      FPTitleTest_A / FPTitleTest_B   — при всяко отваряне на продуктовата страница (посетители на версия);
+      FPTitleOrder_A / FPTitleOrder_B — веднъж на поръчка, на страницата „Благодарим“ (поръчки на версия).
+    Така броят на поръчките по версия го има, дори ако скритото свойство не стигне до поръчката в Shopify.
 
-  Ръчна проверка: добави ?fp_tt=A или ?fp_tt=B към адреса.
-  Зарежда се от snippets/fp-header-style.liquid (в <head>), само на /products/fitpatches-berberinovi-plastiri-30.
+  Ръчна проверка: добави ?fp_tt=A или ?fp_tt=B към адреса на продукта.
+  Зарежда се от snippets/fp-header-style.liquid (в <head>) — на продукта и на /pages/thank-you.
   Спиране на теста: махни реда с render 'fp-title-test' от snippets/fp-header-style.liquid.
 {%- endcomment -%}
 <style>
@@ -22,11 +24,33 @@
 <script>
 (function () {
   var KEY = 'fp_tt_1';
-  var PROP = 'Тест заглавие';
+  var PROP = '_Тест заглавие';
   var TITLE_B = 'По-малко глад от първата седмица. По-малко килограми след 20 дни.';
   var root = document.documentElement;
-  var v = null;
 
+  function ping(name) {
+    var tries = 0;
+    (function go() {
+      if (window.fbq) { try { window.fbq('trackCustom', name); } catch (e) {} return; }
+      if (++tries < 20) setTimeout(go, 500);
+    })();
+  }
+
+  // Страница „Благодарим“: броим поръчката към версията, която клиентът е видял (веднъж на поръчка).
+  if (location.pathname.indexOf('/pages/thank-you') >= 0) {
+    var tv = null;
+    try { tv = localStorage.getItem(KEY); } catch (e) {}
+    if (tv !== 'A' && tv !== 'B') return;
+    if (!/[?&]fp=1(&|$)/.test(location.search)) return; // само при пренасочване след истинска поръчка
+    var oid = '';
+    try { oid = (JSON.parse(sessionStorage.getItem('fp_order') || '{}') || {}).id || ''; } catch (e) {}
+    var mark = 'fp_tt_order_' + (oid || location.search);
+    try { if (localStorage.getItem(mark)) return; localStorage.setItem(mark, '1'); } catch (e) {}
+    ping('FPTitleOrder_' + tv);
+    return;
+  }
+
+  var v = null;
   try {
     var q = new URLSearchParams(location.search).get('fp_tt');
     if (q === 'A' || q === 'B') { v = q; localStorage.setItem(KEY, v); }
@@ -56,7 +80,7 @@
   }
   setTimeout(done, 3000); // предпазител: заглавието никога не остава скрито
 
-  // 2) Отбелязване на версията във всеки пакет, който влиза в количката
+  // 2) Скрито отбелязване на версията във всеки пакет, който влиза в количката
   var origFetch = window.fetch;
   if (origFetch && !origFetch.fpTT) {
     var wrapped = function (input, init) {
@@ -80,21 +104,7 @@
     window.fetch = wrapped;
   }
 
-  // 3) Формата на Middleware.bg показва свойствата на пакета — скриваме реда „Тест заглавие: …“ от клиента.
-  //    Скритото поле във формата остава, така че версията пак стига до поръчката.
-  function hideProp() {
-    var rows = document.querySelectorAll('#mw-modal .mw-prod-prop > div');
-    for (var i = 0; i < rows.length; i++) {
-      if (rows[i].style.display !== 'none' && (rows[i].textContent || '').indexOf(PROP + ':') === 0) rows[i].style.display = 'none';
-    }
-  }
-  new MutationObserver(hideProp).observe(root, { childList: true, subtree: true });
-
-  // 4) Брояч в Meta: колко посетители са видели всяка версия
-  var tries = 0;
-  (function ping() {
-    if (window.fbq) { try { window.fbq('trackCustom', 'FPTitleTest_' + v); } catch (e) {} return; }
-    if (++tries < 20) setTimeout(ping, 500);
-  })();
+  // 3) Брояч в Meta: колко посетители са видели всяка версия
+  ping('FPTitleTest_' + v);
 })();
 </script>

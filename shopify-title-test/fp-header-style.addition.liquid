@@ -1,5 +1,6 @@
 {%- comment -%} Добавено най-долу в snippets/fp-header-style.liquid (рендерира се в <head> на layout/theme.liquid). {%- endcomment -%}
-{%- comment -%} A/B тест на заглавието (01.11.2026) — само на страницата на 1 пакет. Виж snippets/fp-title-test.liquid. {%- endcomment -%}
-{%- if request.page_type == 'product' and request.path contains '/products/fitpatches-berberinovi-plastiri-30' -%}
-  {%- render 'fp-title-test' -%}
-{%- endif -%}
+{%- comment -%} A/B тест на заглавието (01.11.2026) — на страницата на 1 пакет и на „Благодарим“. Виж snippets/fp-title-test.liquid. {%- endcomment -%}
+{%- assign fp_tt_on = false -%}
+{%- if request.page_type == 'product' and request.path contains '/products/fitpatches-berberinovi-plastiri-30' -%}{%- assign fp_tt_on = true -%}{%- endif -%}
+{%- if request.path contains '/pages/thank-you' -%}{%- assign fp_tt_on = true -%}{%- endif -%}
+{%- if fp_tt_on -%}{%- render 'fp-title-test' -%}{%- endif -%}
