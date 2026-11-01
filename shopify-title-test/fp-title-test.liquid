@@ -1,0 +1,100 @@
+{%- comment -%}
+  FitPatches — A/B тест на заглавието на продукта (старт 01.11.2026).
+
+  Как работи:
+  - Всеки посетител случайно получава версия A (сегашното заглавие) или B (новото) — 50/50.
+    Версията се пази в localStorage, така че същият човек вижда винаги същото заглавие.
+  - Сменя се само видимото заглавие (H1) на страницата. Името на продукта, <title> и og:title
+    НЕ се сменят → заглавието под видеото в рекламата в Meta не се засяга.
+  - Към всеки пакет, добавен в количката от тази страница, се добавя свойство „Тест заглавие: A/B“.
+    Middleware.bg прехвърля свойствата в поръчката → в Shopify всяка поръчка показва версията.
+    Във формата за поръчка редът „Тест заглавие“ е скрит от клиента (скритото поле остава).
+  - Към Meta се праща персонализирано събитие FPTitleTest_A / FPTitleTest_B (по едно на зареждане),
+    за да се вижда колко посетители е получила всяка версия.
+
+  Ръчна проверка: добави ?fp_tt=A или ?fp_tt=B към адреса.
+  Зарежда се от snippets/fp-header-style.liquid (в <head>), само на /products/fitpatches-berberinovi-plastiri-30.
+  Спиране на теста: махни реда с render 'fp-title-test' от snippets/fp-header-style.liquid.
+{%- endcomment -%}
+<style>
+  html[data-fp-tt="B"]:not(.fp-tt-done) .product__title .h1{visibility:hidden}
+</style>
+<script>
+(function () {
+  var KEY = 'fp_tt_1';
+  var PROP = 'Тест заглавие';
+  var TITLE_B = 'По-малко глад от първата седмица. По-малко килограми след 20 дни.';
+  var root = document.documentElement;
+  var v = null;
+
+  try {
+    var q = new URLSearchParams(location.search).get('fp_tt');
+    if (q === 'A' || q === 'B') { v = q; localStorage.setItem(KEY, v); }
+    if (!v) v = localStorage.getItem(KEY);
+    if (v !== 'A' && v !== 'B') { v = Math.random() < 0.5 ? 'A' : 'B'; localStorage.setItem(KEY, v); }
+  } catch (e) {
+    v = 'A'; // без localStorage: показваме сегашното заглавие и го отбелязваме като A
+  }
+  root.setAttribute('data-fp-tt', v);
+  window.fpTitleTest = v;
+
+  // 1) Смяна на заглавието — едва когато целият блок със заглавието е зареден (без премигване на старото)
+  function done() { root.classList.add('fp-tt-done'); }
+  function swap(force) {
+    if (v !== 'B') { done(); return true; }
+    var box = document.querySelector('div.product__title');
+    if (!box || (!force && !box.nextElementSibling)) return false;
+    var els = box.querySelectorAll('.h1');
+    for (var i = 0; i < els.length; i++) els[i].textContent = TITLE_B;
+    done();
+    return true;
+  }
+  if (!swap(false)) {
+    var mo = new MutationObserver(function () { if (swap(false)) mo.disconnect(); });
+    mo.observe(root, { childList: true, subtree: true });
+    document.addEventListener('DOMContentLoaded', function () { mo.disconnect(); swap(true); done(); });
+  }
+  setTimeout(done, 3000); // предпазител: заглавието никога не остава скрито
+
+  // 2) Отбелязване на версията във всеки пакет, който влиза в количката
+  var origFetch = window.fetch;
+  if (origFetch && !origFetch.fpTT) {
+    var wrapped = function (input, init) {
+      try {
+        var url = typeof input === 'string' ? input : (input && input.url) || '';
+        if (/\/cart\/add(\.js)?($|\?)/.test(url) && init && typeof init.body === 'string') {
+          var body = JSON.parse(init.body);
+          var items = body.items || [body];
+          for (var i = 0; i < items.length; i++) {
+            if (items[i] && items[i].id) {
+              items[i].properties = items[i].properties || {};
+              items[i].properties[PROP] = v;
+            }
+          }
+          init = Object.assign({}, init, { body: JSON.stringify(body) });
+        }
+      } catch (e) {}
+      return origFetch.call(window, input, init);
+    };
+    wrapped.fpTT = true;
+    window.fetch = wrapped;
+  }
+
+  // 3) Формата на Middleware.bg показва свойствата на пакета — скриваме реда „Тест заглавие: …“ от клиента.
+  //    Скритото поле във формата остава, така че версията пак стига до поръчката.
+  function hideProp() {
+    var rows = document.querySelectorAll('#mw-modal .mw-prod-prop > div');
+    for (var i = 0; i < rows.length; i++) {
+      if (rows[i].style.display !== 'none' && (rows[i].textContent || '').indexOf(PROP + ':') === 0) rows[i].style.display = 'none';
+    }
+  }
+  new MutationObserver(hideProp).observe(root, { childList: true, subtree: true });
+
+  // 4) Брояч в Meta: колко посетители са видели всяка версия
+  var tries = 0;
+  (function ping() {
+    if (window.fbq) { try { window.fbq('trackCustom', 'FPTitleTest_' + v); } catch (e) {} return; }
+    if (++tries < 20) setTimeout(ping, 500);
+  })();
+})();
+</script>
