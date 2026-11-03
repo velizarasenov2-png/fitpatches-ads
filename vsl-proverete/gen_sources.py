@@ -8,7 +8,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = sys.argv[1]
 shots = json.load(open(os.path.join(HERE, "shots.json"), encoding="utf-8"))
 repl = {str(r["n"]): r for r in json.load(open(os.path.join(WORK, "replacements.json"), encoding="utf-8"))}
-by_src = {s["src"]: s for s in shots if s.get("page")}
+by_src = {}
+for s in shots:
+    if s.get("page"):
+        by_src.setdefault(s["src"], s)
 
 LIC = {
     "MIXKIT": "Mixkit Free License: търговска употреба, без указване на автор",
@@ -22,7 +25,7 @@ for s in shots:
         n = src.split(":")[1] if ":" in src else s["n"]
         r = repl.get(str(n), {})
         lib, page = r.get("source", "?"), r.get("page_url", "")
-        what = r.get("what_it_shows", "")
+        what = r.get("what_it_shows_bg", r.get("what_it_shows", ""))
         if ":" in src:
             what = f"повторение на кадър {n}, черно-бяло и забавено"
     elif src.startswith("still_"):

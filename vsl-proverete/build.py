@@ -144,6 +144,7 @@ def resolve(s):
         cx = {"left": 0.35, "right": 0.65}.get(r.get("crop_hint", "center"), 0.5)
         if isinstance(r.get("crop_hint"), (int, float)):
             cx = r["crop_hint"]
+        cx = s.get("cx", cx)
         path = r["local_file"] if os.path.isabs(r["local_file"]) else os.path.join(WORK, r["local_file"])
         if s["src"].startswith("REPL:"):  # a repeat: use a later part of the clip
             return ("clip", path, cx, None if r.get("best_start_sec") is None else -1)

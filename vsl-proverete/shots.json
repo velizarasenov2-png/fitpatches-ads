@@ -103,7 +103,8 @@
   "n": "9",
   "vo": "и тялото ви вече не е същото —",
   "desc": "Жена пред огледалото държи корема си",
-  "src": "REPL"
+  "src": "REPL",
+  "cx": 0.67
  },
  {
   "n": "10",
@@ -654,7 +655,8 @@
   "n": "61",
   "vo": "Когато минете продуктите през тези три въпроса,",
   "desc": "Ръка изчиства масата",
-  "src": "REPL"
+  "src": "REPL",
+  "cx": 0.55
  },
  {
   "n": "62",
@@ -713,10 +715,15 @@
  {
   "n": "68",
   "vo": "Берберинът се съдържа в растения като киселия трън —",
-  "desc": "Червени плодчета по храст, отблизо",
-  "src": "REPL",
+  "desc": "Червено плодче на клонка (началото на клипа)",
+  "src": "s69",
   "kw": "киселия трън",
-  "kw_display": "кисел трън"
+  "kw_display": "кисел трън",
+  "cx": 0.33,
+  "start": 0.03,
+  "library": "COVERR",
+  "page": "https://coverr.co/videos/grabbing-a-berry-valbqlykzy",
+  "download": "https://cdn.coverr.co/videos/coverr-grabbing-a-berry-1305/1080p.mp4?download=true"
  },
  {
   "n": "69",
@@ -724,7 +731,7 @@
   "desc": "Ръка посяга към червено плодче на клонка",
   "src": "s69",
   "cx": 0.33,
-  "start": 0.2,
+  "start": 0.55,
   "library": "COVERR",
   "page": "https://coverr.co/videos/grabbing-a-berry-valbqlykzy",
   "download": "https://cdn.coverr.co/videos/coverr-grabbing-a-berry-1305/1080p.mp4?download=true"
