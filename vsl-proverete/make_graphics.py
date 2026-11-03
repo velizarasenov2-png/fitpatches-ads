@@ -200,7 +200,7 @@ d = ImageDraw.Draw(im)
 f = ImageFont.truetype(F_XBOLD, 70)
 text = "ПОРЪЧАЙ СЕГА  ›"
 tw = d.textlength(text, font=f)
-x0, y0 = (W - tw) / 2 - 70, 1120
+x0, y0 = (W - tw) / 2 - 70, 1540
 d.rounded_rectangle((x0, y0, x0 + tw + 140, y0 + 160), radius=80, fill=PINK + (255,))
 d.text((W / 2, y0 + 80), text, font=f, fill="white", anchor="mm")
 f2 = ImageFont.truetype(F_BOLD, 40)

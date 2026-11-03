@@ -335,7 +335,8 @@ for ci, (idx, gold, disp, npre) in enumerate(chunks):
         en = max(en, st + 0.45)
     if gold:
         pre = clean_end(display(" ".join(tokens[j][0] for j in idx[:npre])))
-        text = (esc(pre) + " " if pre else "") + r"{\rGold}" + esc(disp)
+        gold_txt = re.sub(r"([0-9][0-9€+,=.]*|€)", r"{\\fnMontserrat\\b1\\fs108}\1{\\rGold}", esc(disp))
+        text = (esc(pre) + " " if pre else "") + r"{\rGold}" + gold_txt
     else:
         text = esc(clean_end(display(" ".join(tokens[j][0] for j in idx))))
     if not text:
@@ -362,6 +363,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     for st, en, text, gold in events:
         style = "Gold" if gold else "Cap"
         anim = r"{\fad(70,40)\fscx90\fscy90\t(0,140,\fscx100\fscy100)}"
+        text = text.replace(r"{\rGold}", r"{\rGold\fscx90\fscy90\t(0,140,\fscx100\fscy100)}")
         f.write(f"Dialogue: 0,{ass_time(st)},{ass_time(en)},{style},,0,0,0,,{anim}{text}\n")
 
 if CAPS_ONLY:
@@ -377,12 +379,12 @@ final = os.path.join(OUT, "fitpatches_vsl_draft.mp4" if DRAFT else "fitpatches_v
 fade_out_at = total - 2.0
 fc = (
     f"[1:a]loudnorm=I=-16:TP=-2:LRA=9,aresample=48000[vo];"
-    f"[2:a]aloop=loop=-1:size=2000000000,atrim=0:{reveal + 1.5:.2f},loudnorm=I=-35:TP=-8,afade=t=in:d=1.5,"
+    f"[2:a]aloop=loop=-1:size=2000000000,atrim=0:{reveal + 1.5:.2f},loudnorm=I=-31:TP=-8,afade=t=in:d=1.5,"
     f"afade=t=out:st={reveal - 0.5:.2f}:d=2.0,aresample=48000[m1];"
-    f"[3:a]aloop=loop=-1:size=2000000000,atrim=0:{total - reveal + 1:.2f},loudnorm=I=-33:TP=-8,afade=t=in:d=1.2,"
+    f"[3:a]aloop=loop=-1:size=2000000000,atrim=0:{total - reveal + 1:.2f},loudnorm=I=-30:TP=-8,afade=t=in:d=1.2,"
     f"afade=t=out:st={total - reveal - 2.2:.2f}:d=2.2,adelay={int((reveal - 0.5) * 1000)}|{int((reveal - 0.5) * 1000)},"
     f"aresample=48000[m2];"
-    f"[vo][m1][m2]amix=inputs=3:normalize=0:duration=first,apad=whole_dur={total:.2f},"
+    f"[vo][m1][m2]amix=inputs=3:normalize=0:duration=longest,apad=whole_dur={total:.2f},atrim=0:{total:.2f},"
     f"loudnorm=I=-14:TP=-1.5:LRA=11[a];"
     f"[0:v]ass='{ass}',format=yuv420p[v]"
 )
