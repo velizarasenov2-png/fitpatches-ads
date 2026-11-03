@@ -5,7 +5,7 @@
 ```
 You get two images. IMAGE 1 = the finished ad (base). IMAGE 2 = the FitPatches product pouch.
 
-Edit IMAGE 1 by adding the pouch from IMAGE 2. Keep IMAGE 1 exactly as it is: same 4:5 canvas (1080x1350), same flat near-black background (#121212), and every piece of text unchanged — same words, letters, fonts, sizes, positions and colors: the white condensed headline "УПОРИТИ ПАЛАСКИ. ТЕСНИ ДЪНКИ. НИСКО САМОЧУВСТВИЕ.", the pink tag "ЧЕРЕН ПЕТЪК · ДО −46%", the pink paragraph, the pink divider line, "FitPatches" with its pink underline, the price "€0,27 / ден" with the crossed-out "€0,50", and the grey line "3+2 подарък · 150 лепенки · 30 дни гаранция". Do not retype, redraw, move, resize or restyle any text.
+Edit IMAGE 1 by adding the pouch from IMAGE 2. Keep IMAGE 1 exactly as it is: same 4:5 canvas (1080x1350), same flat near-black background (#121212), and every piece of text unchanged — same words, letters, fonts, sizes, positions and colors: the white condensed headline "УПОРИТИ ПАЛАСКИ. ТЕСНИ ДЪНКИ. НИСКО САМОЧУВСТВИЕ.", the pink tag "ЧЕРЕН ПЕТЪК · ДО −46%", the pink paragraph, the pink divider line, "FitPatches" with its pink underline, the price "€0,27 / ден" with the crossed-out "€0,50", and the grey line "3+2 подарък · 150 лепенки · плащаш при получаване". Do not retype, redraw, move, resize or restyle any text.
 
 THE POUCH
 - Use only the pouch from IMAGE 2 (white matte zip-lock pouch, "FitPatches™" logo, large pink circle with "Berberine Patches"). Keep its design, logo and colors exactly; do not redesign it. No pomegranate, herbs or other props, and none of the background from IMAGE 2.
