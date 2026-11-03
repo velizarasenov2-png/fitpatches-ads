@@ -336,7 +336,7 @@ for ci, (idx, gold, disp, npre) in enumerate(chunks):
         en = max(en, st + 0.45)
     if gold:
         pre = clean_end(display(" ".join(tokens[j][0] for j in idx[:npre])))
-        gold_txt = re.sub(r"([0-9][0-9€+,=.]*|€)", r"{\\fnMontserrat\\b1\\fs108}\1{\\rGold}", esc(disp))
+        gold_txt = re.sub(r"([0-9][0-9€+,=.]*|€)", r"{\\fnMontserrat\\b1\\fs120}\1{\\rGold}", esc(disp))
         text = (esc(pre) + " " if pre else "") + r"{\rGold}" + gold_txt
     else:
         text = esc(clean_end(display(" ".join(tokens[j][0] for j in idx))))
@@ -355,8 +355,8 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Cap,Montserrat,86,&H00FFFFFF,&H00FFFFFF,&H50000000,&H78000000,1,0,0,0,100,100,0,0,1,4,4,2,80,80,500,1
-Style: Gold,Playfair Display,124,&H004FC2E8,&H004FC2E8,&H40102030,&H78000000,1,0,0,0,100,100,0,0,1,4,5,2,70,70,490,1
+Style: Cap,Montserrat,96,&H00FFFFFF,&H00FFFFFF,&H50000000,&H78000000,1,0,0,0,100,100,0,0,1,4,4,2,80,80,500,1
+Style: Gold,Playfair Display,136,&H004FC2E8,&H004FC2E8,&H40102030,&H78000000,1,0,0,0,100,100,0,0,1,4,5,2,70,70,490,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
