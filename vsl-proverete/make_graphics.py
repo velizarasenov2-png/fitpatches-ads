@@ -36,8 +36,10 @@ def cover(im, w, h, cx=0.5, cy=0.5):
     return im.crop((x, y, x + w, y + h))
 
 
-def on_canvas(piece, bg, width_frac=0.9, cy=0.5, size=(1296, 2304)):
-    """Places a cropped piece on a flat background (stills are rendered 20% larger for the slow zoom)."""
+def on_canvas(piece, bg, width_frac=0.9, cy=0.5, size=(1296, 2304), sides=False):
+    """Places a cropped piece on a flat background (stills are rendered 20% larger for the slow zoom).
+
+    Products sit in the upper part of the frame so the captions (lower third) fall on plain background."""
     cw, ch = size
     canvas = Image.new("RGB", size, bg)
     pw = round(cw * width_frac)
@@ -50,6 +52,15 @@ def on_canvas(piece, bg, width_frac=0.9, cy=0.5, size=(1296, 2304)):
         a = round(255 * i / fade)
         md.line([(0, i), (piece.width, i)], fill=a)
         md.line([(0, piece.height - 1 - i), (piece.width, piece.height - 1 - i)], fill=a)
+    if sides:
+        side = Image.new("L", piece.size, 255)
+        sd = ImageDraw.Draw(side)
+        for i in range(fade):
+            a = round(255 * i / fade)
+            sd.line([(i, 0), (i, piece.height)], fill=a)
+            sd.line([(piece.width - 1 - i, 0), (piece.width - 1 - i, piece.height)], fill=a)
+        from PIL import ImageChops
+        mask = ImageChops.multiply(mask, side)
     canvas.paste(piece, ((cw - pw) // 2, round(ch * cy - piece.height / 2)), mask)
     return canvas
 
@@ -64,22 +75,23 @@ SW, SH = 1296, 2304
 
 # Pouch on the pink panel. The store image carries a headline claim at the top, so it is cropped away.
 hero = load("fp-slide-s1_hero_v2.png")
-save(cover(hero.crop((0, 640, hero.width, hero.height)), SW, SH, cx=0.5, cy=0.5), "still_hero.png")
+save(on_canvas(hero.crop((250, 700, 1540, 2180)), hero.getpixel((200, 1500)), width_frac=0.8, cy=0.33, sides=True),
+     "still_hero.png")
 
 # Pouch with pomegranate, cinnamon and leaves (no claims in frame).
 pouch = load("fitpatches_2048_no_white_background.png")
-save(cover(pouch, SW, SH, cx=0.47, cy=0.5), "still_pouch.png")
+save(on_canvas(pouch, pouch.getpixel((900, 2390)), width_frac=1.0, cy=0.36), "still_pouch.png")
 
 # A single patch, close (the tile from the how-to card, without the text column).
 howto = load("fp-detail-howto.png")
 tile = howto.crop((70, 860, 905, 1830))
-save(on_canvas(tile, howto.getpixel((10, 10)), width_frac=0.92, cy=0.45), "still_patch.png")
+save(on_canvas(tile, howto.getpixel((10, 10)), width_frac=0.8, cy=0.36), "still_patch.png")
 
 # Patch sheet (from the placement card, without heading or icons).
 polza = load("polza_size.png")
 sheet = polza.crop((120, 640, 1680, 1430))
 bg = polza.getpixel((60, 700))
-save(on_canvas(sheet, bg, width_frac=1.0, cy=0.42), "still_sheet.png")
+save(on_canvas(sheet, bg, width_frac=1.0, cy=0.37), "still_sheet.png")
 
 # Patch on the wrist.
 ruka = load("ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png")
