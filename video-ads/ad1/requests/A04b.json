@@ -1,0 +1,15 @@
+{
+  "model": "google/gemini-omni-flash-1-1",
+  "input": {
+    "prompt": "FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.\n\nCHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.\n\nSETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.\n\nACTION: Same place on the grey yoga mat. [0-3s] She pulls the bow tight on the second sneaker. [3-6s] She rests her forearms on her knees and gives a small shrug at the end of the sentence.\n\nDIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing skipped): и постоянно търсех нещо, което да ми помогне да отслабвам малко по-лесно.\n\nVOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.\n\nCAMERA: Static, low, propped on the coffee table at her seated eye level about 1 m away; the viewer's point of view.\n\nLOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.\n\nAUDIO: Only her voice through the phone microphone, the small natural echo of the living room and quiet everyday sounds (the mat creaking). No music.\n\nRESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.",
+    "character_ids": [
+      "<NIA_CHARACTER_ID>"
+    ],
+    "image_urls": [
+      "<IMG-L1 URL>"
+    ],
+    "duration": "6",
+    "aspect_ratio": "9:16",
+    "resolution": "1080p"
+  }
+}

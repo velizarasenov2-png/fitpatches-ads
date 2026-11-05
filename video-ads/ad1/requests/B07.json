@@ -1,0 +1,16 @@
+{
+  "model": "google/gemini-omni-flash-1-1",
+  "input": {
+    "prompt": "FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.\n\nCHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.\n\nSETTING: Her small bathroom, exactly as in the location reference image: white square tiles, white sink with a mirror cabinet, towel on a hook.\n\nACTION: Macro close-up over the bathroom sink: her fingers peel the backing off a dusty-pink round patch and press it onto the inside of her left wrist, then her thumb smooths it down. The patch is a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read; it keeps exactly the same size and shape the whole time. She does not speak.\n\nCAMERA: Phone held close in her other hand above the wrist, slight natural hand movement.\n\nLOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.\n\nAUDIO: Only natural ambient sound of the action (the backing peeling, a dripping tap) through the phone microphone. Nobody speaks.\n\nRESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music. No cuts inside the clip. No patch changing shape or size.",
+    "character_ids": [
+      "<NIA_CHARACTER_ID>"
+    ],
+    "image_urls": [
+      "<IMG-L5 URL>",
+      "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+    ],
+    "duration": "4",
+    "aspect_ratio": "9:16",
+    "resolution": "1080p"
+  }
+}

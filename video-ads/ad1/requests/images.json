@@ -1,0 +1,139 @@
+[
+  {
+    "id": "IMG-C1",
+    "name": "Портрет на героинята (за Omni character, снимка 1)",
+    "model": "gpt-image-2-text-to-image",
+    "input": {
+      "prompt": "Candid vertical photo of Nia, a 27-year-old Bulgarian woman who is a fitness creator, taken with an iPhone front camera held slightly low at arm's length by a window in her apartment. Long dark-brown hair with a slight natural wave, half pulled back with a brown claw clip, a few flyaway hairs. Light olive skin with visible pores, a small mole on her left cheekbone, faint under-eye shadows, hazel eyes, thick natural eyebrows, minimal everyday makeup, small gold hoop earrings. Toned athletic shoulders and arms. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top. Relaxed, friendly half-smile, looking into the lens. Soft November morning daylight from the side, realistic dynamic range, mild front-camera lens distortion, deep focus, no bokeh. Natural unretouched skin, no beautification, no AI gloss. No text, no logos, no watermark.",
+      "aspect_ratio": "3:4",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "IMG-C2",
+    "name": "Цял ръст (за Omni character, снимка 2)",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo as the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same dark-brown hair with the brown claw clip and the same gold hoop earrings. Full-body vertical photo of her standing in the hallway of her apartment, taken by a friend with an iPhone at chest height from about 2.5 m. She wears the open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Athletic toned figure with a slim waist and natural proportions, not a bodybuilder. Relaxed stance, one hand in the hoodie pocket, a small smile. Daylight plus a warm ceiling light, deep focus, no bokeh, natural unretouched skin. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-C1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-L1",
+    "name": "Локация: хол (ден)",
+    "model": "gpt-image-2-text-to-image",
+    "input": {
+      "prompt": "Photoreal vertical photo of the living room of a lived-in two-room apartment in a Sofia panel block on a November morning: a light-grey fabric sofa with a knitted beige throw and two cushions, a low wooden coffee table with a mug and a phone charger cable, a white TV unit with a small TV, a tall potted monstera, light oak laminate floor with a soft beige rug, white walls, a white radiator under a white PVC window with a sheer curtain, other grey panel blocks and bare trees outside. Taken at chest height. Shot on an iPhone, natural light only, realistic dynamic range with the window slightly blown out, deep focus with no bokeh, slightly imperfect framing, a little everyday clutter. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "IMG-L2",
+    "name": "Локация: кухня",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo only for the apartment's style: the same light oak laminate floor, the same white PVC windows with sheer curtains, the same white walls and the same soft overcast November daylight. Photoreal vertical photo of the small kitchen of this apartment: light-wood lower cabinets and white upper cabinets, a beige countertop with a kettle, a capsule coffee machine, a wooden cutting board and a dish rack with two mugs, a white fridge with a few magnets on the left, a bar stool at the counter, a window above the sink with a view of panel blocks and a small herb pot on the sill. Taken at chest height from the opposite counter. Shot on an iPhone, natural light only, realistic dynamic range with the window slightly blown out, deep focus with no bokeh, slightly imperfect framing, a little everyday clutter. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-L1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-L3",
+    "name": "Локация: спалня (леглото)",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo only for the apartment's style: the same light oak laminate floor, the same white PVC windows with sheer curtains, the same white walls and the same soft overcast November daylight. Photoreal vertical photo of the bedroom of this apartment: an unmade double bed with white and grey linen, a woven laundry basket full of clothes beside it, a white chest of drawers, a black gym bag on the floor, a sheer curtain on the window. Taken from the chest of drawers opposite the bed at seated eye level. Shot on an iPhone, natural light only, realistic dynamic range with the window slightly blown out, deep focus with no bokeh, slightly imperfect framing, a little everyday clutter. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-L1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-L4",
+    "name": "Локация: спалня (тоалетката)",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo only for the apartment's style: the same light oak laminate floor, the same white PVC windows with sheer curtains, the same white walls and the same soft overcast November daylight. Photoreal vertical photo of a corner of this apartment's bedroom: a white vanity table by the window, a small round mirror on a stand pushed to one side, skincare bottles, a jar with hair claw clips and hair ties, a small plant, an empty white chair in front of the table. Taken from across the table at seated eye level, the way a phone leaning on the mirror would see it. Shot on an iPhone, natural light only, realistic dynamic range with the window slightly blown out, deep focus with no bokeh, slightly imperfect framing, a little everyday clutter. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-L1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-L5",
+    "name": "Локация: баня",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo only for the apartment's style: the same light oak laminate floor, the same white PVC windows with sheer curtains, the same white walls and the same soft overcast November daylight. Photoreal vertical photo of this apartment's small bathroom: white square wall tiles, a white sink with a mirror cabinet above it, a toothbrush cup, a hand soap bottle, a light-grey towel on a hook, a small frosted window, cool daylight mixed with a warm ceiling light. Taken from the side of the sink at chest height so the mirror is seen at an angle and reflects only the tiled wall. Shot on an iPhone, natural light only, realistic dynamic range with the window slightly blown out, deep focus with no bokeh, slightly imperfect framing, a little everyday clutter. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-L1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-L6",
+    "name": "Локация: балкон",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo only for the apartment's style: the same light oak laminate floor, the same white PVC windows with sheer curtains, the same white walls and the same soft overcast November daylight. Photoreal vertical photo of this apartment's open balcony on a high floor on a November morning: a narrow concrete balcony with a metal railing, potted herbs and a small geranium in planters hanging on the railing, a green plastic watering can, a folding chair, neighbouring grey panel blocks and cars parked below, overcast soft daylight. Taken at eye level. Shot on an iPhone, natural light only, realistic dynamic range with the window slightly blown out, deep focus with no bokeh, slightly imperfect framing, a little everyday clutter. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-L1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-L7",
+    "name": "Локация: антре с огледало",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo only for the apartment's style: the same light oak laminate floor, the same white PVC windows with sheer curtains, the same white walls and the same soft overcast November daylight. Photoreal vertical photo of this apartment's narrow entrance hallway: a full-length mirror on the wall, a shoe rack with sneakers, coats and a tote bag on wall hooks, a small bowl for keys, warm ceiling light plus daylight coming from the living room. Taken at chest height. Shot on an iPhone, natural light only, realistic dynamic range with the window slightly blown out, deep focus with no bokeh, slightly imperfect framing, a little everyday clutter. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-L1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-L8",
+    "name": "Локация: хол (вечер, за края)",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo: the same living room, same sofa, same coffee table and same plant, but in the evening. The curtains are closed, only a warm floor lamp and a small table lamp are on, cosy dim light with deep shadows, a blanket thrown on the sofa, a mug on the coffee table. Taken at chest height. Shot on an iPhone in low light with visible digital noise, deep focus, no bokeh. Empty, no people. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-L1 URL>"
+      ]
+    }
+  },
+  {
+    "id": "IMG-B1",
+    "name": "Снимка „преди“ (за green screen)",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo as the identity reference: the same woman three years earlier and about 18 kg heavier, with a fuller round face and softer jawline, fuller arms, belly and hips, the same hazel eyes, the same mole on her left cheekbone and the same dark-brown hair, worn loose and a bit longer. She wears a baggy dark-grey hoodie and black leggings and stands a little awkwardly at a friend's birthday party in a living room in the evening, with a slightly self-conscious half-smile. Old phone photo taken with the on-camera flash: harsh flash light, slightly soft focus, JPEG compression, warm dim background, a bit of motion blur. It looks like a real photo from 2022 found in her phone's gallery. No text, no logos, no watermark.",
+      "aspect_ratio": "3:4",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-C1 URL>"
+      ]
+    }
+  }
+]

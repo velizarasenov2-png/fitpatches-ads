@@ -1,0 +1,15 @@
+{
+  "model": "google/gemini-omni-flash-1-1",
+  "input": {
+    "prompt": "FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.\n\nCHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.\n\nSETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.\n\nACTION: Same place, framed from the chest up. She holds the half-peeled mandarin and gestures with it once, serious and direct. She does not eat while talking.\n\nDIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing skipped): не защото не помага, а защото никой не издържа да я пие достатъчно дълго.\n\nVOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.\n\nCAMERA: Static at chest height about 70 cm in front of her; the viewer's point of view.\n\nLOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.\n\nAUDIO: Only her voice through the phone microphone, the small natural echo of the kitchen and quiet everyday sounds (quiet kitchen). No music.\n\nRESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.",
+    "character_ids": [
+      "<NIA_CHARACTER_ID>"
+    ],
+    "image_urls": [
+      "<IMG-L2 URL>"
+    ],
+    "duration": "8",
+    "aspect_ratio": "9:16",
+    "resolution": "1080p"
+  }
+}
