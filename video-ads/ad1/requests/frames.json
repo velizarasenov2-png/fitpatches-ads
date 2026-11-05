@@ -1,0 +1,495 @@
+[
+  {
+    "id": "КАДЪР A01",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands by the window on the far side of the living room, about 2.5 m from the camera, seen from head to knees, looking straight into the lens with a serious face, hands relaxed at her sides. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A02",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands at the kitchen counter, framed from the waist up. A mug of coffee and a small white pill bottle with no label stand on the counter in front of her; her right index finger rests on the bottle's cap. She looks into the lens, mouth slightly open as if mid-sentence. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B01",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up on the kitchen counter from a low side angle about 30 cm away: a white mug under the spout of the capsule coffee machine with coffee starting to pour, a small white pill bottle with no label next to it, her hand with the grey hoodie sleeve entering from the right edge. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A03",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the edge of the unmade bed next to the laundry basket, seen from head to knees, holding a half-folded T-shirt in both hands and looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L3 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B02",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (bedroom).\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Framed from her shoulders down to her knees, her face is not in the frame: she stands by the bed holding up a huge old dark-grey hoodie against her body by its shoulders; it is several sizes too big for her. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L3 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A04a",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits cross-legged on a grey yoga mat on the living-room floor, holding a white sneaker in both hands about to pull it on, looking up into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A04b",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits cross-legged on the grey yoga mat with one white sneaker on, holding the laces of the second sneaker in the middle of tying a bow, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B03",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Floor-level shot on the laminate floor: a grey yoga mat half unrolled toward the camera, her two hands with grey hoodie sleeves pushing the roll, her knees just behind. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A05",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands next to the white fridge with her right hand on the closed fridge door handle, seen from head to hips, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A06a",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the sofa with a laptop on a cushion on her lap; the screen faces her and cannot be seen. Her eyes are on the screen and one hand is on the trackpad. A mug stands on the coffee table. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A06b",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the sofa with the laptop on a cushion on her lap, the screen facing her and not visible, one hand resting on the laptop, looking up into the lens mid-sentence. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B04",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up of her fingers on the laptop trackpad, the edge of the keyboard and her grey hoodie sleeve; the screen is out of the frame; a mug of coffee with a little steam beside the laptop. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A07",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the sofa with the laptop open on her lap, both hands on the edge of the lid about to close it, a determined half-smile at the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A08",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands at the kitchen counter, framed from the waist up, tipping the small white pill bottle with no label over her open left palm, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B05",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Macro close-up: her hand tipping the small white pill bottle with no label over her open palm, one beige capsule just rolling out. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A09",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She is curled up in the corner of the sofa under the knitted beige throw, holding a red rubber hot-water bottle against her stomach and a mug of tea in her other hand, tired, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L1 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A10",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands next to an open kitchen drawer full of supplement bottles and boxes with no readable labels, holding the small white pill bottle, framed from the waist up, looking into the lens with raised eyebrows. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B06",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Top-down close-up into the open kitchen drawer full of supplement bottles and boxes with no readable labels; her hand holds the small white pill bottle just above them. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A11a",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She leans her hip against the kitchen counter, framed from the chest up and closer to the camera, peeling a mandarin, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A11b",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She leans against the kitchen counter, framed from the chest up, holding a half-peeled mandarin at chest height, serious and direct, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A12",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom). Image 4 is the product: copy the FitPatches pouch exactly.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits at the white vanity table, framed from the chest up like a get-ready-with-me video. The FitPatches pouch lies among her skincare bottles in front of her and her hand is reaching for it. The FitPatches pouch looks exactly like the product photo: a white matte stand-up zip pouch with a hang hole, the black word FitPatches at the top and a large soft-pink circle in the middle; no fruit or plants around it. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L4 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/fitpatches_2048_no_white_background.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A13",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom). Image 4 is the product: copy the FitPatches pouch exactly.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits at the white vanity table, framed from the chest up, holding the open FitPatches pouch at chest height with the fingers of her other hand inside it, about to take out a patch. The FitPatches pouch looks exactly like the product photo: a white matte stand-up zip pouch with a hang hole, the black word FitPatches at the top and a large soft-pink circle in the middle; no fruit or plants around it. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L4 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/fitpatches_2048_no_white_background.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A14",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (tiled bathroom). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands at the bathroom sink, framed from the chest up, holding a dusty-pink round patch with the backing half peeled just above the inside of her left wrist, looking into the lens. The patch is a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L5 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B07",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (tiled bathroom). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Macro close-up over the bathroom sink: the inside of her left wrist facing up, her right fingers holding a dusty-pink round patch with the backing half peeled just above it. The patch is a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L5 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A15",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the bar stool at the kitchen counter holding a mug of coffee with both hands near her chin, the inside of her left wrist turned toward the camera, relaxed. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L2 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A16a",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (open balcony). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Selfie at arm's length on the balcony, framed from the chest up: she tilts the green watering can in her left hand over the herb planters on the railing, panel blocks behind her. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L6 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A16b",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (open balcony). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Selfie at arm's length on the balcony, framed from the chest up: she leans her left forearm on the railing with a calm smile, panel blocks behind her. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L6 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B08",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (open balcony). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up on the balcony: water pouring from the green watering can into the herb pots on the railing, her left hand on the railing. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L6 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A17",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands next to the bed with an open black gym bag on it, holding a rolled towel above the bag, seen from head to hips, looking into the lens. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L3 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР B09",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (bedroom). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up of the open black gym bag on the bed: her hands push a shaker bottle in next to a rolled towel. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C2 URL>",
+        "<IMG-L3 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A18",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (hallway). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands in the hallway, framed from the waist up, pointing with her thumb over her right shoulder with a slightly awkward smile. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L7 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A19",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (hallway). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Mirror selfie in the full-length hallway mirror: we see her reflection from head to knees holding a plain dark phone with no logo at chest height, her free hand on the hoodie zipper. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C1 URL>",
+        "<IMG-C2 URL>",
+        "<IMG-L7 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A20",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference and her evening look: the same face and mole, the oversized cream knit sweater, the messy bun, no earrings. Image 2 is the room: keep the same room, furniture, window and light (living room). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Evening close selfie at arm's length: she sits sideways on the sofa with her legs under the blanket, tired relaxed face. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light, except that it is evening and only a warm floor lamp is on.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C3 URL>",
+        "<IMG-L8 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A21",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference and her evening look: the same face and mole, the oversized cream knit sweater, the messy bun, no earrings. Image 2 is the room: keep the same room, furniture, window and light (living room). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Evening close selfie at arm's length on the sofa, her free hand on her chest, sincere. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light, except that it is evening and only a warm floor lamp is on.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C3 URL>",
+        "<IMG-L8 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  },
+  {
+    "id": "КАДЪР A22",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Image 1 is the identity reference and her evening look: the same face and mole, the oversized cream knit sweater, the messy bun, no earrings. Image 2 is the room: keep the same room, furniture, window and light (living room). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.\n\nCreate one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Evening close selfie at arm's length on the sofa, a small smile. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light, except that it is evening and only a warm floor lamp is on.\n\nIt must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.",
+      "input_urls": [
+        "<IMG-C3 URL>",
+        "<IMG-L8 URL>",
+        "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+      ],
+      "aspect_ratio": "9:16",
+      "resolution": "2K"
+    }
+  }
+]

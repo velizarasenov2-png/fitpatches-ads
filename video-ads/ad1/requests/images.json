@@ -23,6 +23,19 @@
     }
   },
   {
+    "id": "IMG-C3",
+    "name": "Вечерният вид (за дозаснетия край)",
+    "model": "gpt-image-2-image-to-image",
+    "input": {
+      "prompt": "Use the reference photo as the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone and the same hazel eyes. Candid vertical selfie of her in the evening on her sofa, taken with an iPhone front camera at arm's length: an oversized cream knit sweater, her dark-brown hair in a loose messy bun with flyaway hairs, no earrings, almost no makeup, tired but relaxed face, a blanket over her legs. Light only from a warm floor lamp, visible digital noise in the dark areas, deep focus, no bokeh, natural unretouched skin. Her arm reaches toward the lens and leaves the frame; no phone visible. No text, no logos, no watermark.",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "input_urls": [
+        "<IMG-C1 URL>"
+      ]
+    }
+  },
+  {
     "id": "IMG-L1",
     "name": "Локация: хол (ден)",
     "model": "gpt-image-2-text-to-image",

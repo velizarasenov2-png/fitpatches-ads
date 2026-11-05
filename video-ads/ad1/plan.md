@@ -1,6 +1,6 @@
 # Реклама 1 „Добавките ти пречат“ — план и промптове
 
-26 говорещи клипа · 9 B-roll · 11 снимки · ~3108 кредита (1080p, без повторения).
+26 говорещи клипа · 9 B-roll · 12 снимки · ~3108 кредита (1080p, без повторения).
 
 ## Снимки
 
@@ -16,6 +16,13 @@ Candid vertical photo of Nia, a 27-year-old Bulgarian woman who is a fitness cre
 
 ```
 Use the reference photo as the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same dark-brown hair with the brown claw clip and the same gold hoop earrings. Full-body vertical photo of her standing in the hallway of her apartment, taken by a friend with an iPhone at chest height from about 2.5 m. She wears the open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Athletic toned figure with a slim waist and natural proportions, not a bodybuilder. Relaxed stance, one hand in the hoodie pocket, a small smile. Daylight plus a warm ceiling light, deep focus, no bokeh, natural unretouched skin. No text, no logos, no watermark.
+```
+
+### IMG-C3 — Вечерният вид (за дозаснетия край)
+`gpt-image-2-image-to-image` · 9:16 · 2K · референс: IMG-C1
+
+```
+Use the reference photo as the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone and the same hazel eyes. Candid vertical selfie of her in the evening on her sofa, taken with an iPhone front camera at arm's length: an oversized cream knit sweater, her dark-brown hair in a loose messy bun with flyaway hairs, no earrings, almost no makeup, tired but relaxed face, a blanket over her legs. Light only from a warm floor lamp, visible digital noise in the dark areas, deep focus, no bokeh, natural unretouched skin. Her arm reaches toward the lens and leaves the frame; no phone visible. No text, no logos, no watermark.
 ```
 
 ### IMG-L1 — Локация: хол (ден)
@@ -110,14 +117,26 @@ Use the reference photo as the identity reference: the same woman three years ea
 
 ### Сцена 1 — Хол · хук
 
-**A01** · ГОВОРИ · 4 сек · референси: Ния, IMG-L1
+**A01** · ГОВОРИ · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L1
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands by the window on the far side of the living room, about 2.5 m from the camera, seen from head to knees, looking straight into the lens with a serious face, hands relaxed at her sides. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: [0-1s] She stands by the window on the far side of the living room, about 2.5 m from the camera, looking at the lens. [1-2.5s] She suddenly walks quickly straight toward the camera with both hands raised in front of her chest, elbows bent, palms open toward the lens in a stop gesture; her arms are bent, not stretched out. [2.5-4s] She stops very close to the lens, her face filling the upper half of the frame, and says the line with raised eyebrows.
 
@@ -125,7 +144,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static, propped on a shelf at chest height, the viewer's point of view. As she comes close the wide front-camera lens slightly distorts her face, the auto exposure briefly readjusts and her hands have a little motion blur.
+CAMERA: Static, propped on a shelf at chest height, the viewer's point of view. As she comes close the wide front-camera lens slightly distorts her face, the auto exposure briefly readjusts and her hands have a little motion blur. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -136,14 +155,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 2 — Кухня · кафе и шишенцето
 
-**A02** · ГОВОРИ · 8 сек · референси: Ния, IMG-L2
+**A02** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L2
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands at the kitchen counter, framed from the waist up. A mug of coffee and a small white pill bottle with no label stand on the counter in front of her; her right index finger rests on the bottle's cap. She looks into the lens, mouth slightly open as if mid-sentence. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands at the kitchen counter, framed from the waist up. A mug of coffee and a small white pill bottle with no label stand on the counter in front of her. [0-3s] She taps the pill bottle twice with her index finger while she starts talking. [3-8s] She picks up the mug with both hands and keeps talking to the camera, raising her eyebrows at the end. Only these two movements in the whole clip.
 
@@ -151,7 +182,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 1 m in front of her, as if the phone leans against the backsplash of the opposite counter; the viewer's point of view. A tiny jitter when she puts her hand on the counter.
+CAMERA: Static at chest height about 1 m in front of her, as if the phone leans against the backsplash of the opposite counter; the viewer's point of view. A tiny jitter when she puts her hand on the counter. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -160,18 +191,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**B01** · B-ROLL · 4 сек · референси: Ния, IMG-L2
+**B01** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L2
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up on the kitchen counter from a low side angle about 30 cm away: a white mug under the spout of the capsule coffee machine with coffee starting to pour, a small white pill bottle with no label next to it, her hand with the grey hoodie sleeve entering from the right edge. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Close-up on the kitchen counter: coffee pours from the capsule coffee machine into a white mug; a small white pill bottle with no label stands next to the mug. Her hand with the grey hoodie sleeve comes in and her fingertip taps the bottle twice. Only her hand is visible. She does not speak.
 
-CAMERA: Phone propped low on the counter about 30 cm away, side angle, static.
+CAMERA: Phone propped low on the counter about 30 cm away, side angle, static. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -182,14 +223,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 3 — Спалня · пране и старото худи
 
-**A03** · ГОВОРИ · 10 сек · референси: Ния, IMG-L3
+**A03** · ГОВОРИ · 10 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L3
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the edge of the unmade bed next to the laundry basket, seen from head to knees, holding a half-folded T-shirt in both hands and looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her bedroom, exactly as in the location reference image: unmade bed with white and grey linen, laundry basket, white chest of drawers.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She sits on the edge of the unmade bed next to the laundry basket, folding a T-shirt. [0-5s] She folds the T-shirt and puts it on the pile while talking. [5-10s] She rests her hands in her lap, glances down for a second when she talks about being ashamed, gives a small embarrassed half-smile and looks back at the screen.
 
@@ -197,7 +250,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at seated eye level about 1.2 m away, as if propped on the chest of drawers opposite the bed; the viewer's point of view.
+CAMERA: Static at seated eye level about 1.2 m away, as if propped on the chest of drawers opposite the bed; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -206,18 +259,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**B02** · B-ROLL · 4 сек · референси: Ния, IMG-L3
+**B02** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L3
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (bedroom).
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Framed from her shoulders down to her knees, her face is not in the frame: she stands by the bed holding up a huge old dark-grey hoodie against her body by its shoulders; it is several sizes too big for her. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her bedroom, exactly as in the location reference image: unmade bed with white and grey linen, laundry basket, white chest of drawers.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Framed from her shoulders down to her knees, her face is not in the frame. She pulls a huge old dark-grey hoodie out of the laundry basket and holds it up against herself by the shoulders; it is several sizes too big for her. Then she lets it drop onto the bed. She does not speak.
 
-CAMERA: Phone propped on the chest of drawers, static, about 1 m away.
+CAMERA: Phone propped on the chest of drawers, static, about 1 m away. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -228,14 +291,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 4 — Хол · постелка и маратонки
 
-**A04a** · ГОВОРИ · 6 сек · референси: Ния, IMG-L1
+**A04a** · ГОВОРИ · 6 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L1
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits cross-legged on a grey yoga mat on the living-room floor, holding a white sneaker in both hands about to pull it on, looking up into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She sits cross-legged on a grey yoga mat on the living-room floor. [0-3s] She pulls a white sneaker onto her right foot. [3-6s] She ties the laces, looking up at the camera between the knots while she talks.
 
@@ -243,7 +318,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static, low, propped on the coffee table at her seated eye level about 1 m away; the viewer's point of view.
+CAMERA: Static, low, propped on the coffee table at her seated eye level about 1 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -252,14 +327,26 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**A04b** · ГОВОРИ · 6 сек · референси: Ния, IMG-L1
+**A04b** · ГОВОРИ · 6 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L1
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits cross-legged on the grey yoga mat with one white sneaker on, holding the laces of the second sneaker in the middle of tying a bow, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: Same place on the grey yoga mat. [0-3s] She pulls the bow tight on the second sneaker. [3-6s] She rests her forearms on her knees and gives a small shrug at the end of the sentence.
 
@@ -267,7 +354,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static, low, propped on the coffee table at her seated eye level about 1 m away; the viewer's point of view.
+CAMERA: Static, low, propped on the coffee table at her seated eye level about 1 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -276,18 +363,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**B03** · B-ROLL · 4 сек · референси: Ния, IMG-L1
+**B03** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L1
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Floor-level shot on the laminate floor: a grey yoga mat half unrolled toward the camera, her two hands with grey hoodie sleeves pushing the roll, her knees just behind. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Floor-level shot on the laminate floor: her hands with the grey hoodie sleeves unroll a grey yoga mat toward the camera. Only her hands, forearms and knees are visible. She does not speak.
 
-CAMERA: Phone lying on the floor, static, the mat rolls out almost up to the lens.
+CAMERA: Phone lying on the floor, static, the mat rolls out almost up to the lens. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -298,14 +395,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 5 — Кухня · хладилникът
 
-**A05** · ГОВОРИ · 8 сек · референси: Ния, IMG-L2
+**A05** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L2
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands next to the white fridge with her right hand on the closed fridge door handle, seen from head to hips, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands next to the white fridge. [0-4s] She opens the fridge door, takes out a small yogurt cup and closes the door with her hip. [4-8s] She peels the lid off the yogurt while talking, with a small eye-roll at the end.
 
@@ -313,7 +422,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height from the counter opposite the fridge, about 1.5 m away; the viewer's point of view.
+CAMERA: Static at chest height from the counter opposite the fridge, about 1.5 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -324,14 +433,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 6 — Хол · лаптоп (green screen)
 
-**A06a** · ГОВОРИ · 8 сек · референси: Ния, IMG-L1
+**A06a** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L1
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the sofa with a laptop on a cushion on her lap; the screen faces her and cannot be seen. Her eyes are on the screen and one hand is on the trackpad. A mug stands on the coffee table. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She sits on the sofa with a laptop on a cushion on her lap and a mug on the coffee table. The laptop screen faces her and cannot be seen. [0-3s] She scrolls on the trackpad with her eyes on the screen. [3-8s] She looks up from the laptop into the camera and talks.
 
@@ -339,7 +460,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view.
+CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -348,14 +469,26 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**A06b** · ГОВОРИ · 8 сек · референси: Ния, IMG-L1
+**A06b** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L1
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the sofa with the laptop on a cushion on her lap, the screen facing her and not visible, one hand resting on the laptop, looking up into the lens mid-sentence. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: Same place on the sofa with the laptop. [0-4s] She talks with a small nod, one hand still on the laptop. [4-8s] She counts two points on her fingers toward the camera.
 
@@ -363,7 +496,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view.
+CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -372,18 +505,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**B04** · B-ROLL · 4 сек · референси: Ния, IMG-L1
+**B04** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L1
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up of her fingers on the laptop trackpad, the edge of the keyboard and her grey hoodie sleeve; the screen is out of the frame; a mug of coffee with a little steam beside the laptop. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Close-up of her fingers scrolling on the laptop trackpad, the edge of the keyboard and her grey hoodie sleeve; the screen is out of the frame. Steam rises from a mug of coffee beside the laptop. She does not speak.
 
-CAMERA: Phone held close above her lap, slight natural hand movement.
+CAMERA: Phone held close above her lap, slight natural hand movement. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -394,14 +537,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 7 — Хол · „поръчвам“
 
-**A07** · ГОВОРИ · 8 сек · референси: Ния, IMG-L1
+**A07** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L1
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the sofa with the laptop open on her lap, both hands on the edge of the lid about to close it, a determined half-smile at the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: Same place on the sofa with the laptop. [0-2s] She closes the laptop lid decisively and points at the camera. [2-8s] She mimes pressing an order button in the air with her index finger, half-smiling.
 
@@ -409,7 +564,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view.
+CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -420,14 +575,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 8 — Кухня · хапчето в дланта
 
-**A08** · ГОВОРИ · 10 сек · референси: Ния, IMG-L2
+**A08** · ГОВОРИ · 10 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L2
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands at the kitchen counter, framed from the waist up, tipping the small white pill bottle with no label over her open left palm, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands at the kitchen counter holding the small white pill bottle with no label. [0-5s] She shakes one beige capsule into her palm while talking. [5-10s] She holds the capsule up between two fingers toward the camera, disappointed.
 
@@ -435,7 +602,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 1 m in front of her, as if leaning against the backsplash of the opposite counter; the viewer's point of view.
+CAMERA: Static at chest height about 1 m in front of her, as if leaning against the backsplash of the opposite counter; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -444,18 +611,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**B05** · B-ROLL · 4 сек · референси: Ния, IMG-L2
+**B05** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L2
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Macro close-up: her hand tipping the small white pill bottle with no label over her open palm, one beige capsule just rolling out. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Macro close-up: her hand tips the small white pill bottle with no label and one beige capsule rolls out into her open palm. Only her hands are visible. She does not speak.
 
-CAMERA: Phone held close in her other hand, slight natural hand movement.
+CAMERA: Phone held close in her other hand, slight natural hand movement. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -466,14 +643,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 9 — Хол · грейка и чай
 
-**A09** · ГОВОРИ · 10 сек · референси: Ния, IMG-L1
+**A09** · ГОВОРИ · 10 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L1
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (living room).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She is curled up in the corner of the sofa under the knitted beige throw, holding a red rubber hot-water bottle against her stomach and a mug of tea in her other hand, tired, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room, exactly as in the location reference image: light-grey sofa, wooden coffee table, monstera, window with panel blocks outside.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She is curled up in the corner of the sofa under the knitted throw, holding a red rubber hot-water bottle against her stomach and a mug of tea. [0-5s] She talks, tired. [5-10s] She presses the hot-water bottle to her stomach with a small grimace.
 
@@ -481,7 +670,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view.
+CAMERA: Static, propped on the coffee table at her seated eye level about 1.2 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -492,14 +681,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 10 — Кухня · чекмеджето
 
-**A10** · ГОВОРИ · 10 сек · референси: Ния, IMG-L2
+**A10** · ГОВОРИ · 10 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L2
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands next to an open kitchen drawer full of supplement bottles and boxes with no readable labels, holding the small white pill bottle, framed from the waist up, looking into the lens with raised eyebrows. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands next to an open kitchen drawer full of supplement bottles and boxes, holding the small white pill bottle with no label. [0-6s] She talks and raises her eyebrows at the question. [6-10s] After a short pause she drops the bottle into the drawer and pushes the drawer shut with her hip.
 
@@ -507,7 +708,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 1.2 m in front of her; the viewer's point of view.
+CAMERA: Static at chest height about 1.2 m in front of her; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -516,18 +717,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**B06** · B-ROLL · 4 сек · референси: Ния, IMG-L2
+**B06** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L2
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Top-down close-up into the open kitchen drawer full of supplement bottles and boxes with no readable labels; her hand holds the small white pill bottle just above them. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Close-up of the open kitchen drawer full of supplement bottles and boxes with no readable labels. Her hand drops the small white pill bottle in among them, then the drawer slides shut. She does not speak.
 
-CAMERA: Phone held at counter height pointing down into the drawer, slight natural hand movement.
+CAMERA: Phone held at counter height pointing down into the drawer, slight natural hand movement. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -538,14 +749,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 11 — Кухня · мандарина
 
-**A11a** · ГОВОРИ · 6 сек · референси: Ния, IMG-L2
+**A11a** · ГОВОРИ · 6 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L2
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She leans her hip against the kitchen counter, framed from the chest up and closer to the camera, peeling a mandarin, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She leans with her hip against the kitchen counter, closer to the camera, framed from the chest up, peeling a mandarin while she talks. The only movement is the peeling.
 
@@ -553,7 +776,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 70 cm in front of her; the viewer's point of view.
+CAMERA: Static at chest height about 70 cm in front of her; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -562,14 +785,26 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip.
 ```
 
-**A11b** · ГОВОРИ · 8 сек · референси: Ния, IMG-L2
+**A11b** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L2
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen).
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She leans against the kitchen counter, framed from the chest up, holding a half-peeled mandarin at chest height, serious and direct, looking into the lens. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: Same place, framed from the chest up. She holds the half-peeled mandarin and gestures with it once, serious and direct. She does not eat while talking.
 
@@ -577,7 +812,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 70 cm in front of her; the viewer's point of view.
+CAMERA: Static at chest height about 70 cm in front of her; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -588,14 +823,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 12 — Тоалетка · пликчето
 
-**A12** · ГОВОРИ · 6 сек · референси: Ния, IMG-L4, POUCH
+**A12** · ГОВОРИ · 6 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L4, POUCH
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom). Image 4 is the product: copy the FitPatches pouch exactly.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits at the white vanity table, framed from the chest up like a get-ready-with-me video. The FitPatches pouch lies among her skincare bottles in front of her and her hand is reaching for it. The FitPatches pouch looks exactly like the product photo: a white matte stand-up zip pouch with a hang hole, the black word FitPatches at the top and a large soft-pink circle in the middle; no fruit or plants around it. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + пликчето + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: The corner of her bedroom with the white vanity table by the window, exactly as in the location reference image: small round mirror pushed to one side, skincare bottles, claw clips.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She sits at the white vanity table, framed from the chest up like a get-ready-with-me video. [0-3s] She picks up the FitPatches pouch from the product reference image (only the pouch, without the fruit and plants around it): a white matte stand-up zip pouch about 13 by 18 cm with a hang hole, the black word FitPatches at the top and a large soft-pink circle in the middle from among her skincare bottles. [3-6s] She lifts it close to the lens: the focus hunts for a moment and then sharpens on the pouch, and she smiles.
 
@@ -603,7 +850,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at her seated eye level about 60 cm away, as if the phone leans on the vanity mirror; the viewer's point of view.
+CAMERA: Static at her seated eye level about 60 cm away, as if the phone leans on the vanity mirror; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -614,14 +861,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 13 — Тоалетка · лепенката
 
-**A13** · ГОВОРИ · 10 сек · референси: Ния, IMG-L4, POUCH, WRIST
+**A13** · ГОВОРИ · 10 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L4, POUCH
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom). Image 4 is the product: copy the FitPatches pouch exactly.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits at the white vanity table, framed from the chest up, holding the open FitPatches pouch at chest height with the fingers of her other hand inside it, about to take out a patch. The FitPatches pouch looks exactly like the product photo: a white matte stand-up zip pouch with a hang hole, the black word FitPatches at the top and a large soft-pink circle in the middle; no fruit or plants around it. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + пликчето + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: The corner of her bedroom with the white vanity table by the window, exactly as in the location reference image: small round mirror pushed to one side, skincare bottles, claw clips.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She sits at the white vanity table, framed from the chest up. [0-4s] She unzips the FitPatches pouch from the product reference image (only the pouch, without the fruit and plants around it): a white matte stand-up zip pouch about 13 by 18 cm with a hang hole, the black word FitPatches at the top and a large soft-pink circle in the middle and takes out one patch. [4-10s] She holds the patch on her fingertip next to her cheek, close to the lens, and turns it slightly to show it. The patch is a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, dusty blush-pink, with a ring of very small dark-grey micro-print along the edge, too small to read; it keeps exactly the same size and shape the whole time.
 
@@ -629,7 +888,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at her seated eye level about 60 cm away, as if the phone leans on the vanity mirror; the viewer's point of view.
+CAMERA: Static at her seated eye level about 60 cm away, as if the phone leans on the vanity mirror; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -640,14 +899,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 14 — Баня · лепи я на китката
 
-**A14** · ГОВОРИ · 4 сек · референси: Ния, IMG-L5, WRIST
+**A14** · ГОВОРИ · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L5, WRIST
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (tiled bathroom). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands at the bathroom sink, framed from the chest up, holding a dusty-pink round patch with the backing half peeled just above the inside of her left wrist, looking into the lens. The patch is a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small bathroom, exactly as in the location reference image: white square tiles, white sink with a mirror cabinet, towel on a hook.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands at the bathroom sink, framed from the chest up, and while talking presses a dusty-pink round patch onto the inside of her left wrist with her right thumb, then turns the wrist toward the camera for a second. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -655,7 +926,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 80 cm away, as if propped on the shelf beside the sink; the viewer's point of view.
+CAMERA: Static at chest height about 80 cm away, as if propped on the shelf beside the sink; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -664,18 +935,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip. No patch changing shape or size.
 ```
 
-**B07** · B-ROLL · 4 сек · референси: Ния, IMG-L5, WRIST
+**B07** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L5, WRIST
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (tiled bathroom). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Macro close-up over the bathroom sink: the inside of her left wrist facing up, her right fingers holding a dusty-pink round patch with the backing half peeled just above it. The patch is a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her small bathroom, exactly as in the location reference image: white square tiles, white sink with a mirror cabinet, towel on a hook.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Macro close-up over the bathroom sink: her fingers peel the backing off a dusty-pink round patch and press it onto the inside of her left wrist, then her thumb smooths it down. The patch is a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read; it keeps exactly the same size and shape the whole time. She does not speak.
 
-CAMERA: Phone held close in her other hand above the wrist, slight natural hand movement.
+CAMERA: Phone held close in her other hand above the wrist, slight natural hand movement. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -686,14 +967,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 15 — Кухня · кафе, спокойна
 
-**A15** · ГОВОРИ · 6 сек · референси: Ния, IMG-L2
+**A15** · ГОВОРИ · 6 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L2, WRIST
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (kitchen). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She sits on the bar stool at the kitchen counter holding a mug of coffee with both hands near her chin, the inside of her left wrist turned toward the camera, relaxed. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her small kitchen, exactly as in the location reference image: light-wood and white cabinets, beige countertop, coffee machine, white fridge, window above the sink.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She sits on the bar stool at the kitchen counter with her mug of coffee, relaxed. [0-2s] She takes one sip. [2-6s] She talks calmly, holding the mug so her inner left wrist faces the camera. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -701,7 +994,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at her seated eye level about 1 m away; the viewer's point of view.
+CAMERA: Static at her seated eye level about 1 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -712,14 +1005,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 16 — Балкон · полива цветята
 
-**A16a** · ГОВОРИ · 6 сек · референси: Ния, IMG-L6
+**A16a** · ГОВОРИ · 6 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L6, WRIST
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (open balcony). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Selfie at arm's length on the balcony, framed from the chest up: she tilts the green watering can in her left hand over the herb planters on the railing, panel blocks behind her. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her open balcony on a high floor, exactly as in the location reference image: metal railing with herb planters, neighbouring panel blocks, overcast morning.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands on the balcony and waters the herb planters on the railing with the green watering can in her left hand while talking to the camera. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -727,7 +1032,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Handheld selfie: she holds the phone in her right hand at arm's length, natural small hand shake.
+CAMERA: Handheld selfie: she holds the phone in her right hand at arm's length, natural small hand shake. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -736,14 +1041,26 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip. No patch changing shape or size.
 ```
 
-**A16b** · ГОВОРИ · 8 сек · референси: Ния, IMG-L6
+**A16b** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L6, WRIST
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (open balcony). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Selfie at arm's length on the balcony, framed from the chest up: she leans her left forearm on the railing with a calm smile, panel blocks behind her. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her open balcony on a high floor, exactly as in the location reference image: metal railing with herb planters, neighbouring panel blocks, overcast morning.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She puts the watering can down, leans her left forearm on the railing and talks to the camera with a calm smile. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -751,7 +1068,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Handheld selfie: she holds the phone in her right hand at arm's length, natural small hand shake.
+CAMERA: Handheld selfie: she holds the phone in her right hand at arm's length, natural small hand shake. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -760,18 +1077,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip. No patch changing shape or size.
 ```
 
-**B08** · B-ROLL · 4 сек · референси: Ния, IMG-L6
+**B08** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L6, WRIST
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (open balcony). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up on the balcony: water pouring from the green watering can into the herb pots on the railing, her left hand on the railing. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her open balcony on a high floor, exactly as in the location reference image: metal railing with herb planters, neighbouring panel blocks, overcast morning.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Close-up: water pours from the green watering can into the potted herbs on the balcony railing; her left hand holds the railing. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time. She does not speak.
 
-CAMERA: Phone held in her right hand close to the planters, slight natural hand movement.
+CAMERA: Phone held in her right hand close to the planters, slight natural hand movement. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -782,14 +1109,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 17 — Спалня · сакът
 
-**A17** · ГОВОРИ · 8 сек · референси: Ния, IMG-L3
+**A17** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L3, WRIST
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (bedroom). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands next to the bed with an open black gym bag on it, holding a rolled towel above the bag, seen from head to hips, looking into the lens. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her bedroom, exactly as in the location reference image: unmade bed with white and grey linen, laundry basket, white chest of drawers.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands next to the bed with a black gym bag on it. [0-4s] She puts a towel and a shaker bottle into the bag while talking. [4-8s] She zips the bag and looks at the camera, proud but casual. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -797,7 +1136,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 1.3 m away, propped on the chest of drawers; the viewer's point of view.
+CAMERA: Static at chest height about 1.3 m away, propped on the chest of drawers; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -806,18 +1145,28 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip. No patch changing shape or size.
 ```
 
-**B09** · B-ROLL · 4 сек · референси: Ния, IMG-L3
+**B09** · B-ROLL · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C2, IMG-L3, WRIST
+
+```
+Image 1 shows the woman's outfit and skin tone: use it for her hands, sleeves and clothes. Image 2 is the room: keep the same room, furniture, window and light (bedroom). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of a detail shot filmed with an iPhone rear camera held close to the action. Close-up of the open black gym bag on the bed: her hands push a shaker bottle in next to a rolled towel. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone rear camera held close to the action, one continuous take with no cuts, real-time speed. A casual everyday detail shot that a creator films for her own video, not an advertisement.
 
-CHARACTER: The hands and sleeves belong to the woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
-
-SETTING: Her bedroom, exactly as in the location reference image: unmade bed with white and grey linen, laundry basket, white chest of drawers.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
 ACTION: Close-up of the black gym bag on the bed: her hands push in a rolled towel and a shaker bottle, then pull the zip closed. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time. She does not speak.
 
-CAMERA: Phone held above the bag, slight natural hand movement.
+CAMERA: Phone held above the bag, slight natural hand movement. One continuous take, no cuts, no zoom.
 
 LOOK: iPhone rear camera, deep focus, auto exposure, flat unedited colours, soft overcast November daylight and a warm ceiling light. Real skin texture on her hands, short natural nails, creased hoodie sleeves.
 
@@ -828,14 +1177,26 @@ RESTRICTIONS: No dialogue. No talking. No subtitles. No on-screen text. No music
 
 ### Сцена 18 — Антре · „преди“ (green screen)
 
-**A18** · ГОВОРИ · 4 сек · референси: Ния, IMG-L7
+**A18** · ГОВОРИ · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L7, WRIST
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (hallway). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera video, the camera at the viewer's point of view directly in front of her, with no phone, tripod or stand visible. She stands in the hallway, framed from the waist up, pointing with her thumb over her right shoulder with a slightly awkward smile. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: The narrow entrance hallway of her apartment, exactly as in the location reference image: full-length mirror, shoe rack, coats on hooks.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: She stands in the hallway, framed from the waist up, and points with her thumb up over her shoulder with a slightly awkward smile, as if pointing at something behind her. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -843,7 +1204,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Static at chest height about 1.2 m away; the viewer's point of view.
+CAMERA: Static at chest height about 1.2 m away; the viewer's point of view. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -854,14 +1215,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 19 — Антре · огледалото „сега“
 
-**A19** · ГОВОРИ · 4 сек · референси: Ния, IMG-L7
+**A19** · ГОВОРИ · 4 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C1, IMG-C2, IMG-L7, WRIST
+
+```
+Image 1 is the identity reference: keep this exact woman, with the same face, the same mole on her left cheekbone, the same hair with the brown claw clip and the same gold hoop earrings. Image 2 is her outfit and body: the open oversized light-grey zip hoodie, the dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks. Image 3 is the room: keep the same room, furniture, window and light (hallway). Image 4 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Mirror selfie in the full-length hallway mirror: we see her reflection from head to knees holding a plain dark phone with no logo at chest height, her free hand on the hoodie zipper. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: The narrow entrance hallway of her apartment, exactly as in the location reference image: full-length mirror, shoe rack, coats on hooks.
+CHARACTER: The woman is the character from the character reference (Nia): the same face, the same long dark-brown hair half pulled back with a brown claw clip, small gold hoop earrings. She wears an open oversized light-grey zip hoodie over a dark-navy longline sports top that covers her whole belly down to the waistband, loose mid-grey sweatpants and white socks.
 
 ACTION: Mirror selfie in the full-length hallway mirror: she holds the phone at chest height (in the reflection it is a plain dark phone with no logo). With her free hand she opens the hoodie to show her figure in the longline sports top and sweatpants, turns her hips slightly left and right, and says the line with a shy, proud smile. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -869,7 +1242,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Handheld mirror selfie, small natural sway; we see her reflection in the mirror.
+CAMERA: Handheld mirror selfie, small natural sway; we see her reflection in the mirror. One continuous take, no cuts, no zoom.
 
 LOOK: Deep focus with the background as sharp as she is, iPhone auto exposure and auto white balance, slight digital noise in the shadows, flat unedited colours. Lit only by soft overcast November daylight from the window and a warm ceiling light. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric. Natural blinks, small head movements, relaxed shoulders. Her eyes move between the lens and the screen just below it.
 
@@ -880,14 +1253,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 20 — Дозаснето вечерта · диван
 
-**A20** · ГОВОРИ · 10 сек · референси: Ния, IMG-L8
+**A20** · ГОВОРИ · 10 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C3, IMG-L8, WRIST
+
+```
+Image 1 is the identity reference and her evening look: the same face and mole, the oversized cream knit sweater, the messy bun, no earrings. Image 2 is the room: keep the same room, furniture, window and light (living room). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Evening close selfie at arm's length: she sits sideways on the sofa with her legs under the blanket, tired relaxed face. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light, except that it is evening and only a warm floor lamp is on.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face. It is evening and she has changed: an oversized cream knit sweater, her hair in a loose messy bun, no earrings, almost no makeup.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room in the evening, exactly as in the location reference image: curtains closed, warm floor lamp on, blanket on the sofa.
+CHARACTER: The woman is the character from the character reference (Nia): the same face. It is evening and she has changed: an oversized cream knit sweater, her hair in a loose messy bun, no earrings, almost no makeup.
 
 ACTION: Recorded later the same day. She sits sideways on the sofa with her legs pulled up under the blanket and talks casually, a little tired, as if adding a quick note to her video. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -895,7 +1280,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Handheld selfie close to her face at arm's length, natural small hand shake.
+CAMERA: Handheld selfie close to her face at arm's length, natural small hand shake. One continuous take, no cuts, no zoom.
 
 LOOK: Evening light only from a warm floor lamp beside the sofa, visible digital noise in the darker areas, iPhone auto exposure, flat unedited colours, deep focus with no bokeh. Natural unretouched skin with visible pores, tired but relaxed eyes, flyaway hairs from the bun. Natural blinks and small head movements.
 
@@ -906,14 +1291,26 @@ RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No rep
 
 ### Сцена 21 — Дозаснето вечерта · диван
 
-**A21** · ГОВОРИ · 8 сек · референси: Ния, IMG-L8
+**A21** · ГОВОРИ · 8 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C3, IMG-L8, WRIST
+
+```
+Image 1 is the identity reference and her evening look: the same face and mole, the oversized cream knit sweater, the messy bun, no earrings. Image 2 is the room: keep the same room, furniture, window and light (living room). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Evening close selfie at arm's length on the sofa, her free hand on her chest, sincere. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light, except that it is evening and only a warm floor lamp is on.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face. It is evening and she has changed: an oversized cream knit sweater, her hair in a loose messy bun, no earrings, almost no makeup.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room in the evening, exactly as in the location reference image: curtains closed, warm floor lamp on, blanket on the sofa.
+CHARACTER: The woman is the character from the character reference (Nia): the same face. It is evening and she has changed: an oversized cream knit sweater, her hair in a loose messy bun, no earrings, almost no makeup.
 
 ACTION: Same place on the sofa in the evening. She puts her free hand on her chest for a second while talking, sincere. A small round dusty-pink patch is stuck on the inside of her left wrist: a perfect circle about 3.5 cm across, made of soft matte non-woven fabric like thin felt, with a ring of very small dark-grey micro-print along the edge, too small to read. It stays exactly the same size, shape, colour and position the whole time.
 
@@ -921,7 +1318,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Handheld selfie close to her face at arm's length, natural small hand shake.
+CAMERA: Handheld selfie close to her face at arm's length, natural small hand shake. One continuous take, no cuts, no zoom.
 
 LOOK: Evening light only from a warm floor lamp beside the sofa, visible digital noise in the darker areas, iPhone auto exposure, flat unedited colours, deep focus with no bokeh. Natural unretouched skin with visible pores, tired but relaxed eyes, flyaway hairs from the bun. Natural blinks and small head movements.
 
@@ -930,14 +1327,26 @@ AUDIO: Only her voice through the phone microphone, the small natural echo of th
 RESTRICTIONS: No subtitles. No on-screen text. No music. No second voice. No repeated dialogue. No phone, tripod or camera visible in the frame. No cuts inside the clip. No patch changing shape or size.
 ```
 
-**A22** · ГОВОРИ · 6 сек · референси: Ния, IMG-L8
+**A22** · ГОВОРИ · 6 сек
+
+КАДЪР (GPT Image 2), прикачи: IMG-C3, IMG-L8, WRIST
+
+```
+Image 1 is the identity reference and her evening look: the same face and mole, the oversized cream knit sweater, the messy bun, no earrings. Image 2 is the room: keep the same room, furniture, window and light (living room). Image 3 is the patch: copy its size, shape, colour and how it sits on the inner wrist.
+
+Create one photoreal vertical 9:16 image: the first frame of an iPhone front-camera selfie video. Evening close selfie at arm's length on the sofa, a small smile. Her arm reaches toward the lens and leaves the frame at the lower edge; the phone itself is not visible. A small round dusty-pink patch is on the inside of her left wrist: a perfect circle about 3.5 cm across, soft matte non-woven fabric like thin felt, with a ring of tiny dark-grey micro-print along the edge, too small to read. Lived-in Bulgarian apartment in a Sofia panel block, soft overcast November daylight from the window and a warm ceiling light, except that it is evening and only a warm floor lamp is on.
+
+It must look like a paused frame from a real phone video, not a photoshoot: iPhone auto exposure, slight digital noise in the shadows, flat unedited colours, deep focus with the background as sharp as the subject, no bokeh, a tiny bit of motion blur on moving hands, slightly imperfect framing. Natural unretouched skin with visible pores, faint under-eye shadows, flyaway hairs, creased fabric, no beautification, no AI gloss. No text, no captions, no app interface, no logos except the word FitPatches on the pouch, no watermark.
+```
+
+ВИДЕО (Omni Flash), вход: кадърът като image 1 + character Ния
 
 ```
 FORMAT: Raw vertical 9:16 smartphone video recorded with an iPhone front camera, one continuous take with no cuts, real-time speed. It looks like a real woman filming a casual talking video at home for her followers, not an advertisement.
 
-CHARACTER: The woman is the character from the character reference (Nia): the same face. It is evening and she has changed: an oversized cream knit sweater, her hair in a loose messy bun, no earrings, almost no makeup.
+START FRAME: The video starts exactly on reference image 1, with the same woman, face, hair, clothes, room, framing and light, and continues from there. Keep all of it the same for the whole clip.
 
-SETTING: Her living room in the evening, exactly as in the location reference image: curtains closed, warm floor lamp on, blanket on the sofa.
+CHARACTER: The woman is the character from the character reference (Nia): the same face. It is evening and she has changed: an oversized cream knit sweater, her hair in a loose messy bun, no earrings, almost no makeup.
 
 ACTION: Same place on the sofa in the evening. She talks with a small smile and at the end points down with her free index finger.
 
@@ -945,7 +1354,7 @@ DIALOGUE (Bulgarian, spoken exactly as written, once, nothing added, nothing ski
 
 VOICE: Her own natural voice from the character reference, relaxed and conversational, like telling a close friend a story, natural Bulgarian pace with small pauses and a short breath before she starts, never an announcer tone.
 
-CAMERA: Handheld selfie close to her face at arm's length, natural small hand shake.
+CAMERA: Handheld selfie close to her face at arm's length, natural small hand shake. One continuous take, no cuts, no zoom.
 
 LOOK: Evening light only from a warm floor lamp beside the sofa, visible digital noise in the darker areas, iPhone auto exposure, flat unedited colours, deep focus with no bokeh. Natural unretouched skin with visible pores, tired but relaxed eyes, flyaway hairs from the bun. Natural blinks and small head movements.
 
