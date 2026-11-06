@@ -1,0 +1,392 @@
+<title>FitPatches Native MSL</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Swipe-file layout: feed of hooks on the left, the ad body on the right, image strip on top of each ad */
+:root {
+  --bg: #F6F5F8; --surface: #FFFFFF; --ink: #1E1A21; --muted: #696170; --line: #E2DDE6;
+  --accent: #A8345A; --accent-soft: #F7DCE5; --ok: #23704F; --warn: #A65A12;
+  --display: "Unbounded", "Golos Text", system-ui, sans-serif;
+  --body: "Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141116; --surface: #1D1920; --ink: #EEE9F1; --muted: #A69EAD; --line: #322B36;
+  --accent: #F08DAA; --accent-soft: #3B2330; --ok: #72CDA2; --warn: #EBA45E; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141116; --surface: #1D1920; --ink: #EEE9F1; --muted: #A69EAD; --line: #322B36;
+  --accent: #F08DAA; --accent-soft: #3B2330; --ok: #72CDA2; --warn: #EBA45E; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: var(--accent) }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px }
+code { font: 13px var(--mono); background: var(--accent-soft); padding: 1px 6px; border-radius: 4px }
+h1, h2 { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; margin: 0 }
+h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.1 }
+h2 { font-size: clamp(24px, 4vw, 34px); line-height: 1.15 }
+h3 { font-size: 13px; font-family: var(--mono); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 40px 0 14px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline }
+h3 .sub { text-transform: none; letter-spacing: 0; font-weight: 400; font-family: var(--body); font-size: 13px }
+.eyebrow { font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin: 0 0 8px }
+.chip { font: 600 11px var(--mono); padding: 2px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); white-space: nowrap }
+.chip.ok { background: transparent; color: var(--ok); border: 1px solid currentColor }
+.chip.warn { background: transparent; color: var(--warn); border: 1px solid currentColor }
+
+/* header */
+.top { padding-block: 48px 28px; display: grid; gap: 18px }
+.lede { max-width: 64ch; color: var(--muted); font-size: 16px; margin: 0 }
+.steps { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line) }
+.steps li { padding: 14px 14px 0 0; display: grid; gap: 4px; min-width: 0 }
+.steps b { font: 600 12px var(--mono); color: var(--accent) }
+.steps span { font-size: 14px; line-height: 1.4 }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr } .steps li:last-child { grid-column: 1 / -1 } }
+
+nav.jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line) }
+nav.jump .wrap { display: flex; gap: 6px; overflow-x: auto; padding-block: 10px; scrollbar-width: none }
+nav.jump a { text-decoration: none; color: var(--ink); font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 99px; white-space: nowrap; border: 1px solid var(--line); background: var(--surface) }
+nav.jump a:hover { border-color: var(--accent); color: var(--accent) }
+
+section { padding-block: 44px; border-bottom: 1px solid var(--line); scroll-margin-top: calc(56px + env(safe-area-inset-top, 0px)) }
+
+/* swipe file */
+.notice { max-width: 72ch; margin: 14px 0 0; padding: 12px 16px; border-left: 3px solid var(--warn); background: var(--surface); font-size: 14px }
+.swipes { list-style: none; padding: 0; margin: 22px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px }
+@media (max-width: 760px) { .swipes { grid-template-columns: 1fr } }
+.swipe { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; display: grid; gap: 6px; align-content: start; min-width: 0 }
+.swipe p { margin: 0 }
+.sw-page { font-weight: 600; display: flex; gap: 8px; align-items: center; flex-wrap: wrap }
+.sw-title { font-size: 17px; line-height: 1.35; font-weight: 500 }
+.sw-take { color: var(--muted); font-size: 14px }
+.sw-foot { font: 12px var(--mono); color: var(--muted) }
+
+/* ad */
+.ad-head { display: grid; gap: 14px }
+.meta { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 20px; border-top: 1px solid var(--line); padding-top: 14px }
+.meta div { min-width: 0 }
+.meta dt { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted) }
+.meta dd { margin: 2px 0 0; font-size: 14px; line-height: 1.4 }
+@media (max-width: 760px) { .meta { grid-template-columns: 1fr 1fr } }
+
+.shots { display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px }
+.shot { margin: 0; scroll-snap-align: start; min-width: 0 }
+.shot img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; background: var(--line) }
+.shot figcaption { font-size: 12.5px; line-height: 1.35; color: var(--muted); margin-top: 6px }
+.shot figcaption b { font-family: var(--mono); color: var(--ink); margin-right: 4px }
+
+.split { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 28px; align-items: start }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr } }
+.posts { display: grid; gap: 12px }
+.post { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 12px; display: grid; gap: 10px }
+.post.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) }
+.post-head { display: flex; align-items: center; gap: 10px }
+.avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--accent-soft); flex: none }
+.who { display: grid; line-height: 1.25; flex: 1; min-width: 0 }
+.who b { font-size: 14px }
+.who small { font-size: 12px; color: var(--muted) }
+.hnum { font: 600 12px var(--mono); color: var(--accent) }
+.post-text { margin: 0; font-size: 15px; line-height: 1.5 }
+.more { color: var(--muted); font-weight: 600 }
+.post-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 10px }
+.count { font: 12px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums }
+button.copy { margin-left: auto; font: 600 13px var(--body); color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 99px; padding: 5px 12px; cursor: pointer }
+button.copy:hover { background: var(--accent-soft) }
+button.copy.done { color: var(--ok); border-color: var(--ok) }
+
+.body { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 6px 20px }
+.row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--line) }
+.row:first-child { border-top: 0 }
+.lbl { font: 600 11px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); padding-top: 3px }
+.txt p { margin: 0 0 10px; max-width: 64ch }
+.txt p:last-child { margin-bottom: 0 }
+.hook-slot { font-weight: 600; font-size: 16px }
+.note { font-size: 13px; color: var(--muted) }
+@media (max-width: 600px) { .row { grid-template-columns: 1fr; gap: 6px } .body { padding: 4px 16px } }
+
+details.prompts { margin-top: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px }
+details.prompts summary { cursor: pointer; font-weight: 600; font-size: 14px }
+details.prompts ol { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 12px }
+details.prompts li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 8px; font-size: 13px; line-height: 1.5; color: var(--muted) }
+details.prompts li b { font-family: var(--mono); color: var(--ink) }
+details.prompts li p { margin: 0; grid-column: 2 }
+details.prompts .refs { color: var(--accent) }
+
+/* launch + compliance */
+.tablewrap { overflow-x: auto; margin-top: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14px }
+th, td { text-align: left; padding: 12px 16px; border-top: 1px solid var(--line); vertical-align: top }
+tr:first-child th, tr:first-child td { border-top: 0 }
+th { font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); width: 160px }
+.math { font: 600 15px var(--mono); color: var(--accent); white-space: nowrap }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 18px }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr } }
+.cols ul { margin: 0; padding-left: 18px; display: grid; gap: 8px }
+.cols h4 { margin: 0 0 10px; font-size: 15px }
+footer.end { padding-block: 32px 48px; color: var(--muted); font-size: 13px }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important } }
+</style>
+
+<div class="wrap top">
+  <p class="eyebrow">FitPatches · Native MSL · ноември 2026</p>
+  <h1>Native реклами за FitPatches</h1>
+  <p class="lede">Три мини sales letter реклами по процеса на Anthony Camacho: взимаме структурата на native реклами, които в момента се въртят в нишата, сменяме само hook-а и механизма с нашите UMP и UMS, и пускаме всяка с 5 снимки и 5 primary текста. Тялото е написано по рамката на David Roy.</p>
+  <ol class="steps">
+    <li><b>1 · Swipe</b><span>Native реклами от лични страници в Ad Library</span></li>
+    <li><b>2 · Подмяна</b><span>Същата структура, нов hook и механизъм</span></li>
+    <li><b>3 · 5 hook-а</b><span>Без продукт, отворена примка</span></li>
+    <li><b>4 · 5 снимки</b><span>Camera roll, не реклама</span></li>
+    <li><b>5 · Launch</b><span>5 × 5 = 25 комбинации на реклама</span></li>
+  </ol>
+</div>
+
+<nav class="jump" aria-label="Секции"><div class="wrap">
+  <a href="#swipe">Swipe файл</a><a href="#a1">1 · Сестра ми</a><a href="#a2">2 · Чекмеджето</a><a href="#a3">3 · След 40</a><a href="#launch">Launch</a><a href="#rules">Compliance</a>
+</div></nav>
+
+<div class="wrap">
+<section id="swipe">
+  <p class="eyebrow">Стъпка 1</p>
+  <h2>Swipe файл от Meta Ad Library</h2>
+  <p class="notice">Brandsearch върна грешка: планът няма API кредити, затова търсих директно в Meta Ad Library (GB и US, активни). Тя подрежда по най-нови, така че тези четири са пуснати на 05–06.11.2026. Структурите са това, което работи в нишата сега, но не доказват дълъг живот. За „най-дълго работещи“ трябва upgrade на Brandsearch.</p>
+  <ul class="swipes"><li class="swipe">
+  <p class="sw-page">Alice Williams <span class="chip">4 варианта</span></p>
+  <p class="sw-title">„That B*tch Went Home Wearing My Goal Jeans“</p>
+  <p class="sw-take">Социално сравнение с близка жена + конкретна вещ (дънките), която тя носи, а авторката не може. Унижение в първия ред, обяснението идва после.</p>
+  <p class="sw-foot">Пусната 05.11.2026 · <a href="https://www.facebook.com/ads/library/?id=2209802143264871" target="_blank" rel="noopener">Ad Library</a></p>
+</li>
+<li class="swipe">
+  <p class="sw-page">Christy Matis <span class="chip">4 варианта</span></p>
+  <p class="sw-title">„Lipo and Tummy Tucks Are the Real Scam“</p>
+  <p class="sw-take">Провокативно твърдение, което дискредитира очевидното решение. Тялото обяснява защо старите решения не могат да работят и чак тогава показва новото.</p>
+  <p class="sw-foot">Пусната 06.11.2026 · <a href="https://www.facebook.com/ads/library/?id=2052678605413168" target="_blank" rel="noopener">Ad Library</a></p>
+</li>
+<li class="swipe">
+  <p class="sw-page">Jessica Thompson <span class="chip">4 варианта</span></p>
+  <p class="sw-title">„Read this If you’re in your 40s or older and want to lose belly fat“</p>
+  <p class="sw-take">Директно извикване на аватара по възраст и проблем. Без история в hook-а, само „това е за теб“ и обещание за обяснение.</p>
+  <p class="sw-foot">Пусната 06.11.2026 · <a href="https://www.facebook.com/ads/library/?id=1676794243875126" target="_blank" rel="noopener">Ad Library</a></p>
+</li>
+<li class="swipe">
+  <p class="sw-page">Diane Hollis <span class="chip">1 вариант</span></p>
+  <p class="sw-title">„I lost 41 pounds before my ex-husband&#x27;s wedding. Everyone said I looked incredible. My mirror said tired.“</p>
+  <p class="sw-take">Конкретно събитие (сватба) като рамка на историята. Взехме сватбата за реклама 1, без цифрите в килограми.</p>
+  <p class="sw-foot">Пусната 06.11.2026 · <a href="https://www.facebook.com/ads/library/?id=1119011530990746" target="_blank" rel="noopener">Ad Library</a></p>
+</li></ul>
+</section>
+
+<section class="ad" id="a1">
+  <div class="ad-head">
+    <p class="eyebrow">Реклама 1 · swipe от Alice Williams + Diane Hollis</p>
+    <h2>Сестра ми</h2>
+    <dl class="meta">
+      <div><dt>Ъгъл</dt><dd>Социално сравнение, топла аудитория и студена</dd></div>
+      <div><dt>Headline</dt><dd>Какво ми каза сестра ми след сватбата</dd></div>
+      <div><dt>Description</dt><dd>Безплатна доставка · 30-дневна гаранция</dd></div>
+      <div><dt>Landing</dt><dd><code>advertorial-07-apetit</code></dd></div>
+    </dl>
+  </div>
+  <h3>5 снимки</h3>
+  <div class="shots"><figure class="shot"><img src="img/a1_1.jpg" alt="Дънки, които не се закопчават, флаш през нощта" width="480" height="600" loading="lazy"><figcaption><b>I1</b> Дънки, които не се закопчават, флаш през нощта</figcaption></figure>
+<figure class="shot"><img src="img/a1_2.jpg" alt="Огледално селфи в коридора, уморено лице" width="480" height="600" loading="lazy"><figcaption><b>I2</b> Огледално селфи в коридора, уморено лице</figcaption></figure>
+<figure class="shot"><img src="img/a1_3.jpg" alt="Сестрите на сватбата, едната дърпа жилетката" width="480" height="600" loading="lazy"><figcaption><b>I3</b> Сестрите на сватбата, едната дърпа жилетката</figcaption></figure>
+<figure class="shot"><img src="img/a1_4.jpg" alt="Сватбени снимки на масата, сянка от телефона" width="480" height="600" loading="lazy"><figcaption><b>I4</b> Сватбени снимки на масата, сянка от телефона</figcaption></figure>
+<figure class="shot"><img src="img/a1_5.jpg" alt="Лепенка на ръката, зелената рокля на закачалка" width="480" height="600" loading="lazy"><figcaption><b>I5</b> Лепенка на ръката, зелената рокля на закачалка</figcaption></figure></div>
+  <div class="split">
+    <div><h3>5 hook-а <span class="sub">какво се вижда преди „Виж още“</span></h3>
+    <div class="posts"><article class="post" id="a1-h1">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H1</span></header>
+  <p class="post-text">Сестра ми отиде на сватбата с роклята, която аз си купих за себе си.<br>Аз не можах да я закопчая.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">95 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a1" data-hook="0">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a1-h2">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H2</span></header>
+  <p class="post-text">На сватбата на братовчедка ни седях с жилетка цяла вечер в 28 градуса.<br>Само сестра ми знаеше защо.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">98 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a1" data-hook="1">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a1-h3">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H3</span></header>
+  <p class="post-text">Със сестра ми носим един размер от гимназията.<br>До миналата година.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">66 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a1" data-hook="2">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a1-h4">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H4</span></header>
+  <p class="post-text">Когато фотографът извика „сега само сестрите“, аз казах, че отивам до тоалетната.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">81 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a1" data-hook="3">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a1-h5">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H5</span></header>
+  <p class="post-text">Ям по-малко от сестра си, а тя е с два размера по-малка.<br>Когато ми каза защо, не повярвах.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">90 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a1" data-hook="4">Копирай primary text</button></footer>
+</article></div></div>
+    <div><h3>Тяло на рекламата <span class="sub">David Roy структура, UMP и UMS по Camacho</span></h3>
+    <div class="body"><div class="row hook-row"><span class="lbl">Hook</span><div class="txt"><p class="hook-slot">Сестра ми отиде на сватбата с роклята, която аз си купих за себе си.<br>Аз не можах да я закопчая.</p><p class="note">Сменя се с H1–H5. Тялото отдолу остава същото.</p></div></div><div class="row"><span class="lbl">Lead · разпознаване на проблема</span><div class="txt"><p>С Деси сме на две години разлика. Цял живот носим един размер и си разменяме дрехи още от гимназията.</p><p>През пролетта си купих зелена рокля за сватбата на братовчедка ни. Пробвах я три пъти. Ципът спираше на средата на гърба. Седмица преди сватбата Деси я пробва. Стана ѝ от първия път.</p></div></div><div class="row"><span class="lbl">Lead · по-дълбоката рана</span><div class="txt"><p>Най-лошото не беше роклята. Най-лошото беше, че Деси ме попита „Сигурна ли си, че нямаш нищо против?“ с онзи внимателен глас. Глас, с който се говори на болен човек.</p></div></div><div class="row"><span class="lbl">Lead · дъното</span><div class="txt"><p>На сватбата седях до нея в черна блуза и жилетка, която държах закопчана цяла вечер в 28 градуса. Когато фотографът дойде за снимка на сестрите, казах, че отивам до тоалетната.</p><p>Стоях пред огледалото там и си мислех: „Аз ям по-малко от нея. Как е възможно?“</p></div></div><div class="row"><span class="lbl">Belief · новото за проблема (UMP)</span><div class="txt"><p>След сватбата я попитах направо какво прави. Очаквах „спрях хляба“ или „ходя на фитнес“.</p><p>Тя каза нещо друго. Гинеколожката ѝ обяснила нещо, което на мен никой не ми беше казвал.</p><p>След 40, а понякога и няколко години по-рано, естрогенът започва да пада. А естрогенът участва в регулирането на два хормона: лептин, който казва на мозъка „сита си“, и грелин, който казва „гладна си“.</p><p>Когато естрогенът спадне, сигналите се объркват. Мозъкът чува „гладна“ по-често и „сита“ по-късно. Ядеш по-малко, а се чувстваш, сякаш постоянно гладуваш. И в един момент се пречупваш.</p><p>Затова диетите ми работеха две седмици и после се сриваха. Не беше слаба воля. Борех се с химия.</p></div></div><div class="row"><span class="lbl">Belief · новото за решението (UMS)</span><div class="txt"><p>Деси каза, че хапчетата не ѝ помагали по същата причина. Глътнеш капсула и тя действа наведнъж: пик, после спад. А апетитът не идва веднъж на ден. Той е цял ден.</p><p>Това, което ѝ проработило, действа постепенно. Лепенка, която подава активните съставки през кожата бавно, 8 часа подред. Без пик и без спад.</p></div></div><div class="row"><span class="lbl">Откриване на продукта</span><div class="txt"><p>Казва се FitPatches. Малка розова лепенка с берберин (от кисел трън), хром и L-глутамин. Слагаш я сутрин на ръката и забравяш за нея.</p><p>Деси ми показа ръката си. Носела я под ръкава на работа три месеца и никой не забелязал.</p></div></div><div class="row"><span class="lbl">Резултати · постепенно</span><div class="txt"><p>Първата седмица не усетих нищо особено.</p><p>Към десетия ден забелязах, че в 4 следобед не ровя в шкафа за нещо сладко. Не че се сдържах. Просто не ми се искаше.</p><p>След месец дънките, които обличах само „в добрите дни“, ми ставаха всеки ден.</p><p>След втория месец пробвах зелената рокля. Деси я беше върнала изпрана, с бележка „за следващата сватба“.</p><p>Ципът стигна догоре.</p></div></div><div class="row"><span class="lbl">Оферта · гаранция</span><div class="txt"><p>Взех си за два месеца, защото имаше отстъпка за по-голям пакет. Доставката беше безплатна и имат 30-дневна гаранция. Ако не ми хареса, връщам ги. Нямаше какво да губя.</p></div></div><div class="row"><span class="lbl">Кръстопът</span><div class="txt"><p>Можеш да продължиш както досега. Още една диета, още една сватба в черно, още една снимка, от която се криеш.</p><p>Или можеш да пробваш нещо, което работи с причината, а не срещу нея. 30 дни. Ако не усетиш разлика, връщаш ги.</p></div></div><div class="row"><span class="lbl">CTA</span><div class="txt"><p>Оставям линка отдолу. Прочети страницата им, там е обяснено по-подробно, отколкото мога аз.</p></div></div></div></div>
+  </div>
+  <details class="prompts"><summary>Промптове за снимките (Kie.ai, nano-banana-pro, 4:5, 2K)</summary><ol><li><b>I1</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Night, phone flash on. A pair of blue women&#x27;s jeans lies flat on a rumpled beige duvet in a small Bulgarian apartment bedroom, the button and buttonhole are about four centimetres apart and will clearly not close. A black going-out blouse and a wedding invitation card with a pressed flower lie next to them. Shot from standing height looking down, a little crooked. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I2</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Mirror selfie in a narrow Bulgarian apartment hallway with a wooden wardrobe mirror. A 46-year-old Bulgarian woman, visible fine lines around the eyes, a few grey strands in shoulder-length dark brown hair, mature soft face and figure, wears a loose black blouse and holds the phone so it hides half of her face. Her expression is tired and unconvinced. A plain cream card is tucked into the mirror frame. Warm ceiling bulb light, slight motion blur. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I3</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Candid phone photo across a wedding banquet table in a Bulgarian restaurant hall: two sisters in their mid-forties sit side by side laughing, one in a fitted emerald dress, the other in a loose black top with a cardigan over it pulling the cardigan closed. White tablecloth, salads, rakia glasses, string lights, guests blurred behind. Warm mixed light, a little grainy. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I4</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Top-down photo of a kitchen table with an oilcloth cover. About twelve printed 10x15 wedding photos are spread out; one photo in the middle is turned face down. A cup of Turkish coffee and reading glasses sit beside them. Afternoon window light, slight shadow of the phone at the edge. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I5</b><p>Use the reference images only for the exact look of the product: the patch is a fully dusty-pink (#F6B8C3) matte round non-woven patch, about 3 cm across, narrower than the wrist, with tiny &#x27;Fit Patches&#x27; print around its edge and no white border; the pouch is a white matte stand-up pouch about 10x14 cm with a large pink circle. Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. A 46-year-old Bulgarian woman with dark brown hair in a white tank top stands in front of an open wardrobe in the morning, an emerald dress on a hanger hooked on the wardrobe door. She smooths one pink patch onto the outside of her upper arm with two fingers and smiles a little. The white pouch lies on the bed behind her. Soft window light, ordinary bedroom. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p><p class="refs">+ 2 референтни снимки на лепенката и плика от Shopify CDN</p></li></ol></details>
+</section>
+<section class="ad" id="a2">
+  <div class="ad-head">
+    <p class="eyebrow">Реклама 2 · swipe от Christy Matis</p>
+    <h2>Чекмеджето</h2>
+    <dl class="meta">
+      <div><dt>Ъгъл</dt><dd>Дискредитиране на старите решения, Solution/Product Aware</dd></div>
+      <div><dt>Headline</dt><dd>Защо 23 опаковки хапчета не проработиха</dd></div>
+      <div><dt>Description</dt><dd>Безплатна доставка · 30-дневна гаранция</dd></div>
+      <div><dt>Landing</dt><dd><code>advertorial-04-hapcheta</code></dd></div>
+    </dl>
+  </div>
+  <h3>5 снимки</h3>
+  <div class="shots"><figure class="shot"><img src="img/a2_1.jpg" alt="Чекмеджето с 30 опаковки добавки" width="480" height="600" loading="lazy"><figcaption><b>I1</b> Чекмеджето с 30 опаковки добавки</figcaption></figure>
+<figure class="shot"><img src="img/a2_2.jpg" alt="Торба с хапчета до входната врата" width="480" height="600" loading="lazy"><figcaption><b>I2</b> Торба с хапчета до входната врата</figcaption></figure>
+<figure class="shot"><img src="img/a2_3.jpg" alt="Шишенце пада в кошчето" width="480" height="600" loading="lazy"><figcaption><b>I3</b> Шишенце пада в кошчето</figcaption></figure>
+<figure class="shot"><img src="img/a2_4.jpg" alt="Лепенка на ръката до старото чекмедже" width="480" height="600" loading="lazy"><figcaption><b>I4</b> Лепенка на ръката до старото чекмедже</figcaption></figure>
+<figure class="shot"><img src="img/a2_5.jpg" alt="Нощем на пода в кухнята, светлина от телефона" width="480" height="600" loading="lazy"><figcaption><b>I5</b> Нощем на пода в кухнята, светлина от телефона</figcaption></figure></div>
+  <div class="split">
+    <div><h3>5 hook-а <span class="sub">какво се вижда преди „Виж още“</span></h3>
+    <div class="posts"><article class="post" id="a2-h1">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H1</span></header>
+  <p class="post-text">Хапчетата за отслабване са най-скъпата грешка, която направих след 40.<br>Имам цяло чекмедже с доказателства.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">106 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a2" data-hook="0">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a2-h2">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H2</span></header>
+  <p class="post-text">Мъжът ми отвори чекмеджето да търси батерии.<br>Затвори го, без да каже дума.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">74 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a2" data-hook="1">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a2-h3">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H3</span></header>
+  <p class="post-text">23 опаковки хапчета за отслабване. Повечето до половината.<br>Ето защо нито едно не проработи.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">91 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a2" data-hook="2">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a2-h4">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H4</span></header>
+  <p class="post-text">Всяко хапче в чекмеджето ми обещаваше да „гори мазнини“.<br>Нито едно не се занимаваше с истинския проблем.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">104 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a2" data-hook="3">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a2-h5">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H5</span></header>
+  <p class="post-text">Изхвърлих цялото си чекмедже с добавки.<br>Остана само една малка розова кутия.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">76 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a2" data-hook="4">Копирай primary text</button></footer>
+</article></div></div>
+    <div><h3>Тяло на рекламата <span class="sub">David Roy структура, UMP и UMS по Camacho</span></h3>
+    <div class="body"><div class="row hook-row"><span class="lbl">Hook</span><div class="txt"><p class="hook-slot">Хапчетата за отслабване са най-скъпата грешка, която направих след 40.<br>Имам цяло чекмедже с доказателства.</p><p class="note">Сменя се с H1–H5. Тялото отдолу остава същото.</p></div></div><div class="row"><span class="lbl">Lead · разпознаване на проблема</span><div class="txt"><p>Гарциния. Зелено кафе. L-карнитин. Ябълков оцет на таблетки. Капсули „за нощно горене на мазнини“. Два вида с берберин.</p><p>Преброих ги миналия месец. 23 опаковки. Повечето до половината.</p></div></div><div class="row"><span class="lbl">Lead · по-дълбоката рана</span><div class="txt"><p>Парите ги преглътнах отдавна. Това, което не можех да преглътна, беше какво си мислех за себе си. Всеки път, когато опаковката свършваше и нищо не се случваше, заключението беше едно: проблемът съм аз. Нямам характер. Не мога да издържа.</p></div></div><div class="row"><span class="lbl">Lead · дъното</span><div class="txt"><p>Една вечер мъжът ми отвори чекмеджето да търси батерии. Погледна вътре, после погледна мен. Не каза нищо. Затвори го внимателно, сякаш е видял нещо, което не трябваше.</p><p>Тази нощ седях на пода в кухнята до 2 и четях форуми.</p></div></div><div class="row"><span class="lbl">Belief · новото за проблема (UMP)</span><div class="txt"><p>Тогава попаднах на обяснение, което никоя реклама не ми беше давала.</p><p>Около менопаузата и години преди нея естрогенът пада. А естрогенът участва в регулирането на лептина, хормона на ситостта, и грелина, хормона на глада. Когато той спадне, мозъкът започва да получава грешни сигнали: гладна си, дори когато не си.</p><p>Всяко хапче в чекмеджето ми се опитваше да „гори мазнини“ или да „ускори метаболизма“. Нито едно не се занимаваше с това, че мозъкът ми цял ден чува „яж“.</p></div></div><div class="row"><span class="lbl">Belief · новото за решението (UMS)</span><div class="txt"><p>Имаше и втори проблем, за който не се бях замисляла. Капсулата действа наведнъж. Глътнеш я, нивото скача, после пада. А гладът не идва веднъж. Идва в 11, в 4 и в 9 вечерта.</p><p>Ако искаш по-спокоен апетит, трябва нещо, което действа равномерно през целия ден. Затова лепенките през кожата се ползват от десетилетия: кожата пропуска веществото бавно и постоянно.</p></div></div><div class="row"><span class="lbl">Откриване на продукта</span><div class="txt"><p>Така стигнах до FitPatches. Розова лепенка с берберин (от кисел трън), хром и L-глутамин, която подава съставките през кожата 8 часа. Слагаш я сутрин на ръката. Не гълташ нищо и не трябва да помниш нищо.</p><p>Признавам, че поръчах с мисълта „това е номер 24“.</p></div></div><div class="row"><span class="lbl">Резултати · постепенно</span><div class="txt"><p>Първите дни нищо.</p><p>Към края на втората седмица се хванах, че съм забравила за сладкото след вечеря. Не съм се борила със себе си. Просто не се сетих.</p><p>След месец колежка ме попита дали съм сменила прическата. Не бях.</p><p>След два месеца изпразних чекмеджето. Цялото. Остана само кутията с лепенките.</p></div></div><div class="row"><span class="lbl">Оферта · гаранция</span><div class="txt"><p>Имат 30-дневна гаранция и безплатна доставка. За разлика от 23-те опаковки, тук поне знаех, че ако не проработи, ще си върна парите.</p></div></div><div class="row"><span class="lbl">Кръстопът</span><div class="txt"><p>Можеш да купиш опаковка номер 24 от поредното хапче и да видиш как пак свършва преди резултата.</p><p>Или можеш да пробваш нещо, което работи там, където е проблемът, без да разчита на волята ти. С гаранция, че ако не стане, нищо не губиш.</p></div></div><div class="row"><span class="lbl">CTA</span><div class="txt"><p>Линкът е отдолу. На страницата обясняват механизма много по-добре от мен.</p></div></div></div></div>
+  </div>
+  <details class="prompts"><summary>Промптове за снимките (Kie.ai, nano-banana-pro, 4:5, 2K)</summary><ol><li><b>I1</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Top-down photo of a pulled-out kitchen drawer stuffed with about thirty half-used supplement jars, capsule bottles and blister packs in many colours and sizes, lids mixed up, a few loose capsules in the corner. Harsh overhead kitchen light, a hand holding the drawer handle at the bottom of the frame. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I2</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. A plastic supermarket bag full of half-empty supplement jars and pill bottles stands on the floor next to the front door of a Bulgarian apartment, beside a pair of slippers and a doormat, as if ready to be thrown out. Dim hallway light, phone held at hip height. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I3</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Close-up of a woman&#x27;s hand with a simple silver ring dropping a white capsule bottle into a kitchen trash bin that already holds several other supplement bottles and a crumpled diet-plan printout. Evening kitchen light, slight motion blur on the falling bottle. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I4</b><p>Use the reference images only for the exact look of the product: the patch is a fully dusty-pink (#F6B8C3) matte round non-woven patch, about 3 cm across, narrower than the wrist, with tiny &#x27;Fit Patches&#x27; print around its edge and no white border; the pouch is a white matte stand-up pouch about 10x14 cm with a large pink circle. The patch must read clearly as a SOLID, opaque, flat dusty-pink disc stuck on the skin, like a pink round plaster, fully filled with pink colour, clearly visible at phone-photo distance. Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. A 47-year-old woman&#x27;s arm rests on a wooden kitchen counter, sleeve of a grey t-shirt pushed up, one solid pink patch on the outside of her upper arm in sharp focus. Behind the arm an open kitchen drawer full of old supplement jars is slightly out of focus, the white pouch with the pink circle lies on the counter. Morning light, photo taken with her other hand. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p><p class="refs">+ 2 референтни снимки на лепенката и плика от Shopify CDN</p></li>
+<li><b>I5</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Night. A 47-year-old Bulgarian woman in pajamas sits on the kitchen floor leaning against the lower cabinets, knees up, reading something on her phone; the phone screen lights her face. An open drawer of supplement jars above her. Only the cooker-hood light is on, very grainy. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p><p class="refs">+ 2 референтни снимки на лепенката и плика от Shopify CDN</p></li></ol></details>
+</section>
+<section class="ad" id="a3">
+  <div class="ad-head">
+    <p class="eyebrow">Реклама 3 · swipe от Jessica Thompson</p>
+    <h2>След 40</h2>
+    <dl class="meta">
+      <div><dt>Ъгъл</dt><dd>Директно извикване по възраст, студена аудитория</dd></div>
+      <div><dt>Headline</dt><dd>Защо след 40 диетите издържат 2 седмици</dd></div>
+      <div><dt>Description</dt><dd>Безплатна доставка · 30-дневна гаранция</dd></div>
+      <div><dt>Landing</dt><dd><code>advertorial-11-menopauza</code></dd></div>
+    </dl>
+  </div>
+  <h3>5 снимки</h3>
+  <div class="shots"><figure class="shot"><img src="img/a3_1.jpg" alt="Бански с етикетите на леглото" width="480" height="600" loading="lazy"><figcaption><b>I1</b> Бански с етикетите на леглото</figcaption></figure>
+<figure class="shot"><img src="img/a3_2.jpg" alt="POV краката на ръба на басейна" width="480" height="600" loading="lazy"><figcaption><b>I2</b> POV краката на ръба на басейна</figcaption></figure>
+<figure class="shot"><img src="img/a3_3.jpg" alt="Торта с „44“, флаш" width="480" height="600" loading="lazy"><figcaption><b>I3</b> Торта с „44“, флаш</figcaption></figure>
+<figure class="shot"><img src="img/a3_4.jpg" alt="Майка и дъщеря на басейна" width="480" height="600" loading="lazy"><figcaption><b>I4</b> Майка и дъщеря на басейна</figcaption></figure>
+<figure class="shot"><img src="img/a3_5.jpg" alt="Лепенка, кафе, плажна чанта на балкона" width="480" height="600" loading="lazy"><figcaption><b>I5</b> Лепенка, кафе, плажна чанта на балкона</figcaption></figure></div>
+  <div class="split">
+    <div><h3>5 hook-а <span class="sub">какво се вижда преди „Виж още“</span></h3>
+    <div class="posts"><article class="post" id="a3-h1">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H1</span></header>
+  <p class="post-text">Прочети това, ако си над 40, ядеш по-малко от преди, а дрехите пак не стават.<br>Не си мързелива.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">94 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a3" data-hook="0">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a3-h2">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H2</span></header>
+  <p class="post-text">Банският, който си купих миналото лято, още е с етикетите.<br>Ето защо.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">68 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a3" data-hook="1">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a3-h3">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H3</span></header>
+  <p class="post-text">Ям по-малко от мъжа си, а дрехите не ми стават.<br>Той яде двойно и нищо.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">70 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a3" data-hook="2">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a3-h4">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H4</span></header>
+  <p class="post-text">След 40 тялото ти сменя правилата на глада.<br>На мен никой не ми го каза.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">71 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a3" data-hook="3">Копирай primary text</button></footer>
+</article>
+<article class="post" id="a3-h5">
+  <header class="post-head"><span class="avatar" aria-hidden="true"></span><span class="who"><b>Лична страница</b><small>Спонсорирано</small></span><span class="hnum">H5</span></header>
+  <p class="post-text">Ако диетите ти издържат точно две седмици, не е характер.<br>Има причина и тя е хормонална.<br><span class="more">Виж още</span></p>
+  <footer class="post-foot"><span class="count">88 / 125</span><span class="chip ok">над fold</span><button type="button" class="copy" data-ad="a3" data-hook="4">Копирай primary text</button></footer>
+</article></div></div>
+    <div><h3>Тяло на рекламата <span class="sub">David Roy структура, UMP и UMS по Camacho</span></h3>
+    <div class="body"><div class="row hook-row"><span class="lbl">Hook</span><div class="txt"><p class="hook-slot">Прочети това, ако си над 40, ядеш по-малко от преди, а дрехите пак не стават.<br>Не си мързелива.</p><p class="note">Сменя се с H1–H5. Тялото отдолу остава същото.</p></div></div><div class="row"><span class="lbl">Lead · разпознаване на проблема</span><div class="txt"><p>На 39 можех да сваля малко за две седмици, ако спра хляба. На 44 спрях хляба, захарта и вечерята след 7. Не се промени нищо.</p><p>Ям по-малко от мъжа си. Ходя пеша по 40 минути. И пак всеки сезон вадех дрехите от гардероба и половината не ставаха.</p></div></div><div class="row"><span class="lbl">Lead · по-дълбоката рана</span><div class="txt"><p>Кантарът не ме интересуваше толкова. Болеше ме, че спрях да се разпознавам. На снимките виждах майка си. В огледалото виждах някаква уморена жена, която не съм аз.</p></div></div><div class="row"><span class="lbl">Lead · дъното</span><div class="txt"><p>Миналото лято дъщеря ми ме покани на басейна с приятелките си. Купих си бански специално за това. Облякох го, погледнах се и казах, че ме боли глава.</p><p>Банският още е с етикетите в чекмеджето.</p></div></div><div class="row"><span class="lbl">Belief · новото за проблема (UMP)</span><div class="txt"><p>Месеци по-късно прочетох нещо, което обясни всичко.</p><p>Около 40, а при някои жени и по-рано, естрогенът започва да намалява. Малко хора знаят, че естрогенът участва в регулирането на апетита. Той помага на два хормона да работят правилно: лептин (ситост) и грелин (глад).</p><p>Когато естрогенът спадне, тези сигнали се разместват. Мозъкът казва „гладна“ по-често, а „стига“ по-късно. Затова диетите след 40 се усещат като постоянно гладуване. Затова издържаш две седмици и се пречупваш.</p><p>Това не е характер. Това е механизъм, който на 30 го нямаше.</p></div></div><div class="row"><span class="lbl">Belief · новото за решението (UMS)</span><div class="txt"><p>Повечето продукти за отслабване са измислени за тяло, при което този механизъм още работи. Хапче сутрин действа няколко часа и спада. А гладът след 40 е цял ден.</p><p>Логичното решение е нещо, което действа равномерно и не изисква воля. Нещо, което слагаш и забравяш.</p></div></div><div class="row"><span class="lbl">Откриване на продукта</span><div class="txt"><p>Намерих FitPatches. Розова лепенка с берберин (от кисел трън), хром и L-глутамин. Слагаш я сутрин на ръката и тя подава съставките през кожата постепенно, 8 часа. Не гълташ хапчета и не броиш нищо.</p></div></div><div class="row"><span class="lbl">Резултати · постепенно</span><div class="txt"><p>Първата седмица нищо специално.</p><p>Втората седмица забелязах, че следобедният глад, онзи в 4 часа, просто го нямаше.</p><p>След месец ядях нормално, без да се боря със себе си цял ден.</p><p>След третия месец извадих банския от чекмеджето. Махнах етикетите. Отидох на басейна с дъщеря ми.</p></div></div><div class="row"><span class="lbl">Оферта · гаранция</span><div class="txt"><p>Доставката е безплатна и имат 30-дневна гаранция. Взех за два месеца с отстъпка, защото знаех, че на тялото му трябва време.</p></div></div><div class="row"><span class="lbl">Кръстопът</span><div class="txt"><p>Имаш два пътя.</p><p>Можеш да продължиш да се обвиняваш и да започваш нова диета всеки понеделник, още две години, докато банският стои с етикетите.</p><p>Или можеш да пробваш нещо, направено за тялото, което имаш сега, а не за това, което имаше на 30. 30 дни, с гаранция.</p></div></div><div class="row"><span class="lbl">CTA</span><div class="txt"><p>Оставям линка отдолу. Ако си стигнала дотук, страницата им си заслужава.</p></div></div></div></div>
+  </div>
+  <details class="prompts"><summary>Промптове за снимките (Kie.ai, nano-banana-pro, 4:5, 2K)</summary><ol><li><b>I1</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. A navy one-piece swimsuit with the shop price tags still attached lies on a made bed next to a folded striped beach towel and sunglasses, as if never worn. Late afternoon sun through a balcony door, shot from above at a slight angle. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I2</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Point-of-view photo looking down at a woman&#x27;s feet in plain sandals standing at the tiled edge of a busy Bulgarian outdoor public pool in July; blue water, a teenage girl waving from the water in the background. Bright midday sun, slightly overexposed sky. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I3</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Phone-flash photo of a home-made chocolate birthday cake on a kitchen table with two number candles &#x27;4&#x27; and &#x27;4&#x27; burning, one slice already cut out, paper plates and a bottle of sparkling wine. Dim room behind. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I4</b><p>Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Candid photo from a few metres away at an outdoor pool: a 44-year-old Bulgarian woman wearing a light linen beach shirt over her swimsuit sits on the pool edge with her feet in the water, laughing with her teenage daughter next to her. Sunny, people and loungers in the background, a little crooked framing. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p></li>
+<li><b>I5</b><p>Use the reference images only for the exact look of the product: the patch is a fully dusty-pink (#F6B8C3) matte round non-woven patch, about 3 cm across, narrower than the wrist, with tiny &#x27;Fit Patches&#x27; print around its edge and no white border; the pouch is a white matte stand-up pouch about 10x14 cm with a large pink circle. The patch must read clearly as a SOLID, opaque, flat dusty-pink disc stuck on the skin, like a pink round plaster, fully filled with pink colour, clearly visible at phone-photo distance. Unedited camera-roll photo shot on an iPhone 13 by a non-photographer, vertical 4:5. Slightly off-center framing, natural phone HDR, mild sensor noise, ordinary home light. It must look like a real woman&#x27;s personal photo, not an advertisement. Morning on a small Bulgarian apartment balcony with red geraniums. A 44-year-old woman in a white sleeveless top holds a mug of coffee; one solid pink patch is clearly visible on the outside of her upper arm, facing the camera. A packed straw beach bag with a striped towel sits on a plastic chair beside her and the white pouch with the pink circle lies on the balcony table. Soft sun, relaxed, photo taken by her husband from a metre away. RESTRICTIONS: no text overlays, no captions, no watermark, no brand logos, no studio lighting, no stock-photo polish, no close-up of the belly or of body parts, no bathroom scale, no before/after split, keep every person fully clothed.</p><p class="refs">+ 2 референтни снимки на лепенката и плика от Shopify CDN</p></li></ol></details>
+</section>
+
+<section id="launch">
+  <p class="eyebrow">Стъпка 5</p>
+  <h2>Как се пуска</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Кампания</th><td>1 Sales кампания за теста. Трите реклами в отделни ad set-ове, за да се види коя история продава.</td></tr>
+    <tr><th>Ad set</th><td>Жени 40–60, България, broad. Native MSL е писан за Facebook Feed, там се очаква основният обем.</td></tr>
+    <tr><th>Реклама</th><td>1 реклама на ad set във flexible формат: 5 снимки, 5 primary текста (H1–H5 + същото тяло), 1 headline, 1 description. <span class="math">5 × 5 = 25</span> комбинации, общо <span class="math">75</span> за трите.</td></tr>
+    <tr><th>Primary текстове</th><td>Готови за копиране в <code>native-ads/primary-texts/</code> или с бутона на всеки hook.</td></tr>
+    <tr><th>Снимки</th><td>1080 × 1350 в <code>native-ads/meta-1080/</code>.</td></tr>
+    <tr><th>Как се чете</th><td>По покупки и CPA. Нисък CPC и висок CTR значат, че hook-ът спира скрола, но не значат, че тялото продава. Ако има кликове без покупки, проблемът е в belief частта или в landing-а, не в hook-а.</td></tr>
+  </table></div>
+</section>
+
+<section id="rules">
+  <p class="eyebrow">Преди качване</p>
+  <h2>Compliance</h2>
+  <div class="cols">
+    <div><h4>Какво нарочно няма</h4><ul>
+      <li>Килограми и срокове в резултатите. Резултатите са в дрехи и поведение: ципът, дънките, басейнът, следобедният глад.</li>
+      <li>Before/after, кантар и близки планове на корема в снимките.</li>
+      <li>Твърдения, че продуктът лекува или балансира хормони. Продуктът е „за по-спокоен апетит“, както в research документа.</li>
+      <li>Непроверени проценти за усвояване. Предимството на лепенката е обяснено с постепенното подаване 8 часа.</li>
+    </ul></div>
+    <div><h4>Какво да се гледа</h4><ul>
+      <li>Meta отхвърля текст, който внушава негативна представа за тялото. Най-емоционални са 1·H4 и 3·H2. Ако ги спрат, 3·H4 и 3·H5 са най-безопасни.</li>
+      <li>Опаковката в снимките I5 и 2·I4 е генерирана по референция. Провери дали текстът на плика съвпада с истинския преди пускане.</li>
+      <li>Историите са измислени разкази с AI лица. Не ги представяй като отзив от реален клиент: правилата на ЕС за защита на потребителите забраняват фалшиви отзиви. По-безопасно е страницата да е разказвач или блог.</li>
+    </ul></div>
+  </div>
+</section>
+<footer class="end">Снимки: Kie.ai nano-banana-pro, 18 генерирани (15 + 3 повторени). Swipe данни: Meta Ad Library, 06.11.2026.</footer>
+</div>
+
+<script>
+const ADS = {"a1": {"hooks": ["Сестра ми отиде на сватбата с роклята, която аз си купих за себе си.\nАз не можах да я закопчая.", "На сватбата на братовчедка ни седях с жилетка цяла вечер в 28 градуса.\nСамо сестра ми знаеше защо.", "Със сестра ми носим един размер от гимназията.\nДо миналата година.", "Когато фотографът извика „сега само сестрите“, аз казах, че отивам до тоалетната.", "Ям по-малко от сестра си, а тя е с два размера по-малка.\nКогато ми каза защо, не повярвах."], "body": ["С Деси сме на две години разлика. Цял живот носим един размер и си разменяме дрехи още от гимназията.", "През пролетта си купих зелена рокля за сватбата на братовчедка ни. Пробвах я три пъти. Ципът спираше на средата на гърба. Седмица преди сватбата Деси я пробва. Стана ѝ от първия път.", "Най-лошото не беше роклята. Най-лошото беше, че Деси ме попита „Сигурна ли си, че нямаш нищо против?“ с онзи внимателен глас. Глас, с който се говори на болен човек.", "На сватбата седях до нея в черна блуза и жилетка, която държах закопчана цяла вечер в 28 градуса. Когато фотографът дойде за снимка на сестрите, казах, че отивам до тоалетната.", "Стоях пред огледалото там и си мислех: „Аз ям по-малко от нея. Как е възможно?“", "След сватбата я попитах направо какво прави. Очаквах „спрях хляба“ или „ходя на фитнес“.", "Тя каза нещо друго. Гинеколожката ѝ обяснила нещо, което на мен никой не ми беше казвал.", "След 40, а понякога и няколко години по-рано, естрогенът започва да пада. А естрогенът участва в регулирането на два хормона: лептин, който казва на мозъка „сита си“, и грелин, който казва „гладна си“.", "Когато естрогенът спадне, сигналите се объркват. Мозъкът чува „гладна“ по-често и „сита“ по-късно. Ядеш по-малко, а се чувстваш, сякаш постоянно гладуваш. И в един момент се пречупваш.", "Затова диетите ми работеха две седмици и после се сриваха. Не беше слаба воля. Борех се с химия.", "Деси каза, че хапчетата не ѝ помагали по същата причина. Глътнеш капсула и тя действа наведнъж: пик, после спад. А апетитът не идва веднъж на ден. Той е цял ден.", "Това, което ѝ проработило, действа постепенно. Лепенка, която подава активните съставки през кожата бавно, 8 часа подред. Без пик и без спад.", "Казва се FitPatches. Малка розова лепенка с берберин (от кисел трън), хром и L-глутамин. Слагаш я сутрин на ръката и забравяш за нея.", "Деси ми показа ръката си. Носела я под ръкава на работа три месеца и никой не забелязал.", "Първата седмица не усетих нищо особено.", "Към десетия ден забелязах, че в 4 следобед не ровя в шкафа за нещо сладко. Не че се сдържах. Просто не ми се искаше.", "След месец дънките, които обличах само „в добрите дни“, ми ставаха всеки ден.", "След втория месец пробвах зелената рокля. Деси я беше върнала изпрана, с бележка „за следващата сватба“.", "Ципът стигна догоре.", "Взех си за два месеца, защото имаше отстъпка за по-голям пакет. Доставката беше безплатна и имат 30-дневна гаранция. Ако не ми хареса, връщам ги. Нямаше какво да губя.", "Можеш да продължиш както досега. Още една диета, още една сватба в черно, още една снимка, от която се криеш.", "Или можеш да пробваш нещо, което работи с причината, а не срещу нея. 30 дни. Ако не усетиш разлика, връщаш ги.", "Оставям линка отдолу. Прочети страницата им, там е обяснено по-подробно, отколкото мога аз."]}, "a2": {"hooks": ["Хапчетата за отслабване са най-скъпата грешка, която направих след 40.\nИмам цяло чекмедже с доказателства.", "Мъжът ми отвори чекмеджето да търси батерии.\nЗатвори го, без да каже дума.", "23 опаковки хапчета за отслабване. Повечето до половината.\nЕто защо нито едно не проработи.", "Всяко хапче в чекмеджето ми обещаваше да „гори мазнини“.\nНито едно не се занимаваше с истинския проблем.", "Изхвърлих цялото си чекмедже с добавки.\nОстана само една малка розова кутия."], "body": ["Гарциния. Зелено кафе. L-карнитин. Ябълков оцет на таблетки. Капсули „за нощно горене на мазнини“. Два вида с берберин.", "Преброих ги миналия месец. 23 опаковки. Повечето до половината.", "Парите ги преглътнах отдавна. Това, което не можех да преглътна, беше какво си мислех за себе си. Всеки път, когато опаковката свършваше и нищо не се случваше, заключението беше едно: проблемът съм аз. Нямам характер. Не мога да издържа.", "Една вечер мъжът ми отвори чекмеджето да търси батерии. Погледна вътре, после погледна мен. Не каза нищо. Затвори го внимателно, сякаш е видял нещо, което не трябваше.", "Тази нощ седях на пода в кухнята до 2 и четях форуми.", "Тогава попаднах на обяснение, което никоя реклама не ми беше давала.", "Около менопаузата и години преди нея естрогенът пада. А естрогенът участва в регулирането на лептина, хормона на ситостта, и грелина, хормона на глада. Когато той спадне, мозъкът започва да получава грешни сигнали: гладна си, дори когато не си.", "Всяко хапче в чекмеджето ми се опитваше да „гори мазнини“ или да „ускори метаболизма“. Нито едно не се занимаваше с това, че мозъкът ми цял ден чува „яж“.", "Имаше и втори проблем, за който не се бях замисляла. Капсулата действа наведнъж. Глътнеш я, нивото скача, после пада. А гладът не идва веднъж. Идва в 11, в 4 и в 9 вечерта.", "Ако искаш по-спокоен апетит, трябва нещо, което действа равномерно през целия ден. Затова лепенките през кожата се ползват от десетилетия: кожата пропуска веществото бавно и постоянно.", "Така стигнах до FitPatches. Розова лепенка с берберин (от кисел трън), хром и L-глутамин, която подава съставките през кожата 8 часа. Слагаш я сутрин на ръката. Не гълташ нищо и не трябва да помниш нищо.", "Признавам, че поръчах с мисълта „това е номер 24“.", "Първите дни нищо.", "Към края на втората седмица се хванах, че съм забравила за сладкото след вечеря. Не съм се борила със себе си. Просто не се сетих.", "След месец колежка ме попита дали съм сменила прическата. Не бях.", "След два месеца изпразних чекмеджето. Цялото. Остана само кутията с лепенките.", "Имат 30-дневна гаранция и безплатна доставка. За разлика от 23-те опаковки, тук поне знаех, че ако не проработи, ще си върна парите.", "Можеш да купиш опаковка номер 24 от поредното хапче и да видиш как пак свършва преди резултата.", "Или можеш да пробваш нещо, което работи там, където е проблемът, без да разчита на волята ти. С гаранция, че ако не стане, нищо не губиш.", "Линкът е отдолу. На страницата обясняват механизма много по-добре от мен."]}, "a3": {"hooks": ["Прочети това, ако си над 40, ядеш по-малко от преди, а дрехите пак не стават.\nНе си мързелива.", "Банският, който си купих миналото лято, още е с етикетите.\nЕто защо.", "Ям по-малко от мъжа си, а дрехите не ми стават.\nТой яде двойно и нищо.", "След 40 тялото ти сменя правилата на глада.\nНа мен никой не ми го каза.", "Ако диетите ти издържат точно две седмици, не е характер.\nИма причина и тя е хормонална."], "body": ["На 39 можех да сваля малко за две седмици, ако спра хляба. На 44 спрях хляба, захарта и вечерята след 7. Не се промени нищо.", "Ям по-малко от мъжа си. Ходя пеша по 40 минути. И пак всеки сезон вадех дрехите от гардероба и половината не ставаха.", "Кантарът не ме интересуваше толкова. Болеше ме, че спрях да се разпознавам. На снимките виждах майка си. В огледалото виждах някаква уморена жена, която не съм аз.", "Миналото лято дъщеря ми ме покани на басейна с приятелките си. Купих си бански специално за това. Облякох го, погледнах се и казах, че ме боли глава.", "Банският още е с етикетите в чекмеджето.", "Месеци по-късно прочетох нещо, което обясни всичко.", "Около 40, а при някои жени и по-рано, естрогенът започва да намалява. Малко хора знаят, че естрогенът участва в регулирането на апетита. Той помага на два хормона да работят правилно: лептин (ситост) и грелин (глад).", "Когато естрогенът спадне, тези сигнали се разместват. Мозъкът казва „гладна“ по-често, а „стига“ по-късно. Затова диетите след 40 се усещат като постоянно гладуване. Затова издържаш две седмици и се пречупваш.", "Това не е характер. Това е механизъм, който на 30 го нямаше.", "Повечето продукти за отслабване са измислени за тяло, при което този механизъм още работи. Хапче сутрин действа няколко часа и спада. А гладът след 40 е цял ден.", "Логичното решение е нещо, което действа равномерно и не изисква воля. Нещо, което слагаш и забравяш.", "Намерих FitPatches. Розова лепенка с берберин (от кисел трън), хром и L-глутамин. Слагаш я сутрин на ръката и тя подава съставките през кожата постепенно, 8 часа. Не гълташ хапчета и не броиш нищо.", "Първата седмица нищо специално.", "Втората седмица забелязах, че следобедният глад, онзи в 4 часа, просто го нямаше.", "След месец ядях нормално, без да се боря със себе си цял ден.", "След третия месец извадих банския от чекмеджето. Махнах етикетите. Отидох на басейна с дъщеря ми.", "Доставката е безплатна и имат 30-дневна гаранция. Взех за два месеца с отстъпка, защото знаех, че на тялото му трябва време.", "Имаш два пътя.", "Можеш да продължиш да се обвиняваш и да започваш нова диета всеки понеделник, още две години, докато банският стои с етикетите.", "Или можеш да пробваш нещо, направено за тялото, което имаш сега, а не за това, което имаше на 30. 30 дни, с гаранция.", "Оставям линка отдолу. Ако си стигнала дотук, страницата им си заслужава."]}};
+function textFor(ad, i) { const a = ADS[ad]; return [a.hooks[i]].concat(a.body).join("\n\n"); }
+function fallbackCopy(t) {
+  const ta = document.createElement("textarea"); ta.value = t; ta.setAttribute("readonly", "");
+  ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select();
+  let ok = false; try { ok = document.execCommand("copy"); } catch (e) {} ta.remove(); return ok;
+}
+function mark(btn, label) { btn.textContent = label; btn.classList.add("done"); setTimeout(() => { btn.textContent = "Копирай primary text"; btn.classList.remove("done"); }, 1800); }
+document.addEventListener("click", ev => {
+  const btn = ev.target.closest("button.copy"); if (!btn) return;
+  const ad = btn.dataset.ad, i = +btn.dataset.hook, t = textFor(ad, i);
+  const sec = document.getElementById(ad);
+  sec.querySelectorAll(".post").forEach(p => p.classList.toggle("on", p.id === ad + "-h" + (i + 1)));
+  sec.querySelector(".hook-slot").innerText = ADS[ad].hooks[i];
+  const done = ok => mark(btn, ok ? "Копирано" : "Маркирай ръчно");
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(() => done(true), () => done(fallbackCopy(t)));
+  else done(fallbackCopy(t));
+});
+</script>
