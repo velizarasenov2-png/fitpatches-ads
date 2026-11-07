@@ -3,5 +3,10 @@
   "nia_character_id": "80d37949ae0b459a9cc2b20a7d5665df",
   "img_c1": "portrait variant 1",
   "img_c2": "full body variant 2",
-  "img_c3": "evening variant 1"
+  "img_c3": "evening variant 1",
+  "nia2_audio_id": "c5501f023e744e889d309e28694bfbc6",
+  "nia2_audio_voice": "laomedeia (energetic)",
+  "nia2_character_id": "60212f8e02274f56840bdf32b0fe719a",
+  "nia2_images": "IMG-C1 + IMG-C2b (plain wall)",
+  "patch_reference": "assets/PATCH_REF.jpg"
 }
