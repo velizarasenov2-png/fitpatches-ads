@@ -1,0 +1,53 @@
+{
+  "_info": "Kie.ai nano-banana-pro, aspect_ratio 4:5, resolution 2K, ~18 credits per image. Images marked generated:true are already in img/. The rest wait for approval. B2/B3 use the pouch photo as a reference (image_input).",
+  "A1_selfie_vnuchka": {
+    "generated": true,
+    "prompt": "Front-camera selfie of a 57-year-old Bulgarian grandmother with short dyed auburn hair, kind laugh lines and no makeup, and her 6-year-old granddaughter. The grandmother is the one taking the selfie: her own right arm, in the same black knitted sleeve as her top, stretches towards the lens at the bottom-left edge of the frame. The granddaughter leans in cheek to cheek and puffs out her cheeks in a silly face; the grandmother laughs with her eyes almost closed. Exactly two people and exactly their own arms in the picture, no phone visible in the frame, no other hands. Slight low angle and wide-angle front-camera distortion. They sit in a small Bulgarian kitchen in the evening: embroidered tablecloth, fridge with magnets, a plate of cookies, a window behind them a bit overexposed. Warm yellow ceiling light, visible digital noise, soft focus, JPEG compression, slightly crooked framing. It must look exactly like a real photo a grandmother posts on Facebook for her family, shot on an old iPhone, not a professional photo, not an ad. No text, no logos, no watermark."
+  },
+  "A2_divan_galeria": {
+    "generated": false,
+    "prompt": "Candid amateur smartphone photo taken by a family member in the evening: a 57-year-old Bulgarian grandmother with short dyed auburn hair, reading glasses pushed up on her head, plain dark knitted cardigan, sits on a worn beige sofa with a crocheted doily on the armrest. Her 6-year-old granddaughter in pink pyjamas sits on her lap holding the grandmother's smartphone and swiping through a photo gallery grid with one finger. The grandmother looks down at the screen with a soft, slightly wistful smile. Typical Bulgarian panel-block living room: wall unit with a glass cabinet and porcelain figurines, framed family photos, TV on in the corner, patterned rug. Lit only by a warm yellow floor lamp, visible grain, a little soft focus, slightly tilted framing that cuts the lamp at the top. Looks like a real photo a daughter posted on Facebook, not an ad. No text, no logos, no watermark."
+  },
+  "A3_tya_snima": {
+    "generated": false,
+    "prompt": "Over-the-shoulder candid phone photo from behind a 57-year-old woman with short auburn hair standing at the end of a crowded festive table in a Bulgarian home, holding her smartphone up with both hands to take a picture of her family; on her phone screen we see the family smiling at the camera. On the table: sarmi in a clay dish, a round homemade banitsa, Russian salad, red wine in a carafe; a small Christmas tree with tinsel in the corner; a family of six including a grandfather and a little girl squeezed together on the other side of the table. She is clearly not in the picture she is taking. Warm ceiling light, mild motion blur, slightly underexposed, cluttered and real, shot on a phone by another relative. No text, no logos, no watermark."
+  },
+  "A4_v_sredata_flash": {
+    "generated": false,
+    "prompt": "Flash photo taken on a phone at a Bulgarian kindergarten Christmas show: a smiling 57-year-old grandmother with short auburn hair wearing a coral-coloured blouse stands in the middle of a family group of four adults, holding the hand of her 6-year-old granddaughter dressed as a snowflake with a tinsel crown. Behind them a kindergarten hall wall with paper snowflakes and small chairs. Direct on-camera flash with harsh shadows on the wall, slightly shiny faces, one person half blinking, crooked framing. An authentic family snapshot, not an ad. No readable text, no logos, no watermark."
+  },
+  "B1_kurier_skeptik": {
+    "generated": true,
+    "prompt": "Front-camera selfie of a 47-year-old Bulgarian woman with a dark brown bob haircut and rectangular glasses, an accountant type, raising one eyebrow sceptically and pressing her lips into a 'yeah, right' expression, holding up a small grey plastic courier parcel next to her face with one hand. Background: a small cramped courier office with fluorescent ceiling lights, metal shelves full of parcels and a counter, no brand names and no logos anywhere. She wears a dark winter coat and a scarf. Harsh fluorescent light with a slight greenish tint, phone camera noise, slight blur on the background, arm-length selfie framing a bit off-centre. Funny and real, the kind of selfie a woman posts in a Facebook group. Not a professional photo, not an ad. No text, no logos, no watermark."
+  },
+  "B2_tetradka_odit": {
+    "generated": false,
+    "refs": ["POUCH_REF_URL"],
+    "prompt": "Overhead phone photo of a kitchen table at night lit by a single pendant lamp: an open spiral notebook with handwritten notes in blue pen and a hand-drawn table with ticks (handwriting not legible), reading glasses, a simple calculator, a mug of chamomile tea, a smartphone lying face up, and the white FitPatches pouch from the reference image lying next to the notebook with three small round pink patches out of it on the table. Plastic oilcloth tablecloth with a lemon print, a few crumbs, real everyday clutter. Visible grain, slightly crooked framing, warm light with dark corners. Authentic, not a product shot, not an ad. Keep the pouch exactly as in the reference; do not add any other text, no watermark."
+  },
+  "B3_lepenka_v_ofisa": {
+    "generated": false,
+    "refs": ["POUCH_REF_URL"],
+    "prompt": "Candid phone photo taken by a colleague: a 47-year-old woman with a dark brown bob and rectangular glasses sits at an office desk, the sleeve of her cream blouse rolled up, pressing a small round dusty-pink patch about 3.5 cm wide (like the patches in the reference image) onto her outer upper arm, looking down at it with a doubtful half-smile. On the desk: two monitors with blurred spreadsheets, stacks of invoices, a calculator, a coffee mug, a sticky note. Office fluorescent light mixed with daylight from a window, slightly blurry, ordinary office. Not an ad. No readable text, no logos, no watermark."
+  },
+  "B4_nosht_podozritelno": {
+    "generated": false,
+    "prompt": "Front-camera selfie at night in a kitchen: a 47-year-old woman with a dark brown bob and reading glasses on the tip of her nose holds a single small round dusty-pink patch, about 3.5 cm wide with a thin printed ring around its edge, between her thumb and finger right in front of the camera, squinting at it suspiciously with her mouth twisted in a 'yeah, right' expression. Behind her: a dark kitchen with only the cooker-hood light on and a fridge. Lit mostly by the hood light, grainy, focus on the patch and slightly soft on her face. Funny and authentic, not an ad. No text, no logos, no watermark."
+  },
+  "C1_snimkata_na_baba": {
+    "generated": true,
+    "prompt": "Smartphone photo of the hand of a 44-year-old woman holding a faded old colour print photograph from 1979 with a white scalloped border, held up in front of a dusty attic window of an old Bulgarian village house. The old photograph shows a slim, upright, smiling 61-year-old village grandmother in a floral dress and an apron, standing in a sunny yard next to a grapevine and holding a metal bucket; the print has warm faded 70s colours, a crease in one corner and slight scratches. Around: old wooden roof beams, an open cardboard shoe box full of more old photos on a dusty table, bunches of dried herbs hanging from a nail. Afternoon light through the dirty glass, background slightly out of focus, focus on the old photo. Authentic nostalgic Facebook 'throwback' post taken with a phone, not staged, not an ad. No text, no logos, no watermark."
+  },
+  "C2_mama_na_peikata": {
+    "generated": false,
+    "prompt": "Candid phone photo taken by a teenage girl: a 44-year-old Bulgarian woman with shoulder-length light brown hair, wearing a floral midi dress and a denim jacket, sits on a wooden bench in front of an old village house with blue-painted window frames, next to her 70-year-old mother in a knitted cardigan; the mother looks at her daughter with a surprised, tender smile while the daughter laughs. Autumn, a walnut tree, yellow leaves on the ground, a cat nearby. Slightly tilted, sky a bit overexposed, natural and unposed. Not an ad. No text, no logos, no watermark."
+  },
+  "C3_kisel_trun": {
+    "generated": false,
+    "prompt": "Close phone photo in a Bulgarian village yard in autumn: a woman's hand picking bright red oblong barberry berries (Berberis vulgaris) hanging in small clusters from a thorny shrub with small oval leaves turning red, growing next to an old wooden fence, and dropping them into a chipped white enamel mug with a blue rim. Soft afternoon light, background blurred with an old house and a vegetable garden. Real, slightly imperfect focus, smartphone look, not an ad. No text, no logos, no watermark."
+  },
+  "C4_kolata_pred_bloka": {
+    "generated": false,
+    "prompt": "Candid phone photo from the passenger seat of a parked small car in front of a Bulgarian concrete panel apartment block at dusk: a 44-year-old woman with shoulder-length light brown hair, wearing a loose dark grey tunic and a black cardigan, sits behind the wheel looking down at her hands, tired, eyes glossy, the street lights just turning on. Dashboard clutter, a few raindrops on the windscreen. Grainy and dim, cool blue light mixed with a warm street lamp, emotional and real. Not an ad. No text, no logos, no watermark."
+  }
+}
