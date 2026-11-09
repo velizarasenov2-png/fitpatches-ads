@@ -14,10 +14,10 @@ def embed(m):
     w = 120 if "avatar" in path else 860
     if im.width > w:
         im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
-    buf = io.BytesIO(); im.save(buf, "JPEG", quality=70, optimize=True, progressive=True)
-    return 'src="data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode() + '"'
+    buf = io.BytesIO(); im.save(buf, "WEBP", quality=72, method=6)
+    return 'src="data:image/webp;base64,' + base64.b64encode(buf.getvalue()).decode() + '"'
 
 
 out = re.sub(r'src="(img/[^"]+)"', embed, html)
 open(os.path.join(ROOT, "standalone.html"), "w", encoding="utf-8").write(out)
-print("standalone.html", round(len(out.encode()) / 1e6, 2), "MB,", out.count("data:image/jpeg"), "images")
+print("standalone.html", round(len(out.encode()) / 1e6, 2), "MB,", out.count("data:image/webp"), "images")
