@@ -10,6 +10,11 @@ html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
 
 def embed(m):
     path = os.path.join(ROOT, m.group(1))
+    # ANIMATED: an animated WebP/GIF is embedded as it is, so the animation survives
+    im0 = Image.open(path)
+    if getattr(im0, "is_animated", False):
+        mime = "image/gif" if path.endswith(".gif") else "image/webp"
+        return 'src="data:' + mime + ';base64,' + base64.b64encode(open(path, "rb").read()).decode() + '"'
     im = Image.open(path).convert("RGB")
     w = 120 if "avatar" in path else 860
     if im.width > w:
@@ -20,4 +25,4 @@ def embed(m):
 
 out = re.sub(r'src="(img/[^"]+)"', embed, html)
 open(os.path.join(ROOT, "standalone.html"), "w", encoding="utf-8").write(out)
-print("standalone.html", round(len(out.encode()) / 1e6, 2), "MB,", out.count("data:image/webp"), "images")
+print("standalone.html", round(len(out.encode()) / 1e6, 2), "MB,", out.count("data:image/"), "images")
