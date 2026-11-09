@@ -11,10 +11,10 @@ html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
 def embed(m):
     path = os.path.join(ROOT, m.group(1))
     im = Image.open(path).convert("RGB")
-    w = 120 if "avatar" in path else 1000
+    w = 120 if "avatar" in path else 860
     if im.width > w:
         im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
-    buf = io.BytesIO(); im.save(buf, "JPEG", quality=78, optimize=True, progressive=True)
+    buf = io.BytesIO(); im.save(buf, "JPEG", quality=70, optimize=True, progressive=True)
     return 'src="data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode() + '"'
 
 
