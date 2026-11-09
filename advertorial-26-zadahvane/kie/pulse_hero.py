@@ -24,9 +24,9 @@ for i in range(N):
     out = arr * (1 - m * k * 0.85) + hot * (m * k * 0.85)
     out = 1 - (1 - out) * (1 - g * k * np.array([0.55, 0.42, 0.05]))           # soft yellow halo (screen)
     frames.append(Image.fromarray((np.clip(out, 0, 1) * 255).astype(np.uint8)))
-web = [f.resize((900, 900), Image.LANCZOS) for f in frames]
+web = [f.resize((640, 640), Image.LANCZOS) for f in frames[::2]]
 web[0].save(os.path.join(HERE, "..", "img", "hero-dexa.webp"), save_all=True, append_images=web[1:],
-            duration=85, loop=0, quality=80, method=6)
+            duration=170, loop=0, quality=70, method=6)
 gif = [f.resize((720, 720), Image.LANCZOS).convert("P", palette=Image.ADAPTIVE, colors=256) for f in frames]
 gif[0].save(os.path.join(HERE, "..", "hero-dexa.gif"), save_all=True, append_images=gif[1:], duration=85, loop=0, optimize=True)
 frames[N // 2].resize((600, 600)).save("/tmp/claude-0/-home-user-fitpatches-ads/baa6b13c-2de6-5efe-9303-3312ac01b124/scratchpad/peak.png")

@@ -378,7 +378,7 @@ FitPatches е тънка розова лепенка с размер на мон
 
 По-малко от един месец карта за фитнес. По-малко от едно шише „фет бърнър“. По-малко от онзи шейкър, който събира прах в шкафа.
 
-**[ВИЖТЕ ЦЕНИТЕ НА FITPATCHES >>>](https://fitpatches.net/products/fitpatches-berberinovi-plastiri-30?utm_source=facebook&utm_medium=advertorial&utm_campaign=adv26-zadahvane)**
+**[ПРОВЕРЕТЕ НАЛИЧНОСТТА И ЦЕНАТА >>>](https://fitpatches.net/products/fitpatches-berberinovi-plastiri-30?utm_source=facebook&utm_medium=advertorial&utm_campaign=adv26-zadahvane)**
 
 ## НО ЕТО Я УЛОВКАТА: ПРАЗНИЦИТЕ ИДВАТ
 
@@ -510,7 +510,7 @@ FitPatches е тънка розова лепенка с размер на мон
 
 **Тялото ви е чакало достатъчно.**
 
-**[ВЗЕМЕТЕ FITPATCHES СЕГА (ОТ 14,99 €) >>>](https://fitpatches.net/products/fitpatches-berberinovi-plastiri-30?utm_source=facebook&utm_medium=advertorial&utm_campaign=adv26-zadahvane)**
+**[ПРОВЕРЕТЕ НАЛИЧНОСТТА >>>](https://fitpatches.net/products/fitpatches-berberinovi-plastiri-30?utm_source=facebook&utm_medium=advertorial&utm_campaign=adv26-zadahvane)**
 
 ПЛАЩАТЕ ПРИ ПОЛУЧАВАНЕ · БЕЗ ПРЕДПЛАЩАНЕ · БЕЗ АБОНАМЕНТ
 
@@ -528,7 +528,7 @@ FitPatches е тънка розова лепенка с размер на мон
 
 **P.P.P.S.** До Никулден остава по-малко време, отколкото мислите. Поръчайте днес и влезте в празниците вече започнали — а не „от понеделник“, на същата площадка.
 
-**[ПОРЪЧАЙТЕ FITPATCHES — ПЛАЩАТЕ ПРИ ПОЛУЧАВАНЕ >>>](https://fitpatches.net/products/fitpatches-berberinovi-plastiri-30?utm_source=facebook&utm_medium=advertorial&utm_campaign=adv26-zadahvane)**
+**[ПРОВЕРЕТЕ НАЛИЧНОСТТА — ПЛАЩАТЕ ПРИ ПОЛУЧАВАНЕ >>>](https://fitpatches.net/products/fitpatches-berberinovi-plastiri-30?utm_source=facebook&utm_medium=advertorial&utm_campaign=adv26-zadahvane)**
 
 ---
 
