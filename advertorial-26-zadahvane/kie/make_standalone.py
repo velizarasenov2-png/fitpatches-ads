@@ -16,10 +16,10 @@ def embed(m):
         mime = "image/gif" if path.endswith(".gif") else "image/webp"
         return 'src="data:' + mime + ';base64,' + base64.b64encode(open(path, "rb").read()).decode() + '"'
     im = Image.open(path).convert("RGB")
-    w = 160 if ("avatar" in path or "author" in path) else 680
+    w = 160 if ("avatar" in path or "author" in path) else 640
     if im.width > w:
         im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
-    buf = io.BytesIO(); im.save(buf, "WEBP", quality=64, method=6)
+    buf = io.BytesIO(); im.save(buf, "WEBP", quality=60, method=6)
     return 'src="data:image/webp;base64,' + base64.b64encode(buf.getvalue()).decode() + '"'
 
 
