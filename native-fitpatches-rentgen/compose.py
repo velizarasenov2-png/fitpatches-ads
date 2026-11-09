@@ -13,24 +13,21 @@ W, H = 1080, 1350
 INK, LINK, PILL = (17, 17, 17), (21, 94, 196), (14, 14, 14)
 CTA = "Прочети повече."
 
+HOOK = ["Пиете всякакви добавки, но всеки ден",
+        "се задъхвате по стълбите и се чувствате,",
+        "сякаш сте тичали маратон?",
+        "Ето истинската причина —",
+        "и тя изобщо не се крие в навиците ви."]
+
+# pills: (text, x, y) as a share of the SOURCE image; layout "cover" = fill the width and crop,
+# "fit" = whole image scaled into the photo area on a grey software-style frame.
 ADS = {
-    "A_skener": dict(
-        raw="skener_2.jpg", crop_top=0.0,
-        pills=[("ЯДЕ МАЛКО", 0.305, 0.150), ("ЯДЕ ВСИЧКО", 0.722, 0.150)],  # text, x centre, y centre (share of photo)
-        lines=["Ядете като врабче, но коремът ви",
-               "пак расте, а дънките стягат все повече?",
-               "Ето истинската причина —",
-               "и тя изобщо не се крие в чинията ви."],
-    ),
-    "B_garderob": dict(
-        raw="garderob_1.jpg", crop_top=0.0,
-        pills=[("ЧАКА ОТ 2019 Г.", 0.335, 0.085)],
-        lines=["Искате пак да облечете роклята, която",
-               "чака в гардероба от години — вместо черното?",
-               "Ето истинската причина да не ви става —",
-               "и тя изобщо не е в чинията ви."],
-    ),
+    "A_dexa_monitor": dict(raw="dexa_monitor_2.jpg", layout="cover", crop_top=0.0,
+                           pills=[("ЗАДЪХВА СЕ", 0.322, 0.165), ("НЕ СЕ ЗАДЪХВА", 0.700, 0.165)], lines=HOOK),
+    "B_dexa_flat": dict(raw="dexa_flat_1.jpg", layout="fit", crop_top=0.0,
+                        pills=[("ЗАДЪХВА СЕ", 0.252, 0.992), ("НЕ СЕ ЗАДЪХВА", 0.748, 0.992)], lines=HOOK),
 }
+FRAME = (205, 205, 205)
 
 
 def font(size, weight=600):
@@ -90,20 +87,28 @@ def build(name, ad):
     size = fit_size(ad["lines"])
     cap = caption(ad["lines"], size)
     ph = H - cap.height
-    src = Image.open(os.path.join(HERE, "raw", ad["raw"])).convert("RGB").resize((W, W), Image.LANCZOS)
-    top = int(ad["crop_top"] * (W - ph))  # 0 = keep the top, 1 = keep the bottom
-    top = max(0, min(W - ph, top))
-    photo = src.crop((0, top, W, top + ph))
+    raw = Image.open(os.path.join(HERE, "raw", ad["raw"])).convert("RGB")
+    if ad["layout"] == "cover":
+        src = raw.resize((W, W), Image.LANCZOS)
+        top = max(0, min(W - ph, int(ad["crop_top"] * (W - ph))))
+        photo = src.crop((0, top, W, top + ph))
+        to_xy = lambda fx, fy: (fx * W, fy * W - top)
+    else:
+        band = 56  # frame below the scans, where the pills sit
+        s = ph - band - 18
+        photo = Image.new("RGB", (W, ph), FRAME)
+        ox, oy = (W - s) // 2, 18
+        photo.paste(raw.resize((s, s), Image.LANCZOS), (ox, oy))
+        to_xy = lambda fx, fy: (ox + fx * s, oy + fy * s)
     d = ImageDraw.Draw(photo)
     for text, fx, fy in ad["pills"]:
-        pill(d, text, fx * W, fy * W - top)
+        pill(d, text, *to_xy(fx, fy))
     out = Image.new("RGB", (W, H), "white")
     out.paste(photo, (0, 0))
     out.paste(cap, (0, ph))
     os.makedirs(os.path.join(HERE, "final"), exist_ok=True)
     out.save(os.path.join(HERE, "final", f"{name}.jpg"), quality=93)
-    print(name, "font", size, "photo h", ph, "crop top", top)
-
+    print(name, "font", size, "photo h", ph)
 
 if __name__ == "__main__":
     for n, a in ADS.items():

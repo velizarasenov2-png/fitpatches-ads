@@ -15,27 +15,32 @@ MODEL = "nano-banana-pro"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "raw")
 NO_TEXT = " Absolutely no text, letters, numbers, labels, logos or watermarks anywhere in the image."
 
+# Style reference: a colour DEXA body-composition scan the user sent (uploaded to kie.ai temp storage).
+DEXA_REF = "https://tempfile.redpandaai.co/kieai/1137735/images/fitpatches-native/dexa_ref.png"
+DEXA_LOOK = (
+    "Each scan is a full-body DEXA body-composition scan of a standing woman, front view, arms at her sides, on a "
+    "black background, in the same false colours as the reference image: fat in yellow-orange, lean tissue in "
+    "red-magenta, bones in blue-cyan. LEFT scan: an obese woman with a very wide body and a large bright "
+    "yellow-orange mass of visceral fat filling the whole belly around the organs and wrapping the waist. RIGHT "
+    "scan: a slim woman of the same height, mostly red-magenta lean tissue with only a thin yellow outline of fat "
+    "and almost no fat inside the belly. "
+)
+
 JOBS = {
-    "skener": (
+    "dexa_monitor": dict(refs=[DEXA_REF], prompt=(
         "Realistic stock photograph. Close view of a widescreen computer monitor with a black bezel on a desk in a "
-        "bright modern medical office, the monitor fills most of the frame, a light grey wall behind it. The screen "
-        "shows two axial abdominal CT scan cross-sections side by side, left and right, separated by a thin vertical "
-        "light line in the middle. Grayscale CT slices of the abdomen at waist level: spine, kidneys, intestines, "
-        "and the fat tissue around the organs highlighted in semi-transparent yellow-orange, as in medical body-fat "
-        "analysis software. The LEFT scan has a much larger yellow-orange fat area wrapped around the organs, the "
-        "RIGHT scan has clearly less. Leave dark empty space at the top of each panel. A doctor's hand in a white "
-        "coat sleeve comes in from the lower right and holds a slim silver ballpoint pen, its tip pointing at the "
-        "yellow-orange area of the left scan near the middle line. Soft neutral daylight, sharp focus, high detail."
-        + NO_TEXT
-    ),
-    "garderob": (
-        "Realistic candid smartphone photo in an ordinary Bulgarian apartment bedroom in daylight. A woman around 45 "
-        "with brown shoulder-length hair, ordinary figure with a soft belly, wearing a loose plain black long top "
-        "and black leggings, stands at an open wooden wardrobe full of mostly black and dark grey clothes on "
-        "hangers. She holds up in front of her, on its hanger, a bright coral-red summer dress and looks at it with "
-        "a wistful, hopeful half-smile. Natural window light, slightly lived-in room, eye level, unposed, not a "
-        "model, real-life feel, leave some empty space above the dress." + NO_TEXT
-    ),
+        "bright modern medical office, the monitor fills most of the frame, a light grey wall behind it. The "
+        "screen is split in two by a thin vertical light line, each half shows one scan. " + DEXA_LOOK +
+        "Leave dark empty space above each head. A doctor's hand in a white coat sleeve comes in from the lower "
+        "right and holds a slim silver ballpoint pen, its tip pointing at the belly of the left scan near the "
+        "middle line. Soft neutral daylight, sharp focus, high detail." + NO_TEXT
+    )),
+    "dexa_flat": dict(refs=[DEXA_REF], prompt=(
+        "Medical imaging software view, flat screenshot, two full-body DEXA scans side by side in two black "
+        "panels with thin light grey borders and a thin divider between them, like the reference image. "
+        + DEXA_LOOK + "Leave dark empty space above each head. Crisp, high detail. No colour bar, no grid lines, "
+        "no measurement boxes." + NO_TEXT
+    )),
 }
 
 
@@ -49,7 +54,8 @@ def _call(url, data=None):
 
 
 def run(name, take=1):
-    inp = {"prompt": JOBS[name], "image_input": [], "aspect_ratio": "1:1", "resolution": "2K", "output_format": "jpg"}
+    job = JOBS[name]
+    inp = {"prompt": job["prompt"], "image_input": job.get("refs", []), "aspect_ratio": "1:1", "resolution": "2K", "output_format": "jpg"}
     j = _call(f"{API}/createTask", {"model": MODEL, "input": inp})
     if j.get("code") != 200:
         raise RuntimeError(f"{name}: {j}")
