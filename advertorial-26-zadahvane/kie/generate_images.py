@@ -11,34 +11,100 @@ API = "https://api.kie.ai/api/v1/jobs"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "img")
 NO_TEXT = " Absolutely no text, letters, numbers, labels, logos or watermarks anywhere in the image."
 
+PATCH = "https://cdn.shopify.com/s/files/1/1019/0929/9545/files/fp-patch-real.png?v=1785852731"
+WRIST = "https://cdn.shopify.com/s/files/1/1048/3269/6657/files/ruka_size_new_e633366f-b56d-4632-848c-4885ced7e166.png"
+PATCH_LOOK = (" The patch must look exactly like the reference photo: a thin round translucent dusty-pink patch the size "
+              "of a coin with a thin ring of tiny print around its edge.")
+ILLU = " Clean semi-realistic medical illustration in a bright educational health-magazine infographic style."
+
+# name: (prompt, aspect ratio, reference images). Text is added later in compose_images.py.
 JOBS = {
+    # first batch (photos)
     "stairs": (
         "Realistic candid phone photo in the stairwell of an old Bulgarian panel apartment block: worn terrazzo "
         "steps, pale green painted walls, a metal railing, a small dusty window. A woman around 50, ordinary "
         "figure with a round belly, in a dark winter coat, has stopped on the landing between floors, one hand "
         "gripping the railing and the other pressed to her chest, catching her breath with her eyes closed and "
         "mouth slightly open. Two full plastic supermarket bags rest on the step beside her. Cold fluorescent "
-        "light mixed with grey daylight, real life, unposed." + NO_TEXT
-    ),
-    "diaphragm": (
-        "Clean 3D medical illustration, side view cross-section of an adult woman's torso on a dark navy "
-        "background: pink lungs in the chest, the dome-shaped diaphragm muscle under them, and below it the "
-        "abdominal organs (liver, stomach, intestines) wrapped and tightly packed in thick glowing yellow "
-        "visceral fat that pushes the diaphragm upward and leaves the lungs visibly squeezed and smaller. "
-        "Educational anatomy style, soft rim lighting, high detail." + NO_TEXT
-    ),
+        "light mixed with grey daylight, real life, unposed." + NO_TEXT, "4:3", []),
     "supplements": (
         "Realistic photo of a Bulgarian kitchen counter crowded with the clutter of years of trying: many plain "
         "unlabeled supplement bottles and jars in different colours, boxes of herbal detox tea without print, a "
         "protein shaker, opened blister packs, a coiled measuring tape, a crumpled printed diet plan with a pen, "
-        "a half-eaten bowl of salad. Morning window light, slightly messy, real life." + NO_TEXT
-    ),
+        "a half-eaten bowl of salad. Morning window light, slightly messy, real life." + NO_TEXT, "4:3", []),
     "finale": (
         "Realistic warm candid photo in a bright Bulgarian apartment block stairwell: a smiling woman around 50 "
         "in a light spring coat climbs the last steps to the top-floor landing easily, laughing, holding the hand "
         "of her granddaughter of about 6 who runs ahead of her up the stairs. Sunlight through the window, joyful "
-        "real-life family moment, shot on a phone." + NO_TEXT
-    ),
+        "real-life family moment, shot on a phone." + NO_TEXT, "4:3", []),
+
+    # second batch: dormo-style illustrations and infographics
+    "methods": (
+        "A 2x2 photo collage with thin white borders on a light turquoise background, magazine infographic style. "
+        "Top left: protein shake tubs, a shaker and a powder scoop on a kitchen counter. Top right: a cup of herbal "
+        "detox tea with tea bags and plain tea boxes. Bottom left: a hand holding a pile of colourful diet pills "
+        "and capsules spilling from an orange pharmacy bottle. Bottom right: an empty gym with treadmills and a "
+        "lonely membership card on a bench. Bright realistic stock photography." + NO_TEXT, "16:9", []),
+    "lungs": (
+        "Two side-by-side medical illustrations separated by a thin vertical dark line, on a soft beige "
+        "background." + ILLU + " LEFT panel: front view of a woman's torso with see-through skin showing large pink "
+        "fully expanded healthy lungs, a low relaxed diaphragm and a slim abdomen with very little yellow fat. "
+        "RIGHT panel: the same torso view but the abdomen is packed with thick yellow visceral fat around the "
+        "organs that pushes the diaphragm high up, the lungs are visibly smaller and squeezed, with small red "
+        "irritated glows on them. Leave empty space in the lower third of each panel." + NO_TEXT, "16:9", []),
+    "vise": (
+        "Side view cross-section of an adult woman's torso on a light grey-white background:" + ILLU + " Pink "
+        "lungs in the chest, the dome-shaped diaphragm under them, and the abdominal organs packed in thick "
+        "yellow visceral fat. Two large bold red arrows point upward from the fat into the diaphragm, showing "
+        "the fat pushing the diaphragm up and squeezing the lungs. Soft lighting, high detail." + NO_TEXT, "16:9", []),
+    "second_door": (
+        "Pale light-blue medical textbook illustration with delicate line work. In the centre a large 3D "
+        "cross-section block of human skin layers (epidermis, dermis with tiny red blood capillaries, a fat "
+        "layer) with a thin round pink patch on top, from which tiny glowing yellow particles move down into the "
+        "skin and enter the capillaries. On the left side, faded and greyed out: the stomach and the liver. On "
+        "the right side, faded and greyed out: the intestines, showing that they are bypassed. High detail."
+        + NO_TEXT, "16:9", []),
+    "step1": (
+        "Square-ish medical illustration on a light grey background:" + ILLU + " A cross-section of skin with a "
+        "round pink patch on top and tiny yellow particles entering the skin, while in the background a faded "
+        "stomach full of yellow capsules is crossed out with a soft red X." + NO_TEXT, "3:4", []),
+    "step2": (
+        "Square-ish medical illustration on a light grey background:" + ILLU + " A round pink patch on a "
+        "cross-section of skin releasing a slow, steady stream of tiny golden droplets into the skin layers, like "
+        "drip irrigation, under a soft arc from a small sun on the left to a small moon on the right showing the "
+        "whole day." + NO_TEXT, "3:4", []),
+    "step3": (
+        "Square-ish illustration on a light grey background:" + ILLU + " A branch of the common barberry shrub "
+        "with small green leaves, thorns and red oblong berries, its freshly cut root showing bright lemon-yellow "
+        "wood, next to a glowing stylised human cell with a small golden switch lever turned on." + NO_TEXT,
+        "3:4", []),
+    "phase1": (
+        "Bright realistic close-up photo: a woman's hand applying one small round pink patch to the clean skin of "
+        "her outer upper arm, soft morning sunlight from a window, bedroom softly blurred behind."
+        + PATCH_LOOK + NO_TEXT, "3:4", [PATCH]),
+    "phase2": (
+        "Realistic candid photo: a smiling woman around 45 at a sunny open-air vegetable market choosing "
+        "tomatoes, her sleeve pushed up so one small round pink patch is visible on her forearm, busy daytime."
+        + PATCH_LOOK + NO_TEXT, "3:4", [PATCH, WRIST]),
+    "phase3": (
+        "Realistic close-up photo: fingers peeling a used round pink patch off the skin of a forearm, a fresh new "
+        "pink patch still on its clear liner lies next to a cup of coffee on a wooden bedside table, soft early "
+        "morning light." + PATCH_LOOK + NO_TEXT, "3:4", [PATCH]),
+    "cost": (
+        "Clean infographic on a light grey-white background: on the left a long crumpled paper shop receipt with "
+        "many faint printed lines and a big bold red diagonal cross over it; in the middle a dark navy circle "
+        "with a small white arrow; on the right a white cardboard price tag on a string with a green circle "
+        "check mark. Leave clean empty space on the lower part of the receipt and in the middle of the tag."
+        + NO_TEXT, "16:9", []),
+    "seal": (
+        "A shiny embossed gold medal seal on a pure white background, 3D render, thick raised rim with a laurel "
+        "pattern and in the centre a raised embossed icon of a delivery van with a hand holding banknotes. "
+        "Premium, high detail, soft shadow." + NO_TEXT, "16:9", []),
+    "tablet": (
+        "Realistic photo: two hands holding a white tablet in front of a softly blurred cosy living room with a "
+        "sofa and bookshelves. The tablet screen is completely plain, flat white and blank, facing the camera "
+        "straight on with almost no perspective, filling the centre of the frame. Soft daylight." + NO_TEXT,
+        "1:1", []),
 }
 
 
@@ -52,7 +118,8 @@ def _call(url, data=None):
 
 
 def run(name):
-    inp = {"prompt": JOBS[name], "image_input": [], "aspect_ratio": "4:3", "resolution": "2K", "output_format": "jpg"}
+    prompt, ar, refs = JOBS[name]
+    inp = {"prompt": prompt, "image_input": refs, "aspect_ratio": ar, "resolution": "2K", "output_format": "jpg"}
     j = _call(f"{API}/createTask", {"model": "nano-banana-pro", "input": inp})
     if j.get("code") != 200:
         raise RuntimeError(f"{name}: {j}")
@@ -64,12 +131,12 @@ def run(name):
         time.sleep(8)
     urls = json.loads(d.get("resultJson") or "{}").get("resultUrls", [])
     if urls:
-        urllib.request.urlretrieve(urls[0], os.path.join(OUT, f"{name}-raw.jpg"))
+        urllib.request.urlretrieve(urls[0], os.path.join(OUT, "..", "kie", "raw", f"{name}-raw.jpg"))
     return name, d["state"], d.get("failMsg")
 
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
-    with ThreadPoolExecutor(4) as ex:
+    with ThreadPoolExecutor(8) as ex:
         for r in ex.map(run, sys.argv[1:] or list(JOBS)):
             print(*r)
