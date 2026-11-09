@@ -186,6 +186,67 @@ def plain(name, out):
     save(raw(name), out)
 
 
+
+
+def absorption():
+    """Detailed capsule-vs-patch absorption infographic -> img/absorption.jpg"""
+    W, H = 1600, 1850
+    BG, GREENC = (246, 243, 238), (22, 128, 60)
+    can = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(can)
+    center_text(d, W / 2, 40, "КАПСУЛА СРЕЩУ ЛЕПЕНКА", F(64, "ExtraBold"), NAVY)
+    center_text(d, W / 2, 124, "Пътят на съставките до кръвта", F(36, "Medium"), GREY)
+    CW, CH, S = 720, 760, 720 / 1792
+    cols = [
+        dict(x=50, color=RED, head="КАПСУЛА: 3 БАРИЕРИ", raw="abs_capsule", y0=180,
+             marks=[(1, 1180, 1250), (2, 905, 1700), (3, 640, 1180)],
+             steps=[("Стомахът", "Киселина и дразнене: тежест, подуване, запек или разстройство."),
+                    ("Червата", "Усвоява се трудно, а „помпите“ в чревната стена връщат голяма част обратно."),
+                    ("Черният дроб", "Разгражда голяма част още при първото преминаване.")],
+             result="До кръвта стига под 1%*", sym="×"),
+        dict(x=830, color=GREENC, head="ЛЕПЕНКА: ВТОРАТА ВРАТА", raw="abs_patch", y0=470,
+             marks=[(1, 1100, 900), (2, 760, 1330)],
+             steps=[("Кожата", "Нищо не се гълта — стомахът изобщо не участва."),
+                    ("Малките съдове под кожата", "Към кръвта, без червата и без първото преминаване през черния дроб."),
+                    ("През целия ден", "Бавно и равномерно, като капково напояване — без пикове и спадове.")],
+             result="Постепенно, целия ден", sym="✓"),
+    ]
+    for c in cols:
+        x = c["x"]
+        f = F(40, "ExtraBold"); tw = d.textlength(c["head"], font=f)
+        d.rounded_rectangle([x + (CW - tw) / 2 - 30, 196, x + (CW + tw) / 2 + 30, 270], radius=37, fill=c["color"])
+        center_text(d, x + CW / 2, 208, c["head"], f, "white")
+        src = Image.open(os.path.join(HERE, "raw", f"{c['raw']}-raw.jpg")).convert("RGB")
+        y0 = c["y0"]; crop = src.crop((0, y0, 1792, y0 + round(CH / S))).resize((CW, CH), Image.LANCZOS)
+        cd = ImageDraw.Draw(crop)
+        for n, ox, oy in c["marks"]:
+            mx, my = ox * S, (oy - y0) * S
+            cd.ellipse([mx - 30, my - 30, mx + 30, my + 30], fill=c["color"], outline="white", width=5)
+            center_text(cd, mx, my - 22, str(n), F(36, "ExtraBold"), "white")
+        card = rounded(crop, 26)
+        can.paste(card, (x, 300), card)
+        y = 1100
+        for i, (t, desc) in enumerate(c["steps"]):
+            d.ellipse([x, y, x + 64, y + 64], fill=c["color"])
+            center_text(d, x + 32, y + 10, str(i + 1), F(36, "ExtraBold"), "white")
+            d.text((x + 84, y + 2), t, font=F(36, "ExtraBold"), fill=INK)
+            yy = y + 50
+            words, line = desc.split(), ""
+            for w in words:
+                tst = (line + " " + w).strip()
+                if d.textlength(tst, font=F(30, "Medium")) > CW - 90 and line:
+                    d.text((x + 84, yy), line, font=F(30, "Medium"), fill=GREY); yy += 38; line = w
+                else:
+                    line = tst
+            d.text((x + 84, yy), line, font=F(30, "Medium"), fill=GREY)
+            y = yy + 66
+        tint = (252, 228, 230) if c["color"] == RED else (222, 244, 228)
+        d.rounded_rectangle([x, 1590, x + CW, 1700], radius=22, fill=tint, outline=c["color"], width=4)
+        center_text(d, x + CW / 2, 1622, c["sym"] + "  " + c["result"], F(40, "ExtraBold"), c["color"])
+    center_text(d, W / 2, 1745, "* при берберин на капсули (Liu и съавт., Fitoterapia, 2016).", F(28, "Medium"), GREY)
+    center_text(d, W / 2, 1787, "Лепенката е създадена да заобиколи трите бариери на капсулата.", F(28, "SemiBold"), NAVY)
+    save(can, "absorption")
+
 if __name__ == "__main__":
     lungs(); vise(); second_door(); steps(); phases(); cost(); seal(); tablet()
     plain("methods", "methods")
+    absorption()

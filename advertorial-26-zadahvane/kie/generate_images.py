@@ -105,6 +105,19 @@ JOBS = {
         "sofa and bookshelves. The tablet screen is completely plain, flat white and blank, facing the camera "
         "straight on with almost no perspective, filling the centre of the frame. Soft daylight." + NO_TEXT,
         "1:1", []),
+    "abs_capsule": (
+        "Clean semi-realistic medical illustration on a plain very light grey background, front view of a "
+        "semi-transparent woman's torso from the mouth to the hips showing the oesophagus, the stomach, the small "
+        "intestine and the liver in soft natural colours. A yellow capsule is dissolving inside the stomach and "
+        "tiny yellow particles travel on into the intestine and the liver, getting fewer and fainter along the "
+        "way, with only a couple of particles reaching a red blood vessel. Educational health infographic style, "
+        "high detail." + NO_TEXT, "3:4", []),
+    "abs_patch": (
+        "Clean semi-realistic medical illustration on a plain very light grey background: a large 3D cross-section "
+        "of human skin (epidermis, dermis with a dense network of small red capillaries, fat layer) with a thin "
+        "round dusty-pink patch on top. Many tiny glowing golden particles move evenly and steadily from the patch "
+        "down through the skin layers and into the capillaries, like a slow drip. Educational health infographic "
+        "style, high detail." + NO_TEXT, "3:4", []),
 }
 
 
