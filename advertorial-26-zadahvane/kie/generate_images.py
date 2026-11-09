@@ -118,6 +118,44 @@ JOBS = {
         "round dusty-pink patch on top. Many tiny glowing golden particles move evenly and steadily from the patch "
         "down through the skin layers and into the capillaries, like a slow drip. Educational health infographic "
         "style, high detail." + NO_TEXT, "3:4", []),
+    "hormones": (
+        "Realistic candid photo at night in a Bulgarian bedroom lit by a dim bedside lamp: a woman around 50 sits up "
+        "in bed, awake, fanning herself with a folded magazine, slightly flushed face, tired eyes, the duvet pushed "
+        "aside, a glass of water on the nightstand. Warm low light, real life, unposed." + NO_TEXT, "4:3", []),
+    "stress": (
+        "Realistic candid photo late in the evening in an ordinary Bulgarian kitchen: a woman around 47 sits at the "
+        "table with a laptop, a pile of unopened envelopes and a cold cup of tea, one hand on her forehead, "
+        "exhausted, the window dark behind her. Cool overhead light mixed with the warm glow of the laptop, real "
+        "life." + NO_TEXT, "4:3", []),
+    "map": (
+        "Clean stylised flat illustration of the map of Bulgaria in soft white on a pale pink background, with many "
+        "small glowing dusty-pink location pins spread across the country (Sofia, Plovdiv, Varna, Burgas, Pleven, "
+        "Stara Zagora, Haskovo, Kyustendil, Vratsa, Pazardzhik, Silistra region and smaller towns), a few thin pink "
+        "lines connecting them, modern infographic style, lots of air around the map." + NO_TEXT, "16:9", []),
+    "courier": (
+        "Realistic warm photo at the open door of a Bulgarian apartment: a courier in a plain dark jacket without "
+        "any logo hands a small cardboard parcel to a smiling woman around 50 in a cardigan, who holds a few "
+        "banknotes in her other hand to pay. Bright hallway, friendly moment, real life, shot on a phone."
+        + NO_TEXT, "4:3", []),
+    "ingredients": (
+        "Bright top-down flat-lay product photo on a soft pale pink marble surface: in the centre one round "
+        "translucent dusty-pink skin patch, surrounded by a small barberry branch with red berries and pieces of "
+        "bright yellow barberry root, cinnamon sticks, a halved pomegranate with glistening seeds, and a small "
+        "ceramic bowl of fine white powder. Soft daylight, gentle shadows, clean premium health style."
+        + PATCH_LOOK + NO_TEXT, "4:3", [PATCH]),
+    "walk": (
+        "Realistic candid photo in a Bulgarian city park in golden autumn: a smiling woman around 50 in a light "
+        "jacket, jeans and sneakers walks briskly along a path with fallen yellow leaves, swinging her arms, "
+        "breathing easily, morning sun. Real life, shot on a phone." + NO_TEXT, "4:3", []),
+    "holiday": (
+        "Realistic warm photo of a festive Bulgarian winter holiday table at home, seen from above at an angle: a "
+        "whole baked carp on a platter, a pot of stuffed cabbage rolls (sarmi), a round banitsa pastry, a sweet "
+        "braided kozunak bread, red wine, candles, a white embroidered tablecloth and several hands reaching for "
+        "the food. Cosy candle light, abundance." + NO_TEXT, "4:3", []),
+    "measure": (
+        "Realistic close-up photo in a bright bathroom: a woman's hands wrapping a soft yellow measuring tape around "
+        "her waist over a plain grey t-shirt, at belly-button level, neutral and calm, only the torso and hands in "
+        "frame, natural morning light." + NO_TEXT, "4:3", []),
 }
 
 
