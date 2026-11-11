@@ -166,6 +166,17 @@ JOBS = {
         "the right) like the second reference image. Daylight from a window, ordinary clinic, real life, "
         "slightly imperfect phone framing." + PATCH_LOOK + NO_TEXT, "1:1",
         [PATCH, "https://raw.githubusercontent.com/velizarasenov2-png/fitpatches-ads/4aadeb89539d02ed1ea64869ab8ead8484038b88/advertorial-26-zadahvane/img/hero-dexa.jpg"]),
+    "wedding_stairs": (
+        "Realistic emotional photo, Bulgarian restaurant wedding venue in the evening: an overweight woman around 52 "
+        "in an elegant festive dress has stopped halfway up a wide staircase to the banquet hall, one hand on the "
+        "railing and the other on her chest, catching her breath, ashamed, while smiling guests in suits and dresses "
+        "walk past her up the stairs. Warm chandelier light, shallow depth of field, cinematic but real." + NO_TEXT,
+        "4:3", []),
+    "desk_night": (
+        "Realistic moody photo of a doctor's office desk late at night, no person in frame: a green banker's desk "
+        "lamp lighting thick open medical books and printed research papers with highlighted lines, a laptop "
+        "showing a colourful full-body DEXA body-composition scan, a stethoscope, a cold cup of coffee, the city "
+        "lights through a dark window behind. Cinematic warm light, high detail." + NO_TEXT, "4:3", []),
 }
 
 
