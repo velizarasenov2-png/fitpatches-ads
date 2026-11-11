@@ -114,6 +114,12 @@ JOBS = {
         "briskly uphill on a trail, laughing and holding hands with her granddaughter of about 7; her husband "
         "follows with a thermos. Joyful, real life, shot on a phone." + NO_TEXT, "4:3", []),
 
+    "pack_sky": (
+        "Clean product advertising photo: the exact FitPatches pouch from the reference image — keep its shape, colours, "
+        "logo and every printed word exactly as in the reference, sharp and readable — stands upright, slightly angled, "
+        "centred in a bright blue sky full of soft white fluffy clouds. A few small round translucent dusty-pink patches "
+        "float around it. Soft sunny daylight, fresh and premium. Do not add any other text, badges or logos.",
+        "4:3", ["https://raw.githubusercontent.com/velizarasenov2-png/fitpatches-ads/claude/admiring-goldberg-xk4kjc/advertorial-28-omaznen/img/product.jpg"]),
 }
 
 

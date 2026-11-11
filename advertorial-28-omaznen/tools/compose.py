@@ -113,6 +113,24 @@ def risk_card():
     save(im, "liver-risks.jpg")
 
 
+def pack_sky():
+    im = raw("pack_sky"); d = ImageDraw.Draw(im); h = im.height
+    cx, cy, r = int(W * 0.84), int(h * 0.17), 118                      # red sale circle
+    d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=RED)
+    d.text((cx, cy - 20), "−50%", font=F("Black", 62), fill="white", anchor="mm")
+    d.text((cx, cy + 42), "ДНЕС", font=F("ExtraBold", 34), fill="white", anchor="mm")
+    cx, cy, r = int(W * 0.15), int(h * 0.80), 112                      # gold seal
+    gold, dark = (214, 168, 52), (120, 82, 10)
+    import math                                                        # starburst edge
+    d.polygon([(cx + (r + (14 if k % 2 else 2)) * math.cos(math.pi * k / 30),
+                cy + (r + (14 if k % 2 else 2)) * math.sin(math.pi * k / 30)) for k in range(60)], fill=gold)
+    d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=gold, outline=dark, width=5)
+    d.ellipse((cx - r + 14, cy - r + 14, cx + r - 14, cy + r - 14), outline=(250, 230, 160), width=3)
+    for i, (t, sz) in enumerate((("ПЛАЩАТЕ", 25), ("ПРИ", 23), ("ПОЛУЧАВАНЕ", 19))):
+        d.text((cx, cy - 30 + i * 30), t, font=F("Black", sz), fill=dark, anchor="mm")
+    save(im, "pack-sky.jpg")
+
+
 def plain(name, out):
     save(raw(name), out)
 
@@ -122,6 +140,6 @@ if __name__ == "__main__":
     liver_hero(); red_x_grid(); portal(); ultrasound(); risk_card()
     band_labels("liver_cells", "liver-cells.jpg", "ЗДРАВИ КЛЕТКИ", "КЛЕТКИ, ПЪЛНИ С МАЗНИНА")
     band_labels("pear_apple", "pear-apple.jpg", "ДО 40: ПО ХАНША", "СЛЕД 40: В КОРЕМА", ((60, 90, 160), RED), fill_bottom=True)
-    plain("desk_liver", "desk-liver.jpg"); plain("walk_finale", "walk-finale.jpg")
+    pack_sky(); plain("desk_liver", "desk-liver.jpg"); plain("walk_finale", "walk-finale.jpg")
     if os.path.exists(os.path.join(RAW, "ultrasound_visit-raw.jpg")):
         plain("ultrasound_visit", "ultrasound-visit.jpg")
