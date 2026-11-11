@@ -156,6 +156,16 @@ JOBS = {
         "Realistic close-up photo in a bright bathroom: a woman's hands wrapping a soft yellow measuring tape around "
         "her waist over a plain grey t-shirt, at belly-button level, neutral and calm, only the torso and hands in "
         "frame, natural morning light." + NO_TEXT, "4:3", []),
+    "doc_selfie": (
+        "Realistic casual smartphone photo taken by a male doctor in his own office, point of view: his left forearm "
+        "in a rolled-up white doctor's coat sleeve is held up close to the camera, showing one small round "
+        "dusty-pink patch stuck on the inside of the forearm. Behind it, slightly out of focus: a framed medical "
+        "diploma on the wall with no readable writing, a bookshelf of thick medical books, a desk with a "
+        "stethoscope and papers, and a computer monitor that clearly shows a colourful full-body DEXA "
+        "body-composition scan split in two (an obese body with lots of yellow fat on the left, a slim body on "
+        "the right) like the second reference image. Daylight from a window, ordinary clinic, real life, "
+        "slightly imperfect phone framing." + PATCH_LOOK + NO_TEXT, "1:1",
+        [PATCH, "https://raw.githubusercontent.com/velizarasenov2-png/fitpatches-ads/4aadeb89539d02ed1ea64869ab8ead8484038b88/advertorial-26-zadahvane/img/hero-dexa.jpg"]),
 }
 
 
@@ -168,7 +178,7 @@ def _call(url, data=None):
         return json.loads(r.read())
 
 
-def run(name):
+def run(name, take=1):
     prompt, ar, refs = JOBS[name]
     inp = {"prompt": prompt, "image_input": refs, "aspect_ratio": ar, "resolution": "2K", "output_format": "jpg"}
     j = _call(f"{API}/createTask", {"model": "nano-banana-pro", "input": inp})
@@ -182,7 +192,7 @@ def run(name):
         time.sleep(8)
     urls = json.loads(d.get("resultJson") or "{}").get("resultUrls", [])
     if urls:
-        urllib.request.urlretrieve(urls[0], os.path.join(OUT, "..", "kie", "raw", f"{name}-raw.jpg"))
+        urllib.request.urlretrieve(urls[0], os.path.join(OUT, "..", "kie", "raw", f"{name}-raw.jpg" if take == 1 else f"{name}-{take}-raw.jpg"))
     return name, d["state"], d.get("failMsg")
 
 
