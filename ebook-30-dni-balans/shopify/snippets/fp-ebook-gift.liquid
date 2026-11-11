@@ -1,0 +1,130 @@
+{%- comment -%}
+  FitPatches — подарък е-книга „30 дни баланс“ към пакетите 2+1 (27,99 €) и 3+2 (39,99 €).
+  Рендерира се от snippets/fp-quick-es.liquid (след офертата и количката), затова не пипа fp-offer-v2 и fp-drawer.
+  1) В офертата: под пакетите с 3 и повече пакета се показва лента „+ ПОДАРЪК: Е-книга“ със снимка.
+  2) В количката: щом има 3+ пакета, продуктът „Е-книга … — ПОДАРЪК“ (0 €) се добавя сам; под 3 пакета се маха сам.
+     Редът му е без +/− и кошче, със зачертани 19,99 € и „Безплатно“.
+  3) Докато е-книгата се добавя, бутонът за поръчка (middleware.bg) изчаква, за да влезе тя в поръчката.
+  4) Запомня в sessionStorage дали е-книгата е в количката — страницата „Благодарим“ показва бутон за изтегляне
+     (виж snippets/fp-ebook-thanks.liquid).
+  Продукт: /products/e-kniga-30-dni-balans (скрит от търсенето). PDF: Shopify Files.
+{%- endcomment -%}
+<style>
+  .fp-offer .fp-tier.has-ebook{grid-template-areas:"thumb body price" "thumb save save" "gift gift gift"!important}
+  .fp-offer .fpg{grid-area:gift;display:flex;align-items:center;gap:12px;margin-top:2px;padding:9px 12px 9px 10px;border-radius:12px;
+    border:1.5px dashed #d64d87;background:linear-gradient(135deg,#fff8fb 0%,#fde8f1 100%);position:relative}
+  .fp-offer .fp-tier.is-selected .fpg{border-style:solid;box-shadow:0 4px 14px rgba(214,77,135,.16)}
+  .fp-offer .fpg__img{flex:0 0 46px;width:46px;height:56px;position:relative}
+  .fp-offer .fpg__img img{position:absolute;left:1px;bottom:-3px;width:44px;height:auto;transform:rotate(-7deg);filter:drop-shadow(0 4px 6px rgba(86,28,59,.28))}
+  .fp-offer .fpg__txt{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:3px;line-height:1.2}
+  .fp-offer .fpg__tag{align-self:flex-start;display:inline-flex;align-items:center;gap:4px;background:#d64d87;color:#fff;font-size:10.5px;font-weight:800;
+    letter-spacing:.06em;text-transform:uppercase;border-radius:20px;padding:3px 8px 3px 6px}
+  .fp-offer .fpg__tag svg{width:12px;height:12px}
+  .fp-offer .fpg__name{font-size:14px;font-weight:800;color:#111}
+  .fp-offer .fpg__meta{font-size:12px;color:#7a6a71}
+  .fp-offer .fpg__price{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;line-height:1.2;text-align:right}
+  .fp-offer .fpg__price s{color:#9a9a9a;font-size:12px}
+  .fp-offer .fpg__price em{font-style:normal;font-weight:900;color:#1f8a4c;font-size:13px;text-transform:uppercase;letter-spacing:.02em}
+  @media (max-width:749px){
+    .fp-offer .fpg{gap:10px;padding:8px 10px 8px 8px}
+    .fp-offer .fpg__name{font-size:13.5px}
+    .fp-offer .fpg__meta{font-size:11.5px}
+  }
+
+  #fpDrawer .fpd__it.fpg-row{border:1.5px dashed #d64d87;border-radius:14px;padding:12px;margin:12px 0;background:linear-gradient(135deg,#fff8fb 0%,#fde8f1 100%)}
+  #fpDrawer .fpd__it.fpg-row .fpd__it-img{background:#fff}
+  #fpDrawer .fpd__it.fpg-row .fpd__it-row{margin-top:8px;justify-content:flex-end}
+  #fpDrawer .fpd__it.fpg-row .fpg-free{color:#1f8a4c;font-size:16px;font-weight:900;text-transform:uppercase}
+</style>
+<script>
+(function(){
+  if(window.fpEbook) return;
+  var EB='55768258347345', MIN=3, OLD='19,99 €';
+  var TIERP={'53836021039441':1,'53837384024401':3,'53837385859409':5};
+  var THUMB='https://cdn.shopify.com/s/files/1/1048/3269/6657/files/fp-ebook-thumb.png?v=1794411601&width=120';
+  var GIFT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9"/><path d="M7.5 8a2.5 2.5 0 1 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 1 1 0 5"/></svg>';
+  var H={'Content-Type':'application/json','Accept':'application/json'};
+
+  // 1) Лента „+ ПОДАРЪК“ под пакетите 2+1 и 3+2 в офертата
+  document.querySelectorAll('.fp-offer .fp-tier').forEach(function(l){
+    var inp=l.querySelector('input[data-packs]'); if(!inp || +inp.dataset.packs<MIN || l.querySelector('.fpg')) return;
+    l.classList.add('has-ebook');
+    l.insertAdjacentHTML('beforeend','<span class="fpg">'
+      +'<span class="fpg__img"><img src="'+THUMB+'" alt="Е-книга „30 дни баланс“" width="44" height="64" loading="lazy" decoding="async"></span>'
+      +'<span class="fpg__txt"><span class="fpg__tag">'+GIFT+'+ Подарък</span>'
+      +'<span class="fpg__name">Е-книга „30 дни баланс“</span>'
+      +'<span class="fpg__meta">План за хранене за 30 дни + 10 рецепти</span></span>'
+      +'<span class="fpg__price"><s>'+OLD+'</s><em>Безплатно</em></span>'
+      +'</span>');
+  });
+
+  // 2) Е-книгата влиза в количката сама при 3+ пакета и излиза под 3
+  var st={busy:false,since:0,running:false,again:false,pend:null,timer:0};
+  var _f=window.fetch.bind(window);
+  function remember(on){ try{ sessionStorage.setItem('fp_ebook',on?'1':'0'); }catch(e){} }
+  function kick(){ clearTimeout(st.timer); st.timer=setTimeout(sync,120); }
+  function done(){
+    st.running=false;
+    if(st.again){ st.again=false; sync(); return; }
+    st.busy=false;
+    if(st.pend){ var b=st.pend; st.pend=null; setTimeout(function(){ b.click(); },30); }
+  }
+  function sync(){
+    if(st.running){ st.again=true; return; }
+    st.running=true; st.busy=true; st.since=st.since||Date.now();
+    _f('/cart.js',{headers:{'Accept':'application/json'}}).then(function(r){ return r.json(); }).then(function(cart){
+      var packs=0, line=null;
+      (cart.items||[]).forEach(function(it){ var id=String(it.variant_id); if(TIERP[id]) packs+=TIERP[id]*it.quantity; if(id===EB) line=it; });
+      var want=packs>=MIN?1:0, have=line?line.quantity:0;
+      remember(want);
+      if(want===have) return false;
+      var req=line ? _f('/cart/change.js',{method:'POST',headers:H,body:JSON.stringify({id:line.key,quantity:want})})
+                   : _f('/cart/add.js',{method:'POST',headers:H,body:JSON.stringify({items:[{id:+EB,quantity:1}]})});
+      return req.then(function(){ return true; });
+    }).then(function(changed){
+      if(changed && window.fpCart && window.fpCart.refresh) window.fpCart.refresh();
+    }).catch(function(){}).then(function(){ st.since=0; done(); });
+  }
+  window.fetch=function(input,init){
+    var u=typeof input==='string'?input:((input&&input.url)||'');
+    var p=_f(input,init);
+    if(/\/cart\/(add|update|change|clear)(\.js)?(\?|$)/.test(u)){ st.busy=true; st.since=st.since||Date.now(); p.then(kick,kick); }
+    return p;
+  };
+  // Поръчка, натисната докато е-книгата още се добавя: изчакваме (най-много 6 сек.), после натискаме пак.
+  window.addEventListener('click',function(e){
+    if(!st.busy || !(e.target instanceof Element)) return;
+    if(st.since && Date.now()-st.since>6000) return;
+    var b=e.target.closest('#fpDrawer .fpd__go, .mw-btn-modal'); if(!b) return;
+    e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation(); st.pend=b;
+  },true);
+
+  // 3) Редът на е-книгата в количката: без +/− и кошче, с „Безплатно“; брояч и лента с „+ е-книга“
+  var dr=document.getElementById('fpDrawer');
+  if(dr){
+    var items=dr.querySelector('[data-fpd-items]'), title=dr.querySelector('[data-fpd-title]'), bar=dr.querySelector('[data-fpd-bar-txt]');
+    var fix=function(){
+      var rows=items.querySelectorAll('.fpd__it[data-key^="'+EB+':"]:not(.fpg-row)');
+      rows.forEach(function(row){
+        row.classList.add('fpg-row');
+        var top=row.querySelector('.fpd__it-top'), nm=row.querySelector('.fpd__it-name');
+        var rm=row.querySelector('[data-rm]'); if(rm) rm.remove();
+        var q=row.querySelector('.fpd__qty'); if(q) q.remove();
+        if(nm){ var w=document.createElement('div'); nm.parentNode.insertBefore(w,nm); w.appendChild(nm); nm.textContent='Е-книга „30 дни баланс“';
+          w.insertAdjacentHTML('beforeend','<span class="fpd__it-meta">PDF · 35 стр. · изтегляш веднага след поръчката</span><span class="fpd__it-gift">'+GIFT+'Подарък</span>'); }
+        var pr=row.querySelector('.fpd__it-price'); if(pr) pr.innerHTML='<s>'+OLD+'</s><b class="fpg-free">Безплатно</b>';
+        if(top && !top.firstElementChild) top.remove();
+      });
+      if(rows.length && title){ title.textContent=title.textContent.replace(/(\d+)(\s*)(брой|броя)$/,function(_,n,s){ n=Math.max(0,+n-1); return n+s+(n===1?'брой':'броя'); }); }
+    };
+    var fixBar=function(){
+      if(!bar) return; var h=bar.innerHTML; if(!h || /книга/i.test(h)) return;
+      bar.innerHTML=h.indexOf(' подарък. Добави')>-1 ? h.replace(' подарък. Добави',' подарък + е-книга. Добави') : h+' <b>+ е-книга</b>';
+    };
+    if(items) new MutationObserver(fix).observe(items,{childList:true});
+    if(bar) new MutationObserver(fixBar).observe(bar,{childList:true,characterData:true,subtree:true});
+  }
+  window.fpEbook={sync:kick};
+  kick();
+})();
+</script>

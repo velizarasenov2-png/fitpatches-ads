@@ -1,0 +1,71 @@
+{%- comment -%}
+  FitPatches — след поръчка клиентът отива на /pages/thank-you (без номер на поръчка),
+  а не на страницата на Shopify („Поръчка #…“). Там е и офертата „+1 пакет за 6,99 €“ (30 секунди).
+  1) Middleware.bg: след поръчка co.php връща поръчката и скриптът им прави
+     location.replace(order_status_url + '&locale=…'). Тук подменяме order_status_url в отговора
+     с нашата страница. Purchase към Meta Middleware.bg го праща преди пренасочването.
+     Номерът на поръчката и тайният код от линка ѝ се пазят в sessionStorage (само в този таб) —
+     с тях страницата „Благодарим“ добавя пакета от офертата към същата поръчка.
+  2) EasySell (изключен, оставен за всеки случай) вика window.es_hook_before_redirect(order) точно преди
+     да пренасочи — спираме пренасочването и пращаме към нашата страница.
+{%- endcomment -%}
+<script>
+  (function () {
+    function fpThanksUrl(total) {
+      var q = new URLSearchParams(location.search);
+      var t = parseFloat(total);
+      var p = ['fp=1'];
+      if (t > 0 && t < 1000) p.push('t=' + t.toFixed(2));
+      if (q.get('preview_theme_id')) p.push('preview_theme_id=' + encodeURIComponent(q.get('preview_theme_id')));
+      return '/pages/thank-you?' + p.join('&');
+    }
+
+    // 1) Middleware.bg
+    function fpRemember(o, total) {
+      try {
+        var m = String(o.order_status_url).match(/\/orders\/([A-Za-z0-9]+)\//);
+        if (!o.id || !m) return;
+        sessionStorage.setItem('fp_order', JSON.stringify({ id: String(o.id), token: m[1], total: String(total || ''), ts: Date.now() }));
+      } catch (e) {}
+    }
+    function fpRewrite(data) {
+      if (typeof data !== 'string' || data.indexOf('order_status_url') < 0) return data;
+      try {
+        var o = JSON.parse(data);
+        if (!o || !o.order_status_url) return data;
+        var total = o.current_total_price || o.total_price;
+        fpRemember(o, total);
+        o.order_status_url = fpThanksUrl(total);
+        return JSON.stringify(o);
+      } catch (e) {
+        return data;
+      }
+    }
+    function fpHookMw() {
+      [window.jQuery, window.$].forEach(function (jq) {
+        if (!jq || !jq.ajaxPrefilter || jq.fpThanks) return;
+        jq.fpThanks = true;
+        jq.ajaxPrefilter(function (s) {
+          if (String(s.url || '').indexOf('/shopify/co/co.php') < 0) return;
+          var f = s.dataFilter;
+          s.dataFilter = function (d, type) { return fpRewrite(f ? f(d, type) : d); };
+        });
+      });
+    }
+    fpHookMw();
+    setInterval(fpHookMw, 500);
+
+    // 2) EasySell
+    window.es_hook_before_redirect = function (order) {
+      try {
+        var u = fpThanksUrl((order || {}).total_price);
+        try { fetch('/cart/clear.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(function () {}); } catch (e) {}
+        setTimeout(function () { window.location.replace(u); }, 150);
+        return new Promise(function () {});
+      } catch (e) {
+        return Promise.resolve();
+      }
+    };
+  })();
+</script>
+{% render 'fp-ebook-thanks' %}
